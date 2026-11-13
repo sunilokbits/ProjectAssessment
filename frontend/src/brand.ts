@@ -11,8 +11,8 @@ export const brand = {
   tagline: "Industry-aware project assessments, from RFP to readiness.",
   logoUrl: "/brand/insight-logo.svg",
   colors: {
-    primary: "#e3005a", // brand accent
-    secondary: "#5a1e96", // gradient partner
-    ink: "#14102b", // navigation / hero background
+    primary: "#c8175f", // Insight magenta accent
+    secondary: "#8a1a7c", // gradient partner (magenta-purple)
+    ink: "#2b2a35", // text
   },
 };

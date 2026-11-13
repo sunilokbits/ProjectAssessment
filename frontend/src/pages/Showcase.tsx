@@ -9,6 +9,18 @@ const GROUPS: [string, string][] = [["business", "Business"], ["data", "Data"], 
 
 type Tip = { x: number; y: number; body: ReactNode } | null;
 
+const LAUNCH_GROUPS = [{ key: "all", label: "All" }, { key: "assess", label: "Assessment" }, { key: "insight", label: "Insights" }, { key: "admin", label: "Administration" }];
+const LAUNCH = [
+  { group: "assess", tone: "t-blue", icon: "▤", title: "New Assessment", desc: "Create a client assessment and classify its domain", cta: "Create", to: "/assessments" },
+  { group: "assess", tone: "t-green", icon: "✦", title: "Domain Auto-Detection", desc: "Upload an RFP / BRD and let AI suggest industry & technology", cta: "Detect", to: "/assessments" },
+  { group: "assess", tone: "t-orange", icon: "?", title: "Tailored Questionnaire", desc: "Global + industry + technology + project questions, de-duplicated", cta: "Answer", to: "/assessments" },
+  { group: "insight", tone: "t-pink", icon: "▦", title: "Readiness Heatmap", desc: "Green / Amber / Red readiness for every project and area", cta: "View", to: "#heatmap" },
+  { group: "insight", tone: "t-purple", icon: "⚖", title: "Compliance Pipeline", desc: "Regulations suggested, confirmed and verified by reviewers", cta: "Review", to: "#compliance" },
+  { group: "insight", tone: "t-cyan", icon: "◆", title: "Industry Coverage", desc: "24 industry domain packs with sub-domains, risks and KPIs", cta: "Explore", to: "#industries" },
+  { group: "admin", tone: "t-blue", icon: "⚙", title: "Domain Management", desc: "Create, version and publish domain packs without code", cta: "Manage", to: "/admin/domains" },
+  { group: "admin", tone: "t-green", icon: "⟳", title: "How to use", desc: "Step-by-step guide, roles, legends and FAQ", cta: "Learn", to: "/guide" },
+];
+
 const CAPABILITIES = [
   { i: "◆", t: "24 industry domain packs", d: "Banking to Aerospace: each pack brings its own questions, risks, KPIs, regulations, terminology and architecture patterns. No generic questionnaire." },
   { i: "⧉", t: "Four-layer questionnaire", d: "Global + Industry + Sub-domain + Technology + Project + AI-discovered questions, de-duplicated, with the origin of every question shown." },
@@ -24,7 +36,10 @@ export default function Showcase() {
   const [rankBy, setRankBy] = useState<"comparable" | "domain_adjusted">("comparable");
   const [ind, setInd] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const nav = useNavigate();
+  const [launchFilter, setLaunchFilter] = useState("all");
+  const launchCards = launchFilter === "all" ? LAUNCH : LAUNCH.filter((l) => l.group === launchFilter);
+  const navigate = useNavigate();
+  const nav = (to: string) => to.startsWith("#") ? document.getElementById(to.slice(1))?.scrollIntoView({ behavior: "smooth" }) : navigate(to);
   const toast = useToast();
   const isAdmin = getUser().role === "admin";
 
@@ -71,25 +86,43 @@ export default function Showcase() {
 
   return (
     <div onMouseLeave={() => setTip(null)}>
-      <section className="hero">
-        <div className="eyebrow">{brand.company} · {brand.product}</div>
-        <h1>Portfolio readiness at a glance</h1>
-        <p>Every client assessment is tailored to its industry, sub-domain, technology stack and project type – then scored transparently and verified by people, not just AI.</p>
-        <div className="hero-stats">
-          <HeroStat v={<CountUp value={stats.n} />} l="Active assessments" />
-          <HeroStat v={<><CountUp value={stats.industries} /><span style={{ fontSize: 16, opacity: .7 }}> / {p.packs_by_kind.industry || 0}</span></>} l="Industries engaged" />
-          <HeroStat v={<CountUp value={packsTotal} />} l="Domain packs live" />
-          <HeroStat v={<CountUp value={stats.avg} suffix="%" />} l="Avg. readiness (comparable)" />
-          <HeroStat v={<CountUp value={stats.gaps} />} l="Critical gaps open" />
-          <HeroStat v={<CountUp value={stats.verify} suffix="%" />} l="Human verification" />
+      <div className="page-head">
+        <div className="ph-l">
+          <span className="ph-ico" aria-hidden>◆</span>
+          <div><h1>Executive Showcase</h1><p>Domain-specific project assessments &amp; portfolio readiness on {brand.company} {brand.product}</p></div>
         </div>
-        <div className="hero-actions">
-          <button className="primary" onClick={() => nav("/assessments")}>+ New assessment</button>
-          <button className="ghost-light" onClick={() => nav("/guide")}>How it works</button>
-          {isAdmin && <button className="ghost-light" disabled={busy} onClick={seed}>{busy ? "Loading demo…" : rows.some((r) => r.demo) ? "Reset demo portfolio" : "Load demo portfolio"}</button>}
-          {isAdmin && rows.some((r) => r.demo) && <button className="ghost-light" onClick={clear}>Remove demo data</button>}
+        <div className="row">
+          {isAdmin && rows.some((r) => r.demo) && <button className="btn-outline" onClick={clear}>Remove demo data</button>}
+          {isAdmin && <button className="btn-outline" disabled={busy} onClick={seed}>{busy ? "Loading demo…" : rows.some((r) => r.demo) ? "↻ Reset demo portfolio" : "＋ Load demo portfolio"}</button>}
+          <button className="btn-outline" onClick={reload}>⟳ Refresh All</button>
         </div>
-      </section>
+      </div>
+
+      <div className="kpis">
+        <Kpi tone="k-magenta" icon="▤" label="Assessments" v={<CountUp value={stats.n} />} sub="Active client projects" />
+        <Kpi tone="k-purple" icon="◆" label="Industries" v={<>{<CountUp value={stats.industries} />}<span style={{ fontSize: 16, opacity: .8 }}> / {p.packs_by_kind.industry || 0}</span></>} sub={`${packsTotal} domain packs live`} />
+        <Kpi tone="k-green" icon="✓" label="Avg readiness" v={<CountUp value={stats.avg} suffix="%" />} sub="Comparable score across projects" />
+        <Kpi tone="k-red" icon="✕" label="Critical gaps" v={<CountUp value={stats.gaps} />} sub="Needs attention" />
+        <Kpi tone="k-orange" icon="✓" label="Human verified" v={<CountUp value={stats.verify} suffix="%" />} sub="Answers & reviews checked" />
+      </div>
+
+      <div className="chiprow">
+        {LAUNCH_GROUPS.map((g) => (
+          <button key={g.key} className={`fchip ${launchFilter === g.key ? "on" : ""}`} onClick={() => setLaunchFilter(g.key)}>
+            {g.label} <span className="n">{g.key === "all" ? LAUNCH.length : LAUNCH.filter((l) => l.group === g.key).length}</span>
+          </button>))}
+      </div>
+      <div className="sec-rule">{(LAUNCH_GROUPS.find((g) => g.key === launchFilter)?.label || "").toUpperCase()} <span className="n">{launchCards.length}</span></div>
+      <div className="launch">
+        {launchCards.map((l) => (
+          <div key={l.title} className={`lcard ${l.tone}`} onClick={() => nav(l.to)} role="link" tabIndex={0} onKeyDown={(e) => e.key === "Enter" && nav(l.to)}>
+            <div className="li" aria-hidden>{l.icon}</div>
+            <div className="lt">{l.title}</div>
+            <div className="ld">{l.desc}</div>
+            <div className="lc">{l.cta} →</div>
+          </div>))}
+      </div>
+      <div className="sec-rule">PORTFOLIO <span className="n">{rows.length}</span></div>
 
       {rows.length === 0 ? (
         <Card title="No assessed projects yet">
@@ -97,7 +130,7 @@ export default function Showcase() {
         </Card>
       ) : (
         <>
-          <Card title="Readiness heatmap – projects × readiness areas" actions={<span className="small muted">Hover a cell for detail · click a project to open it</span>}>
+          <div id="heatmap" /><Card title="Readiness heatmap – projects × readiness areas" actions={<span className="small muted">Hover a cell for detail · click a project to open it</span>}>
             <div style={{ overflowX: "auto" }}>
               <table className="heat">
                 <thead><tr><th className="rowh">Client · project</th>{GROUPS.map(([, l]) => <th key={l}>{l}</th>)}<th>Overall</th></tr></thead>
@@ -150,7 +183,7 @@ export default function Showcase() {
           </div>
 
           <div className="grid-2">
-            <Card title="Compliance pipeline (all projects)">
+            <div id="compliance" /><Card title="Compliance pipeline (all projects)">
               {compliance.map((c) => (
                 <div key={c.k} className="meter" onMouseMove={(e) => showTip(e, <>{c.n} regulatory items · {c.k.replace(/_/g, " ")}</>)} onMouseLeave={() => setTip(null)}>
                   <div className="meter-label">{c.k.replace(/_/g, " ")}</div>
@@ -175,7 +208,7 @@ export default function Showcase() {
         </>
       )}
 
-      <Card title={`Industry coverage – ${p.industries.length} domain packs`} actions={<span className="small muted">Click an industry to see what its pack contains</span>}>
+      <div id="industries" /><Card title={`Industry coverage – ${p.industries.length} domain packs`} actions={<span className="small muted">Click an industry to see what its pack contains</span>}>
         <div className="ind-grid">
           {p.industries.map((i: any) => (
             <div key={i.key} className={`ind-tile ${usedBy[i.key] ? "used" : ""} ${ind === i.key ? "sel" : ""}`} onClick={() => setInd(ind === i.key ? null : i.key)}>
@@ -210,6 +243,11 @@ export default function Showcase() {
   );
 }
 
-function HeroStat({ v, l }: { v: ReactNode; l: string }) {
-  return <div className="hero-stat"><div className="v">{v}</div><div className="l">{l}</div></div>;
+function Kpi({ tone, icon, label, v, sub }: { tone: string; icon: string; label: string; v: ReactNode; sub: string }) {
+  return (
+    <div className={`kpi ${tone}`}>
+      <span className="k-i" aria-hidden>{icon}</span>
+      <div className="k-l">{label}</div><div className="k-v">{v}</div><div className="k-s">{sub}</div>
+    </div>
+  );
 }
