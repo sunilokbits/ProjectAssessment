@@ -1,0 +1,27 @@
+- id: gaa-low-trust
+  title: Users lose trust after inaccurate answers
+  category: business
+  likelihood: 3
+  impact: 4
+  mitigation: Citations, evaluation before launch and clear feedback channels.
+  indicators:
+  - wrong answers
+  - accuracy
+- id: gaa-oversharing
+  title: Assistant surfaces content users should not see
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Permission-aware retrieval and content hygiene before launch.
+  indicators:
+  - permissions
+  - oversharing
+- id: gaa-value-unclear
+  title: Productivity benefits not evidenced
+  category: business
+  likelihood: 3
+  impact: 3
+  mitigation: Baseline task times and measure adoption and outcomes.
+  indicators:
+  - roi
+  - business case

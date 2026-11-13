@@ -1,0 +1,6 @@
+dimensions:
+- key: finops_readiness
+  name: FinOps Readiness
+  group: technology
+  weight: 1.0
+  description: Cost visibility, tagging and allocation, budgets, optimisation practices and accountability.

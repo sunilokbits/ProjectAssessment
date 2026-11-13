@@ -1,0 +1,28 @@
+- id: dpm-dual-running
+  title: Prolonged dual running of legacy and new platforms
+  category: delivery
+  likelihood: 4
+  impact: 4
+  mitigation: Wave plan with decommission milestones and consumer cut-over owners.
+  indicators:
+  - parallel run
+  - dual running
+  - licence renewal
+- id: dpm-hidden-logic
+  title: Undocumented business logic in legacy code
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Automated code analysis and reconciliation testing.
+  indicators:
+  - stored procedures
+  - undocumented
+  - legacy etl
+- id: dpm-like-for-like
+  title: Like-for-like migration fails to deliver modernisation benefits
+  category: business
+  likelihood: 3
+  impact: 3
+  mitigation: Define target-state improvements per wave and track benefits.
+  indicators:
+  - lift and shift

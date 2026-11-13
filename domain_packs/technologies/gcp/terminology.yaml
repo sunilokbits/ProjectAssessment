@@ -1,0 +1,10 @@
+# GCP technology pack - terminology
+- {term: Shared VPC, definition: Network hosted in one project and shared with service projects, entity_type: system, category: network}
+- term: VPC Service Controls
+  definition: Security perimeters preventing data exfiltration from Google services
+  synonyms: [vpc-sc]
+  entity_type: system
+  category: security
+- {term: Organization Policy, definition: Constraints applied across the GCP resource hierarchy, entity_type: concept, category: governance}
+- {term: BigQuery Slot, definition: Unit of BigQuery compute capacity, entity_type: metric, category: operations}
+- {term: Project, definition: 'Base GCP container for resources, billing and IAM', entity_type: concept, category: governance}

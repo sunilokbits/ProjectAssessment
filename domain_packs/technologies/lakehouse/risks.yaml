@@ -1,0 +1,31 @@
+# Lakehouse technology pack - risks
+- id: format-lockin
+  title: Table format / catalog choice limits engine interoperability
+  category: architecture
+  likelihood: 3
+  impact: 3
+  mitigation: Evaluate Delta/Iceberg interoperability (UniForm, catalog federation) against required engines.
+  indicators: [iceberg, interoperability, multiple engines]
+- id: gold-sprawl
+  title: Uncontrolled proliferation of gold tables
+  category: governance
+  likelihood: 3
+  impact: 3
+  mitigation: Data product ownership and certification for gold layer; deprecation process.
+  indicators: [duplicate tables, many versions]
+- id: bi-concurrency
+  title: BI concurrency and latency below expectations on lakehouse
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Serverless SQL serving, aggregates, caching and benchmarking with real dashboards.
+  indicators: [slow dashboards, concurrency]
+  when:
+    technologies_any: [business_intelligence, power_bi]
+- id: maintenance-neglect
+  title: Lack of table maintenance degrades performance and cost
+  category: operations
+  likelihood: 3
+  impact: 2
+  mitigation: Automated optimisation / predictive maintenance features; maintenance SLAs.
+  indicators: [small files]

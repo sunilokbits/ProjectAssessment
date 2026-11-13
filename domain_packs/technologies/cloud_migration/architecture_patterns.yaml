@@ -1,0 +1,34 @@
+# Cloud Migration technology pack - architecture_patterns
+- id: migration-factory
+  name: Cloud migration factory
+  description: Discovery, disposition, wave planning and repeatable migration tooling feeding a governed landing zone.
+  use_cases: [Data centre exit, Cloud data migration]
+  layer_order: [discovery, planning, migration, target, operations]
+  components:
+    - {id: discovery-tool, name: Discovery and dependency mapping (Azure Migrate / AWS Application Discovery / Migration Center), layer: discovery,
+      core: true}
+    - {id: portfolio, name: Portfolio and 7R disposition register, layer: planning, core: true}
+    - {id: wave-plan, name: Wave plan and cutover runbooks, layer: planning, core: true}
+    - id: rehost-tool
+      name: Server replication / rehost tooling
+      layer: migration
+      when:
+        answers:
+          cloud_migration:migration-strategy-mix: [rehost, mixed]
+    - id: db-migration
+      name: Database migration service
+      layer: migration
+      when:
+        technologies_any: [database_migration, data_migration]
+    - id: containers
+      name: Container platform for replatformed apps
+      layer: target
+      when:
+        any_of:
+          - answers:
+              cloud_migration:migration-strategy-mix: [replatform, refactor]
+          - technologies_any: [application_modernization]
+    - {id: landing-zone, name: Target landing zone, layer: target, core: true}
+    - {id: hybrid-network, name: Hybrid connectivity, layer: target, core: true}
+    - {id: ops-handover, name: Cloud operations and monitoring handover, layer: operations, core: true}
+  considerations: [Pilot with low-risk applications to prove the factory., Track decommissioning so on-prem costs actually stop.]

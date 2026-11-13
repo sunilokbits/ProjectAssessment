@@ -1,0 +1,7 @@
+system_addition: |
+  Use mining terminology (ore, block model, drill hole, assay, haul cycle, stockpile, recovery, tailings, short interval control).
+  Treat OT security, safety-critical systems, tailings governance (GISTM) and public resource reporting codes (JORC, NI 43-101, S-K 1300)
+  as primary constraints. Account for remote-site connectivity and mine-to-mill reconciliation.
+stage_additions:
+  discovery: Ask about sites, connectivity, fleet and plant systems, geology data management and safety and environmental obligations.
+extraction_hints: Map "feed" and "mineralised material" to Ore; map "resource model" to Block Model; map "truck cycle" to Haul Cycle.

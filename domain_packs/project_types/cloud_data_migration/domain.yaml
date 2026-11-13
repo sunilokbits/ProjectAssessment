@@ -1,0 +1,25 @@
+key: cloud_data_migration
+name: Cloud Data Migration
+kind: project_type
+version: 1.0.0
+description: Moving databases, data stores and associated pipelines from on-premise to cloud.
+sort_order: 22
+detection:
+  keywords:
+    cloud data migration: 5
+    migrate to cloud: 4
+    move data to the cloud: 4
+    on-premise to cloud: 4
+    on-prem to cloud: 4
+    data centre exit: 4
+    data center exit: 4
+    database migration service: 3
+    lift and shift: 2.5
+    cloud migration: 2
+related_technologies:
+- cloud_migration
+- data_migration
+- database_migration
+- azure
+- aws
+- gcp

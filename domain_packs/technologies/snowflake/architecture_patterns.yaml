@@ -1,0 +1,47 @@
+# Snowflake technology pack - architecture_patterns
+- id: snowflake-elt
+  name: Snowflake ELT platform
+  description: Ingest into Snowflake staging, transform with dbt / Snowpark into marts and serve BI, sharing and AI.
+  use_cases: [BI modernization, Customer 360, Data sharing]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, ai, governance]
+  components:
+    - {id: stages, name: External stages (S3 / ADLS / GCS), layer: ingestion, core: true}
+    - id: snowpipe
+      name: Snowpipe / Snowpipe Streaming
+      layer: ingestion
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis]
+    - id: partner-etl
+      name: Partner ELT / connectors
+      layer: ingestion
+      when:
+        keywords_any: [fivetran, matillion, informatica, saas]
+    - {id: raw-db, name: Raw database, layer: storage, core: true}
+    - id: iceberg
+      name: Iceberg tables (open catalog)
+      layer: storage
+      when:
+        any_of:
+          - technologies_any: [lakehouse, data_lake]
+          - keywords_any: [iceberg]
+    - {id: transform, name: Transformation (dbt / Snowpark / dynamic tables), layer: processing, core: true}
+    - {id: marts, name: Analytics marts, layer: serving, core: true}
+    - id: bi
+      name: BI tools
+      layer: consumption
+      when:
+        technologies_any: [business_intelligence, power_bi]
+    - id: sharing
+      name: Secure data sharing / Marketplace
+      layer: consumption
+      when:
+        keywords_any: [data sharing, share data, marketplace, partners]
+    - id: cortex
+      name: Snowflake Cortex AI
+      layer: ai
+      when:
+        technologies_any: [generative_ai, rag, machine_learning]
+    - {id: horizon, name: 'Horizon governance (tags, masking, row access)', layer: governance, core: true}
+  considerations: [Size warehouses per workload and enable auto-suspend., Use zero-copy cloning for environments.]

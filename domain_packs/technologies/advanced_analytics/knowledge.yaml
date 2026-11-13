@@ -1,0 +1,12 @@
+security_considerations:
+- id: aa-sandbox-data
+  text: Analytical sandboxes must mask or pseudonymise personal data copied from production.
+  category: security
+dependencies:
+- id: aa-curated-data
+  text: Curated, documented analytical datasets from the data platform.
+  category: data
+ai_opportunities:
+- id: aa-genai-assist
+  text: Use code assistants and natural-language querying to accelerate exploratory analysis.
+  category: ai

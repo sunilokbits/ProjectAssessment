@@ -1,0 +1,10 @@
+- id: di-confidence-routing
+  title: Route by confidence to human review
+  text: Auto-process high-confidence extractions and queue the rest for validation.
+  category: operations
+  priority: high
+- id: di-eval-set
+  title: Build a labelled evaluation set per document type
+  text: Measure field-level accuracy before and after go-live.
+  category: quality
+  priority: medium

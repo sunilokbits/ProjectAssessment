@@ -1,0 +1,70 @@
+- id: audience-identity
+  text: How are audiences identified across devices, apps and platforms?
+  category: data
+  dimension: audience_data_readiness
+  answer_type: single_choice
+  weight: 1.5
+  options:
+    - {value: anonymous, label: Mostly anonymous device or cookie ids, score: 0.2}
+    - {value: login_partial, label: Logged-in users on some platforms, score: 0.5}
+    - {value: account_profiles, label: Account and profile ids across platforms, score: 0.8}
+    - {value: identity_graph, label: Governed identity graph with consent, score: 1}
+- id: consent-advertising
+  text: Is consent for personalised advertising captured (e.g. IAB TCF / GPP strings) and enforced in data pipelines?
+  category: privacy
+  dimension: audience_data_readiness
+  critical: true
+  sub_domains: [advertising, streaming, publishing, gaming]
+- id: telemetry-volume
+  text: What event volumes (events per day, peak concurrency) does client-side telemetry generate, and how is it collected?
+  category: data
+  dimension: data_availability
+  answer_type: text
+- id: rights-metadata
+  text: Are content rights (territories, windows, platforms) recorded in a system that downstream analytics and distribution can query?
+  category: governance
+  dimension: content_rights_governance
+  answer_type: single_choice
+  sub_domains: [streaming, content_analytics, publishing]
+  options:
+    - {value: spreadsheets, label: Spreadsheets or contracts only, score: 0.1}
+    - {value: partial, label: Rights system for some content, score: 0.5}
+    - {value: full, label: Rights system of record covering the library, score: 1}
+- id: genai-content-licence
+  text: Do content licences and talent agreements permit use of content for AI training or generative outputs?
+  category: governance
+  dimension: content_rights_governance
+  critical: true
+  when: {technologies_any: [generative_ai, machine_learning, agentic_ai, rag]}
+- id: content-metadata-quality
+  text: How complete and consistent is content metadata (genres, cast, descriptors, identifiers such as EIDR)?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+  sub_domains: [streaming, content_analytics, publishing]
+- id: children-audience
+  text: Does the service target or knowingly attract children, requiring COPPA / Age Appropriate Design controls?
+  category: privacy
+  dimension: privacy_protection
+  sub_domains: [streaming, gaming, publishing]
+- id: ad-measurement
+  text: Which audience measurement and ad verification partners must reconcile with internal figures?
+  category: data
+  dimension: audience_data_readiness
+  answer_type: text
+  sub_domains: [advertising, streaming, publishing]
+- id: royalty-accuracy
+  text: Must analytics outputs feed royalty or revenue-share calculations requiring auditability?
+  category: compliance
+  dimension: content_rights_governance
+  sub_domains: [content_analytics, streaming, publishing]
+- id: live-event-scale
+  text: Must the platform scale for live events (sports, premieres, game launches) with sudden concurrency spikes?
+  category: architecture
+  dimension: architecture_fit
+  sub_domains: [streaming, gaming]
+- id: loot-box-monetisation
+  text: Do monetisation mechanics (loot boxes, virtual currency) require jurisdiction-specific controls or disclosures?
+  category: compliance
+  dimension: privacy_protection
+  sub_domains: [gaming]

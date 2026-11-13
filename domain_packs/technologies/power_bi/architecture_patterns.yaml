@@ -1,0 +1,57 @@
+# Power BI technology pack - architecture_patterns
+- id: power-bi-enterprise
+  name: Enterprise Power BI deployment
+  description: Curated sources feeding shared, certified semantic models in governed workspaces with deployment pipelines.
+  use_cases: [BI modernization, Self-service analytics]
+  layer_order: [sources, connectivity, semantic, consumption, governance, operations]
+  components:
+    - {id: curated-source, name: Curated source (warehouse / lakehouse / Fabric), layer: sources, core: true}
+    - id: gateway
+      name: On-premises data gateway cluster
+      layer: connectivity
+      when:
+        any_of:
+          - answers:
+              power_bi:pbi-gateway: ['yes']
+          - keywords_any: [on-premises, on-prem]
+    - id: import-model
+      name: Import semantic model with incremental refresh
+      layer: semantic
+      when:
+        answers:
+          power_bi:pbi-storage-mode: [import, composite, unknown]
+    - id: dq-model
+      name: DirectQuery / composite model with aggregations
+      layer: semantic
+      when:
+        answers:
+          power_bi:pbi-storage-mode: [directquery, composite]
+    - id: direct-lake-model
+      name: Direct Lake semantic model
+      layer: semantic
+      when:
+        any_of:
+          - answers:
+              power_bi:pbi-storage-mode: [direct_lake]
+          - technologies_any: [microsoft_fabric]
+    - {id: apps, name: Power BI apps and reports, layer: consumption, core: true}
+    - id: paginated
+      name: Paginated reports
+      layer: consumption
+      when:
+        keywords_any: [paginated, pixel-perfect, regulatory report]
+    - id: embedded
+      name: Power BI Embedded
+      layer: consumption
+      when:
+        keywords_any: [embedded, customer-facing, portal]
+    - id: purview-labels
+      name: Sensitivity labels / Purview
+      layer: governance
+      when:
+        any_of:
+          - answers:
+              power_bi:pbi-rls-labels: ['yes']
+          - technologies_any: [data_governance]
+    - {id: deploy-pipelines, name: Deployment pipelines / Git integration, layer: operations, core: true}
+  considerations: [Separate shared semantic models from report workspaces., Use endorsement (promoted / certified) to signal trusted content.]

@@ -1,0 +1,73 @@
+- id: field-boundaries
+  text: Are accurate, geo-referenced field boundaries available for the farms in scope?
+  category: data
+  dimension: agronomic_data_readiness
+  answer_type: single_choice
+  weight: 1.5
+  options:
+    - {value: none, label: No digital boundaries, score: 0}
+    - {value: partial, label: Partial or unverified boundaries, score: 0.5}
+    - {value: verified, label: Verified boundaries for most fields, score: 1}
+- id: seasonal-history
+  text: How many seasons of ground-truth data (yields, planting dates, inputs) are available to train and validate models?
+  category: data
+  dimension: agronomic_data_readiness
+  answer_type: single_choice
+  sub_domains: [crop_analytics, precision_farming, farm_finance]
+  options:
+    - {value: lt2, label: Fewer than 2 seasons, score: 0.2}
+    - {value: "2to4", label: 2 to 4 seasons, score: 0.6}
+    - {value: gt4, label: More than 4 seasons, score: 1}
+- id: farmer-data-consent
+  text: Do farmers explicitly consent to how their farm data is used and shared, consistent with ag data principles (e.g. Ag Data Transparent, EU Code of Conduct on agricultural data sharing)?
+  category: privacy
+  dimension: farm_data_rights
+  critical: true
+- id: oem-data-access
+  text: Can machinery and FMIS data be accessed via OEM APIs with the farmer's authorisation?
+  category: integration
+  dimension: integration_readiness
+  sub_domains: [precision_farming]
+- id: connectivity
+  text: What rural connectivity is available (cellular, LoRaWAN, satellite), and must field apps work offline?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: text
+- id: sensor-data-quality
+  text: How reliable are field sensors, weather stations and animal sensors (calibration, gaps, maintenance)?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+  sub_domains: [precision_farming, livestock]
+- id: traceability-requirements
+  text: Which traceability obligations apply (e.g. EUDR deforestation due diligence, FSMA 204, organic or GlobalG.A.P. certification)?
+  category: compliance
+  dimension: farm_data_rights
+  answer_type: text
+  sub_domains: [agri_supply_chain, livestock, crop_analytics]
+- id: eudr-geolocation
+  text: For EUDR-relevant commodities, can plot-level geolocation be collected and linked to each shipment lot?
+  category: compliance
+  dimension: farm_data_rights
+  critical: true
+  sub_domains: [agri_supply_chain]
+  when: {geographies_any: [EU, EEA]}
+- id: smallholder-identity
+  text: How are smallholder farmers identified and verified (national ID, cooperative membership, mobile number)?
+  category: data
+  dimension: data_quality
+  sub_domains: [farm_finance, agri_supply_chain, agri_inputs]
+- id: advisory-liability
+  text: Will agronomic or veterinary recommendations be delivered directly to farmers, and who is accountable for their outcomes?
+  category: governance
+  dimension: business_alignment
+  answer_type: single_choice
+  options:
+    - {value: agronomist_review, label: Reviewed by agronomists or vets before delivery, score: 1}
+    - {value: direct_disclaimed, label: Direct to farmer with disclaimers, score: 0.6}
+    - {value: undecided, label: Not yet decided, score: 0.2}
+- id: animal-health-data
+  text: Is animal health and movement data reported to authorities, and must the solution integrate with national livestock registries?
+  category: compliance
+  dimension: integration_readiness
+  sub_domains: [livestock]

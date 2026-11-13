@@ -1,0 +1,34 @@
+# Application Modernization technology pack - recommendations
+- id: am-strangler
+  title: Modernise incrementally with the strangler-fig pattern
+  text: Route capabilities one by one from the legacy system to new services behind an API facade.
+  category: architecture
+  priority: high
+  decision_key: modernization_approach
+  decision_option: strangler
+  when:
+    not:
+      answers:
+        application_modernization:modernization-approach: [rewrite, replace, containerize]
+- id: am-containerize
+  title: Containerise first, decompose later
+  text: Containerise the existing application to gain deployment agility, then decompose hot spots.
+  category: architecture
+  priority: medium
+  decision_key: modernization_approach
+  decision_option: containerize
+  when:
+    answers:
+      application_modernization:modernization-approach: [containerize]
+- id: am-replace
+  title: Replace commodity capabilities with SaaS
+  text: Replace non-differentiating applications with SaaS rather than modernising them.
+  category: architecture
+  priority: medium
+  decision_key: modernization_approach
+  decision_option: replace
+  when:
+    answers:
+      application_modernization:modernization-approach: [replace]
+- {id: am-characterisation-tests, title: Build characterisation tests before refactoring, text: Capture current behaviour in automated tests to
+    make modernization safe., category: quality, priority: high}

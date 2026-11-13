@@ -1,0 +1,4 @@
+- {id: conformed-master-data, title: Establish conformed master data across functions, text: "Agree owners and golden sources for entity, cost centre, employee, supplier and customer.", category: data, priority: high}
+- {id: semantic-layer, title: Build a governed semantic layer, text: "Define shared metrics once and reuse across BI and AI tools.", category: architecture, priority: high}
+- {id: protect-hr-data, title: Protect employee data with restricted zones, text: "Apply role-based access, aggregation thresholds and works council engagement.", category: security, priority: high, sub_domains: [hr]}
+- {id: copilot-readiness, title: Clean up permissions before enterprise copilots, text: "Fix oversharing and apply sensitivity labels before enabling copilots on documents.", category: security, priority: medium, when: {technologies_any: [generative_ai, rag, agentic_ai]}}

@@ -1,0 +1,18 @@
+- {term: SKU, definition: Stock keeping unit for a specific product and pack, synonyms: [item, material, product code, gtin, ean, upc], entity_type: entity, category: data}
+- {term: Customer, definition: "Retailer, wholesaler or distributor buying from the manufacturer", synonyms: [account, retailer, ship-to, sold-to, trade customer], entity_type: entity, category: data}
+- {term: Consumer, definition: End user who buys or uses the product, synonyms: [shopper, end consumer, household], entity_type: entity, category: data}
+- {term: Outlet, definition: Point of sale where product is sold to consumers, synonyms: [store, point of sale, retailer outlet, kirana], entity_type: entity, category: data, sub_domains: [distribution, sales_analytics]}
+- {term: Distributor, definition: Intermediary that buys from the manufacturer and sells to outlets, synonyms: [stockist, wholesaler, redistribution stockist], entity_type: role, category: business, sub_domains: [distribution]}
+- {term: Sell-In, definition: Shipments from manufacturer to customers, synonyms: [primary sales, shipments, factory sales], entity_type: metric, category: data}
+- {term: Sell-Out, definition: Sales from retailers to consumers, synonyms: [secondary sales, consumption, pos sales, offtake, tertiary sales], entity_type: metric, category: data}
+- {term: Trade Promotion, definition: Manufacturer-funded promotion executed with retailers, synonyms: [trade event, promotion, deal, tpr, temporary price reduction], entity_type: entity, category: process, sub_domains: [trade_promotion, revenue_growth_management]}
+- {term: Trade Spend, definition: Investment paid to customers for promotions and terms, synonyms: [trade investment, trade funds, trade allowance], entity_type: metric, category: data, sub_domains: [trade_promotion, revenue_growth_management]}
+- {term: Deduction, definition: Amount withheld by a customer from invoice payment, synonyms: [claim, short pay, chargeback], entity_type: event, category: process, sub_domains: [trade_promotion]}
+- {term: S&OP, definition: Sales and operations planning process, synonyms: [ibp, integrated business planning, sales and operations planning], entity_type: process, category: process, sub_domains: [demand_planning, supply_chain]}
+- {term: OTIF, definition: On-time in-full delivery measure, synonyms: [on time in full, service level], entity_type: metric, category: reporting, sub_domains: [supply_chain, distribution]}
+- {term: Syndicated Data, definition: Third-party market measurement data, synonyms: [nielsen, circana, iri, kantar, panel data, retail measurement], entity_type: entity, category: data, sub_domains: [consumer_analytics, sales_analytics, revenue_growth_management]}
+- {term: Numeric Distribution, definition: Share of outlets stocking a product, synonyms: [nd, weighted distribution, wd, acv], entity_type: metric, category: reporting, sub_domains: [distribution, sales_analytics]}
+- {term: Price Pack Architecture, definition: Portfolio of pack sizes and price points, synonyms: [ppa], entity_type: concept, category: business, sub_domains: [revenue_growth_management]}
+- {term: Brand, definition: Consumer-facing product brand, synonyms: [sub-brand, franchise], entity_type: entity, category: data}
+- {term: Modern Trade, definition: Organised retail chains and supermarkets, synonyms: [organised retail, key accounts], entity_type: concept, category: business, sub_domains: [distribution, sales_analytics]}
+- {term: General Trade, definition: Traditional independent retail outlets, synonyms: [traditional trade, kirana, mom and pop], entity_type: concept, category: business, sub_domains: [distribution]}

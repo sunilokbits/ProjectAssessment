@@ -1,0 +1,66 @@
+- id: ml-problem-framing
+  text: Is each ML use case framed with a target variable, decision point and baseline to beat?
+  category: business
+  dimension: business_alignment
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: ml-labels
+  text: Are labelled outcomes (ground truth) available in sufficient volume and quality?
+  category: data
+  dimension: data_quality
+  answer_type: single_choice
+  options:
+  - value: none
+    label: No labels available
+    score: 0
+  - value: partial
+    label: Partial or inconsistent labels
+    score: 0.5
+  - value: good
+    label: Reliable labels with history
+    score: 1
+  critical: true
+- id: ml-features
+  text: Are candidate features available at prediction time (no leakage from future data)?
+  category: data
+  dimension: machine_learning_readiness
+  answer_type: yes_no
+- id: ml-validation
+  text: Is there a model validation standard (holdout testing, bias/fairness checks, sign-off)?
+  category: governance
+  dimension: machine_learning_readiness
+  answer_type: yes_no
+- id: ml-deployment-mode
+  text: How will predictions be consumed?
+  category: architecture
+  dimension: machine_learning_readiness
+  answer_type: single_choice
+  options:
+  - value: batch
+    label: Batch scoring to tables/reports
+    score: 1
+  - value: realtime
+    label: Real-time API / online scoring
+    score: 1
+  - value: embedded
+    label: Embedded in operational application
+    score: 1
+  - value: unknown
+    label: Not defined
+- id: ml-explainability
+  text: Do regulators or users require model explainability for decisions?
+  category: governance
+  dimension: privacy_protection
+  answer_type: yes_no
+- id: ml-platform
+  text: Is an ML platform (experiment tracking, model registry, compute) available?
+  category: technology
+  dimension: machine_learning_readiness
+  answer_type: yes_no
+- id: ml-skills
+  text: How experienced is the client team with building and operating ML models (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

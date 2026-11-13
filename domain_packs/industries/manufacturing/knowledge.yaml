@@ -1,0 +1,40 @@
+nfrs:
+  - {id: no-plant-impact, text: Data collection must not degrade control-system performance or production., category: availability}
+  - {id: edge-buffer, text: Edge components buffer data for the agreed maximum connectivity outage., category: availability}
+  - {id: monitoring-latency, text: Production monitoring dashboards refresh within agreed seconds-to-minutes latency., category: performance, sub_domains: [smart_factory, industrial_iot]}
+  - {id: high-frequency-volume, text: Platform sized for high-frequency sensor data volumes and retention., category: scalability}
+assumptions:
+  - {id: ot-access, text: Plant OT and controls teams will provide access to historians or edge connectivity., category: integration}
+  - {id: erp-record, text: ERP remains the system of record for production orders and inventory., category: data}
+dependencies:
+  - {id: ot-security-approval, text: OT security / plant IT approval of data paths and remote access., category: security}
+  - {id: plant-windows, text: Plant shutdown or maintenance windows for installing edge hardware., category: delivery}
+  - {id: process-engineers, text: Process and reliability engineers available to validate data and models., category: delivery}
+security_considerations:
+  - {id: purdue-segmentation, text: Purdue model segmentation with no direct inbound connections to control networks., category: security}
+  - {id: remote-access, text: Vendor and remote access via secured jump hosts with session recording., category: security}
+  - {id: ot-patching, text: Patching constraints of legacy OT assets considered in risk acceptance., category: security}
+data_quality_checks:
+  - {id: tag-completeness, text: Expected tags present with data in each interval., category: data}
+  - {id: units-ranges, text: Engineering units consistent and values within physical ranges., category: data}
+  - {id: timestamp-sync, text: Timestamps synchronised across OT and IT sources (time zone and clock drift)., category: data}
+  - {id: downtime-coding, text: Downtime events have valid reason codes., category: data}
+reporting_requirements:
+  - {id: shift-reports, text: Shift and daily production and OEE reports., category: reporting}
+  - {id: maintenance-kpis, text: "Maintenance KPIs (MTBF, MTTR, planned maintenance ratio).", category: reporting, sub_domains: [predictive_maintenance]}
+  - {id: ehs-reporting, text: Safety and environmental regulatory reporting., category: reporting, sub_domains: [ehs, energy_sustainability]}
+migration_concerns:
+  - {id: historian-backfill, text: Backfill of historian data required for model training., category: data}
+  - {id: legacy-mes, text: Parallel operation and cut-over of legacy MES functionality., category: integration}
+ai_opportunities:
+  - {id: anomaly-detection, text: Equipment anomaly detection and remaining useful life prediction., category: ai, sub_domains: [predictive_maintenance]}
+  - {id: vision-inspection, text: Computer vision for defect detection., category: ai, sub_domains: [quality]}
+  - {id: process-optimisation, text: Process parameter optimisation for yield and energy., category: ai, sub_domains: [process_manufacturing, energy_sustainability]}
+  - {id: maintenance-copilot, text: GenAI maintenance assistant over manuals and work order history., category: ai}
+  - {id: schedule-optimisation, text: AI-driven production scheduling., category: ai, sub_domains: [production_planning]}
+ai_risks:
+  - {id: unsafe-recommendations, text: AI recommendations that could lead to unsafe operating conditions., category: ai}
+  - {id: model-drift-process, text: Model drift after process or equipment changes., category: ai}
+clarification_questions:
+  - {id: ot-inventory, text: "Please provide an inventory of PLC, SCADA, historian and MES systems per plant.", category: integration}
+  - {id: write-back-intent, text: "Is any write-back to control systems or MES envisaged in later phases?", category: architecture}

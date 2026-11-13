@@ -1,0 +1,3 @@
+dimensions:
+  - {key: public_sector_authorisation, name: Public Sector Authorisation, group: security, weight: 1.5, description: "Readiness for government security authorisation (FedRAMP, StateRAMP, FISMA ATO, CJIS, IRAP, G-Cloud) and classification handling."}
+  - {key: public_accountability, name: Public Accountability, group: domain, weight: 1.0, description: "Statutory data-sharing basis, transparency, records management, accessibility and equitable outcomes."}

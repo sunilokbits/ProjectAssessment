@@ -1,0 +1,4 @@
+# ETL Migration technology pack - scoring
+dimensions:
+  - {key: etl_migration_readiness, name: ETL Migration Readiness, group: technology, weight: 1.0, description: 'Legacy ETL inventory, complexity
+      analysis, conversion approach, target framework and validation readiness.'}

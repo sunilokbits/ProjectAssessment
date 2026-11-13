@@ -1,0 +1,29 @@
+# Data Warehouse technology pack - risks
+- id: model-not-agreed
+  title: No agreed data model - inconsistent metrics across marts
+  category: data
+  likelihood: 3
+  impact: 4
+  mitigation: Agree modelling standard and conformed dimensions; establish business glossary for KPIs.
+  indicators: [conflicting numbers, multiple versions of truth, inconsistent kpi]
+- id: legacy-sql-lockin
+  title: Proprietary SQL / stored procedures hard to migrate
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: Automated code conversion assessment; budget for refactoring proprietary constructs.
+  indicators: [stored procedures, bteq, pl/sql, t-sql, teradata]
+- id: performance-regression
+  title: Query performance regressions after re-platforming
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Benchmark critical workloads early; tune clustering/distribution and caching.
+  indicators: [slow queries, performance issues]
+- id: reconciliation-failure
+  title: Warehouse figures fail reconciliation with source systems
+  category: quality
+  likelihood: 3
+  impact: 4
+  mitigation: Automated reconciliation controls and sign-off by finance / data owners.
+  indicators: [reconciliation, mismatch]

@@ -1,0 +1,69 @@
+- id: soc2
+  name: AICPA SOC 2 Type II (Trust Services Criteria)
+  short_name: SOC 2
+  geographies: [GLOBAL]
+  applicability_note: Attestation commonly required by enterprise customers rather than mandated by law.
+- id: iso-27001
+  name: ISO/IEC 27001 Information Security Management (with ISO 27017 / 27018 for cloud)
+  short_name: ISO 27001
+  geographies: [GLOBAL]
+- id: iso-42001
+  name: ISO/IEC 42001 AI Management System
+  short_name: ISO 42001
+  geographies: [GLOBAL]
+  technologies_any: [generative_ai, machine_learning, agentic_ai, ai_agents]
+- id: gdpr
+  name: General Data Protection Regulation (processor obligations, Art. 28)
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii]
+- id: eu-data-act
+  name: EU Data Act (cloud switching and data portability)
+  short_name: EU Data Act
+  geographies: [EU, EEA]
+  sub_domains: [cloud_platforms, saas]
+- id: nis2
+  name: NIS2 Directive (cloud, data centre and managed service providers)
+  short_name: NIS2
+  geographies: [EU, EEA]
+  sub_domains: [cloud_platforms, cybersecurity, saas]
+- id: eu-ai-act
+  name: EU AI Act (provider and deployer obligations)
+  short_name: EU AI Act
+  geographies: [EU, EEA]
+  technologies_any: [generative_ai, machine_learning, agentic_ai, ai_agents]
+- id: eu-cra
+  name: EU Cyber Resilience Act (products with digital elements)
+  short_name: CRA
+  geographies: [EU, EEA]
+  sub_domains: [enterprise_software, cybersecurity, developer_platforms]
+- id: ccpa
+  name: California Consumer Privacy Act / CPRA (service provider obligations)
+  short_name: CCPA/CPRA
+  geographies: [US-CA]
+  data_classifications_any: [pii]
+- id: fedramp
+  name: FedRAMP authorisation for cloud services sold to US federal agencies
+  short_name: FedRAMP
+  geographies: [US]
+  applicability_note: Only applies when selling cloud services to US federal customers.
+- id: hipaa-ba
+  name: HIPAA Business Associate obligations
+  short_name: HIPAA BAA
+  geographies: [US]
+  data_classifications_any: [phi]
+- id: pci-dss
+  name: Payment Card Industry Data Security Standard v4.0
+  short_name: PCI DSS
+  geographies: [GLOBAL]
+  data_classifications_any: [cardholder]
+- id: asc-606
+  name: ASC 606 / IFRS 15 revenue recognition
+  short_name: ASC 606 / IFRS 15
+  geographies: [GLOBAL]
+  applicability_note: Relevant where subscription and usage data feed revenue recognition.
+- id: india-dpdp
+  name: Digital Personal Data Protection Act 2023
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii]

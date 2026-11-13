@@ -1,0 +1,144 @@
+key: retail
+name: Retail
+kind: industry
+version: 1.0.0
+description: Store-based and digital retail including e-commerce, omnichannel fulfilment, merchandising, pricing, inventory, loyalty and personalisation.
+aliases: [retailer, e-commerce, ecommerce, omnichannel retail, grocery, fashion retail, specialty retail, d2c]
+sort_order: 40
+sub_domains:
+  - key: stores
+    name: Stores and Store Operations
+    description: Physical store operations, POS, workforce, shrink and store performance.
+    keywords: [store operations, point of sale, pos, store manager, footfall, shrink, planogram compliance, store labor, checkout, self-checkout]
+  - key: ecommerce
+    name: E-commerce
+    description: Online storefronts, marketplaces, digital checkout and web/app analytics.
+    keywords: [e-commerce, ecommerce, online store, webshop, shopping cart, checkout, marketplace, shopify, salesforce commerce cloud, adobe commerce, clickstream]
+  - key: omnichannel
+    name: Omnichannel and Fulfilment
+    description: Unified commerce, BOPIS, ship-from-store, returns and order orchestration.
+    keywords: [omnichannel, unified commerce, bopis, click and collect, ship from store, curbside, order management system, returns, last mile, fulfilment]
+  - key: merchandising
+    name: Merchandising and Assortment
+    description: Category management, assortment planning, space planning and vendor management.
+    keywords: [merchandising, assortment planning, category management, planogram, space planning, range planning, open to buy, private label, vendor]
+  - key: pricing
+    name: Pricing and Promotions
+    description: Regular, promotional and markdown pricing, price optimisation and competitor pricing.
+    keywords: [pricing, price optimization, markdown, promotion, promo, price elasticity, competitor pricing, dynamic pricing, coupon]
+  - key: inventory
+    name: Inventory and Replenishment
+    description: Inventory visibility, allocation, replenishment and distribution centre operations.
+    keywords: [inventory, stock level, replenishment, allocation, out of stock, overstock, safety stock, distribution center, warehouse management, stock count]
+  - key: customer_loyalty
+    name: Customer Loyalty and CRM
+    description: Loyalty programs, CRM, segmentation, campaigns and customer data platforms.
+    keywords: [loyalty program, loyalty card, rewards, points, crm, customer segmentation, cdp, customer data platform, member, clienteling]
+  - key: recommendation_systems
+    name: Recommendation and Personalisation
+    description: Product recommendations, search, personalisation and retail media.
+    keywords: [recommendation engine, product recommendations, personalization, next best offer, site search, retail media, cross-sell, upsell]
+  - key: supply_chain
+    name: Retail Supply Chain and Sourcing
+    description: Sourcing, purchase orders, inbound logistics and supplier collaboration.
+    keywords: [sourcing, purchase order, supplier, inbound logistics, vendor compliance, edi, asn, landed cost]
+  - key: grocery
+    name: Grocery and Fresh
+    description: Grocery-specific operations including fresh, perishables and waste.
+    keywords: [grocery, supermarket, fresh food, perishables, food waste, shelf life, weighted items]
+  - key: payments_checkout
+    name: Payments and Checkout
+    description: In-store and online payments, wallets, BNPL and gift cards.
+    keywords: [payment gateway, card payment, digital wallet, bnpl, gift card, tokenization, chargeback]
+detection:
+  keywords:
+    retail: 3
+    retailer: 3.5
+    store: 1.5
+    shopper: 3
+    sku: 3
+    basket: 2.5
+    pos: 2
+    point of sale: 3
+    e-commerce: 3
+    ecommerce: 3
+    omnichannel: 3.5
+    bopis: 4
+    merchandising: 3.5
+    planogram: 4
+    assortment: 2.5
+    markdown: 2.5
+    loyalty program: 3
+    footfall: 3.5
+    shrink: 2.5
+    same-store sales: 4
+    customer: 0.5
+    product: 0.5
+    promotion: 1
+    order: 0.5
+business_processes:
+  - "Assortment and range planning"
+  - "Merchandise financial planning and open-to-buy"
+  - "Pricing, promotions and markdowns"
+  - "Purchase ordering and supplier management"
+  - "Allocation and replenishment"
+  - "Store operations and labour scheduling"
+  - "Point-of-sale and checkout"
+  - "Online order capture and fulfilment"
+  - "Returns management"
+  - "Loyalty and CRM campaigns"
+  - "Customer service"
+  - "Inventory counting and shrink management"
+  - "Space and planogram management"
+capabilities:
+  - "Customer 360 and segmentation"
+  - "Demand forecasting and replenishment optimisation"
+  - "Price and promotion optimisation"
+  - "Assortment optimisation"
+  - "Real-time inventory visibility"
+  - "Order orchestration"
+  - "Product recommendations and personalisation"
+  - "Retail media"
+  - "Store performance analytics"
+  - "Loss prevention analytics"
+  - "Product information management"
+source_systems:
+  - "ERP / merchandising (SAP S/4HANA Retail, Oracle Retail RMS / RMFCS, Microsoft Dynamics 365 Commerce, Aptos)"
+  - "POS (NCR Voyix, Toshiba, Oracle Xstore, LS Retail)"
+  - "E-commerce platforms (Salesforce Commerce Cloud, Adobe Commerce / Magento, Shopify Plus, commercetools, SAP Commerce Cloud)"
+  - "Order management (Manhattan Active Omni, IBM Sterling OMS, Fluent Commerce)"
+  - "WMS (Manhattan, Blue Yonder, SAP EWM)"
+  - "Planning (Blue Yonder, RELEX, o9, Oracle RPAS)"
+  - "Pricing (Revionics, PROS, Oracle Retail Price Management)"
+  - "Loyalty and CDP (Salesforce, Adobe Experience Platform, Segment, Antavo)"
+  - "PIM (Akeneo, Salsify, Stibo STEP)"
+  - "Web analytics (Google Analytics 4, Adobe Analytics)"
+  - "Workforce management (UKG, Reflexis / Zebra)"
+data_entities:
+  - "Customer"
+  - "Loyalty member"
+  - "Product"
+  - "SKU"
+  - "Category"
+  - "Store"
+  - "Basket / transaction"
+  - "Order"
+  - "Order line"
+  - "Return"
+  - "Promotion"
+  - "Price"
+  - "Inventory position"
+  - "Supplier"
+  - "Purchase order"
+  - "Shipment"
+  - "Clickstream event"
+integration_patterns:
+  - "POS transaction log (TLOG) batch and trickle feeds"
+  - "E-commerce platform APIs and webhooks"
+  - "EDI with suppliers (850, 856, 810)"
+  - "Event streaming for inventory and order updates"
+  - "Clickstream collection (GA4 / Adobe exports)"
+  - "CDP integrations"
+  - "Nightly ERP / merchandising extracts"
+related_technologies: [databricks, snowflake, microsoft_fabric, power_bi, machine_learning, generative_ai, real_time_streaming, master_data_management, salesforce_integration, sap_integration]
+related_project_types: [customer_360, recommendation_engine, demand_forecasting, churn_prediction, bi_modernization, data_platform_modernization, fraud_detection]

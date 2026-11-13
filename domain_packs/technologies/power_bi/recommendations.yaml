@@ -1,0 +1,37 @@
+# Power BI technology pack - recommendations
+- id: pbi-import
+  title: Use Import mode for the main semantic models
+  text: Import with incremental refresh gives best interactive performance for typical volumes.
+  category: architecture
+  priority: medium
+  decision_key: semantic_model_mode
+  decision_option: import
+  when:
+    answers:
+      power_bi:pbi-storage-mode: [import]
+- id: pbi-directquery
+  title: Use DirectQuery where near-real-time or very large data requires it
+  text: Use DirectQuery (with aggregations) when data latency or size rules out Import.
+  category: architecture
+  priority: medium
+  decision_key: semantic_model_mode
+  decision_option: directquery
+  when:
+    any_of:
+      - answers:
+          power_bi:pbi-storage-mode: [directquery]
+      - keywords_any: [near real-time dashboard, real-time dashboard]
+- id: pbi-direct-lake
+  title: Use Direct Lake on Fabric gold tables
+  text: Serve large models via Direct Lake over Delta tables in OneLake to avoid import refresh.
+  category: architecture
+  priority: medium
+  decision_key: semantic_model_mode
+  decision_option: direct_lake
+  when:
+    any_of:
+      - answers:
+          power_bi:pbi-storage-mode: [direct_lake]
+      - technologies_any: [microsoft_fabric]
+- {id: pbi-coe, title: Establish a Power BI Centre of Excellence, text: 'Define tenant governance, standards, endorsement and community support.',
+  category: governance, priority: high}

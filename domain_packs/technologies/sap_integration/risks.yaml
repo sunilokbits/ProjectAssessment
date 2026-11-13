@@ -1,0 +1,38 @@
+- id: sap-licence
+  title: SAP licensing restrictions on extraction or indirect access
+  category: compliance
+  likelihood: 3
+  impact: 5
+  mitigation: Confirm extraction method and licensing with SAP account team early.
+  indicators:
+  - indirect access
+  - database access
+  - licence
+- id: sap-complex-model
+  title: Complex SAP data model slows delivery
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Use CDS views/business content; involve functional SMEs.
+  indicators:
+  - custom tables
+  - z tables
+  - abap
+- id: sap-s4-moving-target
+  title: S/4HANA migration changes sources mid-project
+  category: delivery
+  likelihood: 3
+  impact: 4
+  mitigation: Design for both ECC and S/4 sources; align roadmaps.
+  indicators:
+  - s/4 migration
+  - rise with sap
+- id: sap-performance
+  title: Extraction impacts SAP production performance
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Delta extraction, off-peak windows and Basis monitoring.
+  indicators:
+  - full load
+  - performance

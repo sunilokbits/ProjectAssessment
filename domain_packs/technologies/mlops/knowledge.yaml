@@ -1,0 +1,12 @@
+security_considerations:
+- id: mlops-artifact-integrity
+  text: Sign and scan model artefacts and dependencies before deployment.
+  category: security
+ai_risks:
+- id: mlops-ai-unmonitored
+  text: Unmonitored models making degraded decisions.
+  category: ai
+dependencies:
+- id: mlops-devops
+  text: CI/CD tooling and environment provisioning.
+  category: operations

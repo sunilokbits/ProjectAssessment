@@ -1,0 +1,30 @@
+nfrs:
+  - {id: telemetry-latency, text: "Operational telemetry latency defined per use case (seconds for operations, minutes or daily for analytics).", category: performance}
+  - {id: ot-availability, text: Analytics workloads must not degrade control-system or historian performance., category: availability}
+  - {id: long-retention, text: "Asset and sensor history retained for multi-year trend and failure analysis.", category: data}
+assumptions:
+  - {id: historian-access, text: Operations will grant read access to historian data through an approved DMZ path., category: data}
+  - {id: gis-baseline, text: The GIS network model is the authoritative source for connectivity., category: data}
+dependencies:
+  - {id: ot-security-approval, text: OT security / CIP compliance approval for new data flows., category: security}
+  - {id: control-room-engagement, text: Control room and field operations SMEs available for use-case validation., category: business}
+security_considerations:
+  - {id: ot-segmentation, text: "Purdue-model segmentation and IEC 62443 zones and conduits respected.", category: security}
+data_quality_checks:
+  - {id: tag-asset-mapping, text: Every critical sensor tag maps to an asset in the asset register., category: data}
+  - {id: interval-gaps, text: Missing or estimated interval reads flagged and counted per meter., category: data, sub_domains: [smart_metering]}
+reporting_requirements:
+  - {id: reliability-indices, text: "Reliability indices (SAIDI, SAIFI, CAIDI) for regulator submissions.", category: reporting, sub_domains: [electricity, grid_analytics]}
+migration_concerns:
+  - {id: historian-backfill, text: Volume and format of historian back-fill for model training., category: data}
+ai_opportunities:
+  - {id: predictive-maintenance, text: "Failure prediction for transformers, pumps, turbines and compressors.",category: ai}
+  - {id: load-forecast, text: ML load and renewable generation forecasting., category: ai, sub_domains: [grid_analytics, renewable_energy, electricity]}
+  - {id: theft-detection, text: Revenue protection and energy theft detection from meter data., category: ai, sub_domains: [smart_metering]}
+  - {id: leak-detection, text: Leak detection from pressure and flow analytics., category: ai, sub_domains: [water, oil_gas]}
+  - {id: field-copilot, text: GenAI copilot over maintenance manuals and work history for field crews., category: ai}
+ai_risks:
+  - {id: unsafe-recommendations, text: AI recommendations acted upon in safety-critical operations without validation., category: ai}
+  - {id: sparse-failures, text: Rare failure events leave too few labels for reliable predictive models., category: ai, sub_domains: [asset_management]}
+clarification_questions:
+  - {id: ot-owners, text: "Who owns each OT system and approves new data extraction?",category: data}

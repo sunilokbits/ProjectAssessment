@@ -1,0 +1,21 @@
+- id: ot-it-converged-platform
+  name: OT/IT converged utility data platform
+  description: Securely replicates operational telemetry into an analytics platform, contextualised with asset, network and customer data.
+  use_cases: [Predictive asset maintenance, Grid analytics, Smart meter analytics, Load forecasting]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: ot-sources, name: "SCADA / historian / EAM / GIS sources", layer: sources, core: true}
+    - {id: industrial-dmz, name: "Industrial DMZ / data diode replication", layer: security, core: true, purpose: Preserve OT segmentation while exposing data to IT.}
+    - {id: telemetry-stream, name: "Telemetry streaming (MQTT / OPC UA / Kafka)", layer: ingestion, when: {any_of: [{technologies_any: [iot, real_time_streaming]}, {keywords_any: [real-time, streaming, telemetry]}]}, alternatives: [Historian batch export]}
+    - {id: historian-batch, name: Historian batch export, layer: ingestion, when: {not: {technologies_any: [iot, real_time_streaming]}}}
+    - {id: mdm-feed, name: Meter data management interval feed, layer: ingestion, when: {sub_domains_any: [smart_metering]}}
+    - {id: timeseries-store, name: Time-series optimised storage, layer: storage, core: true}
+    - {id: asset-context, name: "Asset and network contextualisation (asset hierarchy, CIM model)", layer: processing, core: true}
+    - {id: forecasting-models, name: Load and generation forecasting models, layer: processing, when: {any_of: [{project_types_any: [demand_forecasting]}, {sub_domains_any: [grid_analytics, renewable_energy]}]}}
+    - {id: apm-models, name: Asset health and failure prediction models, layer: processing, when: {any_of: [{project_types_any: [predictive_maintenance]}, {sub_domains_any: [asset_management]}]}}
+    - {id: cip-enclave, name: NERC CIP protected enclave for BES Cyber System Information, layer: security, when: {answers: {nerc-cip-scope: [yes_controls, yes_no_controls]}}}
+    - {id: consumption-pseudonymisation, name: Consumption data pseudonymisation, layer: security, when: {data_classifications_any: [pii, spi]}}
+    - {id: ops-dashboards, name: Operations and asset dashboards, layer: consumption, core: true}
+  considerations:
+    - Never allow inbound connections from IT or cloud into control networks.
+    - Keep analytics advisory unless a safety case approves closed-loop use.

@@ -1,0 +1,3 @@
+dimensions:
+  - {key: supporter_data_stewardship, name: Supporter Data Stewardship, group: domain, weight: 1.5, description: "Quality, consent and ethical use of supporter, donor and volunteer data, and beneficiary protection."}
+  - {key: impact_accountability, name: Impact and Funder Accountability, group: domain, weight: 1.0, description: "Ability to measure outcomes, track restricted funds and meet funder and regulator reporting."}

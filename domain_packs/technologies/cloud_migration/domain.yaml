@@ -1,0 +1,14 @@
+# Cloud Migration technology pack - domain
+key: cloud_migration
+name: Cloud Migration
+kind: technology
+version: 1.0.0
+description: Migration of applications, infrastructure and data from on-premises or between clouds - discovery, 7R disposition, wave planning,
+  cutover and decommissioning.
+aliases: [Cloud]
+sort_order: 33
+detection:
+  keywords: {cloud migration: 5, migrate to cloud: 4, lift and shift: 4, rehost: 3, replatform: 3, refactor: 2, data centre exit: 4, data center exit: 4,
+    migration waves: 3, azure migrate: 4, aws migration hub: 4, 7 rs: 3, 6 rs: 3, migration: 0.5}
+related_technologies: [azure, aws, gcp, application_modernization, data_migration, database_migration, finops]
+related_project_types: [cloud_data_migration, data_platform_modernization]

@@ -1,0 +1,4 @@
+dimensions:
+  - {key: commercial_data_harmonisation, name: Commercial Data Harmonisation, group: domain, weight: 1.5, description: "Ability to harmonise sell-in, sell-out, syndicated, distributor and trade data on common product, customer and calendar hierarchies."}
+  - {key: planning_maturity, name: Planning Process Maturity, group: domain, weight: 1.0, description: "Maturity of demand planning, S&OP and trade planning processes that analytics outputs must feed."}
+  - {key: partner_data_governance, name: Partner Data Governance, group: security, weight: 1.0, description: "Licensing, contractual and privacy controls over retailer, syndicated and consumer data."}

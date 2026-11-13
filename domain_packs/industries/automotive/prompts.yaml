@@ -1,0 +1,8 @@
+system_addition: |
+  Use automotive terminology (vehicle, VIN, dealer, telematics, signal, DTC, OTA, warranty claim, repair order, recall).
+  Treat build data as the VIN master. Highlight connected vehicle privacy and consent, UNECE R155/R156 and ISO/SAE 21434
+  cybersecurity, VIN linkage, warranty early warning, telemetry cost and market-specific data localisation (e.g. China).
+stage_additions:
+  discovery: "Ask which markets, vehicle programs, connected vehicle platforms, DMS and warranty systems are in scope."
+  solutioning: Design VIN-centric data linkage, consent enforcement and cost-aware telemetry pipelines.
+extraction_hints: Map "car" and "unit" to Vehicle; map "chassis number" to VIN; map "dealership" and "retailer" to Dealer; map "fault code" to DTC; map "job card" and "RO" to Repair Order; map "field action" to Recall.

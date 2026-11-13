@@ -1,0 +1,4 @@
+dimensions:
+  - {key: subscriber_data_protection, name: Subscriber Data Protection, group: security, weight: 1.5, description: "Protection of CPNI, CDRs, location and traffic data with lawful-access and retention controls."}
+  - {key: revenue_integrity, name: Revenue Integrity, group: domain, weight: 1.5, description: "Reconciliation of usage, rating, billing and settlement data to prevent revenue leakage."}
+  - {key: network_data_readiness, name: Network Data Readiness, group: domain, weight: 1.0, description: "Availability, volume handling and context of network telemetry, inventory and performance data."}

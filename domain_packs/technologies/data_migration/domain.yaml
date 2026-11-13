@@ -1,0 +1,13 @@
+# Data Migration technology pack - domain
+key: data_migration
+name: Data Migration
+kind: technology
+version: 1.0.0
+description: Migration of business data between systems or platforms - profiling, mapping, cleansing, transformation, reconciliation and cutover.
+aliases: [Modernization & Migration]
+sort_order: 41
+detection:
+  keywords: {data migration: 5, migrate data: 4, historical data load: 3, data conversion: 3, source to target mapping: 4, reconciliation: 2,
+    cutover: 2, data cleansing: 2, legacy data: 2, archive: 0.8, migration: 0.5}
+related_technologies: [database_migration, etl_migration, cloud_migration, data_quality, data_warehouse, lakehouse]
+related_project_types: [cloud_data_migration, data_platform_modernization, legacy_etl_migration]

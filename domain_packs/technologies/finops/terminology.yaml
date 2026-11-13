@@ -1,0 +1,14 @@
+- term: Showback
+  definition: Reporting costs to consumers without billing them
+  entity_type: process
+  category: operations
+- term: Chargeback
+  definition: Billing consumers for their share of costs
+  entity_type: process
+  category: operations
+- term: Unit Economics
+  definition: Cost per unit of business output
+  synonyms:
+  - unit cost
+  entity_type: metric
+  category: operations

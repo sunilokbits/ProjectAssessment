@@ -1,0 +1,37 @@
+- id: mdm-low-match
+  title: Low match accuracy from poor source data
+  category: data
+  likelihood: 4
+  impact: 4
+  mitigation: Profile and cleanse keys; tune match rules iteratively with stewards.
+  indicators:
+  - duplicates
+  - no common key
+  - free text names
+- id: mdm-politics
+  title: Disagreement on golden-record ownership and survivorship
+  category: governance
+  likelihood: 3
+  impact: 4
+  mitigation: Governance council arbitration; document attribute-level survivorship.
+  indicators:
+  - conflicting sources
+  - ownership dispute
+- id: mdm-big-bang
+  title: Big-bang multi-domain MDM overruns
+  category: delivery
+  likelihood: 3
+  impact: 4
+  mitigation: Deliver one domain and style first; expand iteratively.
+  indicators:
+  - all domains
+  - enterprise mdm
+- id: mdm-sync-back
+  title: Complex sync-back to operational systems
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Start with consolidation; add coexistence once integration is proven.
+  indicators:
+  - write back
+  - bi-directional

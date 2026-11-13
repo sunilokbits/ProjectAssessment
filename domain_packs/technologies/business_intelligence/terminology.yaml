@@ -1,0 +1,27 @@
+# Business Intelligence technology pack - terminology
+- term: Semantic Layer
+  definition: Business-friendly model of data, measures and relationships used by BI tools
+  synonyms: [semantic model]
+  entity_type: concept
+  category: architecture
+- term: KPI
+  definition: Key performance indicator measuring business outcomes
+  synonyms: [key performance indicator]
+  entity_type: metric
+  category: business
+- {term: Self-Service BI, definition: Business users creating their own reports on governed data, entity_type: concept, category: business}
+- term: Certified Dataset
+  definition: Dataset endorsed as authoritative by data owners
+  synonyms: [endorsed dataset]
+  entity_type: entity
+  category: governance
+- term: Row-Level Security
+  definition: Restricting rows of data visible to each user
+  synonyms: [rls]
+  entity_type: concept
+  category: security
+- term: Paginated Report
+  definition: Fixed-layout printable report
+  synonyms: [pixel-perfect report]
+  entity_type: system
+  category: technology

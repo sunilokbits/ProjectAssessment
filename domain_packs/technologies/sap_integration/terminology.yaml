@@ -1,0 +1,16 @@
+- term: CDS View
+  definition: Core Data Services view exposing SAP business data
+  entity_type: system
+  category: data
+- term: ODP
+  definition: Operational Data Provisioning extraction framework
+  entity_type: system
+  category: integration
+- term: SLT
+  definition: SAP Landscape Transformation replication server
+  entity_type: system
+  category: integration
+- term: IDoc
+  definition: SAP intermediate document for message exchange
+  entity_type: entity
+  category: integration

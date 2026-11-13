@@ -1,0 +1,92 @@
+- id: ot-data-sources
+  text: Which OT systems (SCADA, EMS/ADMS, historian, PLC/RTU, meter head-ends) supply data, and how is it extracted today?
+  category: data
+  dimension: ot_data_integration
+  answer_type: text
+- id: ot-it-segmentation
+  text: How is OT data moved to IT/cloud environments while preserving network segmentation?
+  category: security
+  dimension: critical_infrastructure_security
+  answer_type: single_choice
+  critical: true
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: direct, label: Direct connectivity from OT networks, score: 0.1}
+    - {value: dmz_planned, label: Via an industrial DMZ - design in progress, score: 0.5}
+    - {value: dmz_in_place, label: "Via industrial DMZ / data diode with approved replication", score: 1}
+- id: nerc-cip-scope
+  text: Could any in-scope system or data be classified as a BES Cyber System or BES Cyber System Information under NERC CIP?
+  category: compliance
+  dimension: critical_infrastructure_security
+  answer_type: single_choice
+  critical: true
+  sub_domains: [electricity, grid_analytics, renewable_energy]
+  when: {geographies_any: [US, CA]}
+  options:
+    - {value: unknown, label: Not assessed, score: 0}
+    - {value: yes_controls, label: Yes - CIP controls and compliance team engaged, score: 0.8}
+    - {value: yes_no_controls, label: Yes - CIP implications not yet addressed, score: 0.1}
+    - {value: no, label: No (confirmed by CIP compliance), score: 1}
+- id: asset-hierarchy
+  text: Is there a maintained asset hierarchy and asset register (EAM / GIS) that can be used to contextualise sensor and maintenance data?
+  category: data
+  dimension: ot_data_integration
+  weight: 1.5
+  sub_domains: [asset_management, electricity, water, oil_gas, renewable_energy]
+- id: historian-tag-quality
+  text: How would you rate the quality and naming consistency of historian tags and sensor metadata?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+- id: interval-data-volume
+  text: What meter population and interval granularity (e.g. 15-minute, 30-minute) must be supported, and how much history is retained?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [smart_metering]
+- id: vee-process
+  text: Is meter data validation, estimation and editing (VEE) performed in the MDM before data is consumed downstream?
+  category: data
+  dimension: data_quality
+  sub_domains: [smart_metering]
+- id: cim-model
+  text: Is a common information model (IEC CIM or equivalent) used for network and asset data exchange?
+  category: integration
+  dimension: integration_readiness
+  answer_type: single_choice
+  sub_domains: [electricity, grid_analytics]
+  options:
+    - {value: none, label: No common model, score: 0.2}
+    - {value: partial, label: Partially adopted, score: 0.6}
+    - {value: adopted, label: Adopted across key systems, score: 1}
+- id: network-connectivity-model
+  text: Is the GIS network connectivity model accurate enough for grid analytics (phase, feeder, transformer-to-customer mapping)?
+  category: data
+  dimension: data_quality
+  sub_domains: [electricity, grid_analytics, water]
+- id: regulator-reporting
+  text: Which regulator submissions (rate cases, reliability indices, leakage, emissions) depend on data in scope?
+  category: compliance
+  dimension: privacy_protection
+  answer_type: text
+- id: customer-energy-data
+  text: Is customer consumption data treated as personal data, with consent and access rules defined for analytics use?
+  category: privacy
+  dimension: privacy_protection
+  sub_domains: [smart_metering, electricity, water]
+  when: {data_classifications_any: [pii, spi]}
+- id: safety-critical-use
+  text: Will outputs (forecasts, alerts, recommendations) influence safety-critical or real-time operational decisions?
+  category: architecture
+  dimension: operational_readiness
+  answer_type: single_choice
+  options:
+    - {value: advisory, label: Advisory only - humans decide, score: 1}
+    - {value: closed_loop_planned, label: Closed-loop control planned - safety case not yet defined, score: 0.2}
+    - {value: closed_loop_safety_case, label: Closed-loop control with approved safety case, score: 0.8}
+- id: ot-latency
+  text: What latency is required for operational telemetry (seconds, minutes, daily) to support the intended use cases?
+  category: architecture
+  dimension: ot_data_integration
+  answer_type: text
+  when: {technologies_any: [iot, real_time_streaming]}

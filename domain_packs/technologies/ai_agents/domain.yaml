@@ -1,0 +1,30 @@
+key: ai_agents
+name: AI Agents
+kind: technology
+version: 1.0.0
+description: Task-specific AI agents and assistants (e.g. service, sales, IT helpdesk agents) built on LLMs with tools and knowledge.
+aliases:
+- AI
+sort_order: 64
+detection:
+  keywords:
+    ai agent: 5
+    ai agents: 5
+    virtual agent: 4
+    conversational agent: 4
+    copilot studio: 4
+    agentforce: 4
+    agent bricks: 4
+    bedrock agents: 4
+    digital assistant: 3
+    virtual assistant: 3
+    chatbot: 2
+    assistant: 1
+related_technologies:
+- generative_ai
+- agentic_ai
+- rag
+- llmops
+- salesforce_integration
+related_project_types:
+- genai_assistant

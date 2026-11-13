@@ -1,0 +1,6 @@
+dimensions:
+- key: vector_search_readiness
+  name: Vector Search Readiness
+  group: technology
+  weight: 1.0
+  description: Index design, embedding strategy, scale, filtering, latency and operational ownership of vector stores.

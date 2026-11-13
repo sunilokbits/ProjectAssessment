@@ -1,0 +1,72 @@
+- id: itar
+  name: International Traffic in Arms Regulations (22 CFR 120-130)
+  short_name: ITAR
+  geographies: [GLOBAL]
+  data_classifications_any: [export_controlled]
+  applicability_note: US law with extraterritorial reach - applies to US-origin defense articles and technical data wherever located.
+- id: ear
+  name: Export Administration Regulations (15 CFR 730-774)
+  short_name: EAR
+  geographies: [GLOBAL]
+  data_classifications_any: [export_controlled]
+  applicability_note: Applies to US-origin dual-use items and technology, including re-exports.
+- id: cmmc
+  name: Cybersecurity Maturity Model Certification 2.0 (32 CFR Part 170 / 48 CFR)
+  short_name: CMMC
+  geographies: [US]
+  sub_domains: [defense_programs, supply_chain, aircraft_manufacturing, space]
+- id: dfars-7012
+  name: DFARS 252.204-7012 Safeguarding Covered Defense Information and Cyber Incident Reporting
+  short_name: DFARS 7012
+  geographies: [US]
+  sub_domains: [defense_programs, supply_chain, aircraft_manufacturing, space]
+- id: nist-800-171
+  name: NIST SP 800-171 Protecting Controlled Unclassified Information
+  short_name: NIST 800-171
+  geographies: [US]
+- id: nispom
+  name: National Industrial Security Program Operating Manual (32 CFR Part 117)
+  short_name: NISPOM
+  geographies: [US]
+  data_classifications_any: [classified]
+  sub_domains: [defense_programs, space]
+- id: fedramp
+  name: FedRAMP (Moderate or High baselines for cloud hosting CUI)
+  short_name: FedRAMP
+  geographies: [US]
+  technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]
+- id: as9100
+  name: AS9100 / AS9110 / AS9120 Aerospace Quality Management Systems
+  short_name: AS9100
+  geographies: [GLOBAL]
+  sub_domains: [aircraft_manufacturing, mro, supply_chain, space]
+- id: faa-easa-maintenance
+  name: FAA 14 CFR Parts 21 / 43 / 145 and EASA Part-21 / Part-145 / Part-CAMO
+  short_name: FAA / EASA Airworthiness
+  geographies: [GLOBAL]
+  sub_domains: [mro, aircraft_manufacturing]
+- id: counterfeit-parts
+  name: DFARS 252.246-7007/7008 and SAE AS5553 / AS6174 counterfeit parts prevention
+  short_name: Counterfeit Parts
+  geographies: [US]
+  sub_domains: [supply_chain, mro]
+- id: eia-748
+  name: EIA-748 Earned Value Management Systems (DFARS 252.234-7002)
+  short_name: EIA-748 EVMS
+  geographies: [US]
+  sub_domains: [defense_programs, space]
+- id: uk-export-control
+  name: UK Export Control Order 2008 and Strategic Export Controls
+  short_name: UK Export Control
+  geographies: [UK]
+  data_classifications_any: [export_controlled]
+- id: eu-dual-use
+  name: EU Dual-Use Regulation (EU) 2021/821
+  short_name: EU Dual-Use
+  geographies: [EU, EEA]
+  data_classifications_any: [export_controlled]
+- id: uk-def-stan-05-138
+  name: UK Defence Cyber Protection Partnership (DEF STAN 05-138)
+  short_name: DCPP / DEF STAN 05-138
+  geographies: [UK]
+  sub_domains: [defense_programs, supply_chain]

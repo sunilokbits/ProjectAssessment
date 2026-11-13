@@ -1,0 +1,24 @@
+# Data Warehouse technology pack - recommendations
+- id: dimensional-marts
+  title: Publish dimensional marts for consumption
+  text: Expose star-schema marts with conformed dimensions as the BI consumption layer.
+  category: architecture
+  priority: high
+  decision_key: warehouse_modelling
+  decision_option: dimensional
+  when:
+    not:
+      answers:
+        data_warehouse:modelling-approach: [data_vault, normalised]
+- id: data-vault-core
+  title: Use Data Vault for the integration layer
+  text: Model the integration layer as Data Vault for auditability and source agility, publishing marts on top.
+  category: architecture
+  priority: medium
+  decision_key: warehouse_modelling
+  decision_option: data_vault
+  when:
+    answers:
+      data_warehouse:modelling-approach: [data_vault]
+- {id: workload-isolation, title: Isolate workloads, text: 'Separate compute for ingestion, transformation and BI / ad-hoc workloads.', category: technology,
+  priority: medium}

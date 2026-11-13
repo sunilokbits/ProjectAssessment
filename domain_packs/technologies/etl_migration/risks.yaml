@@ -1,0 +1,39 @@
+# ETL Migration technology pack - risks
+- id: etl-complexity
+  title: Complex legacy transformations underestimated
+  category: technology
+  likelihood: 4
+  impact: 4
+  mitigation: Automated complexity scoring of mappings; pilot conversion of representative jobs.
+  indicators: [complex mappings, custom transformations, java transformation]
+- id: etl-like-for-like
+  title: Like-for-like conversion carries legacy anti-patterns to the cloud
+  category: architecture
+  likelihood: 3
+  impact: 3
+  mitigation: Combine automated conversion with redesign of high-value pipelines; apply target standards.
+  indicators: [lift and shift]
+  when:
+    answers:
+      etl_migration:etl-migration-approach: [automated]
+- id: etl-dead-jobs
+  title: Migrating unused / redundant jobs wastes effort
+  category: delivery
+  likelihood: 3
+  impact: 2
+  mitigation: Usage analysis to retire unused jobs before conversion.
+  indicators: [unused jobs, obsolete]
+- id: etl-validation
+  title: Output differences between legacy and new pipelines not detected
+  category: quality
+  likelihood: 3
+  impact: 4
+  mitigation: Automated data comparison during parallel run; sign-off criteria per pipeline.
+  indicators: [mismatch]
+- id: etl-license-overlap
+  title: Dual-running licence costs extend due to delays
+  category: commercial
+  likelihood: 3
+  impact: 3
+  mitigation: Plan decommission milestones aligned to licence renewal.
+  indicators: [license renewal, support end]

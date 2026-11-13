@@ -1,0 +1,4 @@
+dimensions:
+  - {key: patient_data_protection, name: Patient Data Protection, group: security, weight: 1.5, description: "Safeguards, de-identification, consent and access controls for PHI and other patient data."}
+  - {key: clinical_safety, name: Clinical Safety, group: domain, weight: 1.5, description: "Assurance that data, analytics, AI and integrations cannot introduce patient-safety hazards."}
+  - {key: interoperability_readiness, name: Healthcare Interoperability Readiness, group: domain, weight: 1.0, description: "Use of HL7, FHIR, terminology standards and patient matching for clinical data exchange."}

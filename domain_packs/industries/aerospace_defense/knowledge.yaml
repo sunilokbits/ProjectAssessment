@@ -1,0 +1,30 @@
+nfrs:
+  - {id: data-sovereignty, text: Controlled data stored and processed only in approved locations by authorised persons., category: compliance}
+  - {id: long-retention, text: Product and maintenance records retained for the life of the product plus regulatory periods., category: compliance}
+  - {id: incident-reporting, text: Cyber incidents affecting CUI reportable to DoD within 72 hours., category: security}
+assumptions:
+  - {id: export-team, text: Export compliance will classify data and approve access models., category: compliance}
+  - {id: plm-authoritative, text: PLM is authoritative for design configuration., category: data}
+dependencies:
+  - {id: empowered-official, text: Empowered official and export compliance sign-off., category: compliance}
+  - {id: security-office, text: Facility security officer involvement for classified scope., category: security}
+security_considerations:
+  - {id: key-management, text: Customer-managed encryption keys held by authorised persons., category: security}
+  - {id: dlp, text: Data loss prevention for technical data in email and AI tools., category: security}
+data_quality_checks:
+  - {id: serial-uniqueness, text: Serial numbers unique per part number and traceable to build records., category: data}
+  - {id: classification-tags, text: Every technical data object carries an export classification tag., category: data}
+reporting_requirements:
+  - {id: evm-reporting, text: Integrated program management reports to government customers., category: reporting, sub_domains: [defense_programs, space]}
+migration_concerns:
+  - {id: legacy-plm, text: Migrating legacy PLM and drawing archives with classification metadata., category: data}
+ai_opportunities:
+  - {id: fleet-health, text: Predictive maintenance for engines and components., category: ai, sub_domains: [mro, aircraft_manufacturing]}
+  - {id: quality-analytics, text: ML root cause analysis of nonconformances., category: ai}
+  - {id: tech-pubs-assistant, text: GenAI assistant over technical publications within an approved enclave., category: ai}
+  - {id: supplier-risk-ai, text: Supplier risk prediction from delivery and quality signals., category: ai, sub_domains: [supply_chain]}
+ai_risks:
+  - {id: controlled-data-in-ai, text: Export-controlled data processed by unapproved AI services., category: ai}
+  - {id: safety-critical-ai, text: AI recommendations affecting airworthiness without certification., category: ai, sub_domains: [mro, aircraft_manufacturing]}
+clarification_questions:
+  - {id: contract-clauses, text: "Which DFARS / FAR clauses and CMMC levels apply to the contracts in scope?", category: compliance}

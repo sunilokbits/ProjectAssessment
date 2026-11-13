@@ -1,0 +1,6 @@
+dimensions:
+- key: data_catalog_readiness
+  name: Data Catalog Readiness
+  group: technology
+  weight: 1.0
+  description: Catalog tool choice, asset coverage, curation, adoption and access workflow.

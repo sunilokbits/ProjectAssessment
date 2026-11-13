@@ -1,0 +1,23 @@
+# Snowflake technology pack - questions
+- id: sf-status
+  text: Does the client already use Snowflake, and on which cloud / region?
+  category: technology
+  dimension: snowflake_platform_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: No Snowflake, score: 0.3}
+    - {value: pilot, label: Pilot / sandbox, score: 0.6}
+    - {value: production, label: Production accounts, score: 1}
+- {id: sf-rbac, text: 'Is a Snowflake role hierarchy (functional and access roles) designed?', category: security, dimension: snowflake_platform_readiness,
+  weight: 1.5, critical: true}
+- {id: sf-warehouse-strategy, text: 'Is a virtual warehouse strategy defined (per workload, sizing, auto-suspend, multi-cluster)?', category: technology,
+  dimension: snowflake_platform_readiness}
+- {id: sf-cost-controls, text: 'Are resource monitors, budgets and credit consumption reporting in place?', category: operations, dimension: snowflake_platform_readiness}
+- {id: sf-network, text: 'Is private connectivity (PrivateLink, network policies) required and configured?', category: security, dimension: security_controls}
+- {id: sf-ingestion, text: 'How will data be loaded (Snowpipe / Snowpipe Streaming, partner ETL, connectors, external / Iceberg tables)?', category: data,
+  dimension: integration_readiness, answer_type: text}
+- {id: sf-governance, text: 'Will Horizon features (tags, masking and row access policies, object lineage) be used for sensitive data?', category: governance,
+  dimension: privacy_protection}
+- {id: sf-environments, text: 'Is the account / database layout for environments (dev, test, prod) and CI/CD agreed?', category: operations, dimension: operational_readiness}
+- {id: sf-skills, text: 'How experienced is the client team with Snowflake (SQL, Snowpark, administration) (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

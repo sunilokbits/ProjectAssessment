@@ -1,0 +1,15 @@
+- {term: Service Point, definition: Location where a utility service is delivered and metered, synonyms: [premise, delivery point, mpan, mprn, icp], entity_type: entity, category: data}
+- {term: Meter, definition: Device measuring consumption or generation, synonyms: [smart meter, electricity meter, water meter, gas meter], entity_type: entity, category: data}
+- {term: Interval Read, definition: Consumption measured over a fixed interval, synonyms: [interval data, load profile, half-hourly data, register read], entity_type: entity, category: data, sub_domains: [smart_metering]}
+- {term: AMI, definition: Advanced metering infrastructure, synonyms: [advanced metering infrastructure, smart metering system, head-end], entity_type: system, category: integration, sub_domains: [smart_metering]}
+- {term: MDM, definition: Meter data management system, synonyms: [meter data management, mdms], entity_type: system, category: integration, sub_domains: [smart_metering]}
+- {term: SCADA, definition: Supervisory control and data acquisition system, synonyms: [supervisory control, ems, control system], entity_type: system, category: integration}
+- {term: Historian, definition: Time-series database for operational data, synonyms: [pi system, osisoft pi, process historian, data historian], entity_type: system, category: data}
+- {term: Outage, definition: Interruption of supply to customers, synonyms: [interruption, power cut, supply loss], entity_type: event, category: operational}
+- {term: Feeder, definition: Distribution circuit supplying a group of customers, synonyms: [circuit, distribution line], entity_type: entity, category: data, sub_domains: [electricity, grid_analytics]}
+- {term: DER, definition: Distributed energy resources, synonyms: [distributed energy resources, rooftop solar, behind-the-meter, distributed generation], entity_type: entity, category: data, sub_domains: [grid_analytics, renewable_energy, electricity]}
+- {term: Non-Revenue Water, definition: Water produced but not billed, synonyms: [nrw, water loss, unaccounted-for water], entity_type: metric, category: operational, sub_domains: [water]}
+- {term: Work Order, definition: Instruction to perform maintenance or field work, synonyms: [job, maintenance order, wo], entity_type: entity, category: data}
+- {term: Asset, definition: Physical equipment managed by the utility, synonyms: [equipment, plant item, functional location], entity_type: entity, category: data}
+- {term: NERC CIP, definition: North American critical infrastructure protection standards, synonyms: [cip, bes cyber system], entity_type: regulation, category: compliance}
+- {term: Well, definition: Borehole producing oil or gas, synonyms: [wellbore, completion, producing well], entity_type: entity, category: data, sub_domains: [oil_gas]}

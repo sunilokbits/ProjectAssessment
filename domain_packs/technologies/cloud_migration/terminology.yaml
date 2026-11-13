@@ -1,0 +1,23 @@
+# Cloud Migration technology pack - terminology
+- term: 7 Rs
+  definition: 'Migration dispositions: retire, retain, rehost, relocate, replatform, refactor, repurchase'
+  synonyms: [6 rs, migration strategy]
+  entity_type: concept
+  category: architecture
+- term: Rehost
+  definition: Moving workloads to cloud IaaS without changes
+  synonyms: [lift and shift]
+  entity_type: process
+  category: architecture
+- term: Replatform
+  definition: Migrating with minor optimisation onto managed services
+  synonyms: [lift tinker and shift]
+  entity_type: process
+  category: architecture
+- term: Migration Wave
+  definition: Group of applications migrated together
+  synonyms: [wave]
+  entity_type: concept
+  category: delivery
+- {term: Cutover, definition: Switch of production traffic to the migrated environment, entity_type: event, category: operations}
+- {term: TCO, definition: Total cost of ownership comparison of current and target state, entity_type: metric, category: business}

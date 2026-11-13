@@ -1,0 +1,20 @@
+- id: multi-tenant-analytics
+  name: Multi-tenant product and revenue analytics platform
+  description: Combines product telemetry, application data, CRM and billing into a governed metric layer while preserving tenant isolation for internal and customer-facing use.
+  use_cases: [Customer health and churn, SaaS metrics, Embedded analytics, In-product AI]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: saas-sources, name: "Application DBs, telemetry, CRM, billing and support sources", layer: sources, core: true}
+    - {id: app-cdc, name: CDC from application databases, layer: ingestion, core: true}
+    - {id: event-collection, name: Product event collection with schema contracts, layer: ingestion, core: true}
+    - {id: tenant-security, name: Tenant-aware row-level security, layer: security, core: true}
+    - {id: metric-layer, name: "Governed SaaS metric layer (ARR, NRR, churn)", layer: processing, core: true}
+    - {id: health-model, name: Customer health and churn models, layer: processing, when: {project_types_any: [churn_prediction, customer_360]}}
+    - {id: reverse-etl, name: Reverse ETL to CRM and customer success tools, layer: serving, when: {technologies_any: [salesforce_integration]}}
+    - {id: embedded-serving, name: Multi-tenant embedded analytics serving layer, layer: serving, when: {answers: {embedded-analytics: [embedded_planned, embedded_designed]}}}
+    - {id: tenant-rag, name: Tenant-scoped retrieval for in-product copilots, layer: serving, when: {technologies_any: [generative_ai, rag, vector_search]}}
+    - {id: regional-deploy, name: Regional data planes for residency commitments, layer: storage, when: {answers: {data-residency-commitments: "yes"}}}
+    - {id: cost-allocation, name: Per-tenant cost allocation, layer: governance, when: {technologies_any: [finops]}}
+  considerations:
+    - Treat tenant id as mandatory on every table and vector index.
+    - Reconcile ARR in the metric layer to finance before publishing.

@@ -1,0 +1,10 @@
+- {id: cpi, name: Cost performance index, description: Earned value divided by actual cost., formula: BCWP / ACWP, unit: ratio, direction: higher_is_better, category: program, sub_domains: [defense_programs, space, aircraft_manufacturing]}
+- {id: spi, name: Schedule performance index, description: Earned value divided by planned value., formula: BCWP / BCWS, unit: ratio, direction: higher_is_better, category: program, sub_domains: [defense_programs, space, aircraft_manufacturing]}
+- {id: first-pass-yield, name: First pass yield, description: Share of units passing inspection without rework., unit: "%", direction: higher_is_better, category: quality, sub_domains: [aircraft_manufacturing]}
+- {id: nonconformance-rate, name: Nonconformance rate, description: Nonconformances per unit or per thousand parts., unit: rate, direction: lower_is_better, category: quality}
+- {id: supplier-otd, name: Supplier on-time delivery, description: Share of supplier deliveries on time., unit: "%", direction: higher_is_better, category: supply_chain, sub_domains: [supply_chain, aircraft_manufacturing]}
+- {id: tat, name: MRO turnaround time, description: Time from induction to release to service., unit: days, direction: lower_is_better, category: operational, sub_domains: [mro]}
+- {id: aog-events, name: AOG events, description: Aircraft-on-ground events caused by parts or maintenance., unit: count, direction: lower_is_better, category: operational, sub_domains: [mro]}
+- {id: dispatch-reliability, name: Technical dispatch reliability, description: Share of departures without technical delay., unit: "%", direction: higher_is_better, category: operational, sub_domains: [mro]}
+- {id: on-time-delivery, name: Customer on-time delivery, description: Share of deliveries to customers on schedule., unit: "%", direction: higher_is_better, category: program}
+- {id: export-incidents, name: Export compliance incidents, description: Number of potential export control violations identified., unit: count, direction: lower_is_better, category: compliance}

@@ -1,0 +1,29 @@
+nfrs:
+  - {id: peak-load, text: "Systems handle peak load during enrolment, results release and term start.", category: scalability}
+  - {id: accessibility, text: Student and staff facing outputs meet WCAG 2.1 AA., category: usability}
+assumptions:
+  - {id: ir-ownership, text: Institutional research owns official metric definitions., category: data}
+  - {id: sis-system-of-record, text: The SIS remains the system of record for enrolment and grades., category: data}
+dependencies:
+  - {id: registrar-signoff, text: Registrar and data protection officer sign-off on student data use., category: compliance}
+  - {id: faculty-engagement, text: Faculty and student services engagement for analytics adoption., category: business}
+security_considerations:
+  - {id: federated-identity, text: Federated identity and least-privilege access for staff and students., category: security}
+data_quality_checks:
+  - {id: student-id-uniqueness, text: Student identifiers unique and consistent across SIS and LMS., category: data}
+  - {id: enrolment-census-tieout, text: Enrolment counts tie out to official census figures., category: data}
+reporting_requirements:
+  - {id: statutory-returns, text: "Statutory returns (IPEDS, HESA, state and DfE census) with audit trail.", category: reporting}
+migration_concerns:
+  - {id: historical-terms, text: Mapping historical programme and course codes across curriculum changes., category: data}
+ai_opportunities:
+  - {id: early-alert, text: Early-alert models identifying students who may need support., category: ai, sub_domains: [student_analytics, higher_education, schools]}
+  - {id: student-assistant, text: GenAI student services assistant grounded in institutional policies., category: ai}
+  - {id: enrolment-forecast, text: Enrolment and demand forecasting for course planning., category: ai}
+  - {id: research-discovery, text: RAG-based research discovery across publications and grants., category: ai, sub_domains: [research]}
+ai_risks:
+  - {id: student-bias, text: Predictive models disadvantaging specific student groups., category: ai}
+  - {id: academic-integrity, text: GenAI tools undermining assessment integrity., category: ai}
+  - {id: minors-genai, text: GenAI interactions with minors without age-appropriate safeguards., category: ai, sub_domains: [schools, edtech]}
+clarification_questions:
+  - {id: official-metrics, text: "Which office owns official enrolment and retention figures, and which census dates apply?", category: data}

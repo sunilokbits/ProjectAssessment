@@ -1,0 +1,36 @@
+# Azure technology pack - risks
+- id: azure-no-landing-zone
+  title: Workloads deployed before a governed Azure landing zone exists
+  category: architecture
+  likelihood: 3
+  impact: 4
+  mitigation: Deploy a landing zone (Azure Landing Zone accelerators) with policies, identity and network hub before onboarding workloads.
+  indicators: [no landing zone, shadow it, single subscription, single account]
+- id: azure-misconfiguration
+  title: Cloud misconfiguration exposes data (public storage, open ports)
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Preventive policies, Microsoft Defender for Cloud posture management and private endpoints.
+  indicators: [public access, open bucket, misconfiguration]
+- id: azure-cost-overrun
+  title: Unexpected Azure cost growth
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Tagging, budgets and alerts, reservations / savings plans and FinOps reviews.
+  indicators: [cost overrun, cloud bill, egress]
+- id: azure-quota-region
+  title: Service or quota unavailability in required region
+  category: technology
+  likelihood: 2
+  impact: 3
+  mitigation: Validate service availability and request quota increases early.
+  indicators: [quota, region availability]
+- id: azure-entra-misconfig
+  title: Over-privileged Entra ID roles and standing admin access
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: PIM for just-in-time admin, access reviews and managed identities for services.
+  indicators: [global admin, owner role]

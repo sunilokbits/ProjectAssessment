@@ -1,0 +1,12 @@
+- {id: loss-ratio, name: Loss ratio, description: Incurred losses relative to earned premium., formula: incurred losses / earned premium, unit: "%", direction: lower_is_better, category: financial}
+- {id: combined-ratio, name: Combined ratio, description: Losses plus expenses relative to earned premium., formula: (incurred losses + expenses) / earned premium, unit: "%", direction: lower_is_better, category: financial, sub_domains: [general_insurance, property_casualty, health_insurance, reinsurance]}
+- {id: gross-written-premium, name: Gross written premium growth, description: Growth in gross written premium over the period., unit: "%", direction: higher_is_better, category: business}
+- {id: claims-cycle-time, name: Claims cycle time, description: Time from first notice of loss to settlement., unit: days, direction: lower_is_better, category: operational, sub_domains: [claims, health_insurance, property_casualty, general_insurance]}
+- {id: straight-through-processing, name: Straight-through processing rate, description: Share of quotes/policies/claims processed without manual touch., unit: "%", direction: higher_is_better, category: operational}
+- {id: policy-retention, name: Policy retention rate, description: Share of policies renewed at expiry or persisting at anniversary., unit: "%", direction: higher_is_better, category: business}
+- {id: persistency-13m, name: 13th-month persistency, description: Share of life policies still in force after 13 months., unit: "%", direction: higher_is_better, category: business, sub_domains: [life_insurance]}
+- {id: claims-leakage, name: Claims leakage, description: Overpayment on claims relative to correct settlement value., unit: "%", direction: lower_is_better, category: financial, sub_domains: [claims]}
+- {id: fraud-detection-rate, name: Fraud detection rate, description: Share of fraudulent claims identified before payment., unit: "%", direction: higher_is_better, category: risk}
+- {id: quote-to-bind, name: Quote-to-bind ratio, description: Share of quotes converted to bound policies., unit: "%", direction: higher_is_better, category: business, sub_domains: [underwriting, distribution, property_casualty, general_insurance]}
+- {id: expense-ratio, name: Expense ratio, description: Operating and acquisition expenses relative to premium., unit: "%", direction: lower_is_better, category: financial}
+- {id: solvency-ratio, name: Solvency ratio, description: Available capital relative to required capital., unit: "%", direction: higher_is_better, category: risk, sub_domains: [actuarial]}

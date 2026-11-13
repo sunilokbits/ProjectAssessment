@@ -1,0 +1,82 @@
+- id: export-controlled-data
+  text: Will ITAR- or EAR-controlled technical data be processed, and is the target environment approved for it?
+  category: security
+  dimension: export_control_cui
+  answer_type: single_choice
+  critical: true
+  options:
+    - {value: unknown, label: Not yet classified, score: 0}
+    - {value: yes_unapproved, label: Yes - environment not yet assessed, score: 0.1}
+    - {value: yes_approved, label: "Yes - US-person-restricted environment approved (e.g. GovCloud / sovereign)", score: 1}
+    - {value: no, label: No controlled data (confirmed by export compliance), score: 1}
+- id: cmmc-level
+  text: What CMMC level is required for the contracts in scope, and does the platform fall within the CUI assessment boundary?
+  category: compliance
+  dimension: export_control_cui
+  answer_type: single_choice
+  critical: true
+  sub_domains: [defense_programs, supply_chain, aircraft_manufacturing, space]
+  when: {geographies_any: [US]}
+  options:
+    - {value: unknown, label: Not yet determined, score: 0}
+    - {value: level1, label: Level 1 (FCI only), score: 1}
+    - {value: level2_gap, label: Level 2 - gaps against NIST 800-171 remain, score: 0.3}
+    - {value: level2_ready, label: Level 2 - assessed or ready, score: 1}
+    - {value: level3, label: Level 3 required, score: 0.6}
+- id: foreign-persons
+  text: Will any foreign persons (including offshore delivery staff or cloud provider support) have access to controlled data?
+  category: security
+  dimension: export_control_cui
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not assessed, score: 0}
+    - {value: yes_licensed, label: Yes - covered by export licences or TAAs, score: 0.8}
+    - {value: yes_unlicensed, label: Yes - no licence in place, score: 0}
+    - {value: no, label: US persons only (or national equivalent), score: 1}
+- id: classified-data
+  text: Does any part of the scope involve classified information requiring accredited facilities and systems?
+  category: security
+  dimension: export_control_cui
+  sub_domains: [defense_programs, space]
+- id: configuration-management
+  text: Is as-designed, as-built and as-maintained configuration traceable by serial number across PLM, MES and MRO systems?
+  category: data
+  dimension: digital_thread_maturity
+  answer_type: scale
+  weight: 1.5
+- id: quality-system
+  text: Must new systems and data processes be integrated into the AS9100 / AS9110 / AS9120 quality management system?
+  category: compliance
+  dimension: digital_thread_maturity
+  sub_domains: [aircraft_manufacturing, mro, supply_chain]
+- id: airworthiness-records
+  text: Are maintenance records in scope subject to airworthiness regulation (FAA Part 43 / 145, EASA Part-145 / CAMO)?
+  category: compliance
+  dimension: digital_thread_maturity
+  sub_domains: [mro]
+- id: supplier-flowdown
+  text: Are DFARS, CUI and quality flow-down requirements tracked for each supplier, with supplier security posture known?
+  category: governance
+  dimension: export_control_cui
+  sub_domains: [supply_chain, defense_programs]
+- id: evm-data
+  text: Does program reporting require EIA-748 compliant earned value data, and is it integrated with cost and schedule systems?
+  category: data
+  dimension: data_availability
+  sub_domains: [defense_programs, space]
+- id: aircraft-health-data
+  text: What aircraft, engine or satellite health telemetry is available, and who owns it (operator, OEM, lessor)?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [mro, aircraft_manufacturing, space]
+- id: counterfeit-parts
+  text: Are counterfeit part prevention controls (e.g. AS5553, AS6174, DFARS 252.246-7007) reflected in parts data?
+  category: compliance
+  dimension: digital_thread_maturity
+  sub_domains: [supply_chain, mro]
+- id: genai-controlled-data
+  text: Will GenAI tools process technical data, and is the model hosting approved for export-controlled or CUI content?
+  category: security
+  dimension: export_control_cui
+  when: {technologies_any: [generative_ai, rag, agentic_ai, ai_agents, llmops]}

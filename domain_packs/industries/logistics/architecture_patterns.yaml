@@ -1,0 +1,20 @@
+- id: supply-chain-control-tower
+  name: Supply chain control tower
+  description: Canonical order, shipment and inventory model fed by execution systems and partner events, powering visibility, planning and optimisation.
+  use_cases: [End-to-end visibility, Demand forecasting, Route optimisation, Inventory optimisation]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: execution-sources, name: "WMS / TMS / ERP / planning sources", layer: sources, core: true}
+    - {id: edi-gateway, name: EDI and carrier API ingestion, layer: ingestion, core: true}
+    - {id: telematics-stream, name: Telematics and IoT event streaming, layer: ingestion, when: {any_of: [{technologies_any: [iot, real_time_streaming]}, {sub_domains_any: [route_optimization, last_mile]}]}}
+    - {id: canonical-model, name: "Canonical order / shipment / inventory model", layer: processing, core: true}
+    - {id: master-data-hub, name: "Location, SKU and carrier master data hub", layer: governance, when: {any_of: [{technologies_any: [master_data_management]}, {answers: {location-master: "no"}}]}}
+    - {id: forecasting-engine, name: Demand forecasting engine, layer: processing, when: {any_of: [{project_types_any: [demand_forecasting]}, {sub_domains_any: [demand_forecasting, inventory]}]}}
+    - {id: route-optimiser, name: Route and load optimisation solver, layer: processing, when: {sub_domains_any: [route_optimization, last_mile]}}
+    - {id: eta-model, name: ETA prediction model, layer: processing, when: {sub_domains_any: [transportation, last_mile]}}
+    - {id: client-segregation, name: Per-client row-level security, layer: security, when: {answers: {multi-client-segregation: "yes"}}}
+    - {id: plan-writeback, name: Plan write-back to execution systems, layer: serving, when: {answers: {execution-write-back: [semi, automatic]}}}
+    - {id: control-tower-ui, name: Control tower dashboards and alerts, layer: consumption, core: true}
+  considerations:
+    - Measure event completeness per partner before promising visibility SLAs.
+    - Keep execution systems as systems of record; optimisation proposes, execution confirms.

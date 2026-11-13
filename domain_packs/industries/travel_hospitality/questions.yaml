@@ -1,0 +1,76 @@
+- id: traveller-identity
+  text: How is a single traveller or guest identified across bookings, loyalty, channels and properties?
+  category: data
+  dimension: traveller_data_readiness
+  answer_type: single_choice
+  weight: 1.5
+  options:
+    - {value: none, label: No common identifier - each system separate, score: 0.1}
+    - {value: loyalty_only, label: Loyalty members only, score: 0.5}
+    - {value: matching, label: Probabilistic matching across systems, score: 0.7}
+    - {value: golden_record, label: Governed golden record in place, score: 1}
+- id: booking-sources
+  text: Which reservation, PSS, PMS, CRS or GDS platforms supply booking data, and how is it extracted?
+  category: data
+  dimension: data_availability
+  answer_type: text
+- id: payment-card-scope
+  text: Is cardholder data captured in booking or folio flows, and is it tokenised before reaching analytics systems?
+  category: security
+  dimension: security_controls
+  critical: true
+  when: {data_classifications_any: [cardholder]}
+- id: api-pnr-data
+  text: Does the solution process Advance Passenger Information (API) or PNR data subject to government passenger data regimes?
+  category: compliance
+  dimension: privacy_protection
+  answer_type: single_choice
+  critical: true
+  sub_domains: [airlines, airports, travel_distribution]
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: yes_controls, label: Yes - legal basis and retention controls defined, score: 1}
+    - {value: yes_no_controls, label: Yes - controls not yet defined, score: 0.1}
+    - {value: no, label: No (confirmed), score: 1}
+- id: disruption-data
+  text: Is real-time operational data (flight status, delays, room availability, train running) available to drive disruption handling?
+  category: data
+  dimension: operational_resilience
+  sub_domains: [airlines, airports, rail, hotels]
+- id: peak-scalability
+  text: Has the solution been sized for seasonal peaks and disruption-driven traffic spikes?
+  category: architecture
+  dimension: operational_resilience
+  answer_type: scale
+- id: revenue-management-integration
+  text: Will outputs feed the revenue management or pricing system, and is that integration supported?
+  category: integration
+  dimension: integration_readiness
+  sub_domains: [airlines, hotels, rail, travel_distribution]
+- id: loyalty-consent
+  text: Is marketing and personalisation consent captured per traveller and enforceable across channels and partners?
+  category: privacy
+  dimension: traveller_data_readiness
+  sub_domains: [airlines, hotels, travel_distribution, rail]
+- id: ndc-adoption
+  text: What is the status of IATA NDC / ONE Order adoption and how does it affect booking data structures?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+  sub_domains: [airlines, travel_distribution]
+- id: safety-regulated-maintenance
+  text: Do maintenance records in scope fall under aviation or rail safety regulation (e.g. EASA Part-145, FAA Part 43, ORR)?
+  category: compliance
+  dimension: operational_resilience
+  sub_domains: [airlines, rail, fleet_management]
+- id: franchise-ownership
+  text: Who owns guest and property data across franchised, managed and owned properties?
+  category: governance
+  dimension: traveller_data_readiness
+  sub_domains: [hotels]
+- id: telematics-coverage
+  text: What share of the fleet has telematics or sensor coverage, and at what data frequency?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [fleet_management, rail, passenger_logistics]

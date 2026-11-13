@@ -1,0 +1,49 @@
+# Microsoft Fabric technology pack - architecture_patterns
+- id: fabric-medallion
+  name: Microsoft Fabric medallion on OneLake
+  description: OneLake-based medallion with Data Factory ingestion, Lakehouse/Warehouse layers and Direct Lake Power BI.
+  use_cases: [BI modernization, Data platform modernization]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, operations]
+  components:
+    - {id: data-factory, name: Data Factory pipelines / Dataflows Gen2, layer: ingestion, core: true}
+    - id: mirroring
+      name: Database mirroring
+      layer: ingestion
+      when:
+        keywords_any: [mirroring, azure sql, cosmos db, snowflake]
+    - id: shortcuts
+      name: OneLake shortcuts (ADLS / S3 / GCS)
+      layer: ingestion
+      when:
+        technologies_any: [aws, gcp, data_lake]
+    - id: eventstream
+      name: Eventstream / Eventhouse (Real-Time Intelligence)
+      layer: ingestion
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis]
+    - {id: onelake, name: OneLake, layer: storage, core: true}
+    - {id: lakehouse, name: Fabric Lakehouse (bronze / silver), layer: processing, core: true}
+    - id: warehouse
+      name: Fabric Warehouse (gold, T-SQL)
+      layer: serving
+      when:
+        answers:
+          microsoft_fabric:fabric-lakehouse-vs-warehouse: [warehouse, both]
+    - {id: semantic-model, name: Power BI semantic model (Direct Lake), layer: consumption, core: true}
+    - id: data-science
+      name: Fabric Data Science (notebooks / ML)
+      layer: consumption
+      when:
+        technologies_any: [machine_learning, mlops, advanced_analytics]
+    - id: purview
+      name: Microsoft Purview (labels, lineage, DLP)
+      layer: governance
+      when:
+        any_of:
+          - technologies_any: [data_governance, data_catalog, metadata_management]
+          - answers:
+              microsoft_fabric:fabric-purview: ['yes']
+    - {id: deployment-pipelines, name: Git integration and deployment pipelines, layer: operations, core: true}
+  considerations: [Plan capacities and workspace structure before onboarding teams., Prefer Direct Lake for large models on gold Delta tables.]

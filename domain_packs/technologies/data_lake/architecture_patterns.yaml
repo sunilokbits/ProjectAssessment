@@ -1,0 +1,44 @@
+# Data Lake technology pack - architecture_patterns
+- id: zoned-data-lake
+  name: Zoned data lake
+  description: Object storage organised into raw, curated and consumption zones with central catalog and access governance.
+  use_cases: [Data platform build, Hadoop migration]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, operations]
+  components:
+    - id: adls
+      name: ADLS Gen2
+      layer: storage
+      when:
+        technologies_any: [azure]
+    - id: s3
+      name: Amazon S3
+      layer: storage
+      when:
+        technologies_any: [aws]
+    - id: gcs
+      name: Google Cloud Storage
+      layer: storage
+      when:
+        technologies_any: [gcp]
+    - {id: raw-zone, name: Raw zone (immutable), layer: storage, core: true}
+    - {id: curated-zone, name: Curated zone (open table format), layer: storage, core: true}
+    - id: sandbox-zone
+      name: Sandbox / exploration zone
+      layer: storage
+      when:
+        technologies_any: [machine_learning, mlops, advanced_analytics]
+    - {id: ingestion, name: Batch ingestion, layer: ingestion, core: true}
+    - id: streaming
+      name: Streaming ingestion
+      layer: ingestion
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis]
+    - {id: catalog, name: Central catalog and fine-grained access control, layer: governance, core: true}
+    - id: query-engine
+      name: SQL query engine over the lake
+      layer: serving
+      when:
+        technologies_any: [business_intelligence, power_bi]
+  considerations: [Keep raw zone immutable and append-only., 'Partition by access pattern, not only by load date.']

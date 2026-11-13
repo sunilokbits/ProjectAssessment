@@ -1,0 +1,24 @@
+- id: pdm-unplanned-downtime
+  name: Unplanned downtime
+  description: Hours of unplanned downtime for in-scope assets.
+  unit: hours
+  direction: lower_is_better
+  category: operations
+- id: pdm-precision
+  name: Alert precision
+  description: Share of alerts confirmed as genuine issues.
+  unit: '%'
+  direction: higher_is_better
+  category: quality
+- id: pdm-maintenance-cost
+  name: Maintenance cost
+  description: Maintenance spend for in-scope assets.
+  unit: currency
+  direction: lower_is_better
+  category: financial
+- id: pdm-lead-time
+  name: Prediction lead time
+  description: Time between alert and failure or intervention.
+  unit: days
+  direction: higher_is_better
+  category: operations

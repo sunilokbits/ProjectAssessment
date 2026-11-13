@@ -1,0 +1,26 @@
+- id: bim-like-for-like
+  title: Migrating every legacy report like-for-like
+  category: delivery
+  likelihood: 4
+  impact: 3
+  mitigation: Usage-based rationalisation with business sign-off.
+  indicators:
+  - all reports
+  - thousands of reports
+- id: bim-kpi-conflicts
+  title: Conflicting KPI definitions across reports
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Certified semantic models and glossary.
+  indicators:
+  - different numbers
+  - kpi definitions
+- id: bim-adoption
+  title: Users stay on legacy tools or spreadsheets
+  category: business
+  likelihood: 3
+  impact: 3
+  mitigation: Training, champions and legacy switch-off dates.
+  indicators:
+  - excel exports

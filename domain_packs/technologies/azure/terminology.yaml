@@ -1,0 +1,15 @@
+# Azure technology pack - terminology
+- term: Landing Zone
+  definition: Pre-configured, governed Azure environment for workloads
+  synonyms: [alz]
+  entity_type: system
+  category: infrastructure
+- {term: Management Group, definition: Azure hierarchy level for applying policy across subscriptions, entity_type: concept, category: governance}
+- term: Microsoft Entra ID
+  definition: Microsoft cloud identity service
+  synonyms: [azure ad, aad]
+  entity_type: system
+  category: security
+- {term: Private Endpoint, definition: Private IP interface to an Azure PaaS service inside a VNet, entity_type: concept, category: network}
+- {term: Azure Policy, definition: Service enforcing organisational rules on Azure resources, entity_type: system, category: governance}
+- {term: ExpressRoute, definition: Private dedicated connection between on-premises and Azure, entity_type: system, category: network}

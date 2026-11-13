@@ -1,0 +1,11 @@
+# Snowflake technology pack - terminology
+- term: Virtual Warehouse
+  definition: Snowflake compute cluster billed in credits
+  synonyms: [warehouse]
+  entity_type: system
+  category: technology
+- {term: Credit, definition: Snowflake unit of compute consumption, entity_type: metric, category: operations}
+- {term: Snowpipe, definition: Continuous serverless ingestion into Snowflake, entity_type: system, category: technology}
+- {term: Zero-Copy Cloning, definition: Instant copy of databases/tables without duplicating storage, entity_type: concept, category: technology}
+- {term: Secure Data Sharing, definition: Live sharing of data across Snowflake accounts without copying, entity_type: concept, category: integration}
+- {term: Snowpark, definition: Snowflake developer framework for Python / Java / Scala, entity_type: system, category: technology}

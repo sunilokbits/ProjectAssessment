@@ -1,0 +1,14 @@
+# Lakehouse technology pack - domain
+key: lakehouse
+name: Lakehouse
+kind: technology
+version: 1.0.0
+description: Lakehouse architecture - open table formats on object storage combining data lake flexibility with warehouse-grade ACID, governance
+  and SQL performance.
+aliases: [Data Platforms]
+sort_order: 14
+detection:
+  keywords: {lakehouse: 4, data lakehouse: 5, medallion: 3, bronze silver gold: 3, delta lake: 3, apache iceberg: 3, iceberg: 2.5, apache hudi: 3,
+    open table format: 3, onelake: 2, unity catalog: 2}
+related_technologies: [databricks, microsoft_fabric, snowflake, data_lake, data_warehouse, data_engineering]
+related_project_types: [data_platform_modernization, customer_360]

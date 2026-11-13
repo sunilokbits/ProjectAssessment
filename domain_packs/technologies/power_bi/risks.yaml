@@ -1,0 +1,42 @@
+# Power BI technology pack - risks
+- id: pbi-poor-models
+  title: Poorly designed semantic models (no star schema, heavy DAX) cause slow reports
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: Star-schema modelling standards, Best Practice Analyzer, model reviews.
+  indicators: [slow reports, complex dax, flat tables]
+- id: pbi-personal-workspaces
+  title: Business-critical content in personal workspaces / shared via exports
+  category: governance
+  likelihood: 3
+  impact: 3
+  mitigation: Workspace strategy, endorsement and restrictions on export / publish to web.
+  indicators: [my workspace, publish to web, export to excel]
+- id: pbi-capacity-overload
+  title: Capacity overload from refreshes and interactive load
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Capacity monitoring, refresh scheduling, incremental refresh and workload separation.
+  indicators: [refresh failures, throttling]
+- id: pbi-directquery-performance
+  title: DirectQuery reports slow due to source performance
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Aggregations, source tuning, or switch to Import / Direct Lake.
+  indicators: [directquery]
+  when:
+    answers:
+      power_bi:pbi-storage-mode: [directquery, composite]
+- id: pbi-gateway-spof
+  title: Single on-premises gateway is a point of failure
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Gateway clusters, monitoring and patching.
+  indicators: [gateway]
+  when:
+    answers:
+      power_bi:pbi-gateway: ['yes']

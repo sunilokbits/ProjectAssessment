@@ -1,0 +1,20 @@
+- term: Golden Record
+  definition: Single trusted version of an entity
+  synonyms:
+  - best version of truth
+  entity_type: entity
+  category: data
+- term: Survivorship
+  definition: Rules choosing attribute values when merging records
+  entity_type: process
+  category: data
+- term: Match Rule
+  definition: Rule deciding whether records refer to the same entity
+  entity_type: concept
+  category: data
+- term: Cross-reference
+  definition: Mapping of source identifiers to master identifiers
+  synonyms:
+  - xref
+  entity_type: entity
+  category: data

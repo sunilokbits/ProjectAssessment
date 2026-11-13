@@ -1,0 +1,27 @@
+key: data_catalog
+name: Data Catalog
+kind: technology
+version: 1.0.0
+description: Searchable inventory of data assets with descriptions, ownership, classification, lineage and access requests.
+aliases:
+- Data Management
+sort_order: 74
+detection:
+  keywords:
+    data catalog: 5
+    data catalogue: 5
+    alation: 5
+    collibra: 4
+    atlan: 5
+    microsoft purview: 4
+    datahub: 4
+    unity catalog: 3
+    aws glue data catalog: 4
+    dataplex: 4
+    data discovery: 2.5
+    data marketplace: 3
+related_technologies:
+- metadata_management
+- data_governance
+- data_quality
+- data_platform

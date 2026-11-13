@@ -1,0 +1,6 @@
+dimensions:
+- key: machine_learning_readiness
+  name: Machine Learning Readiness
+  group: technology
+  weight: 1.0
+  description: Labelled data, feature availability, model validation, deployment path and ML skills.

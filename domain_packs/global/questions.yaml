@@ -1,0 +1,164 @@
+- id: business-objectives
+  text: Are the business objectives and expected outcomes of the project documented and agreed by the sponsor?
+  category: business
+  dimension: business_alignment
+  weight: 2
+  critical: true
+  evidence_required: true
+  equivalence_key: business_objectives
+- id: success-criteria
+  text: Are measurable success criteria / KPIs defined for the project?
+  category: business
+  dimension: business_alignment
+  weight: 1.5
+  equivalence_key: success_criteria
+- id: executive-sponsor
+  text: Is there an accountable executive sponsor with budget authority?
+  category: business
+  dimension: stakeholder_readiness
+  critical: true
+  equivalence_key: executive_sponsor
+- id: stakeholders-identified
+  text: Have all key business and IT stakeholders been identified and engaged?
+  category: business
+  dimension: stakeholder_readiness
+- id: change-management
+  text: How mature is the organisation's change-management and adoption approach for this initiative?
+  category: business
+  dimension: stakeholder_readiness
+  answer_type: scale
+  help: "1 = none, 3 = defined for this project, 5 = proven enterprise practice"
+- id: data-sources-identified
+  text: Have the source systems and datasets required for the project been identified?
+  category: data
+  dimension: data_availability
+  weight: 2
+  critical: true
+  equivalence_key: source_systems_identified
+- id: data-access
+  text: Is access to the required source data approved and technically available to the delivery team?
+  category: data
+  dimension: data_availability
+  weight: 1.5
+- id: data-ownership
+  text: Are data owners and stewards assigned for the key data domains?
+  category: data
+  dimension: data_availability
+  equivalence_key: data_ownership
+- id: data-volumes
+  text: Are current and projected data volumes, velocity and history requirements known?
+  category: data
+  dimension: data_availability
+- id: data-quality-known
+  text: What is the current level of data-quality measurement for the in-scope data?
+  category: data
+  dimension: data_quality
+  answer_type: single_choice
+  options:
+    - {value: none, label: Unknown / not measured, score: 0}
+    - {value: adhoc, label: Ad-hoc checks, score: 0.35}
+    - {value: rules, label: Defined rules and periodic reporting, score: 0.7}
+    - {value: managed, label: Continuously monitored with ownership and SLAs, score: 1}
+  equivalence_key: data_quality_maturity
+- id: target-architecture
+  text: Is there an agreed target architecture or architecture principles for the solution?
+  category: architecture
+  dimension: architecture_fit
+  weight: 1.5
+- id: nfrs-defined
+  text: Are non-functional requirements (performance, availability, scalability, RTO/RPO) defined and quantified?
+  category: architecture
+  dimension: architecture_fit
+  critical: true
+  equivalence_key: nfrs_defined
+- id: existing-architecture-documented
+  text: Is the existing (as-is) architecture documented?
+  category: architecture
+  dimension: architecture_fit
+- id: integration-inventory
+  text: Is there an inventory of interfaces/integrations the solution must connect to?
+  category: integration
+  dimension: integration_readiness
+- id: network-connectivity
+  text: Is network connectivity between source systems and the target platform available or planned?
+  category: integration
+  dimension: integration_readiness
+- id: identity-access
+  text: Will the solution integrate with the enterprise identity provider (SSO/MFA) and role-based access control?
+  category: security
+  dimension: security_controls
+  weight: 1.5
+  equivalence_key: identity_access
+- id: encryption
+  text: Are encryption requirements for data at rest and in transit defined?
+  category: security
+  dimension: security_controls
+  equivalence_key: encryption
+- id: security-review
+  text: Has the client security team been engaged to review the solution design?
+  category: security
+  dimension: security_controls
+- id: data-classification-done
+  text: Has the in-scope data been classified (e.g. public, internal, confidential, personal, regulated)?
+  category: privacy
+  dimension: privacy_protection
+  critical: true
+  equivalence_key: data_classification
+- id: regulatory-obligations-known
+  text: Has the client's legal/compliance team confirmed which regulations apply to this project?
+  category: compliance
+  dimension: privacy_protection
+  weight: 1.5
+  equivalence_key: regulatory_confirmed
+- id: data-residency
+  text: Are there data-residency or cross-border transfer restrictions?
+  category: privacy
+  dimension: privacy_protection
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: yes_defined, label: Yes - restrictions are documented, score: 1}
+    - {value: none, label: No restrictions (confirmed), score: 1}
+  equivalence_key: data_residency
+- id: scope-defined
+  text: Is the project scope (in/out of scope) documented and baselined?
+  category: delivery
+  dimension: delivery_governance
+  weight: 1.5
+  critical: true
+- id: budget-approved
+  text: Is the budget approved for the planned phase?
+  category: delivery
+  dimension: delivery_governance
+- id: timeline-constraints
+  text: Are timeline constraints and key milestones known (including regulatory or contractual deadlines)?
+  category: delivery
+  dimension: delivery_governance
+- id: governance-model
+  text: Is there a defined governance model (steering committee, decision rights, escalation)?
+  category: delivery
+  dimension: delivery_governance
+- id: client-team-skills
+  text: How would you rate the client team's skills in the target technologies?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  help: "1 = no experience, 5 = expert team in place"
+  equivalence_key: client_skills
+- id: sme-availability
+  text: Will business and technical SMEs be available for the required time?
+  category: delivery
+  dimension: team_capability
+- id: run-support-model
+  text: Is the post-go-live support and operating model defined?
+  category: operations
+  dimension: operational_readiness
+  equivalence_key: support_model
+- id: monitoring
+  text: Are monitoring, alerting and incident-management processes defined for the solution?
+  category: operations
+  dimension: operational_readiness
+- id: environments
+  text: Are development, test and production environments (and a promotion process) available or planned?
+  category: operations
+  dimension: operational_readiness

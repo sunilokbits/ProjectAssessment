@@ -1,0 +1,19 @@
+- id: agentic-human-gate
+  title: Start with human-approved actions
+  text: Launch with human approval for every consequential action and widen autonomy only on evidence.
+  category: governance
+  priority: high
+  decision_key: agent_autonomy
+  decision_option: human_gated
+- id: agentic-bounded-autonomy
+  title: Allow bounded autonomy for low-risk actions
+  text: Permit autonomous execution for reversible, low-value actions within hard limits.
+  category: governance
+  priority: medium
+  decision_key: agent_autonomy
+  decision_option: bounded
+- id: agentic-tracing
+  title: Instrument full agent tracing from day one
+  text: Capture plans, tool calls, inputs and outputs for debugging, evaluation and audit.
+  category: operations
+  priority: high

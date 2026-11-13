@@ -1,0 +1,19 @@
+- id: regulated-lakehouse
+  name: Regulated banking lakehouse
+  description: Layered lakehouse with reconciliation controls, PII protection and lineage for banking data.
+  use_cases: [Customer 360, Regulatory reporting, Risk analytics]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: core-banking-src, name: Core banking / card / LOS sources, layer: sources, core: true}
+    - {id: cdc, name: CDC replication from core banking, layer: ingestion, when: {keywords_any: [cdc, change data capture, near real-time, intraday]}, alternatives: [EOD batch extracts]}
+    - {id: batch-extract, name: EOD batch extracts (SFTP / file drop), layer: ingestion, when: {not: {keywords_any: [cdc, change data capture, near real-time, intraday]}}}
+    - {id: payment-stream, name: Payment event streaming, layer: ingestion, when: {sub_domains_any: [payments, cards], keywords_any: [real-time, streaming, event]}}
+    - {id: recon-controls, name: "Reconciliation control framework (counts, balances, GL tie-out)", layer: processing, core: true}
+    - {id: pii-tokenisation, name: PII tokenisation / masking service, layer: security, when: {data_classifications_any: [pii, spi, financial, cardholder]}}
+    - {id: pci-segment, name: Segmented PCI cardholder data zone, layer: security, when: {data_classifications_any: [cardholder]}}
+    - {id: reg-reporting-mart, name: Regulatory reporting data mart, layer: serving, when: {any_of: [{project_types_any: [regulatory_reporting]}, {keywords_any: [regulatory report, rbi return, corep, finrep]}]}}
+    - {id: customer-golden-record, name: Customer golden record (entity resolution), layer: processing, when: {project_types_any: [customer_360]}}
+    - {id: lineage, name: End-to-end lineage and data catalog, layer: governance, when: {any_of: [{answers: {data-lineage-regulatory: [required_none, required_partial, required_full]}}, {keywords_any: [lineage, bcbs 239]}]}}
+  considerations:
+    - Keep the general ledger as the financial book of record; the platform reconciles to it.
+    - Confirm data localisation requirements before selecting cloud regions.

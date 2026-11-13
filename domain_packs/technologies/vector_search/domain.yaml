@@ -1,0 +1,32 @@
+key: vector_search
+name: Vector Search
+kind: technology
+version: 1.0.0
+description: Vector databases and similarity-search indexes for semantic search, RAG and recommendations.
+aliases:
+- AI
+sort_order: 66
+detection:
+  keywords:
+    vector search: 5
+    vector database: 5
+    vector store: 4
+    pinecone: 4
+    weaviate: 4
+    milvus: 4
+    qdrant: 4
+    pgvector: 4
+    azure ai search: 3
+    opensearch: 2
+    ann index: 3
+    similarity search: 3
+    embeddings: 2
+    hnsw: 3
+related_technologies:
+- rag
+- generative_ai
+- machine_learning
+- data_platform
+related_project_types:
+- recommendation_engine
+- genai_assistant

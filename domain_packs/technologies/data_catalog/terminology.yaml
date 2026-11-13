@@ -1,0 +1,14 @@
+- term: Data Asset
+  definition: Any catalogued dataset, table, report or model
+  entity_type: entity
+  category: governance
+- term: Certification
+  definition: Endorsement that an asset is trusted for use
+  synonyms:
+  - endorsement
+  entity_type: process
+  category: governance
+- term: Data Product
+  definition: Curated, owned and documented dataset served for consumption
+  entity_type: entity
+  category: data

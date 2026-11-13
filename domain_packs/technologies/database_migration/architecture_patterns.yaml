@@ -1,0 +1,29 @@
+# Database Migration technology pack - architecture_patterns
+- id: db-migration-replication
+  name: Database migration with continuous replication
+  description: Assess and convert schema, bulk load, then CDC replication until cutover.
+  use_cases: [Database re-platforming, Cloud migration]
+  layer_order: [source, extraction, transformation, load, target, validation, operations]
+  components:
+    - {id: assessment, name: Compatibility assessment, layer: source, core: true}
+    - id: schema-conversion
+      name: Schema and code conversion (SCT / SSMA / ora2pg)
+      layer: transformation
+      when:
+        answers:
+          database_migration:dbm-target-type: [heterogeneous, unknown]
+    - {id: full-load, name: Initial full load, layer: load, core: true}
+    - id: cdc
+      name: CDC replication (DMS / Azure DMS / Datastream)
+      layer: load
+      when:
+        answers:
+          database_migration:dbm-downtime: [minutes, zero]
+    - {id: target-db, name: Target database (managed service), layer: target, core: true}
+    - {id: validation, name: Data validation and performance benchmark, layer: validation, core: true}
+    - id: ha-dr
+      name: High availability / DR configuration
+      layer: operations
+      when:
+        keywords_any: [high availability, disaster recovery, rpo, rto]
+  considerations: [Validate primary keys and logging prerequisites for CDC., Re-point applications via DNS / connection strings at cutover.]

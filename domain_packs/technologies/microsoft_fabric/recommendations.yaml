@@ -1,0 +1,26 @@
+# Microsoft Fabric technology pack - recommendations
+- {id: fabric-capacity-separation, title: Separate capacities by workload criticality, text: Isolate production BI from data engineering and dev/test
+    via separate capacities., category: technology, priority: high}
+- {id: fabric-git, title: Use Git integration and deployment pipelines, text: Source-control Fabric items and promote through dev / test / prod.,
+  category: operations, priority: medium}
+- id: fabric-lakehouse-first
+  title: Use Lakehouse for engineering layers and Warehouse for T-SQL serving where needed
+  text: Build bronze/silver in Lakehouse with Spark; use Warehouse for gold only when T-SQL skills or multi-table transactions require it.
+  category: architecture
+  priority: medium
+  decision_key: fabric_store
+  decision_option: lakehouse
+  when:
+    not:
+      answers:
+        microsoft_fabric:fabric-lakehouse-vs-warehouse: [warehouse]
+- id: fabric-warehouse-first
+  title: Use Fabric Warehouse as the curated store
+  text: Model curated data in Fabric Warehouse to leverage existing T-SQL skills.
+  category: architecture
+  priority: medium
+  decision_key: fabric_store
+  decision_option: warehouse
+  when:
+    answers:
+      microsoft_fabric:fabric-lakehouse-vs-warehouse: [warehouse]

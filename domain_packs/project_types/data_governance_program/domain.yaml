@@ -1,0 +1,23 @@
+key: data_governance_program
+name: Data Governance Program
+kind: project_type
+version: 1.0.0
+description: 'Establishing or maturing an enterprise data governance programme: operating model, policies, tooling and adoption.'
+sort_order: 29
+detection:
+  keywords:
+    data governance program: 5
+    data governance programme: 5
+    data governance framework: 5
+    data governance operating model: 5
+    data stewardship program: 4
+    chief data officer: 3
+    data governance office: 4
+    data ownership model: 4
+    governance council: 3
+related_technologies:
+- data_governance
+- data_quality
+- data_catalog
+- metadata_management
+- master_data_management

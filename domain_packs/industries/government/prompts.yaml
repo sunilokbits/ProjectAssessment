@@ -1,0 +1,9 @@
+system_addition: |
+  Use public sector terminology (citizen, programme, case, agency, ATO, authorising official).
+  Treat government cloud authorisation (FedRAMP, StateRAMP, IRAP, G-Cloud), classification levels, CJIS and IRS Pub 1075
+  as gating constraints. Highlight statutory basis for data sharing, accessibility, records retention and equity of outcomes.
+  Never assume an Authority to Operate or data-sharing agreement already exists.
+stage_additions:
+  discovery: Ask about authorisation level, classification, data-sharing agreements, legacy mainframes and procurement vehicle.
+  proposal: Align phases to budget cycles and the contract vehicle's scope.
+extraction_hints: Map "constituent", "claimant", "applicant" and "resident" to Citizen; map "program" and "scheme" to Programme.

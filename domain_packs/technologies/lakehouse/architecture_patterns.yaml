@@ -1,0 +1,40 @@
+# Lakehouse technology pack - architecture_patterns
+- id: medallion-lakehouse
+  name: Medallion lakehouse
+  description: Open-table-format lakehouse with bronze/silver/gold layers, unified catalog and SQL/BI serving.
+  use_cases: [Data platform modernization, Customer 360, Advanced analytics]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, ai, governance]
+  components:
+    - {id: ingest, name: Batch / CDC ingestion, layer: ingestion, core: true}
+    - id: stream
+      name: Streaming ingestion
+      layer: ingestion
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis]
+    - {id: object-store, name: Cloud object storage, layer: storage, core: true}
+    - {id: bronze, name: Bronze (raw tables), layer: processing, core: true}
+    - {id: silver, name: Silver (cleansed / conformed), layer: processing, core: true}
+    - {id: gold, name: Gold (business data products), layer: processing, core: true}
+    - id: sql-serving
+      name: Serverless SQL endpoint
+      layer: serving
+      when: &id001
+        technologies_any: [business_intelligence, power_bi]
+    - id: bi
+      name: BI / semantic layer
+      layer: consumption
+      when: *id001
+    - id: ml
+      name: ML feature engineering and training
+      layer: ai
+      when:
+        technologies_any: [machine_learning, mlops, advanced_analytics]
+    - id: vector
+      name: Vector index for RAG
+      layer: ai
+      when:
+        technologies_any: [rag, vector_search, generative_ai]
+    - {id: catalog, name: 'Unified catalog (permissions, lineage)', layer: governance, core: true}
+  considerations: [Agree the table format and catalog before building pipelines., Certify gold tables as data products with owners.]

@@ -1,0 +1,28 @@
+nfrs:
+  - {id: permission-latency, text: Permission changes and new walls propagate to indexes within agreed minutes., category: security}
+  - {id: audit-trail, text: Access to client documents through AI and search is fully logged., category: security}
+assumptions:
+  - {id: dms-authoritative, text: The DMS is authoritative for document permissions., category: security}
+  - {id: psa-sor, text: PSA / practice management is the system of record for time and billing., category: data}
+dependencies:
+  - {id: risk-gc, text: "General counsel, risk and independence team sign-off.", category: compliance}
+  - {id: partner-sponsor, text: Partner sponsorship per practice., category: business}
+security_considerations:
+  - {id: client-confidentiality, text: Client confidential data never used to train shared models., category: security}
+data_quality_checks:
+  - {id: time-coding, text: Time entries coded to valid open engagements with narratives., category: data}
+reporting_requirements:
+  - {id: partner-reporting, text: "Partner and practice profitability, utilisation and pipeline reporting.", category: reporting}
+migration_concerns:
+  - {id: dms-permissions, text: Preserving document permissions and metadata during DMS migration., category: data}
+ai_opportunities:
+  - {id: knowledge-assistant, text: GenAI knowledge assistant over precedents and prior deliverables., category: ai}
+  - {id: contract-review, text: AI-assisted contract review and clause extraction., category: ai, sub_domains: [legal]}
+  - {id: audit-analytics, text: Full-population audit analytics and anomaly detection., category: ai, sub_domains: [accounting]}
+  - {id: staffing-optimisation, text: Skills-based staffing recommendations., category: ai}
+  - {id: time-capture-ai, text: AI-assisted time capture and narrative drafting., category: ai}
+ai_risks:
+  - {id: confidentiality-leak, text: AI surfaces content across ethical walls., category: ai}
+  - {id: fabricated-authority, text: Fabricated case law or standards citations., category: ai, sub_domains: [legal, accounting]}
+clarification_questions:
+  - {id: engagement-terms, text: "Do engagement letters address use of AI tools on client materials?", category: compliance}

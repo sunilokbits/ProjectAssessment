@@ -1,0 +1,73 @@
+- id: ferpa-school-official
+  text: Has the institution designated the vendor or platform as a "school official" with legitimate educational interest under FERPA, with contractual controls?
+  category: compliance
+  dimension: student_data_protection
+  critical: true
+  when: {geographies_any: [US]}
+- id: minors-data
+  text: Does the solution process data of children under 13 (COPPA) or minors covered by state student privacy laws?
+  category: privacy
+  dimension: student_data_protection
+  answer_type: single_choice
+  critical: true
+  sub_domains: [schools, edtech]
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: yes_controls, label: Yes - consent and controls defined, score: 0.9}
+    - {value: yes_no_controls, label: Yes - controls not yet defined, score: 0.1}
+    - {value: no, label: No minors' data (confirmed), score: 1}
+- id: sis-lms-integration
+  text: Which SIS and LMS platforms are in scope and how is data extracted today (batch, APIs, OneRoster, Ed-Fi)?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+- id: academic-definitions
+  text: Are core academic definitions (census date, FTE, retention, completion, active student) agreed across faculties and reporting teams?
+  category: data
+  dimension: academic_data_readiness
+  weight: 1.5
+- id: statutory-returns
+  text: Which statutory returns depend on data in scope (e.g. IPEDS, HESA Data Futures, state accountability reports, DfE school census)?
+  category: compliance
+  dimension: academic_data_readiness
+  answer_type: text
+- id: student-identity
+  text: How consistently are students identified across SIS, LMS, CRM and finance systems?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+- id: learning-analytics-ethics
+  text: Is there an approved policy on the ethical use of learning analytics and student data for interventions?
+  category: governance
+  dimension: student_data_protection
+  answer_type: single_choice
+  sub_domains: [student_analytics, higher_education, edtech]
+  options:
+    - {value: none, label: No policy, score: 0}
+    - {value: draft, label: Draft policy, score: 0.5}
+    - {value: approved, label: Approved policy with student consultation, score: 1}
+- id: academic-calendar
+  text: Must delivery and cut-over avoid critical academic calendar periods (enrolment, exams, census)?
+  category: delivery
+  dimension: delivery_governance
+- id: research-data-controls
+  text: Are research data subject to grant, sponsor or ethics board restrictions (IRB, data use agreements, export controls)?
+  category: compliance
+  dimension: privacy_protection
+  sub_domains: [research]
+- id: research-security
+  text: Is the institution subject to research security requirements (e.g. NSPM-33, CUI handling under NIST SP 800-171) for funded research?
+  category: security
+  dimension: security_controls
+  sub_domains: [research]
+  when: {geographies_any: [US]}
+- id: edtech-interoperability
+  text: Does the product support 1EdTech standards (LTI 1.3, OneRoster, Caliper) for integration with institutional systems?
+  category: integration
+  dimension: integration_readiness
+  sub_domains: [edtech]
+- id: genai-academic-integrity
+  text: Is there an institutional policy on GenAI use that addresses academic integrity and assessment?
+  category: governance
+  dimension: academic_data_readiness
+  when: {technologies_any: [generative_ai, agentic_ai, ai_agents, rag]}

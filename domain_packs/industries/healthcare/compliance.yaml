@@ -1,0 +1,97 @@
+- id: hipaa
+  name: Health Insurance Portability and Accountability Act (Privacy, Security and Breach Notification Rules)
+  short_name: HIPAA
+  geographies: [US]
+  data_classifications_any: [phi]
+  description: Safeguards for protected health information held by covered entities and business associates.
+  obligations: [Business Associate Agreements, Minimum necessary use, Administrative physical and technical safeguards, Breach notification, De-identification standards]
+- id: hitech
+  name: Health Information Technology for Economic and Clinical Health Act
+  short_name: HITECH
+  geographies: [US]
+  data_classifications_any: [phi]
+  description: Strengthens HIPAA enforcement and breach notification; extends obligations to business associates.
+- id: 42-cfr-part-2
+  name: 42 CFR Part 2 - Confidentiality of Substance Use Disorder Patient Records
+  short_name: 42 CFR Part 2
+  geographies: [US]
+  data_classifications_any: [phi, spi]
+  applicability_note: Applies to federally assisted substance use disorder programs and recipients of their records.
+- id: cures-act-info-blocking
+  name: 21st Century Cures Act - Information Blocking and ONC Interoperability Rules
+  short_name: Cures Act
+  geographies: [US]
+  applicability_note: Applies to providers, health IT developers and HIEs; relevant where the project affects electronic health information access or exchange.
+- id: cms-interoperability
+  name: CMS Interoperability and Patient Access / Prior Authorization Rules
+  short_name: CMS Interoperability
+  geographies: [US]
+  sub_domains: [healthcare_payers]
+  applicability_note: Applies to CMS-regulated payers (Medicare Advantage, Medicaid, CHIP, ACA exchange plans).
+- id: fda-samd
+  name: FDA regulation of Software as a Medical Device (21 CFR Part 820 / QMSR and premarket pathways)
+  short_name: FDA SaMD
+  geographies: [US]
+  sub_domains: [medical_devices, digital_health, clinical_operations, health_analytics]
+  applicability_note: Only where software meets the device definition; clinical decision support may be exempt under Cures Act criteria.
+- id: fda-cybersecurity-devices
+  name: FDA Cybersecurity in Medical Devices (FD&C Act section 524B)
+  short_name: FDA Device Cybersecurity
+  geographies: [US]
+  sub_domains: [medical_devices]
+- id: eu-mdr
+  name: EU Medical Device Regulation (EU) 2017/745
+  short_name: EU MDR
+  geographies: [EU, EEA]
+  sub_domains: [medical_devices, digital_health, clinical_operations, health_analytics]
+- id: gdpr-health
+  name: General Data Protection Regulation (special category health data)
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [phi, spi, pii]
+- id: ehds
+  name: European Health Data Space Regulation
+  short_name: EHDS
+  geographies: [EU, EEA]
+  applicability_note: Adopted 2025 with phased application; confirm timelines for primary and secondary use obligations.
+- id: uk-gdpr-dspt
+  name: UK GDPR and NHS Data Security and Protection Toolkit
+  short_name: UK GDPR / DSPT
+  geographies: [UK]
+  data_classifications_any: [phi, spi, pii]
+- id: dcb0129-0160
+  name: NHS clinical risk management standards DCB0129 and DCB0160
+  short_name: DCB0129/0160
+  geographies: [UK]
+  applicability_note: Applies to manufacturers and deploying organisations of health IT systems used in NHS care.
+- id: dpdp-health
+  name: Digital Personal Data Protection Act 2023 and ABDM health data management policy
+  short_name: DPDP / ABDM
+  geographies: [IN]
+  data_classifications_any: [phi, spi, pii]
+- id: pipeda-phipa
+  name: PIPEDA and provincial health privacy laws (e.g. Ontario PHIPA)
+  short_name: PIPEDA / PHIPA
+  geographies: [CA]
+  data_classifications_any: [phi, pii]
+- id: au-my-health-records
+  name: Australian Privacy Act and My Health Records Act
+  short_name: AU Health Privacy
+  geographies: [AU]
+  data_classifications_any: [phi, pii]
+- id: hitrust
+  name: HITRUST CSF
+  short_name: HITRUST
+  geographies: [GLOBAL]
+  applicability_note: Voluntary certifiable framework commonly required by US healthcare clients of vendors.
+- id: iec-62304
+  name: IEC 62304 Medical device software lifecycle processes
+  short_name: IEC 62304
+  geographies: [GLOBAL]
+  sub_domains: [medical_devices]
+- id: eu-ai-act-health
+  name: EU AI Act
+  short_name: EU AI Act
+  geographies: [EU, EEA]
+  technologies_any: [machine_learning, generative_ai, agentic_ai, ai_agents, advanced_analytics]
+  applicability_note: AI that is a safety component of a medical device under EU MDR is high-risk.

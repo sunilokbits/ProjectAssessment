@@ -1,0 +1,30 @@
+# Business Intelligence technology pack - questions
+- id: bi-current-tools
+  text: Which BI tools are currently in use?
+  category: technology
+  dimension: bi_readiness
+  answer_type: multi_choice
+  options:
+    - {value: power_bi, label: Power BI}
+    - {value: tableau, label: Tableau}
+    - {value: qlik, label: Qlik}
+    - {value: looker, label: Looker}
+    - {value: legacy, label: 'Legacy (Cognos, BusinessObjects, MicroStrategy, SSRS)'}
+    - {value: excel, label: Mainly Excel}
+- {id: bi-kpi-definitions, text: 'Are KPI definitions documented in a business glossary with owners?', category: business, dimension: bi_readiness,
+  weight: 1.5, critical: true}
+- {id: bi-semantic-layer, text: 'Is there a governed semantic layer / certified datasets shared across reports?', category: architecture, dimension: bi_readiness}
+- {id: bi-report-inventory, text: 'Is there an inventory of existing reports with usage statistics to rationalise?', category: data, dimension: bi_readiness}
+- id: bi-self-service
+  text: What self-service model is intended?
+  category: business
+  dimension: business_alignment
+  answer_type: single_choice
+  options:
+    - {value: centralised, label: Centralised - IT builds all reports}
+    - {value: managed, label: Managed self-service on certified data}
+    - {value: full, label: Full self-service}
+- {id: bi-rls, text: 'Is row-level security required to restrict report data by user / region / business unit?', category: security, dimension: security_controls}
+- {id: bi-adoption, text: 'Is there an adoption plan (training, champions, usage monitoring)?', category: business, dimension: stakeholder_readiness}
+- {id: bi-skills, text: 'How experienced is the client team with BI tools and data modelling (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

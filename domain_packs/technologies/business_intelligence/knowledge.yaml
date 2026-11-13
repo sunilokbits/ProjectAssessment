@@ -1,0 +1,7 @@
+# Business Intelligence technology pack - knowledge
+security_considerations:
+  - {id: bi-rls-sec, text: Row-level security aligned with identity groups., category: security}
+  - {id: bi-export, text: Controls on data export and external sharing of reports., category: security}
+dependencies:
+  - {id: bi-curated-data, text: 'Curated, reconciled data sources available.', category: data}
+  - {id: bi-kpi-owners, text: KPI owners available to agree definitions., category: governance}

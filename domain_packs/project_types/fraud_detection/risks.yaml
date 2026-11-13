@@ -1,0 +1,27 @@
+- id: fd-false-positives
+  title: High false-positive rates harm customers and overload investigators
+  category: business
+  likelihood: 4
+  impact: 4
+  mitigation: Optimise thresholds by cost; combine rules and ML; monitor precision.
+  indicators:
+  - false positives
+  - customer complaints
+  - declines
+- id: fd-adversarial
+  title: Fraudsters adapt faster than models
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: Frequent retraining, drift monitoring and feedback loops.
+  indicators:
+  - new fraud patterns
+- id: fd-label-delay
+  title: Delayed or missing fraud labels
+  category: data
+  likelihood: 3
+  impact: 3
+  mitigation: Integrate chargeback and investigation outcomes promptly.
+  indicators:
+  - chargeback
+  - label delay

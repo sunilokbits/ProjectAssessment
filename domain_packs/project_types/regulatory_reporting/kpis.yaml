@@ -1,0 +1,24 @@
+- id: rr-on-time
+  name: On-time submission rate
+  description: Share of regulatory submissions delivered by deadline.
+  unit: '%'
+  direction: higher_is_better
+  category: compliance
+- id: rr-resubmissions
+  name: Resubmissions
+  description: Number of submissions requiring correction after filing.
+  unit: count
+  direction: lower_is_better
+  category: compliance
+- id: rr-manual-adjustments
+  name: Manual adjustments
+  description: Number or value of manual post-close adjustments per cycle.
+  unit: count
+  direction: lower_is_better
+  category: data
+- id: rr-cycle-time
+  name: Reporting cycle time
+  description: Elapsed days from period end to submission-ready.
+  unit: days
+  direction: lower_is_better
+  category: operations

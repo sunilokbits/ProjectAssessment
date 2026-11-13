@@ -1,0 +1,84 @@
+key: real_estate_construction
+name: Real Estate and Construction
+kind: industry
+version: 1.0.0
+description: Residential and commercial real estate, property management, construction and contracting, and smart buildings.
+aliases: [real estate, property, construction, proptech, contech, AEC]
+sort_order: 100
+sub_domains:
+  - key: residential
+    name: Residential Real Estate
+    keywords: [residential, homebuilder, apartments, multifamily, tenant screening, home sales, mls, buy-to-let, housing association]
+  - key: commercial
+    name: Commercial Real Estate
+    keywords: [commercial real estate, cre, office portfolio, retail property, industrial property, reit, lease abstraction, cap rate, noi]
+  - key: property_management
+    name: Property Management
+    keywords: [property management, rent roll, lease administration, maintenance requests, service charge, tenant portal, facilities management]
+  - key: construction
+    name: Construction
+    keywords: [construction project, general contractor, subcontractor, bim, rfi, submittals, change order, site progress, cost to complete, epc]
+  - key: smart_buildings
+    name: Smart Buildings
+    keywords: [smart building, bms, building management system, hvac optimisation, occupancy sensors, energy management, digital twin, iot sensors]
+detection:
+  keywords:
+    real estate: 4
+    property: 1.5
+    lease: 2.5
+    tenant: 1.5
+    rent roll: 5
+    reit: 4.5
+    noi: 3
+    cap rate: 4.5
+    yardi: 5
+    mri software: 5
+    construction: 3
+    general contractor: 4.5
+    subcontractor: 3.5
+    bim: 4
+    procore: 5
+    change order: 4
+    rfi: 2.5
+    building management system: 4.5
+    bms: 2.5
+    facilities management: 3
+    occupancy: 1.5
+business_processes:
+  - Acquisition and due diligence
+  - Leasing and lease administration
+  - Rent collection and arrears management
+  - Property and facilities maintenance
+  - Service charge and CAM reconciliation
+  - Construction bidding and estimating
+  - Project controls (cost, schedule, change)
+  - Subcontractor and procurement management
+  - Building operations and energy management
+  - Portfolio valuation and investor reporting
+capabilities:
+  - Portfolio performance analytics
+  - Lease abstraction and intelligence
+  - Predictive maintenance for building systems
+  - Construction cost and schedule forecasting
+  - Energy and carbon optimisation
+  - Tenant experience analytics
+  - Site safety analytics
+  - Investor reporting
+source_systems:
+  - "Property management and accounting (Yardi Voyager, MRI Software, RealPage, Entrata, AppFolio)"
+  - "Lease administration (Visual Lease, CoStar Real Estate Manager, Accruent Lx)"
+  - "Construction management (Procore, Autodesk Construction Cloud, Oracle Aconex, Oracle Primavera P6)"
+  - "Estimating and ERP (Sage Intacct Construction, Viewpoint Vista, CMiC, InEight)"
+  - "BIM and design (Autodesk Revit, Navisworks, Bentley)"
+  - "Building management systems (Johnson Controls Metasys, Siemens Desigo CC, Honeywell, Schneider EcoStruxure)"
+  - "CAFM / IWMS (Planon, IBM TRIRIGA, ServiceNow WSD)"
+  - "Market data (CoStar, MSCI Real Assets)"
+data_entities: [Property, Unit, Lease, Tenant, Rent charge, Work order, Project, Cost code, Change order, RFI, Subcontract, Building asset, Sensor reading, Valuation]
+integration_patterns:
+  - Property management system batch exports and APIs
+  - "BACnet / Modbus / MQTT building telemetry"
+  - "BIM model exchange (IFC)"
+  - Construction platform APIs
+  - "Lease document ingestion (OCR / document AI)"
+related_technologies: [iot, power_bi, generative_ai, machine_learning, data_platform]
+related_project_types: [document_intelligence, iot_analytics_platform, predictive_maintenance, bi_modernization]

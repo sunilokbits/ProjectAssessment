@@ -1,0 +1,20 @@
+- id: student-data-platform
+  name: Institutional student data platform
+  description: Integrates SIS, LMS, CRM and finance data into a governed student data model for reporting and student success analytics.
+  use_cases: [Student 360, Retention analytics, Statutory reporting, Enrolment forecasting]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: sis-lms-sources, name: "SIS, LMS, CRM and finance sources", layer: sources, core: true}
+    - {id: standards-ingest, name: "Standards-based ingestion (OneRoster, Ed-Fi, Caliper)", layer: ingestion, when: {keywords_any: [oneroster, ed-fi, caliper, lti]}, alternatives: [SIS batch extracts]}
+    - {id: lms-events, name: LMS activity event streaming, layer: ingestion, when: {sub_domains_any: [student_analytics, edtech]}}
+    - {id: student-model, name: "Governed student data model (term, census, programme)", layer: processing, core: true}
+    - {id: student-golden-record, name: Student golden record, layer: processing, when: {project_types_any: [customer_360]}}
+    - {id: retention-model, name: Retention and early-alert models, layer: processing, when: {any_of: [{project_types_any: [churn_prediction]}, {sub_domains_any: [student_analytics]}]}}
+    - {id: statutory-mart, name: "Statutory returns mart (IPEDS, HESA, state reports)", layer: serving, when: {keywords_any: [ipeds, hesa, statutory return, census]}}
+    - {id: ferpa-access, name: FERPA role-based access and directory opt-out enforcement, layer: security, when: {geographies_any: [US]}}
+    - {id: minors-protection, name: Minors' data minimisation and consent controls, layer: security, when: {data_classifications_any: [children]}}
+    - {id: research-enclave, name: Secure research data enclave, layer: security, when: {sub_domains_any: [research]}}
+    - {id: institutional-dashboards, name: Institutional and faculty dashboards, layer: consumption, core: true}
+  considerations:
+    - Freeze snapshots at census dates so statutory figures are reproducible.
+    - Separate research data environments from administrative student data.

@@ -1,0 +1,56 @@
+- id: dpm-drivers
+  text: What are the primary drivers for modernisation (cost, end of support, scalability, AI enablement, agility)?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: dpm-estate-inventory
+  text: Is the legacy data estate inventoried (databases, pipelines, reports, consumers, volumes)?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: dpm-target-platform
+  text: Has the target platform been selected?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+  - value: selected
+    label: Selected and approved
+    score: 1
+  - value: shortlist
+    label: Shortlisted
+    score: 0.6
+  - value: open
+    label: Open / to be recommended
+    score: 0.4
+- id: dpm-approach
+  text: What migration approach is preferred (lift-and-shift, re-platform, re-architect by domain)?
+  category: delivery
+  dimension: delivery_governance
+  answer_type: single_choice
+  options:
+  - value: lift_shift
+    label: Lift-and-shift
+    score: 1
+  - value: replatform
+    label: Re-platform with targeted improvements
+    score: 1
+  - value: rearchitect
+    label: Re-architect into data products
+    score: 1
+  - value: undecided
+    label: Undecided
+    score: 0.3
+- id: dpm-decommission
+  text: Is there a committed decommissioning date for the legacy platform?
+  category: delivery
+  dimension: delivery_governance
+  answer_type: yes_no
+- id: dpm-operating-model
+  text: Will the operating model change (domain ownership, platform team, self-service)?
+  category: business
+  dimension: stakeholder_readiness
+  answer_type: yes_no

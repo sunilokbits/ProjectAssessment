@@ -1,0 +1,23 @@
+key: predictive_maintenance
+name: Predictive Maintenance
+kind: project_type
+version: 1.0.0
+description: Predicting equipment failure or degradation from sensor, maintenance and operational data to optimise maintenance.
+sort_order: 24
+detection:
+  keywords:
+    predictive maintenance: 5
+    condition monitoring: 4
+    condition-based maintenance: 4
+    remaining useful life: 5
+    failure prediction: 4
+    asset health: 4
+    equipment failure: 3
+    unplanned downtime: 3
+    vibration analysis: 3
+    mtbf: 2.5
+related_technologies:
+- iot
+- machine_learning
+- real_time_streaming
+- mlops

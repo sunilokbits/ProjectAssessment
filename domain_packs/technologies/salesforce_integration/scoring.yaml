@@ -1,0 +1,6 @@
+dimensions:
+- key: salesforce_integration_readiness
+  name: Salesforce Integration Readiness
+  group: technology
+  weight: 1.0
+  description: Org landscape, API limits, data model customisation, integration pattern and data ownership.

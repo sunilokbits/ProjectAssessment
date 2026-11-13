@@ -1,0 +1,32 @@
+key: master_data_management
+name: Master Data Management
+kind: technology
+version: 1.0.0
+description: Golden records for core entities (customer, product, supplier, asset) through matching, survivorship and stewardship.
+aliases:
+- Data Management
+sort_order: 72
+detection:
+  keywords:
+    master data management: 5
+    mdm: 4
+    golden record: 4
+    informatica mdm: 5
+    reltio: 5
+    stibo: 4
+    profisee: 4
+    tamr: 4
+    sap mdg: 5
+    survivorship: 4
+    match and merge: 4
+    entity resolution: 3
+    master data: 3
+related_technologies:
+- data_governance
+- data_quality
+- data_platform
+- sap_integration
+- salesforce_integration
+related_project_types:
+- customer_360
+- data_governance_program

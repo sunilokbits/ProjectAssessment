@@ -1,0 +1,21 @@
+- id: telco-data-platform
+  name: Telco subscriber and network data platform
+  description: High-volume platform ingesting BSS, OSS, CDR and network telemetry with subscriber-data protection and revenue-assurance controls.
+  use_cases: [Subscriber 360, Churn prediction, Revenue assurance, Network analytics, Fraud detection]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: bss-oss-sources, name: "BSS, OSS, mediation and CRM systems", layer: sources, core: true}
+    - {id: cdr-ingest, name: CDR / xDR file ingestion from mediation, layer: ingestion, core: true}
+    - {id: network-stream, name: Network telemetry and probe streaming, layer: ingestion, when: {any_of: [{technologies_any: [real_time_streaming]}, {sub_domains_any: [network_operations, five_g]}]}}
+    - {id: pseudonymisation, name: MSISDN / IMSI pseudonymisation and CPNI controls, layer: security, core: true}
+    - {id: tiered-retention, name: Tiered storage with regulatory retention policies, layer: storage, core: true}
+    - {id: ra-controls, name: Revenue assurance reconciliation controls, layer: processing, when: {sub_domains_any: [billing, revenue_assurance, oss_bss]}}
+    - {id: subscriber-360, name: Subscriber / household identity graph, layer: processing, when: {project_types_any: [customer_360, churn_prediction]}}
+    - {id: churn-model, name: Churn scoring and retention decisioning, layer: serving, when: {project_types_any: [churn_prediction]}}
+    - {id: fraud-stream, name: Near-real-time fraud detection, layer: serving, when: {any_of: [{project_types_any: [fraud_detection]}, {sub_domains_any: [revenue_assurance]}]}}
+    - {id: network-cx, name: Network-to-customer experience correlation, layer: processing, when: {sub_domains_any: [network_operations, customer_analytics, five_g]}}
+    - {id: aiops, name: AIOps anomaly detection and alarm correlation, layer: serving, when: {sub_domains_any: [network_operations, five_g], technologies_any: [machine_learning, agentic_ai, ai_agents, advanced_analytics]}}
+  considerations:
+    - Keep lawful interception and mandatory retention systems outside the analytics platform.
+    - Billing remains the system of record for revenue; the platform reconciles to it.
+    - Confirm licence-driven data localisation before selecting cloud regions.

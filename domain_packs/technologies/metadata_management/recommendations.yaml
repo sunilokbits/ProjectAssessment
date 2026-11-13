@@ -1,0 +1,10 @@
+- id: mm-automate-harvest
+  title: Automate metadata and lineage capture
+  text: Use native platform lineage and OpenLineage-compatible tools; avoid manual documentation.
+  category: technology
+  priority: high
+- id: mm-cde-lineage
+  title: Prioritise lineage for critical data elements
+  text: Document full lineage for regulatory and key KPI data first.
+  category: governance
+  priority: medium

@@ -1,0 +1,72 @@
+- id: fair-housing-act
+  name: Fair Housing Act
+  short_name: FHA
+  geographies: [US]
+  sub_domains: [residential, property_management]
+- id: fcra
+  name: Fair Credit Reporting Act (tenant screening reports)
+  short_name: FCRA
+  geographies: [US]
+  sub_domains: [residential, property_management]
+- id: ifrs16-asc842
+  name: IFRS 16 / ASC 842 lease accounting
+  short_name: IFRS 16 / ASC 842
+  geographies: [GLOBAL]
+  sub_domains: [commercial, property_management]
+- id: osha-construction
+  name: OSHA Construction Industry Standards (29 CFR 1926) and recordkeeping
+  short_name: OSHA 1926
+  geographies: [US]
+  sub_domains: [construction]
+- id: uk-building-safety
+  name: UK Building Safety Act 2022 (golden thread of information)
+  short_name: Building Safety Act
+  geographies: [UK]
+  sub_domains: [construction, property_management, residential]
+- id: uk-cdm
+  name: Construction (Design and Management) Regulations 2015
+  short_name: CDM 2015
+  geographies: [UK]
+  sub_domains: [construction]
+- id: iso-19650
+  name: ISO 19650 information management using BIM
+  short_name: ISO 19650
+  geographies: [GLOBAL]
+  sub_domains: [construction, smart_buildings]
+  applicability_note: Mandated on some public-sector projects (e.g. UK); otherwise contractual.
+- id: nyc-ll97
+  name: NYC Local Law 97 building emissions limits
+  short_name: NYC LL97
+  geographies: [US-NY]
+  sub_domains: [commercial, residential, smart_buildings, property_management]
+- id: eu-epbd
+  name: EU Energy Performance of Buildings Directive
+  short_name: EPBD
+  geographies: [EU, EEA]
+  sub_domains: [commercial, residential, smart_buildings]
+- id: uk-mees
+  name: UK Minimum Energy Efficiency Standards
+  short_name: MEES
+  geographies: [UK]
+  sub_domains: [commercial, residential]
+- id: india-rera
+  name: Real Estate (Regulation and Development) Act 2016
+  short_name: RERA
+  geographies: [IN]
+  sub_domains: [residential, commercial, construction]
+- id: gdpr
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA, UK]
+  data_classifications_any: [pii, biometric]
+- id: ccpa
+  name: California Consumer Privacy Act / CPRA
+  short_name: CCPA/CPRA
+  geographies: [US-CA]
+  data_classifications_any: [pii]
+- id: aml-real-estate
+  name: AML obligations for real estate transactions (e.g. FinCEN residential real estate rule, EU AMLD)
+  short_name: Real Estate AML
+  geographies: [US, EU, EEA]
+  sub_domains: [residential, commercial]
+  applicability_note: Obligations depend on the firm's role in the transaction.

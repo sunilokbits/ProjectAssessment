@@ -1,0 +1,4 @@
+- {term: Delta Lake, definition: Open table format with ACID transactions used by Databricks, synonyms: [delta table], entity_type: system, category: data}
+- {term: Unity Catalog, definition: Databricks unified governance for data and AI assets, synonyms: [uc], entity_type: system, category: security}
+- {term: Medallion Architecture, definition: Bronze/silver/gold data layering, synonyms: [bronze silver gold, medallion], entity_type: concept, category: architecture}
+- {term: DBU, definition: Databricks unit of processing consumption, entity_type: metric, category: operations}

@@ -1,0 +1,36 @@
+# Application Modernization technology pack - architecture_patterns
+- id: strangler-modernization
+  name: Strangler-fig modernization
+  description: API facade routes traffic between legacy and new cloud-native services while capabilities migrate incrementally.
+  use_cases: [Legacy application modernization, Mainframe offload]
+  layer_order: [channels, api, services, legacy, data, platform, operations]
+  components:
+    - {id: api-gateway, name: API gateway / facade, layer: api, core: true}
+    - {id: new-services, name: New domain services, layer: services, core: true}
+    - {id: legacy-app, name: Legacy application (shrinking), layer: legacy, core: true}
+    - {id: acl, name: Anti-corruption layer, layer: services, core: true}
+    - id: event-bus
+      name: Event bus for change propagation
+      layer: data
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming]
+          - keywords_any: [event-driven, events, kafka]
+    - id: data-sync
+      name: Data synchronisation / CDC between legacy and new stores
+      layer: data
+      when:
+        technologies_any: [data_migration, database_migration]
+    - id: k8s
+      name: Container platform (Kubernetes / managed containers)
+      layer: platform
+      when:
+        answers:
+          application_modernization:modernization-approach: [containerize, strangler]
+    - id: mainframe-integration
+      name: Mainframe integration / offload
+      layer: legacy
+      when:
+        keywords_any: [mainframe, cobol, cics, db2]
+    - {id: cicd, name: CI/CD and observability, layer: operations, core: true}
+  considerations: [Pick seams with high change frequency first., Keep data ownership clear during co-existence.]

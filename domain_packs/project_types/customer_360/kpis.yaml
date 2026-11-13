@@ -1,0 +1,3 @@
+- {id: match-rate, name: Customer match rate, description: Share of source customer records linked to a golden record., unit: "%", direction: higher_is_better, category: data}
+- {id: profile-completeness, name: Profile completeness, description: Share of priority attributes populated per customer., unit: "%", direction: higher_is_better, category: data}
+- {id: customer-lifetime-value, name: Customer lifetime value, description: Projected value of a customer relationship., unit: currency, direction: higher_is_better, category: business}

@@ -1,0 +1,136 @@
+key: cpg
+name: Consumer Packaged Goods
+kind: industry
+version: 1.0.0
+description: Consumer packaged goods / FMCG manufacturers covering demand planning, trade promotion, sales and distribution, supply chain, revenue growth management and consumer analytics.
+aliases: [CPG, FMCG, consumer goods, fast-moving consumer goods, consumer products, food and beverage, personal care, household products]
+sort_order: 45
+sub_domains:
+  - key: demand_planning
+    name: Demand Planning and S&OP
+    description: Statistical forecasting, consensus demand planning and sales and operations planning.
+    keywords: [demand planning, demand forecast, s&op, sales and operations planning, ibp, integrated business planning, consensus forecast, forecast accuracy, demand sensing]
+  - key: trade_promotion
+    name: Trade Promotion Management and Optimisation
+    description: Trade spend planning, promotion execution, deductions and post-event analysis.
+    keywords: [trade promotion, tpm, tpo, trade spend, promotion roi, deductions, claims settlement, accruals, retailer promotion, trade funds]
+  - key: revenue_growth_management
+    name: Revenue Growth Management
+    description: Pricing, pack-price architecture, mix and promotion strategy.
+    keywords: [revenue growth management, rgm, price pack architecture, net revenue management, price elasticity, mix management, list price]
+  - key: sales_analytics
+    name: Sales Analytics and Key Account Management
+    description: Sell-in and sell-out analytics, key account plans and retail execution.
+    keywords: [sell-in, sell-out, key account management, retail execution, perfect store, field sales, secondary sales, primary sales, account plan]
+  - key: distribution
+    name: Distribution and Route-to-Market
+    description: Distributor management, DMS, general trade, van sales and route-to-market.
+    keywords: [distributor, distributor management system, dms, route to market, general trade, modern trade, van sales, beat plan, outlet coverage, numeric distribution]
+  - key: supply_chain
+    name: Supply Chain and Logistics
+    description: Supply planning, procurement, manufacturing, warehousing and transportation.
+    keywords: [supply planning, procurement, co-manufacturer, warehousing, transportation, otif, fill rate, logistics, inventory optimization, control tower]
+  - key: consumer_analytics
+    name: Consumer Analytics and Insights
+    description: Consumer research, panel data, social listening and brand health.
+    keywords: [consumer insights, consumer panel, nielsen, circana, kantar, brand health, social listening, market share, household penetration, consumer research]
+  - key: marketing_analytics
+    name: Marketing and Media Analytics
+    description: Marketing mix modelling, media effectiveness and first-party data.
+    keywords: [marketing mix modeling, mmm, media effectiveness, brand marketing, first-party data, digital marketing, attribution, media spend]
+  - key: ecommerce_d2c
+    name: E-commerce and Direct-to-Consumer
+    description: Marketplace, quick commerce, retailer.com and direct-to-consumer channels.
+    keywords: [d2c, direct to consumer, digital shelf, amazon vendor central, quick commerce, retailer.com, content syndication, ratings and reviews]
+  - key: product_lifecycle
+    name: Product Innovation and Lifecycle
+    description: New product development, formulation, packaging and regulatory labelling.
+    keywords: [new product development, npd, formulation, packaging, plm, product lifecycle, label compliance, sustainability, recyclable packaging]
+detection:
+  keywords:
+    cpg: 5
+    fmcg: 5
+    consumer packaged goods: 5
+    consumer goods: 3.5
+    trade promotion: 4.5
+    trade spend: 4
+    sell-in: 4
+    sell-out: 4
+    distributor: 2
+    general trade: 4
+    modern trade: 4
+    nielsen: 3.5
+    circana: 4
+    kantar: 3
+    s&op: 3
+    otif: 3
+    brand: 1
+    retailer: 1
+    sku: 1.5
+    consumer: 0.8
+    shelf: 1
+    promotion: 1
+business_processes:
+  - "Statistical forecasting and demand sensing"
+  - "Sales and operations planning / IBP"
+  - "Trade promotion planning and execution"
+  - "Deduction and claims settlement"
+  - "Pricing and pack-price architecture"
+  - "Order to cash with retailers and distributors"
+  - "Distributor and secondary sales management"
+  - "Retail execution and perfect store audits"
+  - "Supply and production planning"
+  - "Procurement of raw and packaging materials"
+  - "Warehousing and transportation"
+  - "Consumer and market insights"
+  - "Marketing mix and media planning"
+  - "New product launch"
+capabilities:
+  - "Demand forecasting and demand sensing"
+  - "Trade promotion optimisation"
+  - "Revenue growth management analytics"
+  - "Sell-out and syndicated data harmonisation"
+  - "Supply chain control tower"
+  - "Distributor and outlet analytics"
+  - "Consumer 360 for D2C and loyalty"
+  - "Marketing mix modelling"
+  - "Digital shelf analytics"
+  - "Product and customer master data management"
+source_systems:
+  - "ERP (SAP S/4HANA / ECC, Oracle E-Business Suite, Microsoft Dynamics 365)"
+  - "Planning (SAP IBP, Kinaxis RapidResponse, o9 Solutions, Blue Yonder, Oracle Demantra)"
+  - "TPM / TPO (SAP Promotion Management, Salesforce Consumer Goods Cloud, Exceedra, Blacksmith, UpClear)"
+  - "Distributor management systems (Bizom, Salesforce, SAP DMS add-ons)"
+  - "Retail execution / SFA (Salesforce Consumer Goods Cloud, Repsly, Movista)"
+  - "Syndicated data (NielsenIQ, Circana, Kantar Worldpanel)"
+  - "Retailer data portals (Walmart Retail Link / Luminate, Kroger 84.51, Tesco dunnhumby)"
+  - "TMS and WMS (Blue Yonder, Manhattan, SAP TM / EWM)"
+  - "PLM (SAP PLM, Siemens Teamcenter, Trace One)"
+  - "Marketing platforms and CDP"
+data_entities:
+  - "Product / SKU"
+  - "Brand"
+  - "Customer (retailer / distributor)"
+  - "Outlet / store"
+  - "Consumer"
+  - "Sales order"
+  - "Shipment"
+  - "Sell-out sales"
+  - "Promotion / trade event"
+  - "Trade spend / accrual"
+  - "Deduction"
+  - "Forecast"
+  - "Price list"
+  - "Inventory"
+  - "Material / BOM"
+  - "Market share"
+integration_patterns:
+  - "EDI with retailers (850, 855, 856, 810)"
+  - "Retailer POS data feeds and portals"
+  - "Syndicated data file deliveries"
+  - "Distributor DMS uploads and APIs"
+  - "ERP batch extracts and SAP connectors"
+  - "Planning system integration (IBP / Kinaxis APIs)"
+  - "Data sharing / clean rooms with retailers"
+related_technologies: [databricks, snowflake, sap_integration, salesforce_integration, power_bi, machine_learning, master_data_management, data_quality]
+related_project_types: [demand_forecasting, customer_360, bi_modernization, data_platform_modernization, recommendation_engine]

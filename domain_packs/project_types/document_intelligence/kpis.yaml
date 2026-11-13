@@ -1,0 +1,18 @@
+- id: di-stp-rate
+  name: Straight-through processing rate
+  description: Share of documents processed without human touch.
+  unit: '%'
+  direction: higher_is_better
+  category: operations
+- id: di-field-accuracy
+  name: Field extraction accuracy
+  description: Share of extracted fields that are correct.
+  unit: '%'
+  direction: higher_is_better
+  category: quality
+- id: di-handling-time
+  name: Average handling time
+  description: Time to process a document end to end.
+  unit: minutes
+  direction: lower_is_better
+  category: operations

@@ -1,0 +1,7 @@
+system_addition: |
+  Use travel and hospitality terminology (traveller, PNR, booking, segment, room night, RevPAR, load factor, loyalty member).
+  Highlight traveller identity resolution, PCI DSS for booking payments, government passenger data regimes (API/PNR),
+  peak and disruption resilience, and partner data rights (GDS, OTAs, franchisees).
+stage_additions:
+  discovery: Ask which PSS/PMS/CRS/GDS systems, loyalty platforms and operational feeds are in scope.
+extraction_hints: Map "passenger", "pax", "guest" and "rider" to Traveller; map "reservation" and "order" to Booking; map "IROPS" to Irregular Operations.

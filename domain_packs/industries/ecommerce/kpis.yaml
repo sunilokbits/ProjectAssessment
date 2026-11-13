@@ -1,0 +1,10 @@
+- {id: conversion-rate, name: Conversion rate, description: Share of sessions resulting in an order., unit: "%", direction: higher_is_better, category: growth}
+- {id: aov, name: Average order value, description: Revenue divided by number of orders., unit: currency, direction: higher_is_better, category: revenue}
+- {id: gmv, name: Gross merchandise value, description: Total value of goods sold through the platform., unit: currency, direction: higher_is_better, category: revenue, sub_domains: [marketplace]}
+- {id: take-rate, name: Take rate, description: Marketplace revenue as a share of GMV., unit: "%", direction: higher_is_better, category: revenue, sub_domains: [marketplace, seller_management]}
+- {id: cart-abandonment, name: Cart abandonment rate, description: Share of carts not converted to orders., unit: "%", direction: lower_is_better, category: growth, sub_domains: [payments_checkout, d2c, marketplace]}
+- {id: payment-authorisation-rate, name: Payment authorisation rate, description: Share of payment attempts authorised., unit: "%", direction: higher_is_better, category: payments, sub_domains: [payments_checkout]}
+- {id: chargeback-rate, name: Chargeback rate, description: Chargebacks as a share of transactions., unit: "%", direction: lower_is_better, category: risk, sub_domains: [payments_checkout, marketplace]}
+- {id: return-rate, name: Return rate, description: Share of items returned., unit: "%", direction: lower_is_better, category: operations, sub_domains: [fulfilment, d2c, marketplace]}
+- {id: search-conversion, name: Search conversion rate, description: Share of searches leading to a purchase., unit: "%", direction: higher_is_better, category: discovery, sub_domains: [search_discovery]}
+- {id: customer-lifetime-value, name: Customer lifetime value, description: Expected margin from a customer over their lifetime., unit: currency, direction: higher_is_better, category: customer}

@@ -1,0 +1,4 @@
+# Data Platform technology pack - scoring
+dimensions:
+  - {key: data_platform_readiness, name: Data Platform Readiness, group: technology, weight: 1.0, description: 'Platform operating model, landing
+      zone, multi-domain onboarding, governance and FinOps readiness.'}

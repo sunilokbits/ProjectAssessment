@@ -1,0 +1,25 @@
+# Data Migration technology pack - recommendations
+- {id: dm-mock-runs, title: Run multiple mock migrations, text: Plan at least two full mock migrations with reconciliation before cutover., category: delivery,
+  priority: high}
+- id: dm-phased
+  title: Phase the cutover
+  text: Migrate in phases by entity or business unit to reduce risk.
+  category: operations
+  priority: medium
+  decision_key: data_cutover_approach
+  decision_option: phased
+  when:
+    answers:
+      data_migration:dm-cutover-approach: [phased, unknown]
+- id: dm-big-bang
+  title: Plan a single big-bang cutover
+  text: Use one rehearsed cutover where coexistence of old and new systems is impractical.
+  category: operations
+  priority: medium
+  decision_key: data_cutover_approach
+  decision_option: big_bang
+  when:
+    answers:
+      data_migration:dm-cutover-approach: [big_bang]
+- {id: dm-archive, title: Archive instead of migrating all history, text: Migrate required history only; move older data to a queryable archive.,
+  category: data, priority: medium}

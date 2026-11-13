@@ -1,0 +1,18 @@
+- id: mine-value-chain-platform
+  name: Mine value-chain data platform
+  description: Replicates OT, fleet, geology and plant data from remote sites through an industrial DMZ into a platform that reconciles the value chain and supports reliability and safety analytics.
+  use_cases: [Mine-to-mill reconciliation, Predictive maintenance, Integrated operations centre, Environmental monitoring]
+  layer_order: [sources, edge, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: mine-sources, name: "FMS, historian, geology, LIMS, EAM and EHS sources", layer: sources, core: true}
+    - {id: site-edge, name: Site edge processing and store-and-forward, layer: edge, when: {keywords_any: [remote site, satellite, bandwidth, offline]}}
+    - {id: industrial-dmz, name: Industrial DMZ with one-way replication, layer: security, core: true}
+    - {id: telemetry-stream, name: Equipment and plant telemetry streaming, layer: ingestion, when: {technologies_any: [iot, real_time_streaming]}}
+    - {id: value-chain-model, name: "Mine-to-mill data model and reconciliation", layer: processing, when: {sub_domains_any: [extraction_operations, processing, exploration]}}
+    - {id: reliability-models, name: Equipment health and failure prediction, layer: processing, when: {any_of: [{project_types_any: [predictive_maintenance]}, {sub_domains_any: [fleet_equipment]}]}}
+    - {id: geology-store, name: Governed geological data store, layer: storage, when: {sub_domains_any: [exploration]}}
+    - {id: tailings-monitoring, name: Tailings and environmental monitoring dashboards with TARP triggers, layer: consumption, when: {sub_domains_any: [environmental]}}
+    - {id: ioc-dashboards, name: Integrated operations centre dashboards, layer: consumption, core: true}
+  considerations:
+    - Never route safety-critical alarms solely through the analytics platform.
+    - Design for intermittent connectivity from remote sites.

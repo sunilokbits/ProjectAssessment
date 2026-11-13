@@ -1,0 +1,24 @@
+- term: Historian
+  definition: Time-series database for industrial process data
+  synonyms:
+  - process historian
+  entity_type: system
+  category: technology
+- term: OPC UA
+  definition: Industrial interoperability standard
+  entity_type: concept
+  category: integration
+- term: MQTT
+  definition: Lightweight publish/subscribe messaging protocol
+  entity_type: concept
+  category: integration
+- term: Tag
+  definition: A named sensor signal or data point
+  synonyms:
+  - sensor tag
+  entity_type: entity
+  category: data
+- term: Edge Gateway
+  definition: On-site device that collects and pre-processes telemetry
+  entity_type: system
+  category: technology

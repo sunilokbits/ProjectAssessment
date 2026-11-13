@@ -1,0 +1,48 @@
+- id: dataops-version-control
+  text: Are pipelines, transformations and schemas version-controlled and deployed via CI/CD?
+  category: operations
+  dimension: dataops_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: dataops-testing
+  text: Are automated data tests (schema, row counts, business rules) run in pipelines?
+  category: quality
+  dimension: dataops_readiness
+  answer_type: yes_no
+- id: dataops-orchestration
+  text: Which orchestration approach is used?
+  category: technology
+  dimension: dataops_readiness
+  answer_type: single_choice
+  options:
+  - value: manual
+    label: Manual / cron scripts
+    score: 0.2
+  - value: legacy
+    label: Legacy scheduler
+    score: 0.5
+  - value: modern
+    label: Modern orchestrator (Airflow, platform jobs, Dagster)
+    score: 1
+- id: dataops-observability
+  text: Is pipeline observability (freshness, failures, SLA breaches) monitored with alerting?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: dataops-contracts
+  text: Are data contracts agreed between producers and consumers?
+  category: governance
+  dimension: dataops_readiness
+  answer_type: yes_no
+- id: dataops-environments
+  text: Can pipelines be tested in isolated environments with representative data?
+  category: operations
+  dimension: dataops_readiness
+  answer_type: yes_no
+- id: dataops-skills
+  text: How experienced is the client team with DataOps practices (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

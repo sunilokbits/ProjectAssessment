@@ -1,0 +1,19 @@
+- id: sf-cdc
+  title: Use CDC / platform events for incremental changes
+  text: Avoid polling; subscribe to change events for near-real-time updates.
+  category: architecture
+  priority: medium
+- id: sf-zero-copy
+  title: Use zero-copy sharing between Data Cloud and the lakehouse
+  text: Share data bi-directionally without copies where both platforms support it.
+  category: architecture
+  priority: medium
+  decision_key: sf_data_path
+  decision_option: zero_copy
+- id: sf-replicate
+  title: Replicate Salesforce data into the data platform
+  text: Land Salesforce objects in the lakehouse via managed connectors for broad analytics.
+  category: architecture
+  priority: medium
+  decision_key: sf_data_path
+  decision_option: replicate

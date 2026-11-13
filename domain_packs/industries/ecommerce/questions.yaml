@@ -1,0 +1,75 @@
+- id: pci-scope
+  text: How is cardholder data handled at checkout, and does any PAN reach systems in scope of this project?
+  category: security
+  dimension: payment_trust_controls
+  answer_type: single_choice
+  critical: true
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: pan_stored, label: PAN stored or processed in our systems, score: 0.2}
+    - {value: hosted_fields, label: "Hosted fields / redirect - SAQ A or A-EP", score: 0.9}
+    - {value: tokens_only, label: Only PSP tokens reach our systems, score: 1}
+- id: clickstream-quality
+  text: How complete and governed is clickstream tracking (event taxonomy, consent, bot filtering, identity stitching)?
+  category: data
+  dimension: commerce_data_readiness
+  answer_type: scale
+- id: customer-identity
+  text: How are guest and logged-in customers stitched across devices and channels?
+  category: data
+  dimension: commerce_data_readiness
+  answer_type: single_choice
+  weight: 1.5
+  options:
+    - {value: none, label: No stitching, score: 0.1}
+    - {value: login_only, label: Logged-in only, score: 0.5}
+    - {value: deterministic, label: Deterministic stitching across channels, score: 0.8}
+    - {value: governed_graph, label: Governed identity graph with consent, score: 1}
+- id: catalogue-quality
+  text: How complete and consistent are product attributes, categories and images in the catalogue / PIM?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+  sub_domains: [marketplace, search_discovery, d2c, seller_management]
+- id: consent-tracking
+  text: Is consent for cookies, tracking and marketing captured and enforced before data reaches analytics and ad platforms?
+  category: privacy
+  dimension: privacy_protection
+  critical: true
+- id: seller-verification
+  text: Are seller identity verification and trader information requirements (e.g. INFORM Consumers Act, DSA KYBC) implemented?
+  category: compliance
+  dimension: payment_trust_controls
+  sub_domains: [marketplace, seller_management]
+- id: fraud-tooling
+  text: Which fraud prevention tools and chargeback data are available to the project?
+  category: security
+  dimension: payment_trust_controls
+  answer_type: text
+  sub_domains: [payments_checkout, marketplace]
+- id: order-reconciliation
+  text: Do orders, payments, refunds and settlements reconcile between the commerce platform, PSP and finance?
+  category: data
+  dimension: commerce_data_readiness
+  sub_domains: [payments_checkout, marketplace, d2c]
+- id: peak-trading
+  text: Is the solution sized and tested for peak trading events (Black Friday, Singles' Day, festive sales)?
+  category: architecture
+  dimension: architecture_fit
+- id: real-time-personalisation
+  text: What latency is required for personalisation and recommendations on site (batch, near real-time, in-session)?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: text
+  sub_domains: [search_discovery, d2c, marketplace]
+  when: {project_types_any: [recommendation_engine, customer_360]}
+- id: returns-data
+  text: Are return reasons and refund outcomes captured in structured form linked to orders and products?
+  category: data
+  dimension: data_quality
+  sub_domains: [fulfilment]
+- id: pricing-fairness
+  text: Will dynamic or personalised pricing be used, and has it been reviewed against consumer protection rules?
+  category: compliance
+  dimension: privacy_protection
+  when: {technologies_any: [machine_learning, advanced_analytics, generative_ai, agentic_ai]}

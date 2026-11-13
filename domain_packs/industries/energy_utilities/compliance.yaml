@@ -1,0 +1,65 @@
+- id: nerc-cip
+  name: NERC Critical Infrastructure Protection Reliability Standards (CIP-002 to CIP-014)
+  short_name: NERC CIP
+  geographies: [US, CA]
+  sub_domains: [electricity, grid_analytics, renewable_energy]
+  applicability_note: Applies to registered entities operating Bulk Electric System assets; scope depends on BES Cyber System categorisation.
+- id: tsa-pipeline
+  name: TSA Security Directives for Pipeline Owners and Operators
+  short_name: TSA Pipeline SD
+  geographies: [US]
+  sub_domains: [oil_gas]
+  applicability_note: Applies to TSA-designated critical hazardous liquid and natural gas pipelines.
+- id: phmsa
+  name: PHMSA Pipeline Safety Regulations (49 CFR Parts 190-199)
+  short_name: PHMSA
+  geographies: [US]
+  sub_domains: [oil_gas]
+- id: ferc
+  name: FERC regulations and market reporting obligations
+  short_name: FERC
+  geographies: [US]
+  sub_domains: [electricity, oil_gas, renewable_energy]
+- id: nis2
+  name: NIS2 Directive (essential entities - energy and water sectors)
+  short_name: NIS2
+  geographies: [EU, EEA]
+- id: remit
+  name: Regulation on Wholesale Energy Market Integrity and Transparency
+  short_name: REMIT
+  geographies: [EU, EEA]
+  sub_domains: [electricity, oil_gas, renewable_energy]
+- id: uk-nis
+  name: UK Network and Information Systems Regulations 2018 (energy and water)
+  short_name: UK NIS
+  geographies: [UK]
+- id: iec-62443
+  name: ISA/IEC 62443 Industrial Automation and Control Systems Security
+  short_name: IEC 62443
+  geographies: [GLOBAL]
+  applicability_note: Widely adopted standard for OT security; often contractually required rather than legally mandated.
+- id: gdpr-smart-meter
+  name: GDPR as applied to smart meter consumption data
+  short_name: GDPR
+  geographies: [EU, EEA, UK]
+  data_classifications_any: [pii]
+  sub_domains: [smart_metering, electricity, water]
+- id: sdwa
+  name: Safe Drinking Water Act and America's Water Infrastructure Act (AWIA) risk and resilience requirements
+  short_name: SDWA / AWIA
+  geographies: [US]
+  sub_domains: [water]
+- id: cea-cyber
+  name: CEA (Cyber Security in Power Sector) Guidelines
+  short_name: CEA Cyber Guidelines
+  geographies: [IN]
+  sub_domains: [electricity, renewable_energy, grid_analytics]
+- id: aescsf
+  name: Australian Energy Sector Cyber Security Framework and SOCI Act obligations
+  short_name: AESCSF / SOCI
+  geographies: [AU]
+- id: ghg-reporting
+  name: Greenhouse gas emissions reporting (e.g. EPA GHGRP, EU ETS, CSRD)
+  short_name: GHG Reporting
+  geographies: [GLOBAL]
+  applicability_note: Specific scheme depends on jurisdiction and facility thresholds.

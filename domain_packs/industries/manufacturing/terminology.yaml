@@ -1,0 +1,19 @@
+- {term: Plant, definition: Manufacturing site containing production lines and equipment, synonyms: [factory, site, facility, mill, works], entity_type: entity, category: data}
+- {term: Equipment, definition: Machine or asset used in production, synonyms: [asset, machine, unit, device, tool], entity_type: entity, category: data}
+- {term: Work Order, definition: Maintenance job to inspect or repair equipment, synonyms: [maintenance order, job, service order, pm order], entity_type: entity, category: process}
+- {term: Production Order, definition: Instruction to produce a quantity of material, synonyms: [manufacturing order, process order, job order, batch order, shop order], entity_type: entity, category: process}
+- {term: BOM, definition: Bill of materials listing components required for a product, synonyms: [bill of materials, recipe, formula, parts list], entity_type: entity, category: data}
+- {term: OEE, definition: "Overall equipment effectiveness = availability x performance x quality", synonyms: [overall equipment effectiveness, teep], entity_type: metric, category: reporting}
+- {term: Downtime, definition: Period when equipment is not producing, synonyms: [stoppage, outage, breakdown, idle time, unplanned stop], entity_type: event, category: data}
+- {term: Quality, definition: Conformance of product to specifications, synonyms: [qc, qa, inspection, conformance, defect rate], entity_type: concept, category: process}
+- {term: Routing, definition: Sequence of operations to manufacture a product, synonyms: [operation sequence, process plan, recipe], entity_type: entity, category: data, sub_domains: [discrete_manufacturing, production_planning, process_manufacturing]}
+- {term: Work Center, definition: Location or resource where operations are performed, synonyms: [work cell, workstation, resource, line], entity_type: entity, category: data}
+- {term: MES, definition: Manufacturing execution system managing shop-floor execution, synonyms: [mom, manufacturing execution system, manufacturing operations management], entity_type: system, category: integration}
+- {term: Historian, definition: Time-series database for process and sensor data, synonyms: [pi, osisoft pi, process historian, data historian], entity_type: system, category: integration, sub_domains: [industrial_iot, process_manufacturing, smart_factory, predictive_maintenance]}
+- {term: PLC, definition: Programmable logic controller controlling machinery, synonyms: [controller, programmable logic controller], entity_type: system, category: integration, sub_domains: [industrial_iot, smart_factory, discrete_manufacturing]}
+- {term: SCADA, definition: Supervisory control and data acquisition system, synonyms: [hmi, dcs, control system], entity_type: system, category: integration}
+- {term: Tag, definition: Named data point from a sensor or controller, synonyms: [sensor tag, data point, signal, point], entity_type: entity, category: data, sub_domains: [industrial_iot, smart_factory, predictive_maintenance]}
+- {term: Non-Conformance, definition: Product or process deviation from specification, synonyms: [ncr, defect, deviation, reject], entity_type: event, category: process, sub_domains: [quality]}
+- {term: Scrap, definition: Material or product discarded as unusable, synonyms: [waste, reject, yield loss], entity_type: metric, category: reporting}
+- {term: ISA-95, definition: Standard for enterprise-control system integration and equipment hierarchy, synonyms: [isa 95, iec 62264, b2mml], entity_type: concept, category: integration}
+- {term: MTBF, definition: Mean time between failures, synonyms: [mean time between failures], entity_type: metric, category: reporting, sub_domains: [predictive_maintenance]}

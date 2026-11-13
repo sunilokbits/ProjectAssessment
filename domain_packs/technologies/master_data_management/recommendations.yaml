@@ -1,0 +1,19 @@
+- id: mdm-one-domain
+  title: Start with one master data domain
+  text: Prove value on the domain tied to the priority use case before expanding.
+  category: delivery
+  priority: high
+- id: mdm-consolidation-first
+  title: Begin with consolidation style
+  text: Create an analytical golden record first; evolve to coexistence when operational sync is needed.
+  category: architecture
+  priority: medium
+  decision_key: mdm_style
+  decision_option: consolidation
+- id: mdm-centralised
+  title: Implement centralised authoring
+  text: Author master data in the MDM hub where process control and data creation governance are priorities.
+  category: architecture
+  priority: medium
+  decision_key: mdm_style
+  decision_option: centralised

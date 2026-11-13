@@ -1,0 +1,35 @@
+# Database Migration technology pack - risks
+- id: dbm-code-conversion
+  title: Procedural code conversion effort underestimated
+  category: technology
+  likelihood: 4
+  impact: 4
+  mitigation: Run automated assessment (SCT / SSMA / ora2pg); estimate by complexity; plan manual rework.
+  indicators: [pl/sql, packages, stored procedures, triggers]
+  when:
+    answers:
+      database_migration:dbm-target-type: [heterogeneous, unknown]
+- id: dbm-performance
+  title: Query performance regressions on new engine
+  category: technology
+  likelihood: 3
+  impact: 4
+  mitigation: Capture production workload; benchmark and tune before cutover.
+  indicators: [performance, query plans]
+- id: dbm-hidden-consumers
+  title: Unknown applications / reports connected to the database
+  category: integration
+  likelihood: 3
+  impact: 3
+  mitigation: Analyse connection logs; inventory linked servers and DB links.
+  indicators: [db link, linked server]
+- id: dbm-replication-lag
+  title: Replication lag or failures during online migration
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Validate CDC prerequisites (logging, primary keys); monitor lag; rehearse.
+  indicators: [cdc, replication]
+  when:
+    answers:
+      database_migration:dbm-downtime: [minutes, zero]

@@ -1,0 +1,23 @@
+nfrs:
+  - {id: availability, text: "Availability target and maintenance windows (e.g. 99.5% / 99.9%).", category: availability}
+  - {id: rto-rpo, text: Recovery time and recovery point objectives for disaster recovery., category: availability}
+  - {id: performance, text: Response time / data latency targets for key user journeys and pipelines., category: performance}
+  - {id: scalability, text: "Expected growth in data volume, users and workloads over 3 years.", category: scalability}
+  - {id: auditability, text: Audit logging of access and changes for regulated data., category: security}
+assumptions:
+  - {id: client-access, text: "Client will provide timely access to systems, data and environments.", category: delivery}
+  - {id: sme-time, text: Client SMEs will be available as per the agreed RACI., category: delivery}
+  - {id: licences, text: Required software licences and cloud subscriptions are provided by the client., category: commercial}
+dependencies:
+  - {id: security-approval, text: Client security architecture approval of the solution design., category: security}
+  - {id: network, text: Network connectivity and firewall changes delivered by the client infrastructure team., category: infrastructure}
+  - {id: source-owners, text: Source-system owners available to support extraction and reconciliation., category: data}
+security_considerations:
+  - {id: least-privilege, text: Least-privilege role-based access with periodic access reviews., category: security}
+  - {id: secrets, text: "Secrets and keys managed in a vault; no credentials in code.", category: security}
+data_quality_checks:
+  - {id: completeness, text: Completeness of mandatory attributes., category: data}
+  - {id: uniqueness, text: Uniqueness of business keys., category: data}
+  - {id: reconciliation, text: Record counts and totals reconcile with source., category: data}
+clarification_questions:
+  - {id: decision-makers, text: "Who makes the final decision on solution selection and when?", category: delivery}

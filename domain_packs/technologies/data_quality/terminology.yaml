@@ -1,0 +1,16 @@
+- term: Data Profiling
+  definition: Statistical analysis of data content and structure
+  entity_type: process
+  category: data
+- term: Data Quality Dimension
+  definition: Aspect of quality such as completeness, validity, accuracy, timeliness, uniqueness
+  entity_type: concept
+  category: data
+- term: Quarantine
+  definition: Isolation of records failing quality rules
+  entity_type: process
+  category: data
+- term: Data Observability
+  definition: Automated monitoring of freshness, volume, schema and distribution
+  entity_type: concept
+  category: operations

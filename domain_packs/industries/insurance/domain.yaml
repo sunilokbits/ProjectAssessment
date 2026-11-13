@@ -1,0 +1,149 @@
+key: insurance
+name: Insurance
+kind: industry
+version: 1.0.0
+description: Life, health, general and property and casualty insurance, reinsurance, claims, underwriting, policy administration, distribution and actuarial functions.
+aliases: [insurer, insurance company, assurance, insurtech, carrier]
+sort_order: 20
+sub_domains:
+  - key: life_insurance
+    name: Life Insurance
+    description: Term, whole life, endowment, ULIP, annuities and pensions.
+    keywords: [life insurance, term life, whole life, endowment, ulip, annuity, pension, mortality, policyholder, sum assured, surrender value]
+  - key: health_insurance
+    name: Health Insurance
+    description: Individual and group health, medical indemnity and TPA operations.
+    keywords: [health insurance, medical insurance, mediclaim, group health, tpa, cashless, network hospital, pre-authorization, health plan]
+  - key: general_insurance
+    name: General Insurance
+    description: Non-life lines such as motor, travel, marine, liability and SME packages.
+    keywords: [general insurance, non-life, motor insurance, travel insurance, marine insurance, liability insurance, sme package]
+  - key: property_casualty
+    name: Property and Casualty
+    description: Personal and commercial property, casualty, workers compensation and specialty lines.
+    keywords: [property and casualty, p&c, homeowners, commercial property, casualty, workers compensation, auto insurance, catastrophe, cat modelling, specialty lines]
+  - key: reinsurance
+    name: Reinsurance
+    description: Treaty and facultative reinsurance, retrocession and bordereaux management.
+    keywords: [reinsurance, treaty, facultative, retrocession, ceded, cedant, bordereaux, quota share, excess of loss, reinsurer]
+  - key: claims
+    name: Claims
+    description: First notice of loss through adjudication, settlement, recovery and litigation.
+    keywords: [claims, fnol, first notice of loss, claim adjuster, loss adjuster, claim settlement, subrogation, salvage, claims leakage, reserving]
+  - key: underwriting
+    name: Underwriting
+    description: Risk selection, rating, pricing and acceptance of new and renewal business.
+    keywords: [underwriting, underwriter, risk selection, rating engine, premium rating, medical underwriting, risk appetite, quote, binding authority]
+  - key: policy_administration
+    name: Policy Administration
+    description: Policy issuance, endorsements, renewals, billing and lapse management.
+    keywords: [policy administration, policy issuance, endorsement, renewal, premium billing, lapse, reinstatement, policy servicing]
+  - key: distribution
+    name: Distribution and Channels
+    description: Agency, broker, bancassurance, direct and digital aggregator channels.
+    keywords: [agent, agency, broker, bancassurance, aggregator, commission, intermediary, distribution channel, mga]
+  - key: actuarial
+    name: Actuarial and Finance
+    description: Reserving, pricing models, capital modelling and IFRS 17 / Solvency reporting.
+    keywords: [actuarial, reserving, ibnr, loss triangle, ifrs 17, solvency ii, capital model, embedded value, contractual service margin, csm]
+  - key: insurtech
+    name: InsurTech and Embedded Insurance
+    description: Digital-first carriers, usage-based insurance and embedded insurance partnerships.
+    keywords: [insurtech, embedded insurance, usage-based insurance, ubi, telematics insurance, parametric insurance, digital insurer]
+detection:
+  keywords:
+    insurance: 3
+    insurer: 3
+    policyholder: 3.5
+    premium: 1.5
+    claims: 1.5
+    fnol: 4
+    underwriting: 2.5
+    reinsurance: 4
+    actuarial: 3.5
+    ibnr: 4
+    ifrs 17: 4
+    solvency ii: 4
+    irdai: 4
+    naic: 4
+    guidewire: 4
+    duck creek: 4
+    sapiens: 3.5
+    majesco: 3.5
+    bordereaux: 4
+    sum assured: 3.5
+    loss ratio: 3
+    combined ratio: 3.5
+    broker: 1
+    policy: 0.5
+    coverage: 1
+business_processes:
+  - "Product design and filing"
+  - "Quote and new business"
+  - "Underwriting and risk selection"
+  - "Policy issuance and servicing"
+  - "Premium billing and collections"
+  - "Renewals and lapse management"
+  - "First notice of loss"
+  - "Claims adjudication and settlement"
+  - "Subrogation and recoveries"
+  - "Reinsurance ceding and bordereaux"
+  - "Actuarial reserving and pricing"
+  - "Regulatory and statutory reporting"
+  - "Agent and broker commission management"
+  - "Fraud investigation"
+capabilities:
+  - "Policyholder 360"
+  - "Underwriting decision support"
+  - "Pricing and rating analytics"
+  - "Claims triage and automation"
+  - "Claims fraud detection"
+  - "Loss reserving and IFRS 17 reporting"
+  - "Solvency and capital reporting"
+  - "Catastrophe exposure management"
+  - "Distribution performance analytics"
+  - "Retention and lapse prediction"
+  - "Document intelligence for claims and proposals"
+source_systems:
+  - "Policy administration (Guidewire PolicyCenter, Duck Creek Policy, Sapiens, Majesco, EIS, Ebix)"
+  - "Claims system (Guidewire ClaimCenter, Duck Creek Claims, Sapiens ClaimsPro)"
+  - "Billing (Guidewire BillingCenter, Duck Creek Billing)"
+  - "Life admin (FAST, Oracle Insurance Policy Administration, LifePRO, Ingenium)"
+  - "Rating engines"
+  - "Reinsurance system (SAP FS-RI, Sapiens Reinsurance)"
+  - "Actuarial tools (Moody's AXIS, Prophet, WTW ResQ, Igloo)"
+  - "IFRS 17 engines (SAP FPSL, Moody's, Aptitude)"
+  - "Catastrophe models (Verisk/AIR, Moody's RMS)"
+  - "Agent portal and CRM (Salesforce Financial Services Cloud)"
+  - "Document management and imaging"
+  - "General ledger"
+data_entities:
+  - "Policyholder"
+  - "Insured"
+  - "Policy"
+  - "Coverage"
+  - "Rider"
+  - "Premium"
+  - "Quote"
+  - "Claim"
+  - "Claimant"
+  - "Loss event"
+  - "Reserve"
+  - "Payment"
+  - "Agent / broker"
+  - "Commission"
+  - "Reinsurance treaty"
+  - "Bordereau"
+  - "Product"
+  - "Beneficiary"
+  - "Exposure"
+integration_patterns:
+  - "ACORD XML / ACORD AL3 messaging"
+  - "Batch policy and claims extracts"
+  - "CDC from policy administration systems"
+  - "Broker and aggregator APIs"
+  - "Bordereaux file exchange"
+  - "Third-party data enrichment APIs (MVR, credit, property, medical)"
+  - "Document / image ingestion"
+related_technologies: [databricks, snowflake, power_bi, machine_learning, generative_ai, data_governance, salesforce_integration]
+related_project_types: [customer_360, fraud_detection, regulatory_reporting, document_intelligence, churn_prediction, data_platform_modernization]

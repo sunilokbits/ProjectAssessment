@@ -1,0 +1,5 @@
+- {id: token-only-analytics, title: Keep analytics PSP-token-only, text: "Use hosted fields or redirects and only PSP tokens downstream to minimise PCI scope.", category: security, priority: high, decision_key: checkout_pci_approach, decision_option: hosted_fields_tokens}
+- {id: server-side-tracking, title: Move to consent-aware server-side tracking, text: "Collect events server-side with consent flags and bot filtering.", category: data, priority: high}
+- {id: identity-graph, title: Build a governed customer identity graph, text: "Stitch guest and logged-in activity deterministically before personalisation.", category: data, priority: medium, when: {project_types_any: [customer_360, recommendation_engine]}}
+- {id: daily-reconciliation, title: Automate daily order-to-settlement reconciliation, category: data, priority: medium, sub_domains: [payments_checkout, marketplace], text: "Reconcile orders, PSP settlements, refunds and seller payouts daily."}
+- {id: peak-readiness, title: Run a peak readiness programme, text: "Load test, define change freezes and scale plans ahead of peak trading.", category: delivery, priority: medium}

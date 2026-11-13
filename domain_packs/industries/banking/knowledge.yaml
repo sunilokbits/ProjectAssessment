@@ -1,0 +1,33 @@
+nfrs:
+  - {id: eod-window, text: Processing must complete within the bank's EOD / BOD batch window., category: performance}
+  - {id: retention, text: "Financial records retained per regulatory retention schedules (often 8-10 years).", category: compliance}
+  - {id: dr-rbi, text: DR drills and RTO/RPO aligned to the bank's business continuity policy., category: availability}
+assumptions:
+  - {id: gl-book-of-record, text: The general ledger remains the book of record for financial figures., category: data}
+  - {id: core-extract-access, text: Core banking team will provide extracts within agreed windows., category: data}
+dependencies:
+  - {id: infosec-approval, text: Bank information security and CISO approval., category: security}
+  - {id: outsourcing-committee, text: Outsourcing / cloud committee approval and regulator notification where required., category: compliance}
+  - {id: fincrime-signoff, text: Financial-crime compliance sign-off where KYC/AML data is affected., category: compliance}
+security_considerations:
+  - {id: maker-checker, text: Maker-checker controls for configuration and reference-data changes., category: security}
+  - {id: privileged-access, text: Privileged access management for production financial data., category: security}
+data_quality_checks:
+  - {id: balance-tieout, text: Account balances tie out to GL per product and currency., category: data}
+  - {id: txn-uniqueness, text: Transaction ids unique across intraday and EOD feeds., category: data}
+  - {id: kyc-completeness, text: Mandatory KYC attributes populated for active customers., category: data}
+reporting_requirements:
+  - {id: reg-returns, text: Regulatory returns and statutory reports with full audit trail., category: reporting}
+  - {id: mis, text: "Management information on portfolio, profitability and risk.", category: reporting}
+migration_concerns:
+  - {id: history-depth, text: Depth of transaction history to migrate and its archival format., category: data}
+  - {id: account-mapping, text: Mapping of legacy product/account codes to the new data model., category: data}
+ai_opportunities:
+  - {id: fraud-ml, text: ML-based fraud and anomaly detection on transactions., category: ai}
+  - {id: nba, text: Next-best-action and personalised offers., category: ai, sub_domains: [retail_banking, cards, wealth_management]}
+  - {id: kyc-docs, text: GenAI-assisted KYC document review and adverse media screening., category: ai}
+ai_risks:
+  - {id: fair-lending, text: Bias in credit decisions (fair lending / explainability obligations)., category: ai, sub_domains: [lending, mortgage, cards, fintech]}
+  - {id: customer-advice, text: GenAI producing unsuitable financial advice to customers., category: ai, sub_domains: [wealth_management, retail_banking]}
+clarification_questions:
+  - {id: reg-reports-list, text: Please list regulatory reports that consume in-scope data and their owners., category: compliance}

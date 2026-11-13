@@ -1,0 +1,14 @@
+- {term: Supporter, definition: Individual or organisation engaging with the charity, synonyms: [constituent, donor, member, contact], entity_type: entity, category: data}
+- {term: Gift, definition: Donation received from a supporter, synonyms: [donation, contribution, payment], entity_type: entity, category: data, sub_domains: [fundraising, donor_management]}
+- {term: Pledge, definition: Commitment to give in the future, synonyms: [commitment, regular gift, direct debit], entity_type: entity, category: data, sub_domains: [fundraising, donor_management]}
+- {term: Appeal, definition: Specific fundraising ask within a campaign, synonyms: [solicitation, ask, mailing], entity_type: entity, category: data, sub_domains: [fundraising]}
+- {term: Fund, definition: Accounting designation for income use, synonyms: [restricted fund, unrestricted fund, designated fund], entity_type: entity, category: financial}
+- {term: Grant, definition: Funding award with conditions and reporting obligations, synonyms: [award, contract, sub-grant], entity_type: entity, category: data, sub_domains: [grants]}
+- {term: Beneficiary, definition: Person or community served by a programme, synonyms: [client, participant, service user, recipient], entity_type: entity, category: data, sub_domains: [programs_impact]}
+- {term: Outcome Indicator, definition: Measure of change achieved by a programme, synonyms: [kpi, impact indicator, logframe indicator], entity_type: metric, category: impact, sub_domains: [programs_impact, grants]}
+- {term: Theory of Change, definition: Model linking activities to intended outcomes, synonyms: [logic model, logframe, results framework], entity_type: concept, category: impact, sub_domains: [programs_impact]}
+- {term: Gift Aid, definition: UK tax relief that increases eligible donations, synonyms: [gift aid declaration], entity_type: regulation, category: compliance, sub_domains: [fundraising]}
+- {term: Stewardship, definition: Activities that thank and retain donors, synonyms: [donor care, donor journey], entity_type: process, category: fundraising, sub_domains: [donor_management]}
+- {term: Major Gift, definition: Large donation managed through personal relationship, synonyms: [major donor, high-value gift, philanthropy], entity_type: concept, category: fundraising, sub_domains: [fundraising, donor_management]}
+- {term: Volunteer, definition: Person giving time without pay, synonyms: [helper, volunteer worker], entity_type: entity, category: data, sub_domains: [volunteer_management]}
+- {term: M&E, definition: Monitoring and evaluation of programmes, synonyms: [monitoring and evaluation, meal, mel], entity_type: process, category: impact, sub_domains: [programs_impact]}

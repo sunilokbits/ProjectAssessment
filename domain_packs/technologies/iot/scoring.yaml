@@ -1,0 +1,6 @@
+dimensions:
+- key: iot_readiness
+  name: IoT Readiness
+  group: technology
+  weight: 1.0
+  description: Device connectivity, protocols, edge, telemetry volumes, OT security and data contextualisation.

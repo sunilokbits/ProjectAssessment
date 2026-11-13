@@ -1,0 +1,104 @@
+- id: cpg-core-systems
+  text: Which ERP, planning, TPM and distributor systems are in scope, and how is data extracted from them today?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  equivalence_key: cpg_core_extract
+- id: product-customer-hierarchy
+  text: Are product (brand, category, SKU, pack) and customer (retailer, banner, distributor, outlet) hierarchies harmonised across ERP, TPM and external data?
+  category: data
+  dimension: commercial_data_harmonisation
+  answer_type: single_choice
+  options:
+    - {value: none, label: No common hierarchies, score: 0}
+    - {value: manual, label: Manual mapping tables maintained in spreadsheets, score: 0.3}
+    - {value: partial_mdm, label: MDM for some domains only, score: 0.6}
+    - {value: governed_mdm, label: Governed MDM for product and customer with external mappings, score: 1}
+  weight: 2
+  critical: true
+  equivalence_key: product_master
+- id: sellout-availability
+  text: Which sell-out data sources are available (retailer POS, syndicated, distributor secondary sales, e-commerce) and at what granularity and latency?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [sales_analytics, demand_planning, distribution, revenue_growth_management]
+- id: syndicated-licence
+  text: Do syndicated and retailer data licences permit the intended use, storage location and sharing with third parties (e.g. implementation partners, AI services)?
+  category: compliance
+  dimension: partner_data_governance
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not reviewed, score: 0}
+    - {value: restricted, label: Reviewed - restrictions affect scope, score: 0.5}
+    - {value: permitted, label: Reviewed - intended use permitted, score: 1}
+    - {value: na, label: No syndicated or retailer data in scope, score: 1}
+  critical: true
+- id: forecast-process
+  text: How mature is the demand planning and S&OP / IBP process?
+  category: business
+  dimension: planning_maturity
+  answer_type: scale
+  sub_domains: [demand_planning, supply_chain]
+  help: "1 = spreadsheet forecasts by sales teams, 3 = statistical forecast with monthly consensus, 5 = demand sensing with integrated IBP and forecast value-add tracking."
+- id: forecast-accuracy-baseline
+  text: Is current forecast accuracy and bias measured consistently (level, lag, metric) to provide a baseline?
+  category: business
+  dimension: planning_maturity
+  when: {project_types_any: [demand_forecasting]}
+- id: trade-spend-data
+  text: Is trade spend captured at event / SKU / customer level with accruals, actuals and deductions linked?
+  category: data
+  dimension: commercial_data_harmonisation
+  sub_domains: [trade_promotion, revenue_growth_management]
+- id: promo-calendar
+  text: Are historical promotion calendars and mechanics (price, display, feature, duration) available to model uplift and cannibalisation?
+  category: data
+  dimension: data_availability
+  sub_domains: [trade_promotion, demand_planning, revenue_growth_management]
+  when: {technologies_any: [machine_learning, advanced_analytics]}
+- id: calendar-alignment
+  text: Are fiscal, retailer and syndicated data calendars (e.g. 4-4-5 weeks vs retailer weeks) reconciled?
+  category: data
+  dimension: commercial_data_harmonisation
+- id: distributor-data-quality
+  text: How reliable and timely are distributor secondary sales and inventory submissions?
+  category: data
+  dimension: data_quality
+  answer_type: single_choice
+  options:
+    - {value: none, label: Not collected, score: 0}
+    - {value: irregular, label: Irregular manual uploads, score: 0.3}
+    - {value: regular, label: Regular DMS feeds with known gaps, score: 0.7}
+    - {value: automated, label: Automated and validated DMS integration, score: 1}
+  sub_domains: [distribution]
+- id: consumer-data-consent
+  text: For D2C, loyalty or first-party consumer data, is consent captured and are clean-room or privacy-safe methods used for retailer data collaboration?
+  category: privacy
+  dimension: partner_data_governance
+  sub_domains: [consumer_analytics, ecommerce_d2c, marketing_analytics]
+- id: plan-writeback
+  text: Must analytics outputs (forecasts, promotion recommendations) write back into planning or TPM systems, and is that integration defined?
+  category: integration
+  dimension: integration_readiness
+  sub_domains: [demand_planning, trade_promotion]
+- id: sap-integration-cpg
+  text: Is extraction from SAP (ECC / S/4HANA) licensed and supported for the target platform (e.g. SAP Datasphere, ODP, third-party connectors)?
+  category: integration
+  dimension: integration_readiness
+  when: {technologies_any: [sap_integration]}
+- id: antitrust-sharing
+  text: Has legal reviewed competition-law constraints on sharing pricing or promotion data with retailers, distributors or via third-party platforms?
+  category: compliance
+  dimension: partner_data_governance
+  sub_domains: [revenue_growth_management, trade_promotion, sales_analytics]
+- id: planner-adoption
+  text: Are planners and key account managers engaged to adopt model-driven forecasts and recommendations (forecast value-add, override governance)?
+  category: business
+  dimension: stakeholder_readiness
+  when: {technologies_any: [machine_learning, advanced_analytics, agentic_ai, ai_agents]}
+- id: sustainability-data
+  text: Are packaging, ingredient and emissions data required for sustainability reporting (e.g. EPR, CSRD, Scope 3) in scope?
+  category: data
+  dimension: data_availability
+  sub_domains: [product_lifecycle, supply_chain]

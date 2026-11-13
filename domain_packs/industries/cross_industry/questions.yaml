@@ -1,0 +1,67 @@
+- id: erp-landscape
+  text: Which ERP instances and versions are in scope, and are any migrations (e.g. SAP ECC to S/4HANA) planned during the project?
+  category: data
+  dimension: enterprise_data_foundations
+  answer_type: text
+- id: master-data-ownership
+  text: Are master data domains (legal entity, cost centre, employee, supplier, customer, product) owned and governed?
+  category: data
+  dimension: enterprise_data_foundations
+  answer_type: single_choice
+  weight: 1.5
+  options:
+    - {value: none, label: No defined ownership, score: 0.1}
+    - {value: partial, label: Some domains governed, score: 0.5}
+    - {value: governed, label: Owners and governance for all key domains, score: 1}
+- id: metric-definitions
+  text: Are key cross-functional metrics (revenue, headcount, spend, cost per case) defined consistently and owned?
+  category: data
+  dimension: enterprise_data_foundations
+  answer_type: scale
+- id: financial-controls
+  text: Will the solution feed financial reporting or controls subject to SOX / internal control requirements?
+  category: compliance
+  dimension: privacy_protection
+  critical: true
+  sub_domains: [finance, procurement]
+- id: employee-data
+  text: Does the solution process employee personal or sensitive data (compensation, health, diversity), and are works councils or unions to be consulted?
+  category: privacy
+  dimension: privacy_protection
+  critical: true
+  sub_domains: [hr]
+- id: close-calendar
+  text: Must data refresh and cut-over align with the financial close calendar?
+  category: delivery
+  dimension: delivery_governance
+  sub_domains: [finance]
+- id: spend-taxonomy
+  text: Is a spend classification taxonomy (e.g. UNSPSC or internal) applied consistently across purchasing systems?
+  category: data
+  dimension: data_quality
+  sub_domains: [procurement]
+- id: crm-adoption
+  text: How complete and current is CRM data (opportunity stages, contacts, activity capture)?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+  sub_domains: [sales_marketing]
+- id: interaction-recording
+  text: Are customer call recordings or transcripts in scope, and is consent for recording and analytics in place?
+  category: privacy
+  dimension: privacy_protection
+  sub_domains: [customer_service]
+- id: cmdb-quality
+  text: Is the CMDB accurate enough to map incidents and changes to services and owners?
+  category: data
+  dimension: data_quality
+  sub_domains: [it_operations]
+- id: copilot-permissions
+  text: For enterprise copilots, are document permissions and sensitivity labels in good order to prevent oversharing?
+  category: security
+  dimension: security_controls
+  when: {technologies_any: [generative_ai, rag, agentic_ai, ai_agents]}
+- id: process-ownership
+  text: Are end-to-end process owners (e.g. P2P, O2C, R2R) identified to approve changes and definitions?
+  category: governance
+  dimension: enterprise_data_foundations

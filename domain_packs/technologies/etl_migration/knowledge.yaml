@@ -1,0 +1,11 @@
+# ETL Migration technology pack - knowledge
+security_considerations:
+  - {id: etl-credentials, text: Migrate connection credentials into a secrets manager; remove embedded passwords., category: security}
+  - {id: etl-service-principals, text: Run converted pipelines with least-privilege service identities., category: security}
+migration_concerns:
+  - {id: etl-semantics, text: 'Differences in null handling, data types and sort order between engines.', category: technology}
+  - {id: etl-schedules, text: Scheduler dependencies and SLAs must be reproduced., category: operations}
+  - {id: etl-decommission, text: Legacy ETL decommission tied to licence end dates., category: commercial}
+dependencies:
+  - {id: etl-target-platform, text: Target data platform ready to host converted pipelines., category: infrastructure}
+  - {id: etl-repo-access, text: Access to legacy ETL repositories / exports for analysis., category: technology}

@@ -1,0 +1,59 @@
+# Azure technology pack - architecture_patterns
+- id: azure-data-landing-zone
+  name: Azure landing zone for data and analytics workloads
+  description: Governed Azure foundation (identity, network hub, policies, logging) hosting data and analytics services.
+  use_cases: [Cloud data migration, Data platform modernization]
+  layer_order: [identity, network, compute, storage, data, integration, security, operations]
+  components:
+    - {id: mgmt-groups, name: Management groups and subscriptions, layer: identity, core: true}
+    - {id: entra, name: 'Microsoft Entra ID (conditional access, PIM)', layer: identity, core: true}
+    - {id: hub-network, name: Hub-spoke / Virtual WAN network with Azure Firewall, layer: network, core: true}
+    - id: expressroute
+      name: ExpressRoute / VPN gateway
+      layer: network
+      when:
+        any_of:
+          - keywords_any: [on-premises, on-prem, hybrid, data center]
+          - technologies_any: [cloud_migration, data_migration]
+    - {id: private-endpoints, name: Private Endpoints and private DNS zones, layer: network, core: true}
+    - id: adls
+      name: ADLS Gen2
+      layer: storage
+      when: &id001
+        technologies_any: [data_platform, data_warehouse, lakehouse, data_lake, data_engineering]
+    - id: adf
+      name: Azure Data Factory
+      layer: integration
+      when: *id001
+    - id: databricks
+      name: Azure Databricks
+      layer: data
+      when:
+        technologies_any: [databricks]
+    - id: fabric
+      name: Microsoft Fabric capacity
+      layer: data
+      when:
+        technologies_any: [microsoft_fabric]
+    - id: event-hubs
+      name: Azure Event Hubs
+      layer: integration
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis, pub/sub]
+    - id: aoai
+      name: Azure OpenAI / AI Foundry
+      layer: data
+      when:
+        technologies_any: [generative_ai, rag, agentic_ai, ai_agents, machine_learning]
+    - {id: key-vault, name: Azure Key Vault, layer: security, core: true}
+    - {id: defender, name: Microsoft Defender for Cloud, layer: security, core: true}
+    - {id: monitor, name: Azure Monitor / Log Analytics, layer: operations, core: true}
+    - id: asr
+      name: Azure Site Recovery / paired-region DR
+      layer: operations
+      when:
+        keywords_any: [disaster recovery, rto, rpo, high availability, failover]
+  considerations: ['Separate platform (connectivity, identity, management) from workload environments.', 'Apply preventive guardrails as policy,
+      not documentation.']

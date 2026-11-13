@@ -1,0 +1,14 @@
+- {term: Subscriber, definition: Paying or registered member of a service, synonyms: [member, account holder, user, customer], entity_type: entity, category: data}
+- {term: Profile, definition: Individual viewer profile within an account, synonyms: [user profile, household member], entity_type: entity, category: data, sub_domains: [streaming]}
+- {term: Title, definition: Piece of content such as a film or series, synonyms: [content, programme, show, asset, series], entity_type: entity, category: data}
+- {term: Viewing Session, definition: Continuous period of content consumption, synonyms: [play, stream, session, watch event], entity_type: event, category: data, sub_domains: [streaming]}
+- {term: Rights Window, definition: Period and territory in which content may be exploited, synonyms: [availability window, licence window, holdback], entity_type: concept, category: compliance, sub_domains: [streaming, content_analytics]}
+- {term: Impression, definition: Single display of an advertisement, synonyms: [ad view, ad impression], entity_type: event, category: advertising, sub_domains: [advertising, streaming, publishing]}
+- {term: CPM, definition: Cost per thousand impressions, synonyms: [cost per mille, ecpm], entity_type: metric, category: advertising, sub_domains: [advertising]}
+- {term: Player, definition: User of a game, synonyms: [gamer, user], entity_type: entity, category: data, sub_domains: [gaming]}
+- {term: DAU, definition: Daily active users, synonyms: [daily active users, dau/mau], entity_type: metric, category: engagement}
+- {term: Royalty, definition: Payment to rights holders based on usage, synonyms: [royalties, revenue share, residuals], entity_type: concept, category: finance, sub_domains: [content_analytics, publishing, streaming]}
+- {term: SVOD, definition: Subscription video on demand, synonyms: [subscription vod], entity_type: concept, category: business, sub_domains: [streaming]}
+- {term: AVOD, definition: Advertising-funded video on demand, synonyms: [ad-supported vod, fast], entity_type: concept, category: business, sub_domains: [streaming, advertising]}
+- {term: Clean Room, definition: Privacy-safe environment for joining audience data with partners, synonyms: [data clean room], entity_type: system, category: privacy, sub_domains: [advertising]}
+- {term: Paywall, definition: Access control requiring subscription for content, synonyms: [metered paywall, subscription wall], entity_type: concept, category: business, sub_domains: [publishing]}

@@ -1,0 +1,55 @@
+- id: bim-inventory
+  text: Is the report inventory known with usage statistics and owners?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: bim-rationalisation
+  text: Will reports be rationalised (retire unused, consolidate duplicates) rather than migrated like-for-like?
+  category: delivery
+  dimension: delivery_governance
+  answer_type: yes_no
+- id: bim-semantic-model
+  text: Is there an agreed semantic layer with certified KPI definitions?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+- id: bim-target-tool
+  text: Has the target BI tool been selected?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+  - value: selected
+    label: Selected
+    score: 1
+  - value: shortlist
+    label: Shortlisted
+    score: 0.6
+  - value: open
+    label: Open
+    score: 0.4
+- id: bim-self-service
+  text: What self-service model is intended (centrally built, governed self-service, open)?
+  category: business
+  dimension: stakeholder_readiness
+  answer_type: single_choice
+  options:
+  - value: central
+    label: Centrally built
+    score: 1
+  - value: governed
+    label: Governed self-service
+    score: 1
+  - value: open
+    label: Open self-service
+    score: 0.7
+  - value: undefined
+    label: Undefined
+    score: 0.3
+- id: bim-row-security
+  text: Are row-level security requirements documented?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no

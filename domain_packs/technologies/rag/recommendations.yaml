@@ -1,0 +1,15 @@
+- id: rag-hybrid
+  title: Use hybrid search with reranking
+  text: Combine keyword and vector retrieval with a reranker; tune against a labelled evaluation set.
+  category: architecture
+  priority: high
+- id: rag-acl-aware
+  title: Make retrieval permission-aware
+  text: Carry source ACLs into the index and filter results by the requesting user's identity.
+  category: security
+  priority: high
+- id: rag-content-curation
+  title: Curate content before indexing
+  text: Remove obsolete and duplicate documents and assign owners before ingesting into the index.
+  category: data
+  priority: medium

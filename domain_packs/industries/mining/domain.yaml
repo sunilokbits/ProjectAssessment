@@ -1,0 +1,88 @@
+key: mining
+name: Mining and Natural Resources
+kind: industry
+version: 1.0.0
+description: Mineral exploration, mine operations and extraction, mineral processing, mobile fleet and equipment, health and safety, and environmental management.
+aliases: [mining, metals and mining, natural resources, minerals, quarrying]
+sort_order: 130
+sub_domains:
+  - key: exploration
+    name: Exploration and Geology
+    keywords: [exploration, drilling program, drill hole, assay, geological model, resource estimation, ore body, geophysics, jorc, ni 43-101]
+  - key: extraction_operations
+    name: Mine Operations and Extraction
+    keywords: [open pit, underground mine, blasting, drill and blast, mine planning, short interval control, ore control, haulage, production reporting]
+  - key: processing
+    name: Mineral Processing
+    keywords: [concentrator, processing plant, crushing, grinding, flotation, leaching, recovery, mill throughput, smelter, metallurgical accounting]
+  - key: fleet_equipment
+    name: Fleet and Equipment
+    keywords: [haul truck, autonomous haulage, fleet management system, shovel, excavator, equipment health, oee, tyre management, dispatch]
+  - key: health_safety
+    name: Health and Safety
+    keywords: [mine safety, incident management, fatigue monitoring, proximity detection, critical controls, gas monitoring, ventilation, msha]
+  - key: environmental
+    name: Environmental and Tailings
+    keywords: [tailings, tailings storage facility, water management, emissions, rehabilitation, mine closure, environmental monitoring, dust monitoring]
+detection:
+  keywords:
+    mining: 4
+    mine: 3
+    ore: 3.5
+    ore body: 5
+    assay: 4.5
+    drill hole: 4.5
+    haul truck: 5
+    tailings: 5
+    concentrator: 4.5
+    flotation: 4
+    open pit: 5
+    underground mine: 5
+    msha: 5
+    jorc: 5
+    ni 43-101: 5
+    tonnes mined: 4.5
+    strip ratio: 5
+    blast: 2
+    modular mining: 5
+    dispatch system: 2
+    metallurgical: 4
+business_processes:
+  - Exploration and resource estimation
+  - Mine planning and scheduling
+  - Drill and blast
+  - Load and haul operations
+  - Ore processing and metallurgical accounting
+  - Maintenance and reliability
+  - Health and safety management
+  - Environmental monitoring and reporting
+  - Product logistics and marketing
+  - Mine closure and rehabilitation
+capabilities:
+  - Short interval control and operations centre
+  - Predictive maintenance for mobile and fixed plant
+  - Processing plant optimisation
+  - Ore grade reconciliation
+  - Safety analytics and critical control monitoring
+  - Tailings and water monitoring
+  - Energy and emissions optimisation
+  - Geological data management
+source_systems:
+  - "Fleet management and dispatch (Hexagon MineOps / Modular Mining, Caterpillar MineStar, Komatsu FrontRunner, Wenco)"
+  - "Mine planning and geology (Deswik, Hexagon MinePlan, Maptek Vulcan, Datamine, Seequent Leapfrog)"
+  - "Geological data management (acQuire, Datamine Fusion)"
+  - "Historian and process control (AVEVA PI System, Honeywell, ABB 800xA, Emerson DeltaV)"
+  - "Laboratory information management (LIMS)"
+  - "EAM (SAP PM, IBM Maximo, Pronto)"
+  - "Safety management (Enablon, Cority, INX, Sphera)"
+  - "Environmental monitoring (EHS systems, telemetry networks)"
+  - Equipment OEM condition monitoring platforms
+data_entities: [Drill hole, Assay sample, Block model, Pit, Bench, Blast, Load, Haul cycle, Equipment, Stockpile, Plant stream, Incident, Monitoring point, Production shift]
+integration_patterns:
+  - "OPC UA / historian integration from processing plants"
+  - Fleet management system data exports and APIs
+  - OEM telematics feeds
+  - Mine site OT network to enterprise DMZ replication
+  - Satellite or private LTE connectivity from remote sites
+related_technologies: [iot, real_time_streaming, machine_learning, data_platform, cybersecurity]
+related_project_types: [predictive_maintenance, iot_analytics_platform, data_platform_modernization]

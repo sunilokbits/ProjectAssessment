@@ -1,0 +1,22 @@
+- id: vehicle-data-platform
+  name: VIN-centric vehicle data platform
+  description: Ingests connected vehicle telemetry, build, warranty, service and dealer data linked by VIN with consent enforcement and cost-aware telemetry processing.
+  use_cases: [Warranty early warning, Connected services analytics, Vehicle predictive maintenance, Customer 360, Battery health]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: enterprise-sources, name: "ERP, MES, PLM, warranty and DMS systems", layer: sources, core: true}
+    - {id: vehicle-telemetry, name: Vehicle telemetry from TCU / connected vehicle cloud, layer: sources, when: {sub_domains_any: [connected_vehicle, telematics, ev_battery]}}
+    - {id: telemetry-stream, name: Telemetry stream ingestion with edge filtering, layer: ingestion, when: {technologies_any: [iot, real_time_streaming]}}
+    - {id: batch-ingest, name: Batch ingestion of warranty and dealer data, layer: ingestion, core: true}
+    - {id: vin-master, name: VIN master and vehicle configuration (build BOM / option codes), layer: processing, core: true}
+    - {id: signal-catalog, name: Vehicle signal catalogue and normalisation, layer: governance, when: {sub_domains_any: [connected_vehicle, telematics, ev_battery]}}
+    - {id: consent-enforcement, name: Consent and purpose enforcement on vehicle and location data, layer: governance, when: {any_of: [{data_classifications_any: [pii]}, {sub_domains_any: [connected_vehicle, telematics, mobility_services]}]}}
+    - {id: tiered-storage, name: Tiered hot / cold telemetry storage, layer: storage, when: {technologies_any: [iot, real_time_streaming]}}
+    - {id: warranty-ew, name: Warranty early-warning analytics, layer: serving, when: {sub_domains_any: [warranty_analytics]}}
+    - {id: text-mining, name: Technician comment and complaint text mining, layer: processing, when: {technologies_any: [generative_ai, machine_learning]}}
+    - {id: data-act-api, name: Data access API for users and third parties, layer: serving, when: {geographies_any: [EU, EEA, DE, FR, IT, ES, NL, IE, SE, PL]}}
+    - {id: china-region, name: In-country data region for China-collected data, layer: storage, when: {geographies_any: [CN]}}
+  considerations:
+    - Treat build data as the VIN master; all other sources link to it.
+    - Include the vehicle data backend in CSMS scope where it interacts with vehicles or OTA.
+    - Control telemetry cost with signal prioritisation and retention tiers.

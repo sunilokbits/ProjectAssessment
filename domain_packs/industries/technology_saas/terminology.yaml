@@ -1,0 +1,14 @@
+- {term: Tenant, definition: Isolated customer instance within a multi-tenant system, synonyms: [workspace, organisation, org, instance], entity_type: entity, category: data}
+- {term: Account, definition: Customer organisation that purchases the product, synonyms: [customer, logo, company], entity_type: entity, category: data}
+- {term: User, definition: Individual using the product, synonyms: [seat, end user, member], entity_type: entity, category: data}
+- {term: Subscription, definition: Recurring contract for a plan, synonyms: [plan, contract, licence], entity_type: entity, category: data}
+- {term: ARR, definition: Annual recurring revenue, synonyms: [annual recurring revenue, annualised run rate], entity_type: metric, category: revenue}
+- {term: MRR, definition: Monthly recurring revenue, synonyms: [monthly recurring revenue], entity_type: metric, category: revenue}
+- {term: NRR, definition: Net revenue retention, synonyms: [net dollar retention, ndr, net retention], entity_type: metric, category: revenue}
+- {term: Churn, definition: Loss of customers or revenue, synonyms: [attrition, cancellation, logo churn], entity_type: event, category: customer}
+- {term: Usage Event, definition: Product interaction captured by telemetry, synonyms: [product event, telemetry event, track call], entity_type: event, category: data}
+- {term: Customer Health Score, definition: Composite indicator of account risk and engagement, synonyms: [health score, account health], entity_type: metric, category: customer}
+- {term: SOC 2, definition: AICPA attestation on security controls, synonyms: [soc2, soc 2 type ii], entity_type: regulation, category: compliance}
+- {term: PLG, definition: Product-led growth motion, synonyms: [product-led growth, self-serve], entity_type: concept, category: growth, sub_domains: [saas, developer_platforms]}
+- {term: SLA, definition: Service level agreement with customers, synonyms: [service level agreement, uptime commitment], entity_type: concept, category: operational}
+- {term: DPA, definition: Data processing agreement with customers, synonyms: [data processing addendum], entity_type: concept, category: compliance}

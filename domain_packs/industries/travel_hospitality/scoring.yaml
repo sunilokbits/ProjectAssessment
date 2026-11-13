@@ -1,0 +1,3 @@
+dimensions:
+  - {key: traveller_data_readiness, name: Traveller Data Readiness, group: domain, weight: 1.5, description: "Unified traveller / guest identity, booking and loyalty data and the controls on passenger data use."}
+  - {key: operational_resilience, name: Operational Resilience, group: domain, weight: 1.0, description: "Ability to operate through disruption, peak demand and safety-critical operational constraints."}

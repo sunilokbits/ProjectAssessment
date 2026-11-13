@@ -1,0 +1,36 @@
+- id: sf-api-limits
+  title: API limits exhausted by integration load
+  category: technology
+  likelihood: 3
+  impact: 4
+  mitigation: Use Bulk API, CDC and efficient queries; monitor limits.
+  indicators:
+  - api limits
+  - governor limits
+- id: sf-data-quality
+  title: Duplicate and incomplete CRM data
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Duplicate rules, validation and MDM alignment.
+  indicators:
+  - duplicate accounts
+  - incomplete contacts
+- id: sf-sor-conflict
+  title: Conflicting updates in bi-directional sync
+  category: data
+  likelihood: 3
+  impact: 3
+  mitigation: Define system of record per field and conflict rules.
+  indicators:
+  - bi-directional
+  - sync conflicts
+- id: sf-undocumented
+  title: Undocumented customisations
+  category: delivery
+  likelihood: 3
+  impact: 3
+  mitigation: Metadata analysis and SME walkthroughs.
+  indicators:
+  - custom objects
+  - apex

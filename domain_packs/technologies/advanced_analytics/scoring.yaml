@@ -1,0 +1,6 @@
+dimensions:
+- key: advanced_analytics_readiness
+  name: Advanced Analytics Readiness
+  group: technology
+  weight: 1.0
+  description: Analytical use cases, curated data, tooling, statistical skills and decision integration.

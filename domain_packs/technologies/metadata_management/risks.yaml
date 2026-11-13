@@ -1,0 +1,26 @@
+- id: mm-lineage-gaps
+  title: Lineage gaps through hand-coded or legacy logic
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Parse SQL where possible; document manual lineage for critical flows.
+  indicators:
+  - stored procedures
+  - hand-coded
+  - legacy etl
+- id: mm-stale
+  title: Metadata becomes stale
+  category: governance
+  likelihood: 4
+  impact: 3
+  mitigation: Automate harvesting; embed curation in delivery definition of done.
+  indicators:
+  - out of date documentation
+- id: mm-tool-sprawl
+  title: Metadata scattered across multiple tools
+  category: technology
+  likelihood: 3
+  impact: 2
+  mitigation: Federate via open standards or a single catalog of record.
+  indicators:
+  - multiple catalogs

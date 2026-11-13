@@ -1,0 +1,12 @@
+security_considerations:
+- id: llmops-trace-redaction
+  text: Redact personal data from traces and limit retention.
+  category: security
+ai_risks:
+- id: llmops-ai-judge-bias
+  text: Judge models may be biased or inconsistent; calibrate with human labels.
+  category: ai
+dependencies:
+- id: llmops-eval-data
+  text: Evaluation datasets owned by business SMEs.
+  category: business

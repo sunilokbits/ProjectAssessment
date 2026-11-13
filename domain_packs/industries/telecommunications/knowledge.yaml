@@ -1,0 +1,39 @@
+nfrs:
+  - {id: volume-scale, text: Platform handles billions of usage and network events per day with growth headroom., category: scalability}
+  - {id: retention-rules, text: Usage and traffic data retained per licence and data-retention law (no longer than permitted)., category: compliance}
+  - {id: fraud-latency, text: Fraud detection operates within minutes of usage for high-risk fraud types., category: performance, sub_domains: [revenue_assurance]}
+assumptions:
+  - {id: billing-record, text: Billing remains the system of record for revenue., category: data}
+  - {id: mediation-feeds, text: Mediation provides complete usage feeds with sequence controls., category: data}
+dependencies:
+  - {id: regulatory-team, text: Regulatory affairs review of CPNI and licence conditions., category: compliance}
+  - {id: noc-engagement, text: NOC and network engineering availability for network data access., category: delivery}
+  - {id: bss-vendor, text: BSS / OSS vendor support for data extraction., category: integration}
+security_considerations:
+  - {id: privileged-cpni, text: Privileged access management and monitoring for CPNI and location data., category: security}
+  - {id: insider-threat, text: Insider threat controls for subscriber data lookups., category: security}
+  - {id: signalling-security, text: Signalling (SS7 / Diameter) security considerations for network data., category: security, sub_domains: [network_operations, revenue_assurance]}
+data_quality_checks:
+  - {id: cdr-sequence, text: CDR file sequence and record count completeness., category: data}
+  - {id: rated-vs-raw, text: Rated event counts reconcile to raw usage., category: data, sub_domains: [billing, revenue_assurance]}
+  - {id: subscriber-status, text: Subscriber status consistent between HLR / HSS and billing., category: data}
+  - {id: cell-reference, text: Cell reference data complete for usage records., category: data, sub_domains: [network_operations, five_g]}
+reporting_requirements:
+  - {id: qos-reports, text: Regulatory quality-of-service reporting., category: reporting, sub_domains: [network_operations]}
+  - {id: subscriber-reports, text: Regulatory subscriber and traffic reporting., category: reporting}
+  - {id: ra-reporting, text: Revenue assurance and fraud loss reporting., category: reporting, sub_domains: [revenue_assurance]}
+migration_concerns:
+  - {id: teradata-migration, text: Migration of legacy telco data warehouse (often Teradata) models and workloads., category: data}
+  - {id: billing-history, text: Depth of billing and usage history to migrate given retention limits., category: data}
+ai_opportunities:
+  - {id: churn-ml, text: Churn prediction and uplift-based retention., category: ai, sub_domains: [churn, customer_analytics]}
+  - {id: network-anomaly, text: Network anomaly detection and alarm correlation (AIOps)., category: ai, sub_domains: [network_operations, five_g]}
+  - {id: care-assistant, text: GenAI customer-care assistant and agent assist., category: ai, sub_domains: [customer_analytics, digital_services]}
+  - {id: capex-optimisation, text: Network capacity and investment optimisation., category: ai, sub_domains: [network_operations, five_g, fixed_broadband]}
+  - {id: fraud-ml, text: ML-based telecom fraud detection., category: ai, sub_domains: [revenue_assurance]}
+ai_risks:
+  - {id: cpni-disclosure, text: GenAI disclosing CPNI without proper authentication., category: ai}
+  - {id: autonomous-network-actions, text: Autonomous agents executing network changes without guardrails., category: ai, sub_domains: [network_operations, five_g]}
+clarification_questions:
+  - {id: lines-of-business, text: "Which lines of business (mobile, fixed, enterprise, wholesale) are in scope?", category: business}
+  - {id: data-retention-limits, text: "What retention limits apply to usage and location data under your licence?", category: compliance}

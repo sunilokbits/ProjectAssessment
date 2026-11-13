@@ -1,0 +1,6 @@
+dimensions:
+- key: devops_readiness
+  name: DevOps Readiness
+  group: technology
+  weight: 1.0
+  description: Source control, CI/CD, IaC, environment strategy, automated testing and release governance.

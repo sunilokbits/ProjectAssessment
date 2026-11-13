@@ -1,0 +1,55 @@
+- id: mdm-hub
+  name: MDM hub
+  description: Sources publish records to an MDM hub that standardises, matches and merges into golden records, stewarded and distributed to consumers.
+  use_cases:
+  - Customer 360
+  - Product data
+  - Supplier master
+  layer_order:
+  - sources
+  - ingestion
+  - processing
+  - storage
+  - governance
+  - integration
+  - serving
+  - consumption
+  components:
+  - id: standardise
+    name: Standardisation and cleansing
+    layer: processing
+    core: true
+  - id: match-merge
+    name: Match and merge engine
+    layer: processing
+    core: true
+  - id: golden-store
+    name: Golden record store
+    layer: storage
+    core: true
+  - id: steward-ui
+    name: Stewardship workflow
+    layer: governance
+    core: true
+  - id: sync-back
+    name: Sync-back to operational systems
+    layer: integration
+    when:
+      keywords_any:
+      - coexistence
+      - write back
+      - bi-directional
+  - id: mdm-api
+    name: Master data APIs
+    layer: serving
+    when:
+      technologies_any:
+      - api_integration
+  - id: sap-mdg
+    name: SAP Master Data Governance
+    layer: processing
+    when:
+      technologies_any:
+      - sap_integration
+  considerations:
+  - Keep cross-references for every source identifier.

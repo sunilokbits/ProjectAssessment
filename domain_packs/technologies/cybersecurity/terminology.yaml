@@ -1,0 +1,18 @@
+- term: Zero Trust
+  definition: Security model assuming no implicit trust based on network location
+  entity_type: concept
+  category: security
+- term: SIEM
+  definition: Security information and event management
+  entity_type: system
+  category: security
+- term: PAM
+  definition: Privileged access management
+  synonyms:
+  - pim
+  entity_type: system
+  category: security
+- term: Threat Model
+  definition: Structured analysis of threats to a system
+  entity_type: process
+  category: security

@@ -1,0 +1,71 @@
+- id: sap-landscape
+  text: Which SAP systems and versions are in scope?
+  category: integration
+  dimension: sap_integration_readiness
+  answer_type: multi_choice
+  options:
+  - value: ecc
+    label: SAP ECC
+  - value: s4_onprem
+    label: S/4HANA on-premise / private cloud
+  - value: s4_public
+    label: S/4HANA public cloud
+  - value: bw
+    label: SAP BW / BW/4HANA
+  - value: datasphere
+    label: SAP Datasphere
+  - value: other
+    label: Other SAP (Ariba, SuccessFactors, etc.)
+- id: sap-extraction
+  text: Which extraction method is permitted and licensed?
+  category: technology
+  dimension: sap_integration_readiness
+  answer_type: single_choice
+  options:
+  - value: odp
+    label: ODP / CDS view extraction
+    score: 1
+  - value: slt
+    label: SLT replication
+    score: 0.9
+  - value: datasphere
+    label: SAP Datasphere / Business Data Cloud
+    score: 1
+  - value: third_party
+    label: Third-party connector (licence confirmed)
+    score: 0.8
+  - value: db_level
+    label: Direct database-level access
+    score: 0.3
+  - value: unknown
+    label: Not confirmed
+    score: 0.1
+  weight: 1.5
+  critical: true
+- id: sap-licensing
+  text: Has SAP licensing been confirmed for the intended extraction and indirect access?
+  category: governance
+  dimension: sap_integration_readiness
+  answer_type: yes_no
+  critical: true
+- id: sap-data-model
+  text: Are SAP functional experts available to explain tables, CDS views and business logic?
+  category: delivery
+  dimension: team_capability
+  answer_type: yes_no
+- id: sap-basis
+  text: Is SAP Basis support available for connectivity, users and performance tuning?
+  category: operations
+  dimension: sap_integration_readiness
+  answer_type: yes_no
+- id: sap-s4-program
+  text: Is an S/4HANA migration planned or underway that affects the integration design?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: yes_no
+- id: sap-skills
+  text: How experienced is the client team with SAP data extraction and integration (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

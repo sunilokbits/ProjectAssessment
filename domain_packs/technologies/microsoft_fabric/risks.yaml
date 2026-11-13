@@ -1,0 +1,36 @@
+# Microsoft Fabric technology pack - risks
+- id: capacity-throttling
+  title: Capacity throttling due to under-sized or shared F SKU
+  category: technology
+  likelihood: 3
+  impact: 4
+  mitigation: Capacity metrics app monitoring, workload separation across capacities, surge protection settings.
+  indicators: [throttling, capacity overload, slow reports]
+- id: workspace-sprawl
+  title: Uncontrolled workspace and item sprawl
+  category: governance
+  likelihood: 4
+  impact: 3
+  mitigation: Restrict creation via tenant settings, domain structure and lifecycle policies.
+  indicators: [self-service sprawl, too many workspaces]
+- id: feature-maturity
+  title: Dependence on preview features
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Check GA status for critical features; design fallbacks.
+  indicators: [preview, public preview]
+- id: fabric-cost-model
+  title: Capacity cost model misunderstood (always-on vs pause, reservation)
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Model capacity costs incl. reservations and pause schedules; FinOps reviews.
+  indicators: [licensing, cost]
+- id: fabric-security-gaps
+  title: Default tenant settings allow external sharing or export
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Harden tenant settings, sensitivity labels and DLP policies.
+  indicators: [export to excel, external sharing]

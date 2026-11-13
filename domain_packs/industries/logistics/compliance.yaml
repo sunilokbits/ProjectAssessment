@@ -1,0 +1,57 @@
+- id: fmcsa-hos
+  name: FMCSA Hours of Service and ELD Mandate
+  short_name: FMCSA HOS / ELD
+  geographies: [US]
+  sub_domains: [transportation, last_mile, route_optimization]
+- id: eu-tachograph
+  name: EU Driving Time Regulation (EC) 561/2006 and Smart Tachograph rules
+  short_name: EU Driving Time / Tachograph
+  geographies: [EU, EEA, UK]
+  sub_domains: [transportation, route_optimization]
+- id: fsma-204
+  name: FDA FSMA Section 204 Food Traceability Rule
+  short_name: FSMA 204
+  geographies: [US]
+  sub_domains: [warehouse, transportation, inventory]
+  applicability_note: Applies where foods on the Food Traceability List are handled.
+- id: ctpat
+  name: Customs-Trade Partnership Against Terrorism
+  short_name: C-TPAT
+  geographies: [US]
+  sub_domains: [transportation]
+  applicability_note: Voluntary programme often required by shipper customers.
+- id: eu-ucc-ics2
+  name: Union Customs Code and ICS2 advance cargo information
+  short_name: UCC / ICS2
+  geographies: [EU, EEA]
+  sub_domains: [transportation]
+- id: dangerous-goods
+  name: "Dangerous goods regulations (ADR, IMDG Code, IATA DGR, 49 CFR HMR)"
+  short_name: Dangerous Goods
+  geographies: [GLOBAL]
+  sub_domains: [transportation, warehouse]
+- id: gdpr
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii]
+- id: ccpa
+  name: California Consumer Privacy Act / CPRA
+  short_name: CCPA/CPRA
+  geographies: [US-CA]
+  data_classifications_any: [pii]
+- id: india-dpdp
+  name: Digital Personal Data Protection Act 2023
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii]
+- id: eu-csrd-glec
+  name: CSRD Scope 3 reporting and ISO 14083 / GLEC Framework emissions methodology
+  short_name: CSRD / ISO 14083
+  geographies: [EU, EEA]
+  applicability_note: ISO 14083 and GLEC are methodologies; CSRD drives the reporting obligation for in-scope companies.
+- id: india-eway-bill
+  name: GST E-way Bill requirements for goods movement
+  short_name: E-way Bill
+  geographies: [IN]
+  sub_domains: [transportation, last_mile]

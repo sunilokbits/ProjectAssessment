@@ -1,0 +1,4 @@
+dimensions:
+  - {key: actuarial_data_integrity, name: Actuarial and Financial Data Integrity, group: domain, weight: 1.5, description: "Granularity, reconciliation and lineage of policy, premium, claims and reserve data used for actuarial and finance reporting."}
+  - {key: insurance_regulatory_readiness, name: Insurance Regulatory Readiness, group: domain, weight: 1.5, description: "Readiness for solvency, IFRS 17 / statutory, conduct and regulator reporting obligations."}
+  - {key: claims_fraud_controls, name: Claims and Fraud Controls, group: security, weight: 1.0, description: "Controls over claims integrity, fraud detection and fair treatment of policyholders."}

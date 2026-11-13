@@ -1,0 +1,105 @@
+- id: telco-core-systems
+  text: Which BSS (billing, charging, CRM), OSS and mediation platforms are in scope, and how is data extracted from them today?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  equivalence_key: telco_core_extract
+- id: cdr-volumes
+  text: What daily CDR / xDR and network event volumes, retention periods and latency requirements must the platform support?
+  category: architecture
+  dimension: network_data_readiness
+  answer_type: text
+- id: cpni-location
+  text: Will CPNI, traffic data, location data or call content metadata be processed, and are access, minimisation and retention rules defined?
+  category: privacy
+  dimension: subscriber_data_protection
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not yet assessed, score: 0}
+    - {value: yes_undefined, label: Yes - rules not yet defined, score: 0.2}
+    - {value: yes_defined, label: Yes - access / minimisation / retention rules defined and approved, score: 1}
+    - {value: no, label: No such data in scope (confirmed), score: 1}
+  critical: true
+  evidence_required: true
+- id: lawful-intercept-separation
+  text: Are lawful interception and mandatory data-retention systems kept separate from analytics, with access restricted per licence conditions?
+  category: security
+  dimension: subscriber_data_protection
+  critical: true
+- id: usage-reconciliation
+  text: Is there an agreed reconciliation between network usage, mediated records, rated events and billed revenue?
+  category: data
+  dimension: revenue_integrity
+  answer_type: single_choice
+  options:
+    - {value: none, label: No systematic reconciliation, score: 0}
+    - {value: partial, label: Partial controls for some streams, score: 0.5}
+    - {value: full, label: End-to-end revenue assurance controls in place, score: 1}
+  weight: 2
+- id: subscriber-identity
+  text: Can subscribers be linked across mobile, fixed, prepaid / postpaid and household / enterprise account hierarchies?
+  category: data
+  dimension: data_quality
+  when: {project_types_any: [customer_360, churn_prediction]}
+  equivalence_key: customer_identity_resolution
+- id: churn-definition
+  text: Is churn defined consistently (voluntary vs involuntary, prepaid inactivity rules, port-out, partial churn)?
+  category: business
+  dimension: business_alignment
+  sub_domains: [churn, customer_analytics]
+- id: retention-actionability
+  text: Can churn scores be acted upon through retention channels (save desk, campaigns, offers) with measurable treatment and control groups?
+  category: business
+  dimension: business_alignment
+  when: {project_types_any: [churn_prediction]}
+- id: network-inventory
+  text: How accurate is network and service inventory (cell sites, network elements, services to customers mapping)?
+  category: data
+  dimension: network_data_readiness
+  answer_type: scale
+  sub_domains: [network_operations, oss_bss, five_g, fixed_broadband]
+  help: "1 = spreadsheets and stale records, 3 = inventory system with known reconciliation gaps, 5 = auto-discovered, reconciled inventory linked to customers."
+- id: network-telemetry
+  text: Which network telemetry sources (PM counters, alarms, probes, streaming telemetry) are accessible and with what granularity?
+  category: data
+  dimension: network_data_readiness
+  answer_type: text
+  sub_domains: [network_operations, five_g, fixed_broadband]
+- id: tmf-apis
+  text: Are TM Forum Open APIs / ODA components used or planned for OSS/BSS integration?
+  category: integration
+  dimension: integration_readiness
+  sub_domains: [oss_bss, billing, digital_services]
+- id: fraud-detection-latency
+  text: What detection latency is required for telecom fraud types in scope (IRSF, SIM box, Wangiri, subscription fraud)?
+  category: architecture
+  dimension: revenue_integrity
+  answer_type: text
+  sub_domains: [revenue_assurance]
+  when: {project_types_any: [fraud_detection]}
+- id: billing-migration
+  text: Does the project include billing or charging migration, and are bill-run parallel testing and revenue reconciliation planned?
+  category: delivery
+  dimension: revenue_integrity
+  sub_domains: [billing, oss_bss]
+  when: {technologies_any: [data_migration, application_modernization, database_migration, cloud_migration]}
+- id: telecom-data-localisation
+  text: Do licence conditions or regulations require subscriber or network data to remain in-country (e.g. India unified licence, Saudi or UAE rules)?
+  category: compliance
+  dimension: subscriber_data_protection
+  when: {technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]}
+- id: critical-infrastructure
+  text: Is the solution classed as critical network infrastructure or a security-relevant function under telecom security rules (e.g. NIS2, UK Telecoms Security Act)?
+  category: compliance
+  dimension: security_controls
+  sub_domains: [network_operations, five_g, oss_bss]
+- id: marketing-consent
+  text: Are marketing consent and do-not-disturb / do-not-call preferences enforced for retention and next-best-offer campaigns?
+  category: privacy
+  dimension: subscriber_data_protection
+  sub_domains: [customer_analytics, churn, digital_services]
+- id: genai-care
+  text: For GenAI customer-care or network-operations assistants, are CPNI handling, authentication before disclosure and action guardrails defined?
+  category: governance
+  dimension: subscriber_data_protection
+  when: {technologies_any: [generative_ai, rag, agentic_ai, ai_agents]}

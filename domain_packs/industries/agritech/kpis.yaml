@@ -1,0 +1,10 @@
+- {id: yield-per-hectare, name: Yield per hectare, description: Harvested output per unit area., unit: t/ha, direction: higher_is_better, category: production, sub_domains: [crop_analytics, precision_farming]}
+- {id: yield-forecast-error, name: Yield forecast error, description: Error between predicted and actual yield., unit: "%", direction: lower_is_better, category: analytics, sub_domains: [crop_analytics]}
+- {id: input-cost-per-hectare, name: Input cost per hectare, description: "Seed, fertiliser and crop protection spend per hectare.", unit: currency/ha, direction: lower_is_better, category: cost, sub_domains: [precision_farming, agri_inputs]}
+- {id: water-use-efficiency, name: Water use efficiency, description: Crop output per unit of irrigation water., unit: kg/m3, direction: higher_is_better, category: sustainability, sub_domains: [precision_farming]}
+- {id: milk-yield, name: Milk yield per cow, description: Average milk produced per cow per day., unit: litres, direction: higher_is_better, category: production, sub_domains: [livestock]}
+- {id: feed-conversion, name: Feed conversion ratio, description: Feed consumed per unit of weight gain or output., unit: ratio, direction: lower_is_better, category: production, sub_domains: [livestock]}
+- {id: post-harvest-loss, name: Post-harvest loss, description: Share of harvested produce lost before sale., unit: "%", direction: lower_is_better, category: supply_chain, sub_domains: [agri_supply_chain]}
+- {id: traceable-volume, name: Traceable volume share, description: Share of sourced volume traceable to plot or farm., unit: "%", direction: higher_is_better, category: compliance, sub_domains: [agri_supply_chain]}
+- {id: farmer-loan-default, name: Farmer loan default rate, description: Share of agri loans in default., unit: "%", direction: lower_is_better, category: finance, sub_domains: [farm_finance]}
+- {id: farmer-adoption, name: Farmer active adoption, description: Farmers actively using the digital service per season., unit: count, direction: higher_is_better, category: adoption}

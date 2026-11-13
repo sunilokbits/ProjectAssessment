@@ -1,0 +1,30 @@
+nfrs:
+  - {id: intermittent-links, text: Pipelines tolerate intermittent site connectivity without data loss., category: availability}
+  - {id: shift-latency, text: Operational data available within short-interval control cycles., category: performance}
+  - {id: geology-audit, text: Geological and resource data changes fully audit-trailed., category: compliance}
+assumptions:
+  - {id: historian-available, text: Plant historians hold sufficient history for analytics., category: data}
+  - {id: oem-access, text: OEMs will provide telematics data under existing contracts., category: integration}
+dependencies:
+  - {id: ot-security-team, text: OT security and site IT approval for data flows., category: security}
+  - {id: site-operations, text: Site operations and maintenance SME availability across rosters., category: business}
+security_considerations:
+  - {id: autonomous-systems, text: Autonomous haulage and drilling networks isolated from enterprise IT., category: security}
+data_quality_checks:
+  - {id: assay-qaqc, text: Assay QA/QC (standards and blanks and duplicates) passed before use., category: data, sub_domains: [exploration]}
+  - {id: cycle-validity, text: Haul cycles validated for missing or implausible states., category: data, sub_domains: [fleet_equipment, extraction_operations]}
+reporting_requirements:
+  - {id: production-reporting, text: "Daily, monthly and JV production reporting reconciled to plant output.", category: reporting}
+  - {id: safety-reporting, text: Regulatory safety incident reporting., category: reporting, sub_domains: [health_safety]}
+migration_concerns:
+  - {id: site-variation, text: Different systems and codes across sites complicate consolidation., category: data}
+ai_opportunities:
+  - {id: predictive-maintenance, text: Predictive maintenance for haul trucks and plant equipment., category: ai}
+  - {id: plant-optimisation, text: ML process optimisation for throughput and recovery., category: ai, sub_domains: [processing]}
+  - {id: ore-sorting, text: Sensor-based ore sorting and grade prediction., category: ai, sub_domains: [extraction_operations, processing]}
+  - {id: geology-assistant, text: GenAI assistant over geological reports and drilling logs., category: ai, sub_domains: [exploration]}
+ai_risks:
+  - {id: safety-overreliance, text: Over-reliance on AI for safety decisions., category: ai}
+  - {id: model-drift-ore, text: Models drifting as ore characteristics change., category: ai, sub_domains: [processing]}
+clarification_questions:
+  - {id: site-list, text: "Which sites are in scope, and what connectivity does each have?", category: architecture}

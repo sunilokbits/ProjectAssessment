@@ -1,0 +1,53 @@
+- id: gaa-users-tasks
+  text: Who are the assistant's users and which tasks or questions must it handle?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: gaa-audience
+  text: Is the assistant internal-facing or customer-facing?
+  category: governance
+  dimension: privacy_protection
+  answer_type: single_choice
+  options:
+  - value: internal
+    label: Internal employees only
+    score: 1
+  - value: customer
+    label: Customer-facing
+    score: 0.7
+  - value: both
+    label: Both
+    score: 0.6
+- id: gaa-knowledge-sources
+  text: Are the knowledge sources identified, owned and permissioned?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: gaa-success-measures
+  text: How will success be measured (resolution rate, time saved, answer accuracy, satisfaction)?
+  category: business
+  dimension: business_alignment
+  answer_type: yes_no
+- id: gaa-actions
+  text: Will the assistant take actions in systems or only answer questions?
+  category: integration
+  dimension: integration_readiness
+  answer_type: single_choice
+  options:
+  - value: answer
+    label: Answers only
+    score: 1
+  - value: draft
+    label: Drafts content for human use
+    score: 1
+  - value: act
+    label: Takes actions in systems
+    score: 0.7
+- id: gaa-adoption
+  text: Is there a change and adoption plan for users?
+  category: business
+  dimension: stakeholder_readiness
+  answer_type: yes_no

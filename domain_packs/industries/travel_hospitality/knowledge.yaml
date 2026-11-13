@@ -1,0 +1,29 @@
+nfrs:
+  - {id: availability-24x7, text: 24x7 availability for booking and operational services., category: availability}
+  - {id: disruption-latency, text: Operational events available to downstream consumers within agreed seconds or minutes., category: performance}
+  - {id: peak-scale, text: Elastic scaling for seasonal peaks and disruption surges., category: scalability}
+assumptions:
+  - {id: partner-access, text: "GDS, PSS and PMS vendors will provide data feeds under existing contracts.", category: data}
+  - {id: loyalty-anchor, text: Loyalty identifiers anchor the traveller identity where available., category: data}
+dependencies:
+  - {id: vendor-feeds, text: Technology vendor support for feed set-up and schema documentation., category: integration}
+  - {id: commercial-signoff, text: Commercial and revenue management sign-off on pricing outputs., category: business}
+security_considerations:
+  - {id: travel-docs, text: Passport and travel document data handled as sensitive personal data., category: security}
+data_quality_checks:
+  - {id: booking-dedupe, text: "Bookings deduplicated across channels, changes and cancellations.", category: data}
+  - {id: profile-match-rate, text: Profile match precision and recall measured on samples., category: data}
+reporting_requirements:
+  - {id: regulatory-punctuality, text: Punctuality and passenger rights reporting where required by regulators., category: reporting, sub_domains: [airlines, rail]}
+migration_concerns:
+  - {id: booking-history, text: Depth of historic booking data and changes in fare or rate structures over time., category: data}
+ai_opportunities:
+  - {id: dynamic-pricing, text: ML-driven dynamic pricing and demand forecasting., category: ai}
+  - {id: disruption-prediction, text: Disruption prediction and automated re-accommodation., category: ai, sub_domains: [airlines, rail, airports]}
+  - {id: travel-assistant, text: GenAI travel or guest assistant for servicing and rebooking., category: ai}
+  - {id: predictive-mro, text: Predictive maintenance for aircraft and rolling stock components., category: ai, sub_domains: [airlines, rail, fleet_management]}
+ai_risks:
+  - {id: price-discrimination, text: Personalised pricing perceived as unfair or discriminatory., category: ai}
+  - {id: assistant-commitments, text: GenAI assistant making binding commitments on refunds or compensation., category: ai}
+clarification_questions:
+  - {id: data-ownership-partners, text: "Which partners (GDS, OTAs, franchisees) restrict use of the data they provide?", category: governance}

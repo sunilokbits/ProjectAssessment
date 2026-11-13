@@ -1,0 +1,34 @@
+# Data Lake technology pack - risks
+- id: data-swamp
+  title: Data lake becomes an ungoverned data swamp
+  category: governance
+  likelihood: 4
+  impact: 3
+  mitigation: Mandatory cataloguing, ownership and zone promotion rules.
+  indicators: [data swamp, nobody knows what data, duplicate copies]
+- id: coarse-access
+  title: Coarse-grained bucket/container permissions expose sensitive data
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Fine-grained access via catalog-level policies; separate sensitive zones.
+  indicators: [shared access key, sas token, public bucket]
+- id: small-files-lake
+  title: Small files and poor partitioning degrade performance
+  category: technology
+  likelihood: 3
+  impact: 2
+  mitigation: Compaction, partitioning standards and open table formats.
+  indicators: [small files, slow spark jobs]
+- id: hadoop-migration
+  title: Hadoop migration complexity underestimated
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Inventory Hive/HDFS workloads, Oozie jobs and security (Ranger/Sentry) before planning.
+  indicators: [hadoop, hive, cloudera, hortonworks, oozie]
+  when:
+    any_of:
+      - answers:
+          data_lake:hadoop-legacy: ['yes']
+      - keywords_any: [hadoop, cloudera, hdfs]

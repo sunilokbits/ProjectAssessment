@@ -1,0 +1,7 @@
+nfrs:
+  - {id: job-sla, text: Pipeline completion SLAs per data product (e.g. gold refreshed by 06:00)., category: performance}
+security_considerations:
+  - {id: uc-grants, text: "Unity Catalog grants, row filters and column masks for sensitive data.", category: security}
+  - {id: secret-scopes, text: Secrets via Databricks secret scopes backed by Key Vault / Secrets Manager., category: security}
+dependencies:
+  - {id: cloud-landing-zone, text: Cloud landing zone and networking ready for workspace deployment., category: infrastructure}

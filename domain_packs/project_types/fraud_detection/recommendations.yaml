@@ -1,0 +1,10 @@
+- id: fd-hybrid
+  title: Combine rules with ML scoring
+  text: Keep high-precision rules and add ML scoring for unknown patterns, with champion/challenger testing.
+  category: architecture
+  priority: high
+- id: fd-feedback-loop
+  title: Build an investigation feedback loop
+  text: Capture investigator outcomes as labels for retraining and rule tuning.
+  category: data
+  priority: high

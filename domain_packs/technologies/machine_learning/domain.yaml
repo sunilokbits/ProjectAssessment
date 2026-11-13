@@ -1,0 +1,36 @@
+key: machine_learning
+name: Machine Learning
+kind: technology
+version: 1.0.0
+description: Supervised, unsupervised and deep-learning models built, validated and deployed into business processes.
+aliases:
+- AI
+sort_order: 61
+detection:
+  keywords:
+    machine learning: 5
+    ml model: 4
+    predictive model: 3
+    classification model: 3
+    deep learning: 3
+    xgboost: 3
+    scikit-learn: 3
+    tensorflow: 3
+    pytorch: 3
+    feature engineering: 2.5
+    model training: 2.5
+    supervised learning: 2.5
+    anomaly detection: 2
+    prediction: 1
+related_technologies:
+- mlops
+- advanced_analytics
+- data_platform
+- databricks
+- lakehouse
+related_project_types:
+- churn_prediction
+- fraud_detection
+- predictive_maintenance
+- demand_forecasting
+- recommendation_engine

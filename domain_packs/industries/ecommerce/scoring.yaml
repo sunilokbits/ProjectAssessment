@@ -1,0 +1,3 @@
+dimensions:
+  - {key: commerce_data_readiness, name: Commerce Data Readiness, group: domain, weight: 1.5, description: "Clickstream, catalogue, order and customer identity data quality for personalisation and analytics."}
+  - {key: payment_trust_controls, name: Payment and Marketplace Trust Controls, group: security, weight: 1.0, description: "PCI DSS scope, payment fraud, seller verification and consumer protection controls."}

@@ -1,0 +1,102 @@
+- id: genai-risk-tiering
+  text: Have GenAI use cases been risk-tiered (e.g. internal productivity vs customer-facing vs regulated decisions)?
+  category: governance
+  dimension: responsible_ai
+  answer_type: single_choice
+  options:
+  - value: none
+    label: No risk tiering
+    score: 0
+  - value: informal
+    label: Informal assessment only
+    score: 0.4
+  - value: framework
+    label: Documented risk-tiering framework applied
+    score: 1
+  weight: 1.5
+  critical: true
+- id: genai-ai-policy
+  text: Is there an approved AI policy / responsible AI framework covering acceptable use?
+  category: governance
+  dimension: responsible_ai
+  answer_type: yes_no
+- id: genai-eval-datasets
+  text: Do curated evaluation datasets (golden questions with expected answers) exist to measure accuracy before release?
+  category: quality
+  dimension: grounding_quality
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+  evidence_required: true
+- id: genai-grounding-source
+  text: Is the grounding content (documents, knowledge bases, data) identified, owned and kept current?
+  category: data
+  dimension: grounding_quality
+  answer_type: yes_no
+- id: genai-hitl
+  text: Which outputs require human-in-the-loop approval before they reach customers or trigger actions?
+  category: governance
+  dimension: responsible_ai
+  answer_type: single_choice
+  options:
+  - value: undefined
+    label: Not defined
+    score: 0
+  - value: all
+    label: All outputs reviewed by a human
+    score: 1
+  - value: risk_based
+    label: Risk-based approval for high-impact outputs
+    score: 1
+  - value: none_needed
+    label: Internal low-risk use only; no approval needed
+    score: 0.7
+  critical: true
+- id: genai-guardrails
+  text: Are guardrails in place (input/output filtering, prompt-injection defences, content safety, topic restrictions)?
+  category: security
+  dimension: responsible_ai
+  answer_type: yes_no
+  weight: 1.5
+- id: genai-pii-prompts
+  text: Can personal or confidential data appear in prompts or grounding content, and is it masked or controlled?
+  category: privacy
+  dimension: privacy_protection
+  answer_type: single_choice
+  options:
+  - value: 'no'
+    label: No personal/confidential data in scope
+    score: 1
+  - value: controlled
+    label: Yes, with masking/redaction and access controls
+    score: 0.8
+  - value: uncontrolled
+    label: Yes, with no controls defined
+    score: 0
+  - value: unknown
+    label: Unknown
+    score: 0.1
+  critical: true
+- id: genai-hosting
+  text: Where will models be hosted and does this satisfy data residency and retention requirements?
+  category: architecture
+  dimension: model_risk
+  answer_type: single_choice
+  options:
+  - value: public_api
+    label: Public vendor API (shared tenancy)
+    score: 0.4
+  - value: cloud_private
+    label: Cloud provider managed model in client tenant/region
+    score: 0.9
+  - value: self_hosted
+    label: Self-hosted open-weight model
+    score: 0.8
+  - value: unknown
+    label: Not decided
+    score: 0.1
+- id: genai-model-lifecycle
+  text: Is there a process to evaluate, version and switch models as vendors deprecate or update them?
+  category: operations
+  dimension: model_risk
+  answer_type: yes_no

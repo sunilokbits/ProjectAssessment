@@ -1,0 +1,4 @@
+# Business Intelligence technology pack - scoring
+dimensions:
+  - {key: bi_readiness, name: BI Readiness, group: technology, weight: 1.0, description: 'KPI definitions, semantic layer, report rationalisation,
+      BI governance and adoption readiness.'}

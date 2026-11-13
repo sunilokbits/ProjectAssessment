@@ -1,0 +1,13 @@
+# Snowflake technology pack - domain
+key: snowflake
+name: Snowflake
+kind: technology
+version: 1.0.0
+description: Snowflake AI Data Cloud - virtual warehouses, separation of storage and compute, Snowpark, data sharing, Horizon governance and Cortex
+  AI.
+aliases: [Data Platforms]
+sort_order: 22
+detection:
+  keywords: {snowflake: 5, snowpark: 4, snowpipe: 4, snowflake cortex: 4, virtual warehouse: 2.5, snowsight: 3, data sharing: 1.5, snowflake marketplace: 3,
+    credits: 0.8, time travel: 1}
+related_technologies: [data_warehouse, lakehouse, data_engineering, aws, azure, gcp, business_intelligence]

@@ -1,0 +1,6 @@
+dimensions:
+- key: ai_agents_readiness
+  name: AI Agent Readiness
+  group: technology
+  weight: 1.0
+  description: Agent scope, knowledge sources, channel integration, escalation and evaluation for task-specific agents.

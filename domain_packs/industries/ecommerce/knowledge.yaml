@@ -1,0 +1,29 @@
+nfrs:
+  - {id: recs-latency, text: On-site recommendations and search respond within interactive latency budgets., category: performance}
+  - {id: peak-elasticity, text: Platform scales elastically for peak trading traffic., category: scalability}
+  - {id: event-loss, text: Clickstream ingestion tolerates bursts without data loss., category: availability}
+assumptions:
+  - {id: commerce-platform-sor, text: The commerce platform / OMS is the system of record for orders., category: data}
+  - {id: psp-tokens, text: PSP tokens are available for joining payment outcomes to orders., category: data}
+dependencies:
+  - {id: web-teams, text: Web and app teams to implement tracking changes., category: delivery}
+  - {id: psp-reports, text: PSP settlement report access., category: integration}
+security_considerations:
+  - {id: script-integrity, text: Payment page script inventory and integrity monitoring (PCI DSS 6.4.3 / 11.6.1)., category: security}
+data_quality_checks:
+  - {id: order-uniqueness, text: Orders unique across platform and OMS with consistent statuses., category: data}
+  - {id: bot-filter-check, text: Bot share of sessions monitored and filtered., category: data}
+reporting_requirements:
+  - {id: trading-reporting, text: "Daily trading reports (sales, conversion, margin) with consistent definitions.", category: reporting}
+migration_concerns:
+  - {id: replatforming, text: Preserving order and customer history during commerce re-platforming., category: data}
+ai_opportunities:
+  - {id: recommendations, text: Personalised recommendations and search ranking., category: ai}
+  - {id: catalogue-enrichment, text: GenAI catalogue attribute enrichment and descriptions., category: ai, sub_domains: [marketplace, seller_management, search_discovery]}
+  - {id: shopping-assistant, text: Conversational shopping assistant., category: ai}
+  - {id: fraud-ml, text: ML fraud scoring for payments and promotions., category: ai, sub_domains: [payments_checkout, marketplace]}
+ai_risks:
+  - {id: hallucinated-product-info, text: GenAI inventing product attributes or claims., category: ai}
+  - {id: unfair-pricing, text: Personalised pricing perceived as discriminatory., category: ai}
+clarification_questions:
+  - {id: checkout-integration, text: "Which checkout integration pattern and SAQ type apply today?", category: security}

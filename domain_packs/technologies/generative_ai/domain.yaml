@@ -1,0 +1,39 @@
+key: generative_ai
+name: Generative AI
+kind: technology
+version: 1.0.0
+description: Large language models and other foundation models used to generate, summarise, classify or transform content.
+aliases:
+- AI
+sort_order: 62
+detection:
+  keywords:
+    generative ai: 5
+    genai: 5
+    gen ai: 4
+    large language model: 5
+    llm: 4
+    gpt: 3
+    azure openai: 4
+    openai: 3
+    bedrock: 3
+    vertex ai: 2.5
+    claude: 2.5
+    gemini: 2
+    copilot: 2.5
+    chatbot: 2
+    prompt engineering: 3
+    foundation model: 3
+    summarisation: 1.5
+    summarization: 1.5
+related_technologies:
+- rag
+- llmops
+- vector_search
+- agentic_ai
+- ai_agents
+- data_governance
+- cybersecurity
+related_project_types:
+- genai_assistant
+- document_intelligence

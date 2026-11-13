@@ -1,0 +1,47 @@
+- id: rr-reports-in-scope
+  text: Which regulatory reports and regulators are in scope, with submission deadlines?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: rr-lineage
+  text: Can every reported figure be traced to source with documented transformations?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+  evidence_required: true
+- id: rr-controls
+  text: Are reconciliation and sign-off controls defined (maker-checker, variance analysis)?
+  category: governance
+  dimension: delivery_governance
+  answer_type: yes_no
+- id: rr-cde-quality
+  text: Are critical data elements for reports measured against quality thresholds?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+- id: rr-change-tracking
+  text: Is there a process to track regulatory change and update report logic?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: rr-tooling
+  text: Is a regulatory reporting engine in use or planned?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+  - value: vendor
+    label: Vendor regulatory reporting tool
+    score: 1
+  - value: in_house
+    label: In-house built
+    score: 0.7
+  - value: spreadsheets
+    label: Spreadsheets / manual
+    score: 0.2
+  - value: undecided
+    label: Undecided
+    score: 0.4

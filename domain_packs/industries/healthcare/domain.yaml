@@ -1,0 +1,149 @@
+key: healthcare
+name: Healthcare
+kind: industry
+version: 1.0.0
+description: Hospitals and health systems, clinical operations, patient management, health analytics, medical devices, healthcare payers and provider organisations.
+aliases: [health care, healthcare provider, health system, hospital, payer, provider, healthtech]
+sort_order: 30
+sub_domains:
+  - key: hospitals
+    name: Hospitals and Health Systems
+    description: Acute care hospitals, integrated delivery networks and multi-site health systems.
+    keywords: [hospital, health system, inpatient, outpatient, emergency department, bed management, admission, discharge, idn, ward]
+  - key: clinical_operations
+    name: Clinical Operations
+    description: Clinical workflows, orders, care pathways, nursing, pharmacy and theatre operations.
+    keywords: [clinical workflow, cpoe, order entry, care pathway, nursing, medication administration, operating theatre, clinical decision support, pharmacy]
+  - key: patient_management
+    name: Patient Management
+    description: Patient registration, scheduling, access, engagement and care coordination.
+    keywords: [patient registration, patient scheduling, patient portal, patient engagement, care coordination, mpi, master patient index, referral, appointment]
+  - key: health_analytics
+    name: Health Analytics and Population Health
+    description: Clinical quality, population health, outcomes and operational analytics.
+    keywords: [population health, clinical analytics, quality measures, hedis, readmission, risk stratification, outcomes research, care gaps, value-based care]
+  - key: medical_devices
+    name: Medical Devices and Connected Care
+    description: Device integration, remote patient monitoring and software as a medical device.
+    keywords: [medical device, remote patient monitoring, rpm, wearable, samd, software as a medical device, device integration, bedside monitor, infusion pump]
+  - key: healthcare_payers
+    name: Healthcare Payers
+    description: Health plans, managed care, claims adjudication, member management and risk adjustment.
+    keywords: [health plan, payer, member, claims adjudication, prior authorization, risk adjustment, medicare advantage, medicaid, utilization management, provider network]
+  - key: healthcare_providers
+    name: Healthcare Providers and Physician Groups
+    description: Physician practices, ambulatory clinics, ACOs and provider revenue cycle.
+    keywords: [physician practice, ambulatory, clinic, aco, provider group, primary care, specialty care, urgent care]
+  - key: revenue_cycle
+    name: Revenue Cycle Management
+    description: Charge capture, coding, billing, claims submission, denials and collections.
+    keywords: [revenue cycle, rcm, charge capture, medical coding, claim submission, denials management, "837", "835", remittance, patient billing]
+  - key: diagnostics_imaging
+    name: Diagnostics, Laboratory and Imaging
+    description: Laboratory information systems, radiology, PACS and diagnostic reporting.
+    keywords: [laboratory, lis, radiology, pacs, dicom, imaging, pathology, ris, lab results]
+  - key: digital_health
+    name: Digital Health and Telehealth
+    description: Telehealth, virtual care, digital front door and consumer health apps.
+    keywords: [telehealth, telemedicine, virtual care, digital front door, health app, virtual visit, mhealth]
+  - key: public_health
+    name: Public Health and Government Health
+    description: Public health surveillance, national health programs and registries.
+    keywords: [public health, disease surveillance, immunization registry, national health, abdm, nhs, health registry]
+detection:
+  keywords:
+    patient: 2.5
+    hospital: 3
+    clinical: 2.5
+    phi: 4
+    hipaa: 4
+    ehr: 4
+    emr: 4
+    hl7: 4
+    fhir: 4
+    epic: 3
+    cerner: 4
+    oracle health: 4
+    meditech: 4
+    icd-10: 4
+    cpt: 2.5
+    encounter: 2
+    diagnosis: 2.5
+    physician: 2.5
+    nurse: 2
+    health plan: 3
+    payer: 2
+    care: 0.5
+    medical: 1.5
+    health: 1
+business_processes:
+  - "Patient registration and identity management"
+  - "Scheduling and patient access"
+  - "Admission discharge and transfer"
+  - "Clinical documentation"
+  - "Orders and results management"
+  - "Medication management"
+  - "Care coordination and referrals"
+  - "Charge capture and coding"
+  - "Claims submission and adjudication"
+  - "Denials management"
+  - "Prior authorization"
+  - "Quality and regulatory reporting"
+  - "Population health management"
+  - "Supply chain and asset management"
+capabilities:
+  - "Patient 360"
+  - "Clinical decision support"
+  - "Population health and risk stratification"
+  - "Readmission prediction"
+  - "Capacity and bed management"
+  - "Revenue cycle analytics"
+  - "Claims analytics and payment integrity"
+  - "Quality measure reporting"
+  - "Interoperability and health information exchange"
+  - "Remote patient monitoring"
+  - "Clinical documentation assistance"
+source_systems:
+  - "EHR / EMR (Epic, Oracle Health / Cerner, MEDITECH, Allscripts / Veradigm, athenahealth, eClinicalWorks)"
+  - "Laboratory information system (Sunquest, Epic Beaker)"
+  - "Radiology / PACS (GE Centricity, Philips IntelliSpace, Sectra)"
+  - "Integration engine (InterSystems HealthShare / Ensemble, Rhapsody, Mirth Connect, Infor Cloverleaf)"
+  - "Revenue cycle and practice management"
+  - "Payer core admin (Facets, QNXT, HealthEdge HealthRules)"
+  - "ERP and supply chain (Workday, Oracle, Infor)"
+  - "Patient engagement and CRM (Salesforce Health Cloud)"
+  - "Medical device and RPM platforms"
+  - "Health information exchange"
+  - "Clinical data warehouse (Epic Clarity / Caboodle)"
+data_entities:
+  - "Patient"
+  - "Encounter"
+  - "Diagnosis"
+  - "Procedure"
+  - "Order"
+  - "Result"
+  - "Medication"
+  - "Allergy"
+  - "Provider"
+  - "Practitioner"
+  - "Facility"
+  - "Claim"
+  - "Member"
+  - "Coverage"
+  - "Appointment"
+  - "Observation"
+  - "Care plan"
+  - "Device reading"
+  - "Consent"
+integration_patterns:
+  - "HL7 v2 messaging (ADT, ORU, ORM)"
+  - "HL7 FHIR R4 APIs"
+  - "CDA / C-CDA documents"
+  - "DICOM imaging"
+  - "X12 EDI (837, 835, 270/271, 278)"
+  - "Integration engine routing"
+  - "Bulk FHIR export"
+  - "EHR reporting database extracts"
+  - "Device telemetry streaming"
+related_technologies: [databricks, snowflake, azure, power_bi, machine_learning, generative_ai, data_governance, api_integration, iot]
+related_project_types: [customer_360, document_intelligence, genai_assistant, data_platform_modernization, regulatory_reporting, fraud_detection]

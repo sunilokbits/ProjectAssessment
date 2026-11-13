@@ -1,0 +1,24 @@
+- id: dpm-workloads-migrated
+  name: Workloads migrated
+  description: Share of in-scope pipelines and reports running on the target platform.
+  unit: '%'
+  direction: higher_is_better
+  category: delivery
+- id: dpm-legacy-decommissioned
+  name: Legacy components decommissioned
+  description: Share of legacy platform components switched off.
+  unit: '%'
+  direction: higher_is_better
+  category: delivery
+- id: dpm-run-cost
+  name: Platform run cost
+  description: Monthly total cost of ownership of the data platform.
+  unit: currency
+  direction: lower_is_better
+  category: financial
+- id: dpm-data-freshness
+  name: Data freshness
+  description: Elapsed time between source change and availability for consumers.
+  unit: hours
+  direction: lower_is_better
+  category: data

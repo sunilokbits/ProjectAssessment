@@ -1,0 +1,98 @@
+- id: fda-21-cfr-part-11
+  name: FDA 21 CFR Part 11 - Electronic Records and Electronic Signatures
+  short_name: 21 CFR Part 11
+  geographies: [US]
+  description: Requirements for trustworthy electronic records and signatures used for FDA-regulated activities.
+  obligations: [System validation, Secure computer-generated audit trails, Electronic signature controls, Record retention and retrieval, Access controls]
+  applicability_note: Applies to GxP records submitted to or required by FDA, regardless of where the company is based.
+- id: eu-gmp-annex-11
+  name: EU GMP Annex 11 - Computerised Systems
+  short_name: Annex 11
+  geographies: [EU, EEA, UK]
+  applicability_note: A revised Annex 11 has been consulted on; confirm current version in force.
+- id: fda-cgmp
+  name: FDA current Good Manufacturing Practice (21 CFR Parts 210 and 211)
+  short_name: cGMP
+  geographies: [US]
+  sub_domains: [manufacturing, quality_management, biotech_cgt]
+- id: eu-gmp
+  name: EudraLex Volume 4 - EU Good Manufacturing Practice
+  short_name: EU GMP
+  geographies: [EU, EEA]
+  sub_domains: [manufacturing, quality_management, biotech_cgt]
+- id: ich-e6
+  name: ICH E6 Good Clinical Practice (R3)
+  short_name: ICH GCP
+  geographies: [GLOBAL]
+  sub_domains: [clinical_trials]
+- id: eu-ctr
+  name: EU Clinical Trials Regulation (EU) No 536/2014
+  short_name: EU CTR
+  geographies: [EU, EEA]
+  sub_domains: [clinical_trials]
+- id: gvp
+  name: EU Good Pharmacovigilance Practices
+  short_name: GVP
+  geographies: [EU, EEA]
+  sub_domains: [pharmacovigilance]
+- id: fda-safety-reporting
+  name: FDA postmarketing and IND safety reporting (21 CFR 314.80 and 312.32)
+  short_name: FDA Safety Reporting
+  geographies: [US]
+  sub_domains: [pharmacovigilance, clinical_trials]
+- id: dscsa
+  name: Drug Supply Chain Security Act
+  short_name: DSCSA
+  geographies: [US]
+  sub_domains: [manufacturing]
+- id: eu-fmd
+  name: EU Falsified Medicines Directive (2011/62/EU) and Delegated Regulation 2016/161
+  short_name: EU FMD
+  geographies: [EU, EEA]
+  sub_domains: [manufacturing]
+- id: sunshine-act
+  name: Physician Payments Sunshine Act (Open Payments)
+  short_name: Sunshine Act
+  geographies: [US]
+  sub_domains: [commercial_analytics, medical_affairs]
+- id: hipaa-ls
+  name: Health Insurance Portability and Accountability Act
+  short_name: HIPAA
+  geographies: [US]
+  data_classifications_any: [phi]
+  applicability_note: Pharma companies are usually not covered entities, but HIPAA governs PHI they receive from providers, hubs and claims data vendors.
+- id: gdpr-ls
+  name: General Data Protection Regulation (health and genetic data)
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [phi, spi, pii]
+- id: iso-13485
+  name: ISO 13485 Medical devices - Quality management systems
+  short_name: ISO 13485
+  geographies: [GLOBAL]
+  sub_domains: [medtech]
+- id: eu-mdr-ivdr
+  name: EU Medical Device Regulation 2017/745 and IVD Regulation 2017/746
+  short_name: EU MDR / IVDR
+  geographies: [EU, EEA]
+  sub_domains: [medtech]
+- id: idmp
+  name: ISO IDMP standards and EMA SPOR implementation
+  short_name: IDMP
+  geographies: [EU, EEA]
+  sub_domains: [regulatory]
+- id: cdsco-schedule-m
+  name: CDSCO regulations and revised Schedule M (Good Manufacturing Practices) under the Drugs and Cosmetics Rules
+  short_name: CDSCO / Schedule M
+  geographies: [IN]
+  sub_domains: [manufacturing, quality_management]
+- id: gamp-5
+  name: ISPE GAMP 5 Second Edition
+  short_name: GAMP 5
+  geographies: [GLOBAL]
+  applicability_note: Industry guidance rather than regulation; widely expected by inspectors as the basis for CSV / CSA.
+- id: fda-csa-guidance
+  name: FDA Computer Software Assurance for Production and Quality System Software guidance
+  short_name: FDA CSA
+  geographies: [US]
+  applicability_note: Final guidance issued 2025 for device production and quality system software; widely applied by analogy in pharma.

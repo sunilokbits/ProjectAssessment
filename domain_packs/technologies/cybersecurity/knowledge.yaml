@@ -1,0 +1,15 @@
+security_considerations:
+- id: cyber-encryption
+  text: Encryption at rest and in transit with managed keys.
+  category: security
+- id: cyber-logging
+  text: Centralised audit logging with tamper-resistant retention.
+  category: security
+dependencies:
+- id: cyber-security-team
+  text: Client security architecture and SOC availability for reviews.
+  category: delivery
+ai_risks:
+- id: cyber-ai-attacks
+  text: AI components introduce new attack surfaces (prompt injection, model theft).
+  category: ai

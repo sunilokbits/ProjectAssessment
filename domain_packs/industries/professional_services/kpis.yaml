@@ -1,0 +1,9 @@
+- {id: utilisation, name: Billable utilisation, description: Billable hours as a share of available hours., formula: billable hours / available hours, unit: "%", direction: target_range, category: productivity}
+- {id: realisation, name: Realisation rate, description: Amount billed or collected relative to standard value of time., unit: "%", direction: higher_is_better, category: financial}
+- {id: engagement-margin, name: Engagement margin, description: Engagement revenue less delivery cost as a share of revenue., unit: "%", direction: higher_is_better, category: financial}
+- {id: wip-days, name: WIP days, description: Days of unbilled work in progress., unit: days, direction: lower_is_better, category: financial}
+- {id: lockup, name: Lock-up days, description: Combined WIP and debtor days., unit: days, direction: lower_is_better, category: financial, sub_domains: [legal, accounting]}
+- {id: win-rate, name: Proposal win rate, description: Share of proposals won., unit: "%", direction: higher_is_better, category: growth}
+- {id: revenue-per-fee-earner, name: Revenue per professional, description: Revenue per fee-earning professional., unit: currency, direction: higher_is_better, category: productivity}
+- {id: time-submission-lag, name: Time submission lag, description: Average delay between work performed and time submitted., unit: days, direction: lower_is_better, category: data}
+- {id: staff-attrition, name: Professional staff attrition, description: Voluntary attrition of professional staff., unit: "%", direction: lower_is_better, category: talent}

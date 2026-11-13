@@ -1,0 +1,11 @@
+security_considerations:
+- id: devops-supply-chain
+  text: Dependency and container scanning, signed artefacts.
+  category: security
+- id: devops-oidc
+  text: Workload identity federation instead of long-lived pipeline secrets.
+  category: security
+dependencies:
+- id: devops-tooling
+  text: Licensed DevOps toolchain and runners with network access.
+  category: infrastructure

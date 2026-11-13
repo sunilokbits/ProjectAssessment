@@ -1,0 +1,18 @@
+security_considerations:
+- id: rag-acl
+  text: Document-level ACL enforcement at retrieval time.
+  category: security
+- id: rag-untrusted
+  text: Treat retrieved text as untrusted input (indirect prompt injection).
+  category: security
+ai_risks:
+- id: rag-ai-hallucination
+  text: Hallucination when retrieval returns nothing relevant.
+  category: ai
+dependencies:
+- id: rag-source-connectors
+  text: Connectors to content sources (SharePoint, Confluence, file shares, DMS).
+  category: integration
+- id: rag-vector-store
+  text: Vector / hybrid search index.
+  category: technology

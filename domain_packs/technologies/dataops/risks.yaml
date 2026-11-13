@@ -1,0 +1,26 @@
+- id: dataops-fragile-pipelines
+  title: Fragile pipelines break on upstream change
+  category: operations
+  likelihood: 4
+  impact: 3
+  mitigation: Data contracts, schema checks and alerting.
+  indicators:
+  - schema change
+  - pipeline failures
+- id: dataops-no-test-data
+  title: No safe test data for non-production
+  category: privacy
+  likelihood: 3
+  impact: 3
+  mitigation: Synthetic or masked datasets for lower environments.
+  indicators:
+  - production data in dev
+- id: dataops-sla-breach
+  title: Data SLAs missed without detection
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Freshness monitoring and on-call ownership.
+  indicators:
+  - late data
+  - missed sla

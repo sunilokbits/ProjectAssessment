@@ -1,0 +1,27 @@
+key: salesforce_integration
+name: Salesforce Integration
+kind: technology
+version: 1.0.0
+description: Integrating Salesforce CRM, Data Cloud and related clouds with enterprise data and applications.
+aliases:
+- Integration
+sort_order: 82
+detection:
+  keywords:
+    salesforce: 4
+    sales cloud: 4
+    service cloud: 4
+    marketing cloud: 4
+    salesforce data cloud: 5
+    data cloud: 2.5
+    mulesoft: 2
+    soql: 4
+    bulk api: 3
+    platform events: 3
+    change data capture: 1.5
+    crm: 0.8
+related_technologies:
+- api_integration
+- master_data_management
+- data_platform
+- ai_agents

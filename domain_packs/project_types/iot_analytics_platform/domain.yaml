@@ -1,0 +1,24 @@
+key: iot_analytics_platform
+name: IoT Analytics Platform
+kind: project_type
+version: 1.0.0
+description: Platform to ingest, store, contextualise and analyse device and sensor telemetry at scale.
+sort_order: 31
+detection:
+  keywords:
+    iot analytics: 5
+    iot platform: 5
+    iot analytics platform: 5
+    telemetry platform: 4
+    sensor analytics: 4
+    connected devices: 3
+    industrial analytics: 4
+    smart factory: 3
+    industry 4.0: 3
+    fleet telematics: 4
+    digital twin: 3
+related_technologies:
+- iot
+- real_time_streaming
+- data_platform
+- machine_learning

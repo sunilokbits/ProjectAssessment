@@ -1,0 +1,18 @@
+- id: nonprofit-mission-data-platform
+  name: Nonprofit mission data platform
+  description: Right-sized platform combining supporter CRM, giving, finance and programme data with consent and beneficiary protection for fundraising and impact insight.
+  use_cases: [Supporter 360, Donor retention, Impact reporting, Grant portfolio reporting]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: np-sources, name: "Donor CRM, giving platforms, finance, grants and M&E sources", layer: sources, core: true}
+    - {id: managed-ingest, name: Managed low-code connectors, layer: ingestion, core: true, purpose: Minimise maintenance for small teams.}
+    - {id: supporter-model, name: Supporter golden record and giving history, layer: processing, when: {sub_domains_any: [donor_management, fundraising]}}
+    - {id: consent-enforcement, name: Consent and suppression enforcement, layer: governance, core: true}
+    - {id: propensity-models, name: Donor propensity and retention models, layer: processing, when: {project_types_any: [churn_prediction, customer_360]}}
+    - {id: fund-tracking, name: Restricted fund and grant tracking model, layer: processing, when: {sub_domains_any: [grants, programs_impact]}}
+    - {id: mne-ingest, name: Offline field data collection integration, layer: ingestion, when: {sub_domains_any: [programs_impact]}}
+    - {id: beneficiary-protection, name: Beneficiary data pseudonymisation and segregation, layer: security, when: {any_of: [{sub_domains_any: [programs_impact]}, {data_classifications_any: [spi, children]}]}}
+    - {id: impact-dashboards, name: Impact and fundraising dashboards, layer: consumption, core: true}
+  considerations:
+    - Favour SaaS and nonprofit licensing programmes to keep total cost of ownership low.
+    - Separate beneficiary data from supporter marketing data.

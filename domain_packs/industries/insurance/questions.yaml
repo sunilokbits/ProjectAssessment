@@ -1,0 +1,117 @@
+- id: policy-admin-systems
+  text: Which policy administration, claims and billing systems (and versions) are in scope, and how is data extracted from them today (batch, CDC, APIs)?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  equivalence_key: insurance_core_extract
+- id: policy-claims-reconciliation
+  text: Is there an agreed reconciliation approach between the new solution and the finance ledger / actuarial source of record for written premium, paid claims and reserves?
+  category: data
+  dimension: actuarial_data_integrity
+  weight: 2
+  critical: true
+  evidence_required: true
+- id: data-granularity
+  text: At what granularity is policy and claims data available historically?
+  category: data
+  dimension: actuarial_data_integrity
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not known, score: 0}
+    - {value: aggregated, label: Aggregated only (by product or month), score: 0.25}
+    - {value: policy_level, label: Policy and claim level with gaps, score: 0.6}
+    - {value: transaction_level, label: Full transaction-level history (endorsements and claim movements), score: 1}
+- id: ifrs17-solvency-impact
+  text: Do IFRS 17, Solvency II, RBC or local statutory reports depend on data or calculations in scope?
+  category: compliance
+  dimension: insurance_regulatory_readiness
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: yes_assessed, label: Yes - impact assessed with actuarial and finance, score: 1}
+    - {value: yes_not_assessed, label: Yes - impact not yet assessed, score: 0.2}
+    - {value: no, label: No dependency (confirmed), score: 1}
+  critical: true
+- id: regulatory-returns
+  text: Which regulatory returns (e.g. IRDAI returns, NAIC statutory statements, Solvency II QRTs, APRA returns) consume data in scope, and who owns them?
+  category: compliance
+  dimension: insurance_regulatory_readiness
+  answer_type: text
+- id: product-hierarchy
+  text: Is there an agreed product, line-of-business and coverage hierarchy that maps legacy product codes consistently across systems?
+  category: data
+  dimension: data_quality
+  weight: 1.5
+- id: claims-fraud-process
+  text: How mature is the claims fraud detection and special investigation unit (SIU) process?
+  category: compliance
+  dimension: claims_fraud_controls
+  answer_type: scale
+  sub_domains: [claims, health_insurance, property_casualty, general_insurance]
+  help: "1 = manual referrals only, 3 = rules-based scoring, 5 = analytics/ML scoring with feedback loop from SIU outcomes."
+- id: claims-automation-guardrails
+  text: Will automation or AI make or recommend claim decisions, and are human-review and fair-treatment guardrails defined?
+  category: governance
+  dimension: claims_fraud_controls
+  answer_type: single_choice
+  options:
+    - {value: no_automation, label: No automated decisions in scope, score: 1}
+    - {value: defined, label: Yes - guardrails and human review defined, score: 1}
+    - {value: partial, label: Yes - guardrails partially defined, score: 0.5}
+    - {value: undefined, label: Yes - no guardrails defined yet, score: 0}
+  sub_domains: [claims, underwriting]
+  when: {technologies_any: [machine_learning, generative_ai, agentic_ai, ai_agents, advanced_analytics]}
+  critical: true
+- id: pricing-model-governance
+  text: Will pricing, underwriting or reserving models be subject to model governance and regulator scrutiny (e.g. rate filings, unfair discrimination testing)?
+  category: governance
+  dimension: insurance_regulatory_readiness
+  sub_domains: [underwriting, property_casualty, general_insurance, actuarial, life_insurance]
+  when: {technologies_any: [machine_learning, advanced_analytics, generative_ai]}
+- id: medical-data-handling
+  text: Is medical or health information (underwriting disclosures, claims documents) in scope, and are health-data handling rules (e.g. HIPAA, sensitive personal data rules) applied?
+  category: privacy
+  dimension: privacy_protection
+  sub_domains: [health_insurance, life_insurance, claims, underwriting]
+  critical: true
+- id: policyholder-consent
+  text: Is policyholder consent for analytics, marketing and third-party data enrichment captured and enforceable?
+  category: privacy
+  dimension: privacy_protection
+- id: reinsurance-data
+  text: Are ceded / assumed reinsurance treaties, bordereaux and recoveries available in structured form?
+  category: data
+  dimension: actuarial_data_integrity
+  sub_domains: [reinsurance, actuarial]
+- id: acord-standards
+  text: Which data exchange standards are used with brokers, agents and partners (ACORD XML, ACORD AL3, proprietary APIs, spreadsheets)?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+  sub_domains: [distribution, property_casualty, general_insurance, reinsurance]
+- id: policyholder-identity
+  text: Is there a single policyholder identifier across lines of business, channels and legacy books?
+  category: data
+  dimension: data_quality
+  when: {project_types_any: [customer_360, churn_prediction]}
+- id: cat-exposure-data
+  text: Is location-level exposure data (geocoded risk addresses, construction, occupancy) available for catastrophe modelling?
+  category: data
+  dimension: data_availability
+  sub_domains: [property_casualty, reinsurance, general_insurance]
+- id: claims-documents
+  text: What volume and formats of claims and proposal documents (forms, medical reports, invoices, photos) would be processed?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  when: {project_types_any: [document_intelligence]}
+- id: legacy-book-migration
+  text: Are closed or legacy books of business (e.g. older life policies on legacy admin systems) in scope for migration or archival?
+  category: data
+  dimension: actuarial_data_integrity
+  when: {technologies_any: [data_migration, application_modernization, database_migration, cloud_migration]}
+- id: cloud-outsourcing-insurance
+  text: Has the insurer's cloud/outsourcing approval process (including regulator notification where required) been initiated?
+  category: compliance
+  dimension: insurance_regulatory_readiness
+  when: {technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]}

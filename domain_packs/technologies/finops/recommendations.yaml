@@ -1,0 +1,15 @@
+- id: finops-tag-policy
+  title: Enforce tagging via cloud policy
+  text: Block untagged resources and report allocation weekly.
+  category: governance
+  priority: high
+- id: finops-unit-cost
+  title: Track unit cost per business outcome
+  text: Measure cost per pipeline, report or prediction to steer optimisation.
+  category: operations
+  priority: medium
+- id: finops-commitments
+  title: Purchase commitments once usage stabilises
+  text: Buy reserved capacity or savings plans after a baseline period.
+  category: operations
+  priority: low

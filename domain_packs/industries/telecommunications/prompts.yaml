@@ -1,0 +1,8 @@
+system_addition: |
+  Use telecom terminology (subscriber, SIM, MSISDN, network, CDR, billing, churn, ARPU, OSS/BSS, CPNI).
+  Treat billing as the system of record for revenue. Highlight CPNI, traffic and location data protection, lawful-interception separation,
+  revenue assurance, data volumes and cost, licence-driven data localisation and network operational continuity.
+stage_additions:
+  discovery: "Ask which lines of business, BSS/OSS platforms, data volumes and licence conditions apply."
+  solutioning: Design pseudonymisation of subscriber identifiers, tiered retention and revenue reconciliation as core components.
+extraction_hints: Map "customer", "line" and "connection" to Subscriber; map "mobile number" to MSISDN; map "xDR", "EDR" and "usage record" to CDR; map "attrition" and "port-out" to Churn; map "invoicing" and "rating" to Billing.

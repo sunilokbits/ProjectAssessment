@@ -1,0 +1,66 @@
+- id: api-inventory
+  text: Is there an inventory of interfaces in scope with protocols, volumes and owners?
+  category: integration
+  dimension: integration_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: api-platform
+  text: Which integration platform is the standard?
+  category: technology
+  dimension: api_integration_readiness
+  answer_type: single_choice
+  options:
+  - value: none
+    label: No standard; point-to-point
+    score: 0.2
+  - value: esb
+    label: Legacy ESB / middleware
+    score: 0.5
+  - value: ipaas
+    label: iPaaS (e.g. MuleSoft, Boomi, Azure Integration Services)
+    score: 1
+  - value: custom
+    label: Custom microservices with API gateway
+    score: 0.9
+- id: api-standards
+  text: Are API design standards (versioning, naming, error handling, OpenAPI contracts) defined?
+  category: architecture
+  dimension: api_integration_readiness
+  answer_type: yes_no
+- id: api-security
+  text: Are APIs secured with OAuth2/OIDC, mTLS where needed, rate limiting and threat protection?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+- id: api-source-readiness
+  text: Do source systems expose APIs or events for required data, or will new interfaces be needed?
+  category: integration
+  dimension: integration_readiness
+  answer_type: single_choice
+  options:
+  - value: available
+    label: APIs/events available
+    score: 1
+  - value: partial
+    label: Some available, some to build
+    score: 0.6
+  - value: none
+    label: None; new interfaces or file-based
+    score: 0.3
+- id: api-monitoring
+  text: Is interface monitoring and alerting (failures, latency, retries) in place?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: api-error-handling
+  text: Are retry, idempotency and dead-letter handling patterns standardised?
+  category: architecture
+  dimension: api_integration_readiness
+  answer_type: yes_no
+- id: api-skills
+  text: How experienced is the client team with API and integration platform development (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

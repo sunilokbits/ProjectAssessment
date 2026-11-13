@@ -1,0 +1,14 @@
+- {term: Citizen, definition: Member of the public receiving government services, synonyms: [constituent, resident, claimant, applicant, beneficiary], entity_type: entity, category: data}
+- {term: Taxpayer, definition: Individual or business with tax obligations, synonyms: [tax filer, registrant, tin holder], entity_type: entity, category: data, sub_domains: [tax_revenue]}
+- {term: Case, definition: Unit of work tracking an application or investigation, synonyms: [case file, application, claim], entity_type: entity, category: data}
+- {term: Programme, definition: Government programme delivering a benefit or service, synonyms: [program, scheme, initiative], entity_type: entity, category: business}
+- {term: ATO, definition: Authority to Operate granted by an authorising official, synonyms: [authority to operate, authorisation to operate, accreditation], entity_type: process, category: compliance}
+- {term: FedRAMP, definition: US federal cloud security authorisation programme, synonyms: [fedramp moderate, fedramp high, jab p-ato], entity_type: regulation, category: compliance}
+- {term: CJI, definition: Criminal Justice Information protected by the CJIS Security Policy, synonyms: [criminal justice information, cjis data, criminal history record], entity_type: entity, category: security, sub_domains: [public_safety]}
+- {term: FTI, definition: Federal Tax Information received from the IRS, synonyms: [federal tax information], entity_type: entity, category: security, sub_domains: [tax_revenue, citizen_services, state_government]}
+- {term: CAD, definition: Computer-aided dispatch system, synonyms: [computer aided dispatch, dispatch system], entity_type: system, category: integration, sub_domains: [public_safety]}
+- {term: RMS, definition: Records management system for law enforcement, synonyms: [police records system], entity_type: system, category: integration, sub_domains: [public_safety]}
+- {term: Improper Payment, definition: Payment that should not have been made or was the wrong amount, synonyms: [overpayment, erroneous payment, fraud waste and abuse], entity_type: event, category: integrity}
+- {term: Parcel, definition: Unit of land with an identifier used for property and permits, synonyms: [property parcel, apn, land parcel], entity_type: entity, category: data, sub_domains: [local_government, smart_cities]}
+- {term: "311", definition: Non-emergency municipal service request channel, synonyms: [service request, citizen request], entity_type: process, category: business, sub_domains: [local_government, smart_cities]}
+- {term: FOIA, definition: Freedom of Information request regime, synonyms: [freedom of information, public records request, rti], entity_type: regulation, category: compliance}

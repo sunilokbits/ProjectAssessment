@@ -1,0 +1,15 @@
+# Data Warehouse technology pack - terminology
+- term: Star Schema
+  definition: Dimensional model with fact tables surrounded by dimension tables
+  synonyms: [dimensional model]
+  entity_type: concept
+  category: architecture
+- term: Slowly Changing Dimension
+  definition: Technique for tracking attribute history in dimensions
+  synonyms: [scd, scd type 2]
+  entity_type: concept
+  category: data
+- {term: Data Vault, definition: 'Modelling method using hubs, links and satellites for auditable integration', entity_type: concept, category: architecture}
+- {term: Data Mart, definition: Subject-specific subset of the warehouse for a business area, entity_type: system, category: data}
+- {term: Conformed Dimension, definition: Dimension shared consistently across multiple fact tables, entity_type: entity, category: data}
+- {term: Grain, definition: The level of detail represented by one row of a fact table, entity_type: concept, category: data}

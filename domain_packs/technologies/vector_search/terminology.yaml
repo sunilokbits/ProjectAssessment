@@ -1,0 +1,14 @@
+- term: ANN
+  definition: Approximate nearest neighbour search
+  synonyms:
+  - approximate nearest neighbor
+  entity_type: concept
+  category: technology
+- term: HNSW
+  definition: Hierarchical navigable small world graph index
+  entity_type: concept
+  category: technology
+- term: Cosine Similarity
+  definition: Similarity measure between vectors
+  entity_type: metric
+  category: technology

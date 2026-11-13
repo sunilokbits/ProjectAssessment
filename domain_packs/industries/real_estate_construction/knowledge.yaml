@@ -1,0 +1,28 @@
+nfrs:
+  - {id: telemetry-retention, text: Building telemetry retained long enough for seasonal energy analysis., category: data}
+  - {id: investor-auditability, text: Investor and valuation reports reproducible with audit trail., category: compliance}
+assumptions:
+  - {id: pms-book-of-record, text: The property management system is the book of record for rent and leases., category: data}
+  - {id: contractor-data, text: Contractors will provide project data in agreed formats., category: data}
+dependencies:
+  - {id: fm-vendors, text: FM and BMS vendor cooperation for data access., category: integration}
+  - {id: asset-managers, text: Asset and property manager engagement for data validation., category: business}
+security_considerations:
+  - {id: ot-buildings, text: Building automation networks treated as OT with segmentation., category: security}
+data_quality_checks:
+  - {id: rent-roll-tieout, text: Rent roll ties out to the general ledger per property., category: data}
+  - {id: area-consistency, text: Floor areas consistent across lease and space systems using a defined measurement standard., category: data}
+reporting_requirements:
+  - {id: esg-reporting, text: "Energy, carbon and GRESB reporting by asset.", category: reporting}
+migration_concerns:
+  - {id: historic-leases, text: Migrating lease history and amendments from legacy systems., category: data}
+ai_opportunities:
+  - {id: lease-ai, text: GenAI lease abstraction and clause Q&A., category: ai, sub_domains: [commercial, property_management, residential]}
+  - {id: hvac-optimisation, text: ML-driven HVAC optimisation and fault detection., category: ai, sub_domains: [smart_buildings]}
+  - {id: cost-forecasting, text: Construction cost and schedule risk prediction., category: ai, sub_domains: [construction]}
+  - {id: site-safety-vision, text: Computer vision for site safety compliance., category: ai, sub_domains: [construction]}
+ai_risks:
+  - {id: screening-bias, text: Discriminatory outcomes in tenant screening or pricing models., category: ai, sub_domains: [residential, property_management]}
+  - {id: abstraction-errors, text: Errors in AI-abstracted lease terms affecting billing., category: ai}
+clarification_questions:
+  - {id: management-structure, text: "Which properties are owned, JV or third-party managed, and who owns the data?", category: governance}

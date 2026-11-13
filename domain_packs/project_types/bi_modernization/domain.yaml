@@ -1,0 +1,27 @@
+key: bi_modernization
+name: BI / Reporting Modernization
+kind: project_type
+version: 1.0.0
+description: 'Modernising reporting estates: migrating legacy BI tools, rationalising reports and enabling governed self-service.'
+sort_order: 28
+detection:
+  keywords:
+    bi modernization: 5
+    bi modernisation: 5
+    reporting modernization: 5
+    reporting modernisation: 5
+    report rationalisation: 4
+    report rationalization: 4
+    migrate to power bi: 4
+    tableau migration: 4
+    cognos: 3
+    business objects: 3
+    microstrategy: 3
+    qlikview: 3
+    ssrs: 3
+    self-service bi: 3
+related_technologies:
+- business_intelligence
+- power_bi
+- data_warehouse
+- microsoft_fabric

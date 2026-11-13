@@ -1,0 +1,6 @@
+dimensions:
+- key: agentic_ai_readiness
+  name: Agentic AI Readiness
+  group: technology
+  weight: 1.0
+  description: Action boundaries, tool security, autonomy controls, observability and rollback for autonomous AI.

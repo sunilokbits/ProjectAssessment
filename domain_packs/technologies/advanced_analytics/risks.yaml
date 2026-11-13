@@ -1,0 +1,39 @@
+- id: aa-no-adoption
+  title: Analytical insights not adopted by the business
+  category: business
+  likelihood: 3
+  impact: 4
+  mitigation: Co-design with decision owners; embed outputs into existing workflows and measure decision uptake.
+  indicators:
+  - low adoption
+  - shelfware
+  - not used
+- id: aa-data-depth
+  title: Insufficient historical data depth for robust models
+  category: data
+  likelihood: 3
+  impact: 3
+  mitigation: Assess history and granularity early; consider external data or simpler methods.
+  indicators:
+  - limited history
+  - data gaps
+  - only recent data
+- id: aa-desktop-sprawl
+  title: Analytics trapped in unmanaged desktop tools and spreadsheets
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: Move analysts onto a governed platform with shared, versioned code.
+  indicators:
+  - excel models
+  - spreadsheet
+  - local scripts
+- id: aa-legacy-licence
+  title: Legacy statistical platform licence lock-in and migration effort
+  category: technology
+  likelihood: 2
+  impact: 3
+  mitigation: Inventory legacy code; plan phased conversion to open-source languages.
+  indicators:
+  - sas
+  - spss

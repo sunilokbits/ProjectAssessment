@@ -1,0 +1,75 @@
+- id: mine-ot-segmentation
+  text: How will data from fleet, plant control and safety systems leave the mine OT network without compromising segmentation?
+  category: security
+  dimension: safety_environment_controls
+  answer_type: single_choice
+  critical: true
+  options:
+    - {value: unknown, label: Not yet defined, score: 0}
+    - {value: direct, label: Direct connections from OT systems, score: 0.1}
+    - {value: dmz_planned, label: Industrial DMZ planned, score: 0.5}
+    - {value: dmz_in_place, label: Industrial DMZ with one-way replication in place, score: 1}
+- id: value-chain-reconciliation
+  text: Is there a mine-to-mill reconciliation process linking resource model, mined tonnes, plant feed and production?
+  category: data
+  dimension: mine_operations_data
+  answer_type: single_choice
+  weight: 1.5
+  sub_domains: [extraction_operations, processing, exploration]
+  options:
+    - {value: none, label: No systematic reconciliation, score: 0.1}
+    - {value: monthly_manual, label: Monthly manual reconciliation, score: 0.5}
+    - {value: automated, label: Automated reconciliation with factors tracked, score: 1}
+- id: fleet-data-access
+  text: Which fleet management, dispatch and OEM telematics systems are in use, and can raw cycle and health data be accessed?
+  category: data
+  dimension: mine_operations_data
+  answer_type: text
+  sub_domains: [fleet_equipment, extraction_operations]
+- id: geology-data-management
+  text: Are drill hole, assay and QA/QC data managed in a geological database with controlled access?
+  category: data
+  dimension: data_quality
+  sub_domains: [exploration]
+- id: resource-reporting-code
+  text: Must outputs support public resource and reserve reporting (JORC, NI 43-101, S-K 1300) with Competent Person sign-off?
+  category: compliance
+  dimension: mine_operations_data
+  sub_domains: [exploration]
+- id: site-connectivity
+  text: What connectivity exists between remote sites and the enterprise or cloud (fibre, satellite, private LTE), and what latency/bandwidth limits apply?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: text
+- id: safety-critical-alerts
+  text: Will any analytics outputs be used for safety-critical alerts (proximity, fatigue, gas, slope stability)?
+  category: architecture
+  dimension: safety_environment_controls
+  answer_type: single_choice
+  critical: true
+  sub_domains: [health_safety, extraction_operations, fleet_equipment]
+  options:
+    - {value: no, label: No - informational only, score: 1}
+    - {value: yes_certified, label: Yes - via certified safety systems with analytics as secondary, score: 0.9}
+    - {value: yes_primary, label: Yes - analytics would be the primary alerting path, score: 0.1}
+- id: tailings-monitoring
+  text: Is tailings facility instrumentation data (piezometers, InSAR, deformation) available and governed per GISTM?
+  category: compliance
+  dimension: safety_environment_controls
+  sub_domains: [environmental]
+- id: environmental-permits
+  text: Which environmental permit conditions and reporting obligations depend on in-scope data (water discharge, dust, emissions)?
+  category: compliance
+  dimension: safety_environment_controls
+  answer_type: text
+  sub_domains: [environmental, processing]
+- id: maintenance-data-quality
+  text: How reliable are maintenance work order histories and failure codes for reliability analytics?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+  sub_domains: [fleet_equipment, processing]
+- id: jv-reporting
+  text: Are there joint venture partners requiring separate production reporting or data-sharing controls?
+  category: governance
+  dimension: delivery_governance

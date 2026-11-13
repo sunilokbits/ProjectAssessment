@@ -1,0 +1,39 @@
+# Data Migration technology pack - risks
+- id: dm-quality-surprises
+  title: Poor source data quality discovered late
+  category: quality
+  likelihood: 4
+  impact: 4
+  mitigation: Early profiling, cleansing workstream with business ownership, quality gates per mock run.
+  indicators: [duplicates, data quality issues, inconsistent data]
+- id: dm-reconciliation-fail
+  title: Migrated data fails reconciliation at cutover
+  category: quality
+  likelihood: 3
+  impact: 5
+  mitigation: Automated reconciliation, repeated mock migrations and defined tolerance / sign-off criteria.
+  indicators: [mismatch, reconciliation]
+- id: dm-cutover-window
+  title: Volume too large for the agreed cutover window
+  category: technology
+  likelihood: 3
+  impact: 4
+  mitigation: Pre-load history, delta / CDC sync before cutover, performance-tested load runs.
+  indicators: [downtime window, weekend cutover]
+- id: dm-scope-creep
+  title: Uncontrolled scope of historical data and objects
+  category: delivery
+  likelihood: 3
+  impact: 3
+  mitigation: Agree retention and archive strategy; migrate only what is needed and archive the rest.
+  indicators: [all history, everything]
+- id: dm-pii-exposure
+  title: Personal data exposed in migration environments
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Masking, secure migration environments, access logging.
+  indicators: [production data in test]
+  when:
+    answers:
+      data_migration:dm-pii-handling: ['yes']

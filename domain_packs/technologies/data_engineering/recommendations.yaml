@@ -1,0 +1,8 @@
+# Data Engineering technology pack - recommendations
+- {id: pipelines-as-code, title: Treat pipelines as code, text: Version-control all pipeline code and configuration and deploy via CI/CD with
+    automated tests., category: operations, priority: high}
+- {id: elt-pattern, title: Prefer ELT on the target platform, text: Land raw data first and transform inside the scalable target platform using
+    SQL/dbt or Spark., category: architecture, priority: medium, rationale: 'Keeps raw history, simplifies reprocessing and uses elastic platform
+    compute.', decision_key: transformation_pattern, decision_option: elt}
+- {id: data-contracts, title: Establish data contracts with source owners, text: 'Agree schemas, SLAs and change notification for critical sources.',
+  category: data, priority: medium}

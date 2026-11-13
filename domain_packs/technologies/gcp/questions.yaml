@@ -1,0 +1,25 @@
+# GCP technology pack - questions
+- id: gcp-footprint
+  text: What is the client's current Google Cloud footprint?
+  category: technology
+  dimension: gcp_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: No Google Cloud usage, score: 0.2}
+    - {value: limited, label: Limited / departmental workloads, score: 0.5}
+    - {value: enterprise, label: Enterprise agreement with production workloads, score: 1}
+- {id: gcp-landing-zone, text: 'Is a Google Cloud foundation (organization, folders, projects, Shared VPC) deployed per the security foundations
+    blueprint?', category: technology, dimension: gcp_readiness, weight: 1.5, critical: true}
+- {id: gcp-identity, text: 'Is Cloud Identity / Workspace federated with the corporate IdP, with least-privilege IAM and service account controls?',
+  category: security, dimension: security_controls}
+- {id: gcp-network, text: 'Is hybrid connectivity (Cloud Interconnect / HA VPN) and Private Service Connect / Private Google Access in place?',
+  category: integration, dimension: integration_readiness}
+- {id: gcp-policy, text: 'Are Organization Policy constraints and VPC Service Controls perimeters enforcing guardrails?', category: governance,
+  dimension: gcp_readiness}
+- {id: gcp-iac, text: 'Is infrastructure provisioned as code (Terraform / Infrastructure Manager) through CI/CD pipelines?', category: operations,
+  dimension: gcp_readiness}
+- {id: gcp-cost, text: 'Are billing budgets, labels, BigQuery cost controls and committed use discounts managed?', category: operations, dimension: operational_readiness}
+- {id: gcp-region, text: 'Are the Google Cloud regions confirmed against data residency and service availability requirements?', category: architecture,
+  dimension: privacy_protection}
+- {id: gcp-skills, text: 'How experienced is the client team with Google Cloud (1-5)?', category: delivery, dimension: team_capability, answer_type: scale,
+  equivalence_key: client_skills}

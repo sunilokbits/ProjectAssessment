@@ -1,0 +1,10 @@
+# Database Migration technology pack - terminology
+- {term: Homogeneous Migration, definition: Migration between the same database engine, entity_type: concept, category: technology}
+- {term: Heterogeneous Migration, definition: Migration between different database engines requiring conversion, entity_type: concept, category: technology}
+- {term: Schema Conversion, definition: Translating DDL and procedural code to the target engine, entity_type: process, category: technology}
+- {term: Online Migration, definition: Migration with continuous replication keeping downtime minimal, entity_type: process, category: operations}
+- term: Transparent Data Encryption
+  definition: Encryption at rest at the database file level
+  synonyms: [tde]
+  entity_type: concept
+  category: security

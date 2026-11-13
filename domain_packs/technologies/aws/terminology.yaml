@@ -1,0 +1,19 @@
+# AWS technology pack - terminology
+- {term: Control Tower, definition: AWS service to set up and govern a multi-account landing zone, entity_type: system, category: governance}
+- term: Service Control Policy
+  definition: Organization-level guardrail restricting permissions in accounts
+  synonyms: [scp]
+  entity_type: concept
+  category: governance
+- term: VPC
+  definition: Virtual private cloud network in AWS
+  synonyms: [virtual private cloud]
+  entity_type: system
+  category: network
+- term: IAM Identity Center
+  definition: AWS workforce identity federation and SSO service
+  synonyms: [aws sso]
+  entity_type: system
+  category: security
+- {term: Direct Connect, definition: Dedicated private network connection to AWS, entity_type: system, category: network}
+- {term: Savings Plans, definition: AWS commitment-based pricing discount model, entity_type: concept, category: operations}

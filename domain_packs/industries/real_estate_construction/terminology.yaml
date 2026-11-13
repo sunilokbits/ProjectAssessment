@@ -1,0 +1,14 @@
+- {term: Property, definition: Real estate asset such as a building or site, synonyms: [asset, building, site, estate], entity_type: entity, category: data}
+- {term: Unit, definition: Leasable space within a property, synonyms: [suite, apartment, space, demise], entity_type: entity, category: data}
+- {term: Lease, definition: Contract granting occupation of a unit, synonyms: [tenancy, rental agreement, licence to occupy], entity_type: entity, category: data}
+- {term: Tenant, definition: Occupier holding a lease, synonyms: [lessee, occupier, resident, renter], entity_type: entity, category: data}
+- {term: Rent Roll, definition: Schedule of units with lease and rent details, synonyms: [tenancy schedule], entity_type: entity, category: data, sub_domains: [commercial, residential, property_management]}
+- {term: NOI, definition: Net operating income, synonyms: [net operating income], entity_type: metric, category: financial}
+- {term: CAM, definition: Common area maintenance charges recovered from tenants, synonyms: [service charge, common area maintenance, opex recovery], entity_type: concept, category: financial, sub_domains: [commercial, property_management]}
+- {term: Change Order, definition: Approved modification to contract scope or price, synonyms: [variation, change request, co], entity_type: entity, category: data, sub_domains: [construction]}
+- {term: RFI, definition: Request for information on a construction project, synonyms: [request for information], entity_type: entity, category: data, sub_domains: [construction]}
+- {term: BIM, definition: Building information modelling, synonyms: [building information model, revit model, ifc], entity_type: concept, category: data, sub_domains: [construction, smart_buildings]}
+- {term: BMS, definition: Building management system, synonyms: [building management system, bas, building automation system], entity_type: system, category: integration, sub_domains: [smart_buildings]}
+- {term: Cost to Complete, definition: Forecast remaining cost on a project, synonyms: [ctc, estimate to complete, etc forecast], entity_type: metric, category: project, sub_domains: [construction]}
+- {term: Cap Rate, definition: Capitalisation rate relating NOI to value, synonyms: [capitalisation rate, yield], entity_type: metric, category: financial, sub_domains: [commercial]}
+- {term: Work Order, definition: Maintenance task for a property or asset, synonyms: [maintenance request, service request, job], entity_type: entity, category: data}

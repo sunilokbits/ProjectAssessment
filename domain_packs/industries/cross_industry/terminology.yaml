@@ -1,0 +1,14 @@
+- {term: Legal Entity, definition: Registered company within the group, synonyms: [company code, business unit, subsidiary], entity_type: entity, category: data}
+- {term: Cost Centre, definition: Organisational unit for cost tracking, synonyms: [cost center, department, profit centre], entity_type: entity, category: data, sub_domains: [finance]}
+- {term: GL Account, definition: General ledger account in the chart of accounts, synonyms: [account, natural account, ledger account], entity_type: entity, category: data, sub_domains: [finance]}
+- {term: Journal, definition: Accounting entry posted to the ledger, synonyms: [journal entry, posting, je], entity_type: entity, category: data, sub_domains: [finance]}
+- {term: Employee, definition: Person employed by the organisation, synonyms: [worker, staff member, associate, colleague], entity_type: entity, category: data, sub_domains: [hr]}
+- {term: Position, definition: Role slot in the organisation structure, synonyms: [role, job, requisition], entity_type: entity, category: data, sub_domains: [hr]}
+- {term: Supplier, definition: External provider of goods or services, synonyms: [vendor, provider, contractor], entity_type: entity, category: data, sub_domains: [procurement, finance]}
+- {term: Purchase Order, definition: Commitment to buy from a supplier, synonyms: [po, order], entity_type: entity, category: data, sub_domains: [procurement]}
+- {term: Opportunity, definition: Potential sale tracked in the CRM, synonyms: [deal, pipeline item], entity_type: entity, category: data, sub_domains: [sales_marketing]}
+- {term: Case, definition: Customer service request, synonyms: [ticket, service request, contact], entity_type: entity, category: data, sub_domains: [customer_service]}
+- {term: Incident, definition: Unplanned IT service interruption, synonyms: [outage, ticket, p1], entity_type: event, category: data, sub_domains: [it_operations]}
+- {term: Configuration Item, definition: Managed IT component in the CMDB, synonyms: [ci, asset, service component], entity_type: entity, category: data, sub_domains: [it_operations]}
+- {term: Financial Close, definition: Period-end process to finalise accounts, synonyms: [month-end close, period close, r2r], entity_type: process, category: finance, sub_domains: [finance]}
+- {term: FP&A, definition: Financial planning and analysis, synonyms: [financial planning, budgeting and forecasting], entity_type: process, category: finance, sub_domains: [finance]}

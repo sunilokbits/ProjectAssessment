@@ -1,0 +1,4 @@
+dimensions:
+  - {key: gxp_validation_readiness, name: GxP Validation Readiness, group: domain, weight: 1.5, description: "Computer system validation / assurance approach, quality oversight and validated-state maintenance for GxP systems and data."}
+  - {key: data_integrity_alcoa, name: Data Integrity (ALCOA+), group: domain, weight: 1.5, description: "Attributable, legible, contemporaneous, original and accurate data with audit trails and electronic signature controls."}
+  - {key: patient_safety_controls, name: Patient Safety and Pharmacovigilance Controls, group: security, weight: 1.0, description: "Protection of trial subject data and assurance that safety-relevant information is captured and reported."}

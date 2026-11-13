@@ -1,0 +1,35 @@
+# ETL Migration technology pack - questions
+- id: etl-legacy-tool
+  text: Which legacy ETL tools are in scope?
+  category: technology
+  dimension: etl_migration_readiness
+  answer_type: multi_choice
+  options:
+    - {value: informatica, label: Informatica PowerCenter}
+    - {value: datastage, label: IBM DataStage}
+    - {value: ssis, label: SSIS}
+    - {value: ab_initio, label: Ab Initio}
+    - {value: odi, label: Oracle Data Integrator}
+    - {value: talend, label: Talend}
+    - {value: custom, label: Custom scripts / stored procedures}
+- {id: etl-inventory, text: 'Is there an inventory of ETL jobs with complexity, schedules, lineage and usage (incl. unused jobs)?', category: data,
+  dimension: etl_migration_readiness, weight: 1.5, critical: true}
+- id: etl-migration-approach
+  text: What conversion approach is preferred?
+  category: architecture
+  dimension: etl_migration_readiness
+  answer_type: single_choice
+  options:
+    - {value: automated, label: Automated code conversion (like-for-like)}
+    - {value: redesign, label: Redesign to modern ELT patterns}
+    - {value: hybrid, label: Automated conversion plus targeted redesign}
+    - {value: unknown, label: Not decided}
+- {id: etl-target-framework, text: 'Is the target pipeline framework and coding standard defined (e.g. dbt, Spark, Data Factory, Lakeflow)?',
+  category: architecture, dimension: architecture_fit}
+- {id: etl-parallel-run, text: 'Will legacy and new pipelines run in parallel with automated output comparison?', category: quality, dimension: etl_migration_readiness}
+- {id: etl-license-deadline, text: 'Is there a legacy ETL license renewal or support end date constraining the timeline?', category: delivery,
+  dimension: delivery_governance}
+- {id: etl-scheduling, text: 'Are scheduler dependencies (Control-M, Autosys, cron) mapped for migration to the new orchestrator?', category: integration,
+  dimension: integration_readiness}
+- {id: etl-skills, text: 'How experienced is the client team with the target ELT / pipeline technology (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

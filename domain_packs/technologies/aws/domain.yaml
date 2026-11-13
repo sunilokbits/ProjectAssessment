@@ -1,0 +1,13 @@
+# AWS technology pack - domain
+key: aws
+name: AWS
+kind: technology
+version: 1.0.0
+description: Amazon Web Services - multi-account landing zone (Control Tower), IAM, VPC networking and AWS data and AI services (S3, Glue, Redshift,
+  Bedrock).
+aliases: [Cloud]
+sort_order: 31
+detection:
+  keywords: {amazon web services: 5, aws: 3.5, amazon s3: 3, aws glue: 4, redshift: 3, aws lambda: 3, control tower: 4, aws organizations: 3,
+    iam: 1, vpc: 1.5, amazon bedrock: 3, kinesis: 3, cloudformation: 2.5, ec2: 2}
+related_technologies: [databricks, snowflake, cloud_migration, data_platform, data_lake, devops]

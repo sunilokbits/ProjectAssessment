@@ -1,0 +1,38 @@
+nfrs:
+  - {id: close-window, text: Processing must fit the monthly/quarterly financial and actuarial close calendar., category: performance}
+  - {id: retention, text: "Policy and claims records retained for the policy term plus regulatory retention periods (often decades for life business).", category: compliance}
+  - {id: quote-latency, text: Real-time quote and rating calls must meet channel response-time SLAs., category: performance, sub_domains: [underwriting, distribution, insurtech]}
+assumptions:
+  - {id: gl-actuarial-record, text: The general ledger and actuarial systems remain the books of record for financial and reserve figures., category: data}
+  - {id: core-extract-access, text: Policy and claims system owners will provide extracts or CDC access within agreed windows., category: data}
+dependencies:
+  - {id: actuarial-signoff, text: Actuarial and finance sign-off on data definitions and reconciliations., category: data}
+  - {id: outsourcing-approval, text: Outsourcing / cloud committee approval and regulator notification where required., category: compliance}
+  - {id: vendor-support, text: Policy/claims platform vendor support for data access and upgrades., category: integration}
+security_considerations:
+  - {id: medical-access, text: Restricted access to medical and claims investigation data on a need-to-know basis., category: security}
+  - {id: siu-confidentiality, text: Confidentiality of SIU investigations and fraud flags., category: security, sub_domains: [claims]}
+data_quality_checks:
+  - {id: premium-tieout, text: Written and earned premium tie out to GL by product and period., category: data}
+  - {id: claim-movements, text: "Claim payments and reserve movements sum to incurred amounts per claim.", category: data}
+  - {id: policy-dates, text: "Policy inception, expiry and transaction dates are consistent and complete.", category: data}
+  - {id: party-duplicates, text: Duplicate policyholders across lines of business are identified., category: data}
+reporting_requirements:
+  - {id: regulatory-returns, text: "Statutory, solvency and IFRS 17 reporting with audit trail.", category: reporting}
+  - {id: portfolio-mi, text: "Portfolio MI on premium, loss ratio, retention and distribution performance.", category: reporting}
+migration_concerns:
+  - {id: closed-books, text: Treatment of closed books and legacy admin systems (migrate or archive)., category: data}
+  - {id: product-code-mapping, text: Mapping of legacy product and coverage codes to the target model., category: data}
+  - {id: claims-history, text: Depth of claims history needed for reserving triangles and pricing models., category: data}
+ai_opportunities:
+  - {id: claims-triage, text: ML-based claims triage and straight-through settlement for simple claims., category: ai, sub_domains: [claims]}
+  - {id: fraud-ml, text: Claims fraud detection using network analytics and anomaly detection., category: ai}
+  - {id: doc-intelligence, text: "GenAI extraction from proposals, medical reports, invoices and loss adjuster reports.", category: ai}
+  - {id: lapse-prediction, text: Lapse and churn prediction for retention campaigns., category: ai, sub_domains: [life_insurance, policy_administration, distribution]}
+  - {id: underwriting-assist, text: Underwriting assistant summarising risk submissions and guidelines., category: ai, sub_domains: [underwriting]}
+ai_risks:
+  - {id: unfair-pricing, text: Proxy discrimination in pricing or underwriting models using external data., category: ai, sub_domains: [underwriting, property_casualty, general_insurance, life_insurance]}
+  - {id: claim-denial, text: Automated claim denials without adequate explanation or human review., category: ai, sub_domains: [claims, health_insurance]}
+clarification_questions:
+  - {id: lines-in-scope, text: "Please list the lines of business, products and legal entities in scope.", category: business}
+  - {id: reporting-owners, text: Please list regulatory and actuarial reports that consume in-scope data and their owners., category: compliance}

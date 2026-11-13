@@ -1,0 +1,89 @@
+- id: fcc-cpni
+  name: FCC CPNI rules (47 U.S.C. 222 and 47 CFR 64.2001-2011)
+  short_name: FCC CPNI
+  geographies: [US]
+  description: Protection of customer proprietary network information, customer approval for use, and breach notification.
+  obligations: [Customer approval for CPNI use in marketing, Authentication before disclosure, Annual certification, Breach notification]
+- id: calea
+  name: Communications Assistance for Law Enforcement Act
+  short_name: CALEA
+  geographies: [US]
+- id: tcpa
+  name: Telephone Consumer Protection Act
+  short_name: TCPA
+  geographies: [US]
+  sub_domains: [customer_analytics, churn, digital_services]
+- id: trai-regulations
+  name: TRAI regulations (incl. Telecom Commercial Communications Customer Preference Regulations and QoS regulations)
+  short_name: TRAI
+  geographies: [IN]
+- id: india-telecom-act
+  name: Telecommunications Act 2023 and DoT Unified Licence conditions (India)
+  short_name: India Telecom Act / UL
+  geographies: [IN]
+  applicability_note: Licence conditions include security, lawful interception and restrictions on transferring subscriber and network data outside India.
+- id: telecom-cyber-rules-in
+  name: Telecommunications (Telecom Cyber Security) Rules 2024 (India)
+  short_name: Telecom Cyber Security Rules
+  geographies: [IN]
+- id: dpdp-telecom
+  name: Digital Personal Data Protection Act 2023 (India)
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii]
+- id: eprivacy-telecom
+  name: ePrivacy Directive 2002/58/EC (traffic and location data)
+  short_name: ePrivacy
+  geographies: [EU, EEA]
+  description: Confidentiality of communications and restrictions on processing traffic and location data.
+- id: eecc
+  name: European Electronic Communications Code (Directive (EU) 2018/1972)
+  short_name: EECC
+  geographies: [EU, EEA]
+- id: nis2-telecom
+  name: NIS2 Directive (EU) 2022/2555
+  short_name: NIS2
+  geographies: [EU, EEA]
+  applicability_note: Providers of public electronic communications networks and services are essential / important entities.
+- id: gdpr-telecom
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii, spi]
+- id: uk-tsa
+  name: UK Telecommunications (Security) Act 2021 and Electronic Communications (Security Measures) Regulations 2022
+  short_name: UK TSA
+  geographies: [UK]
+- id: uk-pecr-telecom
+  name: Privacy and Electronic Communications Regulations
+  short_name: PECR
+  geographies: [UK]
+- id: eu-5g-toolbox
+  name: EU 5G Cybersecurity Toolbox
+  short_name: EU 5G Toolbox
+  geographies: [EU, EEA]
+  sub_domains: [five_g, network_operations]
+  applicability_note: Coordinated risk-mitigation measures implemented via national law; not a regulation in itself.
+- id: gsma-fs
+  name: GSMA fraud and security guidelines (e.g. FS.11 SS7 interconnect security)
+  short_name: GSMA FS
+  geographies: [GLOBAL]
+  sub_domains: [revenue_assurance, network_operations]
+  applicability_note: Industry guidelines rather than law.
+- id: crtc-telecom
+  name: CRTC regulations and Unsolicited Telecommunications Rules (Canada)
+  short_name: CRTC
+  geographies: [CA]
+- id: soci-act-au
+  name: Security of Critical Infrastructure Act 2018 and Telecommunications Sector Security Reforms (Australia)
+  short_name: SOCI / TSSR
+  geographies: [AU]
+- id: tdra-uae
+  name: TDRA regulatory framework and telecom consumer protection (UAE)
+  short_name: TDRA
+  geographies: [AE]
+- id: cst-ksa
+  name: CST regulations and Cloud Computing Regulatory Framework (Saudi Arabia)
+  short_name: CST
+  geographies: [SA]
+  technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]

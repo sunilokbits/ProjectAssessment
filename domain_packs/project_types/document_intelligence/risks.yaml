@@ -1,0 +1,28 @@
+- id: di-poor-scans
+  title: Poor scan quality and handwriting reduce accuracy
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Image pre-processing, capture standards and human validation.
+  indicators:
+  - handwritten
+  - fax
+  - poor quality scans
+- id: di-layout-variety
+  title: High layout variety across senders
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: LLM-based or layout-agnostic extraction with evaluation per layout cluster.
+  indicators:
+  - many vendors
+  - different formats
+- id: di-silent-errors
+  title: Extraction errors flow silently downstream
+  category: business
+  likelihood: 3
+  impact: 4
+  mitigation: Confidence thresholds, validation rules and review queues.
+  indicators:
+  - straight-through
+  - no review

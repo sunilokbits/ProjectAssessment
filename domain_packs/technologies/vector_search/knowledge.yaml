@@ -1,0 +1,8 @@
+security_considerations:
+- id: vs-tenant-isolation
+  text: Enforce tenant and permission filters on every query; embeddings can leak source content.
+  category: security
+dependencies:
+- id: vs-embedding-endpoint
+  text: Embedding model endpoint with capacity for initial load and updates.
+  category: technology

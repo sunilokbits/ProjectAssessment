@@ -1,0 +1,6 @@
+dimensions:
+- key: api_integration_readiness
+  name: API and Integration Readiness
+  group: technology
+  weight: 1.0
+  description: Integration inventory, API standards, platform, security and operational monitoring of interfaces.

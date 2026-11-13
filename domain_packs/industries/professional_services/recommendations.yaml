@@ -1,0 +1,4 @@
+- {id: permission-aware-ai, title: Enforce ethical walls in search and AI, text: "Synchronise DMS permissions and walls into indexes; filter retrieval by user at query time.", category: security, priority: high, when: {technologies_any: [generative_ai, rag, vector_search, agentic_ai, ai_agents]}}
+- {id: unify-engagement-hierarchy, title: Unify the client-engagement hierarchy, text: "Align CRM, PSA, billing and DMS identifiers before profitability analytics.", category: data, priority: high}
+- {id: professional-review, title: Mandate professional review of AI outputs, text: "Require qualified review and citation verification before AI output reaches clients.", category: governance, priority: high, sub_domains: [legal, accounting, consulting]}
+- {id: firm-metric-definitions, title: Standardise utilisation and realisation definitions, category: data, priority: medium, text: "Agree firm-wide definitions and capacity baselines across practices."}

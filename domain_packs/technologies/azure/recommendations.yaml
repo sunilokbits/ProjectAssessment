@@ -1,0 +1,7 @@
+# Azure technology pack - recommendations
+- {id: azure-landing-zone-first, title: Establish a Azure landing zone first, text: 'Use Azure Landing Zone accelerators to set up identity, networking,
+    policies and logging before workloads.', category: architecture, priority: high}
+- {id: azure-private-networking, title: Default to private networking, text: Use Private Endpoints and Private Link for PaaS data services and
+    disable public endpoints., category: security, priority: high}
+- {id: azure-finops, title: Embed FinOps from day one, text: 'Enforce tagging, budgets and regular rightsizing / commitment reviews.', category: operations,
+  priority: medium}

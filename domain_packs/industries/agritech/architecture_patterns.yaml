@@ -1,0 +1,20 @@
+- id: geospatial-agri-platform
+  name: Geospatial agri data platform
+  description: Combines field boundaries, imagery, weather, sensor, machinery and farmer data with consent management for agronomic analytics and traceability.
+  use_cases: [Yield prediction, Precision recommendations, Traceability, Agri credit scoring]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: agri-sources, name: "FMIS, imagery, weather, sensors and ERP sources", layer: sources, core: true}
+    - {id: imagery-pipeline, name: Satellite and drone imagery pipeline, layer: ingestion, when: {sub_domains_any: [crop_analytics, precision_farming, farm_finance]}}
+    - {id: iot-edge, name: IoT edge buffering and LoRaWAN gateways, layer: ingestion, when: {any_of: [{technologies_any: [iot]}, {sub_domains_any: [precision_farming, livestock]}]}}
+    - {id: geospatial-store, name: "Geospatial store (field boundaries, rasters, vectors)", layer: storage, core: true}
+    - {id: farmer-consent, name: Farmer consent and data-sharing registry, layer: governance, core: true}
+    - {id: yield-models, name: Yield and crop health models, layer: processing, when: {sub_domains_any: [crop_analytics, precision_farming]}}
+    - {id: herd-analytics, name: Animal health and herd analytics, layer: processing, when: {sub_domains_any: [livestock]}}
+    - {id: traceability-ledger, name: Lot-to-plot traceability with geolocation, layer: processing, when: {sub_domains_any: [agri_supply_chain]}}
+    - {id: credit-scoring, name: Agri credit and risk scoring, layer: processing, when: {sub_domains_any: [farm_finance]}}
+    - {id: offline-field-app, name: Offline-first field agent and farmer app, layer: consumption, when: {keywords_any: [offline, smallholder, field agent, rural]}}
+    - {id: agronomy-dashboards, name: Agronomist and operations dashboards, layer: consumption, core: true}
+  considerations:
+    - Validate models per crop, region and season rather than in aggregate.
+    - Respect farmer consent at query time when sharing data with partners.

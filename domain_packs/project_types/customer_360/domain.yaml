@@ -1,0 +1,16 @@
+key: customer_360
+name: Customer 360
+kind: project_type
+version: 1.0.0
+description: Unified, governed view of the customer across channels, products and interactions.
+sort_order: 10
+detection:
+  keywords:
+    customer 360: 5
+    360-degree view: 4
+    360 degree view: 4
+    single customer view: 5
+    unified customer profile: 4
+    golden record: 3
+    customer data platform: 3
+    entity resolution: 2

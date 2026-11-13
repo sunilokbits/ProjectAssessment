@@ -1,0 +1,27 @@
+- id: dgp-loss-of-sponsor
+  title: Loss of executive sponsorship
+  category: business
+  likelihood: 3
+  impact: 4
+  mitigation: Link programme to business outcomes and report value regularly.
+  indicators:
+  - reorganisation
+  - new cdo
+- id: dgp-bureaucracy
+  title: Governance perceived as bureaucracy
+  category: business
+  likelihood: 4
+  impact: 3
+  mitigation: Lightweight processes tied to delivery; automate controls.
+  indicators:
+  - slow approvals
+  - red tape
+- id: dgp-boil-ocean
+  title: Programme tries to govern everything at once
+  category: delivery
+  likelihood: 3
+  impact: 3
+  mitigation: Phase by priority domains and use cases.
+  indicators:
+  - all data
+  - enterprise-wide

@@ -1,0 +1,6 @@
+dimensions:
+- key: master_data_management_readiness
+  name: MDM Readiness
+  group: technology
+  weight: 1.0
+  description: Entity scope, matching rules, survivorship, stewardship workflow and system integration style.

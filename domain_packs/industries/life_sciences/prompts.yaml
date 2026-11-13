@@ -1,0 +1,9 @@
+system_addition: |
+  Use life sciences terminology (GxP, CSV/CSA, ALCOA+, 21 CFR Part 11, batch, deviation, CAPA, subject, protocol, adverse event, ICSR, HCP).
+  Treat source GxP systems as records of origin. Highlight GxP classification, validation effort, data integrity,
+  adverse event capture, trial blinding and subject privacy, and third-party data licensing. Never assume a system
+  is non-GxP without Quality confirmation.
+stage_additions:
+  discovery: "Ask which GxP systems, regulated markets, validation approach and Quality stakeholders apply."
+  solutioning: Separate GxP and non-GxP zones and include validation evidence automation and change control in the plan.
+extraction_hints: Map "lot" to Batch; map "AE", "SAE" and "side effect" to Adverse Event; map "trial participant" to Subject; map "prescriber" and "KOL" to HCP; map "CSV" to Computer System Validation only in validation context (not file format).

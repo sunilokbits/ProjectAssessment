@@ -1,0 +1,88 @@
+key: ecommerce
+name: E-commerce and Digital Marketplaces
+kind: industry
+version: 1.0.0
+description: Online marketplaces, direct-to-consumer brands, seller management, fulfilment, payments and checkout, and search and discovery.
+aliases: [ecommerce, e-commerce, online retail, marketplace, d2c, dtc, digital commerce]
+sort_order: 110
+sub_domains:
+  - key: marketplace
+    name: Marketplace
+    keywords: [marketplace, multi-vendor, third-party sellers, gmv, take rate, listings, buyer and seller, two-sided marketplace]
+  - key: d2c
+    name: Direct-to-Consumer
+    keywords: [d2c, dtc, direct-to-consumer, brand webshop, shopify store, subscription box, own channel]
+  - key: seller_management
+    name: Seller Management
+    keywords: [seller onboarding, seller performance, seller kyc, vendor portal, seller payouts, catalogue onboarding, seller rating]
+  - key: fulfilment
+    name: Fulfilment and Returns
+    keywords: [fulfilment, fulfillment, order fulfilment, returns, reverse logistics, delivery promise, click and collect, dropship]
+  - key: payments_checkout
+    name: Payments and Checkout
+    keywords: [checkout, payment gateway, cart abandonment, payment methods, bnpl, chargebacks, psp, 3ds, wallet]
+  - key: search_discovery
+    name: Search and Discovery
+    keywords: [site search, product search, recommendations, personalisation, merchandising, product discovery, relevance, browse]
+detection:
+  keywords:
+    e-commerce: 4.5
+    ecommerce: 4.5
+    online store: 4
+    marketplace: 3
+    gmv: 5
+    checkout: 3.5
+    cart abandonment: 5
+    add to cart: 4.5
+    conversion rate: 2
+    sellers: 2.5
+    take rate: 4
+    shopify: 4.5
+    magento: 4.5
+    salesforce commerce cloud: 5
+    commercetools: 5
+    product catalogue: 2.5
+    pdp: 3
+    order management system: 2.5
+    chargeback: 2.5
+    clickstream: 2.5
+    average order value: 3
+business_processes:
+  - Catalogue and listing management
+  - Seller onboarding and performance management
+  - Search, browse and merchandising
+  - Cart and checkout
+  - Payment authorisation, capture and reconciliation
+  - Order management and fulfilment
+  - Returns and refunds
+  - Customer service
+  - Marketing, promotions and loyalty
+  - Trust and safety and fraud prevention
+capabilities:
+  - Customer 360 and segmentation
+  - Product recommendations and personalisation
+  - Search relevance optimisation
+  - Dynamic pricing and promotions
+  - Payment fraud detection
+  - Delivery promise and fulfilment optimisation
+  - Seller analytics
+  - Catalogue enrichment with AI
+source_systems:
+  - "Commerce platforms (Shopify Plus, Adobe Commerce / Magento, Salesforce Commerce Cloud, commercetools, BigCommerce, SAP Commerce Cloud)"
+  - "Marketplace platforms (Mirakl, custom marketplace engines)"
+  - "Order management (Manhattan Active Omni, Fluent Commerce, IBM Sterling OMS)"
+  - "Payments (Stripe, Adyen, PayPal / Braintree, Checkout.com, Razorpay)"
+  - "Search (Algolia, Elasticsearch / OpenSearch, Bloomreach, Coveo)"
+  - "PIM (Akeneo, Salsify, inRiver)"
+  - "Web analytics and CDP (Google Analytics 4, Adobe Analytics, Segment, Bloomreach Engagement)"
+  - "Fraud (Riskified, Signifyd, Forter, Sift)"
+  - Marketing automation and email platforms
+data_entities: [Customer, Session, Product, SKU, Listing, Seller, Cart, Order, Payment, Refund, Return, Shipment, Review, Promotion]
+integration_patterns:
+  - Clickstream event collection
+  - Commerce platform webhooks and APIs
+  - Payment provider settlement files and webhooks
+  - Marketplace seller APIs and feeds
+  - Product feeds to channels and marketplaces
+related_technologies: [real_time_streaming, machine_learning, vector_search, generative_ai, api_integration]
+related_project_types: [customer_360, recommendation_engine, fraud_detection, demand_forecasting, churn_prediction]

@@ -1,0 +1,22 @@
+- id: insurance-lakehouse
+  name: Insurance analytics and reporting lakehouse
+  description: Layered lakehouse integrating policy, claims, billing and reinsurance data with reconciliation controls for actuarial and finance reporting.
+  use_cases: [Policyholder 360, IFRS 17 and solvency data, Claims analytics, Underwriting analytics]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: core-insurance-src, name: "Policy, claims and billing systems", layer: sources, core: true}
+    - {id: cdc-pas, name: CDC from policy administration and claims systems, layer: ingestion, when: {keywords_any: [cdc, change data capture, near real-time, intraday]}, alternatives: [Nightly batch extracts]}
+    - {id: batch-extract, name: Nightly batch extracts, layer: ingestion, when: {not: {keywords_any: [cdc, change data capture]}}}
+    - {id: partner-ingest, name: Broker and bordereaux ingestion with validation, layer: ingestion, when: {sub_domains_any: [distribution, reinsurance, property_casualty]}}
+    - {id: insurance-data-model, name: "Canonical insurance data model (policy, coverage, claim, party)", layer: processing, core: true}
+    - {id: recon-controls, name: "Reconciliation controls (premium, claims, reserves vs GL)", layer: processing, core: true}
+    - {id: actuarial-mart, name: Actuarial and IFRS 17 data mart, layer: serving, when: {any_of: [{project_types_any: [regulatory_reporting]}, {sub_domains_any: [actuarial]}, {keywords_any: [ifrs 17, solvency, reserving]}]}}
+    - {id: party-resolution, name: Policyholder entity resolution, layer: processing, when: {project_types_any: [customer_360, churn_prediction]}}
+    - {id: fraud-scoring, name: Claims fraud scoring service, layer: serving, when: {any_of: [{project_types_any: [fraud_detection]}, {technologies_any: [machine_learning]}]}}
+    - {id: doc-ai, name: Claims and proposal document intelligence, layer: processing, when: {any_of: [{project_types_any: [document_intelligence]}, {technologies_any: [generative_ai, rag]}]}}
+    - {id: health-data-zone, name: Segregated health data zone, layer: security, when: {data_classifications_any: [phi, spi]}}
+    - {id: lineage, name: Lineage and data catalog, layer: governance, when: {any_of: [{technologies_any: [data_governance, data_catalog, metadata_management]}, {keywords_any: [lineage, ifrs 17, solvency]}]}}
+  considerations:
+    - Keep the general ledger and actuarial systems as the books of record; the platform reconciles to them.
+    - Preserve transaction-level history (endorsements, claim movements) to support reserving triangles and IFRS 17 cohorts.
+    - Confirm data localisation and outsourcing requirements before selecting cloud regions.

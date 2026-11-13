@@ -1,0 +1,13 @@
+# Application Modernization technology pack - domain
+key: application_modernization
+name: Application Modernization
+kind: technology
+version: 1.0.0
+description: Modernising legacy applications - decomposition to services, containerisation, API enablement, mainframe and monolith modernisation
+  and cloud-native re-architecture.
+aliases: [Modernization & Migration]
+sort_order: 40
+detection:
+  keywords: {application modernization: 5, application modernisation: 5, legacy modernization: 4, monolith: 3, microservices: 3, containerization: 3,
+    kubernetes: 2.5, mainframe: 3, cobol: 3, strangler fig: 4, cloud-native: 2, api-first: 1.5, legacy: 0.5}
+related_technologies: [cloud_migration, api_integration, devops, azure, aws, gcp]

@@ -1,0 +1,39 @@
+- id: rag-stale-content
+  title: Answers based on stale or conflicting documents
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Content ownership, freshness monitoring and source de-duplication.
+  indicators:
+  - outdated
+  - multiple versions
+  - duplicate documents
+- id: rag-permission-leak
+  title: Retrieval bypasses source permissions
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Index ACLs with content; filter at query time by user identity.
+  indicators:
+  - permissions
+  - confidential documents
+  - hr documents
+- id: rag-poor-retrieval
+  title: Poor retrieval recall leads to unhelpful or hallucinated answers
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: Tune chunking, hybrid search and reranking against an evaluation set.
+  indicators:
+  - irrelevant results
+  - poor search
+- id: rag-complex-docs
+  title: Complex document formats parsed poorly
+  category: data
+  likelihood: 3
+  impact: 3
+  mitigation: Layout-aware parsing and OCR; test on representative samples early.
+  indicators:
+  - scanned
+  - pdf tables
+  - images

@@ -1,0 +1,8 @@
+system_addition: |
+  Use CPG / FMCG terminology (SKU, sell-in, sell-out, trade promotion, trade spend, distributor, outlet, S&OP, OTIF).
+  Distinguish the manufacturer's customers (retailers, distributors) from consumers. Highlight hierarchy harmonisation,
+  syndicated and retailer data licensing, trade spend effectiveness, planner adoption and competition-law limits on data sharing.
+stage_additions:
+  discovery: "Ask which markets, channels, planning/TPM systems and external data sources (syndicated, retailer, distributor) apply."
+  solutioning: Treat product/customer/calendar harmonisation as a core workstream and plan write-back to planning tools.
+extraction_hints: Map "primary sales" and "shipments" to Sell-In; map "secondary sales", "offtake" and "consumption" to Sell-Out; map "account", "retailer" and "ship-to" to Customer; map "stockist" to Distributor; map "TPR" and "deal" to Trade Promotion.

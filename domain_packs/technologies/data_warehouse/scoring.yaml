@@ -1,0 +1,4 @@
+# Data Warehouse technology pack - scoring
+dimensions:
+  - {key: data_warehouse_readiness, name: Data Warehouse Readiness, group: technology, weight: 1.0, description: 'Modelling standards, target
+      warehouse choice, historisation, performance and workload management readiness.'}

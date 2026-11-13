@@ -1,0 +1,24 @@
+- id: genai-risk-framework
+  title: Adopt a risk-tiered responsible AI framework
+  text: Classify every GenAI use case by risk tier and apply proportionate controls, evaluation and approval.
+  category: governance
+  priority: high
+- id: genai-eval-harness
+  title: Build an evaluation harness before scaling
+  text: Create golden evaluation datasets and automated scoring for accuracy, groundedness and safety; gate releases on them.
+  category: quality
+  priority: high
+- id: genai-managed-models
+  title: Use cloud-managed foundation models in the client tenant
+  text: Consume models through the cloud provider's enterprise endpoints in the required region with zero data retention.
+  category: architecture
+  priority: medium
+  decision_key: genai_model_hosting
+  decision_option: managed
+- id: genai-self-hosted
+  title: Self-host open-weight models
+  text: Host open-weight models on client infrastructure where residency, cost or customisation require full control.
+  category: architecture
+  priority: medium
+  decision_key: genai_model_hosting
+  decision_option: self_hosted

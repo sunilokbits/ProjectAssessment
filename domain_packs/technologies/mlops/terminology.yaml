@@ -1,0 +1,14 @@
+- term: Model Registry
+  definition: Versioned store of models with lifecycle stages
+  entity_type: system
+  category: operations
+- term: Data Drift
+  definition: Change in input data distribution over time
+  synonyms:
+  - covariate shift
+  entity_type: concept
+  category: operations
+- term: Champion/Challenger
+  definition: Comparing a new model against the production model
+  entity_type: process
+  category: operations

@@ -1,0 +1,7 @@
+system_addition: |
+  Use logistics terminology (shipment, consignment, SKU, location, carrier, ASN, POD, OTIF, S&OP).
+  Emphasise master data quality, partner event completeness, peak volumes and the role of execution systems as systems of record.
+  Distinguish advisory optimisation from automated write-back.
+stage_additions:
+  discovery: Ask which WMS/TMS/ERP instances, carriers, EDI messages and planning processes are in scope.
+extraction_hints: Map "consignment", "load" and "freight" to Shipment; map "item" and "article" to SKU; map "POD" to Proof of Delivery.

@@ -1,0 +1,10 @@
+- id: gaa-pilot-group
+  title: Pilot with a defined user group and evaluation set
+  text: Launch to a pilot group with golden-set evaluation and feedback before scaling.
+  category: delivery
+  priority: high
+- id: gaa-content-hygiene
+  title: Clean up knowledge content and permissions first
+  text: Remove outdated content and fix oversharing before indexing.
+  category: data
+  priority: high

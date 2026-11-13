@@ -1,0 +1,35 @@
+- id: dq-unknown-quality
+  title: Data quality issues discovered late in delivery
+  category: data
+  likelihood: 4
+  impact: 4
+  mitigation: Profile sources in discovery; size remediation effort explicitly.
+  indicators:
+  - unknown quality
+  - not profiled
+- id: dq-fix-downstream
+  title: Issues fixed downstream instead of at source
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Root-cause analysis and source-system remediation with owners.
+  indicators:
+  - manual corrections
+  - workaround
+  - spreadsheet fixes
+- id: dq-alert-fatigue
+  title: Alert fatigue from too many low-value rules
+  category: operations
+  likelihood: 3
+  impact: 2
+  mitigation: Prioritise rules on critical data elements; tune thresholds.
+  indicators:
+  - too many alerts
+- id: dq-no-owner
+  title: No one accountable for remediation
+  category: governance
+  likelihood: 3
+  impact: 3
+  mitigation: Assign issue owners via the governance model.
+  indicators:
+  - no owner

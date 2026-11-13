@@ -1,0 +1,23 @@
+- id: databricks-medallion
+  name: Databricks medallion lakehouse
+  description: Ingest to Delta bronze, conform in silver, publish business-ready gold products governed by Unity Catalog.
+  use_cases: [Data platform modernization, Customer 360, Analytics]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, ai, governance]
+  components:
+    - {id: adls, name: ADLS Gen2 storage, layer: storage, when: {technologies_any: [azure]}}
+    - {id: s3, name: Amazon S3 storage, layer: storage, when: {technologies_any: [aws]}}
+    - {id: gcs, name: Google Cloud Storage, layer: storage, when: {technologies_any: [gcp]}}
+    - {id: autoloader, name: Auto Loader / Lakeflow Connect ingestion, layer: ingestion, core: true}
+    - {id: streaming, name: Structured Streaming / Lakeflow pipelines (streaming), layer: ingestion, when: {any_of: [{technologies_any: [real_time_streaming, iot]}, {keywords_any: [real-time, streaming, kafka, event hub]}]}}
+    - {id: bronze, name: Bronze (raw Delta), layer: processing, core: true}
+    - {id: silver, name: Silver (cleansed / conformed), layer: processing, core: true}
+    - {id: gold, name: Gold (business data products), layer: processing, core: true}
+    - {id: uc, name: "Unity Catalog (governance, lineage, access control)", layer: governance, core: true}
+    - {id: dbsql, name: Databricks SQL warehouse, layer: serving, when: {technologies_any: [business_intelligence, power_bi]}}
+    - {id: powerbi, name: Power BI, layer: consumption, when: {technologies_any: [power_bi]}}
+    - {id: mosaic-ai, name: Mosaic AI (model training / serving), layer: ai, when: {technologies_any: [machine_learning, mlops]}}
+    - {id: vector-search, name: Databricks Vector Search, layer: ai, when: {technologies_any: [rag, vector_search, generative_ai]}}
+    - {id: lakebase, name: Lakebase (operational Postgres serving), layer: serving, when: {keywords_any: [operational api, low-latency lookup, oltp]}}
+  considerations:
+    - Use Unity Catalog from day one; avoid workspace-local Hive metastore.
+    - Prefer serverless compute where policy allows to reduce operational overhead.

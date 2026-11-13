@@ -1,0 +1,9 @@
+- {id: retention-rate, name: Student retention rate, description: Share of students continuing to the next year or term., unit: "%", direction: higher_is_better, category: outcomes, sub_domains: [higher_education, student_analytics]}
+- {id: completion-rate, name: Completion rate, description: Share of a cohort completing within the expected timeframe., unit: "%", direction: higher_is_better, category: outcomes}
+- {id: enrolment-yield, name: Admissions yield, description: Share of admitted applicants who enrol., formula: enrolled / admitted, unit: "%", direction: higher_is_better, category: business, sub_domains: [higher_education]}
+- {id: attendance-rate, name: Attendance rate, description: Share of scheduled sessions attended., unit: "%", direction: higher_is_better, category: outcomes, sub_domains: [schools, student_analytics]}
+- {id: chronic-absenteeism, name: Chronic absenteeism, description: Share of students missing a defined proportion of school days., unit: "%", direction: lower_is_better, category: outcomes, sub_domains: [schools]}
+- {id: course-pass-rate, name: Course pass rate, description: Share of course enrolments with a passing grade., unit: "%", direction: higher_is_better, category: outcomes}
+- {id: research-income, name: Research income, description: Sponsored research funding awarded per period., unit: currency, direction: higher_is_better, category: business, sub_domains: [research]}
+- {id: learner-engagement, name: Learner engagement, description: "Active learners or platform activity per period (e.g. weekly active learners).", unit: count, direction: higher_is_better, category: product, sub_domains: [edtech]}
+- {id: cost-per-student, name: Cost per student, description: Operating cost per enrolled student or FTE., unit: currency, direction: lower_is_better, category: business}

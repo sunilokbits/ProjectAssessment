@@ -1,0 +1,18 @@
+- {term: Vehicle, definition: Individual car or commercial vehicle identified by VIN, synonyms: [car, unit, asset, automobile], entity_type: entity, category: data}
+- {term: VIN, definition: Vehicle identification number uniquely identifying a vehicle, synonyms: [vehicle identification number, chassis number], entity_type: entity, category: data}
+- {term: Dealer, definition: Franchised retailer selling and servicing vehicles, synonyms: [dealership, retailer, outlet, dealer group], entity_type: role, category: business, sub_domains: [dealer_network, aftersales]}
+- {term: Telematics, definition: Collection and transmission of vehicle data, synonyms: [vehicle telemetry, connected data, tcu data], entity_type: concept, category: data, sub_domains: [telematics, connected_vehicle]}
+- {term: Signal, definition: Individual vehicle data element from ECUs or sensors, synonyms: [can signal, data point, pid], entity_type: entity, category: data, sub_domains: [connected_vehicle, telematics, ev_battery]}
+- {term: DTC, definition: Diagnostic trouble code reported by a vehicle ECU, synonyms: [diagnostic trouble code, fault code, error code, obd code], entity_type: event, category: data}
+- {term: ECU, definition: Electronic control unit in the vehicle, synonyms: [electronic control unit, controller, module], entity_type: system, category: integration, sub_domains: [connected_vehicle, product_engineering]}
+- {term: OTA, definition: Over-the-air software update delivered to vehicles, synonyms: [over-the-air, fota, sota, software update], entity_type: process, category: process, sub_domains: [connected_vehicle]}
+- {term: Warranty Claim, definition: Request by a dealer for reimbursement of a warranty repair, synonyms: [claim, warranty repair, goodwill claim], entity_type: entity, category: data, sub_domains: [warranty_analytics, aftersales]}
+- {term: Repair Order, definition: Record of service work performed on a vehicle, synonyms: [ro, job card, work order, service order], entity_type: entity, category: data, sub_domains: [aftersales, dealer_network]}
+- {term: Recall, definition: Manufacturer campaign to remedy a safety defect, synonyms: [recall campaign, field action, service campaign, tsb], entity_type: event, category: process, sub_domains: [warranty_analytics, aftersales]}
+- {term: DMS, definition: Dealer management system used by dealerships, synonyms: [dealer management system, cdk, reynolds], entity_type: system, category: integration, sub_domains: [dealer_network, aftersales]}
+- {term: PPAP, definition: Production part approval process for supplier parts, synonyms: [production part approval process], entity_type: process, category: process, sub_domains: [supply_chain, vehicle_manufacturing]}
+- {term: JIS, definition: Just-in-sequence delivery of parts in build order, synonyms: [just in sequence, jit, sequenced supply], entity_type: process, category: process, sub_domains: [supply_chain, vehicle_manufacturing]}
+- {term: Model Year, definition: Designation of a vehicle model version, synonyms: [my, model variant, trim, derivative], entity_type: concept, category: data}
+- {term: CSMS, definition: Cyber security management system required by UNECE R155, synonyms: [r155, cybersecurity management system], entity_type: regulation, category: compliance, sub_domains: [connected_vehicle, product_engineering]}
+- {term: State of Health, definition: Remaining battery capacity relative to new, synonyms: [soh, battery health], entity_type: metric, category: data, sub_domains: [ev_battery]}
+- {term: Months in Service, definition: Vehicle age since warranty start used for warranty analysis, synonyms: [mis, time in service], entity_type: metric, category: reporting, sub_domains: [warranty_analytics]}

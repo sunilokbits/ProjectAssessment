@@ -1,0 +1,3 @@
+dimensions:
+  - {key: student_data_protection, name: Student Data Protection, group: security, weight: 1.5, description: "Protection of student education records and children's data (FERPA, COPPA, state student privacy laws, GDPR)."}
+  - {key: academic_data_readiness, name: Academic Data Readiness, group: domain, weight: 1.0, description: "Consistency of SIS / LMS data, academic definitions and institutional reporting."}

@@ -1,0 +1,4 @@
+dimensions:
+  - {key: financial_data_governance, name: Financial Data Governance, group: domain, weight: 1.5, description: "Reconciliation, golden sources, lineage and controls over financial data."}
+  - {key: regulatory_readiness, name: Regulatory Readiness, group: domain, weight: 1.5, description: "Readiness to meet banking regulatory, reporting and audit expectations."}
+  - {key: financial_crime_controls, name: Financial Crime Controls, group: security, weight: 1.0, description: "KYC/AML, fraud and sanctions controls impacted by the project."}

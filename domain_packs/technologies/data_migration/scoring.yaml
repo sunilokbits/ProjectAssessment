@@ -1,0 +1,4 @@
+# Data Migration technology pack - scoring
+dimensions:
+  - {key: data_migration_readiness, name: Data Migration Readiness, group: technology, weight: 1.0, description: 'Scope and volumes, source profiling,
+      mapping, cleansing, reconciliation and cutover readiness.'}

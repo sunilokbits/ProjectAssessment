@@ -1,0 +1,7 @@
+system_addition: |
+  Use e-commerce terminology (customer, session, product, SKU, listing, seller, order, GMV, AOV, chargeback, PSP).
+  Highlight PCI DSS scope minimisation, consent for tracking, bot filtering, identity stitching, order-to-settlement reconciliation,
+  marketplace seller verification and peak trading resilience.
+stage_additions:
+  discovery: Ask about commerce platform, checkout and PSP integration, clickstream tooling, marketplace model and peak events.
+extraction_hints: Map "shopper" and "buyer" to Customer; map "merchant" and "vendor" to Seller on marketplaces; map "basket" to Order or Cart depending on context.

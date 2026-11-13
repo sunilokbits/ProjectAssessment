@@ -1,0 +1,25 @@
+# Database Migration technology pack - recommendations
+- {id: dbm-assessment-tools, title: Run automated compatibility assessment, text: Use vendor assessment tools to quantify conversion effort per
+    database., category: technology, priority: high}
+- id: dbm-online
+  title: Use online (CDC-based) migration
+  text: Replicate continuously with a database migration service to minimise downtime.
+  category: operations
+  priority: medium
+  decision_key: db_migration_mode
+  decision_option: online
+  when:
+    answers:
+      database_migration:dbm-downtime: [minutes, zero]
+- id: dbm-offline
+  title: Use offline backup / restore migration
+  text: Use simpler offline migration where downtime windows allow.
+  category: operations
+  priority: low
+  decision_key: db_migration_mode
+  decision_option: offline
+  when:
+    answers:
+      database_migration:dbm-downtime: [hours]
+- {id: dbm-paas-target, title: Target managed database services, text: Prefer managed PaaS databases to reduce patching and HA effort., category: architecture,
+  priority: medium}

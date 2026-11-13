@@ -1,0 +1,43 @@
+# Data Engineering technology pack - questions
+- {id: pipeline-inventory, text: 'Is there an inventory of existing data pipelines with owners, schedules and dependencies?', category: data,
+  dimension: data_engineering_readiness, weight: 1.5}
+- id: ingestion-patterns
+  text: Which ingestion patterns are required?
+  category: data
+  dimension: integration_readiness
+  answer_type: multi_choice
+  options:
+    - {value: batch_file, label: Batch files (SFTP / object storage)}
+    - {value: cdc, label: Database CDC}
+    - {value: api, label: API pull}
+    - {value: streaming, label: Event streaming}
+    - {value: saas_connector, label: SaaS connectors}
+- id: orchestration-tool
+  text: Is a standard orchestration tool agreed (e.g. Airflow, Data Factory, Databricks Jobs)?
+  category: technology
+  dimension: data_engineering_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: No standard / cron and scripts, score: 0.2}
+    - {value: mixed, label: Several tools in use, score: 0.5}
+    - {value: standard, label: One agreed standard, score: 1}
+- {id: transformation-framework, text: 'Are transformation standards defined (SQL/dbt models, Spark code conventions, naming, layering)?', category: architecture,
+  dimension: data_engineering_readiness}
+- {id: pipeline-testing, text: 'Are automated data tests (schema, row counts, business rules) run as part of pipelines?', category: quality, dimension: data_quality,
+  help: Covers unit tests for transformation code and data-contract checks at runtime.}
+- {id: pipeline-cicd, text: 'Is pipeline code version-controlled and deployed through CI/CD to separate environments?', category: operations,
+  dimension: data_engineering_readiness, weight: 1.2}
+- {id: pipeline-observability, text: 'Are pipeline failures, freshness and SLA breaches monitored with alerting and runbooks?', category: operations,
+  dimension: operational_readiness}
+- id: latency-requirements
+  text: What data latency is required by consumers?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+    - {value: daily, label: Daily batch}
+    - {value: hourly, label: Hourly / intra-day}
+    - {value: near_real_time, label: Near real-time (minutes)}
+    - {value: real_time, label: Real-time (seconds)}
+- {id: de-skills, text: 'How experienced is the client team with data engineering (SQL, Python/Spark, orchestration) (1-5)?', category: delivery,
+  dimension: team_capability, answer_type: scale, equivalence_key: client_skills}

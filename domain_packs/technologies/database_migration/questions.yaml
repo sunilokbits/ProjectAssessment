@@ -1,0 +1,31 @@
+# Database Migration technology pack - questions
+- {id: dbm-inventory, text: 'Is there an inventory of databases with engine, version, size, criticality and connected applications?', category: technology,
+  dimension: database_migration_readiness, weight: 1.5}
+- id: dbm-target-type
+  text: What type of migration is planned?
+  category: architecture
+  dimension: database_migration_readiness
+  answer_type: single_choice
+  options:
+    - {value: homogeneous, label: 'Homogeneous (same engine, e.g. SQL Server to Azure SQL MI)'}
+    - {value: heterogeneous, label: 'Heterogeneous (engine change, e.g. Oracle to PostgreSQL)'}
+    - {value: unknown, label: Not decided}
+- {id: dbm-code-objects, text: 'Has the volume of procedural code (stored procedures, triggers, packages) been assessed for conversion?', category: technology,
+  dimension: database_migration_readiness, critical: true}
+- id: dbm-downtime
+  text: What downtime is acceptable at cutover?
+  category: operations
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+    - {value: hours, label: Hours (offline migration acceptable)}
+    - {value: minutes, label: Minutes (online replication needed)}
+    - {value: zero, label: Near-zero}
+- {id: dbm-app-testing, text: 'Are application owners committed to regression and performance testing against the migrated database?', category: quality,
+  dimension: database_migration_readiness}
+- {id: dbm-managed-target, text: 'Will the target be a managed database service (PaaS) rather than self-managed VMs?', category: architecture,
+  dimension: architecture_fit}
+- {id: dbm-security-features, text: 'Are source security features (TDE, auditing, row-level security, encryption) mapped to the target?', category: security,
+  dimension: security_controls}
+- {id: dbm-skills, text: 'How experienced is the client team with the source and target database engines (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

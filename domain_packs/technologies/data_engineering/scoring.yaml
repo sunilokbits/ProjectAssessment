@@ -1,0 +1,4 @@
+# Data Engineering technology pack - scoring
+dimensions:
+  - {key: data_engineering_readiness, name: Data Engineering Readiness, group: technology, weight: 1.0, description: 'Pipeline standards, orchestration,
+      testing, CI/CD and operational monitoring of data pipelines.'}

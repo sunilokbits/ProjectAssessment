@@ -1,0 +1,41 @@
+# Cloud Migration technology pack - questions
+- id: cm-discovery
+  text: Has automated discovery of servers, applications and dependencies been completed?
+  category: technology
+  dimension: cloud_migration_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: Not started, score: 0.1}
+    - {value: partial, label: Partial / CMDB only, score: 0.5}
+    - {value: complete, label: Complete with dependency mapping, score: 1}
+  weight: 1.5
+  critical: true
+- id: migration-strategy-mix
+  text: What is the predominant migration strategy expected for the portfolio?
+  category: architecture
+  dimension: cloud_migration_readiness
+  answer_type: single_choice
+  options:
+    - {value: rehost, label: Rehost (lift and shift)}
+    - {value: replatform, label: 'Replatform (lift, tinker and shift)'}
+    - {value: refactor, label: Refactor / re-architect}
+    - {value: mixed, label: Mixed per application}
+    - {value: unknown, label: Not yet decided}
+- id: cm-drivers
+  text: What are the primary migration drivers?
+  category: business
+  dimension: business_alignment
+  answer_type: multi_choice
+  options:
+    - {value: dc_exit, label: Data centre exit / contract end}
+    - {value: cost, label: Cost reduction}
+    - {value: agility, label: Agility / innovation}
+    - {value: eol, label: Hardware / software end of life}
+    - {value: resilience, label: Resilience / DR}
+- {id: cm-deadline, text: 'Is there a hard deadline (e.g. data centre contract expiry) driving the migration?', category: delivery, dimension: delivery_governance}
+- {id: cm-wave-plan, text: 'Is a wave plan grouping applications by dependency and business criticality defined?', category: delivery, dimension: cloud_migration_readiness}
+- {id: cm-business-case, text: 'Is there an approved business case / TCO comparison for the migration?', category: business, dimension: cloud_migration_readiness}
+- {id: cm-cutover, text: 'Are cutover, rollback and downtime windows agreed with application owners?', category: operations, dimension: operational_readiness}
+- {id: cm-licensing, text: 'Have licensing implications (BYOL, Windows/SQL Server, Oracle on cloud) been assessed?', category: commercial, dimension: cloud_migration_readiness}
+- {id: cm-skills, text: 'How experienced is the client team with cloud migration and operating cloud workloads (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

@@ -1,0 +1,57 @@
+- id: agentic-orchestration
+  name: Governed agent orchestration
+  description: Orchestrator plans tasks and invokes scoped tools through a gateway with policy checks, approvals and tracing.
+  use_cases:
+  - Process automation
+  - IT operations
+  - Back-office workflows
+  layer_order:
+  - sources
+  - ingestion
+  - integration
+  - storage
+  - processing
+  - ai
+  - serving
+  - consumption
+  - governance
+  - operations
+  components:
+  - id: agent-orchestrator
+    name: Agent orchestrator / planner
+    layer: processing
+    core: true
+  - id: tool-gateway
+    name: Tool gateway with policy enforcement
+    layer: integration
+    core: true
+  - id: agent-tracing
+    name: Agent tracing and evaluation
+    layer: operations
+    core: true
+  - id: approval-step
+    name: Human approval step
+    layer: consumption
+    when:
+      keywords_any:
+      - approval
+      - payment
+      - customer communication
+  - id: mcp-servers
+    name: MCP servers exposing enterprise tools
+    layer: integration
+    when:
+      keywords_any:
+      - mcp
+      - model context protocol
+  - id: memory-store
+    name: Agent memory / state store
+    layer: storage
+    when:
+      keywords_any:
+      - memory
+      - long-running
+      - stateful
+  considerations:
+  - Every tool must have an owner and a permission scope.
+  - Prefer deterministic workflows where autonomy adds no value.

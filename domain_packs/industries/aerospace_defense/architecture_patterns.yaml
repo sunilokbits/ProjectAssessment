@@ -1,0 +1,19 @@
+- id: export-controlled-digital-thread
+  name: Export-controlled digital thread platform
+  description: Links PLM, ERP, MES, MRO and supplier data by part and serial number inside an environment approved for ITAR/EAR and CUI, with attribute-based access by nationality, program and contract.
+  use_cases: [Digital thread and traceability, Predictive maintenance, Supply chain risk, Quality analytics]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: ad-sources, name: "PLM, ERP, MES, MRO, QMS and supplier sources", layer: sources, core: true}
+    - {id: sovereign-enclave, name: "US-person / sovereign cloud enclave (GovCloud, FedRAMP High equivalent)", layer: security, when: {any_of: [{data_classifications_any: [export_controlled]}, {answers: {export-controlled-data: [yes_unapproved, yes_approved]}}]}}
+    - {id: abac, name: "Attribute-based access control (nationality, program, contract, export licence)", layer: security, core: true}
+    - {id: cui-boundary, name: CMMC CUI assessment boundary and evidence, layer: governance, when: {sub_domains_any: [defense_programs, supply_chain], geographies_any: [US]}}
+    - {id: classified-air-gap, name: Air-gapped classified environment with cross-domain solution, layer: security, when: {data_classifications_any: [classified]}}
+    - {id: part-serial-master, name: Part and serial master (as-designed / as-built / as-maintained), layer: governance, core: true}
+    - {id: health-analytics, name: Aircraft and engine health analytics, layer: processing, when: {any_of: [{project_types_any: [predictive_maintenance]}, {sub_domains_any: [mro]}]}}
+    - {id: supplier-risk, name: Supplier risk and flow-down tracking, layer: processing, when: {sub_domains_any: [supply_chain]}}
+    - {id: private-llm, name: Privately hosted LLM within the approved enclave, layer: serving, when: {technologies_any: [generative_ai, rag, agentic_ai]}}
+    - {id: program-dashboards, name: Program and quality dashboards, layer: consumption, core: true}
+  considerations:
+    - Export compliance must classify data before platform and staffing decisions.
+    - Customer-managed keys and US-person support are typical requirements for ITAR workloads.

@@ -1,0 +1,140 @@
+key: telecommunications
+name: Telecommunications
+kind: industry
+version: 1.0.0
+description: Mobile, fixed, broadband and enterprise communications service providers covering network operations, OSS/BSS, billing, revenue assurance, customer analytics, churn and 5G.
+aliases: [telecom, telco, communications service provider, csp, mobile operator, mno, isp, carrier]
+sort_order: 60
+sub_domains:
+  - key: network_operations
+    name: Network Operations
+    description: Network monitoring, fault and performance management, NOC operations and capacity planning.
+    keywords: [network operations, noc, fault management, performance management, alarm, network kpi, capacity planning, ran, core network, transport network]
+  - key: customer_analytics
+    name: Customer Analytics
+    description: Subscriber segmentation, usage analytics, next best offer and customer experience.
+    keywords: [subscriber analytics, customer experience, usage analytics, next best offer, segmentation, nps, customer journey, arpu analysis]
+  - key: billing
+    name: Billing and Charging
+    description: Rating, charging, invoicing, prepaid and postpaid billing and mediation.
+    keywords: [billing, charging, rating, mediation, invoice, prepaid, postpaid, ocs, online charging, convergent billing, bill shock]
+  - key: revenue_assurance
+    name: Revenue Assurance and Fraud
+    description: Revenue leakage detection, usage reconciliation, interconnect and telecom fraud management.
+    keywords: [revenue assurance, revenue leakage, usage reconciliation, interconnect, roaming settlement, fraud management, sim box, irsf, wangiri, subscription fraud]
+  - key: churn
+    name: Churn and Retention
+    description: Churn prediction, retention offers and port-out management.
+    keywords: [churn, churn prediction, retention, port-out, mnp, win-back, save desk, customer attrition]
+  - key: five_g
+    name: 5G and Network Modernisation
+    description: 5G standalone, network slicing, Open RAN, edge computing and private networks.
+    keywords: [5g, 5g sa, network slicing, open ran, o-ran, mec, multi-access edge computing, private 5g, cloud-native network functions, cnf]
+  - key: oss_bss
+    name: OSS/BSS
+    description: Operations and business support systems including inventory, order management, CRM and product catalogue.
+    keywords: [oss, bss, oss/bss, service inventory, order management, product catalog, service assurance, tm forum, oda, open apis, provisioning]
+  - key: fixed_broadband
+    name: Fixed and Broadband
+    description: FTTH, DSL, cable, field service and home network experience.
+    keywords: [ftth, fibre, fiber, broadband, gpon, dsl, docsis, cpe, home wifi, field technician, truck roll]
+  - key: enterprise_wholesale
+    name: Enterprise and Wholesale
+    description: B2B connectivity, SD-WAN, managed services, wholesale and interconnect.
+    keywords: [enterprise services, b2b, sd-wan, mpls, managed services, wholesale, carrier services, sla management, iot connectivity]
+  - key: digital_services
+    name: Digital Services and Channels
+    description: Self-care apps, digital sales, content and partner services.
+    keywords: [self-care app, digital channel, ott, content partnership, digital sales, esim, mobile money]
+detection:
+  keywords:
+    telecom: 4
+    telco: 4.5
+    telecommunications: 4.5
+    subscriber: 3
+    msisdn: 5
+    imsi: 5
+    sim: 2
+    cdr: 4.5
+    xdr: 4
+    arpu: 4.5
+    churn: 1.5
+    oss: 2
+    bss: 3
+    5g: 3
+    ran: 2
+    noc: 2.5
+    roaming: 3
+    interconnect: 3
+    trai: 4.5
+    cpni: 4.5
+    amdocs: 4
+    ericsson: 3
+    nokia: 2.5
+    network: 0.5
+    mobile: 1
+business_processes:
+  - "Customer onboarding and SIM activation"
+  - "Order capture and service provisioning"
+  - "Number porting"
+  - "Usage mediation, rating and charging"
+  - "Billing and collections"
+  - "Revenue assurance and usage reconciliation"
+  - "Interconnect and roaming settlement"
+  - "Fraud management"
+  - "Network fault and performance management"
+  - "Capacity planning and network rollout"
+  - "Field service and trouble-ticket management"
+  - "Churn prediction and retention"
+  - "Lawful interception and data retention"
+  - "Regulatory reporting"
+capabilities:
+  - "Subscriber 360"
+  - "Churn prediction and retention optimisation"
+  - "Next best offer"
+  - "Network analytics and anomaly detection"
+  - "Customer experience management (network-to-customer)"
+  - "Revenue assurance analytics"
+  - "Fraud detection"
+  - "Capacity planning and network investment optimisation"
+  - "Autonomous network operations (AIOps)"
+  - "5G slice and edge monetisation"
+source_systems:
+  - "BSS / billing (Amdocs, Netcracker, Ericsson Charging and Billing, Oracle Communications BRM, CSG, Optiva)"
+  - "CRM (Salesforce Communications Cloud, Amdocs CES, Microsoft Dynamics 365, Pega)"
+  - "Mediation (Ericsson MM, Comarch, DigitalRoute)"
+  - "OSS / service assurance (Nokia NetAct, Ericsson ENM, Netcracker, IBM Netcool, ServiceNow TSOM)"
+  - "Network inventory (Netcracker, Oracle UIM, Blue Planet)"
+  - "Probes and network analytics (NETSCOUT, Viavi, Mycom OSI)"
+  - "Revenue assurance and fraud (Subex, Mobileum, TEOCO)"
+  - "Number portability and HLR / HSS / UDM"
+  - "Data warehouse (Teradata legacy, Oracle Exadata)"
+  - "Field service (ServiceNow, Salesforce Field Service)"
+data_entities:
+  - "Subscriber"
+  - "Account"
+  - "SIM / IMSI"
+  - "MSISDN"
+  - "Device / IMEI"
+  - "Contract / plan"
+  - "Product offering"
+  - "CDR / xDR"
+  - "Usage event"
+  - "Invoice"
+  - "Payment"
+  - "Cell site"
+  - "Network element"
+  - "Alarm"
+  - "Trouble ticket"
+  - "Service order"
+  - "Port request"
+integration_patterns:
+  - "CDR / xDR file mediation"
+  - "Streaming network telemetry and probe data (Kafka)"
+  - "TM Forum Open APIs"
+  - "SNMP / streaming telemetry from network elements"
+  - "Batch BSS extracts"
+  - "Interconnect and roaming files (TAP / RAP)"
+  - "Event-driven order orchestration"
+related_technologies: [real_time_streaming, databricks, snowflake, gcp, aws, azure, machine_learning, generative_ai, data_governance, finops]
+related_project_types: [churn_prediction, customer_360, fraud_detection, data_platform_modernization, regulatory_reporting, genai_assistant]

@@ -1,0 +1,4 @@
+# Application Modernization technology pack - scoring
+dimensions:
+  - {key: app_modernization_readiness, name: Application Modernization Readiness, group: technology, weight: 1.0, description: 'Application portfolio
+      insight, target architecture, decomposition strategy, test automation and DevOps readiness.'}

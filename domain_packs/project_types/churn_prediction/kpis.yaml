@@ -1,0 +1,18 @@
+- id: cp-churn-rate
+  name: Churn rate
+  description: Share of customers lost in the period.
+  unit: '%'
+  direction: lower_is_better
+  category: business
+- id: cp-retention-uplift
+  name: Retention uplift
+  description: Incremental retention in treated vs control group.
+  unit: '%'
+  direction: higher_is_better
+  category: business
+- id: cp-model-precision
+  name: Top-decile precision
+  description: Share of customers in the highest-risk decile who churn.
+  unit: '%'
+  direction: higher_is_better
+  category: quality

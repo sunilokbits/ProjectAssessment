@@ -1,0 +1,8 @@
+# Snowflake technology pack - knowledge
+security_considerations:
+  - {id: sf-sso-mfa, text: SSO via identity provider with MFA; key-pair auth for service users., category: security}
+  - {id: sf-masking, text: Dynamic masking and row access policies on classified columns., category: security}
+  - {id: sf-tri-secret, text: Tri-Secret Secure / customer-managed keys where regulation requires., category: security}
+dependencies:
+  - {id: sf-edition, text: Snowflake edition supporting required features (e.g. Business Critical for PrivateLink)., category: commercial}
+  - {id: sf-idp, text: Identity provider integration (SCIM provisioning)., category: identity}

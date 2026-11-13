@@ -1,0 +1,10 @@
+# Application Modernization technology pack - knowledge
+security_considerations:
+  - {id: am-container-security, text: 'Container image scanning, signed images and runtime policies.', category: security}
+  - {id: am-api-security, text: API authentication / authorisation (OAuth2) and rate limiting at the gateway., category: security}
+migration_concerns:
+  - {id: am-coexistence, text: Legacy and new components co-exist; data consistency must be managed., category: data}
+  - {id: am-business-rules, text: Undocumented business rules embedded in legacy code., category: technology}
+dependencies:
+  - {id: am-platform, text: Target container / PaaS platform provisioned., category: infrastructure}
+  - {id: am-smes, text: Legacy application SMEs available., category: delivery}

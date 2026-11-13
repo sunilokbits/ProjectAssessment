@@ -1,0 +1,13 @@
+# GCP technology pack - domain
+key: gcp
+name: GCP
+kind: technology
+version: 1.0.0
+description: Google Cloud Platform - resource hierarchy, Cloud IAM, VPC / Shared VPC networking and Google data and AI services (BigQuery, Dataflow,
+  Dataplex, Vertex AI).
+aliases: [Cloud]
+sort_order: 32
+detection:
+  keywords: {google cloud platform: 5, google cloud: 4, gcp: 4, bigquery: 4, dataflow: 3, dataproc: 3, pub/sub: 3, vertex ai: 3, dataplex: 3,
+    cloud storage: 1.5, shared vpc: 3, gke: 2.5, looker: 2}
+related_technologies: [databricks, snowflake, cloud_migration, data_platform, data_warehouse, devops]

@@ -1,0 +1,36 @@
+- id: validated-gxp-platform
+  name: Validated GxP data platform
+  description: Lakehouse with segregated GxP and non-GxP zones, audit trails, controlled change and validation evidence automation.
+  use_cases: [Batch genealogy and quality analytics, Clinical data platform, Safety analytics, Regulatory data]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: gxp-sources, name: "MES, LIMS, QMS, EDC, safety and ERP systems", layer: sources, core: true}
+    - {id: validated-ingestion, name: Validated ingestion pipelines with audit trail, layer: ingestion, core: true}
+    - {id: gxp-zone, name: Segregated GxP data zone with immutable history, layer: storage, core: true}
+    - {id: non-gxp-zone, name: Non-GxP exploratory and commercial zone, layer: storage, when: {sub_domains_any: [commercial_analytics, drug_discovery, medical_affairs]}}
+    - {id: validation-automation, name: Automated test evidence and validation documentation, layer: governance, core: true}
+    - {id: change-control-cicd, name: GxP change control integrated with CI/CD, layer: governance, when: {technologies_any: [devops, dataops, mlops]}}
+    - {id: ot-connect, name: OPC UA / ISA-95 manufacturing connectivity, layer: ingestion, when: {any_of: [{sub_domains_any: [manufacturing, biotech_cgt]}, {technologies_any: [iot, real_time_streaming]}]}}
+    - {id: sce, name: Statistical computing environment (SAS / R / Python), layer: processing, when: {sub_domains_any: [clinical_trials]}}
+    - {id: cdisc-mdr, name: CDISC metadata repository, layer: governance, when: {sub_domains_any: [clinical_trials, regulatory]}}
+    - {id: subject-pseudonymisation, name: Subject pseudonymisation service, layer: security, when: {data_classifications_any: [phi, spi, pii]}}
+    - {id: model-lifecycle, name: Validated model lifecycle management, layer: serving, when: {technologies_any: [machine_learning, mlops, generative_ai, llmops]}}
+    - {id: doc-ai, name: Document intelligence for SOPs and submissions, layer: processing, when: {any_of: [{project_types_any: [document_intelligence, genai_assistant]}, {technologies_any: [rag, generative_ai]}]}}
+  considerations:
+    - Keep source GxP systems (MES, LIMS, EDC, safety DB) as the records of origin; the platform must not alter original records.
+    - Apply risk-based CSA so validation effort focuses on GxP-critical functions.
+    - Establish quality agreements with cloud providers covering change notification and audit rights.
+- id: commercial-hcp-360
+  name: Commercial HCP 360 and omnichannel analytics
+  description: Integrates CRM, third-party prescription and claims data and engagement events for HCP-level insights and next best action.
+  sub_domains: [commercial_analytics, medical_affairs]
+  use_cases: [HCP 360, Next best action, Territory and incentive analytics, Brand performance]
+  layer_order: [sources, ingestion, processing, serving, consumption, governance]
+  components:
+    - {id: crm-src, name: Veeva / Salesforce CRM and engagement platforms, layer: sources, core: true}
+    - {id: syndicated-data, name: Syndicated and RWD feeds with licence tagging, layer: ingestion, core: true}
+    - {id: hcp-mdm, name: HCP / HCO master data (e.g. Veeva OpenData / Network), layer: processing, core: true}
+    - {id: nba-engine, name: Next best action model, layer: serving, when: {technologies_any: [machine_learning, advanced_analytics, agentic_ai]}}
+    - {id: ae-detection, name: Adverse event detection and PV routing, layer: governance, when: {technologies_any: [generative_ai, ai_agents, agentic_ai]}}
+  considerations:
+    - Respect licence terms of syndicated data and HCP consent preferences.

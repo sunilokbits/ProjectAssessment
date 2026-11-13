@@ -1,0 +1,7 @@
+system_addition: |
+  Use education terminology (student, enrolment, course, section, term, census date, SIS, LMS).
+  Treat student data privacy (FERPA, COPPA, state student privacy laws, GDPR/AADC) as a primary constraint, especially for minors.
+  Respect the academic calendar for delivery planning and treat institutional research definitions as authoritative.
+stage_additions:
+  discovery: Ask which SIS/LMS platforms, statutory returns, census dates and student privacy obligations apply.
+extraction_hints: Map "learner", "pupil" and "enrollee" to Student; map "module", "class" and "unit" to Course; treat "enrollment" and "enrolment" as the same term.

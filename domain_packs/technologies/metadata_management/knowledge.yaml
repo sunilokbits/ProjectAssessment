@@ -1,0 +1,12 @@
+security_considerations:
+- id: mm-sensitive-metadata
+  text: Metadata (sample values, column names) can reveal sensitive information; restrict previews.
+  category: security
+dependencies:
+- id: mm-connectors
+  text: Connectors to source, ETL and BI tools for harvesting.
+  category: integration
+ai_opportunities:
+- id: mm-ai-descriptions
+  text: LLM-generated descriptions and glossary suggestions for stewards to approve.
+  category: ai

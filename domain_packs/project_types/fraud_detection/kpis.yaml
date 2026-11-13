@@ -1,0 +1,24 @@
+- id: fd-detection-rate
+  name: Fraud detection rate
+  description: Share of fraud value or cases detected.
+  unit: '%'
+  direction: higher_is_better
+  category: business
+- id: fd-false-positive-rate
+  name: False-positive rate
+  description: Share of alerts that are not fraud.
+  unit: '%'
+  direction: lower_is_better
+  category: quality
+- id: fd-fraud-losses
+  name: Fraud losses
+  description: Value of fraud losses in the period.
+  unit: currency
+  direction: lower_is_better
+  category: financial
+- id: fd-decision-latency
+  name: Decision latency
+  description: Time to score a transaction.
+  unit: ms
+  direction: lower_is_better
+  category: operations

@@ -1,0 +1,5 @@
+- {term: NFR, definition: "Non-functional requirement (performance, availability, security, etc.)", synonyms: [non-functional requirement, quality attribute], entity_type: concept, category: architecture}
+- {term: RTO, definition: Recovery time objective, entity_type: metric, category: availability}
+- {term: RPO, definition: Recovery point objective, entity_type: metric, category: availability}
+- {term: PII, definition: Personally identifiable information, synonyms: [personal data, personal information], entity_type: concept, category: privacy}
+- {term: SSO, definition: Single sign-on, entity_type: system, category: security}

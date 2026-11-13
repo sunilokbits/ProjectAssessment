@@ -1,0 +1,3 @@
+dimensions:
+  - {key: asset_portfolio_data, name: Asset and Portfolio Data Readiness, group: domain, weight: 1.5, description: "Consistency of property, unit, lease, project and building-asset data across systems and owners."}
+  - {key: project_controls_maturity, name: Project Controls Maturity, group: domain, weight: 1.0, description: "Cost, schedule and change control data discipline on construction projects."}

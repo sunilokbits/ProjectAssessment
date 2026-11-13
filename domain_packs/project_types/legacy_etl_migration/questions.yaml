@@ -1,0 +1,41 @@
+- id: lem-inventory
+  text: Is the ETL estate inventoried (job count, complexity, schedules, dependencies)?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: lem-conversion-approach
+  text: What conversion approach is planned?
+  category: delivery
+  dimension: delivery_governance
+  answer_type: single_choice
+  options:
+  - value: automated
+    label: Automated code conversion tooling
+    score: 1
+  - value: manual
+    label: Manual rewrite
+    score: 0.7
+  - value: hybrid
+    label: Hybrid automated + manual
+    score: 1
+  - value: undecided
+    label: Undecided
+    score: 0.3
+- id: lem-target-pattern
+  text: Is the target pipeline pattern agreed (ELT on lakehouse/warehouse, dbt, platform-native pipelines)?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: yes_no
+- id: lem-testing
+  text: Is automated output reconciliation between legacy and new pipelines planned?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+  critical: true
+- id: lem-licence-deadline
+  text: Is there a licence expiry or support deadline driving the timeline?
+  category: delivery
+  dimension: delivery_governance
+  answer_type: yes_no

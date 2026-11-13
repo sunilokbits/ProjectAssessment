@@ -1,0 +1,41 @@
+# Cloud Migration technology pack - recommendations
+- id: cm-rehost
+  title: Rehost to meet the exit deadline, then optimise
+  text: Use rehost for the bulk of the estate to meet the deadline; schedule post-migration optimisation.
+  category: architecture
+  priority: high
+  decision_key: migration_strategy
+  decision_option: rehost
+  when:
+    any_of:
+      - answers:
+          cloud_migration:migration-strategy-mix: [rehost]
+      - keywords_any: [data centre exit, data center exit, contract expiry]
+- id: cm-replatform
+  title: Replatform onto managed services
+  text: Move databases and middleware to managed PaaS (e.g. managed SQL, containers) during migration.
+  category: architecture
+  priority: medium
+  decision_key: migration_strategy
+  decision_option: replatform
+  when:
+    answers:
+      cloud_migration:migration-strategy-mix: [replatform]
+- id: cm-refactor
+  title: Refactor strategic applications to cloud-native
+  text: Re-architect strategic, high-change applications to cloud-native services.
+  category: architecture
+  priority: medium
+  decision_key: migration_strategy
+  decision_option: refactor
+  when:
+    answers:
+      cloud_migration:migration-strategy-mix: [refactor]
+- id: cm-per-app-disposition
+  title: Decide disposition per application
+  text: Run a 7R disposition per application based on business value, technical fit and deadline.
+  category: architecture
+  priority: high
+  when:
+    answers:
+      cloud_migration:migration-strategy-mix: [mixed, unknown]

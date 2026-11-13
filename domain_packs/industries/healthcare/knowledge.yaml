@@ -1,0 +1,43 @@
+nfrs:
+  - {id: clinical-availability, text: "Clinically used services require high availability with downtime procedures agreed with clinical operations.", category: availability}
+  - {id: retention, text: "Medical records retained per jurisdictional retention rules (often 7-10 years for adults and longer for minors).", category: compliance}
+  - {id: audit-logging, text: "All PHI access logged and reviewable (who, what, when, why).", category: security}
+  - {id: adt-latency, text: ADT and clinical event feeds processed within agreed near-real-time latency for operational use., category: performance, sub_domains: [hospitals, clinical_operations]}
+assumptions:
+  - {id: ehr-legal-record, text: The EHR remains the legal medical record and system of record for clinical data., category: data}
+  - {id: ehr-access, text: EHR vendor entitlements for reporting database / API access are available to the project., category: integration}
+dependencies:
+  - {id: privacy-officer, text: Privacy officer / DPO approval of data flows and de-identification approach., category: compliance}
+  - {id: clinical-informatics, text: Clinical informatics and clinician SME availability for validation., category: delivery}
+  - {id: interface-team, text: Integration / interface team capacity for new HL7 and FHIR feeds., category: integration}
+  - {id: baa-execution, text: Executed BAAs with all PHI-handling vendors., category: compliance}
+security_considerations:
+  - {id: break-glass, text: Break-glass access procedures with retrospective review., category: security}
+  - {id: reidentification, text: Re-identification risk assessment for de-identified and linked data sets., category: privacy}
+  - {id: device-security, text: Network segmentation and patching constraints for connected medical devices., category: security, sub_domains: [medical_devices]}
+data_quality_checks:
+  - {id: duplicate-patients, text: Duplicate and overlaid patient records monitored via EMPI match rates., category: data}
+  - {id: code-validity, text: "Diagnosis, procedure and lab codes valid for the code-system version and date of service.", category: data}
+  - {id: encounter-completeness, text: "Encounters have valid patient, provider, facility and dates.", category: data}
+  - {id: units-of-measure, text: Lab and vitals units of measure standardised and plausible., category: data}
+reporting_requirements:
+  - {id: quality-reporting, text: "Quality measure reporting (e.g. HEDIS, eCQMs, CMS Star Ratings, NHS returns).", category: reporting}
+  - {id: operational-dashboards, text: "Capacity, throughput and patient-flow dashboards.", category: reporting, sub_domains: [hospitals, clinical_operations]}
+  - {id: disclosure-accounting, text: Accounting of disclosures of PHI where required., category: compliance}
+migration_concerns:
+  - {id: legacy-ehr, text: Legacy EHR archive and read-only access requirements after migration., category: data}
+  - {id: code-version, text: Historic code-system versions (ICD-9 to ICD-10) and mapping of legacy local codes., category: data}
+  - {id: interface-cutover, text: Cut-over of HL7 interfaces without message loss., category: integration}
+ai_opportunities:
+  - {id: ambient-documentation, text: Ambient clinical documentation and note summarisation., category: ai, sub_domains: [clinical_operations, healthcare_providers, hospitals]}
+  - {id: readmission-risk, text: Readmission and deterioration risk prediction., category: ai, sub_domains: [hospitals, health_analytics]}
+  - {id: prior-auth-automation, text: GenAI-assisted prior authorization and claims document processing., category: ai, sub_domains: [healthcare_payers, revenue_cycle]}
+  - {id: coding-assist, text: Computer-assisted coding from clinical documentation., category: ai, sub_domains: [revenue_cycle]}
+  - {id: capacity-forecast, text: Patient demand and bed capacity forecasting., category: ai, sub_domains: [hospitals]}
+ai_risks:
+  - {id: clinical-hallucination, text: GenAI producing inaccurate clinical summaries or recommendations., category: ai}
+  - {id: algorithmic-bias, text: Bias across demographic groups in clinical risk models., category: ai}
+  - {id: phi-in-prompts, text: PHI sent to AI services without BAA or outside approved boundaries., category: ai}
+clarification_questions:
+  - {id: clinical-users, text: "Who will consume outputs (clinicians, operations, finance, patients) and for what decisions?", category: business}
+  - {id: phi-elements, text: Please list the PHI elements required and the justification for each., category: privacy}

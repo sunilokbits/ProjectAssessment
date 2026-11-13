@@ -1,0 +1,97 @@
+key: energy_utilities
+name: Energy and Utilities
+kind: industry
+version: 1.0.0
+description: Electricity generation, transmission and distribution, oil and gas, renewables, water utilities, smart metering, grid analytics and asset management.
+aliases: [utilities, energy, power and utilities, oil and gas, E&U]
+sort_order: 20
+sub_domains:
+  - key: electricity
+    name: Electricity (Generation, Transmission and Distribution)
+    keywords: [power generation, transmission, distribution network, substation, feeder, dso, tso, iso/rto, load dispatch, outage management]
+  - key: oil_gas
+    name: Oil and Gas
+    keywords: [upstream, midstream, downstream, wellhead, drilling, pipeline, refinery, reservoir, production allocation, lng]
+  - key: renewable_energy
+    name: Renewable Energy
+    keywords: [solar, wind farm, wind turbine, photovoltaic, battery storage, bess, ppa, curtailment, renewable generation, hydrogen]
+  - key: water
+    name: Water and Wastewater
+    keywords: [water utility, wastewater, water treatment, non-revenue water, leakage, sewer, water network, water quality]
+  - key: smart_metering
+    name: Smart Metering
+    keywords: [smart meter, ami, amr, meter data management, mdm, interval data, head-end, meter-to-cash, prepayment meter]
+  - key: grid_analytics
+    name: Grid Analytics
+    keywords: [grid analytics, adms, derms, load forecasting, grid edge, der, voltage optimisation, phasor, synchrophasor, grid modernisation]
+  - key: asset_management
+    name: Asset Management
+    keywords: [asset health, asset performance management, apm, condition monitoring, work order, maintenance planning, asset register, vegetation management]
+detection:
+  keywords:
+    utility: 2.5
+    utilities: 2.5
+    grid: 2
+    substation: 4
+    smart meter: 4
+    ami: 3
+    meter data management: 4
+    scada: 3.5
+    outage management: 4
+    adms: 4.5
+    derms: 4.5
+    nerc cip: 5
+    upstream: 2
+    wellhead: 4
+    refinery: 3.5
+    pipeline integrity: 4
+    non-revenue water: 5
+    wind farm: 3.5
+    solar plant: 3
+    load forecasting: 3
+    kilowatt-hour: 3
+    kwh: 2.5
+    megawatt: 3
+    feeder: 2
+    distribution network: 2.5
+business_processes:
+  - Meter-to-cash (meter reading, billing, collections)
+  - Outage management and restoration
+  - Network planning and load forecasting
+  - Asset maintenance and work management
+  - Energy trading and scheduling
+  - Production operations and allocation
+  - Customer service and connections
+  - Regulatory reporting and rate cases
+  - Health, safety and environmental management
+  - Leakage and loss management
+capabilities:
+  - Grid and network analytics
+  - Predictive asset maintenance
+  - Load and generation forecasting
+  - Revenue protection and theft detection
+  - Customer 360 and energy insights
+  - Outage prediction
+  - Renewable integration and DER management
+  - Emissions and ESG reporting
+source_systems:
+  - "SCADA / EMS (GE Vernova, Siemens Spectrum Power, Hitachi Energy, AVEVA)"
+  - "ADMS / OMS (Schneider EcoStruxure ADMS, Oracle NMS)"
+  - "Meter data management (Itron, Landis+Gyr, Oracle MDM, Siemens EnergyIP)"
+  - "Customer information and billing (SAP IS-U / S/4HANA Utilities, Oracle CC&B)"
+  - "Enterprise asset management (IBM Maximo, SAP PM, Oracle EAM)"
+  - "Historian (AVEVA PI System / OSIsoft PI, Honeywell PHD)"
+  - "GIS (Esri ArcGIS Utility Network, GE Smallworld)"
+  - "Energy trading and risk management (Allegro, Openlink Endur)"
+  - "Production accounting (Quorum, P2 Energy Solutions)"
+  - Workforce and field service management
+data_entities: [Meter, Interval read, Customer premise, Service point, Asset, Work order, Outage event, Feeder, Substation, Well, Tariff, Generation unit, Sensor reading]
+integration_patterns:
+  - OT/IT integration via historian and DMZ
+  - "IEC 61968 / 61970 CIM messaging"
+  - MQTT / OPC UA telemetry
+  - Head-end to MDM batch interval loads
+  - "MultiSpeak / ESB integration"
+  - Event streaming of grid and sensor data
+related_technologies: [iot, real_time_streaming, machine_learning, databricks, data_governance]
+related_project_types: [predictive_maintenance, iot_analytics_platform, demand_forecasting, customer_360]

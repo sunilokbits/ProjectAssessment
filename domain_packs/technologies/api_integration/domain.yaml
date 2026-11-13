@@ -1,0 +1,33 @@
+key: api_integration
+name: API and Integration
+kind: technology
+version: 1.0.0
+description: APIs, integration platforms, messaging and event patterns connecting applications and data.
+aliases:
+- Integration
+sort_order: 80
+detection:
+  keywords:
+    api management: 5
+    api gateway: 4
+    integration platform: 4
+    ipaas: 4
+    mulesoft: 5
+    boomi: 5
+    azure integration services: 4
+    apigee: 5
+    logic apps: 3
+    rest api: 3
+    openapi: 3
+    graphql: 3
+    esb: 3
+    middleware: 2
+    webhook: 2
+    api: 0.8
+    integration: 0.5
+related_technologies:
+- sap_integration
+- salesforce_integration
+- real_time_streaming
+- cybersecurity
+- devops

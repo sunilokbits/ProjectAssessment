@@ -1,0 +1,14 @@
+- {term: Customer, definition: Person buying through the store or marketplace, synonyms: [shopper, buyer, consumer, user], entity_type: entity, category: data}
+- {term: Session, definition: Period of continuous site or app activity, synonyms: [visit, browsing session], entity_type: event, category: data}
+- {term: Product, definition: Item offered for sale, synonyms: [item, article, offer], entity_type: entity, category: data}
+- {term: SKU, definition: Stock keeping unit for a product variant, synonyms: [variant, item code], entity_type: entity, category: data}
+- {term: Listing, definition: Seller offer for a product on a marketplace, synonyms: [offer, seller listing], entity_type: entity, category: data, sub_domains: [marketplace, seller_management]}
+- {term: Seller, definition: Third-party merchant selling on a marketplace, synonyms: [merchant, vendor, third-party seller, 3p seller], entity_type: entity, category: data, sub_domains: [marketplace, seller_management]}
+- {term: Order, definition: Confirmed purchase of one or more items, synonyms: [purchase, transaction, basket], entity_type: entity, category: data}
+- {term: GMV, definition: Gross merchandise value, synonyms: [gross merchandise volume, gross sales], entity_type: metric, category: revenue}
+- {term: AOV, definition: Average order value, synonyms: [average basket value, average order size], entity_type: metric, category: revenue}
+- {term: Chargeback, definition: Card payment reversal initiated by the cardholder's bank, synonyms: [dispute, payment reversal], entity_type: event, category: payments, sub_domains: [payments_checkout, marketplace]}
+- {term: PSP, definition: Payment service provider, synonyms: [payment gateway, acquirer, payment processor], entity_type: system, category: integration, sub_domains: [payments_checkout]}
+- {term: PIM, definition: Product information management system, synonyms: [product information management, catalogue system], entity_type: system, category: integration}
+- {term: Clickstream, definition: Sequence of user interaction events, synonyms: [behavioural data, web events, tracking data], entity_type: entity, category: data}
+- {term: Take Rate, definition: Marketplace commission as a share of GMV, synonyms: [commission rate], entity_type: metric, category: revenue, sub_domains: [marketplace]}

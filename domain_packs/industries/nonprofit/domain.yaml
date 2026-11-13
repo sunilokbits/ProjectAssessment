@@ -1,0 +1,82 @@
+key: nonprofit
+name: Non-profit and NGO
+kind: industry
+version: 1.0.0
+description: Charities, foundations, NGOs and humanitarian organisations covering fundraising, donor management, programmes and impact, grants and volunteer management.
+aliases: [non-profit, not-for-profit, charity, ngo, foundation, third sector, humanitarian]
+sort_order: 150
+sub_domains:
+  - key: fundraising
+    name: Fundraising
+    keywords: [fundraising, appeal, campaign, donations, major gifts, legacy giving, peer-to-peer fundraising, gift aid, regular giving]
+  - key: donor_management
+    name: Donor Management
+    keywords: [donor, supporter, constituent, donor retention, donor journey, stewardship, crm, wealth screening, donor segmentation]
+  - key: programs_impact
+    name: Programmes and Impact
+    keywords: [programme delivery, beneficiaries, impact measurement, monitoring and evaluation, m&e, outcomes framework, theory of change, logframe, case management]
+  - key: grants
+    name: Grants Management
+    keywords: [grant making, grant applications, grantee, restricted funds, donor reporting, institutional funders, usaid, grant compliance]
+  - key: volunteer_management
+    name: Volunteer Management
+    keywords: [volunteers, volunteer scheduling, volunteer hours, volunteer engagement, safeguarding checks, dbs check]
+detection:
+  keywords:
+    nonprofit: 4.5
+    non-profit: 4.5
+    not-for-profit: 4.5
+    charity: 4
+    ngo: 4.5
+    donor: 3.5
+    donors: 3.5
+    fundraising: 4
+    beneficiaries: 4
+    gift aid: 5
+    raiser's edge: 5
+    blackbaud: 5
+    salesforce nonprofit cloud: 5
+    restricted funds: 4.5
+    monitoring and evaluation: 4
+    volunteers: 3
+    grantee: 4
+    humanitarian: 4
+    form 990: 5
+    supporter: 2
+business_processes:
+  - Supporter acquisition and appeals
+  - Gift processing and acknowledgement
+  - Donor stewardship and retention
+  - Major gifts and legacy management
+  - Grant application, award and reporting
+  - Programme design and delivery
+  - Monitoring, evaluation and learning
+  - Volunteer recruitment and scheduling
+  - Fund accounting and restricted fund tracking
+  - Safeguarding and beneficiary protection
+capabilities:
+  - Supporter 360
+  - Donor propensity and lifetime value modelling
+  - Campaign attribution
+  - Impact measurement and outcomes reporting
+  - Grant portfolio analytics
+  - Volunteer matching
+  - Fund accounting transparency
+  - GenAI-assisted grant writing and reporting
+source_systems:
+  - "Donor CRM (Blackbaud Raiser's Edge NXT, Salesforce Nonprofit Cloud / NPSP, Microsoft Dynamics 365 Nonprofit Accelerator, Bloomerang)"
+  - "Online giving (JustGiving, Classy / GoFundMe Pro, Donorbox, Stripe, PayPal Giving Fund)"
+  - "Grants management (Fluxx, Submittable, SmartSimple, Blackbaud Grantmaking)"
+  - "Programme and M&E (DHIS2, KoboToolbox, CommCare, ActivityInfo, Salesforce Program Management Module)"
+  - "Fund accounting (Blackbaud Financial Edge NXT, Sage Intacct, Unit4, Microsoft Dynamics 365 Finance)"
+  - "Volunteer management (Volunteer Hub, Better Impact, Assemble)"
+  - "Email and marketing (Mailchimp, Dotdigital, Salesforce Marketing Cloud)"
+data_entities: [Supporter, Donor, Gift, Pledge, Campaign, Appeal, Fund, Grant, Beneficiary, Programme, Outcome indicator, Volunteer, Consent record]
+integration_patterns:
+  - Payment platform and giving-site integrations
+  - Batch gift imports from agencies and payroll giving
+  - Mobile offline data collection from the field
+  - Funder reporting templates and portals
+  - Wealth screening and data append services
+related_technologies: [salesforce_integration, power_bi, data_governance, generative_ai, machine_learning]
+related_project_types: [customer_360, churn_prediction, bi_modernization, genai_assistant]

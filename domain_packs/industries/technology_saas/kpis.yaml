@@ -1,0 +1,10 @@
+- {id: arr, name: Annual recurring revenue, description: Annualised value of recurring subscription contracts., unit: currency, direction: higher_is_better, category: revenue, sub_domains: [saas, enterprise_software, developer_platforms, cybersecurity]}
+- {id: nrr, name: Net revenue retention, description: Recurring revenue retained from existing customers including expansion., formula: "(starting ARR + expansion - contraction - churn) / starting ARR", unit: "%", direction: higher_is_better, category: revenue}
+- {id: grr, name: Gross revenue retention, description: Recurring revenue retained excluding expansion., unit: "%", direction: higher_is_better, category: revenue}
+- {id: logo-churn, name: Logo churn rate, description: Share of customers lost per period., unit: "%", direction: lower_is_better, category: customer}
+- {id: cac-payback, name: CAC payback period, description: Months of gross margin needed to recover acquisition cost., unit: months, direction: lower_is_better, category: efficiency}
+- {id: feature-adoption, name: Feature adoption rate, description: Share of active accounts using a feature., unit: "%", direction: higher_is_better, category: product}
+- {id: trial-conversion, name: Trial-to-paid conversion, description: Share of trials converting to paid plans., unit: "%", direction: higher_is_better, category: growth, sub_domains: [saas, developer_platforms]}
+- {id: gross-margin, name: Gross margin, description: Revenue less cost of revenue including hosting., unit: "%", direction: higher_is_better, category: efficiency}
+- {id: uptime, name: Service availability, description: Measured availability against the published SLA., unit: "%", direction: higher_is_better, category: operational}
+- {id: mttr, name: Mean time to restore, description: Average time to restore service after incidents., unit: minutes, direction: lower_is_better, category: operational}

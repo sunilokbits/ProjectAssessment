@@ -1,0 +1,10 @@
+- id: df-hierarchical
+  title: Use hierarchical forecasting with reconciliation
+  text: Forecast across product and location hierarchies and reconcile levels for consistent plans.
+  category: architecture
+  priority: medium
+- id: df-fva
+  title: Measure forecast value added
+  text: Track accuracy of statistical vs overridden forecasts to focus planner effort.
+  category: business
+  priority: high

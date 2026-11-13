@@ -1,0 +1,5 @@
+- {id: governed-data-dictionary, title: Agree a governed academic data dictionary, text: "Define retention, FTE, completion and active student with institutional research before building dashboards.", category: data, priority: high}
+- {id: census-snapshots, title: Snapshot data at census and reporting dates, text: "Persist immutable snapshots so statutory returns can be reproduced and audited.", category: data, priority: high}
+- {id: student-privacy-controls, title: Implement student privacy controls by design, text: "Apply FERPA / COPPA / GDPR controls: role-based access, minimisation and opt-out handling.", category: security, priority: high, when: {data_classifications_any: [pii, children]}}
+- {id: supportive-analytics, title: Use predictive analytics for supportive outreach only, text: "Co-design interventions with student services and publish a learning analytics policy.", category: governance, priority: medium, sub_domains: [student_analytics, higher_education]}
+- {id: calendar-aware-release, title: Align releases to the academic calendar, category: delivery, priority: medium, text: "Avoid cut-overs during enrolment, exams and census windows."}

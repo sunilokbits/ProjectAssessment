@@ -1,0 +1,51 @@
+- id: mlops-registry
+  text: Is there a model registry with versioning, lineage and stage approvals?
+  category: technology
+  dimension: mlops_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: mlops-cicd
+  text: Are model training and deployment automated through CI/CD pipelines?
+  category: operations
+  dimension: mlops_readiness
+  answer_type: yes_no
+- id: mlops-monitoring
+  text: Are data drift, prediction drift and business performance monitored for production models?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: mlops-retraining
+  text: What is the retraining approach?
+  category: technology
+  dimension: mlops_readiness
+  answer_type: single_choice
+  options:
+  - value: none
+    label: No retraining process
+    score: 0
+  - value: manual
+    label: Manual ad-hoc retraining
+    score: 0.4
+  - value: scheduled
+    label: Scheduled retraining
+    score: 0.8
+  - value: triggered
+    label: Drift-triggered automated retraining
+    score: 1
+- id: mlops-governance
+  text: Is there a model risk management / governance process (inventory, validation, periodic review)?
+  category: governance
+  dimension: mlops_readiness
+  answer_type: yes_no
+- id: mlops-environments
+  text: Are separate dev/test/prod environments available for ML workloads?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: mlops-skills
+  text: How experienced is the client team with MLOps tooling and practices (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

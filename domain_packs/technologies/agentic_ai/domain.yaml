@@ -1,0 +1,32 @@
+key: agentic_ai
+name: Agentic AI
+kind: technology
+version: 1.0.0
+description: Autonomous or semi-autonomous AI systems that plan multi-step work and take actions through tools and APIs.
+aliases:
+- AI
+sort_order: 63
+detection:
+  keywords:
+    agentic ai: 5
+    agentic: 4
+    autonomous agent: 4
+    multi-agent: 4
+    agent orchestration: 4
+    langgraph: 3
+    autogen: 3
+    crewai: 3
+    tool calling: 3
+    function calling: 2.5
+    model context protocol: 3
+    mcp server: 2.5
+    planning: 0.5
+    workflow automation: 1
+related_technologies:
+- generative_ai
+- ai_agents
+- llmops
+- api_integration
+- cybersecurity
+related_project_types:
+- genai_assistant

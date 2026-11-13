@@ -1,0 +1,29 @@
+# Data Platform technology pack - risks
+- id: platform-without-use-case
+  title: Platform built without priority use cases - low adoption
+  category: business
+  likelihood: 3
+  impact: 4
+  mitigation: Anchor each release on business use cases with measurable value; build thin vertical slices.
+  indicators: [build it and they will come, no use cases, platform first]
+- id: ownership-gaps
+  title: Unclear ownership between platform and domain teams
+  category: delivery
+  likelihood: 3
+  impact: 3
+  mitigation: RACI for platform vs domain responsibilities; product owner for the platform.
+  indicators: [ownership unclear, no product owner]
+- id: cost-sprawl
+  title: Platform cost growth without allocation or controls
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Tagging standards, budgets, chargeback/showback and FinOps reviews.
+  indicators: [cost overrun, cloud bill]
+- id: tool-proliferation
+  title: Proliferation of overlapping tools across teams
+  category: architecture
+  likelihood: 3
+  impact: 2
+  mitigation: Define a reference toolset and architecture review for exceptions.
+  indicators: [multiple tools, shadow it]

@@ -1,0 +1,15 @@
+security_considerations:
+- id: api-oauth
+  text: OAuth2/OIDC with scoped tokens; no shared credentials.
+  category: security
+- id: api-owasp
+  text: Test against OWASP API Security Top 10.
+  category: security
+nfrs:
+- id: api-latency
+  text: Latency, throughput and availability targets per interface.
+  category: performance
+dependencies:
+- id: api-network
+  text: Network connectivity and firewall rules between platforms.
+  category: infrastructure

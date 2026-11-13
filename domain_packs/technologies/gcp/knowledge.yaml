@@ -1,0 +1,9 @@
+# GCP technology pack - knowledge
+security_considerations:
+  - {id: gcp-wif, text: Workload identity federation instead of service account keys., category: security}
+  - {id: gcp-cmek, text: CMEK via Cloud KMS for regulated datasets., category: security}
+  - {id: gcp-audit, text: Organization-level audit logs exported to a protected logging project., category: security}
+dependencies:
+  - {id: gcp-agreement, text: Google Cloud commercial agreement / billing account in place., category: commercial}
+  - {id: gcp-connectivity, text: Hybrid connectivity from on-premises to Google Cloud (Cloud Interconnect or HA VPN)., category: network}
+  - {id: gcp-idp, text: Corporate identity provider federation configured., category: identity}

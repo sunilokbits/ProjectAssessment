@@ -1,0 +1,14 @@
+# Data Migration technology pack - terminology
+- term: Source-to-Target Mapping
+  definition: Specification of how source fields transform into target fields
+  synonyms: [sttm, mapping]
+  entity_type: concept
+  category: data
+- term: Mock Migration
+  definition: Full rehearsal of the migration in a non-production environment
+  synonyms: [dress rehearsal]
+  entity_type: event
+  category: delivery
+- {term: Reconciliation, definition: 'Verifying migrated data matches source by counts, sums and checks', entity_type: process, category: quality}
+- {term: Cutover, definition: Switch from legacy to target system, entity_type: event, category: operations}
+- {term: Data Cleansing, definition: Correcting or removing inaccurate source records, entity_type: process, category: quality}

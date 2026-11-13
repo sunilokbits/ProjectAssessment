@@ -1,0 +1,8 @@
+# Data Lake technology pack - knowledge
+security_considerations:
+  - {id: lake-encryption, text: Encryption at rest with customer-managed keys where required; TLS in transit., category: security}
+  - {id: lake-private-endpoints, text: Private endpoints for storage accounts / buckets; deny public access., category: security}
+  - {id: lake-erasure, text: Ability to locate and delete personal data across zones for erasure requests., category: privacy}
+dependencies:
+  - {id: lake-storage, text: Storage accounts / buckets provisioned under the landing zone., category: infrastructure}
+  - {id: lake-catalog-tool, text: 'Catalog service selected (Unity Catalog, Glue, Purview, Dataplex).', category: governance}

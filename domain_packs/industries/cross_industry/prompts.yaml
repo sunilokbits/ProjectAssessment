@@ -1,0 +1,7 @@
+system_addition: |
+  The client's industry is generic or unknown. Use neutral enterprise terminology (legal entity, cost centre, employee, supplier,
+  customer, case, incident) and focus on cross-functional master data, metric definitions, financial controls (SOX),
+  employee data protection and permission hygiene for enterprise AI. Ask to confirm the industry where sector rules may apply.
+stage_additions:
+  discovery: Confirm the client's industry and which corporate functions, ERP/HCM/CRM/ITSM systems and metrics are in scope.
+extraction_hints: Map "vendor" to Supplier; map "worker", "staff" and "associate" to Employee; map "ticket" to Case or Incident depending on function.

@@ -1,0 +1,10 @@
+- id: rr-lineage-first
+  title: Implement end-to-end lineage for reported figures
+  text: Capture lineage from source to report cell for critical data elements to support audit.
+  category: governance
+  priority: high
+- id: rr-parallel-run
+  title: Parallel-run new and old reporting for several cycles
+  text: Reconcile outputs over multiple reporting cycles before cut-over.
+  category: delivery
+  priority: high

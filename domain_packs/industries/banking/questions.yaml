@@ -1,0 +1,117 @@
+- id: core-banking-system
+  text: Which core banking platform(s) and versions are in scope, and how is data extracted from them today (EOD batch, CDC, APIs)?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  equivalence_key: core_banking_extract
+- id: gl-reconciliation
+  text: Is there an agreed reconciliation approach between the new solution and the general ledger / source of record?
+  category: data
+  dimension: financial_data_governance
+  weight: 2
+  critical: true
+  evidence_required: true
+- id: golden-source
+  text: Are golden sources defined for customer, account and product reference data?
+  category: data
+  dimension: financial_data_governance
+  weight: 1.5
+- id: data-lineage-regulatory
+  text: Is end-to-end data lineage required for regulatory or risk data (e.g. BCBS 239 principles)?
+  category: governance
+  dimension: financial_data_governance
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not known, score: 0}
+    - {value: required_none, label: Required - no lineage today, score: 0.25}
+    - {value: required_partial, label: Required - partial lineage exists, score: 0.6}
+    - {value: required_full, label: Required - lineage tooling in place, score: 1}
+    - {value: not_required, label: Not required (confirmed), score: 1}
+- id: kyc-aml-impact
+  text: Does the project create, change or consume KYC / AML / sanctions data or processes?
+  category: compliance
+  dimension: financial_crime_controls
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: yes_assessed, label: Yes - impact assessed with financial-crime team, score: 1}
+    - {value: yes_not_assessed, label: Yes - impact not yet assessed, score: 0.2}
+    - {value: no, label: No impact (confirmed), score: 1}
+  critical: true
+- id: regulatory-reports
+  text: Which regulatory reports (e.g. RBI returns, FR Y-9C, COREP/FINREP, liquidity reports) depend on data in scope?
+  category: compliance
+  dimension: regulatory_readiness
+  answer_type: text
+- id: regulator-change-deadline
+  text: Is there a regulator-mandated deadline driving the project?
+  category: compliance
+  dimension: regulatory_readiness
+  answer_type: single_choice
+  options:
+    - {value: yes_known, label: Yes - deadline and scope known, score: 1}
+    - {value: yes_unclear, label: Yes - scope still unclear, score: 0.3}
+    - {value: no, label: No regulatory deadline, score: 1}
+- id: model-risk-governance
+  text: Will any models (credit scoring, fraud, AI/ML) fall under the bank's model risk management policy (e.g. SR 11-7)?
+  category: governance
+  dimension: regulatory_readiness
+  when: {technologies_any: [machine_learning, generative_ai, advanced_analytics, agentic_ai, ai_agents]}
+- id: audit-trail
+  text: Are audit-trail and data-retention requirements for financial records defined?
+  category: compliance
+  dimension: regulatory_readiness
+  equivalence_key: audit_trail_retention
+- id: transaction-consistency
+  text: Are there requirements for transaction-level consistency (e.g. no loss/duplication across intraday and EOD processing)?
+  category: data
+  dimension: financial_data_governance
+- id: pii-masking
+  text: Will customer PII and account numbers be masked/tokenised in non-production environments?
+  category: security
+  dimension: security_controls
+  equivalence_key: nonprod_masking
+- id: card-data-scope
+  text: Is cardholder data (PAN) in scope, and if so is the target environment within the PCI DSS cardholder data environment?
+  category: security
+  dimension: security_controls
+  sub_domains: [cards, payments]
+  critical: true
+- id: payment-message-standards
+  text: Which payment message standards are used (ISO 20022, ISO 8583, SWIFT MT, domestic schemes)?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+  sub_domains: [payments]
+- id: customer-consent
+  text: Is customer consent for analytics/marketing use of data captured and available for enforcement?
+  category: privacy
+  dimension: privacy_protection
+  sub_domains: [retail_banking, cards, wealth_management, fintech]
+- id: customer-hierarchy
+  text: Are customer hierarchies (individual, joint, household, corporate group) defined for a single customer view?
+  category: data
+  dimension: financial_data_governance
+  sub_domains: [retail_banking, corporate_banking, commercial_banking, wealth_management]
+  when: {project_types_any: [customer_360]}
+- id: credit-decisioning-data
+  text: What data feeds credit decisioning (bureau, internal behaviour, alternative data), and is it available historically?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [lending, mortgage, cards, fintech]
+- id: market-data
+  text: Which market and reference data vendors (e.g. Bloomberg, Refinitiv) feed the solution, and are licences in place for the intended use?
+  category: data
+  dimension: data_availability
+  sub_domains: [capital_markets, investment_banking, asset_management]
+- id: suitability-rules
+  text: Do suitability / advice regulations constrain how client data and recommendations can be used?
+  category: compliance
+  dimension: regulatory_readiness
+  sub_domains: [wealth_management, asset_management]
+- id: outsourcing-cloud-approval
+  text: Has the bank's cloud/outsourcing approval process (including regulator notification where required) been initiated?
+  category: compliance
+  dimension: regulatory_readiness
+  when: {technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]}

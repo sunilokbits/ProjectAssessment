@@ -1,0 +1,80 @@
+- id: pci-dss-retail
+  name: Payment Card Industry Data Security Standard v4.0
+  short_name: PCI DSS
+  geographies: [GLOBAL]
+  data_classifications_any: [cardholder]
+  description: Security requirements for merchants that store, process or transmit cardholder data.
+- id: gdpr-retail
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii, spi, children]
+- id: eprivacy
+  name: ePrivacy Directive (cookies and electronic marketing)
+  short_name: ePrivacy
+  geographies: [EU, EEA]
+  sub_domains: [ecommerce, customer_loyalty, recommendation_systems]
+- id: uk-gdpr-pecr
+  name: UK GDPR and Privacy and Electronic Communications Regulations
+  short_name: UK GDPR / PECR
+  geographies: [UK]
+  data_classifications_any: [pii]
+- id: ccpa-cpra
+  name: California Consumer Privacy Act as amended by CPRA
+  short_name: CCPA/CPRA
+  geographies: [US-CA]
+  data_classifications_any: [pii]
+  applicability_note: Loyalty programs offering financial incentives require notice of financial incentive.
+- id: us-state-privacy
+  name: US state comprehensive privacy laws (e.g. Virginia VCDPA, Colorado CPA, Texas TDPSA)
+  short_name: US State Privacy
+  geographies: [US]
+  data_classifications_any: [pii]
+  applicability_note: Applicability depends on state of residence of consumers and processing thresholds.
+- id: coppa
+  name: Children's Online Privacy Protection Act
+  short_name: COPPA
+  geographies: [US]
+  data_classifications_any: [children]
+- id: dpdp-retail
+  name: Digital Personal Data Protection Act 2023 (India)
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii]
+- id: india-ecommerce-rules
+  name: Consumer Protection (E-Commerce) Rules 2020 (India)
+  short_name: India E-Commerce Rules
+  geographies: [IN]
+  sub_domains: [ecommerce, omnichannel]
+- id: eu-omnibus
+  name: EU Omnibus Directive (2019/2161) - price reduction and consumer protection rules
+  short_name: EU Omnibus
+  geographies: [EU, EEA]
+  sub_domains: [pricing, ecommerce]
+- id: eu-dsa
+  name: Digital Services Act
+  short_name: DSA
+  geographies: [EU, EEA]
+  sub_domains: [ecommerce, recommendation_systems]
+  applicability_note: Applies to online marketplaces and platforms; recommender-system transparency obligations for online platforms.
+- id: eu-accessibility-act
+  name: European Accessibility Act (Directive 2019/882)
+  short_name: EAA
+  geographies: [EU, EEA]
+  sub_domains: [ecommerce, omnichannel, payments_checkout]
+- id: ftc-act
+  name: FTC Act Section 5 (unfair or deceptive practices) and FTC guidance on reviews and endorsements
+  short_name: FTC Act
+  geographies: [US]
+  sub_domains: [ecommerce, pricing, customer_loyalty]
+- id: pipeda-retail
+  name: Personal Information Protection and Electronic Documents Act and CASL
+  short_name: PIPEDA / CASL
+  geographies: [CA]
+  data_classifications_any: [pii]
+- id: eu-ai-act-retail
+  name: EU AI Act
+  short_name: EU AI Act
+  geographies: [EU, EEA]
+  technologies_any: [machine_learning, generative_ai, agentic_ai, ai_agents]
+  applicability_note: Most retail AI is limited/minimal risk; transparency duties apply to chatbots and AI-generated content.

@@ -1,0 +1,96 @@
+- id: ifrs-17
+  name: IFRS 17 Insurance Contracts
+  short_name: IFRS 17
+  geographies: [GLOBAL]
+  description: Accounting standard for measurement and disclosure of insurance contracts.
+  obligations: [Contract grouping and cohort tracking, CSM and risk adjustment calculation, Audit trail from source data to disclosures]
+  applicability_note: Applies in IFRS-adopting jurisdictions; US insurers use US GAAP LDTI instead. India (Ind AS 117) implementation timing should be confirmed.
+- id: solvency-ii
+  name: Solvency II Directive (2009/138/EC)
+  short_name: Solvency II
+  geographies: [EU, EEA]
+  description: Risk-based capital, governance and reporting regime for EU insurers.
+  obligations: [Pillar 3 QRT reporting, Data quality for technical provisions, ORSA]
+- id: uk-solvency
+  name: UK Solvency regime (PRA Rulebook - Solvency UK)
+  short_name: Solvency UK
+  geographies: [UK]
+- id: naic-model-laws
+  name: NAIC model laws and statutory accounting (incl. Insurance Data Security Model Law)
+  short_name: NAIC
+  geographies: [US]
+  applicability_note: Adopted state by state; confirm the domiciliary state's enacted version.
+- id: nydfs-500
+  name: NYDFS Cybersecurity Regulation (23 NYCRR 500)
+  short_name: NYDFS 500
+  geographies: [US-NY]
+- id: hipaa-insurance
+  name: Health Insurance Portability and Accountability Act
+  short_name: HIPAA
+  geographies: [US]
+  data_classifications_any: [phi]
+  sub_domains: [health_insurance]
+  applicability_note: Health plans are covered entities; life and P&C carriers are generally not, unless acting as a health plan.
+- id: glba-insurance
+  name: Gramm-Leach-Bliley Act (privacy of consumer financial information)
+  short_name: GLBA
+  geographies: [US]
+  data_classifications_any: [pii, financial]
+- id: irdai-regulations
+  name: IRDAI regulations (incl. Information and Cyber Security Guidelines)
+  short_name: IRDAI
+  geographies: [IN]
+- id: irdai-outsourcing
+  name: IRDAI (Outsourcing of Activities by Indian Insurers) Regulations
+  short_name: IRDAI Outsourcing
+  geographies: [IN]
+  technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]
+- id: dpdp-act
+  name: Digital Personal Data Protection Act 2023 (India)
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii, spi, phi]
+- id: dora-insurance
+  name: Digital Operational Resilience Act
+  short_name: DORA
+  geographies: [EU, EEA]
+  applicability_note: Applies to insurance and reinsurance undertakings (with proportionality for smaller firms).
+- id: eiopa-cloud
+  name: EIOPA Guidelines on outsourcing to cloud service providers
+  short_name: EIOPA Cloud
+  geographies: [EU, EEA]
+  technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]
+- id: idd
+  name: Insurance Distribution Directive
+  short_name: IDD
+  geographies: [EU, EEA]
+  sub_domains: [distribution]
+- id: fca-consumer-duty
+  name: FCA Consumer Duty
+  short_name: Consumer Duty
+  geographies: [UK]
+- id: apra-cps-234-insurance
+  name: APRA CPS 234 Information Security
+  short_name: APRA CPS 234
+  geographies: [AU]
+- id: mas-trm-insurance
+  name: MAS Technology Risk Management Guidelines
+  short_name: MAS TRM
+  geographies: [SG]
+- id: eu-ai-act-insurance
+  name: EU AI Act
+  short_name: EU AI Act
+  geographies: [EU, EEA]
+  technologies_any: [machine_learning, generative_ai, agentic_ai, ai_agents, advanced_analytics]
+  applicability_note: AI used for risk assessment and pricing in life and health insurance is classified as high-risk.
+- id: colorado-sb21-169
+  name: Colorado SB21-169 (unfair discrimination in insurance using external data and algorithms)
+  short_name: Colorado SB21-169
+  geographies: [US]
+  technologies_any: [machine_learning, advanced_analytics, generative_ai]
+  applicability_note: State law; applies to insurers doing business in Colorado. Several other states have issued similar NAIC AI bulletins.
+- id: gdpr-insurance
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii, spi, phi]

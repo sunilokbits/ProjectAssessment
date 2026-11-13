@@ -1,0 +1,9 @@
+# AWS technology pack - knowledge
+security_considerations:
+  - {id: aws-iam-roles, text: IAM roles with least privilege for workloads; no root account usage., category: security}
+  - {id: aws-kms, text: KMS customer-managed keys and S3 Block Public Access enforced., category: security}
+  - {id: aws-cloudtrail, text: Organization-wide CloudTrail logging to a protected log archive account., category: security}
+dependencies:
+  - {id: aws-agreement, text: AWS commercial agreement / billing account in place., category: commercial}
+  - {id: aws-connectivity, text: Hybrid connectivity from on-premises to AWS (Direct Connect or site-to-site VPN)., category: network}
+  - {id: aws-idp, text: Corporate identity provider federation configured., category: identity}

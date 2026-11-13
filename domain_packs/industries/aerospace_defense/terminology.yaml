@@ -1,0 +1,14 @@
+- {term: Technical Data, definition: Information required for design or production or maintenance of controlled items, synonyms: [controlled technical data, engineering data, drawings], entity_type: entity, category: security}
+- {term: CUI, definition: Controlled Unclassified Information, synonyms: [controlled unclassified information, covered defense information, cdi], entity_type: concept, category: security}
+- {term: ITAR, definition: US International Traffic in Arms Regulations, synonyms: [international traffic in arms regulations, usml], entity_type: regulation, category: compliance}
+- {term: ECCN, definition: Export control classification number under the EAR, synonyms: [export classification, ccl entry], entity_type: concept, category: compliance}
+- {term: US Person, definition: Person permitted access to ITAR data without a licence, synonyms: [us citizen or permanent resident, authorised person], entity_type: role, category: security}
+- {term: Part, definition: Manufactured or purchased component identified by part number, synonyms: [component, part number, p/n], entity_type: entity, category: data}
+- {term: Serial Number, definition: Unique identifier of an individual part or assembly, synonyms: [s/n, serialised part, tail number], entity_type: entity, category: data}
+- {term: Engineering Change, definition: Controlled change to design configuration, synonyms: [ecn, eco, engineering change order, change notice], entity_type: event, category: data, sub_domains: [aircraft_manufacturing, space]}
+- {term: Nonconformance, definition: Deviation from specification found in inspection, synonyms: [ncr, defect, discrepancy, concession], entity_type: event, category: quality}
+- {term: Airworthiness, definition: Condition of an aircraft being safe to fly per approved design, synonyms: [certificate of airworthiness, release to service, crs], entity_type: concept, category: compliance, sub_domains: [mro, aircraft_manufacturing]}
+- {term: AOG, definition: Aircraft on ground awaiting parts or maintenance, synonyms: [aircraft on ground], entity_type: event, category: operational, sub_domains: [mro]}
+- {term: Digital Thread, definition: Connected data flow across the product lifecycle, synonyms: [model-based enterprise, mbe, digital twin], entity_type: concept, category: data}
+- {term: Earned Value, definition: Measure of work performed against budget, synonyms: [evm, bcwp, earned value management], entity_type: metric, category: program, sub_domains: [defense_programs, space]}
+- {term: Flow-down, definition: Contract requirements passed from prime to suppliers, synonyms: [flowdown clause, supplier requirements], entity_type: concept, category: compliance, sub_domains: [supply_chain, defense_programs]}

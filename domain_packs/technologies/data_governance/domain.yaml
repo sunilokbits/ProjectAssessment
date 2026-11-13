@@ -1,0 +1,32 @@
+key: data_governance
+name: Data Governance
+kind: technology
+version: 1.0.0
+description: Operating model, policies, ownership, access governance and controls that make data trustworthy and compliant.
+aliases:
+- Data Management
+sort_order: 70
+detection:
+  keywords:
+    data governance: 5
+    data stewardship: 4
+    data steward: 4
+    data owner: 3
+    governance council: 3
+    data policy: 3
+    collibra: 4
+    informatica axon: 4
+    microsoft purview: 4
+    unity catalog: 2
+    bcbs 239: 3
+    data ownership: 3
+    governance: 0.5
+related_technologies:
+- data_quality
+- metadata_management
+- data_catalog
+- master_data_management
+- cybersecurity
+related_project_types:
+- data_governance_program
+- regulatory_reporting

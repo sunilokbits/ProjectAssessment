@@ -1,0 +1,10 @@
+- id: iap-site-template
+  title: Create a repeatable site onboarding template
+  text: Standardise edge, connectivity and tag mapping per site to scale quickly.
+  category: delivery
+  priority: high
+- id: iap-hot-cold
+  title: Separate hot and cold telemetry paths
+  text: Use a low-latency store for monitoring and a lakehouse for history and ML.
+  category: architecture
+  priority: medium

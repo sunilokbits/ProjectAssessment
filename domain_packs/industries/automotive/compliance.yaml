@@ -1,0 +1,93 @@
+- id: unece-r155
+  name: UN Regulation No. 155 - Cyber security and cyber security management system
+  short_name: UNECE R155
+  geographies: [EU, EEA, UK, JP]
+  sub_domains: [connected_vehicle, product_engineering, telematics]
+  applicability_note: Mandatory for type approval in UNECE 1958 Agreement markets (incl. EU, UK, Japan, Korea); not adopted in the US.
+- id: unece-r156
+  name: UN Regulation No. 156 - Software update and software update management system
+  short_name: UNECE R156
+  geographies: [EU, EEA, UK, JP]
+  sub_domains: [connected_vehicle, product_engineering]
+- id: iso-sae-21434
+  name: ISO/SAE 21434 Road vehicles - Cybersecurity engineering
+  short_name: ISO/SAE 21434
+  geographies: [GLOBAL]
+  sub_domains: [connected_vehicle, product_engineering, telematics]
+- id: iso-26262
+  name: ISO 26262 Road vehicles - Functional safety
+  short_name: ISO 26262
+  geographies: [GLOBAL]
+  sub_domains: [product_engineering, connected_vehicle]
+- id: tisax
+  name: TISAX (Trusted Information Security Assessment Exchange)
+  short_name: TISAX
+  geographies: [GLOBAL]
+  sub_domains: [product_engineering, supply_chain]
+  applicability_note: Industry assessment standard (ENX / VDA ISA) required by many European OEMs for suppliers and partners.
+- id: iatf-16949-auto
+  name: IATF 16949 Automotive quality management system
+  short_name: IATF 16949
+  geographies: [GLOBAL]
+  sub_domains: [vehicle_manufacturing, supply_chain, warranty_analytics]
+- id: eu-data-act
+  name: EU Data Act (EU) 2023/2854
+  short_name: EU Data Act
+  geographies: [EU, EEA]
+  sub_domains: [connected_vehicle, telematics, aftersales]
+  applicability_note: Applies from September 2025; product design obligations for data accessibility apply to products placed on the market from September 2026.
+- id: gdpr-auto
+  name: General Data Protection Regulation (incl. EDPB Guidelines 01/2020 on connected vehicles)
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii, biometric]
+- id: eu-type-approval
+  name: EU Vehicle Type-Approval Regulation (EU) 2018/858 (incl. RMI access provisions)
+  short_name: EU Type Approval
+  geographies: [EU, EEA]
+  sub_domains: [product_engineering, aftersales]
+- id: eu-battery-regulation
+  name: EU Batteries Regulation (EU) 2023/1542 (battery passport and due diligence)
+  short_name: EU Batteries Regulation
+  geographies: [EU, EEA]
+  sub_domains: [ev_battery]
+  applicability_note: Battery passport required for EV batteries from February 2027.
+- id: nhtsa-tread
+  name: TREAD Act and NHTSA early warning reporting (49 CFR Part 579)
+  short_name: TREAD / EWR
+  geographies: [US]
+  sub_domains: [warranty_analytics, aftersales]
+- id: fmvss
+  name: Federal Motor Vehicle Safety Standards and NHTSA recall regulations (49 CFR Parts 571 and 573)
+  short_name: FMVSS / Recalls
+  geographies: [US]
+  sub_domains: [product_engineering, warranty_analytics]
+- id: us-connected-vehicle-rule
+  name: US Commerce Department rule on connected vehicle ICTS from foreign adversaries (15 CFR Part 791)
+  short_name: US Connected Vehicle Rule
+  geographies: [US]
+  sub_domains: [connected_vehicle, telematics]
+  applicability_note: Final rule issued January 2025 with phased software and hardware prohibitions; confirm supply-chain applicability.
+- id: ccpa-auto
+  name: California Consumer Privacy Act as amended by CPRA
+  short_name: CCPA/CPRA
+  geographies: [US-CA]
+  data_classifications_any: [pii]
+  applicability_note: CPPA has signalled enforcement focus on connected vehicle data practices.
+- id: ais-189-190
+  name: AIS-189 and AIS-190 vehicle cybersecurity and software update standards (India)
+  short_name: AIS-189 / AIS-190
+  geographies: [IN]
+  sub_domains: [connected_vehicle, product_engineering]
+  applicability_note: Indian standards aligned to UNECE R155 / R156; confirm mandatory applicability dates.
+- id: dpdp-auto
+  name: Digital Personal Data Protection Act 2023 (India)
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii]
+- id: china-auto-data
+  name: China Several Provisions on Automotive Data Security Management and PIPL
+  short_name: China Auto Data Rules
+  geographies: [CN]
+  sub_domains: [connected_vehicle, telematics]
+  applicability_note: Important data and personal information collected in China generally must be stored in China.

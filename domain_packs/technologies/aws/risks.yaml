@@ -1,0 +1,36 @@
+# AWS technology pack - risks
+- id: aws-no-landing-zone
+  title: Workloads deployed before a governed AWS landing zone exists
+  category: architecture
+  likelihood: 3
+  impact: 4
+  mitigation: Deploy a landing zone (AWS Control Tower) with policies, identity and network hub before onboarding workloads.
+  indicators: [no landing zone, shadow it, single subscription, single account]
+- id: aws-misconfiguration
+  title: Cloud misconfiguration exposes data (public storage, open ports)
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Preventive policies, AWS Security Hub / GuardDuty posture management and private endpoints.
+  indicators: [public access, open bucket, misconfiguration]
+- id: aws-cost-overrun
+  title: Unexpected AWS cost growth
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Tagging, budgets and alerts, reservations / savings plans and FinOps reviews.
+  indicators: [cost overrun, cloud bill, egress]
+- id: aws-quota-region
+  title: Service or quota unavailability in required region
+  category: technology
+  likelihood: 2
+  impact: 3
+  mitigation: Validate service availability and request quota increases early.
+  indicators: [quota, region availability]
+- id: aws-access-keys
+  title: Long-lived IAM access keys and over-broad policies
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Identity Center, role assumption, IAM Access Analyzer and key rotation / removal.
+  indicators: [access key, root account, administratoraccess]

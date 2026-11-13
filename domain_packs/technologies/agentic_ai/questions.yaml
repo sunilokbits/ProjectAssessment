@@ -1,0 +1,60 @@
+- id: agentic-autonomy-level
+  text: What level of autonomy is intended for the agentic system?
+  category: governance
+  dimension: agentic_ai_readiness
+  answer_type: single_choice
+  options:
+  - value: assist
+    label: Suggests actions; human executes
+    score: 1
+  - value: approve
+    label: Executes after human approval
+    score: 0.9
+  - value: bounded
+    label: Executes autonomously within defined limits
+    score: 0.6
+  - value: full
+    label: Fully autonomous
+    score: 0.3
+  - value: unknown
+    label: Not defined
+    score: 0
+  critical: true
+- id: agentic-action-boundaries
+  text: Are the actions, systems and data each agent may touch explicitly enumerated with limits (amounts, records, scope)?
+  category: governance
+  dimension: agentic_ai_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: agentic-tool-auth
+  text: Do agent tools use scoped, least-privilege identities with auditable credentials?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+- id: agentic-reversibility
+  text: Are agent actions reversible or compensatable, with a kill switch?
+  category: operations
+  dimension: agentic_ai_readiness
+  answer_type: yes_no
+- id: agentic-tracing
+  text: Will every plan, tool call and decision be traced for observability and audit?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: agentic-eval
+  text: Are end-to-end task evaluation scenarios defined (success rate, unsafe action rate)?
+  category: quality
+  dimension: agentic_ai_readiness
+  answer_type: yes_no
+- id: agentic-apis
+  text: Are the target systems exposed through stable, documented APIs the agents can call?
+  category: integration
+  dimension: integration_readiness
+  answer_type: yes_no
+- id: agentic-skills
+  text: How experienced is the client team with building agentic / tool-using AI systems (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

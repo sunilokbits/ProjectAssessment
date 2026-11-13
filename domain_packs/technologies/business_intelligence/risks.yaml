@@ -1,0 +1,29 @@
+# Business Intelligence technology pack - risks
+- id: bi-conflicting-kpis
+  title: Conflicting KPI definitions undermine trust
+  category: business
+  likelihood: 4
+  impact: 4
+  mitigation: Business glossary, certified semantic models and KPI ownership.
+  indicators: [different numbers, conflicting reports, multiple versions of truth]
+- id: bi-report-sprawl
+  title: Report sprawl with duplicate and unused reports
+  category: governance
+  likelihood: 4
+  impact: 2
+  mitigation: Usage-based rationalisation and certification workflow.
+  indicators: [thousands of reports, duplicate reports]
+- id: bi-low-adoption
+  title: Low user adoption of new dashboards
+  category: business
+  likelihood: 3
+  impact: 3
+  mitigation: Co-design with users, training, champions network, usage monitoring.
+  indicators: [excel exports, users prefer excel]
+- id: bi-performance
+  title: Slow dashboards on large datasets
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Aggregations, appropriate storage mode, optimised models and serving layer.
+  indicators: [slow dashboard, timeout]

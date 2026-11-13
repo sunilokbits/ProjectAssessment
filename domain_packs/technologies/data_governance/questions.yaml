@@ -1,0 +1,57 @@
+- id: dg-operating-model
+  text: Is there a data governance operating model (council, owners, stewards) with decision rights?
+  category: governance
+  dimension: data_governance_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: dg-ownership
+  text: Are business data owners assigned for the critical data domains in scope?
+  category: governance
+  dimension: data_availability
+  answer_type: yes_no
+  equivalence_key: data_ownership
+- id: dg-policies
+  text: Are data policies (classification, retention, access, quality, sharing) approved and published?
+  category: governance
+  dimension: data_governance_readiness
+  answer_type: yes_no
+- id: dg-maturity
+  text: How would you rate overall data governance maturity?
+  category: governance
+  dimension: data_governance_readiness
+  answer_type: single_choice
+  options:
+  - value: initial
+    label: Initial - ad hoc, no formal governance
+    score: 0.1
+  - value: developing
+    label: Developing - some roles and policies
+    score: 0.4
+  - value: defined
+    label: Defined - formal programme in place
+    score: 0.7
+  - value: managed
+    label: Managed - measured and embedded
+    score: 1
+- id: dg-access-governance
+  text: Is data access granted through a governed request/approval process with periodic recertification?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+- id: dg-tooling
+  text: Is governance tooling in place (catalog, lineage, policy enforcement)?
+  category: technology
+  dimension: data_governance_readiness
+  answer_type: yes_no
+- id: dg-cde
+  text: Have critical data elements (CDEs) been identified for regulatory or key reports?
+  category: data
+  dimension: data_governance_readiness
+  answer_type: yes_no
+- id: dg-skills
+  text: How experienced is the client organisation in running data governance (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

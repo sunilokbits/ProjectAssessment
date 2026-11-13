@@ -1,0 +1,13 @@
+# Microsoft Fabric technology pack - domain
+key: microsoft_fabric
+name: Microsoft Fabric
+kind: technology
+version: 1.0.0
+description: Microsoft Fabric SaaS analytics platform - OneLake, Lakehouse, Warehouse, Data Factory, Real-Time Intelligence, Power BI and capacity-based
+  licensing.
+aliases: [Data Platforms]
+sort_order: 21
+detection:
+  keywords: {microsoft fabric: 5, fabric: 1.5, onelake: 5, fabric capacity: 4, fabric lakehouse: 5, fabric warehouse: 5, direct lake: 4, data factory: 1.5,
+    real-time intelligence: 3, eventhouse: 3, shortcuts: 1, f64: 3}
+related_technologies: [power_bi, azure, lakehouse, data_warehouse, data_engineering, business_intelligence]

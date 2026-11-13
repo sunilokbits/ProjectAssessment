@@ -1,0 +1,8 @@
+system_addition: |
+  Use aerospace and defense terminology (technical data, CUI, part, serial number, engineering change, nonconformance, airworthiness, AOG).
+  Treat export controls (ITAR/EAR), CUI protection (CMMC, DFARS 7012, NIST 800-171), classified handling and airworthiness
+  as gating constraints that shape hosting, staffing and AI choices. Never assume offshore or foreign-person access is permitted.
+stage_additions:
+  discovery: Ask about export classification, CMMC level, foreign-person access, classified scope, PLM/MES/MRO systems and quality system.
+  proposal: Reflect onshore or authorised staffing and sovereign hosting where controlled data is in scope.
+extraction_hints: Map "drawings" and "engineering data" to Technical Data; map "CDI" to CUI; map "NCR" and "discrepancy" to Nonconformance.

@@ -1,0 +1,33 @@
+- id: rts-unneeded-realtime
+  title: Real-time built where batch would suffice
+  category: architecture
+  likelihood: 3
+  impact: 3
+  mitigation: Validate latency against the decision; use micro-batch where acceptable.
+  indicators:
+  - real-time everything
+- id: rts-schema-breaks
+  title: Producer schema changes break consumers
+  category: data
+  likelihood: 3
+  impact: 4
+  mitigation: Schema registry with compatibility rules.
+  indicators:
+  - schema change
+- id: rts-ops-burden
+  title: Operational burden of self-managed streaming
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Use managed streaming services; define on-call.
+  indicators:
+  - self-managed kafka
+- id: rts-reprocessing
+  title: Difficult reprocessing and backfill
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Retain events, design idempotent consumers and replay procedures.
+  indicators:
+  - replay
+  - backfill

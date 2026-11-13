@@ -1,0 +1,43 @@
+- id: llmops-versioning
+  text: Are prompts, model versions and configurations version-controlled and released together?
+  category: operations
+  dimension: llmops_readiness
+  answer_type: yes_no
+- id: llmops-offline-eval
+  text: Is there automated offline evaluation (golden sets, LLM-as-judge) gating releases?
+  category: quality
+  dimension: llmops_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: llmops-tracing
+  text: Are production requests traced end-to-end (prompt, retrieval, tool calls, latency, tokens)?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: llmops-feedback
+  text: Is user feedback captured and routed into evaluation datasets?
+  category: quality
+  dimension: llmops_readiness
+  answer_type: yes_no
+- id: llmops-cost
+  text: Are token usage, cost per request and quotas monitored with budgets?
+  category: operations
+  dimension: llmops_readiness
+  answer_type: yes_no
+- id: llmops-gateway
+  text: Is there an AI gateway for routing, rate limiting, fallback and central logging?
+  category: architecture
+  dimension: llmops_readiness
+  answer_type: yes_no
+- id: llmops-safety-monitoring
+  text: Are safety events (guardrail triggers, jailbreak attempts) monitored and reviewed?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+- id: llmops-skills
+  text: How experienced is the client team with operating LLM applications in production (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

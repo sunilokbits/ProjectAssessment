@@ -1,0 +1,23 @@
+# Data Engineering technology pack - terminology
+- term: ELT
+  definition: 'Extract-load-transform: load raw data then transform in the target platform'
+  synonyms: [extract load transform]
+  entity_type: process
+  category: data
+- term: CDC
+  definition: Change data capture - replicating row-level changes from source databases
+  synonyms: [change data capture]
+  entity_type: process
+  category: data
+- term: Orchestration
+  definition: Scheduling and dependency management of pipeline tasks
+  synonyms: [workflow scheduling]
+  entity_type: process
+  category: operations
+- {term: Data Contract, definition: 'Agreed schema, semantics and SLA between data producer and consumer', entity_type: concept, category: data}
+- {term: Idempotency, definition: Property that re-running a pipeline produces the same result, entity_type: concept, category: architecture}
+- term: Data Freshness
+  definition: Elapsed time since data was last updated relative to its source
+  synonyms: [latency]
+  entity_type: metric
+  category: operations

@@ -1,0 +1,2 @@
+dimensions:
+  - {key: databricks_platform_readiness, name: Databricks Platform Readiness, group: technology, weight: 1.0, description: "Workspace, Unity Catalog, networking, compute policies and DevOps readiness."}

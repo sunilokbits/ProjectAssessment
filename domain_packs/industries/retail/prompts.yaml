@@ -1,0 +1,8 @@
+system_addition: |
+  Use retail terminology (customer, product, SKU, basket, order, promotion, store, inventory, like-for-like sales).
+  Treat the ERP as the financial record for sales. Highlight product master consistency, inventory accuracy,
+  consent-driven personalisation, PCI DSS scope, and peak-trading risk. Distinguish store, e-commerce and omnichannel needs.
+stage_additions:
+  discovery: "Ask which channels, banners, POS / e-commerce / OMS platforms and peak trading periods apply."
+  solutioning: Design for peak volumes, near-real-time inventory where omnichannel promises depend on it, and daily sales reconciliation.
+extraction_hints: Map "shopper", "guest" and "consumer" to Customer; map "item" and "article" to Product; map "UPC", "EAN" and "GTIN" to SKU; map "cart", "ticket" and "receipt" to Basket; map "stock" and "SOH" to Inventory; map "promo" and "deal" to Promotion.

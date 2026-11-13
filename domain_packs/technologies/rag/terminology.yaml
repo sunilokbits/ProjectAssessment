@@ -1,0 +1,22 @@
+- term: Chunking
+  definition: Splitting documents into retrievable passages
+  entity_type: process
+  category: ai
+- term: Embedding
+  definition: Numeric vector representation of text meaning
+  synonyms:
+  - vector embedding
+  entity_type: entity
+  category: ai
+- term: Reranker
+  definition: Model that reorders retrieved passages by relevance
+  synonyms:
+  - cross-encoder
+  entity_type: system
+  category: ai
+- term: Groundedness
+  definition: Degree to which an answer is supported by retrieved sources
+  synonyms:
+  - faithfulness
+  entity_type: metric
+  category: quality

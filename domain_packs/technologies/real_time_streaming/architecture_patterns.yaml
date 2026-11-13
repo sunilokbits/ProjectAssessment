@@ -1,0 +1,65 @@
+- id: rts-kappa
+  name: Event streaming pipeline
+  description: Producers and CDC publish to a broker; stream processors enrich and aggregate into serving stores and the lakehouse.
+  use_cases:
+  - Fraud detection
+  - IoT analytics
+  - Operational dashboards
+  layer_order:
+  - sources
+  - integration
+  - ingestion
+  - processing
+  - storage
+  - serving
+  - consumption
+  - governance
+  - operations
+  components:
+  - id: broker
+    name: Event broker
+    layer: integration
+    core: true
+  - id: schema-registry
+    name: Schema registry
+    layer: governance
+    core: true
+  - id: cdc
+    name: CDC connectors
+    layer: ingestion
+    when:
+      keywords_any:
+      - cdc
+      - change data capture
+      - database replication
+  - id: stream-processor
+    name: Stream processor
+    layer: processing
+    core: true
+  - id: serving-store
+    name: Low-latency serving store
+    layer: serving
+    when:
+      keywords_any:
+      - api
+      - lookup
+      - operational
+  - id: lakehouse-sink
+    name: Lakehouse sink
+    layer: storage
+    core: true
+  - id: event-hubs
+    name: Azure Event Hubs
+    layer: integration
+    when:
+      technologies_any:
+      - azure
+  - id: msk
+    name: Amazon MSK / Kinesis
+    layer: integration
+    when:
+      technologies_any:
+      - aws
+  considerations:
+  - Design consumers to be idempotent.
+  - Retain raw events for replay.

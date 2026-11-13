@@ -1,0 +1,3 @@
+# Data Engineering technology pack - kpis
+- {id: pipeline-success-rate, name: Pipeline success rate, formula: successful runs / total runs, unit: '%', direction: higher_is_better, category: operations}
+- {id: data-freshness-lag, name: Data freshness lag, formula: now - last successful load time, unit: minutes, direction: lower_is_better, category: operations}

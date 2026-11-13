@@ -1,0 +1,81 @@
+- id: execution-systems
+  text: Which WMS, TMS, ERP and planning systems are in scope, and how many instances or versions exist across sites?
+  category: data
+  dimension: supply_chain_visibility
+  answer_type: text
+- id: partner-event-data
+  text: How is shipment status received from carriers and partners?
+  category: integration
+  dimension: supply_chain_visibility
+  answer_type: single_choice
+  weight: 1.5
+  options:
+    - {value: manual, label: "Manual (email, portals, spreadsheets)", score: 0.1}
+    - {value: edi_batch, label: EDI batch messages, score: 0.5}
+    - {value: mixed, label: Mix of EDI and APIs, score: 0.7}
+    - {value: realtime, label: "Real-time APIs / visibility platform", score: 1}
+- id: location-master
+  text: Are location, SKU and carrier master data governed with consistent identifiers (e.g. GS1 GLN, GTIN) across systems?
+  category: data
+  dimension: planning_data_maturity
+  critical: true
+  weight: 1.5
+- id: demand-history
+  text: How many years of clean demand history are available at the required granularity (SKU-location-day/week)?
+  category: data
+  dimension: planning_data_maturity
+  answer_type: single_choice
+  sub_domains: [demand_forecasting, inventory]
+  options:
+    - {value: lt1, label: Less than 1 year, score: 0.2}
+    - {value: "1to2", label: 1 to 2 years, score: 0.5}
+    - {value: gt2, label: More than 2 years, score: 0.9}
+    - {value: gt2_clean, label: More than 2 years with promotions and stockouts flagged, score: 1}
+- id: inventory-accuracy
+  text: How accurate are system inventory positions compared with physical counts?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+  sub_domains: [warehouse, inventory]
+- id: telematics-data
+  text: Is vehicle telematics data (GPS, engine, driver behaviour) available and at what frequency?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [transportation, last_mile, route_optimization]
+- id: route-constraints
+  text: Are routing constraints (time windows, vehicle capacity, driver hours, access restrictions) documented and maintained digitally?
+  category: data
+  dimension: planning_data_maturity
+  sub_domains: [route_optimization, last_mile, transportation]
+- id: execution-write-back
+  text: Will optimised plans be written back to execution systems (TMS, WMS, driver apps) automatically?
+  category: integration
+  dimension: integration_readiness
+  answer_type: single_choice
+  sub_domains: [route_optimization, warehouse, inventory]
+  options:
+    - {value: advisory, label: Advisory only - planners re-key, score: 0.4}
+    - {value: semi, label: Planner-approved write-back, score: 0.8}
+    - {value: automatic, label: Fully automated write-back with controls, score: 1}
+- id: customs-data
+  text: Does the solution handle customs, trade compliance or dangerous goods data?
+  category: compliance
+  dimension: privacy_protection
+  sub_domains: [transportation]
+- id: driver-privacy
+  text: Is driver and courier location data handled under an agreed privacy and works-council position?
+  category: privacy
+  dimension: privacy_protection
+  sub_domains: [last_mile, transportation, route_optimization]
+  when: {data_classifications_any: [pii]}
+- id: peak-volume
+  text: Is the solution sized for peak season volumes (e.g. Black Friday, holiday peaks)?
+  category: architecture
+  dimension: architecture_fit
+- id: multi-client-segregation
+  text: For 3PL operations, must data be segregated per client with client-specific reporting?
+  category: security
+  dimension: security_controls
+  critical: true
+  sub_domains: [warehouse, transportation]

@@ -1,0 +1,31 @@
+key: data_quality
+name: Data Quality
+kind: technology
+version: 1.0.0
+description: Profiling, rules, monitoring, remediation and observability that keep data fit for purpose.
+aliases:
+- Data Management
+sort_order: 71
+detection:
+  keywords:
+    data quality: 5
+    data profiling: 4
+    data observability: 4
+    great expectations: 4
+    monte carlo: 3
+    soda: 2
+    dq rules: 4
+    data validation: 3
+    data cleansing: 3
+    deduplication: 2
+    completeness: 1.5
+    accuracy: 0.5
+    dq: 1.5
+related_technologies:
+- data_governance
+- master_data_management
+- dataops
+- data_engineering
+related_project_types:
+- data_governance_program
+- regulatory_reporting

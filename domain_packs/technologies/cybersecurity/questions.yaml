@@ -1,0 +1,58 @@
+- id: cyber-framework
+  text: Which security framework does the client align to (ISO 27001, NIST CSF, SOC 2, CIS)?
+  category: security
+  dimension: cybersecurity_readiness
+  answer_type: single_choice
+  options:
+  - value: none
+    label: None formally
+    score: 0.2
+  - value: partial
+    label: Partially aligned
+    score: 0.6
+  - value: certified
+    label: Certified / audited
+    score: 1
+- id: cyber-threat-model
+  text: Will a threat model be produced and reviewed for the solution?
+  category: security
+  dimension: cybersecurity_readiness
+  answer_type: yes_no
+- id: cyber-identity
+  text: Are privileged access management and MFA enforced for admin access?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: cyber-network
+  text: Are private networking and zero-trust controls required for platform services?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+- id: cyber-siem
+  text: Will platform logs integrate with the SIEM / SOC for monitoring?
+  category: operations
+  dimension: cybersecurity_readiness
+  answer_type: yes_no
+- id: cyber-pentest
+  text: Is penetration testing required before go-live?
+  category: security
+  dimension: cybersecurity_readiness
+  answer_type: yes_no
+- id: cyber-dlp
+  text: Are data loss prevention and key management (customer-managed keys) required?
+  category: privacy
+  dimension: privacy_protection
+  answer_type: yes_no
+- id: cyber-incident
+  text: Is the incident response plan updated to cover the new platform?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: cyber-skills
+  text: How experienced is the client security team with cloud and data platform security (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

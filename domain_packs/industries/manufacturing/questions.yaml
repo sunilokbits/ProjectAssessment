@@ -1,0 +1,112 @@
+- id: plant-scope
+  text: Which plants, lines and equipment classes are in scope, and how standardised are they across sites?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+- id: ot-data-sources
+  text: How is shop-floor data accessed today?
+  category: data
+  dimension: ot_integration
+  answer_type: single_choice
+  options:
+    - {value: none, label: Not collected - manual logs or paper, score: 0}
+    - {value: local_only, label: Local HMI / SCADA only - no central storage, score: 0.25}
+    - {value: historian, label: Plant historian(s) with tag data, score: 0.7}
+    - {value: uns, label: Historian or unified namespace with asset context (ISA-95 model), score: 1}
+  weight: 2
+  critical: true
+  equivalence_key: ot_data_access
+- id: tag-context
+  text: Are sensor tags mapped to an asset hierarchy (plant, line, work centre, equipment) with consistent naming and units?
+  category: data
+  dimension: ot_integration
+  weight: 1.5
+- id: ot-network-segmentation
+  text: Is the OT network segmented from IT (e.g. Purdue model / DMZ), and is the data path to the target platform approved by OT security?
+  category: security
+  dimension: ot_security
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not known, score: 0}
+    - {value: flat, label: Flat or weakly segmented network, score: 0.1}
+    - {value: segmented_unapproved, label: Segmented - data path not yet approved, score: 0.5}
+    - {value: segmented_approved, label: Segmented with approved DMZ / one-way data path, score: 1}
+  critical: true
+- id: iec-62443
+  text: Are OT security controls aligned to ISA/IEC 62443 (zones and conduits, remote access, patching)?
+  category: security
+  dimension: ot_security
+  answer_type: scale
+  help: "1 = no formal OT security program, 3 = partial controls and asset inventory, 5 = 62443-aligned program with monitoring (e.g. OT IDS)."
+- id: production-impact
+  text: Could the project change or write to control systems, MES or production schedules (closed-loop), or is it read-only?
+  category: architecture
+  dimension: operational_continuity
+  answer_type: single_choice
+  options:
+    - {value: read_only, label: Read-only analytics, score: 1}
+    - {value: advisory, label: Advisory - operators act on recommendations, score: 0.8}
+    - {value: closed_loop_controlled, label: Closed-loop with MOC and safety review, score: 0.7}
+    - {value: closed_loop_unreviewed, label: Closed-loop - no safety / MOC review yet, score: 0}
+  critical: true
+- id: change-windows
+  text: Are plant shutdown / maintenance windows and management-of-change (MOC) procedures defined for deployments that touch plant systems?
+  category: delivery
+  dimension: operational_continuity
+- id: safety-systems
+  text: Are safety instrumented systems (SIS) and functional-safety-relevant equipment explicitly excluded from or governed within scope?
+  category: compliance
+  dimension: operational_continuity
+  sub_domains: [process_manufacturing, smart_factory, industrial_iot, ehs]
+- id: plant-connectivity
+  text: Is plant connectivity (bandwidth, latency, redundancy) sufficient for edge-to-cloud data flows, and how is store-and-forward handled during outages?
+  category: architecture
+  dimension: ot_integration
+  when: {technologies_any: [iot, real_time_streaming, azure, aws, gcp, databricks, microsoft_fabric]}
+- id: sensor-reliability
+  text: Are sensor calibration, data gaps, flatlines and outliers monitored, with known data quality per tag?
+  category: data
+  dimension: data_quality
+  sub_domains: [industrial_iot, predictive_maintenance, smart_factory, quality]
+- id: failure-history
+  text: Is maintenance and failure history (work orders, failure codes, root causes) recorded consistently in the CMMS / EAM for the target assets?
+  category: data
+  dimension: data_availability
+  answer_type: single_choice
+  options:
+    - {value: none, label: Little or no failure history, score: 0}
+    - {value: inconsistent, label: Work orders exist but failure codes inconsistent, score: 0.4}
+    - {value: consistent, label: Consistent failure codes and timestamps, score: 1}
+  sub_domains: [predictive_maintenance]
+  when: {project_types_any: [predictive_maintenance]}
+- id: oee-definition
+  text: Is there a standard OEE / downtime reason-code definition applied consistently across plants?
+  category: data
+  dimension: data_quality
+  sub_domains: [smart_factory, discrete_manufacturing, process_manufacturing, production_planning]
+- id: mes-erp-integration
+  text: How are MES and ERP integrated for production orders, confirmations, material consumption and quality results?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+  sub_domains: [smart_factory, production_planning, discrete_manufacturing, process_manufacturing]
+- id: traceability
+  text: Is batch / serial-number genealogy captured from raw material through finished goods?
+  category: data
+  dimension: data_availability
+  sub_domains: [quality, process_manufacturing, discrete_manufacturing]
+- id: edge-processing
+  text: Which workloads must run at the edge (low latency, intermittent connectivity, vision inspection) versus in the cloud?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: text
+  when: {technologies_any: [iot, real_time_streaming, machine_learning]}
+- id: ot-team-engagement
+  text: Are plant engineering, controls and maintenance teams engaged and resourced to support data access and validation?
+  category: business
+  dimension: stakeholder_readiness
+- id: export-control
+  text: Does any in-scope data (designs, specifications, defence or dual-use products) fall under export control (ITAR / EAR / EU dual-use) restrictions?
+  category: compliance
+  dimension: privacy_protection
+  sub_domains: [discrete_manufacturing, aftermarket_service]

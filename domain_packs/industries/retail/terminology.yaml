@@ -1,0 +1,18 @@
+- {term: Customer, definition: Person or business purchasing from the retailer, synonyms: [shopper, consumer, guest, member, buyer], entity_type: entity, category: data}
+- {term: Product, definition: Merchandise item offered for sale, synonyms: [item, article, style, merchandise], entity_type: entity, category: data}
+- {term: SKU, definition: Stock keeping unit identifying a sellable product variant, synonyms: [stock keeping unit, item number, upc, ean, gtin, article number], entity_type: entity, category: data}
+- {term: Basket, definition: Set of items bought together in a single transaction, synonyms: [cart, shopping cart, ticket, receipt, transaction], entity_type: entity, category: data}
+- {term: Order, definition: Customer request to purchase products for delivery or pick-up, synonyms: [online order, purchase, sales order], entity_type: entity, category: data}
+- {term: Promotion, definition: Time-bound offer to stimulate sales, synonyms: [promo, deal, offer, coupon, discount, markdown], entity_type: entity, category: data, sub_domains: [pricing, merchandising, customer_loyalty]}
+- {term: Store, definition: Physical retail location or fulfilment node, synonyms: [shop, outlet, branch, location, site], entity_type: entity, category: data}
+- {term: Inventory, definition: Stock on hand and on order by location, synonyms: [stock, stock on hand, soh, on-hand], entity_type: entity, category: data}
+- {term: Planogram, definition: Diagram defining product placement on shelves, synonyms: [pog, shelf layout, space plan], entity_type: concept, category: process, sub_domains: [merchandising, stores]}
+- {term: Assortment, definition: Range of products offered by store or channel, synonyms: [range, product mix], entity_type: concept, category: process, sub_domains: [merchandising]}
+- {term: BOPIS, definition: Buy online and pick up in store, synonyms: [click and collect, buy online pick up in store, curbside], entity_type: process, category: process, sub_domains: [omnichannel, ecommerce]}
+- {term: Like-for-Like Sales, definition: Sales growth in comparable stores, synonyms: [same-store sales, comp sales, lfl], entity_type: metric, category: reporting, sub_domains: [stores]}
+- {term: Shrink, definition: "Inventory loss through theft, damage or error", synonyms: [shrinkage, inventory loss], entity_type: metric, category: reporting, sub_domains: [stores, inventory]}
+- {term: Loyalty Member, definition: Customer enrolled in the loyalty program, synonyms: [cardholder, rewards member, loyalty id], entity_type: role, category: data, sub_domains: [customer_loyalty]}
+- {term: TLOG, definition: POS transaction log containing sales line detail, synonyms: [transaction log, pos data, sales journal], entity_type: entity, category: integration, sub_domains: [stores]}
+- {term: Open-to-Buy, definition: Budget available for merchandise purchases in a period, synonyms: [otb], entity_type: metric, category: process, sub_domains: [merchandising]}
+- {term: Available to Promise, definition: Inventory available to commit to new orders, synonyms: [atp, sellable inventory], entity_type: concept, category: process, sub_domains: [omnichannel, inventory, ecommerce]}
+- {term: Retail Media, definition: Advertising sold by retailers on their own digital and in-store channels, synonyms: [retail media network, sponsored products], entity_type: concept, category: business, sub_domains: [recommendation_systems, ecommerce]}

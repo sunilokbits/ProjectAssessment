@@ -1,0 +1,4 @@
+- {id: consent-first, title: Fix consent and suppression before campaign analytics, text: "Record lawful basis and channel preferences and enforce them in every selection.", category: privacy, priority: high}
+- {id: protect-beneficiaries, title: Segregate and pseudonymise beneficiary data, text: "Complete a DPIA and keep beneficiary data separate from fundraising data.", category: security, priority: high, sub_domains: [programs_impact]}
+- {id: right-size-platform, title: Right-size the platform for sustainability, text: "Prefer managed SaaS and nonprofit programmes over custom builds that require scarce skills.", category: architecture, priority: high, decision_key: platform_scale, decision_option: managed_lightweight}
+- {id: standard-indicators, title: Standardise outcome indicators, text: "Agree organisation-wide indicator definitions to make impact comparable across programmes.", category: data, priority: medium, sub_domains: [programs_impact, grants]}

@@ -1,0 +1,7 @@
+# Data Warehouse technology pack - knowledge
+security_considerations:
+  - {id: dw-rls, text: Row-level security and dynamic data masking for sensitive dimensions., category: security}
+  - {id: dw-audit, text: Query audit logging for access to regulated data., category: security}
+dependencies:
+  - {id: business-glossary, text: Business definitions of KPIs and dimensions agreed with data owners., category: governance}
+  - {id: source-extracts, text: Source system extracts or CDC feeds available for ingestion., category: integration}

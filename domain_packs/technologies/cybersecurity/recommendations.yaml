@@ -1,0 +1,15 @@
+- id: cyber-shift-left
+  title: Embed security architecture from design
+  text: Run threat modelling and security design reviews in discovery, not before go-live.
+  category: security
+  priority: high
+- id: cyber-policy-as-code
+  title: Enforce cloud guardrails as policy-as-code
+  text: Prevent insecure configurations through cloud policies and continuous posture management.
+  category: security
+  priority: high
+- id: cyber-cmk
+  title: Use customer-managed keys for sensitive data
+  text: Apply CMK and key rotation where regulation or classification demands it.
+  category: security
+  priority: medium

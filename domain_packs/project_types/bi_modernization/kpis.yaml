@@ -1,0 +1,18 @@
+- id: bim-reports-retired
+  name: Reports retired
+  description: Share of legacy reports retired or consolidated.
+  unit: '%'
+  direction: higher_is_better
+  category: delivery
+- id: bim-active-users
+  name: Active BI users
+  description: Users actively viewing reports in a period.
+  unit: count
+  direction: higher_is_better
+  category: business
+- id: bim-certified-content
+  name: Certified content usage
+  description: Share of report views on certified datasets.
+  unit: '%'
+  direction: higher_is_better
+  category: data

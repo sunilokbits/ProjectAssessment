@@ -1,0 +1,30 @@
+# Data Warehouse technology pack - questions
+- id: current-warehouse
+  text: What is the current warehouse platform?
+  category: technology
+  dimension: data_warehouse_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: No warehouse, score: 0.4}
+    - {value: on_prem, label: 'On-premises (Teradata, Oracle, SQL Server, Netezza)', score: 0.5}
+    - {value: cloud, label: Cloud warehouse already in use, score: 1}
+- id: modelling-approach
+  text: Which modelling approach is agreed for the warehouse?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+    - {value: not_agreed, label: Not agreed, score: 0.2}
+    - {value: dimensional, label: Dimensional (Kimball star schemas), score: 1}
+    - {value: data_vault, label: Data Vault plus marts, score: 1}
+    - {value: normalised, label: 3NF / Inmon plus marts, score: 0.9}
+- {id: conformed-dimensions, text: 'Are conformed dimensions and business keys defined for core entities (customer, product, date)?', category: data,
+  dimension: data_warehouse_readiness, weight: 1.3}
+- {id: history-requirements, text: 'Are historisation requirements (SCD types, as-of reporting, retention) defined?', category: data, dimension: data_warehouse_readiness}
+- {id: workload-concurrency, text: 'Are concurrency, query performance targets and workload isolation requirements known?', category: architecture,
+  dimension: architecture_fit}
+- {id: reconciliation, text: 'Is there a reconciliation approach between warehouse figures and source / finance systems?', category: quality,
+  dimension: data_quality, critical: true}
+- {id: dw-access-model, text: 'Is row/column-level security required for warehouse consumers?', category: security, dimension: security_controls}
+- {id: dw-skills, text: 'How experienced is the client team with data warehouse modelling and SQL (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

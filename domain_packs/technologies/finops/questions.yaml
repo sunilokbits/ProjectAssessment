@@ -1,0 +1,51 @@
+- id: finops-visibility
+  text: Is cloud and platform cost visible by project, environment and team?
+  category: operations
+  dimension: finops_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: finops-tagging
+  text: Is a mandatory tagging / labelling policy enforced for cost allocation?
+  category: governance
+  dimension: finops_readiness
+  answer_type: yes_no
+- id: finops-model
+  text: How are costs allocated?
+  category: governance
+  dimension: finops_readiness
+  answer_type: single_choice
+  options:
+  - value: none
+    label: Not allocated
+    score: 0.1
+  - value: central
+    label: Central IT budget
+    score: 0.4
+  - value: showback
+    label: Showback to consumers
+    score: 0.8
+  - value: chargeback
+    label: Chargeback to consumers
+    score: 1
+- id: finops-budgets
+  text: Are budgets and anomaly alerts configured?
+  category: operations
+  dimension: finops_readiness
+  answer_type: yes_no
+- id: finops-optimisation
+  text: Are optimisation practices (rightsizing, auto-stop, commitments) applied regularly?
+  category: operations
+  dimension: finops_readiness
+  answer_type: yes_no
+- id: finops-estimate
+  text: Has a run-cost estimate been agreed for the target solution?
+  category: governance
+  dimension: delivery_governance
+  answer_type: yes_no
+- id: finops-skills
+  text: How mature is the client's FinOps practice and team (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

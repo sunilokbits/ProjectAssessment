@@ -1,0 +1,15 @@
+security_considerations:
+- id: sap-tech-users
+  text: Dedicated technical users with minimum SAP authorisations for extraction.
+  category: security
+dependencies:
+- id: sap-basis-team
+  text: SAP Basis and functional SMEs availability.
+  category: delivery
+- id: sap-connectivity
+  text: Network path from SAP to the target platform.
+  category: infrastructure
+migration_concerns:
+- id: sap-ecc-eol
+  text: ECC end of mainstream maintenance driving S/4 timelines.
+  category: migration

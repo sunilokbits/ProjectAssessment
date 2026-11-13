@@ -1,0 +1,37 @@
+nfrs:
+  - {id: peak-scalability, text: Platform scales to peak trading volumes (multiples of average daily transactions)., category: scalability}
+  - {id: daily-sales-availability, text: Prior-day sales and inventory available to merchants and store managers before store opening., category: performance}
+  - {id: reco-latency, text: Recommendation and search APIs respond within web/app page-load budgets., category: performance, sub_domains: [recommendation_systems, ecommerce]}
+assumptions:
+  - {id: erp-sales-record, text: ERP remains the financial record for net sales and inventory valuation., category: data}
+  - {id: loyalty-coverage, text: Loyalty-identified transactions represent only a share of total sales., category: data}
+dependencies:
+  - {id: merch-team, text: Merchandising and category teams available to validate hierarchies and forecasts., category: delivery}
+  - {id: store-it, text: Store IT support for POS and network changes., category: integration}
+  - {id: platform-vendors, text: E-commerce and OMS vendor API access and rate limits., category: integration}
+security_considerations:
+  - {id: pci-segmentation, text: Segment cardholder data environment from analytics platforms., category: security}
+  - {id: account-takeover, text: Protection of loyalty accounts against account takeover and points fraud., category: security, sub_domains: [customer_loyalty, ecommerce]}
+data_quality_checks:
+  - {id: sales-tieout, text: Daily net sales tie out between POS / e-commerce and ERP by store., category: data}
+  - {id: sku-validity, text: All transaction SKUs exist in the product master with valid hierarchy., category: data}
+  - {id: negative-inventory, text: Negative or implausible inventory positions flagged., category: data}
+  - {id: duplicate-customers, text: Duplicate customer and loyalty records identified., category: data}
+reporting_requirements:
+  - {id: flash-sales, text: "Daily flash sales, margin and like-for-like reporting.", category: reporting}
+  - {id: promo-post-eval, text: Promotion post-event evaluation reporting., category: reporting, sub_domains: [pricing, merchandising]}
+migration_concerns:
+  - {id: history-for-seasonality, text: Migrate enough history (two to three years) for seasonality modelling., category: data}
+  - {id: hierarchy-remapping, text: Remapping of legacy product and store hierarchies., category: data}
+ai_opportunities:
+  - {id: demand-forecast, text: ML demand forecasting at SKU-store level., category: ai}
+  - {id: price-optimisation, text: Price elasticity and markdown optimisation., category: ai, sub_domains: [pricing]}
+  - {id: personalisation, text: Personalised recommendations and offers., category: ai, sub_domains: [recommendation_systems, customer_loyalty, ecommerce]}
+  - {id: product-content, text: GenAI product description and attribute enrichment., category: ai, sub_domains: [ecommerce, merchandising]}
+  - {id: shopping-assistant, text: Conversational shopping assistant grounded in catalogue and inventory., category: ai}
+ai_risks:
+  - {id: wrong-product-claims, text: GenAI generating inaccurate product or pricing claims., category: ai}
+  - {id: discriminatory-pricing, text: Personalised pricing perceived as unfair or discriminatory., category: ai, sub_domains: [pricing]}
+clarification_questions:
+  - {id: channels-banners, text: "Which channels, banners and countries are in scope?", category: business}
+  - {id: peak-calendar, text: Please share the trading calendar and change-freeze periods., category: delivery}

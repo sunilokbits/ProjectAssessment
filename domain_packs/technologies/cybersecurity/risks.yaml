@@ -1,0 +1,36 @@
+- id: cyber-late-review
+  title: Security review late in delivery forces redesign
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Engage security architecture at design; threat model early.
+  indicators:
+  - security sign-off
+  - late review
+- id: cyber-misconfig
+  title: Cloud misconfiguration exposes data
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Policy-as-code guardrails, CSPM and private endpoints.
+  indicators:
+  - public storage
+  - open endpoint
+- id: cyber-excess-privilege
+  title: Excessive privileges and standing admin access
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: PIM/PAM, least privilege and access reviews.
+  indicators:
+  - shared admin
+  - owner role
+- id: cyber-no-monitoring
+  title: Attacks go undetected
+  category: security
+  likelihood: 2
+  impact: 5
+  mitigation: SIEM integration, alert use cases and SOC runbooks.
+  indicators:
+  - no siem
+  - no logging

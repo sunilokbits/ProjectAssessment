@@ -1,0 +1,12 @@
+nfrs:
+- id: rts-latency-nfr
+  text: End-to-end latency and throughput targets per stream.
+  category: performance
+security_considerations:
+- id: rts-topic-acl
+  text: Topic-level ACLs and encryption in transit for event streams.
+  category: security
+dependencies:
+- id: rts-cdc-access
+  text: Database permissions for CDC log access.
+  category: integration

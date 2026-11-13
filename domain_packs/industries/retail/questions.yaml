@@ -1,0 +1,109 @@
+- id: retail-core-systems
+  text: Which merchandising/ERP, POS, e-commerce and order management systems are in scope, and how is transaction data extracted today?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  equivalence_key: retail_core_extract
+- id: product-master
+  text: Is there a single governed product master (SKU, hierarchy, attributes) shared across stores, e-commerce and suppliers?
+  category: data
+  dimension: retail_data_foundation
+  answer_type: single_choice
+  options:
+    - {value: none, label: No - product data differs by channel, score: 0}
+    - {value: partial, label: Partially - ERP master but channel-specific enrichment, score: 0.5}
+    - {value: pim_mdm, label: Yes - governed PIM / MDM feeding all channels, score: 1}
+  weight: 1.5
+  equivalence_key: product_master
+- id: sales-reconciliation
+  text: Is there an agreed reconciliation between POS / e-commerce sales and financial sales reported in the ERP?
+  category: data
+  dimension: retail_data_foundation
+  weight: 1.5
+  critical: true
+- id: customer-identity
+  text: How are customers identified across channels (loyalty ID, email, payment token, device ID)?
+  category: data
+  dimension: customer_data_trust
+  answer_type: single_choice
+  options:
+    - {value: none, label: No cross-channel identity, score: 0}
+    - {value: loyalty_only, label: Loyalty ID only (partial coverage of transactions), score: 0.5}
+    - {value: resolved, label: Identity resolution across loyalty / online / payment tokens, score: 1}
+  when: {project_types_any: [customer_360, recommendation_engine, churn_prediction]}
+  equivalence_key: customer_identity_resolution
+- id: consent-marketing
+  text: Is shopper consent for marketing, personalisation and data sharing (e.g. retail media) captured per channel and enforceable?
+  category: privacy
+  dimension: customer_data_trust
+  critical: true
+- id: cardholder-data
+  text: Is cardholder data (PAN) excluded from analytics data, with payment data tokenised at the point of capture?
+  category: security
+  dimension: customer_data_trust
+  sub_domains: [payments_checkout, stores, ecommerce]
+  critical: true
+- id: inventory-accuracy
+  text: How accurate and timely is inventory visibility across stores, DCs and in-transit?
+  category: data
+  dimension: omnichannel_readiness
+  answer_type: scale
+  help: "1 = periodic counts only, 3 = daily perpetual inventory with known accuracy issues, 5 = near-real-time inventory with RFID or cycle-count accuracy measured."
+- id: order-latency
+  text: What latency is required for inventory and order status across channels (e.g. available-to-promise for BOPIS)?
+  category: architecture
+  dimension: omnichannel_readiness
+  answer_type: text
+  sub_domains: [omnichannel, ecommerce, inventory]
+- id: promo-data
+  text: Are promotion calendars, mechanics and vendor funding captured in structured form linked to SKUs and stores?
+  category: data
+  dimension: retail_data_foundation
+  sub_domains: [pricing, merchandising]
+- id: forecast-granularity
+  text: At what granularity are demand forecasts required?
+  category: business
+  dimension: business_alignment
+  answer_type: single_choice
+  options:
+    - {value: undefined, label: Not defined, score: 0}
+    - {value: category_week, label: Category / region by week, score: 0.7}
+    - {value: sku_store_week, label: SKU / store by week, score: 1}
+    - {value: sku_store_day, label: SKU / store by day or intraday, score: 1}
+  when: {project_types_any: [demand_forecasting]}
+- id: history-depth
+  text: Is at least two to three years of transaction, inventory and promotion history available to model seasonality and promotional effects?
+  category: data
+  dimension: data_availability
+  when: {technologies_any: [machine_learning, advanced_analytics]}
+- id: peak-season
+  text: Are peak trading periods (e.g. Black Friday, festive season) reflected in cut-over freeze windows and performance testing?
+  category: delivery
+  dimension: delivery_governance
+- id: clickstream
+  text: Is clickstream / behavioural data captured with consent and joinable to customers and products?
+  category: data
+  dimension: data_availability
+  sub_domains: [ecommerce, recommendation_systems]
+- id: recommendation-guardrails
+  text: Are business rules and guardrails defined for recommendations (e.g. out-of-stock suppression, margin, age-restricted products, fairness)?
+  category: governance
+  dimension: business_alignment
+  sub_domains: [recommendation_systems, ecommerce]
+  when: {project_types_any: [recommendation_engine]}
+- id: store-connectivity
+  text: Do stores have reliable connectivity for near-real-time POS and inventory feeds, and how is offline operation handled?
+  category: architecture
+  dimension: integration_readiness
+  sub_domains: [stores]
+- id: supplier-data
+  text: Which supplier data exchanges (EDI, portals, data sharing) are in scope, and is supplier sell-through data shared?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+  sub_domains: [supply_chain, merchandising]
+- id: genai-shopping-assistant
+  text: For GenAI shopping assistants or content generation, are product data accuracy, pricing claims and brand-safety reviews in place?
+  category: governance
+  dimension: customer_data_trust
+  when: {technologies_any: [generative_ai, rag, agentic_ai, ai_agents]}

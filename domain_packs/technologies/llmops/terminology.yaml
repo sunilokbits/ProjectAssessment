@@ -1,0 +1,18 @@
+- term: LLM-as-a-Judge
+  definition: Using an LLM to score outputs against criteria
+  synonyms:
+  - model-graded evaluation
+  entity_type: process
+  category: quality
+- term: AI Gateway
+  definition: Proxy that governs access to model endpoints
+  synonyms:
+  - model gateway
+  entity_type: system
+  category: architecture
+- term: Trace
+  definition: Record of all steps in one LLM request
+  synonyms:
+  - span
+  entity_type: entity
+  category: operations

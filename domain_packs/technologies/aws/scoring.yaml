@@ -1,0 +1,4 @@
+# AWS technology pack - scoring
+dimensions:
+  - {key: aws_readiness, name: AWS Readiness, group: technology, weight: 1.0, description: 'AWS landing zone, identity, networking, policy guardrails,
+      IaC and cost management readiness.'}

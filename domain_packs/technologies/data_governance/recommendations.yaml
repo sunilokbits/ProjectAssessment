@@ -1,0 +1,19 @@
+- id: dg-use-case-led
+  title: Run governance as use-case-led, federated programme
+  text: Start governance with domains feeding priority use cases; federate ownership to business domains.
+  category: governance
+  priority: high
+  decision_key: governance_model
+  decision_option: federated
+- id: dg-central
+  title: Establish a central data governance office first
+  text: Stand up a central office to define standards before federating where maturity is low.
+  category: governance
+  priority: medium
+  decision_key: governance_model
+  decision_option: central
+- id: dg-automate-controls
+  title: Automate policy enforcement in the platform
+  text: Implement classification, access and masking policies as code in the data platform.
+  category: technology
+  priority: medium

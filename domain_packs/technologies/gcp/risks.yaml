@@ -1,0 +1,46 @@
+# GCP technology pack - risks
+- id: gcp-no-landing-zone
+  title: Workloads deployed before a governed Google Cloud landing zone exists
+  category: architecture
+  likelihood: 3
+  impact: 4
+  mitigation: Deploy a landing zone (the Google Cloud security foundations blueprint) with policies, identity and network hub before onboarding
+    workloads.
+  indicators: [no landing zone, shadow it, single subscription, single account]
+- id: gcp-misconfiguration
+  title: Cloud misconfiguration exposes data (public storage, open ports)
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Preventive policies, Security Command Center posture management and private endpoints.
+  indicators: [public access, open bucket, misconfiguration]
+- id: gcp-cost-overrun
+  title: Unexpected Google Cloud cost growth
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Tagging, budgets and alerts, reservations / savings plans and FinOps reviews.
+  indicators: [cost overrun, cloud bill, egress]
+- id: gcp-quota-region
+  title: Service or quota unavailability in required region
+  category: technology
+  likelihood: 2
+  impact: 3
+  mitigation: Validate service availability and request quota increases early.
+  indicators: [quota, region availability]
+- id: gcp-sa-keys
+  title: Exported service account keys and broad primitive roles
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Disable SA key creation via org policy; use workload identity federation and predefined roles.
+  indicators: [service account key, owner role, editor role]
+- id: gcp-bq-cost
+  title: BigQuery on-demand query costs spike
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Custom quotas, slot reservations, partitioning / clustering and query cost monitoring.
+  indicators: [bigquery cost, full table scan]
+  when:
+    keywords_any: [bigquery]

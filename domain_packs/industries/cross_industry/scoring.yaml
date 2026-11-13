@@ -1,0 +1,2 @@
+dimensions:
+  - {key: enterprise_data_foundations, name: Enterprise Data Foundations, group: domain, weight: 1.0, description: "Shared master data (entities, cost centres, employees, suppliers, customers), metric definitions and process ownership across functions."}

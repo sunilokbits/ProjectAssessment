@@ -1,0 +1,30 @@
+# Business Intelligence technology pack - architecture_patterns
+- id: governed-bi
+  name: Governed BI with semantic layer
+  description: Curated data platform feeding certified semantic models that serve dashboards and self-service.
+  use_cases: [BI modernization, Regulatory reporting]
+  layer_order: [sources, storage, serving, semantic, consumption, governance]
+  components:
+    - {id: curated-data, name: Curated data (warehouse / lakehouse gold), layer: storage, core: true}
+    - {id: sql-serving, name: SQL serving layer, layer: serving, core: true}
+    - {id: semantic-model, name: Certified semantic models, layer: semantic, core: true}
+    - {id: dashboards, name: Dashboards and reports, layer: consumption, core: true}
+    - id: paginated
+      name: Paginated / regulatory reports
+      layer: consumption
+      when:
+        any_of:
+          - project_types_any: [regulatory_reporting]
+          - keywords_any: [pixel-perfect, paginated, regulatory report]
+    - id: embedded
+      name: Embedded analytics
+      layer: consumption
+      when:
+        keywords_any: [embedded, customer-facing, portal]
+    - {id: glossary, name: Business glossary / KPI catalogue, layer: governance, core: true}
+    - id: usage-monitoring
+      name: Usage monitoring and adoption analytics
+      layer: governance
+      when:
+        keywords_any: [adoption, usage]
+  considerations: [Define KPIs before building dashboards., 'Keep business logic in the semantic layer, not individual reports.']

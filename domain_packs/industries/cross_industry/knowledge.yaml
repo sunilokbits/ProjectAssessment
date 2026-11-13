@@ -1,0 +1,30 @@
+nfrs:
+  - {id: close-refresh, text: Finance data refreshed in line with the close calendar., category: performance, sub_domains: [finance]}
+  - {id: hr-access, text: HR data restricted by role and organisational scope., category: security, sub_domains: [hr]}
+  - {id: auditability, text: Financial figures traceable back to source journals., category: compliance, sub_domains: [finance]}
+assumptions:
+  - {id: erp-sor, text: The ERP remains the system of record for financial data., category: data}
+  - {id: function-owners, text: Each function nominates data and metric owners., category: governance}
+dependencies:
+  - {id: erp-team, text: ERP basis and functional team support for extraction., category: integration}
+  - {id: internal-audit, text: Internal audit engagement where financial controls are affected., category: compliance}
+security_considerations:
+  - {id: sod, text: Segregation of duties preserved for financial and procurement data changes., category: security}
+data_quality_checks:
+  - {id: tb-reconciliation, text: Trial balance reconciles to ERP per entity and period., category: data, sub_domains: [finance]}
+  - {id: headcount-reconciliation, text: Headcount reconciles to HCM and payroll., category: data, sub_domains: [hr]}
+reporting_requirements:
+  - {id: management-reporting, text: "Monthly management reporting across finance, people, sales and service.", category: reporting}
+migration_concerns:
+  - {id: erp-history, text: Historic data mapping across ERP versions and chart-of-account changes., category: data}
+ai_opportunities:
+  - {id: finance-copilot, text: GenAI variance commentary and finance Q&A., category: ai, sub_domains: [finance]}
+  - {id: invoice-processing, text: Document intelligence for invoice and contract processing., category: ai, sub_domains: [procurement, finance]}
+  - {id: service-assistant, text: Agent assist and case summarisation in customer service., category: ai, sub_domains: [customer_service]}
+  - {id: aiops, text: AIOps for incident correlation and root cause., category: ai, sub_domains: [it_operations]}
+  - {id: attrition-risk, text: Aggregated attrition risk insight for workforce planning., category: ai, sub_domains: [hr]}
+ai_risks:
+  - {id: hr-ai-bias, text: Biased AI in hiring or performance decisions., category: ai, sub_domains: [hr]}
+  - {id: copilot-oversharing, text: Copilots surfacing confidential documents to unauthorised staff., category: ai}
+clarification_questions:
+  - {id: industry-context, text: "Which industry does the organisation operate in, and are there sector regulations to consider?", category: business}

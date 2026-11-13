@@ -1,0 +1,92 @@
+key: government
+name: Government and Public Sector
+kind: industry
+version: 1.0.0
+description: Central/federal, state and local government, citizen services, tax and revenue, public safety and smart cities.
+aliases: [public sector, federal government, state government, local government, govtech, agency]
+sort_order: 30
+sub_domains:
+  - key: central_government
+    name: Central / Federal Government
+    keywords: [federal agency, ministry, department of, central government, federal government, cabinet office, fedramp]
+  - key: state_government
+    name: State Government
+    keywords: [state agency, state government, statewide, provincial government, state department, stateramp]
+  - key: local_government
+    name: Local Government
+    keywords: [municipality, county, city council, local authority, borough, municipal, council tax]
+  - key: citizen_services
+    name: Citizen Services
+    keywords: [citizen portal, digital services, benefits, case management, eligibility, licensing, permits, social services]
+  - key: tax_revenue
+    name: Tax and Revenue
+    keywords: [tax administration, revenue agency, tax return, taxpayer, assessment, tax compliance, collections, irs]
+  - key: public_safety
+    name: Public Safety and Justice
+    keywords: [police, law enforcement, cad, records management system, "911", emergency services, courts, corrections, criminal justice]
+  - key: smart_cities
+    name: Smart Cities
+    keywords: [smart city, traffic management, urban mobility, smart street lighting, city sensors, digital twin, open data portal]
+detection:
+  keywords:
+    government: 3
+    public sector: 3.5
+    agency: 1.5
+    ministry: 3
+    citizen: 3
+    taxpayer: 4
+    municipality: 3.5
+    fedramp: 5
+    stateramp: 5
+    fisma: 5
+    cjis: 5
+    law enforcement: 4
+    procurement regulations: 2
+    constituent: 3
+    benefits eligibility: 4
+    public safety: 3.5
+    smart city: 4
+    open data: 2
+    authority to operate: 4.5
+    ato: 2
+    g-cloud: 4
+    "nist 800-53": 4
+business_processes:
+  - Benefits eligibility and case management
+  - Tax filing, assessment and collections
+  - Licensing and permitting
+  - Grants management
+  - Public safety dispatch and records management
+  - Public procurement
+  - Budgeting and financial management
+  - Citizen contact and service requests
+  - Open data publishing
+  - Fraud, waste and abuse detection
+capabilities:
+  - Citizen 360 / single view of constituent
+  - Fraud, waste and abuse analytics
+  - Tax gap and compliance analytics
+  - Performance and outcome reporting
+  - Open data and transparency
+  - Smart city operations centre
+  - Crime and incident analytics
+  - Digital self-service
+source_systems:
+  - "ERP / financials (Oracle EBS, SAP S/4HANA, Workday, Tyler Munis, CGI Advantage)"
+  - "Case management (Salesforce Public Sector, Microsoft Dynamics 365, Pega, Cúram)"
+  - "Tax systems (FAST Enterprises GenTax, SAP Tax and Revenue Management)"
+  - "Computer-aided dispatch and RMS (Motorola PremierOne, Hexagon, Tyler New World, Mark43)"
+  - "311 / CRM (Salesforce, Accela, ServiceNow)"
+  - "Permitting and land management (Accela, Tyler EnerGov)"
+  - "GIS (Esri ArcGIS)"
+  - Mainframe legacy benefit and tax systems
+  - "Open data portals (Socrata / Tyler Data and Insights, CKAN)"
+data_entities: [Citizen, Taxpayer, Case, Benefit claim, Licence, Permit, Incident, Property parcel, Grant, Payment, Vendor, Program]
+integration_patterns:
+  - Mainframe batch extracts
+  - Inter-agency data sharing agreements and APIs
+  - "Government identity hubs (Login.gov, GOV.UK One Login, Aadhaar)"
+  - "NIEM-based information exchange"
+  - SFTP file exchange with partner agencies
+related_technologies: [data_governance, master_data_management, generative_ai, cybersecurity, power_bi]
+related_project_types: [customer_360, fraud_detection, document_intelligence, cloud_data_migration, genai_assistant]

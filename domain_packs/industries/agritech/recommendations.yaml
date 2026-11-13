@@ -1,0 +1,5 @@
+- {id: farmer-consent-registry, title: Implement a farmer consent registry, text: "Record what data each farmer shares, with whom and for what purpose; enforce in pipelines.", category: governance, priority: high}
+- {id: field-boundary-baseline, title: Establish verified field boundaries first, text: "Field geometry underpins imagery, yield and traceability analytics.", category: data, priority: high}
+- {id: eudr-geolocation, title: Collect plot geolocation for EUDR commodities, text: "Capture polygons or points at sourcing and link them to every lot.", category: compliance, priority: high, sub_domains: [agri_supply_chain], when: {geographies_any: [EU, EEA]}}
+- {id: offline-first, title: Design field apps offline-first, text: "Buffer data on devices and sync when connectivity returns.", category: architecture, priority: medium}
+- {id: expert-in-loop, title: Keep agronomists in the loop, text: "Route recommendations through agronomist review until accuracy is proven by season.", category: governance, priority: medium, decision_key: advisory_delivery, decision_option: expert_reviewed}

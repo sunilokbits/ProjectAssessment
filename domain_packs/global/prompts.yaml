@@ -1,0 +1,7 @@
+system_addition: |
+  Assess readiness objectively. Distinguish facts confirmed by client evidence from assumptions.
+  Flag missing information as open questions rather than guessing.
+stage_additions:
+  discovery: Focus on understanding objectives, scope, stakeholders, data landscape and constraints.
+  assessment: Focus on gaps, risks, readiness scores and evidence.
+  solutioning: Focus on architecture options grounded in confirmed requirements and constraints.

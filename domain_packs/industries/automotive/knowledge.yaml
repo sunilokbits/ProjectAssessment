@@ -1,0 +1,39 @@
+nfrs:
+  - {id: telemetry-scale, text: Platform scales to fleet size growth and higher signal frequencies., category: scalability}
+  - {id: ota-availability, text: OTA and connected-service backends meet high availability targets., category: availability, sub_domains: [connected_vehicle]}
+  - {id: retention-vehicle, text: Vehicle build and warranty records retained for vehicle lifetime and recall obligations., category: compliance}
+assumptions:
+  - {id: build-master, text: Build / production systems provide the authoritative VIN configuration., category: data}
+  - {id: dealer-cooperation, text: Dealers provide DMS data as per dealer agreements., category: data}
+dependencies:
+  - {id: cybersecurity-team, text: Product cybersecurity (CSMS) team review for vehicle-connected components., category: security}
+  - {id: privacy-legal, text: Privacy and legal review of connected vehicle data use per market., category: compliance}
+  - {id: dms-vendors, text: DMS vendor integration programs and fees., category: integration}
+security_considerations:
+  - {id: vsoc, text: Vehicle security operations centre monitoring of backend and fleet anomalies., category: security}
+  - {id: key-management, text: Secure key management for vehicle certificates and digital keys., category: security, sub_domains: [connected_vehicle]}
+  - {id: prototype-data, text: Protection of prototype and pre-launch data per TISAX., category: security, sub_domains: [product_engineering]}
+data_quality_checks:
+  - {id: vin-validity, text: VIN format and check-digit validation across sources., category: data}
+  - {id: signal-units, text: Signal units and ranges plausible per model and model year., category: data}
+  - {id: warranty-coding, text: Warranty claims have valid causal part and labour op codes., category: data}
+  - {id: odometer-plausibility, text: Odometer readings monotonic and plausible over time., category: data}
+reporting_requirements:
+  - {id: ewr, text: Early warning reporting to regulators (e.g. NHTSA EWR)., category: reporting, sub_domains: [warranty_analytics]}
+  - {id: dealer-performance, text: "Dealer sales, inventory and service performance reporting.", category: reporting, sub_domains: [dealer_network]}
+  - {id: quality-reviews, text: Field quality and warranty review packs., category: reporting}
+migration_concerns:
+  - {id: warranty-history, text: Migration of multi-year warranty history with code mapping changes., category: data}
+  - {id: telemetry-backfill, text: Volume and format of historical telemetry to backfill., category: data}
+ai_opportunities:
+  - {id: vehicle-pdm, text: Predictive maintenance using DTCs and telemetry., category: ai, sub_domains: [telematics, connected_vehicle, aftersales]}
+  - {id: warranty-text, text: GenAI classification of technician comments and complaints., category: ai, sub_domains: [warranty_analytics]}
+  - {id: service-assistant, text: GenAI service assistant over manuals and TSBs., category: ai, sub_domains: [aftersales]}
+  - {id: battery-analytics, text: Battery degradation and residual value prediction., category: ai, sub_domains: [ev_battery, mobility_services]}
+  - {id: demand-mix, text: Vehicle demand and option-mix forecasting., category: ai, sub_domains: [dealer_network, vehicle_manufacturing]}
+ai_risks:
+  - {id: misdiagnosis, text: AI diagnostic suggestions leading to incorrect repairs or safety issues., category: ai}
+  - {id: driver-profiling, text: Driver behaviour profiling without consent or with discriminatory effects., category: ai, sub_domains: [telematics, mobility_services]}
+clarification_questions:
+  - {id: markets, text: "Which markets and regulatory regions will vehicle data be collected in?", category: compliance}
+  - {id: fleet-size, text: "What fleet size, signal set and frequency are expected over the next three years?", category: architecture}

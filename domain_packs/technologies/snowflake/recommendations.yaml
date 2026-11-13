@@ -1,0 +1,16 @@
+# Snowflake technology pack - recommendations
+- {id: sf-rbac-design, title: Design the RBAC hierarchy before onboarding, text: Separate functional roles from access roles; provision via SCIM
+    from the identity provider., category: security, priority: high}
+- {id: sf-workload-warehouses, title: Dedicated warehouses per workload, text: 'Separate ingestion, transformation and BI warehouses with auto-suspend
+    and resource monitors.', category: technology, priority: medium}
+- id: sf-iceberg
+  title: Use Snowflake-managed Iceberg tables for shared data
+  text: Store data that other engines must read as Iceberg tables.
+  category: technology
+  priority: low
+  decision_key: lake_table_format
+  decision_option: iceberg
+  when:
+    any_of:
+      - technologies_any: [lakehouse, databricks, data_lake]
+      - keywords_any: [iceberg, interoperability]

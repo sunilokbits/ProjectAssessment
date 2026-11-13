@@ -1,0 +1,30 @@
+# Lakehouse technology pack - recommendations
+- {id: medallion-standard, title: Standardise medallion layering, text: 'Define bronze/silver/gold responsibilities, naming and promotion quality
+    gates.', category: architecture, priority: high}
+- {id: lh-unified-catalog, title: Govern all tables through one catalog, text: 'Use a unified catalog (e.g. Unity Catalog, OneLake catalog, Polaris/Horizon)
+    for permissions and lineage.', category: governance, priority: high}
+- id: lh-delta
+  title: Standardise on Delta Lake
+  text: Use Delta Lake as the primary table format; expose Iceberg metadata where other engines need it.
+  category: technology
+  priority: medium
+  decision_key: lake_table_format
+  decision_option: delta
+  when:
+    any_of:
+      - answers:
+          lakehouse:lh-engine: [databricks, fabric]
+      - technologies_any: [databricks, microsoft_fabric]
+- id: lh-iceberg
+  title: Standardise on Apache Iceberg
+  text: Use Apache Iceberg with a REST catalog to maximise multi-engine interoperability.
+  category: technology
+  priority: medium
+  decision_key: lake_table_format
+  decision_option: iceberg
+  when:
+    any_of:
+      - answers:
+          lakehouse:lh-engine: [snowflake, open_source]
+      - answers:
+          lakehouse:lh-multi-engine: ['yes']

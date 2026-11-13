@@ -1,0 +1,15 @@
+# Application Modernization technology pack - terminology
+- term: Strangler Fig Pattern
+  definition: Incrementally replacing a legacy system by routing functionality to new components
+  synonyms: [strangler pattern]
+  entity_type: concept
+  category: architecture
+- {term: Monolith, definition: Application built and deployed as a single unit, entity_type: system, category: architecture}
+- {term: Microservice, definition: Independently deployable service around a business capability, entity_type: system, category: architecture}
+- term: Anti-Corruption Layer
+  definition: Translation layer isolating new models from legacy models
+  synonyms: [acl]
+  entity_type: concept
+  category: architecture
+- {term: Containerization, definition: Packaging applications with dependencies into containers, entity_type: process, category: technology}
+- {term: Technical Debt, definition: Accumulated cost of shortcuts in software design, entity_type: concept, category: technology}

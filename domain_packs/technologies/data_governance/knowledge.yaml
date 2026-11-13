@@ -1,0 +1,12 @@
+security_considerations:
+- id: dg-classification
+  text: Classification drives access, masking and retention controls.
+  category: security
+dependencies:
+- id: dg-sponsor
+  text: Executive sponsor (e.g. CDO) with mandate across business units.
+  category: business
+ai_opportunities:
+- id: dg-ai-classification
+  text: AI-assisted classification and description generation for data assets.
+  category: ai

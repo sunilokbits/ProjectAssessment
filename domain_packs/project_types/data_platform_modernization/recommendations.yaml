@@ -1,0 +1,15 @@
+- id: dpm-wave-plan
+  title: Plan migration in value-based waves
+  text: Group workloads by domain and consumer value, each wave ending in legacy decommissioning.
+  category: delivery
+  priority: high
+- id: dpm-automated-reconciliation
+  title: Automate reconciliation between legacy and target
+  text: Automate row-count, checksum and KPI reconciliation to accelerate sign-off.
+  category: data
+  priority: high
+- id: dpm-platform-team
+  title: Establish a platform team and landing zone first
+  text: Stand up the platform foundations (security, networking, CI/CD, governance) before migrating workloads.
+  category: architecture
+  priority: medium

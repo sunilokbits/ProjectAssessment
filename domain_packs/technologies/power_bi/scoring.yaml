@@ -1,0 +1,4 @@
+# Power BI technology pack - scoring
+dimensions:
+  - {key: power_bi_readiness, name: Power BI Readiness, group: technology, weight: 1.0, description: 'Licensing and capacity, tenant governance,
+      semantic model design, deployment process and security readiness.'}

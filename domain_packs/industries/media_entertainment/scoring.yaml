@@ -1,0 +1,3 @@
+dimensions:
+  - {key: audience_data_readiness, name: Audience Data Readiness, group: domain, weight: 1.5, description: "Unified audience identity, behavioural telemetry and consented use for personalisation and advertising."}
+  - {key: content_rights_governance, name: Content Rights Governance, group: domain, weight: 1.0, description: "Rights, metadata and licensing controls governing content use, distribution and AI training."}

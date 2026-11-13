@@ -1,0 +1,24 @@
+key: fraud_detection
+name: Fraud Detection
+kind: project_type
+version: 1.0.0
+description: Detecting fraudulent transactions, claims, accounts or behaviour using rules, ML and network analytics.
+sort_order: 25
+detection:
+  keywords:
+    fraud detection: 5
+    fraud prevention: 5
+    fraud analytics: 5
+    anti-fraud: 4
+    transaction monitoring: 4
+    fraud scoring: 4
+    claims fraud: 4
+    account takeover: 3
+    anti money laundering: 3
+    aml: 2.5
+    suspicious activity: 3
+related_technologies:
+- machine_learning
+- real_time_streaming
+- mlops
+- advanced_analytics

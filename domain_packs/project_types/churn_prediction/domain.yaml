@@ -1,0 +1,23 @@
+key: churn_prediction
+name: Churn Prediction
+kind: project_type
+version: 1.0.0
+description: Predicting which customers are likely to leave and triggering retention actions.
+sort_order: 32
+detection:
+  keywords:
+    churn prediction: 5
+    churn model: 5
+    customer churn: 5
+    attrition prediction: 5
+    customer attrition: 4
+    retention model: 4
+    propensity to churn: 5
+    churn rate: 3
+    customer retention: 2.5
+    win-back: 2
+related_technologies:
+- machine_learning
+- advanced_analytics
+- salesforce_integration
+- mlops

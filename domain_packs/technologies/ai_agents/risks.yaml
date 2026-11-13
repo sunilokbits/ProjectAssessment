@@ -1,0 +1,37 @@
+- id: agents-scope-creep
+  title: Agent scope expands beyond what can be evaluated
+  category: delivery
+  likelihood: 4
+  impact: 3
+  mitigation: Fixed intent catalogue per release; evaluate before adding scope.
+  indicators:
+  - handle everything
+  - all questions
+- id: agents-wrong-answers
+  title: Agent gives confident wrong answers to customers
+  category: ai
+  likelihood: 3
+  impact: 4
+  mitigation: Grounded answers with citations, refusal behaviour and escalation.
+  indicators:
+  - customer-facing
+  - self-service
+- id: agents-oversharing
+  title: Agent exposes data the user should not see
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: On-behalf-of identity and permission-trimmed retrieval.
+  indicators:
+  - sharepoint
+  - permissions
+  - oversharing
+- id: agents-platform-lockin
+  title: Lock-in to a single vendor agent platform
+  category: technology
+  likelihood: 2
+  impact: 3
+  mitigation: Keep knowledge, prompts and evaluations portable; abstract tool interfaces.
+  indicators:
+  - copilot studio
+  - agentforce

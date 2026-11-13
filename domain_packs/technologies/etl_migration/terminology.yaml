@@ -1,0 +1,10 @@
+# ETL Migration technology pack - terminology
+- term: Mapping
+  definition: Legacy ETL object defining source-to-target transformation logic
+  synonyms: [informatica mapping]
+  entity_type: entity
+  category: data
+- {term: Parallel Run, definition: Running legacy and new pipelines side by side to compare outputs, entity_type: process, category: quality}
+- {term: Code Conversion, definition: Automated translation of ETL jobs into target code, entity_type: process, category: technology}
+- {term: Job Rationalisation, definition: Retiring unused or duplicate ETL jobs before migration, entity_type: process, category: delivery}
+- {term: ELT, definition: Extract-load-transform within the target platform, entity_type: process, category: data}

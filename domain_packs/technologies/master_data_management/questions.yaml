@@ -1,0 +1,67 @@
+- id: mdm-domains
+  text: Which master data domains are in scope (customer, product, supplier, asset, location, employee)?
+  category: data
+  dimension: master_data_management_readiness
+  answer_type: multi_choice
+  options:
+  - value: customer
+    label: Customer / party
+  - value: product
+    label: Product / material
+  - value: supplier
+    label: Supplier / vendor
+  - value: asset
+    label: Asset / equipment
+  - value: location
+    label: Location / site
+  - value: employee
+    label: Employee
+- id: mdm-style
+  text: Which MDM implementation style is intended?
+  category: architecture
+  dimension: master_data_management_readiness
+  answer_type: single_choice
+  options:
+  - value: registry
+    label: Registry (cross-reference only)
+    score: 1
+  - value: consolidation
+    label: Consolidation (analytical golden record)
+    score: 1
+  - value: coexistence
+    label: Coexistence (sync back to sources)
+    score: 1
+  - value: centralised
+    label: Centralised (authoring in MDM)
+    score: 1
+  - value: unknown
+    label: Not decided
+    score: 0.2
+  critical: true
+- id: mdm-match-rules
+  text: Are match and survivorship rules defined and agreed with data owners?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+  weight: 1.5
+- id: mdm-stewardship
+  text: Is there a stewardship team and workflow to resolve match exceptions?
+  category: governance
+  dimension: master_data_management_readiness
+  answer_type: yes_no
+- id: mdm-sources
+  text: Are all systems creating or consuming master data identified with integration methods?
+  category: integration
+  dimension: integration_readiness
+  answer_type: yes_no
+- id: mdm-hierarchies
+  text: Are hierarchies and relationships (e.g. household, corporate family, product taxonomy) required?
+  category: data
+  dimension: master_data_management_readiness
+  answer_type: yes_no
+- id: mdm-skills
+  text: How experienced is the client team with MDM tooling and stewardship (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

@@ -1,0 +1,71 @@
+- id: rag-pipeline
+  name: Retrieval-augmented generation pipeline
+  description: Content is parsed, chunked, embedded and indexed with ACLs; queries retrieve, rerank and ground the LLM response with citations.
+  use_cases:
+  - Knowledge assistants
+  - Policy Q&A
+  - Service copilots
+  layer_order:
+  - sources
+  - ingestion
+  - integration
+  - storage
+  - processing
+  - ai
+  - serving
+  - consumption
+  - governance
+  - operations
+  components:
+  - id: content-connectors
+    name: Content source connectors
+    layer: ingestion
+    core: true
+  - id: parsing
+    name: Document parsing and chunking
+    layer: processing
+    core: true
+  - id: embedding
+    name: Embedding model
+    layer: ai
+    core: true
+  - id: index
+    name: Vector / hybrid search index
+    layer: storage
+    core: true
+  - id: reranker
+    name: Reranker
+    layer: ai
+    when:
+      keywords_any:
+      - rerank
+      - relevance
+      - large corpus
+  - id: ocr
+    name: OCR / layout-aware parsing
+    layer: processing
+    when:
+      keywords_any:
+      - scanned
+      - ocr
+      - images
+      - handwritten
+  - id: rag-eval
+    name: Retrieval and answer evaluation
+    layer: operations
+    core: true
+  - id: azure-ai-search
+    name: Azure AI Search
+    layer: storage
+    when:
+      technologies_any:
+      - azure
+  - id: dbx-vector-search
+    name: Databricks Vector Search
+    layer: storage
+    when:
+      technologies_any:
+      - databricks
+  considerations:
+  - Store source, version and ACL metadata with every chunk.
+  - Return citations with every answer.

@@ -1,0 +1,3 @@
+dimensions:
+  - {key: ot_data_integration, name: OT Data Integration, group: domain, weight: 1.5, description: "Readiness to access, contextualise and govern operational technology data (SCADA, historian, meters, sensors)."}
+  - {key: critical_infrastructure_security, name: Critical Infrastructure Security, group: security, weight: 1.5, description: "OT/IT segmentation, NERC CIP / NIS2 obligations and protection of grid and plant systems."}

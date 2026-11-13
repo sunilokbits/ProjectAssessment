@@ -1,0 +1,27 @@
+- id: cp-no-action
+  title: Predictions not linked to retention actions
+  category: business
+  likelihood: 4
+  impact: 4
+  mitigation: Co-design with retention teams; integrate scores into CRM.
+  indicators:
+  - no campaign
+  - no owner
+- id: cp-definition
+  title: Ambiguous churn definition
+  category: data
+  likelihood: 3
+  impact: 3
+  mitigation: Agree definition and observation windows with business.
+  indicators:
+  - inactive customers
+  - non-contractual
+- id: cp-uplift
+  title: Retention offers given to customers who would stay anyway
+  category: business
+  likelihood: 3
+  impact: 3
+  mitigation: Uplift modelling and controlled experiments.
+  indicators:
+  - discounts
+  - incentives

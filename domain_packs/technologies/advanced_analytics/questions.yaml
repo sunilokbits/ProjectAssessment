@@ -1,0 +1,51 @@
+- id: aa-use-cases
+  text: Are the advanced analytics use cases prioritised with a named decision owner and measurable business value?
+  category: business
+  dimension: business_alignment
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: aa-analytical-data
+  text: Is curated, historical analytical data (with sufficient depth and granularity) available for modelling?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+- id: aa-tooling
+  text: Which analytical tooling is standard for the team?
+  category: technology
+  dimension: advanced_analytics_readiness
+  answer_type: single_choice
+  options:
+  - value: none
+    label: No standard tooling
+    score: 0.2
+  - value: desktop
+    label: Desktop tools (Excel, local R/Python)
+    score: 0.4
+  - value: legacy
+    label: Legacy statistical platform (e.g. SAS, SPSS)
+    score: 0.6
+  - value: platform
+    label: Governed notebook / data science platform
+    score: 1
+- id: aa-sandbox
+  text: Is there a governed analytical sandbox with access to production-like data?
+  category: technology
+  dimension: advanced_analytics_readiness
+  answer_type: yes_no
+- id: aa-decision-integration
+  text: How will analytical outputs be embedded into decisions (reports, operational systems, planning processes)?
+  category: business
+  dimension: advanced_analytics_readiness
+  answer_type: text
+- id: aa-reproducibility
+  text: Are analyses version-controlled and reproducible (code in Git, documented assumptions)?
+  category: operations
+  dimension: advanced_analytics_readiness
+  answer_type: yes_no
+- id: aa-skills
+  text: How experienced is the client team with statistical modelling and advanced analytics (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

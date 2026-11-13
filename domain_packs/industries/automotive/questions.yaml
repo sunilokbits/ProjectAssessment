@@ -1,0 +1,98 @@
+- id: auto-core-systems
+  text: Which ERP, MES, PLM, DMS, warranty and connected-vehicle platforms are in scope, and how is data extracted from them today?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  equivalence_key: auto_core_extract
+- id: vin-linkage
+  text: Can vehicle build data, software versions, warranty claims, service history and telemetry be linked reliably by VIN?
+  category: data
+  dimension: quality_traceability
+  answer_type: single_choice
+  options:
+    - {value: none, label: No common VIN linkage, score: 0}
+    - {value: partial, label: Partial - some systems lack VIN or have quality issues, score: 0.5}
+    - {value: full, label: Yes - VIN-centric linkage across systems, score: 1}
+  weight: 2
+  critical: true
+- id: vehicle-data-consent
+  text: Is driver / owner consent for connected vehicle data collection and use (including location data) captured per market and enforceable downstream?
+  category: privacy
+  dimension: vehicle_data_governance
+  sub_domains: [connected_vehicle, telematics, mobility_services, ev_battery]
+  critical: true
+- id: location-data
+  text: Will precise location or driving-behaviour data be processed, and are minimisation / pseudonymisation rules defined?
+  category: privacy
+  dimension: vehicle_data_governance
+  sub_domains: [connected_vehicle, telematics, mobility_services]
+- id: telemetry-volume
+  text: What telemetry volumes, signal frequencies and fleet sizes must the platform handle (current and projected)?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: text
+  sub_domains: [connected_vehicle, telematics, ev_battery]
+  when: {technologies_any: [iot, real_time_streaming]}
+- id: signal-catalog
+  text: Is there a governed vehicle signal catalogue (e.g. VSS-aligned) with definitions, units and versioning across models?
+  category: data
+  dimension: vehicle_data_governance
+  sub_domains: [connected_vehicle, telematics, ev_battery]
+- id: csms-r155
+  text: How mature is the vehicle cybersecurity management system (CSMS) per UNECE R155 / ISO/SAE 21434, and does the project fall within its scope?
+  category: security
+  dimension: vehicle_cybersecurity
+  answer_type: scale
+  sub_domains: [connected_vehicle, product_engineering, telematics]
+  help: "1 = no CSMS, 3 = CSMS certified with gaps for backend/cloud systems, 5 = CSMS covers vehicle and backend with continuous monitoring (VSOC)."
+- id: ota-sums
+  text: Will the project touch OTA software update processes governed by UNECE R156 software update management (SUMS)?
+  category: compliance
+  dimension: vehicle_cybersecurity
+  sub_domains: [connected_vehicle, product_engineering]
+- id: warranty-data-quality
+  text: How consistent are warranty claim data (labour op codes, causal parts, failure codes, technician comments)?
+  category: data
+  dimension: quality_traceability
+  answer_type: single_choice
+  options:
+    - {value: poor, label: Inconsistent codes and free text only, score: 0.2}
+    - {value: mixed, label: Codes present but inconsistent across markets / dealers, score: 0.5}
+    - {value: good, label: Standardised codes with usable technician text, score: 1}
+  sub_domains: [warranty_analytics, aftersales]
+- id: early-warning
+  text: Is there an early-warning process linking warranty, telemetry, call-centre and social signals to field quality investigations and recall decisions?
+  category: business
+  dimension: quality_traceability
+  sub_domains: [warranty_analytics]
+- id: dealer-data-access
+  text: Do dealer agreements permit the OEM to access DMS sales and service data, and is it available consistently across dealer groups and DMS vendors?
+  category: data
+  dimension: data_availability
+  sub_domains: [dealer_network, aftersales]
+- id: supplier-traceability
+  text: Are supplier part serial / batch numbers captured at build so suspect parts can be traced to VINs?
+  category: data
+  dimension: quality_traceability
+  sub_domains: [supply_chain, vehicle_manufacturing, warranty_analytics]
+- id: eu-data-act
+  text: Has the impact of the EU Data Act (user and third-party access to connected product data) been assessed for vehicle data?
+  category: compliance
+  dimension: vehicle_data_governance
+  sub_domains: [connected_vehicle, telematics, aftersales]
+  when: {geographies_any: [EU, EEA, DE, FR, IT, ES, NL, IE, SE, PL]}
+- id: tisax
+  text: Is TISAX (or equivalent) assessment required for partners handling OEM prototype or confidential engineering data?
+  category: security
+  dimension: security_controls
+  sub_domains: [product_engineering, supply_chain]
+- id: battery-passport
+  text: Are battery composition, carbon footprint and state-of-health data captured to meet battery passport and due diligence obligations?
+  category: compliance
+  dimension: vehicle_data_governance
+  sub_domains: [ev_battery]
+- id: genai-service
+  text: For GenAI service or diagnostic assistants, are repair manuals, TSBs and diagnostic data curated and is output validated by technicians?
+  category: governance
+  dimension: quality_traceability
+  when: {technologies_any: [generative_ai, rag, agentic_ai, ai_agents]}

@@ -1,0 +1,4 @@
+- {id: uc-migration, title: Hive metastore to Unity Catalog migration effort underestimated, category: technology, likelihood: 3, impact: 3, mitigation: "Inventory tables/permissions; plan UC migration as a workstream.", indicators: [hive metastore, legacy workspace]}
+- {id: dbu-cost, title: Uncontrolled DBU consumption, category: operations, likelihood: 3, impact: 3, mitigation: "Compute policies, auto-termination, serverless where suitable, tagging and budgets."}
+- {id: small-files, title: "Poor Delta table performance (small files, no clustering)", category: technology, likelihood: 3, impact: 2, mitigation: "Liquid clustering / predictive optimisation; table maintenance standards."}
+- {id: public-network, title: Workspace exposed over public network, category: security, likelihood: 2, impact: 4, mitigation: "Private link, IP access lists, secure cluster connectivity."}

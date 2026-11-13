@@ -1,0 +1,34 @@
+key: iot
+name: IoT
+kind: technology
+version: 1.0.0
+description: Connected devices, sensors and OT systems producing telemetry for monitoring, analytics and control.
+aliases:
+- Integration
+sort_order: 83
+detection:
+  keywords:
+    iot: 4
+    internet of things: 5
+    iiot: 5
+    sensor data: 4
+    telemetry: 3
+    azure iot hub: 5
+    aws iot core: 5
+    mqtt: 4
+    opc ua: 5
+    opc-ua: 5
+    scada: 4
+    historian: 4
+    osisoft pi: 5
+    edge computing: 3
+    digital twin: 3
+    plc: 3
+related_technologies:
+- real_time_streaming
+- data_platform
+- machine_learning
+- cybersecurity
+related_project_types:
+- iot_analytics_platform
+- predictive_maintenance

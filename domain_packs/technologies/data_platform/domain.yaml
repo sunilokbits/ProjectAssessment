@@ -1,0 +1,15 @@
+# Data Platform technology pack - domain
+key: data_platform
+name: Data Platform
+kind: technology
+version: 1.0.0
+description: Enterprise data platform capability - shared ingestion, storage, processing, governance and serving layers delivered as a product
+  for multiple domains.
+aliases: [Data Platforms]
+sort_order: 11
+detection:
+  keywords: {data platform: 4, enterprise data platform: 5, modern data platform: 4, data products: 2, data mesh: 3, self-service analytics: 1.5,
+    platform team: 1.5, data hub: 2, analytics platform: 2.5, data: 0.2}
+capabilities: [Shared ingestion, Storage, Processing, Governance, Self-service, Data products]
+related_technologies: [data_engineering, data_warehouse, data_lake, lakehouse, data_governance, devops, finops]
+related_project_types: [data_platform_modernization, customer_360]

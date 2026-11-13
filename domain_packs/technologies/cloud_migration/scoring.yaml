@@ -1,0 +1,4 @@
+# Cloud Migration technology pack - scoring
+dimensions:
+  - {key: cloud_migration_readiness, name: Cloud Migration Readiness, group: technology, weight: 1.0, description: 'Discovery, dependency mapping,
+      disposition, wave planning, cutover and business-case readiness.'}

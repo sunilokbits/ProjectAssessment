@@ -1,0 +1,28 @@
+nfrs:
+  - {id: telemetry-throughput, text: Telemetry ingestion sustains live-event peak event rates without loss., category: scalability}
+  - {id: recommendation-latency, text: Recommendations served within interactive latency budgets., category: performance}
+assumptions:
+  - {id: event-schema, text: Client apps emit events using a governed schema., category: data}
+  - {id: rights-data-available, text: Rights data can be exported from contracts or rights systems., category: data}
+dependencies:
+  - {id: app-teams, text: Client app teams to instrument and version telemetry., category: delivery}
+  - {id: legal-rights, text: Legal and business affairs review of rights and AI usage., category: compliance}
+security_considerations:
+  - {id: content-piracy, text: Protect pre-release content and DRM keys from leakage., category: security}
+data_quality_checks:
+  - {id: bot-filtering, text: Bot and invalid traffic filtered from audience metrics., category: data}
+  - {id: metadata-completeness, text: Required content metadata fields populated for active titles., category: data}
+reporting_requirements:
+  - {id: royalty-reporting, text: Auditable usage reports for royalty and revenue-share statements., category: reporting}
+migration_concerns:
+  - {id: legacy-analytics, text: Reconciling historic metrics from legacy analytics tools after migration., category: data}
+ai_opportunities:
+  - {id: recommendations, text: Personalised content recommendations and artwork personalisation., category: ai}
+  - {id: metadata-generation, text: AI metadata tagging and content summarisation., category: ai}
+  - {id: churn-prevention, text: Churn prediction and retention offers., category: ai, sub_domains: [streaming, publishing]}
+  - {id: localisation, text: AI-assisted subtitling and dubbing., category: ai, sub_domains: [streaming]}
+ai_risks:
+  - {id: ip-infringement, text: Generated content infringing copyright or likeness rights., category: ai}
+  - {id: misinformation, text: AI-generated news content containing errors., category: ai, sub_domains: [publishing]}
+clarification_questions:
+  - {id: measurement-currency, text: "Which audience measurement is the trading currency with advertisers?", category: data}

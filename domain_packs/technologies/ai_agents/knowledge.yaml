@@ -1,0 +1,18 @@
+security_considerations:
+- id: agents-obo
+  text: Use on-behalf-of authentication so agents never exceed the user's permissions.
+  category: security
+ai_risks:
+- id: agents-ai-wrong
+  text: Incorrect answers presented with confidence.
+  category: ai
+- id: agents-ai-tone
+  text: Inappropriate tone or off-topic responses in customer channels.
+  category: ai
+dependencies:
+- id: agents-knowledge-owner
+  text: Content owners maintaining agent knowledge sources.
+  category: business
+- id: agents-channel-apis
+  text: Channel and back-end APIs for agent actions.
+  category: integration

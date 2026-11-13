@@ -1,0 +1,28 @@
+- id: cdm-cutover-failure
+  title: Cut-over failure or extended downtime
+  category: delivery
+  likelihood: 3
+  impact: 4
+  mitigation: Rehearsed cut-overs, CDC-based sync and rollback plans.
+  indicators:
+  - cutover
+  - downtime
+  - rollback
+- id: cdm-hidden-dependencies
+  title: Hidden application dependencies on migrated data
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: Dependency discovery and connection monitoring before migration.
+  indicators:
+  - unknown consumers
+  - linked servers
+- id: cdm-transfer-time
+  title: Data transfer takes longer than planned
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Assess bandwidth; use offline transfer appliances for large volumes.
+  indicators:
+  - petabytes
+  - limited bandwidth

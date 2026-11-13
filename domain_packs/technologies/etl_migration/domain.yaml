@@ -1,0 +1,14 @@
+# ETL Migration technology pack - domain
+key: etl_migration
+name: ETL Migration
+kind: technology
+version: 1.0.0
+description: Migration of legacy ETL tooling (Informatica, DataStage, SSIS, Ab Initio, ODI) to modern cloud ELT / pipeline platforms, including
+  job conversion and parallel-run validation.
+aliases: [Modernization & Migration]
+sort_order: 43
+detection:
+  keywords: {etl migration: 5, informatica: 4, powercenter: 4, datastage: 4, ssis: 4, ab initio: 4, talend: 3, oracle data integrator: 4, odi: 2,
+    etl modernization: 4, etl: 1.5, mappings: 1, workflows: 0.5}
+related_technologies: [data_engineering, data_migration, lakehouse, databricks, microsoft_fabric, snowflake]
+related_project_types: [legacy_etl_migration, data_platform_modernization]

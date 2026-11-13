@@ -1,0 +1,12 @@
+- term: Data Contract
+  definition: Agreement on schema, semantics and SLAs between producer and consumer
+  entity_type: concept
+  category: governance
+- term: Orchestrator
+  definition: Tool scheduling and coordinating pipeline tasks
+  entity_type: system
+  category: operations
+- term: Data SLA
+  definition: Agreed freshness or availability commitment for data
+  entity_type: metric
+  category: operations

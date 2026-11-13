@@ -1,0 +1,10 @@
+- {id: days-to-close, name: Days to close, description: Working days to complete the period-end financial close., unit: days, direction: lower_is_better, category: finance, sub_domains: [finance]}
+- {id: dso, name: Days sales outstanding, description: Average days to collect receivables., unit: days, direction: lower_is_better, category: finance, sub_domains: [finance]}
+- {id: spend-under-management, name: Spend under management, description: Share of addressable spend managed by procurement., unit: "%", direction: higher_is_better, category: procurement, sub_domains: [procurement]}
+- {id: po-compliance, name: PO compliance, description: Share of invoices with a matching purchase order., unit: "%", direction: higher_is_better, category: procurement, sub_domains: [procurement, finance]}
+- {id: employee-attrition, name: Voluntary attrition, description: Share of employees leaving voluntarily., unit: "%", direction: lower_is_better, category: hr, sub_domains: [hr]}
+- {id: time-to-hire, name: Time to hire, description: Days from requisition approval to offer acceptance., unit: days, direction: lower_is_better, category: hr, sub_domains: [hr]}
+- {id: pipeline-coverage, name: Pipeline coverage, description: Qualified pipeline relative to quota., unit: ratio, direction: higher_is_better, category: sales, sub_domains: [sales_marketing]}
+- {id: csat, name: Customer satisfaction, description: Customer satisfaction score for service interactions., unit: score, direction: higher_is_better, category: service, sub_domains: [customer_service]}
+- {id: fcr, name: First contact resolution, description: Share of cases resolved on first contact., unit: "%", direction: higher_is_better, category: service, sub_domains: [customer_service]}
+- {id: mttr, name: Mean time to resolve incidents, description: Average time to resolve IT incidents., unit: hours, direction: lower_is_better, category: it, sub_domains: [it_operations]}

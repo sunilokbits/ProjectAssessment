@@ -1,0 +1,27 @@
+# ETL Migration technology pack - recommendations
+- {id: etl-rationalise, title: Rationalise before migrating, text: Retire unused and duplicate jobs based on usage and lineage analysis., category: delivery,
+  priority: high}
+- id: etl-automated
+  title: Use automated conversion accelerators
+  text: Convert bulk, low-complexity jobs with conversion tools to meet licence deadlines.
+  category: architecture
+  priority: medium
+  decision_key: etl_conversion_approach
+  decision_option: automated
+  when:
+    any_of:
+      - answers:
+          etl_migration:etl-migration-approach: [automated, hybrid]
+      - keywords_any: [license renewal, support end]
+- id: etl-redesign
+  title: Redesign pipelines to modern ELT patterns
+  text: Rebuild pipelines using target-native ELT (dbt / Spark / declarative pipelines) for maintainability.
+  category: architecture
+  priority: medium
+  decision_key: etl_conversion_approach
+  decision_option: redesign
+  when:
+    answers:
+      etl_migration:etl-migration-approach: [redesign]
+- {id: etl-parallel-compare, title: Validate through automated parallel-run comparison, text: Compare legacy and new outputs automatically for
+    each migrated pipeline., category: quality, priority: high}

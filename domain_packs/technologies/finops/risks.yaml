@@ -1,0 +1,27 @@
+- id: finops-bill-shock
+  title: Unexpected cloud bills after go-live
+  category: operations
+  likelihood: 3
+  impact: 4
+  mitigation: Budgets, alerts, cost estimates per workload and monthly reviews.
+  indicators:
+  - cost overrun
+  - unexpected bill
+- id: finops-no-allocation
+  title: Costs cannot be attributed to owners
+  category: governance
+  likelihood: 4
+  impact: 3
+  mitigation: Enforce tagging via policy; allocate shared costs transparently.
+  indicators:
+  - untagged
+  - shared subscription
+- id: finops-idle
+  title: Idle and oversized resources
+  category: operations
+  likelihood: 4
+  impact: 2
+  mitigation: Auto-termination, rightsizing and scheduled shutdown.
+  indicators:
+  - always-on
+  - idle clusters

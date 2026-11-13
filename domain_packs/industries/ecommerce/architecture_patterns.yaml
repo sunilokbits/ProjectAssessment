@@ -1,0 +1,20 @@
+- id: commerce-intelligence-platform
+  name: Commerce intelligence platform
+  description: Real-time clickstream, catalogue, order and payment data unified around customer identity for personalisation, fraud and commercial analytics.
+  use_cases: [Customer 360, Recommendations and search relevance, Payment fraud detection, Demand forecasting]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: commerce-sources, name: "Commerce platform, OMS, PSP, PIM, marketplace and analytics sources", layer: sources, core: true}
+    - {id: clickstream-ingest, name: Server-side clickstream collection with consent, layer: ingestion, core: true}
+    - {id: identity-stitching, name: Customer identity stitching, layer: processing, when: {project_types_any: [customer_360, recommendation_engine, churn_prediction]}}
+    - {id: realtime-features, name: Real-time feature store, layer: serving, when: {any_of: [{technologies_any: [real_time_streaming]}, {project_types_any: [fraud_detection]}]}}
+    - {id: vector-recs, name: Vector-based search and recommendations, layer: serving, when: {any_of: [{technologies_any: [vector_search]}, {sub_domains_any: [search_discovery]}]}}
+    - {id: fraud-scoring, name: Payment and promo fraud scoring, layer: processing, when: {any_of: [{project_types_any: [fraud_detection]}, {sub_domains_any: [payments_checkout]}]}}
+    - {id: settlement-recon, name: "Order, settlement and payout reconciliation", layer: processing, when: {sub_domains_any: [payments_checkout, marketplace]}}
+    - {id: seller-analytics, name: Seller performance analytics and portal, layer: consumption, when: {sub_domains_any: [marketplace, seller_management]}}
+    - {id: token-only-zone, name: PSP token-only payment data zone, layer: security, core: true, purpose: Keep analytics out of PCI scope.}
+    - {id: consent-enforcement, name: Consent enforcement for analytics and ad activation, layer: governance, core: true}
+    - {id: commercial-dashboards, name: Trading and merchandising dashboards, layer: consumption, core: true}
+  considerations:
+    - Never let PAN reach logs, clickstream or the analytics platform.
+    - Plan capacity for peak trading days rather than averages.

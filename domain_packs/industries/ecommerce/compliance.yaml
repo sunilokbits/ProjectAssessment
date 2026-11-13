@@ -1,0 +1,62 @@
+- id: pci-dss
+  name: Payment Card Industry Data Security Standard v4.0
+  short_name: PCI DSS
+  geographies: [GLOBAL]
+  applicability_note: Applies to all merchants accepting cards; SAQ type depends on checkout integration. Requirements 6.4.3 and 11.6.1 cover payment page scripts.
+- id: psd2-sca
+  name: PSD2 Strong Customer Authentication
+  short_name: PSD2 SCA
+  geographies: [EU, EEA, UK]
+  sub_domains: [payments_checkout, d2c, marketplace]
+- id: gdpr-eprivacy
+  name: GDPR and ePrivacy Directive (cookies and tracking)
+  short_name: GDPR / ePrivacy
+  geographies: [EU, EEA]
+  data_classifications_any: [pii]
+- id: uk-gdpr-pecr
+  name: UK GDPR and PECR
+  short_name: UK GDPR / PECR
+  geographies: [UK]
+  data_classifications_any: [pii]
+- id: ccpa
+  name: California Consumer Privacy Act / CPRA
+  short_name: CCPA/CPRA
+  geographies: [US-CA]
+  data_classifications_any: [pii]
+- id: dsa
+  name: EU Digital Services Act (online marketplaces - trader traceability and transparency)
+  short_name: DSA
+  geographies: [EU, EEA]
+  sub_domains: [marketplace, seller_management]
+- id: inform-act
+  name: INFORM Consumers Act (high-volume third-party seller verification)
+  short_name: INFORM Act
+  geographies: [US]
+  sub_domains: [marketplace, seller_management]
+- id: eu-consumer-rights
+  name: EU Consumer Rights Directive and Omnibus Directive (pricing transparency and reviews)
+  short_name: EU Consumer Rights / Omnibus
+  geographies: [EU, EEA]
+- id: ftc-rules
+  name: FTC Act Section 5 and FTC rules on fake reviews and negative option marketing
+  short_name: FTC Rules
+  geographies: [US]
+- id: india-ecommerce-rules
+  name: Consumer Protection (E-Commerce) Rules 2020
+  short_name: India E-Commerce Rules
+  geographies: [IN]
+- id: india-dpdp
+  name: Digital Personal Data Protection Act 2023
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii]
+- id: rbi-payment-aggregator
+  name: RBI guidelines on payment aggregators and card-on-file tokenisation
+  short_name: RBI PA / CoF Tokenisation
+  geographies: [IN]
+  sub_domains: [payments_checkout, marketplace]
+- id: eaa
+  name: European Accessibility Act (e-commerce services)
+  short_name: EAA
+  geographies: [EU, EEA]
+  applicability_note: Applies to e-commerce services from June 2025, with exemptions for microenterprises.

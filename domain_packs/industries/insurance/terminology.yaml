@@ -1,0 +1,20 @@
+- {term: Policyholder, definition: Person or organisation that owns an insurance policy, synonyms: [policy owner, insured, customer, proposer], entity_type: entity, category: data}
+- {term: Policy, definition: Contract of insurance defining covered risks and terms, synonyms: [contract, certificate, plan], entity_type: entity, category: data}
+- {term: Coverage, definition: Specific risk protection within a policy, synonyms: [cover, benefit, rider, peril], entity_type: entity, category: data}
+- {term: Premium, definition: Amount paid by the policyholder for coverage, synonyms: [gwp, gross written premium, earned premium, contribution], entity_type: metric, category: data}
+- {term: Claim, definition: Request by an insured or claimant for payment under a policy, synonyms: [loss, claim file, notification], entity_type: entity, category: data}
+- {term: FNOL, definition: First notice of loss reported by insured or claimant, synonyms: [first notice of loss, loss notification, claim intimation], entity_type: event, category: process, sub_domains: [claims]}
+- {term: Underwriting, definition: Assessment and pricing of risk before acceptance, synonyms: [risk selection, risk assessment, rating], entity_type: process, category: process}
+- {term: Reserve, definition: Estimated liability for unpaid claims, synonyms: [case reserve, ibnr, technical provisions, outstanding claims], entity_type: metric, category: data}
+- {term: IBNR, definition: Incurred but not reported claims reserve, synonyms: [incurred but not reported], entity_type: metric, category: data, sub_domains: [actuarial, claims]}
+- {term: Loss Ratio, definition: Incurred losses divided by earned premium, synonyms: [claims ratio], entity_type: metric, category: reporting}
+- {term: Endorsement, definition: Mid-term change to an in-force policy, synonyms: [mta, mid-term adjustment, policy change], entity_type: event, category: process, sub_domains: [policy_administration]}
+- {term: Reinsurance Treaty, definition: Agreement ceding a portfolio of risk to a reinsurer, synonyms: [treaty, quota share, excess of loss, facultative], entity_type: entity, category: data, sub_domains: [reinsurance]}
+- {term: Bordereau, definition: Periodic report of premiums or claims exchanged with partners, synonyms: [bordereaux, bdx], entity_type: entity, category: integration, sub_domains: [reinsurance, distribution]}
+- {term: Agent, definition: Intermediary selling policies on behalf of an insurer, synonyms: [advisor, broker, intermediary, producer, pos], entity_type: role, category: business, sub_domains: [distribution]}
+- {term: Sum Assured, definition: Guaranteed benefit payable under a life policy, synonyms: [sum insured, face amount, death benefit], entity_type: metric, category: data, sub_domains: [life_insurance]}
+- {term: Subrogation, definition: Recovery of claim costs from a liable third party, synonyms: [recovery, salvage], entity_type: process, category: process, sub_domains: [claims, property_casualty]}
+- {term: IFRS 17, definition: International accounting standard for insurance contracts, synonyms: [ind as 117, csm, contractual service margin], entity_type: regulation, category: compliance}
+- {term: Solvency II, definition: EU risk-based capital regime for insurers, synonyms: [qrt, scr, orsa], entity_type: regulation, category: compliance}
+- {term: TPA, definition: Third-party administrator handling health claims, synonyms: [third party administrator], entity_type: role, category: business, sub_domains: [health_insurance]}
+- {term: Policy Administration System, definition: System of record for policies and endorsements, synonyms: [pas, policy admin, guidewire, duck creek], entity_type: system, category: integration}

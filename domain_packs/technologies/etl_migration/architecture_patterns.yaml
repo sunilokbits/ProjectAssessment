@@ -1,0 +1,38 @@
+# ETL Migration technology pack - architecture_patterns
+- id: etl-modernization
+  name: Legacy ETL to cloud ELT modernization
+  description: Inventory and analyse legacy jobs, convert or redesign onto a target ELT platform, validate via parallel run.
+  use_cases: [Legacy ETL migration, Data platform modernization]
+  layer_order: [source, extraction, transformation, load, target, validation, operations]
+  components:
+    - {id: metadata-extract, name: Legacy ETL metadata extraction and complexity analysis, layer: source, core: true}
+    - id: converter
+      name: Automated code conversion accelerator
+      layer: transformation
+      when:
+        answers:
+          etl_migration:etl-migration-approach: [automated, hybrid]
+    - {id: target-framework, name: Target ELT framework (dbt / Spark / pipelines), layer: transformation, core: true}
+    - id: databricks
+      name: Databricks Lakeflow pipelines
+      layer: target
+      when:
+        technologies_any: [databricks]
+    - id: fabric
+      name: Fabric Data Factory / notebooks
+      layer: target
+      when:
+        technologies_any: [microsoft_fabric]
+    - id: snowflake
+      name: Snowflake (dbt / Snowpark)
+      layer: target
+      when:
+        technologies_any: [snowflake]
+    - {id: orchestrator, name: Target orchestrator, layer: operations, core: true}
+    - {id: comparison, name: Parallel-run data comparison, layer: validation, core: true}
+    - id: lineage
+      name: Lineage and catalog integration
+      layer: validation
+      when:
+        technologies_any: [data_governance, data_catalog, metadata_management]
+  considerations: [Retire unused jobs first., Pilot a representative sample across complexity tiers.]

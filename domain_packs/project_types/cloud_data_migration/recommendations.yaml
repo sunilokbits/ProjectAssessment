@@ -1,0 +1,10 @@
+- id: cdm-cdc-sync
+  title: Use CDC replication for low-downtime cut-over
+  text: Replicate changes continuously until cut-over to minimise downtime.
+  category: architecture
+  priority: high
+- id: cdm-rehearse
+  title: Rehearse cut-overs end to end
+  text: Run at least one full dress rehearsal with timings and rollback.
+  category: delivery
+  priority: high

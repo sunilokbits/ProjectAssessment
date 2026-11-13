@@ -1,0 +1,35 @@
+key: advanced_analytics
+name: Advanced Analytics
+kind: technology
+version: 1.0.0
+description: Statistical modelling, optimisation, simulation and exploratory analytics that go beyond descriptive BI.
+aliases:
+- Analytics & BI
+sort_order: 60
+detection:
+  keywords:
+    advanced analytics: 5
+    predictive analytics: 4
+    prescriptive analytics: 4
+    statistical modelling: 3
+    statistical modeling: 3
+    optimisation model: 3
+    optimization model: 3
+    simulation: 2
+    what-if analysis: 2.5
+    segmentation: 1.5
+    regression: 1.5
+    data science: 2
+    jupyter: 2
+    r studio: 2
+    sas: 2
+    analytics: 0.5
+related_technologies:
+- machine_learning
+- business_intelligence
+- data_platform
+- lakehouse
+- mlops
+related_project_types:
+- demand_forecasting
+- churn_prediction

@@ -1,0 +1,17 @@
+- term: Containment Rate
+  definition: Share of conversations resolved without human hand-off
+  synonyms:
+  - deflection rate
+  entity_type: metric
+  category: operations
+- term: Escalation
+  definition: Hand-off from the agent to a human
+  synonyms:
+  - hand-off
+  - handover
+  entity_type: process
+  category: operations
+- term: Intent
+  definition: The user goal the agent must recognise
+  entity_type: concept
+  category: ai

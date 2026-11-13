@@ -1,0 +1,11 @@
+# Data Platform technology pack - terminology
+- {term: Data Product, definition: 'Owned, documented and quality-assured dataset published for consumers', entity_type: entity, category: data}
+- {term: Data Mesh, definition: Socio-technical approach with domain-owned data products on self-service infrastructure, entity_type: concept,
+  category: architecture}
+- {term: Landing Zone, definition: 'Pre-configured cloud environment with networking, identity and policy guardrails', entity_type: system, category: infrastructure}
+- {term: Platform Team, definition: Team that builds and operates shared data platform capabilities, entity_type: role, category: delivery}
+- term: Chargeback
+  definition: Allocating platform costs to consuming business units
+  synonyms: [showback]
+  entity_type: process
+  category: operations

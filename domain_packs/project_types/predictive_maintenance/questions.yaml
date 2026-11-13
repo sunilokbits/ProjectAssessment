@@ -1,0 +1,38 @@
+- id: pdm-assets
+  text: Which asset classes are in scope and what is the cost of their unplanned failure?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: pdm-failure-history
+  text: Is failure and maintenance history (work orders, failure codes) available and reliable?
+  category: data
+  dimension: data_quality
+  answer_type: single_choice
+  options:
+  - value: none
+    label: Not available
+    score: 0
+  - value: poor
+    label: Available but inconsistent coding
+    score: 0.4
+  - value: good
+    label: Reliable history with failure codes
+    score: 1
+  critical: true
+- id: pdm-sensor-data
+  text: Is sensor data available at sufficient frequency and history for the target assets?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+- id: pdm-action
+  text: How will predictions trigger maintenance (CMMS/EAM work orders, alerts to planners)?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+- id: pdm-maintenance-buy-in
+  text: Are maintenance and reliability engineers engaged to validate models and act on alerts?
+  category: business
+  dimension: stakeholder_readiness
+  answer_type: yes_no

@@ -1,0 +1,14 @@
+- {term: Ore, definition: Material containing economically recoverable minerals, synonyms: [mineralised material, feed], entity_type: entity, category: data}
+- {term: Block Model, definition: 3D grid model of grade and geology used for planning, synonyms: [resource model, geological model], entity_type: entity, category: data, sub_domains: [exploration, extraction_operations]}
+- {term: Drill Hole, definition: Borehole drilled to sample the ore body, synonyms: [borehole, collar, drillhole], entity_type: entity, category: data, sub_domains: [exploration]}
+- {term: Assay, definition: Laboratory analysis of sample grade, synonyms: [assay result, sample grade, lab result], entity_type: entity, category: data}
+- {term: Haul Cycle, definition: Load-haul-dump cycle of a truck, synonyms: [truck cycle, load and haul, cycle time], entity_type: event, category: data, sub_domains: [fleet_equipment, extraction_operations]}
+- {term: Stockpile, definition: Accumulated ore or waste awaiting processing, synonyms: [rom pad, run of mine stockpile], entity_type: entity, category: data}
+- {term: Recovery, definition: Share of valuable mineral recovered in processing, synonyms: [metallurgical recovery, yield], entity_type: metric, category: production, sub_domains: [processing]}
+- {term: Strip Ratio, definition: Waste moved per unit of ore, synonyms: [stripping ratio, waste to ore ratio], entity_type: metric, category: production, sub_domains: [extraction_operations]}
+- {term: Tailings, definition: Residual material after processing, synonyms: [tailings storage facility, tsf, slimes], entity_type: entity, category: environmental, sub_domains: [environmental, processing]}
+- {term: Short Interval Control, definition: Frequent intra-shift performance management, synonyms: [sic, shift control], entity_type: process, category: operational, sub_domains: [extraction_operations]}
+- {term: FMS, definition: Fleet management and dispatch system, synonyms: [fleet management system, dispatch, minestar, modular], entity_type: system, category: integration, sub_domains: [fleet_equipment, extraction_operations]}
+- {term: Competent Person, definition: Qualified professional signing off resource and reserve estimates, synonyms: [qualified person, qp], entity_type: role, category: compliance, sub_domains: [exploration]}
+- {term: Critical Control, definition: Control essential to preventing a fatal event, synonyms: [critical risk control, ccm], entity_type: concept, category: safety, sub_domains: [health_safety]}
+- {term: Reconciliation Factor, definition: Ratio comparing predicted and actual tonnes and grade, synonyms: [f1 factor, f2 factor, f3 factor, mine call factor], entity_type: metric, category: data}

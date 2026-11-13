@@ -1,0 +1,15 @@
+- id: rts-managed
+  title: Use a managed streaming service
+  text: Prefer cloud-managed Kafka-compatible services to reduce operational overhead.
+  category: technology
+  priority: medium
+- id: rts-schema-registry
+  title: Govern events with a schema registry
+  text: Enforce schema compatibility and document event contracts.
+  category: governance
+  priority: high
+- id: rts-latency-tiers
+  title: Tier latency by use case
+  text: Classify use cases into real-time, near-real-time and batch and design accordingly.
+  category: architecture
+  priority: medium

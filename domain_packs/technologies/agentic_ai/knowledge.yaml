@@ -1,0 +1,18 @@
+security_considerations:
+- id: agentic-scoped-identity
+  text: Each agent runs under its own scoped identity; secrets are never exposed to the model.
+  category: security
+- id: agentic-arg-validation
+  text: Validate tool arguments server-side; never trust model-produced parameters.
+  category: security
+ai_risks:
+- id: agentic-ai-cascade
+  text: Errors compound across multi-step plans.
+  category: ai
+- id: agentic-ai-goal
+  text: Goal misinterpretation leading to wrong actions.
+  category: ai
+dependencies:
+- id: agentic-api-layer
+  text: API layer over target systems with authentication and rate limits.
+  category: integration

@@ -1,0 +1,9 @@
+- {id: donor-retention, name: Donor retention rate, description: Share of prior-period donors who give again., unit: "%", direction: higher_is_better, category: fundraising, sub_domains: [donor_management, fundraising]}
+- {id: average-gift, name: Average gift size, description: Total donations divided by number of gifts., unit: currency, direction: higher_is_better, category: fundraising, sub_domains: [fundraising]}
+- {id: cost-to-raise, name: Cost to raise a unit of currency, description: Fundraising cost divided by funds raised., unit: ratio, direction: lower_is_better, category: efficiency, sub_domains: [fundraising]}
+- {id: donor-lifetime-value, name: Donor lifetime value, description: Expected net income from a supporter over their relationship., unit: currency, direction: higher_is_better, category: fundraising, sub_domains: [donor_management]}
+- {id: programme-spend-ratio, name: Programme spend ratio, description: Share of expenditure spent on charitable programmes., unit: "%", direction: higher_is_better, category: efficiency}
+- {id: beneficiaries-reached, name: Beneficiaries reached, description: Number of people reached by programmes., unit: count, direction: higher_is_better, category: impact, sub_domains: [programs_impact]}
+- {id: outcome-achievement, name: Outcome indicator achievement, description: Share of outcome indicators meeting their planned values., unit: "%", direction: higher_is_better, category: impact, sub_domains: [programs_impact, grants]}
+- {id: grant-reporting-timeliness, name: Grant reporting timeliness, description: Share of funder reports submitted on time., unit: "%", direction: higher_is_better, category: compliance, sub_domains: [grants]}
+- {id: volunteer-hours, name: Volunteer hours contributed, description: Total volunteer hours per period., unit: hours, direction: higher_is_better, category: volunteering, sub_domains: [volunteer_management]}

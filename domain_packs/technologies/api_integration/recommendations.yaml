@@ -1,0 +1,19 @@
+- id: api-led
+  title: Adopt API-led connectivity
+  text: Structure integration into system, process and experience APIs with reusable contracts.
+  category: architecture
+  priority: medium
+  decision_key: integration_style
+  decision_option: api_led
+- id: api-event-driven
+  title: Adopt event-driven integration
+  text: Publish business events to a broker for decoupled, near-real-time integration.
+  category: architecture
+  priority: medium
+  decision_key: integration_style
+  decision_option: event_driven
+- id: api-contracts
+  title: Contract-first API design
+  text: Define OpenAPI/AsyncAPI contracts before build and test against them.
+  category: architecture
+  priority: high

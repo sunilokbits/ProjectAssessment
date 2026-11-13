@@ -1,0 +1,30 @@
+nfrs:
+  - {id: accessibility, text: "Citizen-facing outputs meet Section 508 / WCAG 2.1 AA or local equivalent.", category: usability}
+  - {id: sovereign-hosting, text: Data hosted in authorised in-country government regions., category: compliance}
+  - {id: audit-logging, text: "Access to citizen records fully audit-logged and retained per policy.", category: security}
+assumptions:
+  - {id: authorised-region, text: An authorised government cloud tenancy is available or can be provisioned., category: architecture}
+  - {id: sme-access, text: Programme SMEs and legacy system owners are available despite operational pressures., category: delivery}
+dependencies:
+  - {id: ato-dependency, text: Authorising official and ISSO availability for ATO activities., category: compliance}
+  - {id: legal-counsel, text: Agency counsel review of data-sharing basis and privacy notices., category: compliance}
+  - {id: procurement-dependency, text: Contract vehicle covering required services and licences., category: delivery}
+security_considerations:
+  - {id: personnel-screening, text: Delivery staff may require background checks or security clearances., category: security}
+data_quality_checks:
+  - {id: identifier-validity, text: "Citizen and taxpayer identifiers validated (format, check digits, duplicates).", category: data}
+reporting_requirements:
+  - {id: performance-reporting, text: "Programme performance reporting to legislature, oversight bodies and the public.", category: reporting}
+migration_concerns:
+  - {id: mainframe-encoding, text: "EBCDIC encoding, packed decimals and copybook variants in mainframe extracts.", category: data}
+ai_opportunities:
+  - {id: fwa-detection, text: "Fraud, waste and abuse detection across benefit and tax programmes.", category: ai}
+  - {id: citizen-assistant, text: GenAI assistant for citizen enquiries grounded in published policy., category: ai, sub_domains: [citizen_services, local_government, tax_revenue]}
+  - {id: document-intake, text: Document intelligence for application and correspondence intake., category: ai}
+  - {id: traffic-optimisation, text: Traffic signal and mobility optimisation from city sensor data., category: ai, sub_domains: [smart_cities]}
+ai_risks:
+  - {id: entitlement-bias, text: Biased or opaque AI decisions affecting benefits or enforcement., category: ai}
+  - {id: hallucinated-policy, text: GenAI giving citizens incorrect policy or legal guidance., category: ai, sub_domains: [citizen_services, tax_revenue]}
+  - {id: predictive-policing, text: Predictive policing models reinforcing historic bias., category: ai, sub_domains: [public_safety]}
+clarification_questions:
+  - {id: authorising-official, text: "Who is the authorising official, and what impact level has been assigned to the system?", category: compliance}

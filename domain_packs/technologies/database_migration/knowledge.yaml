@@ -1,0 +1,10 @@
+# Database Migration technology pack - knowledge
+security_considerations:
+  - {id: dbm-encryption, text: Encryption at rest and in transit preserved on the target., category: security}
+  - {id: dbm-privileges, text: Map database roles and privileges; remove legacy over-privileged accounts., category: security}
+migration_concerns:
+  - {id: dbm-collation, text: 'Collation, datatype and date/time semantics differences between engines.', category: technology}
+  - {id: dbm-licensing, text: Source database licensing exit and target licensing model., category: commercial}
+dependencies:
+  - {id: dbm-network, text: Network connectivity from source to target for replication., category: network}
+  - {id: dbm-app-teams, text: Application teams available for testing and connection changes., category: delivery}

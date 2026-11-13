@@ -1,0 +1,37 @@
+- id: iot-ot-exposure
+  title: OT networks exposed through new connectivity
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Segmented architecture, DMZ, one-way data flows and OT security review.
+  indicators:
+  - scada
+  - plc
+  - flat network
+- id: iot-tag-context
+  title: Sensor tags lack context and naming standards
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Build asset model and tag mapping with plant engineers.
+  indicators:
+  - tag names
+  - no asset hierarchy
+- id: iot-volume-cost
+  title: Telemetry volume drives storage and ingestion cost
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Edge filtering, downsampling and tiered storage.
+  indicators:
+  - high frequency
+  - millions of messages
+- id: iot-heterogeneous
+  title: Heterogeneous devices and protocols across sites
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: Standardise on gateways and protocols (OPC UA, MQTT) per site.
+  indicators:
+  - multiple vendors
+  - proprietary protocol

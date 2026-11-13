@@ -1,0 +1,33 @@
+# Microsoft Fabric technology pack - questions
+- id: fabric-status
+  text: What is the client's current Microsoft Fabric status?
+  category: technology
+  dimension: fabric_platform_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: Not enabled, score: 0.3}
+    - {value: trial, label: Trial / proof of concept, score: 0.6}
+    - {value: production, label: Production capacity in use, score: 1}
+- {id: fabric-capacity, text: 'Has Fabric capacity (F SKU) sizing been planned against expected workloads and Power BI usage?', category: technology,
+  dimension: fabric_platform_readiness, weight: 1.3}
+- {id: fabric-tenant-settings, text: 'Are Fabric tenant settings and admin governance (who can create items/workspaces) defined?', category: governance,
+  dimension: fabric_platform_readiness, critical: true}
+- {id: fabric-workspace-design, text: 'Is a workspace and domain structure defined (per domain / environment, dev-test-prod)?', category: architecture,
+  dimension: architecture_fit}
+- id: fabric-lakehouse-vs-warehouse
+  text: Which Fabric item will hold curated data?
+  category: architecture
+  dimension: fabric_platform_readiness
+  answer_type: single_choice
+  options:
+    - {value: lakehouse, label: Lakehouse (Spark / Delta)}
+    - {value: warehouse, label: Warehouse (T-SQL)}
+    - {value: both, label: Both by layer}
+    - {value: undecided, label: Undecided}
+- {id: fabric-network-security, text: 'Are private links, managed private endpoints and conditional access configured for Fabric?', category: security,
+  dimension: security_controls}
+- {id: fabric-cicd, text: 'Will Fabric items be managed with Git integration and deployment pipelines?', category: operations, dimension: operational_readiness}
+- {id: fabric-purview, text: 'Will Microsoft Purview be used for sensitivity labels, lineage and DLP on Fabric items?', category: governance,
+  dimension: privacy_protection}
+- {id: fabric-skills, text: 'How experienced is the client team with Microsoft Fabric / Power BI / Spark (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

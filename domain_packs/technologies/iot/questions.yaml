@@ -1,0 +1,57 @@
+- id: iot-devices
+  text: Are device types, counts, protocols and message rates inventoried?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: iot-connectivity
+  text: How is telemetry collected today?
+  category: integration
+  dimension: iot_readiness
+  answer_type: single_choice
+  options:
+  - value: none
+    label: Not collected / manual readings
+    score: 0.1
+  - value: historian
+    label: OT historian (e.g. PI) only
+    score: 0.6
+  - value: platform
+    label: IoT platform / broker in place
+    score: 1
+  - value: mixed
+    label: Mixed, site-dependent
+    score: 0.5
+- id: iot-edge
+  text: Is edge processing required (bandwidth, latency, offline operation)?
+  category: architecture
+  dimension: iot_readiness
+  answer_type: yes_no
+- id: iot-ot-security
+  text: Is IT/OT network segmentation and OT security (e.g. IEC 62443) in place?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+  critical: true
+- id: iot-context
+  text: Is asset hierarchy / context data available to interpret sensor tags?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+- id: iot-device-mgmt
+  text: Is there device provisioning, identity and firmware update management?
+  category: operations
+  dimension: iot_readiness
+  answer_type: yes_no
+- id: iot-retention
+  text: Are telemetry retention and downsampling requirements defined?
+  category: data
+  dimension: iot_readiness
+  answer_type: yes_no
+- id: iot-skills
+  text: How experienced is the client team with IoT / OT data integration (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

@@ -1,0 +1,18 @@
+- id: rec-ctr
+  name: Recommendation click-through rate
+  description: Share of recommendations clicked.
+  unit: '%'
+  direction: higher_is_better
+  category: business
+- id: rec-conversion-uplift
+  name: Conversion uplift
+  description: Incremental conversion versus control group.
+  unit: '%'
+  direction: higher_is_better
+  category: business
+- id: rec-coverage
+  name: Catalogue coverage
+  description: Share of catalogue items recommended at least once.
+  unit: '%'
+  direction: higher_is_better
+  category: quality

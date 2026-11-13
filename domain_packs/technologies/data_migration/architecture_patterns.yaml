@@ -1,0 +1,42 @@
+# Data Migration technology pack - architecture_patterns
+- id: data-migration-pipeline
+  name: Staged data migration
+  description: Extract to staging, cleanse and transform, load to target with automated reconciliation and cutover sync.
+  use_cases: [Cloud data migration, Legacy system replacement]
+  layer_order: [source, extraction, transformation, load, target, validation, operations]
+  components:
+    - {id: extract, name: Source extraction, layer: extraction, core: true}
+    - {id: staging, name: Migration staging area, layer: transformation, core: true}
+    - id: cleansing
+      name: Cleansing and enrichment
+      layer: transformation
+      when:
+        any_of:
+          - technologies_any: [data_quality]
+          - keywords_any: [data quality, cleansing]
+    - id: mdm
+      name: Master data matching / de-duplication
+      layer: transformation
+      when:
+        technologies_any: [master_data_management]
+    - {id: load, name: Target load, layer: load, core: true}
+    - id: cdc-sync
+      name: CDC delta sync until cutover
+      layer: load
+      when:
+        answers:
+          data_migration:dm-cutover-approach: [phased, parallel_run]
+    - {id: reconciliation, name: Automated reconciliation and reporting, layer: validation, core: true}
+    - id: masking
+      name: Data masking for non-production runs
+      layer: validation
+      when:
+        answers:
+          data_migration:dm-pii-handling: ['yes']
+    - id: archive
+      name: Historical archive store
+      layer: target
+      when:
+        keywords_any: [archive, retention]
+    - {id: runbook, name: Cutover runbook and rollback plan, layer: operations, core: true}
+  considerations: [Design reconciliation before the first load., Freeze mappings before final rehearsal.]

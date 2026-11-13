@@ -1,0 +1,61 @@
+- id: msha
+  name: Mine Safety and Health Administration regulations (30 CFR)
+  short_name: MSHA
+  geographies: [US]
+- id: sec-sk1300
+  name: SEC Regulation S-K 1300 mining property disclosure
+  short_name: S-K 1300
+  geographies: [US]
+  sub_domains: [exploration]
+- id: ni-43-101
+  name: National Instrument 43-101 Standards of Disclosure for Mineral Projects
+  short_name: NI 43-101
+  geographies: [CA]
+  sub_domains: [exploration]
+- id: jorc
+  name: JORC Code for reporting exploration results, mineral resources and ore reserves
+  short_name: JORC
+  geographies: [AU, NZ]
+  sub_domains: [exploration]
+- id: gistm
+  name: Global Industry Standard on Tailings Management
+  short_name: GISTM
+  geographies: [GLOBAL]
+  sub_domains: [environmental]
+  applicability_note: Committed to by ICMM members and many other operators.
+- id: icmm-principles
+  name: ICMM Mining Principles and performance expectations
+  short_name: ICMM
+  geographies: [GLOBAL]
+  applicability_note: Applies to ICMM member companies.
+- id: au-whs-mines
+  name: Australian WHS (Mines) Regulations and state mine safety acts
+  short_name: AU WHS Mines
+  geographies: [AU]
+  sub_domains: [health_safety, extraction_operations]
+- id: au-soci
+  name: Security of Critical Infrastructure Act 2018 (where designated)
+  short_name: SOCI Act
+  geographies: [AU]
+- id: india-mmdr
+  name: Mines and Minerals (Development and Regulation) Act and DGMS mine safety regulations
+  short_name: MMDR / DGMS
+  geographies: [IN]
+- id: za-mhsa
+  name: Mine Health and Safety Act 1996
+  short_name: MHSA
+  geographies: [ZA]
+- id: iec-62443
+  name: ISA/IEC 62443 Industrial Automation and Control Systems Security
+  short_name: IEC 62443
+  geographies: [GLOBAL]
+- id: eu-crma
+  name: EU Critical Raw Materials Act
+  short_name: EU CRMA
+  geographies: [EU, EEA]
+- id: ghg-reporting
+  name: Greenhouse gas reporting (e.g. NGER Australia, EPA GHGRP, CSRD)
+  short_name: GHG Reporting
+  geographies: [GLOBAL]
+  sub_domains: [environmental, processing]
+  applicability_note: Scheme depends on jurisdiction and facility thresholds.

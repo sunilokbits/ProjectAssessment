@@ -1,0 +1,25 @@
+# AWS technology pack - questions
+- id: aws-footprint
+  text: What is the client's current AWS footprint?
+  category: technology
+  dimension: aws_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: No AWS usage, score: 0.2}
+    - {value: limited, label: Limited / departmental workloads, score: 0.5}
+    - {value: enterprise, label: Enterprise agreement with production workloads, score: 1}
+- {id: aws-landing-zone, text: 'Is a multi-account AWS landing zone (Organizations, Control Tower, SCPs) deployed?', category: technology, dimension: aws_readiness,
+  weight: 1.5, critical: true}
+- {id: aws-identity, text: 'Is IAM Identity Center federated with the corporate IdP, with least-privilege roles and no long-lived access keys?',
+  category: security, dimension: security_controls}
+- {id: aws-network, text: 'Is hybrid connectivity (Direct Connect / VPN, Transit Gateway) and VPC endpoint strategy in place?', category: integration,
+  dimension: integration_readiness}
+- {id: aws-policy, text: 'Are service control policies and AWS Config rules enforcing guardrails (regions, encryption, public access)?', category: governance,
+  dimension: aws_readiness}
+- {id: aws-iac, text: 'Is infrastructure provisioned as code (CloudFormation / CDK / Terraform) through CI/CD pipelines?', category: operations,
+  dimension: aws_readiness}
+- {id: aws-cost, text: 'Are AWS Budgets, cost allocation tags and Savings Plans / Reserved Instances managed?', category: operations, dimension: operational_readiness}
+- {id: aws-region, text: 'Are the AWS regions confirmed against data residency and service availability requirements?', category: architecture,
+  dimension: privacy_protection}
+- {id: aws-skills, text: 'How experienced is the client team with AWS (1-5)?', category: delivery, dimension: team_capability, answer_type: scale,
+  equivalence_key: client_skills}

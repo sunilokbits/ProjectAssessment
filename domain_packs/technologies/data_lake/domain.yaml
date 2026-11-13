@@ -1,0 +1,13 @@
+# Data Lake technology pack - domain
+key: data_lake
+name: Data Lake
+kind: technology
+version: 1.0.0
+description: Object-storage-based data lake for raw and curated data of any format - zones, file formats, partitioning, cataloguing and access
+  control.
+aliases: [Data Platforms]
+sort_order: 13
+detection:
+  keywords: {data lake: 4, adls gen2: 4, azure data lake: 4, amazon s3: 3, s3 bucket: 3, google cloud storage: 3, hadoop: 3, hdfs: 3, aws lake formation: 4,
+    parquet: 2, raw zone: 2, object storage: 1.5, files: 0.2}
+related_technologies: [lakehouse, data_engineering, azure, aws, gcp, data_catalog]

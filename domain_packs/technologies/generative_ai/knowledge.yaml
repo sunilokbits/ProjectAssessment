@@ -1,0 +1,27 @@
+security_considerations:
+- id: genai-zero-retention
+  text: Use enterprise endpoints with no training on client data and zero or minimal retention.
+  category: security
+- id: genai-least-privilege
+  text: Model and tool access follows least privilege; retrieval respects source permissions.
+  category: security
+- id: genai-logging
+  text: Prompts and responses logged for audit with sensitive data redacted.
+  category: security
+ai_risks:
+- id: genai-ai-hallucination
+  text: Hallucination presented as fact.
+  category: ai
+- id: genai-ai-injection
+  text: Prompt injection via user input or retrieved content.
+  category: ai
+- id: genai-ai-regulation
+  text: Obligations under AI regulation (e.g. EU AI Act) for high-risk or transparency-relevant uses.
+  category: ai
+dependencies:
+- id: genai-model-access
+  text: Approved access to foundation models in required regions with quota.
+  category: infrastructure
+- id: genai-content-owners
+  text: Business owners for grounding content and evaluation datasets.
+  category: business

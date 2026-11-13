@@ -1,0 +1,6 @@
+dimensions:
+- key: rag_readiness
+  name: RAG Readiness
+  group: technology
+  weight: 1.0
+  description: Content inventory, ingestion and chunking, retrieval quality, access control and evaluation.

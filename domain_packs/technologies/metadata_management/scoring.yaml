@@ -1,0 +1,6 @@
+dimensions:
+- key: metadata_management_readiness
+  name: Metadata Management Readiness
+  group: technology
+  weight: 1.0
+  description: Metadata sources, lineage coverage, glossary, automation and ownership.

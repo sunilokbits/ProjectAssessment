@@ -1,0 +1,33 @@
+- id: di-document-types
+  text: Which document types, volumes and formats (scanned, digital, handwritten, languages) are in scope?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  critical: true
+- id: di-accuracy
+  text: What extraction accuracy and straight-through processing level is required, and how is it validated?
+  category: business
+  dimension: business_alignment
+  answer_type: yes_no
+  critical: true
+- id: di-hitl
+  text: Is there a human validation step for low-confidence extractions?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: di-ground-truth
+  text: Are labelled sample documents available to train and test extraction?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+  weight: 1.5
+- id: di-downstream
+  text: How will extracted data flow into downstream systems (ERP, claims, case management)?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+- id: di-sensitive
+  text: Do documents contain personal or sensitive data requiring redaction or residency controls?
+  category: privacy
+  dimension: privacy_protection
+  answer_type: yes_no

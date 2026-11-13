@@ -1,0 +1,10 @@
+- {id: customer-acquisition, name: Customer acquisition, description: New customers acquired per period., unit: count, direction: higher_is_better, category: business}
+- {id: loan-approval-time, name: Loan approval time, description: Time from application to credit decision., unit: hours, direction: lower_is_better, sub_domains: [lending, mortgage, fintech, retail_banking]}
+- {id: delinquency-rate, name: Delinquency rate, description: Share of loan balances past due., formula: past-due balances / total balances, unit: "%", direction: lower_is_better, sub_domains: [lending, mortgage, cards]}
+- {id: fraud-rate, name: Fraud rate, description: Fraud losses relative to transaction value., unit: bps, direction: lower_is_better}
+- {id: cost-per-transaction, name: Cost per transaction, description: Operating cost per processed transaction., unit: currency, direction: lower_is_better}
+- {id: cross-sell-ratio, name: Products per customer, description: Average number of products held per customer., unit: ratio, direction: higher_is_better, sub_domains: [retail_banking, wealth_management]}
+- {id: npa-ratio, name: Gross NPA ratio, description: Non-performing assets as a share of gross advances., unit: "%", direction: lower_is_better, sub_domains: [lending, mortgage, commercial_banking, corporate_banking]}
+- {id: payment-success-rate, name: Payment success rate, description: Share of payment instructions completed successfully., unit: "%", direction: higher_is_better, sub_domains: [payments, cards]}
+- {id: aum-growth, name: AUM growth, description: Growth in assets under management., unit: "%", direction: higher_is_better, sub_domains: [wealth_management, asset_management]}
+- {id: kyc-cycle-time, name: KYC onboarding cycle time, description: Time to complete customer due diligence., unit: hours, direction: lower_is_better}

@@ -1,0 +1,19 @@
+- id: dc-platform-catalog
+  title: Use the platform-native catalog as system of record
+  text: Use the data platform's built-in catalog where most assets reside, federating to an enterprise catalog only if needed.
+  category: technology
+  priority: medium
+  decision_key: catalog_strategy
+  decision_option: platform_native
+- id: dc-enterprise-catalog
+  title: Deploy an enterprise catalog across platforms
+  text: Adopt an enterprise catalog when assets span many heterogeneous platforms.
+  category: technology
+  priority: medium
+  decision_key: catalog_strategy
+  decision_option: enterprise
+- id: dc-certify
+  title: Certify trusted data products
+  text: Mark certified datasets so consumers can identify trusted sources.
+  category: governance
+  priority: medium

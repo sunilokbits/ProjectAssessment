@@ -1,0 +1,144 @@
+key: life_sciences
+name: Life Sciences
+kind: industry
+version: 1.0.0
+description: Pharmaceutical, biotech and medtech organisations across drug discovery, clinical development, GxP manufacturing, pharmacovigilance, regulatory affairs and commercial operations.
+aliases: [pharma, pharmaceutical, biotech, biopharma, life science, medtech, cro]
+sort_order: 35
+sub_domains:
+  - key: drug_discovery
+    name: Drug Discovery and Research
+    description: Target identification, screening, lead optimisation, omics and preclinical research.
+    keywords: [drug discovery, target identification, high-throughput screening, lead optimization, preclinical, omics, genomics, assay, eln, compound library, molecule]
+  - key: clinical_trials
+    name: Clinical Trials and Development
+    description: Study design, site and patient recruitment, data management, biostatistics and trial operations.
+    keywords: [clinical trial, clinical study, protocol, edc, ctms, site management, patient recruitment, cdisc, sdtm, adam, biostatistics, cro, investigator]
+  - key: manufacturing
+    name: GxP Manufacturing and Supply
+    description: Drug substance and product manufacturing, batch records, quality control and supply chain.
+    keywords: [gmp manufacturing, batch record, ebr, mes, quality control, lims, deviation, capa, batch release, serialization, cold chain, cmo]
+  - key: quality_management
+    name: Quality Management
+    description: QMS processes including deviations, CAPA, change control, audits and document control.
+    keywords: [qms, quality management system, deviation, capa, change control, audit, sop, document control, veeva vault quality]
+  - key: pharmacovigilance
+    name: Pharmacovigilance and Drug Safety
+    description: Adverse event intake, case processing, signal detection and safety reporting.
+    keywords: [pharmacovigilance, drug safety, adverse event, icsr, signal detection, argus, arisg, medwatch, eudravigilance, psur, pbrer]
+  - key: regulatory
+    name: Regulatory Affairs
+    description: Submissions, registrations, labelling and regulatory information management.
+    keywords: [regulatory affairs, regulatory submission, ectd, ind, nda, bla, maa, rim, labeling, idmp, health authority]
+  - key: commercial_analytics
+    name: Commercial Analytics
+    description: Sales force effectiveness, market access, HCP engagement, patient services and brand analytics.
+    keywords: [commercial analytics, hcp, sales force effectiveness, market access, brand analytics, iqvia, rx data, territory alignment, omnichannel engagement, patient services, key account]
+  - key: medical_affairs
+    name: Medical Affairs
+    description: Medical information, MSL engagement, real-world evidence and publications.
+    keywords: [medical affairs, msl, medical science liaison, medical information, real-world evidence, rwe, real-world data, publications, heor]
+  - key: medtech
+    name: Medical Technology
+    description: Medical device design, manufacturing, post-market surveillance and UDI.
+    keywords: [medical device manufacturer, medtech, design history file, udi, post-market surveillance, iso 13485, complaint handling]
+  - key: biotech_cgt
+    name: Biotech and Cell and Gene Therapy
+    description: Biologics, cell and gene therapies with chain of identity and vein-to-vein logistics.
+    keywords: [biologics, cell therapy, gene therapy, chain of identity, chain of custody, vein-to-vein, car-t, bioprocess]
+detection:
+  keywords:
+    pharma: 4
+    pharmaceutical: 4
+    biotech: 3.5
+    gxp: 4
+    gmp: 3.5
+    21 cfr part 11: 5
+    computer system validation: 4
+    csv: 1
+    csa: 1.5
+    clinical trial: 4
+    pharmacovigilance: 5
+    adverse event: 3
+    cdisc: 4
+    veeva: 3.5
+    ectd: 4
+    batch record: 3
+    lims: 3
+    drug: 2.5
+    molecule: 2
+    hcp: 2.5
+    fda: 2
+    ema: 2.5
+    alcoa: 4
+    therapy: 1
+business_processes:
+  - "Target discovery and screening"
+  - "Preclinical research and lab data management"
+  - "Clinical trial design and start-up"
+  - "Patient recruitment and site management"
+  - "Clinical data management and biostatistics"
+  - "Regulatory submission and lifecycle management"
+  - "Batch manufacturing and release"
+  - "Quality events (deviation, CAPA, change control)"
+  - "Serialization and distribution"
+  - "Adverse event intake and case processing"
+  - "Signal detection and safety reporting"
+  - "HCP engagement and sales operations"
+  - "Market access and pricing"
+  - "Real-world evidence generation"
+capabilities:
+  - "Clinical data platform and SCE"
+  - "Trial feasibility and site selection analytics"
+  - "Validated GxP data platform"
+  - "Batch genealogy and quality analytics"
+  - "Safety signal detection"
+  - "Regulatory information management"
+  - "HCP 360 and next best action"
+  - "Commercial forecasting and incentive compensation"
+  - "Real-world evidence analytics"
+  - "Scientific knowledge search"
+source_systems:
+  - "ELN and LIMS (Benchling, Revvity Signals, LabWare, LabVantage, STARLIMS)"
+  - "EDC (Medidata Rave, Veeva Vault EDC, Oracle InForm)"
+  - "CTMS and eTMF (Veeva Vault Clinical, Oracle Siebel CTMS)"
+  - "IRT / RTSM and ePRO / eCOA platforms"
+  - "Statistical computing environment (SAS, R, Posit)"
+  - "MES and eBR (Rockwell PharmaSuite, Siemens Opcenter, Körber Werum PAS-X)"
+  - "QMS (Veeva Vault QMS, MasterControl, TrackWise)"
+  - "Safety databases (Oracle Argus, ArisGlobal LifeSphere, Veeva Vault Safety)"
+  - "RIM (Veeva Vault RIM, IQVIA RIM Smart)"
+  - "ERP (SAP S/4HANA)"
+  - "Serialization (SAP ATTP, TraceLink, OPTEL)"
+  - "CRM (Veeva CRM, Salesforce Life Sciences Cloud, IQVIA OCE)"
+  - "Third-party data (IQVIA, Symphony Health, Komodo Health, claims and EHR RWD)"
+data_entities:
+  - "Compound / molecule"
+  - "Assay result"
+  - "Study / protocol"
+  - "Site"
+  - "Subject"
+  - "Visit"
+  - "Adverse event"
+  - "Case (ICSR)"
+  - "Batch / lot"
+  - "Material"
+  - "Deviation"
+  - "CAPA"
+  - "Product / SKU"
+  - "Submission"
+  - "HCP"
+  - "HCO"
+  - "Territory"
+  - "Prescription"
+integration_patterns:
+  - "CDISC standards (ODM, SDTM, ADaM, Define-XML)"
+  - "E2B(R3) ICSR exchange"
+  - "eCTD submission packaging"
+  - "ISA-95 / OPC UA for manufacturing systems"
+  - "Validated batch interfaces with audit trail"
+  - "Vendor data feeds (IQVIA, specialty pharmacy, hub)"
+  - "IDMP / SPOR master data exchange"
+  - "Veeva / Salesforce APIs"
+related_technologies: [databricks, snowflake, aws, azure, data_governance, machine_learning, generative_ai, salesforce_integration, sap_integration]
+related_project_types: [customer_360, regulatory_reporting, document_intelligence, genai_assistant, demand_forecasting, data_platform_modernization]

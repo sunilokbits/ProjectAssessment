@@ -1,0 +1,39 @@
+# Data Warehouse technology pack - architecture_patterns
+- id: cloud-data-warehouse
+  name: Cloud data warehouse
+  description: Staging, integration and presentation layers in a cloud warehouse serving BI and analytics.
+  use_cases: [BI modernization, Regulatory reporting]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, operations]
+  components:
+    - {id: elt-ingest, name: ELT ingestion into staging, layer: ingestion, core: true}
+    - {id: staging, name: Staging layer, layer: storage, core: true}
+    - id: integration-layer
+      name: Integration layer (Data Vault / 3NF)
+      layer: processing
+      when:
+        any_of:
+          - answers:
+              data_warehouse:modelling-approach: [data_vault, normalised]
+          - keywords_any: [data vault, inmon]
+    - {id: marts, name: Dimensional marts (star schemas), layer: serving, core: true}
+    - id: semantic-model
+      name: BI semantic model
+      layer: consumption
+      when:
+        technologies_any: [business_intelligence, power_bi]
+    - id: reconciliation-controls
+      name: Reconciliation and control framework
+      layer: governance
+      when:
+        any_of:
+          - technologies_any: [data_quality]
+          - project_types_any: [regulatory_reporting]
+          - keywords_any: [reconciliation, audit]
+    - id: row-security
+      name: Row/column-level security policies
+      layer: governance
+      when:
+        answers:
+          data_warehouse:dw-access-model: ['yes']
+    - {id: orchestration, name: Orchestration and scheduling, layer: operations, core: true}
+  considerations: [Agree grain and conformed dimensions before building marts., 'Keep business logic in governed, tested models.']

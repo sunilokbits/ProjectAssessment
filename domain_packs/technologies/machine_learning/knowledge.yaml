@@ -1,0 +1,18 @@
+security_considerations:
+- id: ml-training-data-access
+  text: Restrict access to training data containing personal data; log model and dataset lineage.
+  category: security
+ai_risks:
+- id: ml-ai-bias
+  text: Unintended bias against protected groups.
+  category: ai
+- id: ml-ai-opacity
+  text: Opaque models may not satisfy explainability obligations.
+  category: ai
+dependencies:
+- id: ml-curated-data
+  text: Curated historical data with point-in-time correctness.
+  category: data
+- id: ml-mlops
+  text: MLOps capability for deployment and monitoring.
+  category: operations

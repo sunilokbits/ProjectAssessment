@@ -1,0 +1,9 @@
+# Azure technology pack - knowledge
+security_considerations:
+  - {id: azure-mi, text: Managed identities for service-to-service authentication; no secrets in code., category: security}
+  - {id: azure-cmk, text: Customer-managed keys in Key Vault where regulation requires., category: security}
+  - {id: azure-defender, text: Defender for Cloud plans enabled for data services and storage., category: security}
+dependencies:
+  - {id: azure-agreement, text: Azure commercial agreement / billing account in place., category: commercial}
+  - {id: azure-connectivity, text: Hybrid connectivity from on-premises to Azure (ExpressRoute or site-to-site VPN)., category: network}
+  - {id: azure-idp, text: Corporate identity provider federation configured., category: identity}

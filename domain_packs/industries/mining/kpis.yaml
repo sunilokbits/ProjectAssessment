@@ -1,0 +1,10 @@
+- {id: tonnes-moved, name: Total material moved, description: Ore and waste tonnes moved per period., unit: tonnes, direction: higher_is_better, category: production, sub_domains: [extraction_operations]}
+- {id: mill-throughput, name: Mill throughput, description: Tonnes processed per operating hour., unit: t/h, direction: higher_is_better, category: production, sub_domains: [processing]}
+- {id: recovery-rate, name: Metallurgical recovery, description: Share of contained metal recovered to product., unit: "%", direction: higher_is_better, category: production, sub_domains: [processing]}
+- {id: equipment-oee, name: Equipment OEE, description: "Overall equipment effectiveness (availability x utilisation x performance).", unit: "%", direction: higher_is_better, category: operational, sub_domains: [fleet_equipment, processing]}
+- {id: mtbf, name: Mean time between failures, description: Average operating time between equipment failures., unit: hours, direction: higher_is_better, category: reliability, sub_domains: [fleet_equipment, processing]}
+- {id: cost-per-tonne, name: Cost per tonne, description: Operating cost per tonne mined or processed., unit: currency/t, direction: lower_is_better, category: cost}
+- {id: trifr, name: TRIFR, description: Total recordable injury frequency rate per million hours worked., unit: rate, direction: lower_is_better, category: safety}
+- {id: reconciliation-factor, name: Mine-to-mill reconciliation factor, description: Ratio of actual to predicted tonnes or grade across the value chain., unit: ratio, direction: target_range, category: data, sub_domains: [extraction_operations, processing, exploration]}
+- {id: water-reuse, name: Water reuse rate, description: Share of process water recycled., unit: "%", direction: higher_is_better, category: environmental, sub_domains: [environmental, processing]}
+- {id: emissions-intensity, name: Emissions intensity, description: Greenhouse gas emissions per tonne of product., unit: tCO2e/t, direction: lower_is_better, category: environmental}

@@ -1,0 +1,19 @@
+- {term: Subscriber, definition: Person or organisation subscribing to telecom services, synonyms: [customer, user, line, connection, account holder], entity_type: entity, category: data}
+- {term: SIM, definition: Subscriber identity module identifying a subscription on the network, synonyms: [sim card, esim, iccid, imsi, usim], entity_type: entity, category: data}
+- {term: MSISDN, definition: Mobile phone number of a subscription, synonyms: [mobile number, phone number, msisdn], entity_type: entity, category: data}
+- {term: Network, definition: "Infrastructure delivering connectivity (RAN, core, transport, fixed access)", synonyms: [network infrastructure, ran, core, access network], entity_type: concept, category: integration}
+- {term: CDR, definition: Call detail record capturing a usage event, synonyms: [call detail record, xdr, edr, usage record, udr], entity_type: entity, category: data}
+- {term: Billing, definition: Process of rating usage and producing invoices, synonyms: [invoicing, charging, rating, bill run], entity_type: process, category: process}
+- {term: Churn, definition: Subscribers discontinuing service, synonyms: [attrition, disconnection, port-out, deactivation], entity_type: event, category: business}
+- {term: ARPU, definition: Average revenue per user, synonyms: [average revenue per user, arpa, average revenue per account], entity_type: metric, category: reporting}
+- {term: CPNI, definition: Customer proprietary network information, synonyms: [customer proprietary network information, traffic data, call records], entity_type: concept, category: compliance}
+- {term: OSS, definition: Operations support systems for network and service management, synonyms: [operations support system, service assurance, network inventory], entity_type: system, category: integration, sub_domains: [oss_bss, network_operations]}
+- {term: BSS, definition: "Business support systems for customer, order, product and billing", synonyms: [business support system, crm, billing system], entity_type: system, category: integration, sub_domains: [oss_bss, billing]}
+- {term: Mediation, definition: Collection and normalisation of usage records from network elements, synonyms: [usage mediation, mediation platform], entity_type: process, category: integration, sub_domains: [billing, revenue_assurance]}
+- {term: Cell Site, definition: Radio site providing mobile coverage, synonyms: [cell, base station, enodeb, gnodeb, tower, site], entity_type: entity, category: data, sub_domains: [network_operations, five_g]}
+- {term: Network Slice, definition: Logical end-to-end network partition on 5G, synonyms: [slice, network slicing], entity_type: concept, category: integration, sub_domains: [five_g]}
+- {term: Number Portability, definition: Moving a number from one operator to another, synonyms: [mnp, porting, port-in, port-out], entity_type: process, category: process, sub_domains: [churn, oss_bss]}
+- {term: Revenue Assurance, definition: Controls ensuring all delivered services are billed correctly, synonyms: [ra, leakage detection], entity_type: process, category: process, sub_domains: [revenue_assurance, billing]}
+- {term: Roaming, definition: Use of a visited network by a subscriber, synonyms: [international roaming, tap file, rap file], entity_type: concept, category: process, sub_domains: [billing, revenue_assurance]}
+- {term: IMEI, definition: Unique identifier of a mobile device, synonyms: [device id, handset id], entity_type: entity, category: data}
+- {term: Trouble Ticket, definition: Record of a customer or network fault, synonyms: [ticket, incident, fault ticket], entity_type: entity, category: process, sub_domains: [network_operations, fixed_broadband, customer_analytics]}

@@ -1,0 +1,31 @@
+key: sap_integration
+name: SAP Integration
+kind: technology
+version: 1.0.0
+description: Extracting, integrating and modernising data and processes around SAP ECC, S/4HANA and BW.
+aliases:
+- Integration
+sort_order: 81
+detection:
+  keywords:
+    sap: 3
+    s/4hana: 5
+    s4hana: 5
+    sap ecc: 5
+    sap bw: 4
+    bw/4hana: 4
+    sap datasphere: 5
+    sap btp: 4
+    sap integration suite: 5
+    odp: 2.5
+    slt: 3
+    idoc: 4
+    bapi: 4
+    cds views: 3
+    abap: 3
+related_technologies:
+- data_platform
+- api_integration
+- master_data_management
+- data_migration
+- databricks

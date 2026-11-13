@@ -1,0 +1,35 @@
+- id: c360-consumers
+  text: Who will consume the Customer 360 (service agents, marketing, risk, analytics, digital channels) and for which decisions?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: c360-identity-resolution
+  text: How will customers be matched across systems (deterministic keys, probabilistic matching, survivorship rules)?
+  category: data
+  dimension: data_quality
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not defined, score: 0}
+    - {value: common_key, label: Common customer key exists across systems, score: 1}
+    - {value: rules_defined, label: Matching and survivorship rules defined, score: 0.8}
+    - {value: needs_mdm, label: Requires new MDM / entity-resolution capability, score: 0.4}
+  critical: true
+- id: c360-attributes
+  text: Has the list of Customer 360 attributes and their source systems been agreed?
+  category: data
+  dimension: data_availability
+- id: c360-latency
+  text: What freshness does the Customer 360 need (daily, hourly, real-time for channels)?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+    - {value: daily, label: Daily batch, score: 1}
+    - {value: intraday, label: Intraday / hourly, score: 1}
+    - {value: realtime, label: Real-time for operational channels, score: 1}
+    - {value: unknown, label: Not defined}
+- id: c360-consent
+  text: Will consent and marketing preferences be part of the profile and enforced downstream?
+  category: privacy
+  dimension: privacy_protection

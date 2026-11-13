@@ -1,0 +1,64 @@
+# AWS technology pack - architecture_patterns
+- id: aws-data-landing-zone
+  name: AWS landing zone for data and analytics workloads
+  description: Governed AWS foundation (identity, network hub, policies, logging) hosting data and analytics services.
+  use_cases: [Cloud data migration, Data platform modernization]
+  layer_order: [identity, network, compute, storage, data, integration, security, operations]
+  components:
+    - {id: organizations, name: AWS Organizations / Control Tower accounts, layer: identity, core: true}
+    - {id: identity-center, name: IAM Identity Center, layer: identity, core: true}
+    - {id: transit-gateway, name: Transit Gateway / shared VPCs, layer: network, core: true}
+    - id: direct-connect
+      name: Direct Connect / site-to-site VPN
+      layer: network
+      when:
+        any_of:
+          - keywords_any: [on-premises, on-prem, hybrid, data center]
+          - technologies_any: [cloud_migration, data_migration]
+    - {id: vpc-endpoints, name: VPC endpoints / PrivateLink, layer: network, core: true}
+    - id: s3
+      name: Amazon S3 data lake
+      layer: storage
+      when: &id001
+        technologies_any: [data_platform, data_warehouse, lakehouse, data_lake, data_engineering]
+    - id: glue
+      name: AWS Glue (catalog / ETL)
+      layer: integration
+      when: *id001
+    - id: redshift
+      name: Amazon Redshift
+      layer: data
+      when:
+        technologies_any: [data_warehouse]
+    - id: databricks
+      name: Databricks on AWS
+      layer: data
+      when:
+        technologies_any: [databricks]
+    - id: snowflake
+      name: Snowflake on AWS
+      layer: data
+      when:
+        technologies_any: [snowflake]
+    - id: kinesis
+      name: Kinesis / Amazon MSK
+      layer: integration
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis, pub/sub]
+    - id: bedrock
+      name: Amazon Bedrock / SageMaker
+      layer: data
+      when:
+        technologies_any: [generative_ai, rag, agentic_ai, ai_agents, machine_learning]
+    - {id: kms, name: AWS KMS / Secrets Manager, layer: security, core: true}
+    - {id: security-hub, name: Security Hub / GuardDuty / CloudTrail, layer: security, core: true}
+    - {id: cloudwatch, name: CloudWatch monitoring, layer: operations, core: true}
+    - id: aws-dr
+      name: Multi-AZ / cross-region DR (AWS Elastic Disaster Recovery)
+      layer: operations
+      when:
+        keywords_any: [disaster recovery, rto, rpo, high availability, failover]
+  considerations: ['Separate platform (connectivity, identity, management) from workload environments.', 'Apply preventive guardrails as policy,
+      not documentation.']

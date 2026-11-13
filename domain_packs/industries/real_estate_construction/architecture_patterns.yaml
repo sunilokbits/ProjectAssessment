@@ -1,0 +1,18 @@
+- id: property-project-data-platform
+  name: Property, project and building data platform
+  description: Integrates property management, lease, construction and building telemetry data around a governed property master.
+  use_cases: [Portfolio analytics, Lease intelligence, Construction project controls, Smart building optimisation]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: re-sources, name: "Property management, lease, construction and FM sources", layer: sources, core: true}
+    - {id: property-master, name: Property and unit master with source crosswalks, layer: governance, core: true}
+    - {id: lease-doc-ai, name: Lease document abstraction pipeline, layer: processing, when: {any_of: [{project_types_any: [document_intelligence]}, {answers: {lease-data-source: [documents_only, partial]}}]}}
+    - {id: project-controls-model, name: "Project controls model (cost, schedule, change)", layer: processing, when: {sub_domains_any: [construction]}}
+    - {id: bms-gateway, name: Secured BMS / IoT edge gateway, layer: ingestion, when: {sub_domains_any: [smart_buildings]}}
+    - {id: telemetry-store, name: Building telemetry time-series store, layer: storage, when: {any_of: [{sub_domains_any: [smart_buildings]}, {technologies_any: [iot]}]}}
+    - {id: digital-twin, name: BIM-linked building digital twin, layer: serving, when: {keywords_any: [digital twin, bim, ifc]}}
+    - {id: tenant-pii-controls, name: Tenant personal data protection, layer: security, when: {data_classifications_any: [pii, financial]}}
+    - {id: portfolio-dashboards, name: Portfolio and investor dashboards, layer: consumption, core: true}
+  considerations:
+    - Keep property management and ERP as books of record for rent and cost.
+    - Treat building controls as OT; no inbound control paths from analytics.

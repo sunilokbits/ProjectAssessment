@@ -1,0 +1,19 @@
+- id: aa-value-backlog
+  title: Run analytics from a value-ranked use-case backlog
+  text: Rank use cases by value and feasibility and fund the top items with named decision owners.
+  category: business
+  priority: high
+- id: aa-open-platform
+  title: Standardise on an open notebook-based analytics platform
+  text: Consolidate analytics onto a governed Python/SQL platform with shared data access.
+  category: technology
+  priority: medium
+  decision_key: analytics_tooling
+  decision_option: open_platform
+- id: aa-retain-legacy
+  title: Retain the legacy statistical platform for existing models
+  text: Keep validated legacy models where conversion risk outweighs benefit; build new work on the open platform.
+  category: technology
+  priority: low
+  decision_key: analytics_tooling
+  decision_option: retain_legacy

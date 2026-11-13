@@ -1,0 +1,80 @@
+- id: genai-application
+  name: Enterprise GenAI application
+  description: Application layer orchestrates prompts against managed foundation models with guardrails, grounding, evaluation and observability.
+  use_cases:
+  - Copilots
+  - Summarisation
+  - Document drafting
+  layer_order:
+  - sources
+  - ingestion
+  - integration
+  - storage
+  - processing
+  - ai
+  - serving
+  - consumption
+  - governance
+  - operations
+  components:
+  - id: orchestrator
+    name: Prompt orchestration / application service
+    layer: processing
+    core: true
+  - id: model-gateway
+    name: Model gateway (routing, quotas, logging)
+    layer: ai
+    core: true
+  - id: guardrails
+    name: Input/output guardrails and content safety
+    layer: governance
+    core: true
+  - id: eval-harness
+    name: Evaluation harness and golden datasets
+    layer: operations
+    core: true
+  - id: retrieval
+    name: Retrieval / vector index for grounding
+    layer: ai
+    when:
+      technologies_any:
+      - rag
+      - vector_search
+  - id: hitl-queue
+    name: Human review and approval queue
+    layer: consumption
+    when:
+      keywords_any:
+      - approval
+      - human review
+      - customer-facing
+  - id: azure-openai
+    name: Azure OpenAI / Azure AI Foundry
+    layer: ai
+    when:
+      technologies_any:
+      - azure
+  - id: bedrock
+    name: Amazon Bedrock
+    layer: ai
+    when:
+      technologies_any:
+      - aws
+  - id: vertex
+    name: Vertex AI
+    layer: ai
+    when:
+      technologies_any:
+      - gcp
+  - id: pii-redaction
+    name: PII detection and redaction
+    layer: governance
+    when:
+      data_classifications_any:
+      - pii
+      - spi
+      - phi
+      - financial
+  considerations:
+  - Gate every release on evaluation results.
+  - Treat retrieved content as untrusted input.

@@ -1,0 +1,18 @@
+- id: lem-jobs-converted
+  name: Jobs converted and validated
+  description: Share of in-scope ETL jobs converted and passing reconciliation.
+  unit: '%'
+  direction: higher_is_better
+  category: delivery
+- id: lem-automation-rate
+  name: Automated conversion rate
+  description: Share of code converted automatically without manual rework.
+  unit: '%'
+  direction: higher_is_better
+  category: delivery
+- id: lem-run-cost
+  name: Pipeline run cost
+  description: Monthly cost of running migrated pipelines.
+  unit: currency
+  direction: lower_is_better
+  category: financial

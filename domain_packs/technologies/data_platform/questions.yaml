@@ -1,0 +1,38 @@
+# Data Platform technology pack - questions
+- id: platform-operating-model
+  text: Is there a defined platform operating model (central platform team, domain teams, responsibilities)?
+  category: delivery
+  dimension: data_platform_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: Not defined, score: 0.2}
+    - {value: central, label: Centralised team only, score: 0.6}
+    - {value: federated, label: Platform team plus domain teams (federated / mesh), score: 1}
+  weight: 1.5
+- id: platform-choice
+  text: Has the core platform technology been selected?
+  category: technology
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+    - {value: not_selected, label: Not yet selected, score: 0.3}
+    - {value: shortlist, label: Shortlisted, score: 0.6}
+    - {value: selected, label: Selected and approved, score: 1}
+- {id: data-products, text: 'Are data products (owned, documented, versioned datasets) part of the target design?', category: architecture, dimension: data_platform_readiness}
+- {id: domain-onboarding, text: 'Is there a repeatable process to onboard new domains / use cases onto the platform?', category: delivery, dimension: data_platform_readiness}
+- {id: landing-zone, text: 'Is a cloud landing zone (networking, identity, policies) available for the platform?', category: technology, dimension: data_platform_readiness,
+  critical: true}
+- {id: platform-finops, text: 'Are cost allocation (tagging / chargeback) and budget controls defined for platform consumers?', category: operations,
+  dimension: data_platform_readiness}
+- id: self-service-scope
+  text: Which self-service capabilities are expected?
+  category: business
+  dimension: architecture_fit
+  answer_type: multi_choice
+  options:
+    - {value: bi, label: Self-service BI}
+    - {value: sql, label: Ad-hoc SQL exploration}
+    - {value: data_science, label: Data science workspaces}
+    - {value: ingestion, label: Self-service ingestion}
+- {id: platform-skills, text: 'How experienced is the client team with operating an enterprise data platform (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

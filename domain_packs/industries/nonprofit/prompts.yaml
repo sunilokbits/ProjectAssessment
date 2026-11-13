@@ -1,0 +1,7 @@
+system_addition: |
+  Use nonprofit terminology (supporter, gift, pledge, appeal, fund, grant, beneficiary, outcome indicator, stewardship).
+  Emphasise consent and fundraising regulation, protection of vulnerable beneficiaries, restricted fund accountability,
+  impact measurement and right-sized solutions that small teams can sustain within overhead budgets.
+stage_additions:
+  discovery: Ask about donor CRM, giving platforms, fund accounting, programme data collection, funder reporting and budget for running costs.
+extraction_hints: Map "constituent", "donor" and "member" to Supporter; map "donation" to Gift; map "participant" and "service user" to Beneficiary.

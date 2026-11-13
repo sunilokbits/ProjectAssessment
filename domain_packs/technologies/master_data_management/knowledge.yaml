@@ -1,0 +1,12 @@
+security_considerations:
+- id: mdm-pii
+  text: Customer master data is personal data; apply access controls and audit.
+  category: security
+dependencies:
+- id: mdm-governance
+  text: Governance model to own match/survivorship decisions.
+  category: governance
+ai_opportunities:
+- id: mdm-ml-matching
+  text: ML-assisted matching to reduce steward workload.
+  category: ai

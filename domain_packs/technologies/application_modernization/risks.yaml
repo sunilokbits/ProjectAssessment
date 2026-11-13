@@ -1,0 +1,29 @@
+# Application Modernization technology pack - risks
+- id: am-big-bang-rewrite
+  title: Big-bang rewrite overruns and loses business logic
+  category: delivery
+  likelihood: 4
+  impact: 4
+  mitigation: Prefer incremental strangler approach; extract business rules first; release in slices.
+  indicators: [rewrite, big bang, greenfield replacement]
+- id: am-no-tests
+  title: Lack of regression tests makes refactoring unsafe
+  category: quality
+  likelihood: 4
+  impact: 3
+  mitigation: Characterisation tests before change; automate regression suites.
+  indicators: [manual testing, no test]
+- id: am-legacy-skills
+  title: Scarce legacy skills (COBOL, old frameworks)
+  category: delivery
+  likelihood: 3
+  impact: 3
+  mitigation: Retain SMEs, document rules, consider automated code analysis tools.
+  indicators: [cobol, mainframe, retiring staff]
+- id: am-distributed-complexity
+  title: Microservices introduce distributed-system complexity
+  category: architecture
+  likelihood: 3
+  impact: 3
+  mitigation: Right-size service boundaries (domain-driven design); invest in observability and platform engineering.
+  indicators: [microservices, service mesh]

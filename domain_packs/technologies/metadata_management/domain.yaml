@@ -1,0 +1,25 @@
+key: metadata_management
+name: Metadata Management
+kind: technology
+version: 1.0.0
+description: Capture, integration and use of technical, business and operational metadata including lineage.
+aliases:
+- Data Management
+sort_order: 73
+detection:
+  keywords:
+    metadata management: 5
+    data lineage: 4
+    lineage: 2.5
+    business glossary: 4
+    technical metadata: 4
+    openlineage: 4
+    active metadata: 4
+    metadata: 1.5
+    impact analysis: 2.5
+    data dictionary: 3
+related_technologies:
+- data_catalog
+- data_governance
+- data_quality
+- dataops

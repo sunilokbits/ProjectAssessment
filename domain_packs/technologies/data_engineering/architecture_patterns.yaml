@@ -1,0 +1,32 @@
+# Data Engineering technology pack - architecture_patterns
+- id: modern-data-pipeline
+  name: Modern data pipeline
+  description: Layered ingestion, transformation and orchestration pipeline with testing and observability.
+  use_cases: [Data platform build, Legacy ETL migration]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, operations]
+  components:
+    - {id: batch-ingest, name: Batch / CDC ingestion, layer: ingestion, core: true}
+    - id: stream-ingest
+      name: Streaming ingestion (Kafka / Event Hubs / Kinesis)
+      layer: ingestion
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis]
+    - {id: raw-zone, name: Raw landing zone, layer: storage, core: true}
+    - {id: transform, name: Transformation layer (SQL / dbt / Spark), layer: processing, core: true}
+    - {id: orchestrator, name: Orchestrator (Airflow / Data Factory / Jobs), layer: operations, core: true}
+    - id: dq-tests
+      name: Data quality tests and contracts
+      layer: governance
+      when:
+        any_of:
+          - technologies_any: [data_quality]
+          - keywords_any: [data quality, data validation]
+    - id: catalog-lineage
+      name: Catalog and lineage
+      layer: governance
+      when:
+        technologies_any: [data_governance, data_catalog, metadata_management]
+    - {id: observability, name: Pipeline observability and alerting, layer: operations, core: true}
+  considerations: ['Design for idempotent, re-runnable pipelines.', Separate ingestion from business transformation.]

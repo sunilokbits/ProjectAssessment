@@ -1,0 +1,56 @@
+- id: agents-scope
+  text: Are each agent's tasks, users and out-of-scope topics clearly defined?
+  category: business
+  dimension: ai_agents_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: agents-platform
+  text: Which agent platform is preferred?
+  category: technology
+  dimension: ai_agents_readiness
+  answer_type: single_choice
+  options:
+  - value: saas
+    label: SaaS agent builder (e.g. Copilot Studio, Agentforce)
+    score: 1
+  - value: cloud
+    label: Cloud AI platform agents (Bedrock, Vertex, Agent Bricks)
+    score: 1
+  - value: custom
+    label: Custom-built with open frameworks
+    score: 1
+  - value: undecided
+    label: Undecided
+    score: 0.3
+- id: agents-knowledge
+  text: Are the knowledge sources the agent answers from curated and owned?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+- id: agents-escalation
+  text: Is there a defined human hand-off / escalation path when the agent cannot help?
+  category: operations
+  dimension: ai_agents_readiness
+  answer_type: yes_no
+- id: agents-channels
+  text: Are target channels (web, Teams, contact centre, mobile) and their integration APIs known?
+  category: integration
+  dimension: integration_readiness
+  answer_type: yes_no
+- id: agents-eval
+  text: Will agent quality be measured with test conversations and production feedback?
+  category: quality
+  dimension: ai_agents_readiness
+  answer_type: yes_no
+- id: agents-identity
+  text: Does the agent act with the end user's permissions (on-behalf-of) where it accesses data?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+- id: agents-skills
+  text: How experienced is the client team with configuring and running AI agents (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

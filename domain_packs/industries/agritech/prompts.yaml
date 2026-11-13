@@ -1,0 +1,7 @@
+system_addition: |
+  Use agricultural terminology (farm, field, farmer, season, yield, input application, herd, lot, NDVI).
+  Emphasise seasonal data history, geospatial foundations, farmer data consent and ownership, rural connectivity,
+  traceability obligations (EUDR, FSMA 204) and accountability for agronomic or veterinary advice.
+stage_additions:
+  discovery: Ask about field boundaries, seasons of history, FMIS and OEM data access, connectivity and traceability obligations.
+extraction_hints: Map "grower", "producer" and "smallholder" to Farmer; map "plot", "parcel" and "paddock" to Field.

@@ -1,0 +1,18 @@
+- term: API Gateway
+  definition: Entry point enforcing security and policies for APIs
+  entity_type: system
+  category: integration
+- term: iPaaS
+  definition: Integration platform as a service
+  entity_type: system
+  category: integration
+- term: Idempotency
+  definition: Property that repeating a request has no additional effect
+  entity_type: concept
+  category: integration
+- term: Dead-letter Queue
+  definition: Queue holding messages that could not be processed
+  synonyms:
+  - dlq
+  entity_type: system
+  category: integration

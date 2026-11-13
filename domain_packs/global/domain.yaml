@@ -1,0 +1,6 @@
+key: global
+name: Global (all projects)
+kind: global
+version: 1.0.0
+description: Layer-1 questions, risks, compliance references and the comparable scoring dimensions applied to every assessment.
+sort_order: 0

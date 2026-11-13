@@ -1,0 +1,6 @@
+dimensions:
+- key: llmops_readiness
+  name: LLMOps Readiness
+  group: technology
+  weight: 1.0
+  description: Prompt and model versioning, automated evaluation, tracing, cost controls and safety monitoring for LLM apps.

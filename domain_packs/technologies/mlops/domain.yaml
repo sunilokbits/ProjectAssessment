@@ -1,0 +1,28 @@
+key: mlops
+name: MLOps
+kind: technology
+version: 1.0.0
+description: Practices and platforms to deploy, monitor, govern and retrain machine-learning models reliably.
+aliases:
+- AI
+sort_order: 67
+detection:
+  keywords:
+    mlops: 5
+    mlflow: 4
+    model registry: 4
+    sagemaker: 3
+    azure machine learning: 3
+    vertex ai pipelines: 3
+    kubeflow: 4
+    model monitoring: 3
+    feature store: 3
+    model deployment: 2.5
+    retraining: 2
+    model drift: 2.5
+related_technologies:
+- machine_learning
+- devops
+- dataops
+- databricks
+- llmops

@@ -1,0 +1,5 @@
+- {id: tenant-id-everywhere, title: Make tenant id mandatory end-to-end, text: "Propagate tenant id through every table, feature and vector index and enforce row-level security.", category: security, priority: high}
+- {id: governed-metric-layer, title: Build a governed SaaS metric layer, text: "Define ARR, NRR, churn and active usage once and reconcile to finance.", category: data, priority: high, sub_domains: [saas, enterprise_software, developer_platforms, cybersecurity]}
+- {id: contract-review, title: Review customer contracts before AI use of customer data, text: "Confirm MSA/DPA permissions and offer opt-outs for model training.", category: privacy, priority: high, when: {technologies_any: [generative_ai, machine_learning, agentic_ai]}}
+- {id: event-contracts, title: Introduce telemetry event contracts, text: "Govern event taxonomy with a schema registry and CI validation.", category: data, priority: medium}
+- {id: attestation-alignment, title: Include the platform in SOC 2 / ISO scope, category: compliance, priority: medium, text: "Map platform controls to the existing control framework before the next audit window."}

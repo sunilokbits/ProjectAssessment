@@ -1,0 +1,9 @@
+# Microsoft Fabric technology pack - knowledge
+security_considerations:
+  - {id: fabric-tenant-hardening, text: 'Harden tenant settings (export, external sharing, service principal access).', category: security}
+  - {id: fabric-labels, text: Sensitivity labels and DLP via Microsoft Purview., category: security}
+  - {id: fabric-private-link, text: Private links / managed private endpoints for restricted data sources., category: security}
+dependencies:
+  - {id: entra-id, text: Microsoft Entra ID groups for workspace roles., category: identity}
+  - {id: fabric-capacity-purchase, text: Fabric capacity procured and assigned to workspaces., category: commercial}
+  - {id: gateway, text: On-premises data gateway for on-prem sources., category: integration}

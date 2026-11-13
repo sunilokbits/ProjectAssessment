@@ -1,0 +1,28 @@
+- id: rr-late-submission
+  title: Missed or late regulatory submissions
+  category: compliance
+  likelihood: 3
+  impact: 5
+  mitigation: Parallel runs, run-books and contingency plans for each deadline.
+  indicators:
+  - deadline
+  - late submission
+- id: rr-manual-adjustments
+  title: Heavy manual adjustments undermine auditability
+  category: compliance
+  likelihood: 4
+  impact: 4
+  mitigation: Capture adjustments in a controlled workflow with audit trail.
+  indicators:
+  - manual adjustments
+  - spreadsheet
+  - eud
+- id: rr-regulatory-change
+  title: Regulatory change outpaces implementation
+  category: compliance
+  likelihood: 3
+  impact: 4
+  mitigation: Regulatory change management and configurable rules.
+  indicators:
+  - new regulation
+  - taxonomy change

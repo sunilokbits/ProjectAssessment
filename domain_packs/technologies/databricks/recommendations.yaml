@@ -1,0 +1,3 @@
+- {id: uc-first, title: Enable Unity Catalog from day one, category: governance, priority: high}
+- {id: dabs, title: Use Declarative Automation Bundles for CI/CD, text: Deploy jobs and pipelines as code through bundles with environment-specific targets., category: operations, priority: medium}
+- {id: serverless-default, title: Default to serverless compute, text: Use serverless jobs and SQL warehouses unless a workload needs classic compute., category: technology, priority: medium, decision_key: compute_model, decision_option: serverless}

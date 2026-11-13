@@ -1,0 +1,7 @@
+# AWS technology pack - recommendations
+- {id: aws-landing-zone-first, title: Establish a AWS landing zone first, text: 'Use AWS Control Tower to set up identity, networking, policies
+    and logging before workloads.', category: architecture, priority: high}
+- {id: aws-private-networking, title: Default to private networking, text: Use VPC endpoints and AWS PrivateLink for PaaS data services and disable
+    public endpoints., category: security, priority: high}
+- {id: aws-finops, title: Embed FinOps from day one, text: 'Enforce tagging, budgets and regular rightsizing / commitment reviews.', category: operations,
+  priority: medium}

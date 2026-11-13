@@ -1,0 +1,18 @@
+- id: secure-firm-knowledge-platform
+  name: Secure firm intelligence and knowledge platform
+  description: Combines engagement financials with a permission-aware knowledge index so analytics and AI respect ethical walls and client confidentiality.
+  use_cases: [Utilisation and profitability analytics, Knowledge search, Legal / audit GenAI assistants, Client 360]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: firm-sources, name: "PSA / practice management, CRM, HR and DMS sources", layer: sources, core: true}
+    - {id: engagement-model, name: "Client-engagement financial model (time, WIP, billing)", layer: processing, core: true}
+    - {id: permission-sync, name: DMS permission and ethical wall synchronisation, layer: security, core: true}
+    - {id: knowledge-index, name: Permission-aware knowledge index, layer: serving, when: {any_of: [{technologies_any: [rag, vector_search, generative_ai]}, {project_types_any: [genai_assistant, document_intelligence]}]}}
+    - {id: no-train-llm, name: Enterprise LLM endpoint with no training on inputs, layer: serving, when: {technologies_any: [generative_ai, agentic_ai, ai_agents]}}
+    - {id: independence-integration, name: Independence and conflicts system integration, layer: governance, when: {sub_domains_any: [accounting, legal]}}
+    - {id: regional-stores, name: Member-firm or regional data stores, layer: storage, when: {answers: {network-structure: "yes"}}}
+    - {id: export-control-zone, name: Export-controlled technical data zone, layer: security, when: {data_classifications_any: [export_controlled]}}
+    - {id: practice-dashboards, name: Practice and partner dashboards, layer: consumption, core: true}
+  considerations:
+    - Retrieval must evaluate the requesting user's permissions at query time.
+    - Keep professional review mandatory for AI-generated client deliverables.

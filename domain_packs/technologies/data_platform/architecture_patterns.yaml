@@ -1,0 +1,42 @@
+# Data Platform technology pack - architecture_patterns
+- id: enterprise-data-platform
+  name: Enterprise data platform
+  description: Shared, governed platform with ingestion, layered storage, serving and self-service consumption.
+  use_cases: [Data platform modernization, Enterprise analytics]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, operations]
+  components:
+    - {id: ingestion-framework, name: Metadata-driven ingestion framework, layer: ingestion, core: true}
+    - id: streaming
+      name: Streaming ingestion
+      layer: ingestion
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis]
+    - {id: layered-storage, name: Layered storage (raw / curated / consumption), layer: storage, core: true}
+    - {id: processing, name: Transformation and processing engine, layer: processing, core: true}
+    - id: semantic-layer
+      name: Semantic / BI serving layer
+      layer: serving
+      when:
+        technologies_any: [business_intelligence, power_bi]
+    - id: ml-workspace
+      name: Data science / ML workspace
+      layer: consumption
+      when:
+        technologies_any: [machine_learning, mlops, advanced_analytics]
+    - {id: catalog, name: 'Data catalog, lineage and access governance', layer: governance, core: true}
+    - id: mdm
+      name: Master data management hub
+      layer: governance
+      when:
+        technologies_any: [master_data_management]
+    - id: finops
+      name: Cost monitoring and chargeback
+      layer: operations
+      when:
+        any_of:
+          - technologies_any: [finops]
+          - keywords_any: [chargeback, cost allocation]
+    - {id: devops, name: CI/CD and infrastructure as code, layer: operations, core: true}
+  considerations: [Design for multi-domain onboarding from the start., Keep governance federated but policies central.]

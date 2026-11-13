@@ -1,0 +1,7 @@
+# Data Engineering technology pack - knowledge
+security_considerations:
+  - {id: pipeline-secrets, text: 'Connection credentials stored in a secrets manager, never in pipeline code.', category: security}
+  - {id: service-identities, text: 'Pipelines run under least-privilege service identities, not personal accounts.', category: security}
+dependencies:
+  - {id: source-access, text: Network and credential access to source systems for ingestion., category: integration}
+  - {id: target-platform, text: Target storage / compute platform provisioned for pipeline deployment., category: infrastructure}

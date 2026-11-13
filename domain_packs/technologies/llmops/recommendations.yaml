@@ -1,0 +1,15 @@
+- id: llmops-eval-gates
+  title: Gate releases on automated evaluations
+  text: Run golden-set and judge-based evaluations in CI for every prompt or model change.
+  category: quality
+  priority: high
+- id: llmops-gateway
+  title: Route all model traffic through an AI gateway
+  text: Centralise routing, quotas, fallback, logging and cost attribution.
+  category: architecture
+  priority: medium
+- id: llmops-tracing
+  title: Adopt end-to-end LLM tracing
+  text: Trace every request across retrieval, prompts and tools with token and latency metrics.
+  category: operations
+  priority: medium

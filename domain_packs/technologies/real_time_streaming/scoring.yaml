@@ -1,0 +1,6 @@
+dimensions:
+- key: real_time_streaming_readiness
+  name: Streaming Readiness
+  group: technology
+  weight: 1.0
+  description: Latency requirements, event sources, broker platform, schema governance and stateful processing operations.

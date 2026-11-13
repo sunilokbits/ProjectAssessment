@@ -1,0 +1,28 @@
+- id: dgp-mandate
+  text: Does the programme have an executive mandate and funding beyond the first year?
+  category: business
+  dimension: business_alignment
+  answer_type: yes_no
+  critical: true
+- id: dgp-scope-domains
+  text: Which data domains and use cases are in the first phase?
+  category: delivery
+  dimension: delivery_governance
+  answer_type: text
+- id: dgp-roles
+  text: Are owner and steward roles defined and accepted by business units?
+  category: business
+  dimension: stakeholder_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: dgp-measures
+  text: How will programme success be measured (adoption, quality, issue resolution)?
+  category: business
+  dimension: business_alignment
+  answer_type: yes_no
+- id: dgp-regulatory-drivers
+  text: Which regulatory drivers apply (GDPR, BCBS 239, HIPAA, AI regulation)?
+  category: privacy
+  dimension: privacy_protection
+  answer_type: text

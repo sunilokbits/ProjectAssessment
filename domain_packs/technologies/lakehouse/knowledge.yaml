@@ -1,0 +1,7 @@
+# Lakehouse technology pack - knowledge
+security_considerations:
+  - {id: lh-fine-grained, text: Row filters and column masks enforced in the catalog for all engines., category: security}
+  - {id: lh-storage-lockdown, text: Direct storage access blocked; access only via catalog-vended credentials., category: security}
+dependencies:
+  - {id: lh-cloud, text: Cloud storage and compute subscription / account with networking ready., category: infrastructure}
+  - {id: lh-format-decision, text: Table format and catalog decision made before pipeline build., category: architecture}

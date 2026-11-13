@@ -1,0 +1,57 @@
+- id: mlops-pipeline
+  name: MLOps continuous training and delivery
+  description: Source-controlled training pipelines register models, promote through environments with automated tests and monitor in production.
+  use_cases:
+  - Production ML at scale
+  layer_order:
+  - sources
+  - processing
+  - ai
+  - governance
+  - serving
+  - operations
+  components:
+  - id: training-pipeline
+    name: Automated training pipeline
+    layer: processing
+    core: true
+  - id: registry
+    name: Model registry
+    layer: governance
+    core: true
+  - id: cicd
+    name: CI/CD for model promotion
+    layer: operations
+    core: true
+  - id: monitoring
+    name: Model monitoring and alerting
+    layer: operations
+    core: true
+  - id: feature-store
+    name: Feature store
+    layer: storage
+    when:
+      keywords_any:
+      - feature store
+      - online features
+      - real-time
+  - id: mlflow
+    name: MLflow tracking and registry
+    layer: governance
+    when:
+      technologies_any:
+      - databricks
+  - id: sagemaker
+    name: SageMaker pipelines and registry
+    layer: governance
+    when:
+      technologies_any:
+      - aws
+  - id: azureml
+    name: Azure Machine Learning
+    layer: governance
+    when:
+      technologies_any:
+      - azure
+  considerations:
+  - Treat models, data and code as versioned artefacts.

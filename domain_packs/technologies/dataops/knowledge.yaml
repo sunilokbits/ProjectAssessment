@@ -1,0 +1,8 @@
+security_considerations:
+- id: dataops-masked-data
+  text: Use masked or synthetic data in non-production environments.
+  category: security
+dependencies:
+- id: dataops-devops
+  text: DevOps toolchain and environments.
+  category: operations

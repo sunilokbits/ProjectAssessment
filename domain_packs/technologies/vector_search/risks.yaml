@@ -1,0 +1,35 @@
+- id: vs-reembedding
+  title: Costly re-embedding when the embedding model changes
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Version embeddings; budget for re-indexing; store source text for regeneration.
+  indicators:
+  - model change
+  - new embedding
+- id: vs-stale-deletes
+  title: Deleted or restricted data remains searchable
+  category: privacy
+  likelihood: 3
+  impact: 4
+  mitigation: CDC-driven index sync including deletes; periodic reconciliation.
+  indicators:
+  - right to be forgotten
+  - deletion
+- id: vs-new-datastore
+  title: Additional datastore increases operational burden
+  category: operations
+  likelihood: 3
+  impact: 2
+  mitigation: Prefer platform-native or existing database extensions where they meet scale.
+  indicators:
+  - new database
+  - self-managed
+- id: vs-recall
+  title: Approximate search misses relevant results
+  category: technology
+  likelihood: 2
+  impact: 3
+  mitigation: Tune index parameters and evaluate recall against exact search.
+  indicators:
+  - missing results

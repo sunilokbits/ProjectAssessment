@@ -1,0 +1,23 @@
+# Application Modernization technology pack - questions
+- {id: am-portfolio-assessment, text: 'Has an application portfolio assessment (business value, technical health, cost) been done?', category: technology,
+  dimension: app_modernization_readiness, weight: 1.5}
+- id: modernization-approach
+  text: What modernization approach is preferred for the core applications?
+  category: architecture
+  dimension: app_modernization_readiness
+  answer_type: single_choice
+  options:
+    - {value: containerize, label: Containerise as-is}
+    - {value: strangler, label: Incremental strangler-fig decomposition}
+    - {value: rewrite, label: Full rewrite}
+    - {value: replace, label: Replace with SaaS / COTS}
+    - {value: unknown, label: Not decided}
+- {id: am-tech-stack, text: 'Is the legacy technology stack documented (languages, frameworks, runtimes, versions)?', category: technology, dimension: architecture_fit}
+- {id: am-test-coverage, text: 'Is there automated regression test coverage for the applications to be modernised?', category: quality, dimension: app_modernization_readiness,
+  critical: true}
+- {id: am-target-platform, text: 'Is the target runtime platform chosen (Kubernetes, PaaS app services, serverless)?', category: architecture,
+  dimension: architecture_fit}
+- {id: am-devops, text: 'Are CI/CD pipelines, trunk-based development and environment automation in place?', category: operations, dimension: app_modernization_readiness}
+- {id: am-api-layer, text: 'Is an API management layer available to expose and decouple legacy capabilities?', category: integration, dimension: integration_readiness}
+- {id: am-skills, text: 'How experienced is the client team with cloud-native development (containers, microservices, DevOps) (1-5)?', category: delivery,
+  dimension: team_capability, answer_type: scale, equivalence_key: client_skills}

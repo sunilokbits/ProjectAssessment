@@ -1,0 +1,19 @@
+- id: vs-platform-native
+  title: Prefer platform-native vector search
+  text: Use vector capabilities of the existing data platform or database to avoid an extra system.
+  category: technology
+  priority: medium
+  decision_key: vector_store
+  decision_option: platform_native
+- id: vs-dedicated
+  title: Use a dedicated vector database at scale
+  text: Choose a dedicated vector database when scale, latency or advanced filtering exceed platform-native options.
+  category: technology
+  priority: medium
+  decision_key: vector_store
+  decision_option: dedicated
+- id: vs-sync-deletes
+  title: Synchronise deletions into the index
+  text: Propagate source deletes and permission changes to the index within an agreed SLA.
+  category: data
+  priority: high

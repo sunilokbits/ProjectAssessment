@@ -1,0 +1,3 @@
+- {id: discovery-workshops, title: Run structured discovery workshops, text: "Run business-outcome, data and NFR workshops before solution sizing.", category: delivery, priority: high}
+- {id: mvp-first, title: Deliver an MVP before scaling, text: Deliver a thin vertical slice with measurable value before broad rollout., category: delivery, priority: medium, decision_key: delivery_approach, decision_option: mvp}
+- {id: data-profiling, title: Profile source data early, text: Profile critical source data in the first sprint to de-risk quality and volume assumptions., category: data, priority: high}

@@ -1,0 +1,24 @@
+- id: dgp-owned-domains
+  name: Domains with active owners
+  description: Share of in-scope domains with appointed, active owners.
+  unit: '%'
+  direction: higher_is_better
+  category: governance
+- id: dgp-dq-score
+  name: Data quality score for CDEs
+  description: Average quality score of critical data elements.
+  unit: '%'
+  direction: higher_is_better
+  category: data
+- id: dgp-issue-resolution
+  name: Data issue resolution time
+  description: Average time to resolve logged data issues.
+  unit: days
+  direction: lower_is_better
+  category: operations
+- id: dgp-catalog-coverage
+  name: Catalogued critical assets
+  description: Share of critical data assets documented in the catalog.
+  unit: '%'
+  direction: higher_is_better
+  category: governance

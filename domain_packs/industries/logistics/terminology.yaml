@@ -1,0 +1,14 @@
+- {term: Shipment, definition: Goods moved together from origin to destination, synonyms: [consignment, load, freight, delivery], entity_type: entity, category: data}
+- {term: SKU, definition: Stock keeping unit identifying a product variant, synonyms: [item, article, product code, gtin], entity_type: entity, category: data}
+- {term: Inventory Position, definition: Quantity of a SKU at a location by status, synonyms: [stock on hand, stock level, available to promise], entity_type: entity, category: data}
+- {term: Location, definition: Physical site or storage position, synonyms: [site, node, distribution centre, bin, gln], entity_type: entity, category: data}
+- {term: Carrier, definition: Company transporting goods, synonyms: [haulier, trucking company, freight forwarder, courier], entity_type: entity, category: data}
+- {term: WMS, definition: Warehouse management system, synonyms: [warehouse management system], entity_type: system, category: integration, sub_domains: [warehouse, inventory]}
+- {term: TMS, definition: Transportation management system, synonyms: [transport management system], entity_type: system, category: integration, sub_domains: [transportation, route_optimization]}
+- {term: ASN, definition: Advance shipping notice, synonyms: [advance ship notice, despatch advice, edi 856, desadv], entity_type: entity, category: integration}
+- {term: Proof of Delivery, definition: Evidence that goods were delivered, synonyms: [pod, epod, delivery confirmation], entity_type: event, category: data, sub_domains: [last_mile, transportation]}
+- {term: OTIF, definition: On time in full delivery measure, synonyms: [on-time in-full, delivery performance], entity_type: metric, category: service}
+- {term: S&OP, definition: Sales and operations planning process, synonyms: [sales and operations planning, ibp, integrated business planning], entity_type: process, category: planning, sub_domains: [demand_forecasting]}
+- {term: Safety Stock, definition: Buffer inventory held against uncertainty, synonyms: [buffer stock], entity_type: concept, category: planning, sub_domains: [inventory, demand_forecasting]}
+- {term: Bill of Lading, definition: Document of title and receipt for shipped goods, synonyms: [bol, b/l, waybill], entity_type: entity, category: data, sub_domains: [transportation]}
+- {term: Route, definition: Ordered sequence of stops for a vehicle, synonyms: [trip, tour, run], entity_type: entity, category: data, sub_domains: [route_optimization, last_mile, transportation]}

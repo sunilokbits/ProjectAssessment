@@ -1,0 +1,91 @@
+- id: cloud-authorisation
+  text: What government cloud authorisation does the target platform require, and is it already in place for the chosen services?
+  category: compliance
+  dimension: public_sector_authorisation
+  answer_type: single_choice
+  critical: true
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: required_missing, label: "Required (e.g. FedRAMP / StateRAMP / IRAP) - services not authorised", score: 0.1}
+    - {value: required_in_progress, label: Required - authorisation in progress, score: 0.5}
+    - {value: required_in_place, label: Required - authorised services selected, score: 1}
+    - {value: not_required, label: Not required (confirmed), score: 1}
+- id: ato-process
+  text: Has the agency's Authority to Operate (ATO) process been initiated, and are the system security plan owners identified?
+  category: compliance
+  dimension: public_sector_authorisation
+  weight: 1.5
+  evidence_required: true
+  sub_domains: [central_government, state_government, local_government, tax_revenue, citizen_services]
+- id: cjis-data
+  text: Will Criminal Justice Information (CJI) be stored, processed or accessed, and is the environment compliant with the CJIS Security Policy?
+  category: security
+  dimension: public_sector_authorisation
+  critical: true
+  sub_domains: [public_safety]
+  when: {geographies_any: [US]}
+- id: fti-data
+  text: Will Federal Tax Information (FTI) be in scope, requiring IRS Publication 1075 safeguards?
+  category: security
+  dimension: public_sector_authorisation
+  critical: true
+  sub_domains: [tax_revenue, citizen_services, state_government]
+  when: {geographies_any: [US]}
+- id: data-sharing-basis
+  text: Is there a legal basis or data-sharing agreement for combining data across programmes or agencies?
+  category: privacy
+  dimension: public_accountability
+  answer_type: single_choice
+  weight: 1.5
+  options:
+    - {value: unknown, label: Not yet assessed, score: 0}
+    - {value: needed, label: Agreements needed - not yet drafted, score: 0.2}
+    - {value: in_progress, label: Agreements in negotiation, score: 0.5}
+    - {value: in_place, label: Agreements or statutory basis in place, score: 1}
+    - {value: single_agency, label: Single agency data only, score: 1}
+- id: records-retention
+  text: Are records management and retention schedules (public records acts, FOIA/RTI obligations) defined for data in scope?
+  category: compliance
+  dimension: public_accountability
+- id: accessibility
+  text: Must citizen-facing outputs meet accessibility standards such as Section 508 or WCAG 2.1 AA?
+  category: business
+  dimension: public_accountability
+  sub_domains: [citizen_services, local_government, state_government, central_government]
+- id: legacy-mainframe
+  text: Which legacy mainframe or COBOL systems hold in-scope data, and is the knowledge to interpret their data still available?
+  category: data
+  dimension: data_availability
+  answer_type: text
+- id: procurement-vehicle
+  text: Which procurement vehicle or contract (e.g. GSA schedule, state cooperative contract, G-Cloud, GeM) will be used, and does it cover the proposed services?
+  category: delivery
+  dimension: delivery_governance
+  answer_type: text
+- id: citizen-identity
+  text: How mature is identity resolution across citizen or taxpayer records (shared identifiers, matching rules)?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+  sub_domains: [citizen_services, tax_revenue, central_government, state_government]
+- id: algorithmic-transparency
+  text: Will automated or AI-assisted decisions affect citizens' entitlements, and is an algorithmic impact assessment required?
+  category: governance
+  dimension: public_accountability
+  answer_type: single_choice
+  when: {technologies_any: [machine_learning, generative_ai, agentic_ai, ai_agents, advanced_analytics]}
+  options:
+    - {value: no_decisions, label: No decisions affecting citizens, score: 1}
+    - {value: yes_assessed, label: Yes - impact assessment completed, score: 1}
+    - {value: yes_planned, label: Yes - assessment planned, score: 0.5}
+    - {value: yes_none, label: Yes - no assessment planned, score: 0}
+- id: classification-level
+  text: What is the highest data classification level in scope (e.g. FIPS 199 Moderate/High, OFFICIAL-SENSITIVE, PROTECTED)?
+  category: security
+  dimension: security_controls
+  answer_type: text
+- id: smart-city-sensor-privacy
+  text: Do smart city sensors (CCTV, ALPR, mobility data) capture personal data, and is a privacy impact assessment in place?
+  category: privacy
+  dimension: privacy_protection
+  sub_domains: [smart_cities, public_safety]

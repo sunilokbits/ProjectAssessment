@@ -1,0 +1,10 @@
+- id: bim-usage-rationalise
+  title: Rationalise reports by usage before migrating
+  text: Retire unused reports and consolidate duplicates using usage logs.
+  category: delivery
+  priority: high
+- id: bim-semantic-layer
+  title: Build certified semantic models first
+  text: Centralise KPI logic in governed semantic models reused across reports.
+  category: data
+  priority: high

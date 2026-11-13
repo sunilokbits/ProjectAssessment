@@ -1,0 +1,4 @@
+dimensions:
+  - {key: vehicle_data_governance, name: Vehicle Data Governance, group: domain, weight: 1.5, description: "Ownership, consent, quality and VIN-centric linkage of vehicle, telemetry, warranty and customer data."}
+  - {key: vehicle_cybersecurity, name: Vehicle and Product Cybersecurity, group: security, weight: 1.5, description: "Alignment with UNECE R155/R156 and ISO/SAE 21434 for connected vehicle data flows and OTA."}
+  - {key: quality_traceability, name: Quality and Traceability, group: domain, weight: 1.0, description: "Ability to trace parts, software and build data to VINs for warranty, recall and supplier recovery."}

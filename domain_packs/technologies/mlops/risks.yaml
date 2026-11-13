@@ -1,0 +1,36 @@
+- id: mlops-manual-deploy
+  title: Manual model deployments cause errors and delays
+  category: operations
+  likelihood: 4
+  impact: 3
+  mitigation: Automate packaging, testing and deployment via CI/CD.
+  indicators:
+  - manual deployment
+  - copy model
+- id: mlops-silent-degradation
+  title: Models silently degrade in production
+  category: operations
+  likelihood: 3
+  impact: 4
+  mitigation: Drift and performance monitoring with alerts and owners.
+  indicators:
+  - no monitoring
+  - drift
+- id: mlops-no-inventory
+  title: No model inventory for audit and regulators
+  category: governance
+  likelihood: 3
+  impact: 4
+  mitigation: Central registry with ownership, validation and review dates.
+  indicators:
+  - model risk
+  - sr 11-7
+  - audit
+- id: mlops-train-serve-skew
+  title: Training/serving skew from duplicated feature logic
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Shared feature definitions via a feature store.
+  indicators:
+  - feature duplication

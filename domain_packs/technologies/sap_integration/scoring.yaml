@@ -1,0 +1,6 @@
+dimensions:
+- key: sap_integration_readiness
+  name: SAP Integration Readiness
+  group: technology
+  weight: 1.0
+  description: SAP landscape, extraction method and licensing, data model knowledge and SAP Basis support.

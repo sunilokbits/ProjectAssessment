@@ -1,0 +1,55 @@
+- id: dg-federated
+  name: Federated governance with platform-enforced policies
+  description: Central standards and tooling with domain-owned data; policies enforced through catalog and platform controls.
+  use_cases:
+  - Data governance programme
+  - Regulatory reporting
+  layer_order:
+  - sources
+  - ingestion
+  - storage
+  - processing
+  - governance
+  - consumption
+  - operations
+  components:
+  - id: catalog
+    name: Data catalog and business glossary
+    layer: governance
+    core: true
+  - id: policy-engine
+    name: Policy enforcement (access, masking, row filters)
+    layer: governance
+    core: true
+  - id: lineage
+    name: Lineage capture
+    layer: governance
+    core: true
+  - id: dq-monitoring
+    name: Data quality monitoring
+    layer: operations
+    when:
+      technologies_any:
+      - data_quality
+  - id: purview
+    name: Microsoft Purview
+    layer: governance
+    when:
+      technologies_any:
+      - azure
+      - microsoft_fabric
+  - id: unity-catalog
+    name: Unity Catalog
+    layer: governance
+    when:
+      technologies_any:
+      - databricks
+  - id: mdm
+    name: Master data hub
+    layer: storage
+    when:
+      technologies_any:
+      - master_data_management
+  considerations:
+  - Federate ownership, centralise standards.
+  - Measure governance through adoption and quality KPIs.

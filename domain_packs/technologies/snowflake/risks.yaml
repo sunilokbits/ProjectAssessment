@@ -1,0 +1,29 @@
+# Snowflake technology pack - risks
+- id: sf-credit-overrun
+  title: Credit consumption overruns
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Resource monitors, auto-suspend, right-sized warehouses and query optimisation reviews.
+  indicators: [credit usage, cost overrun, warehouse always on]
+- id: sf-rbac-sprawl
+  title: Unmanaged role sprawl and excessive privileges
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Role hierarchy design, access via groups (SCIM), periodic access reviews.
+  indicators: [accountadmin, too many roles]
+- id: sf-public-access
+  title: Account accessible over public internet without network policies
+  category: security
+  likelihood: 2
+  impact: 4
+  mitigation: Network policies, PrivateLink and SSO with MFA.
+  indicators: [public endpoint]
+- id: sf-lockin
+  title: Proprietary features increase switching cost
+  category: architecture
+  likelihood: 2
+  impact: 3
+  mitigation: Use Iceberg tables where interoperability matters; keep transformation logic in portable tools (e.g. dbt).
+  indicators: [vendor lock-in]

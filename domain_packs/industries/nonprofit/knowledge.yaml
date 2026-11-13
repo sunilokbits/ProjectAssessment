@@ -1,0 +1,28 @@
+nfrs:
+  - {id: low-tco, text: Total cost of ownership affordable within overhead budgets., category: operations}
+  - {id: offline-field, text: Field data collection works offline in low-connectivity areas., category: availability, sub_domains: [programs_impact]}
+assumptions:
+  - {id: crm-sor, text: The donor CRM is the system of record for supporters and gifts., category: data}
+  - {id: nonprofit-licensing, text: Nonprofit licence discounts or grants are available for core software., category: delivery}
+dependencies:
+  - {id: dpo-signoff, text: Data protection officer or privacy lead sign-off., category: compliance}
+  - {id: finance-fund-codes, text: Finance team to maintain fund and grant coding., category: data}
+security_considerations:
+  - {id: beneficiary-access, text: Need-to-know access to beneficiary and safeguarding data., category: security}
+data_quality_checks:
+  - {id: deceased-suppression, text: Deceased and gone-away supporters suppressed., category: data}
+  - {id: income-reconciliation, text: CRM income reconciles to finance by fund and period., category: data}
+reporting_requirements:
+  - {id: annual-report, text: "Annual report and accounts, regulator returns and funder reports.", category: reporting}
+migration_concerns:
+  - {id: crm-migration, text: Migrating giving history and consent records between CRMs., category: data}
+ai_opportunities:
+  - {id: donor-propensity, text: Donor propensity and lapse prediction., category: ai, sub_domains: [donor_management, fundraising]}
+  - {id: grant-writing, text: GenAI-assisted grant applications and funder reports., category: ai, sub_domains: [grants]}
+  - {id: impact-synthesis, text: GenAI synthesis of qualitative programme feedback., category: ai, sub_domains: [programs_impact]}
+  - {id: volunteer-matching, text: Volunteer-to-opportunity matching., category: ai, sub_domains: [volunteer_management]}
+ai_risks:
+  - {id: beneficiary-ai, text: Sensitive beneficiary data exposed to external AI services., category: ai}
+  - {id: misleading-impact, text: AI-generated reports overstating impact to funders., category: ai}
+clarification_questions:
+  - {id: funder-requirements, text: "Which major funders impose specific data, reporting or system requirements?", category: compliance}

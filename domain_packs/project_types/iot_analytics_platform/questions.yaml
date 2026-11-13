@@ -1,0 +1,33 @@
+- id: iap-use-cases
+  text: Which analytics use cases will the platform serve first (monitoring, OEE, quality, energy, predictive)?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: iap-scale
+  text: What device count, message rate and retention are expected now and in three years?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: text
+- id: iap-connectivity
+  text: Are site connectivity and OT network access approved for data extraction?
+  category: integration
+  dimension: integration_readiness
+  answer_type: yes_no
+  critical: true
+- id: iap-context
+  text: Is asset and tag metadata available to contextualise telemetry?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+- id: iap-ot-security
+  text: Has OT security approved the data-flow architecture?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+- id: iap-operations
+  text: Who will operate the platform and support sites 24x7?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+  equivalence_key: support_model

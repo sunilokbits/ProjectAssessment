@@ -1,0 +1,15 @@
+security_considerations:
+- id: iot-device-identity
+  text: Unique device identities with certificate-based authentication.
+  category: security
+- id: iot-iec62443
+  text: OT security aligned with IEC 62443 zones and conduits.
+  category: security
+nfrs:
+- id: iot-throughput
+  text: Message throughput and end-to-end latency targets.
+  category: performance
+dependencies:
+- id: iot-plant-access
+  text: Access to plant engineers and OT network owners.
+  category: delivery

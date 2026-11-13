@@ -1,0 +1,28 @@
+- id: pdm-few-failures
+  title: Too few failure events to train models
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Use anomaly detection or physics-informed approaches; pool similar assets.
+  indicators:
+  - rare failures
+  - few failures
+- id: pdm-false-alarms
+  title: False alarms erode engineer trust
+  category: business
+  likelihood: 3
+  impact: 4
+  mitigation: Tune thresholds with engineers; measure precision.
+  indicators:
+  - false positives
+  - alert fatigue
+- id: pdm-no-closed-loop
+  title: Predictions not acted on in maintenance processes
+  category: business
+  likelihood: 3
+  impact: 4
+  mitigation: Integrate with EAM/CMMS work order flow.
+  indicators:
+  - no integration
+  - maximo
+  - sap pm

@@ -1,0 +1,81 @@
+- id: isa-iec-62443
+  name: ISA/IEC 62443 Security for industrial automation and control systems
+  short_name: ISA/IEC 62443
+  geographies: [GLOBAL]
+  data_classifications_any: [ot_telemetry]
+  description: Series of standards for securing industrial automation and control systems (zones, conduits, security levels).
+  applicability_note: Standard rather than law; frequently referenced by regulators and customers for OT security.
+- id: nis2-manufacturing
+  name: NIS2 Directive (EU) 2022/2555
+  short_name: NIS2
+  geographies: [EU, EEA]
+  applicability_note: Manufacturing of medical devices, computers, electronics, machinery, motor vehicles and chemicals are listed sectors; applicability depends on size thresholds and national transposition.
+- id: eu-cra
+  name: EU Cyber Resilience Act (EU) 2024/2847
+  short_name: CRA
+  geographies: [EU, EEA]
+  sub_domains: [discrete_manufacturing, aftermarket_service, industrial_iot]
+  applicability_note: Applies to manufacturers placing products with digital elements on the EU market; obligations phase in through 2027.
+- id: eu-machinery-regulation
+  name: EU Machinery Regulation (EU) 2023/1230
+  short_name: EU Machinery Regulation
+  geographies: [EU, EEA]
+  sub_domains: [discrete_manufacturing, smart_factory]
+  applicability_note: Applies from January 2027; includes cybersecurity and AI-related safety requirements for machinery.
+- id: osha
+  name: OSHA Occupational Safety and Health standards (29 CFR 1910) incl. Process Safety Management 1910.119
+  short_name: OSHA
+  geographies: [US]
+  sub_domains: [ehs, process_manufacturing, smart_factory]
+- id: eu-seveso-iii
+  name: Seveso III Directive 2012/18/EU (major-accident hazards)
+  short_name: Seveso III
+  geographies: [EU, EEA]
+  sub_domains: [process_manufacturing, ehs]
+- id: iec-61511
+  name: IEC 61511 Functional safety - Safety instrumented systems for the process industry
+  short_name: IEC 61511
+  geographies: [GLOBAL]
+  sub_domains: [process_manufacturing, ehs]
+- id: itar-ear
+  name: ITAR (22 CFR 120-130) and EAR (15 CFR 730-774) export controls
+  short_name: ITAR / EAR
+  geographies: [US]
+  data_classifications_any: [export_controlled]
+  applicability_note: Applies to defence articles, technical data and dual-use items; constrains cloud region and foreign-person access.
+- id: eu-dual-use
+  name: EU Dual-Use Regulation (EU) 2021/821
+  short_name: EU Dual-Use
+  geographies: [EU, EEA]
+  data_classifications_any: [export_controlled]
+- id: iso-9001
+  name: ISO 9001 Quality management systems
+  short_name: ISO 9001
+  geographies: [GLOBAL]
+  sub_domains: [quality]
+- id: iatf-16949
+  name: IATF 16949 Automotive quality management
+  short_name: IATF 16949
+  geographies: [GLOBAL]
+  sub_domains: [quality, discrete_manufacturing]
+  applicability_note: Applies to automotive supply-chain manufacturers.
+- id: iso-50001
+  name: ISO 50001 Energy management systems
+  short_name: ISO 50001
+  geographies: [GLOBAL]
+  sub_domains: [energy_sustainability]
+- id: eu-eed
+  name: EU Energy Efficiency Directive (EU) 2023/1791
+  short_name: EU EED
+  geographies: [EU, EEA]
+  sub_domains: [energy_sustainability]
+- id: india-factories-act
+  name: Factories Act 1948 and Occupational Safety, Health and Working Conditions Code 2020 (India)
+  short_name: India Factories Act / OSH Code
+  geographies: [IN]
+  sub_domains: [ehs]
+  applicability_note: The OSH Code consolidates the Factories Act; confirm notification and state rules in force.
+- id: cert-in-directions
+  name: CERT-In Directions on cyber incident reporting (India)
+  short_name: CERT-In Directions
+  geographies: [IN]

@@ -1,0 +1,19 @@
+- id: sap-supported-extraction
+  title: Use SAP-supported extraction interfaces
+  text: Prefer ODP/CDS-based or SAP-endorsed connectors over database-level extraction.
+  category: technology
+  priority: high
+- id: sap-datasphere
+  title: Use SAP Datasphere / Business Data Cloud for SAP data sharing
+  text: Share SAP data with semantics via SAP's data platform where SAP is the dominant source.
+  category: architecture
+  priority: medium
+  decision_key: sap_data_path
+  decision_option: sap_native
+- id: sap-direct-lakehouse
+  title: Replicate SAP data directly into the enterprise lakehouse
+  text: Use certified connectors to land SAP data in the lakehouse when it must be combined with many non-SAP sources.
+  category: architecture
+  priority: medium
+  decision_key: sap_data_path
+  decision_option: direct

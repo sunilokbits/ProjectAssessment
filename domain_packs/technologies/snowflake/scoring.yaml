@@ -1,0 +1,4 @@
+# Snowflake technology pack - scoring
+dimensions:
+  - {key: snowflake_platform_readiness, name: Snowflake Platform Readiness, group: technology, weight: 1.0, description: 'Account structure, RBAC
+      model, warehouse sizing, cost controls and network security readiness.'}

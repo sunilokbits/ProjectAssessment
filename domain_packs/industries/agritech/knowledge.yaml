@@ -1,0 +1,29 @@
+nfrs:
+  - {id: offline-capability, text: Field apps function offline and sync reliably., category: availability}
+  - {id: seasonal-peaks, text: Processing scales for planting and harvest peaks., category: scalability}
+  - {id: geospatial-performance, text: Geospatial queries over field and raster data return within agreed times., category: performance}
+assumptions:
+  - {id: imagery-licensing, text: Imagery licences permit the intended commercial use., category: data}
+  - {id: farmer-participation, text: Farmers or cooperatives will participate in data collection., category: business}
+dependencies:
+  - {id: agronomy-experts, text: Agronomists and vets available to validate models., category: business}
+  - {id: oem-api-access, text: Machinery OEM API access agreements., category: integration}
+security_considerations:
+  - {id: farm-location-sensitivity, text: Farm locations and yields treated as commercially sensitive., category: security}
+data_quality_checks:
+  - {id: boundary-validity, text: Field polygons valid and non-overlapping., category: data}
+  - {id: yield-cleaning, text: Yield monitor data cleaned for header and speed errors., category: data}
+reporting_requirements:
+  - {id: sustainability-reporting, text: "Sustainability and Scope 3 reporting for buyers (emissions, water, deforestation).", category: reporting}
+migration_concerns:
+  - {id: historic-records, text: Digitising historic paper or spreadsheet farm records., category: data}
+ai_opportunities:
+  - {id: yield-prediction, text: Field-level yield prediction from imagery and weather., category: ai, sub_domains: [crop_analytics, precision_farming]}
+  - {id: pest-disease-detection, text: Pest and disease detection from images., category: ai}
+  - {id: farmer-advisory-bot, text: Multilingual GenAI farmer advisory assistant., category: ai}
+  - {id: animal-health-alerts, text: Early warning of animal illness from sensor data., category: ai, sub_domains: [livestock]}
+ai_risks:
+  - {id: regional-bias, text: Models trained in one region failing elsewhere., category: ai}
+  - {id: unsafe-advice, text: GenAI suggesting unsafe or illegal chemical use., category: ai}
+clarification_questions:
+  - {id: data-ownership, text: "Who owns farm data under current farmer contracts, and can it be shared with partners?", category: governance}

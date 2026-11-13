@@ -1,0 +1,15 @@
+# Data Engineering technology pack - domain
+key: data_engineering
+name: Data Engineering
+kind: technology
+version: 1.0.0
+description: Design and build of data pipelines - batch and streaming ingestion, transformation (ETL/ELT), orchestration, testing and pipeline
+  operations.
+aliases: [Data Platforms]
+sort_order: 10
+detection:
+  keywords: {data engineering: 4, data pipeline: 3, elt: 2, etl: 2, dbt: 3, apache airflow: 3, airflow: 2.5, orchestration: 1.5, apache spark: 2.5,
+    cdc: 1.5, change data capture: 2, ingestion: 1, transformation: 0.8, batch: 0.5}
+capabilities: [Batch ingestion, Streaming ingestion, Transformation, Orchestration, Pipeline testing]
+integration_patterns: [Batch file, CDC, API pull, Event streaming]
+related_technologies: [data_platform, lakehouse, data_warehouse, dataops, real_time_streaming, data_quality]

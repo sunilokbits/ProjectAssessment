@@ -1,0 +1,29 @@
+nfrs:
+  - {id: embedded-latency, text: Customer-facing analytics meet interactive latency under multi-tenant load., category: performance}
+  - {id: tenant-isolation-tests, text: Automated tests verify no cross-tenant data access., category: security}
+  - {id: regional-hosting, text: Customer data stays within committed regions., category: compliance}
+assumptions:
+  - {id: telemetry-instrumented, text: Core product flows are already instrumented with account and user ids., category: data}
+  - {id: finance-arr-owner, text: Finance owns the official ARR definition., category: data}
+dependencies:
+  - {id: eng-teams, text: Product engineering capacity to fix instrumentation gaps., category: delivery}
+  - {id: legal-dpa, text: Legal review of customer data-use permissions., category: compliance}
+security_considerations:
+  - {id: secrets-hygiene, text: No production secrets or customer data in non-production analytics., category: security}
+data_quality_checks:
+  - {id: account-mapping, text: Every tenant maps to exactly one CRM account., category: data}
+  - {id: arr-reconciliation, text: ARR reconciles to billing and finance each month., category: data}
+reporting_requirements:
+  - {id: board-metrics, text: Board and investor SaaS metrics with consistent definitions., category: reporting}
+migration_concerns:
+  - {id: legacy-billing, text: Historic subscription changes across billing system migrations., category: data}
+ai_opportunities:
+  - {id: churn-prediction, text: Churn and expansion propensity from usage and support signals., category: ai}
+  - {id: in-product-copilot, text: In-product GenAI copilot grounded in tenant data and documentation., category: ai}
+  - {id: support-deflection, text: GenAI support assistant and ticket summarisation., category: ai}
+  - {id: threat-detection, text: ML-based threat detection on security telemetry., category: ai, sub_domains: [cybersecurity]}
+ai_risks:
+  - {id: cross-tenant-retrieval, text: RAG retrieval returning another tenant's content., category: ai}
+  - {id: prompt-injection, text: Prompt injection via customer-supplied content in copilots., category: ai}
+clarification_questions:
+  - {id: contract-ai-clauses, text: "What do current customer agreements say about AI training and analytics on customer data?", category: compliance}

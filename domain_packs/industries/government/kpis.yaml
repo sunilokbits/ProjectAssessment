@@ -1,0 +1,9 @@
+- {id: digital-adoption, name: Digital service adoption, description: Share of transactions completed through digital channels., unit: "%", direction: higher_is_better, category: business, sub_domains: [citizen_services, local_government, tax_revenue]}
+- {id: case-cycle-time, name: Case processing time, description: Average time from application to decision., unit: days, direction: lower_is_better, category: operational, sub_domains: [citizen_services, central_government, state_government]}
+- {id: improper-payment-rate, name: Improper payment rate, description: Share of programme payments made in error or to ineligible recipients., unit: "%", direction: lower_is_better, category: integrity}
+- {id: tax-gap, name: Tax gap, description: Difference between taxes owed and taxes collected on time., unit: currency, direction: lower_is_better, category: business, sub_domains: [tax_revenue]}
+- {id: voluntary-compliance, name: Voluntary compliance rate, description: Share of taxpayers filing and paying on time without enforcement., unit: "%", direction: higher_is_better, category: business, sub_domains: [tax_revenue]}
+- {id: emergency-response-time, name: Emergency response time, description: Time from call receipt to unit arrival., unit: minutes, direction: lower_is_better, category: operational, sub_domains: [public_safety]}
+- {id: citizen-satisfaction, name: Citizen satisfaction, description: Satisfaction score for public services., unit: score, direction: higher_is_better, category: business}
+- {id: service-request-resolution, name: Service request resolution time, description: "Average time to close 311 / service requests.", unit: days, direction: lower_is_better, category: operational, sub_domains: [local_government, smart_cities]}
+- {id: cost-per-transaction, name: Cost per transaction, description: Fully loaded cost per citizen transaction., unit: currency, direction: lower_is_better, category: business}

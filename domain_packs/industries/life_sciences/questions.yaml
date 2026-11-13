@@ -1,0 +1,110 @@
+- id: gxp-classification
+  text: Has each system and data flow in scope been classified for GxP impact (GMP, GCP, GLP, GVP)?
+  category: compliance
+  dimension: gxp_validation_readiness
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not yet assessed, score: 0}
+    - {value: partial, label: Partially assessed, score: 0.4}
+    - {value: complete, label: Assessment complete and approved by Quality, score: 1}
+    - {value: non_gxp, label: Confirmed non-GxP, score: 1}
+  critical: true
+  evidence_required: true
+- id: validation-approach
+  text: Which validation approach will be applied to GxP systems?
+  category: compliance
+  dimension: gxp_validation_readiness
+  answer_type: single_choice
+  options:
+    - {value: undefined, label: Not defined, score: 0}
+    - {value: traditional_csv, label: Traditional CSV (GAMP 5 document-heavy), score: 0.7}
+    - {value: csa, label: Risk-based CSA aligned to GAMP 5 Second Edition, score: 1}
+    - {value: na, label: Not applicable (non-GxP), score: 1}
+  weight: 1.5
+- id: part11-controls
+  text: Are 21 CFR Part 11 / EU GMP Annex 11 controls (audit trails, electronic signatures, access control, record retention) defined for the target platform?
+  category: compliance
+  dimension: data_integrity_alcoa
+  weight: 2
+  critical: true
+  equivalence_key: audit_trail_retention
+- id: alcoa-maturity
+  text: How mature are data integrity (ALCOA+) practices for the data in scope?
+  category: data
+  dimension: data_integrity_alcoa
+  answer_type: scale
+  help: "1 = paper/hybrid records with manual transcription, 3 = electronic records with partial audit trails, 5 = fully electronic with reviewed audit trails and periodic data integrity audits."
+- id: cloud-supplier-qualification
+  text: Have cloud and SaaS suppliers been qualified by Quality (supplier audit, quality agreement, shared-responsibility for validated state)?
+  category: compliance
+  dimension: gxp_validation_readiness
+  when: {technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]}
+- id: change-control
+  text: Is there a GxP change-control process that can accommodate frequent platform releases (e.g. cloud service updates, CI/CD)?
+  category: delivery
+  dimension: gxp_validation_readiness
+  when: {technologies_any: [devops, dataops, mlops, cloud_migration, databricks, snowflake, microsoft_fabric]}
+- id: cdisc-standards
+  text: Are clinical data standards (CDASH, SDTM, ADaM, controlled terminology) applied and governed by a metadata repository?
+  category: data
+  dimension: data_quality
+  sub_domains: [clinical_trials]
+- id: subject-privacy
+  text: How are trial subject data pseudonymised and consent scope (including secondary research use) enforced?
+  category: privacy
+  dimension: patient_safety_controls
+  sub_domains: [clinical_trials, medical_affairs, biotech_cgt]
+  critical: true
+- id: ae-capture
+  text: Could the solution receive or surface potential adverse events (e.g. via patient programs, social media, call centres, GenAI chat), and is there a process to route them to pharmacovigilance within reporting timelines?
+  category: compliance
+  dimension: patient_safety_controls
+  answer_type: single_choice
+  options:
+    - {value: no, label: No AE exposure (confirmed), score: 1}
+    - {value: yes_process, label: Yes - AE reconciliation process agreed with PV, score: 1}
+    - {value: yes_no_process, label: Yes - no process agreed yet, score: 0}
+    - {value: unknown, label: Not yet assessed, score: 0}
+  sub_domains: [commercial_analytics, medical_affairs, pharmacovigilance, clinical_trials]
+- id: safety-database
+  text: Which safety database and case-processing tools are used, and how are ICSRs exchanged with health authorities (E2B(R3), gateways)?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+  sub_domains: [pharmacovigilance]
+- id: batch-genealogy
+  text: Is end-to-end batch genealogy (materials, equipment, process parameters, test results) available across MES, LIMS and ERP?
+  category: data
+  dimension: data_availability
+  sub_domains: [manufacturing, quality_management, biotech_cgt]
+- id: hcp-data-compliance
+  text: Are HCP data sources licensed for the intended use, and are transparency (Sunshine Act / EFPIA) and HCP consent rules applied?
+  category: compliance
+  dimension: privacy_protection
+  sub_domains: [commercial_analytics, medical_affairs]
+- id: third-party-data
+  text: Which third-party data sets (IQVIA, claims, EHR RWD, specialty pharmacy) are used, and are licence terms compatible with the target platform and use case?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [commercial_analytics, medical_affairs]
+- id: ai-in-gxp
+  text: Will AI/ML models be used in GxP decisions (e.g. batch release, quality review, safety case triage), and is model validation and lifecycle management defined?
+  category: governance
+  dimension: gxp_validation_readiness
+  when: {technologies_any: [machine_learning, generative_ai, agentic_ai, ai_agents, mlops, llmops]}
+- id: regulatory-submission-data
+  text: Will outputs feed regulatory submissions, and is traceability from source to submission data sets required?
+  category: compliance
+  dimension: data_integrity_alcoa
+  sub_domains: [clinical_trials, regulatory, manufacturing]
+- id: ip-protection
+  text: Are research data and compound information classified as intellectual property with access restricted accordingly?
+  category: security
+  dimension: security_controls
+  sub_domains: [drug_discovery, biotech_cgt, clinical_trials]
+- id: legacy-validated-migration
+  text: Does the migration plan preserve validated state, audit trails and record retention for legacy GxP data?
+  category: data
+  dimension: data_integrity_alcoa
+  when: {technologies_any: [data_migration, database_migration, etl_migration, cloud_migration, application_modernization]}

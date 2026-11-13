@@ -1,0 +1,9 @@
+system_addition: |
+  Use healthcare terminology (patient, encounter, diagnosis, provider, claims, clinical data, PHI, EHR, HL7, FHIR, ICD-10).
+  Treat the EHR as the legal medical record. Highlight PHI protection (minimum necessary, BAAs, de-identification),
+  consent, patient-matching accuracy, clinical safety of any analytics or AI output, interoperability standards
+  and health-data residency. Never assume an algorithm is exempt from medical device regulation.
+stage_additions:
+  discovery: "Ask which EHR and clinical systems, PHI elements, consent constraints and clinical users the project touches."
+  solutioning: Design PHI protection, patient matching and terminology mapping as core components; include a clinical safety review for clinically used outputs.
+extraction_hints: Map "member", "beneficiary" and "service user" to Patient; map "visit", "admission" and "episode" to Encounter; map "EMR" to EHR; map "ePHI" and "personal health information" to PHI; map "practitioner" and "clinician" to Provider.

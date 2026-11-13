@@ -1,0 +1,53 @@
+- id: sf-orgs
+  text: How many Salesforce orgs and clouds are in scope?
+  category: integration
+  dimension: salesforce_integration_readiness
+  answer_type: text
+- id: sf-pattern
+  text: Which integration pattern is required?
+  category: architecture
+  dimension: salesforce_integration_readiness
+  answer_type: single_choice
+  options:
+  - value: batch
+    label: Batch extraction (Bulk API)
+    score: 1
+  - value: cdc
+    label: Change data capture / platform events
+    score: 1
+  - value: zero_copy
+    label: Zero-copy data sharing with Data Cloud
+    score: 1
+  - value: bidirectional
+    label: Bi-directional sync with other systems
+    score: 0.8
+  - value: unknown
+    label: Not defined
+    score: 0.2
+- id: sf-api-limits
+  text: Have Salesforce API limits and edition entitlements been checked against volumes?
+  category: technology
+  dimension: salesforce_integration_readiness
+  answer_type: yes_no
+  critical: true
+- id: sf-customisation
+  text: Is the org heavily customised (custom objects, fields, Apex) with documentation?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+- id: sf-system-of-record
+  text: Is it clear which system is master for accounts, contacts and opportunities?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+- id: sf-sharing
+  text: Must Salesforce sharing rules be replicated in downstream analytics?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+- id: sf-skills
+  text: How experienced is the client team with Salesforce integration and data model (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

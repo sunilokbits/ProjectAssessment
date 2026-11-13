@@ -1,0 +1,36 @@
+# Cloud Migration technology pack - risks
+- id: cm-hidden-dependencies
+  title: Hidden application dependencies break after migration
+  category: technology
+  likelihood: 4
+  impact: 4
+  mitigation: Automated dependency mapping, move tightly coupled groups in the same wave, rehearse cutover.
+  indicators: [hard-coded ip, shared database, undocumented interfaces]
+- id: cm-lift-shift-cost
+  title: Lift-and-shift costs exceed on-premises run costs
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Right-size during migration, use reservations, plan post-migration optimisation.
+  indicators: [lift and shift, oversized vms]
+- id: cm-deadline-pressure
+  title: Fixed exit deadline forces risky shortcuts
+  category: delivery
+  likelihood: 3
+  impact: 4
+  mitigation: Prioritise rehost for deadline-critical workloads; modernise in a later phase.
+  indicators: [contract expiry, data centre exit, deadline]
+- id: cm-licensing
+  title: Licensing non-compliance or cost shock on cloud
+  category: commercial
+  likelihood: 3
+  impact: 3
+  mitigation: Licensing assessment (Oracle, Microsoft, IBM) before wave planning.
+  indicators: [oracle licensing, byol]
+- id: cm-latency
+  title: Latency issues for hybrid workloads split across on-prem and cloud
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Keep chatty components together; size hybrid connectivity.
+  indicators: [latency, chatty]

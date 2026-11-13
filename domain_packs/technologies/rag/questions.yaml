@@ -1,0 +1,67 @@
+- id: rag-corpus
+  text: Is the document corpus inventoried (sources, formats, volume, owners, update frequency)?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: rag-content-quality
+  text: Is the content current, de-duplicated and authoritative?
+  category: data
+  dimension: data_quality
+  answer_type: single_choice
+  options:
+  - value: poor
+    label: Many outdated or conflicting documents
+    score: 0.2
+  - value: mixed
+    label: Mixed quality, partly curated
+    score: 0.5
+  - value: curated
+    label: Curated with owners and review cycle
+    score: 1
+- id: rag-access-control
+  text: Must retrieval respect document-level permissions from source systems?
+  category: security
+  dimension: security_controls
+  answer_type: yes_no
+  critical: true
+- id: rag-parsing
+  text: Do documents include complex formats (scans, tables, images) needing advanced parsing/OCR?
+  category: data
+  dimension: rag_readiness
+  answer_type: yes_no
+- id: rag-retrieval-eval
+  text: Are retrieval and answer-quality metrics (recall, groundedness, citation accuracy) measured against a test set?
+  category: quality
+  dimension: rag_readiness
+  answer_type: yes_no
+  evidence_required: true
+- id: rag-freshness
+  text: What freshness is required between a source change and its availability to the assistant?
+  category: architecture
+  dimension: rag_readiness
+  answer_type: single_choice
+  options:
+  - value: daily
+    label: Daily
+    score: 1
+  - value: hourly
+    label: Hourly
+    score: 1
+  - value: near_realtime
+    label: Near real-time
+    score: 1
+  - value: unknown
+    label: Not defined
+- id: rag-search-strategy
+  text: Has the retrieval strategy (vector, keyword, hybrid, reranking) been decided?
+  category: architecture
+  dimension: rag_readiness
+  answer_type: yes_no
+- id: rag-skills
+  text: How experienced is the client team with building RAG pipelines (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

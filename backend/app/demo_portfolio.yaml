@@ -1,0 +1,90 @@
+# Demo portfolio used by POST /api/demo/seed (admin) to populate the Executive Showcase.
+# 'maturity' (0-1) biases the synthetic answers; 'coverage' is the share of questions answered.
+scenarios:
+  - client_name: Meridian Bank
+    project_name: Retail Customer 360
+    stage: assessment
+    maturity: 0.72
+    coverage: 0.85
+    classification:
+      primary_industry: banking
+      sub_domains: [retail_banking, cards]
+      technologies: [databricks, azure, power_bi, data_governance]
+      project_types: [customer_360]
+      geography: IN
+      regulatory_regions: [IN]
+      data_classifications: [pii, financial]
+    document: |
+      RFP - Customer 360. The Bank requires a single customer view of retail banking customers across savings account,
+      current account, cards and mobile banking. KYC and AML attributes must be included and reconciled with the general ledger.
+      The solution shall be built on Azure Databricks with Unity Catalog and Delta Lake, with Power BI dashboards.
+      Data must be available in near real-time and the platform must be scalable. Customer PII must be masked in non-production.
+  - client_name: CarePoint Health
+    project_name: Clinical Data Platform
+    stage: discovery
+    maturity: 0.52
+    coverage: 0.6
+    classification:
+      primary_industry: healthcare
+      sub_domains: [hospitals, patient_management]
+      technologies: [microsoft_fabric, azure, generative_ai, data_quality]
+      project_types: [data_platform_modernization, genai_assistant]
+      geography: US
+      regulatory_regions: [US]
+      data_classifications: [phi, pii]
+    document: |
+      The hospital network needs a modern clinical data platform integrating the EHR (Epic), lab and claims data using HL7 and FHIR.
+      PHI must be protected with role-based access and audit trails. A GenAI assistant should summarise patient encounters for clinicians
+      with human review. Reporting must be real-time for bed management. Data quality of diagnosis codes (ICD-10) is inconsistent.
+  - client_name: Northwind Retail
+    project_name: Personalised Recommendations
+    stage: solutioning
+    maturity: 0.81
+    coverage: 0.92
+    classification:
+      primary_industry: retail
+      sub_domains: [ecommerce, customer_loyalty]
+      secondary_industries: [{key: banking, sub_domains: [cards]}]
+      technologies: [databricks, aws, machine_learning, real_time_streaming]
+      project_types: [recommendation_engine, customer_360]
+      geography: GB
+      regulatory_regions: [UK]
+      data_classifications: [pii]
+    document: |
+      Northwind wants personalised product recommendations across e-commerce and stores. The platform shall unify customer, order,
+      basket, SKU and loyalty data on Databricks on AWS. Recommendations must be served with low latency during checkout.
+      Co-branded credit card data from our banking partner will be used for offers.
+  - client_name: Apex Manufacturing
+    project_name: Smart Factory Predictive Maintenance
+    stage: assessment
+    maturity: 0.43
+    coverage: 0.7
+    classification:
+      primary_industry: manufacturing
+      sub_domains: [smart_factory, predictive_maintenance]
+      technologies: [iot, azure, machine_learning, real_time_streaming]
+      project_types: [predictive_maintenance, iot_analytics_platform]
+      geography: DE
+      regulatory_regions: [EU]
+      data_classifications: [ot_telemetry, confidential]
+    document: |
+      Apex requires predictive maintenance for CNC and press lines across 4 plants. Sensor data from PLCs and SCADA via OPC UA must be
+      streamed to Azure. OEE, downtime and scrap rate dashboards are needed. Plant connectivity is unreliable at two sites. Safety systems
+      must not be affected. Work orders must be created in SAP PM automatically.
+  - client_name: Vertex Telecom
+    project_name: Churn Prediction & Revenue Assurance
+    stage: proposal
+    maturity: 0.64
+    coverage: 0.75
+    classification:
+      primary_industry: telecommunications
+      sub_domains: [churn, revenue_assurance, billing]
+      technologies: [snowflake, gcp, machine_learning, data_governance]
+      project_types: [churn_prediction]
+      geography: SG
+      regulatory_regions: [SG]
+      data_classifications: [pii]
+    document: |
+      Vertex Telecom needs a churn prediction model for prepaid and postpaid subscribers using CDR, billing and network data in Snowflake.
+      Revenue assurance must reconcile billing with usage records. ARPU and churn rate KPIs must be tracked weekly. Subscriber PII must be
+      governed under PDPA.

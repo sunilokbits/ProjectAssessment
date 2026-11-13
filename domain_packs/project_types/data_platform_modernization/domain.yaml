@@ -1,0 +1,26 @@
+key: data_platform_modernization
+name: Data Platform Modernization
+kind: project_type
+version: 1.0.0
+description: Replacing or re-architecting legacy warehouses, lakes and appliances with a modern cloud data platform.
+sort_order: 20
+detection:
+  keywords:
+    data platform modernization: 5
+    data platform modernisation: 5
+    modern data platform: 5
+    modernise data platform: 4
+    modernize data platform: 4
+    legacy data warehouse: 3
+    replace teradata: 4
+    netezza: 3
+    exadata: 2.5
+    lakehouse migration: 4
+    cloud data platform: 3
+    data estate modernization: 4
+related_technologies:
+- data_platform
+- lakehouse
+- cloud_migration
+- etl_migration
+- data_migration

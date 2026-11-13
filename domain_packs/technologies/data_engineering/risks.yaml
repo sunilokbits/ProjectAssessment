@@ -1,0 +1,40 @@
+# Data Engineering technology pack - risks
+- id: undocumented-pipelines
+  title: Undocumented legacy pipelines with hidden dependencies
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Discovery and lineage harvesting before re-platforming; agree owners per pipeline.
+  indicators: [undocumented, legacy scripts, stored procedures, cron job]
+- id: schema-drift
+  title: Upstream schema changes break pipelines
+  category: data
+  likelihood: 3
+  impact: 3
+  mitigation: Data contracts with source owners, schema evolution handling and contract tests.
+  indicators: [schema change, schema drift, source changes]
+- id: no-data-testing
+  title: No automated data testing - quality issues reach consumers
+  category: quality
+  likelihood: 3
+  impact: 3
+  mitigation: Introduce test frameworks (dbt tests, Great Expectations, expectations in pipelines) as a definition-of-done item.
+  indicators: [manual checks, reconciliation issues]
+- id: streaming-complexity
+  title: Streaming requirements underestimated
+  category: architecture
+  likelihood: 3
+  impact: 3
+  mitigation: Validate real latency needs; use managed streaming services; budget for state management and replay.
+  indicators: [real-time, streaming, kafka, event-driven]
+  when:
+    any_of:
+      - technologies_any: [real_time_streaming, iot]
+      - keywords_any: [real-time, streaming, kafka, event hub, kinesis]
+- id: key-person-dependency
+  title: Pipeline knowledge concentrated in few individuals
+  category: delivery
+  likelihood: 3
+  impact: 3
+  mitigation: Pair programming, documentation and knowledge transfer plan.
+  indicators: [single developer, key person]

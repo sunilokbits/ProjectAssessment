@@ -1,0 +1,2 @@
+- {id: use-case-first, title: Prioritise Customer 360 attributes by consuming use case, category: delivery, priority: high}
+- {id: entity-resolution, title: Implement entity resolution with survivorship rules, category: data, priority: high}

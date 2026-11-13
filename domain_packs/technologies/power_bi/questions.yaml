@@ -1,0 +1,33 @@
+# Power BI technology pack - questions
+- id: pbi-licensing
+  text: What Power BI licensing model is in place?
+  category: technology
+  dimension: power_bi_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: None / free only, score: 0.2}
+    - {value: pro, label: Pro, score: 0.6}
+    - {value: ppu, label: Premium Per User, score: 0.8}
+    - {value: capacity, label: Fabric / Premium capacity, score: 1}
+- {id: pbi-tenant-governance, text: 'Are Power BI tenant settings, workspace creation rights and an admin/CoE function defined?', category: governance,
+  dimension: power_bi_readiness, weight: 1.3, critical: true}
+- id: pbi-storage-mode
+  text: Which semantic model storage mode is expected for the main models?
+  category: architecture
+  dimension: power_bi_readiness
+  answer_type: single_choice
+  options:
+    - {value: import, label: Import}
+    - {value: directquery, label: DirectQuery}
+    - {value: direct_lake, label: Direct Lake (Fabric)}
+    - {value: composite, label: Composite / mixed}
+    - {value: unknown, label: Not decided}
+- {id: pbi-data-volume-latency, text: 'Are dataset sizes and data freshness requirements known for the main reports?', category: architecture,
+  dimension: architecture_fit}
+- {id: pbi-deployment, text: 'Are deployment pipelines / Git integration used to promote content dev to test to prod?', category: operations,
+  dimension: power_bi_readiness}
+- {id: pbi-gateway, text: 'Are on-premises data gateways required and managed in clustered / high-availability mode?', category: integration,
+  dimension: integration_readiness}
+- {id: pbi-rls-labels, text: 'Are row-level security and sensitivity labels applied to semantic models and reports?', category: security, dimension: security_controls}
+- {id: pbi-skills, text: 'How experienced is the client team with Power BI (DAX, data modelling, administration) (1-5)?', category: delivery,
+  dimension: team_capability, answer_type: scale, equivalence_key: client_skills}

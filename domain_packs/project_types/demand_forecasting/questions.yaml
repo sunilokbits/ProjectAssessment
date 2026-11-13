@@ -1,0 +1,33 @@
+- id: df-granularity
+  text: At what granularity and horizon are forecasts needed (SKU/store/day, weekly, monthly)?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: df-history
+  text: Is sufficient clean sales/demand history available, including promotions and stock-outs?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: df-drivers
+  text: Are external drivers (promotions, pricing, weather, events) available as data?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+- id: df-planning-integration
+  text: How will forecasts feed planning systems (ERP, APS, replenishment)?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+- id: df-planner-override
+  text: Is there a process for planners to review and override forecasts?
+  category: business
+  dimension: stakeholder_readiness
+  answer_type: yes_no
+- id: df-baseline
+  text: Is current forecast accuracy measured as a baseline?
+  category: business
+  dimension: business_alignment
+  answer_type: yes_no

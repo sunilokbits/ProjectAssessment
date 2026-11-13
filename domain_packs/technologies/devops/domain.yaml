@@ -1,0 +1,28 @@
+key: devops
+name: DevOps
+kind: technology
+version: 1.0.0
+description: CI/CD, infrastructure as code, environments, testing automation and release practices.
+aliases:
+- Operations
+sort_order: 90
+detection:
+  keywords:
+    devops: 5
+    ci/cd: 4
+    azure devops: 4
+    github actions: 4
+    gitlab: 3
+    jenkins: 3
+    terraform: 4
+    bicep: 3
+    infrastructure as code: 4
+    kubernetes: 2.5
+    continuous delivery: 3
+    pipeline: 0.5
+    git: 1.5
+related_technologies:
+- dataops
+- mlops
+- cybersecurity
+- finops

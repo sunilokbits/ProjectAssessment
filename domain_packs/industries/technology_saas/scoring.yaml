@@ -1,0 +1,3 @@
+dimensions:
+  - {key: tenant_data_isolation, name: Tenant Data Isolation and Trust, group: security, weight: 1.5, description: "Customer (tenant) data isolation, attestation obligations (SOC 2, ISO 27001) and contractual data-use limits."}
+  - {key: product_data_maturity, name: Product and Revenue Data Maturity, group: domain, weight: 1.0, description: "Quality of product telemetry, subscription and revenue data and consistent SaaS metric definitions."}

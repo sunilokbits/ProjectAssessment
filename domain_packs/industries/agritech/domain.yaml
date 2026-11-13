@@ -1,0 +1,87 @@
+key: agritech
+name: Agriculture and AgriTech
+kind: industry
+version: 1.0.0
+description: Precision farming, crop analytics, livestock management, agricultural supply chains, agri-inputs and farm finance.
+aliases: [agriculture, agri, farming, agtech, agribusiness]
+sort_order: 120
+sub_domains:
+  - key: precision_farming
+    name: Precision Farming
+    keywords: [precision agriculture, variable rate, field sensors, farm machinery telemetry, yield monitor, soil moisture, drones, prescription maps, isobus]
+  - key: crop_analytics
+    name: Crop Analytics
+    keywords: [crop monitoring, satellite imagery, ndvi, yield prediction, crop health, pest detection, agronomy, crop modelling]
+  - key: livestock
+    name: Livestock and Dairy
+    keywords: [livestock, dairy, herd management, animal health, milk yield, feed conversion, poultry, traceability tags, veterinary]
+  - key: agri_supply_chain
+    name: Agri Supply Chain and Commodities
+    keywords: [grain handling, commodity trading, procurement from farmers, cold chain, agri traceability, food processing, crop procurement, warehouse receipts]
+  - key: farm_finance
+    name: Farm Finance and Insurance
+    keywords: [farm credit, crop insurance, agri lending, farmer loans, parametric insurance, subsidy, farm income]
+  - key: agri_inputs
+    name: Agri Inputs
+    keywords: [seed, fertiliser, crop protection, agrochemicals, dealer network, retailer, input sales, demand planning]
+detection:
+  keywords:
+    agriculture: 4
+    agricultural: 4
+    farm: 3
+    farmer: 3.5
+    farmers: 3.5
+    crop: 3.5
+    yield: 1.5
+    hectare: 4
+    acre: 2.5
+    agronomy: 4.5
+    ndvi: 5
+    livestock: 4.5
+    herd: 3.5
+    harvest: 3
+    seed: 2
+    fertiliser: 3.5
+    fertilizer: 3.5
+    irrigation: 3.5
+    john deere: 4.5
+    grain: 3
+    soil: 2.5
+business_processes:
+  - Farm planning and crop rotation
+  - Planting, input application and irrigation
+  - Crop monitoring and scouting
+  - Harvest and yield recording
+  - Herd health and breeding management
+  - Farmer onboarding and procurement
+  - Commodity grading, storage and trading
+  - Traceability and certification
+  - Agri lending and insurance underwriting
+  - Dealer and channel management
+capabilities:
+  - Field-level yield prediction
+  - Prescription and variable-rate recommendations
+  - Satellite and drone crop monitoring
+  - Animal health early warning
+  - Farm-to-fork traceability
+  - Farmer 360
+  - Agri credit scoring
+  - Weather risk analytics
+source_systems:
+  - "Farm management information systems (Climate FieldView, John Deere Operations Center, Trimble Ag, Granular, xarvio)"
+  - "Livestock and dairy management (DeLaval DelPro, Lely Horizon, Afimilk, Allflex / MSD Animal Health)"
+  - "Satellite and imagery providers (Sentinel-2, Planet, Landsat)"
+  - "Weather data (IBM The Weather Company, DTN, national meteorological services)"
+  - "ERP and commodity management (SAP S/4HANA, Microsoft Dynamics 365, Eka, Aspect CTRM)"
+  - IoT sensors and weather stations
+  - Machinery telemetry via ISOBUS / ADAPT
+  - Government land and subsidy registries
+data_entities: [Farm, Field, Farmer, Crop, Season, Planting, Input application, Yield, Animal, Herd, Lot, Weather observation, Soil sample, Contract]
+integration_patterns:
+  - "Geospatial imagery ingestion (raster / COG)"
+  - "Agricultural data standards (ADAPT, ISOXML, AgGateway)"
+  - IoT and LoRaWAN sensor streams
+  - Machinery OEM cloud APIs
+  - Mobile apps with offline sync for field agents
+related_technologies: [iot, machine_learning, advanced_analytics, real_time_streaming, generative_ai]
+related_project_types: [iot_analytics_platform, demand_forecasting, predictive_maintenance, customer_360]

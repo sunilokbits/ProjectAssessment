@@ -1,0 +1,10 @@
+- id: lem-analyse-first
+  title: Analyse the code base before committing to estimates
+  text: Run automated inventory and complexity analysis to size and wave the migration.
+  category: delivery
+  priority: high
+- id: lem-modernise-pattern
+  title: Convert to ELT patterns, not tool-for-tool
+  text: Re-express logic as modular ELT on the target platform rather than replicating legacy job structure.
+  category: architecture
+  priority: medium

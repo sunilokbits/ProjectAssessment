@@ -1,0 +1,46 @@
+- id: existing-workspace
+  text: Does the client already have Databricks workspaces, and on which cloud (Azure, AWS, GCP)?
+  category: technology
+  dimension: databricks_platform_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: No existing Databricks, score: 0.3}
+    - {value: pilot, label: Pilot / sandbox only, score: 0.6}
+    - {value: production, label: Production workspaces in use, score: 1}
+- id: unity-catalog
+  text: Is Unity Catalog enabled with a defined catalog/schema and access-control model?
+  category: governance
+  dimension: databricks_platform_readiness
+  weight: 1.5
+  critical: true
+- id: network-isolation
+  text: Is the workspace deployed with private networking (VNet/VPC injection, private link, no public IP)?
+  category: security
+  dimension: security_controls
+- id: compute-policies
+  text: Are cluster/compute policies and serverless usage rules defined to control cost and security?
+  category: technology
+  dimension: databricks_platform_readiness
+- id: medallion
+  text: Is a medallion (bronze/silver/gold) layering standard agreed for the lakehouse?
+  category: architecture
+  dimension: architecture_fit
+- id: ingestion-approach
+  text: How will data be ingested (Lakeflow Connect, Auto Loader, partner ETL, CDC tools)?
+  category: data
+  dimension: integration_readiness
+  answer_type: text
+- id: cicd-bundles
+  text: Will code and jobs be deployed through CI/CD (e.g. Declarative Automation Bundles / Git integration)?
+  category: operations
+  dimension: databricks_platform_readiness
+- id: cost-monitoring
+  text: Are DBU consumption budgets and cost monitoring (system tables, tags) in place?
+  category: operations
+  dimension: databricks_platform_readiness
+- id: dbx-skills
+  text: How experienced is the client team with Spark / Databricks (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

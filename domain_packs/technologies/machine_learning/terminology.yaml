@@ -1,0 +1,23 @@
+- term: Ground Truth
+  definition: The observed outcome used as the label for supervised learning
+  synonyms:
+  - label
+  - target
+  entity_type: entity
+  category: data
+- term: Feature Store
+  definition: Managed repository of curated features for training and serving
+  entity_type: system
+  category: technology
+- term: Target Leakage
+  definition: Use of information not available at prediction time during training
+  synonyms:
+  - data leakage
+  entity_type: concept
+  category: data
+- term: AUC
+  definition: Area under the ROC curve, a classification performance metric
+  synonyms:
+  - roc auc
+  entity_type: metric
+  category: analytics

@@ -1,0 +1,13 @@
+# Database Migration technology pack - domain
+key: database_migration
+name: Database Migration
+kind: technology
+version: 1.0.0
+description: Migration of database engines - homogeneous or heterogeneous (e.g. Oracle to PostgreSQL), schema and code conversion, replication
+  and cutover.
+aliases: [Modernization & Migration]
+sort_order: 42
+detection:
+  keywords: {database migration: 5, oracle to postgresql: 5, schema conversion: 4, aws dms: 4, database migration service: 4, azure database migration: 4,
+    sql server: 1.5, oracle: 1.5, postgresql: 1.5, db2: 2, pl/sql: 2, stored procedures: 1.5, sybase: 2.5, database: 0.3}
+related_technologies: [data_migration, cloud_migration, application_modernization, azure, aws, gcp]

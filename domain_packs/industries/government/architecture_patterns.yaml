@@ -1,0 +1,19 @@
+- id: government-data-hub
+  name: Authorised government data hub
+  description: Multi-programme data platform hosted in authorised government cloud regions with purpose-based access and data-sharing controls.
+  use_cases: [Citizen 360, "Fraud, waste and abuse analytics", Performance reporting, Open data]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: agency-sources, name: "Agency case, ERP, tax and legacy mainframe sources", layer: sources, core: true}
+    - {id: mainframe-offload, name: Mainframe extract and copybook conversion, layer: ingestion, when: {keywords_any: [mainframe, cobol, copybook]}}
+    - {id: gov-cloud-region, name: "Authorised government cloud region (GovCloud / FedRAMP High / sovereign)", layer: storage, core: true}
+    - {id: identity-resolution, name: Citizen identity resolution, layer: processing, when: {any_of: [{project_types_any: [customer_360, fraud_detection]}, {sub_domains_any: [citizen_services, tax_revenue]}]}}
+    - {id: purpose-access, name: "Purpose-based access control and data-sharing agreement enforcement", layer: governance, core: true}
+    - {id: cjis-enclave, name: CJIS-compliant enclave, layer: security, when: {sub_domains_any: [public_safety], geographies_any: [US]}}
+    - {id: fti-segregation, name: FTI segregation and labelling, layer: security, when: {answers: {fti-data: "yes"}}}
+    - {id: open-data-publish, name: Open data publishing with disclosure control, layer: serving, when: {keywords_any: [open data, transparency, public dashboard]}}
+    - {id: fwa-analytics, name: "Fraud, waste and abuse analytics", layer: processing, when: {project_types_any: [fraud_detection]}}
+    - {id: accessible-portal, name: Accessible citizen-facing reporting, layer: consumption, when: {sub_domains_any: [citizen_services, local_government]}}
+  considerations:
+    - Confirm authorisation status of every managed service in the target region.
+    - Apply disclosure control before publishing aggregated statistics.

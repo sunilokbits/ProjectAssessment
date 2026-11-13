@@ -1,0 +1,48 @@
+- id: mm-lineage
+  text: Is end-to-end lineage (source to report) required, and at what granularity?
+  category: data
+  dimension: metadata_management_readiness
+  answer_type: single_choice
+  options:
+  - value: none
+    label: Not required
+  - value: table
+    label: Table-level lineage
+    score: 1
+  - value: column
+    label: Column-level lineage
+    score: 1
+  - value: unknown
+    label: Not defined
+    score: 0.3
+- id: mm-automated-harvest
+  text: Can metadata be harvested automatically from platforms, ETL and BI tools?
+  category: technology
+  dimension: metadata_management_readiness
+  answer_type: yes_no
+- id: mm-glossary
+  text: Is there a business glossary linked to physical data assets?
+  category: governance
+  dimension: metadata_management_readiness
+  answer_type: yes_no
+- id: mm-legacy-lineage
+  text: Do legacy tools (hand-coded SQL, stored procedures, legacy ETL) obscure lineage?
+  category: data
+  dimension: metadata_management_readiness
+  answer_type: yes_no
+- id: mm-ownership
+  text: Who owns metadata curation (stewards, engineering, a central team)?
+  category: governance
+  dimension: data_availability
+  answer_type: text
+- id: mm-existing-docs
+  text: Is existing data architecture documentation up to date?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: yes_no
+- id: mm-skills
+  text: How experienced is the client team with metadata and lineage tooling (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

@@ -1,0 +1,19 @@
+- id: audience-content-platform
+  name: Audience and content intelligence platform
+  description: High-volume telemetry ingestion joined with subscriber, content metadata and rights data to power personalisation, churn and ad yield analytics.
+  use_cases: [Audience 360, Content recommendation, Churn prediction, Ad yield optimisation]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: media-sources, name: "Player telemetry, billing, CMS/MAM, ad server and rights sources", layer: sources, core: true}
+    - {id: telemetry-pipeline, name: Client telemetry streaming pipeline, layer: ingestion, core: true}
+    - {id: identity-graph, name: Audience identity graph, layer: processing, when: {project_types_any: [customer_360, recommendation_engine]}}
+    - {id: consent-enforcement, name: Consent signal propagation and enforcement, layer: governance, core: true}
+    - {id: content-metadata-hub, name: Content metadata and rights hub, layer: governance, when: {sub_domains_any: [streaming, content_analytics, publishing]}}
+    - {id: recsys, name: Recommendation models with vector retrieval, layer: serving, when: {any_of: [{project_types_any: [recommendation_engine]}, {technologies_any: [vector_search]}]}}
+    - {id: churn-model, name: Churn propensity model, layer: processing, when: {project_types_any: [churn_prediction]}}
+    - {id: clean-room, name: Data clean room for advertiser matching, layer: serving, when: {sub_domains_any: [advertising]}}
+    - {id: kids-controls, name: Children's profile data restrictions, layer: security, when: {data_classifications_any: [children]}}
+    - {id: content-dashboards, name: Content and audience dashboards, layer: consumption, core: true}
+  considerations:
+    - Sample or aggregate telemetry where full fidelity is not needed to control cost.
+    - Check rights and licence terms before using content in AI training or generation.

@@ -1,0 +1,30 @@
+key: llmops
+name: LLMOps
+kind: technology
+version: 1.0.0
+description: 'Operational practices for LLM applications: prompt/version management, evaluation, tracing, cost and safety monitoring.'
+aliases:
+- AI
+sort_order: 68
+detection:
+  keywords:
+    llmops: 5
+    genaiops: 4
+    prompt management: 4
+    llm observability: 4
+    llm evaluation: 4
+    langsmith: 4
+    langfuse: 4
+    llm-as-a-judge: 4
+    ai gateway: 3
+    token cost: 3
+    tracing: 1.5
+    prompt versioning: 4
+related_technologies:
+- generative_ai
+- rag
+- agentic_ai
+- mlops
+- finops
+related_project_types:
+- genai_assistant

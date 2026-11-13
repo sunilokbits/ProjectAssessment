@@ -1,0 +1,142 @@
+key: manufacturing
+name: Manufacturing
+kind: industry
+version: 1.0.0
+description: Discrete and process manufacturing including smart factory, industrial IoT, predictive maintenance, quality, production planning and plant operations.
+aliases: [manufacturer, industrial, factory, plant operations, industry 4.0, smart manufacturing]
+sort_order: 50
+sub_domains:
+  - key: discrete_manufacturing
+    name: Discrete Manufacturing
+    description: Assembly-based production of distinct units (machinery, electronics, aerospace components, equipment).
+    keywords: [discrete manufacturing, assembly line, machining, cnc, work cell, engineer to order, make to order, serial number, routing]
+  - key: process_manufacturing
+    name: Process Manufacturing
+    description: Batch and continuous production (chemicals, food, metals, paper, plastics).
+    keywords: [process manufacturing, batch process, continuous process, recipe, formulation, chemicals, refinery, dcs, process control, yield loss]
+  - key: smart_factory
+    name: Smart Factory and Industry 4.0
+    description: Digitised plants with MES, connected assets, digital twins and automation.
+    keywords: [smart factory, industry 4.0, digital twin, mes, manufacturing execution system, connected worker, automation, lights-out, unified namespace]
+  - key: industrial_iot
+    name: Industrial IoT
+    description: Sensor and machine connectivity, edge computing and time-series data.
+    keywords: [industrial iot, iiot, sensor data, plc, scada, opc ua, mqtt, historian, edge gateway, time series, telemetry]
+  - key: predictive_maintenance
+    name: Predictive Maintenance and Asset Management
+    description: Condition monitoring, failure prediction and maintenance planning.
+    keywords: [predictive maintenance, condition monitoring, vibration analysis, asset health, cmms, eam, failure prediction, mtbf, mttr, reliability]
+  - key: quality
+    name: Quality Management
+    description: Inspection, SPC, non-conformance, CAPA and traceability.
+    keywords: [quality control, quality inspection, spc, statistical process control, non-conformance, ncr, capa, first pass yield, defect, vision inspection, traceability]
+  - key: production_planning
+    name: Production Planning and Scheduling
+    description: MRP, capacity planning, finite scheduling and shop-floor control.
+    keywords: [production planning, production scheduling, mrp, aps, capacity planning, master production schedule, finite scheduling, shop floor control]
+  - key: supply_chain
+    name: Manufacturing Supply Chain
+    description: Procurement, supplier quality, inbound logistics and inventory.
+    keywords: [supplier quality, procurement, inbound logistics, raw materials, wip inventory, kanban, just in time, supplier collaboration]
+  - key: energy_sustainability
+    name: Energy and Sustainability
+    description: Energy monitoring, emissions tracking and resource efficiency.
+    keywords: [energy management, energy consumption, emissions, carbon footprint, iso 50001, scope 1, scope 2, sustainability]
+  - key: ehs
+    name: Environment, Health and Safety
+    description: Worker safety, incident management and environmental compliance.
+    keywords: [ehs, health and safety, safety incident, near miss, lockout tagout, osha, permit to work, hazard]
+  - key: aftermarket_service
+    name: Aftermarket and Field Service
+    description: Service parts, field service and installed-base management.
+    keywords: [aftermarket, field service, service parts, installed base, warranty, service contract, remote monitoring]
+detection:
+  keywords:
+    manufacturing: 3
+    manufacturer: 3
+    plant: 2
+    factory: 3
+    shop floor: 4
+    production line: 3.5
+    oee: 5
+    mes: 4
+    plc: 4
+    scada: 4
+    historian: 3.5
+    opc ua: 4.5
+    osisoft: 4
+    aveva pi: 4.5
+    predictive maintenance: 3
+    work order: 1.5
+    bill of materials: 3
+    bom: 2.5
+    downtime: 2
+    scrap: 2.5
+    yield: 1
+    equipment: 1
+    quality: 0.5
+business_processes:
+  - "Sales and operations planning"
+  - "Material requirements planning"
+  - "Production scheduling and dispatch"
+  - "Production execution and order confirmation"
+  - "Quality inspection and release"
+  - "Non-conformance and CAPA management"
+  - "Maintenance planning and execution"
+  - "Inventory and warehouse management"
+  - "Engineering change management"
+  - "Procurement and supplier quality"
+  - "Energy and utilities management"
+  - "EHS incident management"
+  - "Product genealogy and traceability"
+capabilities:
+  - "Real-time production monitoring and OEE"
+  - "Predictive maintenance"
+  - "Quality analytics and SPC"
+  - "Digital twin"
+  - "Production scheduling optimisation"
+  - "Product genealogy and traceability"
+  - "Energy optimisation"
+  - "Connected worker"
+  - "Supply chain visibility"
+  - "Computer vision inspection"
+source_systems:
+  - "ERP (SAP S/4HANA / ECC PP-QM-PM, Oracle Cloud SCM, Infor CloudSuite Industrial / LN, Epicor, Microsoft Dynamics 365 SCM)"
+  - "MES / MOM (Siemens Opcenter, Rockwell FactoryTalk / Plex, AVEVA MES, Dassault DELMIA Apriso, GE Proficy)"
+  - "Historians (AVEVA PI System / OSIsoft PI, AVEVA Historian, GE Proficy Historian, Canary)"
+  - "SCADA / DCS (Siemens WinCC / PCS 7, Rockwell, Honeywell Experion, Emerson DeltaV, ABB 800xA)"
+  - "PLCs and edge gateways (Siemens S7, Allen-Bradley, Kepware, Litmus)"
+  - "EAM / CMMS (IBM Maximo, SAP PM, Infor EAM, Fiix)"
+  - "QMS (ETQ, MasterControl, SAP QM)"
+  - "PLM (Siemens Teamcenter, PTC Windchill, Dassault ENOVIA)"
+  - "APS (SAP PP/DS, Siemens Opcenter APS, Kinaxis, Asprova)"
+  - "LIMS for process plants"
+  - "IoT platforms (Azure IoT Operations, AWS IoT SiteWise, PTC ThingWorx, Siemens Insights Hub)"
+data_entities:
+  - "Plant"
+  - "Production line"
+  - "Work center"
+  - "Equipment / asset"
+  - "Sensor / tag"
+  - "Production order"
+  - "Work order (maintenance)"
+  - "Bill of materials"
+  - "Routing / recipe"
+  - "Material"
+  - "Batch / lot / serial number"
+  - "Quality inspection"
+  - "Non-conformance"
+  - "Downtime event"
+  - "Shift"
+  - "Alarm / event"
+  - "Energy reading"
+integration_patterns:
+  - "OPC UA / OPC DA from PLC and SCADA"
+  - "MQTT / Sparkplug B and unified namespace"
+  - "Historian interfaces and PI Asset Framework"
+  - "ISA-95 based MES-ERP integration (B2MML)"
+  - "Edge-to-cloud streaming"
+  - "ERP batch extracts and IDocs"
+  - "File-based quality and lab data transfer"
+related_technologies: [iot, real_time_streaming, databricks, azure, aws, machine_learning, sap_integration, cybersecurity, power_bi]
+related_project_types: [predictive_maintenance, iot_analytics_platform, demand_forecasting, data_platform_modernization, bi_modernization]

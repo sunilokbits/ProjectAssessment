@@ -1,0 +1,19 @@
+- id: devops-iac-everything
+  title: Provision all infrastructure as code
+  text: Manage platform infrastructure through IaC modules in source control.
+  category: operations
+  priority: high
+- id: devops-github
+  title: Standardise on GitHub with GitHub Actions
+  text: Consolidate repositories and pipelines on GitHub where the organisation already uses it.
+  category: technology
+  priority: medium
+  decision_key: devops_toolchain
+  decision_option: github
+- id: devops-azure-devops
+  title: Standardise on Azure DevOps
+  text: Use Azure DevOps Repos and Pipelines where boards and pipelines are established.
+  category: technology
+  priority: medium
+  decision_key: devops_toolchain
+  decision_option: azure_devops

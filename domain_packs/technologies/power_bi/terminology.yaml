@@ -1,0 +1,16 @@
+# Power BI technology pack - terminology
+- term: Semantic Model
+  definition: Power BI data model with tables, relationships and DAX measures
+  synonyms: [dataset]
+  entity_type: system
+  category: technology
+- {term: DAX, definition: Data Analysis Expressions - Power BI formula language, entity_type: concept, category: technology}
+- {term: Import Mode, definition: Storage mode loading data into the in-memory VertiPaq engine, entity_type: concept, category: technology}
+- {term: DirectQuery, definition: Storage mode querying the source at report time, entity_type: concept, category: technology}
+- {term: Direct Lake, definition: Storage mode reading Delta tables in OneLake directly, entity_type: concept, category: technology}
+- term: On-premises Data Gateway
+  definition: Bridge for Power BI to reach on-premises sources
+  synonyms: [gateway]
+  entity_type: system
+  category: integration
+- {term: Deployment Pipeline, definition: Power BI feature to promote content across dev / test / prod, entity_type: process, category: operations}

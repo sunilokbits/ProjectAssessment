@@ -1,0 +1,14 @@
+- {term: Traveller, definition: Person travelling or staying with the business, synonyms: [passenger, pax, guest, customer, rider], entity_type: entity, category: data}
+- {term: PNR, definition: Passenger name record holding a reservation, synonyms: [passenger name record, booking record, record locator], entity_type: entity, category: data, sub_domains: [airlines, travel_distribution, airports]}
+- {term: Booking, definition: Confirmed reservation of travel or accommodation, synonyms: [reservation, order, itinerary], entity_type: entity, category: data}
+- {term: Segment, definition: Single flight or rail leg within an itinerary, synonyms: [leg, flight segment, coupon], entity_type: entity, category: data, sub_domains: [airlines, rail, travel_distribution]}
+- {term: Room Night, definition: One room occupied for one night, synonyms: [room-night, stay night], entity_type: metric, category: business, sub_domains: [hotels]}
+- {term: RevPAR, definition: Revenue per available room, synonyms: [revenue per available room], entity_type: metric, category: business, sub_domains: [hotels]}
+- {term: ADR, definition: Average daily rate, synonyms: [average daily rate, average room rate], entity_type: metric, category: business, sub_domains: [hotels]}
+- {term: Load Factor, definition: Share of seat capacity filled, synonyms: [seat load factor, plf], entity_type: metric, category: business, sub_domains: [airlines, rail]}
+- {term: PMS, definition: Hotel property management system, synonyms: [property management system, opera], entity_type: system, category: integration, sub_domains: [hotels]}
+- {term: PSS, definition: Airline passenger service system, synonyms: [passenger service system, reservation system, altea, navitaire], entity_type: system, category: integration, sub_domains: [airlines]}
+- {term: GDS, definition: Global distribution system for travel content, synonyms: [global distribution system, amadeus, sabre, travelport], entity_type: system, category: integration}
+- {term: Ancillary, definition: Revenue beyond the base fare or room, synonyms: [ancillary revenue, add-on, extras], entity_type: concept, category: business}
+- {term: Loyalty Member, definition: Enrolled member of a loyalty programme, synonyms: [frequent flyer, rewards member, member], entity_type: entity, category: data}
+- {term: Irregular Operations, definition: Disruption to planned operations, synonyms: [irops, disruption, delay, cancellation], entity_type: event, category: operational}

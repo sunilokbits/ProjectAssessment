@@ -1,0 +1,12 @@
+- term: Data Lineage
+  definition: Record of data origin and transformations
+  entity_type: concept
+  category: governance
+- term: Business Glossary
+  definition: Agreed definitions of business terms
+  entity_type: entity
+  category: governance
+- term: Active Metadata
+  definition: Metadata used to drive automation and recommendations
+  entity_type: concept
+  category: technology

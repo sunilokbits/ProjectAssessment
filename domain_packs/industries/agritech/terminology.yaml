@@ -1,0 +1,14 @@
+- {term: Farm, definition: Agricultural holding operated by a farmer, synonyms: [holding, operation, estate, ranch], entity_type: entity, category: data}
+- {term: Field, definition: Bounded area of land managed as a unit, synonyms: [plot, parcel, paddock, block], entity_type: entity, category: data}
+- {term: Farmer, definition: Person or organisation operating a farm, synonyms: [grower, producer, smallholder], entity_type: entity, category: data}
+- {term: Season, definition: Growing cycle for a crop, synonyms: [crop year, campaign, growing season], entity_type: concept, category: data}
+- {term: Yield, definition: Output harvested per area or animal, synonyms: [harvest, production, output], entity_type: metric, category: production}
+- {term: NDVI, definition: Normalised difference vegetation index from imagery, synonyms: [vegetation index, crop vigour index], entity_type: metric, category: analytics, sub_domains: [crop_analytics, precision_farming]}
+- {term: Prescription Map, definition: Spatial plan for variable-rate input application, synonyms: [vra map, variable rate prescription], entity_type: entity, category: data, sub_domains: [precision_farming]}
+- {term: Input Application, definition: Application of seed or chemicals or fertiliser to a field, synonyms: [spray record, fertiliser application, operation], entity_type: event, category: data}
+- {term: Herd, definition: Group of animals managed together, synonyms: [flock, mob, livestock group], entity_type: entity, category: data, sub_domains: [livestock]}
+- {term: Animal, definition: Individually identified livestock animal, synonyms: [head, cow, ewe, eartag], entity_type: entity, category: data, sub_domains: [livestock]}
+- {term: Lot, definition: Batch of commodity tracked through the supply chain, synonyms: [batch, consignment, shipment lot], entity_type: entity, category: data, sub_domains: [agri_supply_chain]}
+- {term: FMIS, definition: Farm management information system, synonyms: [farm management software, fieldview, operations center], entity_type: system, category: integration}
+- {term: Agronomist, definition: Expert advising on crop management, synonyms: [crop adviser, field officer, extension officer], entity_type: role, category: business}
+- {term: EUDR, definition: EU Deforestation Regulation, synonyms: [deforestation regulation, deforestation-free], entity_type: regulation, category: compliance, sub_domains: [agri_supply_chain]}

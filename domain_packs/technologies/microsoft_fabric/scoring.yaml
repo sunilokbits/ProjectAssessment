@@ -1,0 +1,4 @@
+# Microsoft Fabric technology pack - scoring
+dimensions:
+  - {key: fabric_platform_readiness, name: Microsoft Fabric Readiness, group: technology, weight: 1.0, description: 'Capacity planning, tenant
+      settings, workspace/domain structure, OneLake governance and Power BI alignment.'}

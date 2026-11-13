@@ -1,0 +1,80 @@
+key: professional_services
+name: Professional Services
+kind: industry
+version: 1.0.0
+description: Management and technology consulting, legal services, accounting and audit firms, and engineering services firms.
+aliases: [consulting, law firm, accounting firm, advisory, professional services firm, PSF]
+sort_order: 90
+sub_domains:
+  - key: consulting
+    name: Consulting
+    keywords: [consulting, advisory, engagement, consultant, statement of work, practice, utilisation, bench, staffing]
+  - key: legal
+    name: Legal Services
+    keywords: [law firm, matter, legal hold, ediscovery, privilege, client-matter, docketing, conflicts check, legal operations, attorney]
+  - key: accounting
+    name: Accounting and Audit
+    keywords: [audit, assurance, tax advisory, accounting firm, audit engagement, working papers, independence, cpa, chartered accountant]
+  - key: engineering_services
+    name: Engineering Services
+    keywords: [engineering services, design consultancy, cad, bim, engineering drawings, project engineering, epcm, technical services]
+detection:
+  keywords:
+    professional services: 4
+    billable hours: 5
+    utilisation: 3.5
+    utilization: 3.5
+    timesheet: 3
+    engagement: 1.5
+    matter: 2.5
+    law firm: 5
+    client-matter: 5
+    ediscovery: 4.5
+    privilege: 2.5
+    conflicts check: 5
+    audit firm: 4.5
+    independence rules: 4.5
+    working papers: 4.5
+    realisation rate: 5
+    work in progress: 2.5
+    psa: 3.5
+    statement of work: 3
+    partner: 1
+business_processes:
+  - Business development and proposals
+  - Conflict and independence checks
+  - Engagement / matter opening
+  - Resource planning and staffing
+  - Time and expense capture
+  - Billing, WIP and collections
+  - Knowledge management
+  - Quality and risk management
+  - Document management and records retention
+  - Talent management and learning
+capabilities:
+  - Utilisation and realisation analytics
+  - Engagement profitability
+  - Pipeline forecasting
+  - Knowledge search and reuse
+  - Skills and staffing optimisation
+  - Client 360
+  - Legal and audit AI assistants
+  - Pricing and estimation
+source_systems:
+  - "PSA / ERP (Workday PSA, Kantata, Certinia, Deltek Vantagepoint, Oracle NetSuite OpenAir, SAP S/4HANA)"
+  - "Legal practice management (Elite 3E, Aderant Expert, Intapp, iManage, NetDocuments)"
+  - "Audit platforms (CaseWare, TeamMate, proprietary audit tools)"
+  - "eDiscovery (Relativity, Everlaw, Nuix)"
+  - "CRM (Salesforce, Microsoft Dynamics 365, InterAction)"
+  - "Document management (iManage, NetDocuments, SharePoint)"
+  - "Engineering tools (Autodesk Revit / AutoCAD, Bentley, Procore)"
+  - "HR and talent (Workday, SuccessFactors)"
+data_entities: [Client, Engagement, Matter, Timesheet entry, Invoice, WIP, Resource, Skill, Proposal, Document, Deliverable, Conflict record, Rate card]
+integration_patterns:
+  - PSA and ERP batch integration
+  - Document management APIs
+  - "LEDES e-billing (legal)"
+  - CRM to PSA opportunity hand-off
+  - Search and knowledge indexing over document repositories
+related_technologies: [generative_ai, rag, vector_search, power_bi, data_governance]
+related_project_types: [genai_assistant, document_intelligence, bi_modernization, customer_360]

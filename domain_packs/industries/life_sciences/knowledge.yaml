@@ -1,0 +1,40 @@
+nfrs:
+  - {id: gxp-retention, text: "GxP records retained per predicate rules (e.g. batch records at least one year past expiry; trial master file per ICH/EU CTR timelines).", category: compliance}
+  - {id: audit-trail, text: "Secure, time-stamped, computer-generated audit trails for creation, modification and deletion of GxP records.", category: compliance}
+  - {id: validated-backup, text: Backup and restore procedures verified as part of validation., category: availability}
+assumptions:
+  - {id: source-records, text: Source GxP systems remain records of origin; the platform holds certified copies or derived data., category: data}
+  - {id: qa-capacity, text: Quality Assurance has capacity to review validation deliverables within project timelines., category: delivery}
+dependencies:
+  - {id: supplier-qualification, text: Supplier qualification and quality agreements for cloud and SaaS vendors., category: compliance}
+  - {id: pv-team, text: Pharmacovigilance team involvement for any channel that could surface adverse events., category: compliance}
+  - {id: data-licences, text: Third-party data licence reviews by legal / procurement., category: business}
+security_considerations:
+  - {id: ip-classification, text: Research and compound data classified as IP with restricted access and egress monitoring., category: security}
+  - {id: blinding-controls, text: Access controls preserving trial blinding., category: security, sub_domains: [clinical_trials]}
+  - {id: e-signature, text: Electronic signatures linked to unique individuals with two-component authentication., category: security}
+data_quality_checks:
+  - {id: audit-trail-review, text: Periodic audit trail review for GxP-critical data., category: data}
+  - {id: batch-genealogy-completeness, text: "Batch genealogy complete across materials, equipment and test results.", category: data, sub_domains: [manufacturing]}
+  - {id: cdisc-conformance, text: SDTM / ADaM data sets pass conformance checks before submission., category: data, sub_domains: [clinical_trials]}
+  - {id: ae-reconciliation, text: AE counts reconcile between source channels and the safety database., category: data, sub_domains: [pharmacovigilance]}
+reporting_requirements:
+  - {id: apr-pqr, text: Annual product reviews / product quality reviews., category: reporting, sub_domains: [manufacturing, quality_management]}
+  - {id: psur, text: Periodic safety reports (PSUR / PBRER / DSUR)., category: reporting, sub_domains: [pharmacovigilance]}
+  - {id: transparency-reporting, text: Transfer-of-value transparency reports., category: reporting, sub_domains: [commercial_analytics]}
+migration_concerns:
+  - {id: audit-trail-migration, text: Migration of audit trails and metadata with legacy GxP records., category: data}
+  - {id: legacy-retirement, text: Read-only archive and retrieval for retired validated systems., category: data}
+ai_opportunities:
+  - {id: trial-site-selection, text: ML-based site selection and enrolment forecasting., category: ai, sub_domains: [clinical_trials]}
+  - {id: case-intake-automation, text: GenAI-assisted AE case intake and narrative drafting., category: ai, sub_domains: [pharmacovigilance]}
+  - {id: deviation-assistant, text: AI assistance for deviation investigation and root-cause search., category: ai, sub_domains: [quality_management, manufacturing]}
+  - {id: submission-authoring, text: GenAI drafting of regulatory documents and clinical study reports., category: ai, sub_domains: [regulatory, clinical_trials]}
+  - {id: molecule-design, text: AI-driven molecule generation and property prediction., category: ai, sub_domains: [drug_discovery]}
+ai_risks:
+  - {id: unvalidated-ai-gxp, text: Unvalidated AI influencing GxP decisions., category: ai}
+  - {id: off-label-content, text: GenAI producing off-label or non-compliant promotional content., category: ai, sub_domains: [commercial_analytics, medical_affairs]}
+  - {id: hallucinated-citations, text: Hallucinated scientific or regulatory citations., category: ai}
+clarification_questions:
+  - {id: gxp-scope, text: "Which systems and data sets in scope are GxP-relevant and who in Quality owns them?", category: compliance}
+  - {id: markets, text: "Which markets (FDA, EMA, MHRA, PMDA, CDSCO) must the solution support?", category: compliance}

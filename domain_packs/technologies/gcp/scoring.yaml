@@ -1,0 +1,4 @@
+# GCP technology pack - scoring
+dimensions:
+  - {key: gcp_readiness, name: GCP Readiness, group: technology, weight: 1.0, description: 'Google Cloud landing zone, identity, networking, policy
+      guardrails, IaC and cost management readiness.'}

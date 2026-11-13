@@ -1,0 +1,11 @@
+# Cloud Migration technology pack - knowledge
+security_considerations:
+  - {id: cm-replication-security, text: Replication traffic encrypted and routed over private connectivity., category: security}
+  - {id: cm-security-baseline, text: Migrated workloads conform to landing zone security baseline before go-live., category: security}
+migration_concerns:
+  - {id: cm-downtime, text: Agreed downtime windows and rollback criteria per application., category: operations}
+  - {id: cm-decommission, text: Decommissioning plan to retire source infrastructure and contracts., category: commercial}
+  - {id: cm-licensing-concern, text: License portability and cloud licensing rules., category: commercial}
+dependencies:
+  - {id: cm-landing-zone, text: Target landing zone ready before first wave., category: infrastructure}
+  - {id: cm-app-owners, text: Application owners available for testing and sign-off., category: delivery}

@@ -1,0 +1,22 @@
+- term: Tool Calling
+  definition: LLM capability to invoke external functions or APIs
+  synonyms:
+  - function calling
+  entity_type: process
+  category: ai
+- term: Model Context Protocol
+  definition: Open protocol for exposing tools and context to AI models
+  synonyms:
+  - mcp
+  entity_type: system
+  category: integration
+- term: Kill Switch
+  definition: Control that immediately halts agent execution
+  entity_type: concept
+  category: operations
+- term: Multi-agent System
+  definition: Several cooperating agents coordinated by an orchestrator
+  synonyms:
+  - supervisor agent
+  entity_type: concept
+  category: ai

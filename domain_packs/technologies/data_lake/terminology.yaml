@@ -1,0 +1,11 @@
+# Data Lake technology pack - terminology
+- term: Raw Zone
+  definition: Lake area holding unmodified source data
+  synonyms: [bronze, landing zone]
+  entity_type: concept
+  category: architecture
+- {term: Open Table Format, definition: 'Table layer over files providing ACID and schema evolution (Delta, Iceberg, Hudi)', entity_type: system,
+  category: technology}
+- {term: Parquet, definition: Columnar open file format for analytics, entity_type: system, category: technology}
+- {term: Data Swamp, definition: Ungoverned lake where data cannot be found or trusted, entity_type: concept, category: governance}
+- {term: Partitioning, definition: Physical organisation of files by key to prune reads, entity_type: concept, category: technology}

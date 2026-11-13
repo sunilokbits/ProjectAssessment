@@ -1,0 +1,27 @@
+key: dataops
+name: DataOps
+kind: technology
+version: 1.0.0
+description: 'Applying DevOps and agile practices to data pipelines: versioning, testing, orchestration and observability.'
+aliases:
+- Operations
+sort_order: 91
+detection:
+  keywords:
+    dataops: 5
+    dbt: 4
+    airflow: 4
+    data pipeline ci/cd: 4
+    data observability: 3
+    orchestration: 2
+    data contracts: 4
+    pipeline testing: 3
+    dagster: 4
+    prefect: 3
+    data ops: 5
+related_technologies:
+- devops
+- data_quality
+- data_engineering
+- metadata_management
+- mlops

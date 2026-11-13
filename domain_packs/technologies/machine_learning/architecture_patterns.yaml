@@ -1,0 +1,64 @@
+- id: ml-lifecycle
+  name: ML training and scoring pipeline
+  description: Curated data feeds feature pipelines, experiment tracking and a model registry; models are deployed for batch or online scoring with monitoring.
+  use_cases:
+  - Churn prediction
+  - Fraud detection
+  - Demand forecasting
+  layer_order:
+  - sources
+  - ingestion
+  - integration
+  - storage
+  - processing
+  - ai
+  - serving
+  - consumption
+  - governance
+  - operations
+  components:
+  - id: feature-pipelines
+    name: Feature engineering pipelines
+    layer: processing
+    core: true
+  - id: experiment-tracking
+    name: Experiment tracking (e.g. MLflow)
+    layer: ai
+    core: true
+  - id: model-registry
+    name: Model registry with approval stages
+    layer: governance
+    core: true
+  - id: batch-scoring
+    name: Batch scoring jobs
+    layer: serving
+    core: true
+  - id: online-feature-store
+    name: Online feature store
+    layer: serving
+    when:
+      keywords_any:
+      - real-time scoring
+      - online inference
+      - low latency
+  - id: model-endpoint
+    name: Real-time model serving endpoint
+    layer: serving
+    when:
+      keywords_any:
+      - real-time scoring
+      - online inference
+      - api
+  - id: model-monitoring
+    name: Model and data drift monitoring
+    layer: operations
+    core: true
+  - id: databricks-mosaic
+    name: Mosaic AI model training and serving
+    layer: ai
+    when:
+      technologies_any:
+      - databricks
+  considerations:
+  - Use point-in-time joins for features.
+  - Register every production model with lineage to data and code.

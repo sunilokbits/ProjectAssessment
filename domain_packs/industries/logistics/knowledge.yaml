@@ -1,0 +1,29 @@
+nfrs:
+  - {id: event-latency, text: Shipment and telematics events available within agreed minutes for visibility use cases., category: performance}
+  - {id: planning-run-time, text: Forecasting and optimisation runs complete within planning windows., category: performance}
+  - {id: peak-scaling, text: Elastic capacity for peak season volumes., category: scalability}
+assumptions:
+  - {id: execution-sor, text: WMS and TMS remain systems of record for execution., category: data}
+  - {id: carrier-cooperation, text: Key carriers will provide EDI or API status feeds., category: integration}
+dependencies:
+  - {id: carrier-onboarding, text: Carrier and partner onboarding for event feeds., category: integration}
+  - {id: planner-availability, text: Planner and operations SME availability for model validation., category: business}
+security_considerations:
+  - {id: partner-access, text: Partner and client portal access scoped per organisation., category: security}
+data_quality_checks:
+  - {id: uom-consistency, text: Units of measure and pack hierarchies consistent across systems., category: data}
+  - {id: event-completeness, text: Milestone event completeness per carrier and lane., category: data}
+reporting_requirements:
+  - {id: client-sla-reporting, text: Client SLA and OTIF reporting., category: reporting}
+migration_concerns:
+  - {id: history-reconstruction, text: Reconstructing historic shipments across retired systems., category: data}
+ai_opportunities:
+  - {id: ml-forecasting, text: ML demand forecasting with external signals., category: ai, sub_domains: [demand_forecasting, inventory]}
+  - {id: eta-prediction, text: ETA prediction from telematics and historic lane performance., category: ai}
+  - {id: document-ai, text: "Document intelligence for bills of lading, invoices and customs documents.", category: ai}
+  - {id: logistics-agent, text: Agentic exception management for delayed shipments., category: ai}
+ai_risks:
+  - {id: forecast-drift, text: Forecast models degrading after demand shocks., category: ai}
+  - {id: autonomous-actions, text: Agents rebooking or rerouting without adequate controls., category: ai}
+clarification_questions:
+  - {id: system-instances, text: "How many WMS/TMS instances exist, and are any being replaced during the project?", category: data}

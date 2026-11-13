@@ -1,0 +1,37 @@
+nfrs:
+  - {id: planning-cycle, text: Data refresh aligned to weekly demand review and monthly S&OP cycles., category: performance}
+  - {id: partner-data-sla, text: Partner data ingested and validated within agreed SLAs after receipt., category: performance}
+assumptions:
+  - {id: planning-system-record, text: Planning and TPM systems remain the system of record for approved plans and promotions., category: data}
+  - {id: syndicated-access, text: Existing syndicated data contracts allow use on the target platform., category: compliance}
+dependencies:
+  - {id: retailer-data, text: Retailer and distributor cooperation for data feeds., category: integration}
+  - {id: legal-review, text: Legal review of data licences and competition-law constraints., category: compliance}
+  - {id: planner-sme, text: Demand planners and KAMs available as SMEs and adopters., category: delivery}
+security_considerations:
+  - {id: commercial-sensitivity, text: Restrict access to customer-specific pricing and trade terms., category: security}
+  - {id: partner-segregation, text: Segregate data shared by different retailers to prevent cross-customer leakage., category: security}
+data_quality_checks:
+  - {id: unmapped-items, text: Share of external items unmapped to internal SKUs., category: data}
+  - {id: sellin-erp-tieout, text: Sell-in volumes and values tie out to ERP invoicing., category: data}
+  - {id: distributor-gaps, text: Missing distributor submissions detected per period., category: data, sub_domains: [distribution]}
+  - {id: promo-overlaps, text: Overlapping or conflicting promotion records flagged., category: data, sub_domains: [trade_promotion]}
+reporting_requirements:
+  - {id: sop-pack, text: S&OP / IBP review packs., category: reporting, sub_domains: [demand_planning]}
+  - {id: post-event, text: Promotion post-event analysis and trade ROI reporting., category: reporting, sub_domains: [trade_promotion]}
+  - {id: share-reporting, text: Market share and distribution performance reporting., category: reporting}
+migration_concerns:
+  - {id: promo-history, text: Migration of historical promotion data needed for uplift models., category: data}
+  - {id: hierarchy-history, text: Restating history under new product and customer hierarchies., category: data}
+ai_opportunities:
+  - {id: demand-sensing, text: Short-term demand sensing using POS and external signals., category: ai, sub_domains: [demand_planning]}
+  - {id: tpo, text: Promotion uplift modelling and trade spend optimisation., category: ai, sub_domains: [trade_promotion, revenue_growth_management]}
+  - {id: outlet-reco, text: Outlet-level order recommendations for field sales., category: ai, sub_domains: [distribution, sales_analytics]}
+  - {id: genai-insights, text: GenAI assistant for commercial insights over harmonised data., category: ai}
+  - {id: mmm, text: Marketing mix modelling and budget reallocation., category: ai, sub_domains: [marketing_analytics]}
+ai_risks:
+  - {id: unexplainable-forecasts, text: Black-box forecasts reducing planner trust., category: ai}
+  - {id: licence-ai, text: Licensed third-party data sent to AI services contrary to licence terms., category: ai}
+clarification_questions:
+  - {id: markets-channels, text: "Which markets, categories and channels (modern trade, general trade, e-commerce) are in scope?", category: business}
+  - {id: external-data-list, text: Please list syndicated and retailer data sources with contract owners., category: data}

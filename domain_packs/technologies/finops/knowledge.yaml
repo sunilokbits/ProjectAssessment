@@ -1,0 +1,8 @@
+dependencies:
+- id: finops-billing-access
+  text: Access to billing exports and cost management tools.
+  category: operations
+security_considerations:
+- id: finops-billing-rbac
+  text: Restrict billing data access to authorised roles.
+  category: security

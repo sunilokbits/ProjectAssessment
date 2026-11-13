@@ -1,0 +1,57 @@
+key: banking
+name: Banking and Financial Services
+kind: industry
+version: 1.0.1
+description: Retail, corporate, commercial and investment banking, payments, cards, lending, wealth and capital markets.
+aliases: [BFSI, financial services, bank]
+sort_order: 10
+sub_domains:
+  - {key: retail_banking, name: Retail Banking, keywords: [retail bank, current account, savings account, branch, mobile banking, retail customer, deposits]}
+  - {key: corporate_banking, name: Corporate Banking, keywords: [corporate banking, corporate client, cash management, trade finance, treasury services]}
+  - {key: commercial_banking, name: Commercial Banking, keywords: [commercial banking, sme lending, business banking, commercial loan]}
+  - {key: investment_banking, name: Investment Banking, keywords: [investment banking, m&a, underwriting, ecm, dcm, advisory]}
+  - {key: payments, name: Payments, keywords: [payments, upi, swift, iso 20022, rtgs, neft, ach, sepa, real-time payments, payment gateway]}
+  - {key: cards, name: Cards, keywords: [credit card, debit card, card issuing, acquiring, cardholder, chargeback, interchange]}
+  - {key: lending, name: Lending, keywords: [loan origination, lending, credit decisioning, collections, loan servicing, underwriting]}
+  - {key: mortgage, name: Mortgage, keywords: [mortgage, home loan, ltv, property valuation, remortgage]}
+  - {key: wealth_management, name: Wealth Management, keywords: [wealth management, private banking, advisor, portfolio, hnwi, financial planning]}
+  - {key: asset_management, name: Asset Management, keywords: [asset management, fund, nav, aum, portfolio management, mutual fund]}
+  - {key: capital_markets, name: Capital Markets, keywords: [capital markets, trading, securities, settlement, front office, market risk, order management]}
+  - {key: fintech, name: FinTech, keywords: [fintech, neobank, digital lending, open banking, embedded finance, bnpl]}
+detection:
+  keywords:
+    bank: 2.5
+    banking: 3
+    kyc: 3
+    aml: 3
+    anti-money laundering: 3
+    core banking: 4
+    loan: 1.5
+    deposit: 1.5
+    credit risk: 2.5
+    basel: 3
+    rbi: 3
+    teller: 2
+    account holder: 2
+    transaction monitoring: 2.5
+    finacle: 4
+    temenos: 4
+    flexcube: 4
+    swift: 2
+business_processes: [Customer onboarding and KYC, Account opening and servicing, Payments processing, Loan origination and servicing, Collections and recoveries, Fraud management, AML transaction monitoring, Regulatory reporting, Treasury and liquidity management, Risk management]
+capabilities: [Customer 360, Credit decisioning, Fraud detection, Regulatory reporting, Financial crime compliance, Liquidity and ALM, Product pricing, Next best action]
+source_systems:
+  - "Core banking (Finacle, Temenos T24, Flexcube)"
+  - "Card management (TSYS, Fiserv)"
+  - Loan origination system
+  - Payment switch
+  - CRM
+  - "AML system (Actimize, SAS AML)"
+  - Treasury system
+  - General ledger
+  - Internet / mobile banking
+  - Data warehouse
+data_entities: [Customer, Account, Transaction, Loan, Collateral, Card, Payment, Product, Branch, GL entry, Counterparty, Limit]
+integration_patterns: [ISO 8583 / ISO 20022 messaging, Batch EOD extracts, CDC from core banking, API gateway / open banking APIs, MQ messaging]
+related_technologies: [databricks, power_bi, data_governance, generative_ai]
+related_project_types: [customer_360, regulatory_reporting, data_platform_modernization]

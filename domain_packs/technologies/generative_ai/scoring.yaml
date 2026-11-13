@@ -1,0 +1,16 @@
+dimensions:
+- key: responsible_ai
+  name: Responsible AI
+  group: technology
+  weight: 1.0
+  description: Use-case risk tiering, guardrails, human oversight, transparency and AI policy compliance.
+- key: grounding_quality
+  name: Grounding Quality
+  group: technology
+  weight: 1.0
+  description: Quality, coverage and freshness of grounding content plus evaluation datasets proving factual accuracy.
+- key: model_risk
+  name: Model Risk
+  group: technology
+  weight: 1.0
+  description: Model selection, hosting, data residency, drift, lifecycle and vendor risk of foundation models.

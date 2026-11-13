@@ -1,0 +1,19 @@
+- id: ml-baseline-first
+  title: Establish a simple baseline before complex models
+  text: Measure a rules-based or simple statistical baseline to quantify the uplift ML must deliver.
+  category: delivery
+  priority: high
+- id: ml-batch-first
+  title: Start with batch scoring
+  text: Deliver value via batch scoring first; move to real-time only where the decision requires it.
+  category: architecture
+  priority: medium
+  decision_key: ml_serving_mode
+  decision_option: batch
+- id: ml-realtime
+  title: Design for real-time online inference
+  text: Build an online feature store and low-latency serving endpoint for in-the-moment decisions.
+  category: architecture
+  priority: medium
+  decision_key: ml_serving_mode
+  decision_option: realtime

@@ -1,0 +1,33 @@
+key: cybersecurity
+name: Cybersecurity
+kind: technology
+version: 1.0.0
+description: Security architecture, identity, data protection, threat detection and secure operations for data and AI platforms.
+aliases:
+- Operations
+sort_order: 93
+detection:
+  keywords:
+    cybersecurity: 5
+    cyber security: 5
+    zero trust: 4
+    siem: 4
+    soc: 2.5
+    sentinel: 3
+    splunk: 3
+    penetration test: 4
+    pen test: 4
+    iso 27001: 4
+    nist csf: 4
+    soc 2: 3
+    vulnerability management: 4
+    dlp: 3
+    threat modelling: 4
+    threat modeling: 4
+    security: 0.5
+related_technologies:
+- devops
+- data_governance
+- azure
+- aws
+- gcp

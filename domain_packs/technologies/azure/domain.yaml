@@ -1,0 +1,13 @@
+# Azure technology pack - domain
+key: azure
+name: Azure
+kind: technology
+version: 1.0.0
+description: Microsoft Azure cloud - landing zones, Entra ID, networking, Azure data and AI services (ADLS, Data Factory, Synapse, Azure SQL,
+  Azure OpenAI).
+aliases: [Cloud]
+sort_order: 30
+detection:
+  keywords: {microsoft azure: 5, azure: 3, azure data factory: 4, adls gen2: 3, azure sql: 3, azure synapse: 3, entra id: 3, azure active directory: 3,
+    azure openai: 3, key vault: 2, expressroute: 3, arm template: 2, bicep: 2.5}
+related_technologies: [databricks, microsoft_fabric, power_bi, cloud_migration, data_platform, devops]

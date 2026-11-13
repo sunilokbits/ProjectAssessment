@@ -1,0 +1,40 @@
+- id: api-point-to-point
+  title: Point-to-point integration sprawl
+  category: architecture
+  likelihood: 4
+  impact: 3
+  mitigation: Introduce API-led or event-driven patterns via a standard platform.
+  indicators:
+  - point-to-point
+  - spaghetti
+  - file transfer
+- id: api-no-source-apis
+  title: Source systems lack APIs
+  category: integration
+  likelihood: 3
+  impact: 4
+  mitigation: Plan adapters, CDC or vendor upgrades early; size interface build.
+  indicators:
+  - no api
+  - legacy system
+  - batch file
+- id: api-security-gaps
+  title: Insecure APIs expose data
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Gateway policies, OAuth2, schema validation and API security testing.
+  indicators:
+  - api key
+  - basic auth
+  - public endpoint
+- id: api-third-party-limits
+  title: Third-party API rate limits and quotas
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Confirm limits; design caching, batching and backoff.
+  indicators:
+  - rate limit
+  - throttling
+  - quota

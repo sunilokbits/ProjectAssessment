@@ -1,0 +1,15 @@
+- id: iot-edge-gateway
+  title: Standardise on edge gateways with OPC UA / MQTT
+  text: Use edge gateways to normalise protocols and buffer data before cloud ingestion.
+  category: architecture
+  priority: high
+- id: iot-asset-model
+  title: Build an asset model before analytics
+  text: Contextualise telemetry with asset hierarchy and metadata to enable analytics at scale.
+  category: data
+  priority: medium
+- id: iot-ot-review
+  title: Run an OT security architecture review
+  text: Validate segmentation and data-flow direction with OT security owners before connecting sites.
+  category: security
+  priority: high

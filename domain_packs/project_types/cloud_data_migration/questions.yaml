@@ -1,0 +1,47 @@
+- id: cdm-inventory
+  text: Is there an inventory of data stores with size, change rate, dependencies and owners?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: cdm-downtime
+  text: What downtime window is acceptable for cut-over?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+  - value: zero
+    label: Near-zero downtime required
+    score: 1
+  - value: hours
+    label: A few hours
+    score: 1
+  - value: weekend
+    label: A weekend
+    score: 1
+  - value: unknown
+    label: Not defined
+    score: 0.2
+- id: cdm-landing-zone
+  text: Is the cloud landing zone (networking, identity, security baseline) ready?
+  category: architecture
+  dimension: integration_readiness
+  answer_type: yes_no
+  critical: true
+- id: cdm-bandwidth
+  text: Has network bandwidth for data transfer been assessed (or offline transfer considered)?
+  category: integration
+  dimension: integration_readiness
+  answer_type: yes_no
+- id: cdm-residency
+  text: Do data residency or sovereignty rules restrict target regions?
+  category: privacy
+  dimension: privacy_protection
+  answer_type: yes_no
+  equivalence_key: data_residency
+- id: cdm-validation
+  text: Is a data validation and reconciliation approach agreed for sign-off?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no

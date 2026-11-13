@@ -1,0 +1,89 @@
+key: logistics
+name: Logistics and Supply Chain
+kind: industry
+version: 1.0.0
+description: Warehousing, transportation, last-mile delivery, inventory management, demand forecasting and route optimisation for 3PLs, carriers and shippers.
+aliases: [supply chain, 3pl, freight, distribution, scm]
+sort_order: 60
+sub_domains:
+  - key: warehouse
+    name: Warehouse and Distribution
+    keywords: [warehouse, distribution centre, wms, pick and pack, putaway, slotting, cross-docking, fulfilment centre, dock scheduling]
+  - key: transportation
+    name: Transportation and Freight
+    keywords: [tms, freight, carrier, shipment, ltl, ftl, load planning, freight audit, intermodal, ocean freight, air freight]
+  - key: last_mile
+    name: Last-mile Delivery
+    keywords: [last mile, last-mile, proof of delivery, courier, parcel, delivery driver, delivery slot, failed delivery]
+  - key: inventory
+    name: Inventory Management
+    keywords: [inventory, stock levels, safety stock, replenishment, stockout, cycle count, sku, inventory optimisation]
+  - key: demand_forecasting
+    name: Demand Forecasting and Planning
+    keywords: [demand forecast, demand planning, s&op, sales and operations planning, supply planning, ibp, forecast accuracy]
+  - key: route_optimization
+    name: Route Optimization
+    keywords: [route optimisation, route optimization, vehicle routing, dispatch, telematics, eta prediction, fleet routing]
+detection:
+  keywords:
+    supply chain: 3
+    logistics: 3.5
+    warehouse: 3
+    wms: 4
+    tms: 4
+    3pl: 4.5
+    shipment: 3
+    freight: 3.5
+    carrier: 2
+    pallet: 3
+    sku: 2
+    last mile: 4
+    proof of delivery: 4.5
+    replenishment: 2.5
+    s&op: 4
+    bill of lading: 5
+    consignment: 3
+    asn: 3
+    edi 856: 5
+    track and trace: 3.5
+    manhattan associates: 5
+    blue yonder: 5
+business_processes:
+  - Order-to-delivery
+  - Inbound receiving and putaway
+  - Picking, packing and shipping
+  - Transportation planning and execution
+  - Freight audit and payment
+  - Inventory planning and replenishment
+  - Sales and operations planning
+  - Returns and reverse logistics
+  - Customs and trade compliance
+  - Carrier and supplier management
+capabilities:
+  - End-to-end supply chain visibility
+  - Demand forecasting
+  - Inventory optimisation
+  - Route and load optimisation
+  - ETA prediction
+  - Warehouse labour and slotting optimisation
+  - Supply chain control tower
+  - Carbon footprint tracking
+source_systems:
+  - "WMS (Manhattan Active WM, Blue Yonder WMS, SAP EWM, Körber HighJump, Oracle WMS Cloud)"
+  - "TMS (Oracle OTM, Blue Yonder TMS, SAP TM, MercuryGate, e2open)"
+  - "Planning (SAP IBP, Kinaxis RapidResponse, o9 Solutions, Blue Yonder Demand Planning)"
+  - "ERP (SAP S/4HANA, Oracle, Microsoft Dynamics 365 SCM)"
+  - "Visibility platforms (project44, FourKites)"
+  - "Telematics (Samsara, Geotab, Trimble)"
+  - "Last-mile and routing (Descartes, Bringg, Onfleet, ORTEC)"
+  - EDI / B2B integration gateways
+  - Warehouse automation and robotics control systems
+data_entities: [Order, Shipment, Consignment, Load, SKU, Inventory position, Location, Carrier, Route, Stop, Proof of delivery, ASN, Forecast, Pallet]
+integration_patterns:
+  - "EDI (X12 204/214/856, EDIFACT IFTMIN / DESADV)"
+  - Carrier and visibility APIs
+  - Telematics and IoT event streams
+  - "GS1 standards (GTIN, SSCC, EPCIS)"
+  - ERP batch and IDoc integration
+related_technologies: [iot, real_time_streaming, machine_learning, sap_integration, api_integration]
+related_project_types: [demand_forecasting, iot_analytics_platform, predictive_maintenance, data_platform_modernization]

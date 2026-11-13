@@ -1,0 +1,23 @@
+- id: industrial-data-platform
+  name: Secure edge-to-cloud industrial data platform
+  description: OT data collected at the edge through a segmented data path, contextualised with an ISA-95 asset model and combined with ERP, MES and CMMS data.
+  use_cases: [OEE and production monitoring, Predictive maintenance, Quality analytics, Energy optimisation]
+  layer_order: [sources, edge, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: ot-sources, name: "PLC, SCADA, historians and MES", layer: sources, core: true}
+    - {id: it-sources, name: "ERP, CMMS / EAM, QMS and PLM", layer: sources, core: true}
+    - {id: ot-dmz, name: OT DMZ / one-way data path (Purdue level 3.5), layer: security, core: true}
+    - {id: edge-gateway, name: Edge gateway with OPC UA / MQTT and store-and-forward, layer: edge, when: {any_of: [{technologies_any: [iot, real_time_streaming]}, {keywords_any: [opc ua, mqtt, edge, sensor]}]}}
+    - {id: historian-connector, name: Historian replication connector, layer: ingestion, when: {keywords_any: [historian, pi system, osisoft, aveva pi]}, alternatives: [Direct edge streaming]}
+    - {id: uns, name: Unified namespace / MQTT broker, layer: ingestion, when: {keywords_any: [unified namespace, uns, sparkplug]}}
+    - {id: asset-model, name: ISA-95 asset hierarchy and tag contextualisation, layer: processing, core: true}
+    - {id: timeseries-store, name: Time-series optimised storage, layer: storage, when: {technologies_any: [iot, real_time_streaming]}}
+    - {id: sensor-dq, name: Sensor data quality monitoring, layer: processing, when: {sub_domains_any: [industrial_iot, predictive_maintenance, smart_factory]}}
+    - {id: pdm-models, name: Anomaly detection and failure prediction models, layer: serving, when: {any_of: [{project_types_any: [predictive_maintenance]}, {sub_domains_any: [predictive_maintenance]}]}}
+    - {id: edge-inference, name: Edge model inference (vision / low latency), layer: edge, when: {keywords_any: [vision inspection, low latency, edge inference, computer vision]}}
+    - {id: cmms-writeback, name: Work order creation in CMMS / EAM, layer: serving, when: {project_types_any: [predictive_maintenance]}}
+    - {id: ot-monitoring, name: OT threat monitoring, layer: security, when: {technologies_any: [cybersecurity]}}
+  considerations:
+    - Start read-only; any write-back to control systems requires MOC and safety review.
+    - Design for intermittent connectivity with edge buffering.
+    - Template asset models and pipelines so that additional plants can be onboarded quickly.

@@ -1,0 +1,60 @@
+# GCP technology pack - architecture_patterns
+- id: gcp-data-landing-zone
+  name: Google Cloud landing zone for data and analytics workloads
+  description: Governed Google Cloud foundation (identity, network hub, policies, logging) hosting data and analytics services.
+  use_cases: [Cloud data migration, Data platform modernization]
+  layer_order: [identity, network, compute, storage, data, integration, security, operations]
+  components:
+    - {id: resource-hierarchy, name: Organization / folders / projects, layer: identity, core: true}
+    - {id: cloud-identity, name: Cloud Identity federation and IAM, layer: identity, core: true}
+    - {id: shared-vpc, name: Shared VPC host project, layer: network, core: true}
+    - id: interconnect
+      name: Cloud Interconnect / HA VPN
+      layer: network
+      when:
+        any_of:
+          - keywords_any: [on-premises, on-prem, hybrid, data center]
+          - technologies_any: [cloud_migration, data_migration]
+    - id: vpc-sc
+      name: VPC Service Controls perimeter
+      layer: security
+      when:
+        any_of:
+          - data_classifications_any: [confidential, pii, spi, phi, cardholder, financial]
+          - keywords_any: [exfiltration, sensitive data]
+    - id: gcs
+      name: Cloud Storage
+      layer: storage
+      when: &id001
+        technologies_any: [data_platform, data_warehouse, lakehouse, data_lake, data_engineering]
+    - id: bigquery
+      name: BigQuery
+      layer: data
+      when:
+        technologies_any: [data_warehouse, data_platform, lakehouse, business_intelligence]
+    - id: dataflow
+      name: Dataflow / Dataproc
+      layer: integration
+      when: *id001
+    - id: pubsub
+      name: Pub/Sub
+      layer: integration
+      when:
+        any_of:
+          - technologies_any: [real_time_streaming, iot]
+          - keywords_any: [real-time, streaming, kafka, event hub, kinesis, pub/sub]
+    - id: dataplex
+      name: Dataplex (catalog / governance)
+      layer: security
+      when:
+        technologies_any: [data_governance, data_catalog, metadata_management]
+    - id: vertex
+      name: Vertex AI
+      layer: data
+      when:
+        technologies_any: [generative_ai, rag, agentic_ai, ai_agents, machine_learning]
+    - {id: kms, name: Cloud KMS / Secret Manager, layer: security, core: true}
+    - {id: scc, name: Security Command Center, layer: security, core: true}
+    - {id: cloud-ops, name: Cloud Monitoring / Logging, layer: operations, core: true}
+  considerations: ['Separate platform (connectivity, identity, management) from workload environments.', 'Apply preventive guardrails as policy,
+      not documentation.']

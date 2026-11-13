@@ -1,0 +1,71 @@
+- id: iot-telemetry
+  name: IoT telemetry platform
+  description: Devices publish via edge gateways to a cloud IoT hub; streams land in hot and cold storage with asset context for analytics.
+  use_cases:
+  - Predictive maintenance
+  - Asset monitoring
+  layer_order:
+  - sources
+  - edge
+  - ingestion
+  - processing
+  - storage
+  - serving
+  - consumption
+  - governance
+  components:
+  - id: edge-gateway
+    name: Edge gateway
+    layer: edge
+    core: true
+  - id: iot-hub
+    name: IoT hub / broker
+    layer: ingestion
+    core: true
+  - id: stream-processing
+    name: Stream processing
+    layer: processing
+    core: true
+  - id: timeseries-store
+    name: Time-series / hot store
+    layer: storage
+    core: true
+  - id: lake-cold
+    name: Lake / lakehouse cold store
+    layer: storage
+    core: true
+  - id: azure-iot
+    name: Azure IoT Hub / Event Hubs
+    layer: ingestion
+    when:
+      technologies_any:
+      - azure
+  - id: aws-iot
+    name: AWS IoT Core / Kinesis
+    layer: ingestion
+    when:
+      technologies_any:
+      - aws
+  - id: historian-connector
+    name: Historian connector
+    layer: ingestion
+    when:
+      keywords_any:
+      - historian
+      - osisoft
+      - pi system
+  - id: digital-twin
+    name: Digital twin / asset model
+    layer: serving
+    when:
+      keywords_any:
+      - digital twin
+      - asset model
+  - id: anomaly-ml
+    name: Anomaly detection models
+    layer: processing
+    when:
+      technologies_any:
+      - machine_learning
+  considerations:
+  - Keep OT-to-IT data flow one-directional where possible.

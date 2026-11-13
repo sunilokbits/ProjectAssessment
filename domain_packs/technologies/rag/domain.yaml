@@ -1,0 +1,30 @@
+key: rag
+name: RAG
+kind: technology
+version: 1.0.0
+description: 'Retrieval-augmented generation: grounding LLM answers in enterprise content retrieved at query time.'
+aliases:
+- AI
+sort_order: 65
+detection:
+  keywords:
+    retrieval augmented generation: 5
+    retrieval-augmented generation: 5
+    rag: 4
+    grounding: 2.5
+    chunking: 3
+    embeddings: 2.5
+    semantic search: 2.5
+    hybrid search: 3
+    reranking: 3
+    knowledge base: 1.5
+    citations: 1.5
+related_technologies:
+- generative_ai
+- vector_search
+- llmops
+- data_governance
+- metadata_management
+related_project_types:
+- genai_assistant
+- document_intelligence

@@ -1,0 +1,77 @@
+- id: gdpr-cpg
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii, children]
+  applicability_note: Relevant where consumer, loyalty, D2C or field-sales personal data is processed.
+- id: ccpa-cpg
+  name: California Consumer Privacy Act as amended by CPRA
+  short_name: CCPA/CPRA
+  geographies: [US-CA]
+  data_classifications_any: [pii]
+- id: dpdp-cpg
+  name: Digital Personal Data Protection Act 2023 (India)
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii]
+- id: eu-competition-law
+  name: EU competition law (TFEU Articles 101 and 102) and Vertical Block Exemption Regulation
+  short_name: EU Competition Law
+  geographies: [EU, EEA]
+  sub_domains: [revenue_growth_management, trade_promotion, sales_analytics, distribution]
+  applicability_note: Constrains information exchange on pricing and resale price maintenance.
+- id: sherman-act
+  name: Sherman Act and Robinson-Patman Act
+  short_name: US Antitrust
+  geographies: [US]
+  sub_domains: [revenue_growth_management, trade_promotion, sales_analytics]
+  applicability_note: Robinson-Patman constrains price discrimination and promotional allowances between competing customers.
+- id: fsma
+  name: FDA Food Safety Modernization Act (incl. Food Traceability Rule)
+  short_name: FSMA
+  geographies: [US]
+  sub_domains: [supply_chain, product_lifecycle]
+  applicability_note: Applies to food and beverage manufacturers; traceability rule compliance date should be confirmed.
+- id: eu-general-food-law
+  name: EU General Food Law Regulation (EC) 178/2002 - traceability
+  short_name: EU General Food Law
+  geographies: [EU, EEA]
+  sub_domains: [supply_chain, product_lifecycle]
+- id: eu-fic
+  name: EU Food Information to Consumers Regulation (EU) 1169/2011
+  short_name: EU FIC
+  geographies: [EU, EEA]
+  sub_domains: [product_lifecycle, ecommerce_d2c]
+- id: fssai
+  name: Food Safety and Standards Act and FSSAI Labelling and Display Regulations (India)
+  short_name: FSSAI
+  geographies: [IN]
+  sub_domains: [product_lifecycle, supply_chain]
+- id: legal-metrology
+  name: Legal Metrology (Packaged Commodities) Rules (India)
+  short_name: Legal Metrology
+  geographies: [IN]
+  sub_domains: [product_lifecycle, ecommerce_d2c]
+- id: eu-ppwr
+  name: EU Packaging and Packaging Waste Regulation
+  short_name: PPWR
+  geographies: [EU, EEA]
+  sub_domains: [product_lifecycle, supply_chain]
+  applicability_note: Adopted 2024/2025 with phased application dates; confirm timelines.
+- id: csrd
+  name: Corporate Sustainability Reporting Directive
+  short_name: CSRD
+  geographies: [EU, EEA]
+  applicability_note: Scope and timing amended by the 2025 Omnibus simplification package; confirm whether the entity is in scope.
+- id: eudr
+  name: EU Deforestation Regulation (EU) 2023/1115
+  short_name: EUDR
+  geographies: [EU, EEA]
+  sub_domains: [supply_chain]
+  applicability_note: Applies to commodities such as cocoa, coffee, palm oil, soy and cattle; application dates have been deferred - confirm current timeline.
+- id: coppa-cpg
+  name: Children's Online Privacy Protection Act
+  short_name: COPPA
+  geographies: [US]
+  data_classifications_any: [children]
+  sub_domains: [marketing_analytics, ecommerce_d2c, consumer_analytics]

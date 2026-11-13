@@ -1,0 +1,48 @@
+- id: agentic-unintended-actions
+  title: Agent takes unintended or harmful actions
+  category: ai
+  likelihood: 3
+  impact: 5
+  mitigation: Enumerated tool permissions, transaction limits, approval for irreversible actions and kill switch.
+  indicators:
+  - autonomous
+  - write access
+  - execute
+- id: agentic-injection
+  title: Indirect prompt injection hijacks tool use
+  category: security
+  likelihood: 3
+  impact: 5
+  mitigation: Isolate untrusted content, constrain tools, validate tool arguments and red-team agent workflows.
+  indicators:
+  - email
+  - web browsing
+  - untrusted content
+- id: agentic-runaway-cost
+  title: Runaway loops and uncontrolled token or API cost
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Step and budget limits per task, loop detection and cost alerts.
+  indicators:
+  - loop
+  - recursion
+- id: agentic-accountability
+  title: Unclear accountability for agent decisions
+  category: governance
+  likelihood: 3
+  impact: 4
+  mitigation: Named business owner per agent, decision logs and approval matrix.
+  indicators:
+  - accountability
+  - liability
+- id: agentic-brittle-integrations
+  title: Brittle integrations with target systems
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Stable APIs with contracts; avoid UI automation for critical steps.
+  indicators:
+  - screen scraping
+  - rpa
+  - no api

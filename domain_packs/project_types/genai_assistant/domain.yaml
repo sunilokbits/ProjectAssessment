@@ -1,0 +1,25 @@
+key: genai_assistant
+name: GenAI Assistant / Copilot
+kind: project_type
+version: 1.0.0
+description: LLM-powered assistant or copilot helping employees or customers find information and complete tasks.
+sort_order: 23
+detection:
+  keywords:
+    genai assistant: 5
+    ai assistant: 4
+    copilot: 4
+    knowledge assistant: 5
+    virtual assistant: 3
+    chatbot: 3
+    conversational ai: 4
+    employee assistant: 4
+    customer service bot: 4
+    ask questions of documents: 4
+    q&a assistant: 4
+related_technologies:
+- generative_ai
+- rag
+- ai_agents
+- llmops
+- vector_search

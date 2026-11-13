@@ -1,0 +1,75 @@
+- id: supporter-consent
+  text: Is marketing and communication consent (and lawful basis) recorded per supporter and channel, and enforced in campaign selection?
+  category: privacy
+  dimension: supporter_data_stewardship
+  answer_type: single_choice
+  critical: true
+  options:
+    - {value: unknown, label: Not consistently recorded, score: 0}
+    - {value: partial, label: Recorded for some channels, score: 0.4}
+    - {value: recorded, label: Recorded but not enforced automatically, score: 0.7}
+    - {value: enforced, label: Recorded and enforced in selections, score: 1}
+- id: donor-crm-quality
+  text: How would you rate supporter record quality in the CRM (duplicates, addresses, deceased flags, giving history)?
+  category: data
+  dimension: data_quality
+  answer_type: scale
+  sub_domains: [donor_management, fundraising]
+- id: beneficiary-data
+  text: Does the project process beneficiary data (including vulnerable people, children or refugees), and is a data protection impact assessment in place?
+  category: privacy
+  dimension: supporter_data_stewardship
+  critical: true
+  sub_domains: [programs_impact]
+- id: restricted-funds
+  text: Can income and expenditure be tracked against restricted funds and grants at the required granularity?
+  category: data
+  dimension: impact_accountability
+  weight: 1.5
+  sub_domains: [grants, fundraising, programs_impact]
+- id: outcomes-framework
+  text: Is there an agreed outcomes framework (theory of change, indicators, baselines) underpinning impact data?
+  category: data
+  dimension: impact_accountability
+  answer_type: single_choice
+  sub_domains: [programs_impact, grants]
+  options:
+    - {value: none, label: No agreed framework, score: 0.1}
+    - {value: per_programme, label: Per programme - not standardised, score: 0.5}
+    - {value: standard, label: Organisation-wide indicators and definitions, score: 1}
+- id: field-data-collection
+  text: How is programme data collected in the field (paper, mobile offline apps, partner reports), and what connectivity exists?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [programs_impact]
+- id: funder-reporting
+  text: Which funder and regulator reports depend on in-scope data (e.g. charity commission annual return, IRS Form 990, institutional donor reports)?
+  category: compliance
+  dimension: impact_accountability
+  answer_type: text
+- id: wealth-screening
+  text: Is wealth screening or data appending used, and has it been assessed for transparency and lawful basis?
+  category: privacy
+  dimension: supporter_data_stewardship
+  sub_domains: [fundraising, donor_management]
+- id: payment-data
+  text: Are card or bank details for donations handled only by PCI-compliant payment providers, never stored in the CRM?
+  category: security
+  dimension: security_controls
+  sub_domains: [fundraising]
+- id: budget-capacity
+  text: Is there funding and internal capacity to sustain the solution after implementation (licences, admin, data skills)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+- id: volunteer-safeguarding
+  text: Are volunteer safeguarding checks (e.g. DBS, background checks) and their expiry tracked in the volunteer system?
+  category: compliance
+  dimension: supporter_data_stewardship
+  sub_domains: [volunteer_management]
+- id: sanctions-screening
+  text: Are grantees, partners and suppliers screened against sanctions and counter-terrorism financing lists?
+  category: compliance
+  dimension: impact_accountability
+  sub_domains: [grants, programs_impact]

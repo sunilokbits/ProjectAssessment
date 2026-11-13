@@ -1,0 +1,19 @@
+- id: traveller-data-platform
+  name: Traveller and operations data platform
+  description: Combines booking, loyalty, operational and channel data into a traveller profile and operational event store for personalisation, pricing and disruption management.
+  use_cases: [Traveller 360, Personalised offers, Disruption management, Revenue management analytics]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: booking-sources, name: "PSS / PMS / CRS / GDS / loyalty sources", layer: sources, core: true}
+    - {id: edifact-parse, name: EDIFACT and Type B message parsing, layer: ingestion, when: {sub_domains_any: [airlines, travel_distribution]}}
+    - {id: ops-events, name: Operational event streaming, layer: ingestion, when: {any_of: [{technologies_any: [real_time_streaming, iot]}, {keywords_any: [real-time, disruption, flight status, irops]}]}}
+    - {id: traveller-profile, name: Traveller identity resolution and profile, layer: processing, core: true}
+    - {id: offer-engine, name: Personalisation and offer engine, layer: serving, when: {project_types_any: [recommendation_engine, customer_360]}}
+    - {id: demand-models, name: Demand forecasting and pricing models, layer: processing, when: {project_types_any: [demand_forecasting]}}
+    - {id: card-tokenisation, name: Payment card tokenisation, layer: security, when: {data_classifications_any: [cardholder]}}
+    - {id: pnr-segregation, name: Segregated API/PNR data store with statutory retention, layer: security, when: {answers: {api-pnr-data: [yes_controls, yes_no_controls]}}}
+    - {id: consent-hub, name: Consent and preference hub, layer: governance, when: {data_classifications_any: [pii]}}
+    - {id: ops-dashboards, name: Operations control dashboards, layer: consumption, core: true}
+  considerations:
+    - Size for disruption peaks rather than average traffic.
+    - Keep pricing and offer decisions explainable to commercial teams.

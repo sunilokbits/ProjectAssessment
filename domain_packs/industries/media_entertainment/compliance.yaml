@@ -1,0 +1,63 @@
+- id: gdpr-eprivacy
+  name: GDPR and ePrivacy Directive (cookies and tracking)
+  short_name: GDPR / ePrivacy
+  geographies: [EU, EEA]
+  data_classifications_any: [pii]
+- id: uk-gdpr-pecr
+  name: UK GDPR and Privacy and Electronic Communications Regulations
+  short_name: UK GDPR / PECR
+  geographies: [UK]
+  data_classifications_any: [pii]
+- id: ccpa
+  name: California Consumer Privacy Act / CPRA (including sale and sharing of personal information)
+  short_name: CCPA/CPRA
+  geographies: [US-CA]
+  data_classifications_any: [pii]
+- id: vppa
+  name: Video Privacy Protection Act
+  short_name: VPPA
+  geographies: [US]
+  sub_domains: [streaming]
+  applicability_note: Restricts disclosure of video viewing history; frequently litigated for pixel-based tracking.
+- id: coppa
+  name: Children's Online Privacy Protection Act
+  short_name: COPPA
+  geographies: [US]
+  data_classifications_any: [children]
+  sub_domains: [streaming, gaming, publishing]
+- id: uk-aadc
+  name: UK Age Appropriate Design Code (Children's Code)
+  short_name: AADC
+  geographies: [UK]
+  data_classifications_any: [children]
+- id: dsa
+  name: EU Digital Services Act
+  short_name: DSA
+  geographies: [EU, EEA]
+  applicability_note: Obligations scale with service type; includes advertising transparency and minors' protection.
+- id: avmsd
+  name: Audiovisual Media Services Directive
+  short_name: AVMSD
+  geographies: [EU, EEA]
+  sub_domains: [streaming]
+- id: eu-copyright-dsm
+  name: EU Directive on Copyright in the Digital Single Market (incl. text and data mining opt-outs)
+  short_name: EU DSM Copyright
+  geographies: [EU, EEA]
+  technologies_any: [generative_ai, machine_learning]
+- id: eu-ai-act
+  name: EU AI Act (transparency obligations for AI-generated content)
+  short_name: EU AI Act
+  geographies: [EU, EEA]
+  technologies_any: [generative_ai, agentic_ai]
+- id: iab-tcf
+  name: IAB Transparency and Consent Framework / Global Privacy Platform
+  short_name: IAB TCF / GPP
+  geographies: [GLOBAL]
+  sub_domains: [advertising, publishing, streaming]
+  applicability_note: Industry framework rather than law; used to evidence consent for programmatic advertising.
+- id: india-dpdp
+  name: Digital Personal Data Protection Act 2023
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii, children]

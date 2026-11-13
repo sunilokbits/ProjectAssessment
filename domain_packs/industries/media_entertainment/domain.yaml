@@ -1,0 +1,86 @@
+key: media_entertainment
+name: Media and Entertainment
+kind: industry
+version: 1.0.0
+description: Video and audio streaming, broadcasting, publishing, gaming, advertising and content analytics.
+aliases: [media, entertainment, m&e, broadcasting, streaming]
+sort_order: 70
+sub_domains:
+  - key: streaming
+    name: Streaming and Broadcasting
+    keywords: [streaming, ott, svod, avod, fast channels, subscriber, video on demand, broadcaster, playback, viewing sessions, cdn]
+  - key: publishing
+    name: Publishing
+    keywords: [publisher, newsroom, editorial, paywall, digital subscriptions, articles, magazine, book publishing, cms]
+  - key: gaming
+    name: Gaming
+    keywords: [game studio, player, live ops, in-game purchases, dau, mau, matchmaking, game telemetry, esports, microtransactions]
+  - key: advertising
+    name: Advertising and Ad Tech
+    keywords: [ad server, programmatic, ssp, dsp, ad impressions, cpm, audience segments, campaign, ad inventory, addressable advertising]
+  - key: content_analytics
+    name: Content Analytics and Rights
+    keywords: [content performance, audience measurement, rights management, royalties, content metadata, recommendation, content library, windowing]
+detection:
+  keywords:
+    streaming: 3
+    ott: 4
+    subscriber: 2
+    churn: 1.5
+    viewership: 4
+    audience measurement: 4.5
+    content library: 4
+    rights management: 4
+    royalties: 3.5
+    programmatic: 4
+    ad impressions: 4.5
+    cpm: 3
+    paywall: 4.5
+    newsroom: 4
+    game telemetry: 5
+    live ops: 4
+    daily active users: 2.5
+    broadcaster: 4
+    nielsen: 4
+    svod: 5
+    avod: 5
+    "vod": 3
+business_processes:
+  - Content acquisition and commissioning
+  - Rights and royalties management
+  - Content production and post-production
+  - Content packaging, metadata and distribution
+  - Subscriber acquisition, retention and billing
+  - Advertising sales and yield management
+  - Audience measurement and reporting
+  - Personalisation and recommendations
+  - Live operations and community management
+  - Editorial planning and publishing
+capabilities:
+  - Audience 360
+  - Content recommendation
+  - Churn prediction
+  - Ad yield optimisation
+  - Content performance analytics
+  - Rights availability and royalty calculation
+  - Player behaviour analytics
+  - Metadata enrichment
+source_systems:
+  - "Subscription billing (Zuora, Recurly, Chargebee, Evergent)"
+  - "Video platforms and players (Brightcove, Kaltura, JW Player, Bitmovin, Conviva QoE)"
+  - "Ad servers and SSPs (Google Ad Manager, FreeWheel, Magnite, PubMatic)"
+  - "Rights and royalties (Rightsline, FilmTrack, Vistex)"
+  - "Media asset management (Avid, Dalet, Vizrt, Adobe Experience Manager Assets)"
+  - "Content management (WordPress VIP, Arc XP, Adobe Experience Manager)"
+  - "Audience measurement (Nielsen, Comscore, Kantar)"
+  - "Product analytics and CDP (Adobe Analytics, Amplitude, Segment, mParticle)"
+  - "Game backends and telemetry (PlayFab, Unity Gaming Services, AWS GameLift)"
+data_entities: [Subscriber, Account, Profile, Title, Episode, Asset, Rights window, Viewing session, Impression, Campaign, Article, Player, Event, Royalty statement]
+integration_patterns:
+  - Client-side event telemetry collection
+  - "OpenRTB / VAST / VMAP ad standards"
+  - "Content metadata standards (EIDR, MovieLabs, IPTC)"
+  - Billing and CRM webhooks
+  - Data clean rooms for audience matching
+related_technologies: [real_time_streaming, machine_learning, generative_ai, vector_search, databricks]
+related_project_types: [recommendation_engine, churn_prediction, customer_360, genai_assistant]

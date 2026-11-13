@@ -1,0 +1,11 @@
+# Microsoft Fabric technology pack - terminology
+- {term: OneLake, definition: Single tenant-wide logical data lake underlying Microsoft Fabric, entity_type: system, category: technology}
+- term: Fabric Capacity
+  definition: Purchased compute (F SKU) shared by Fabric workloads
+  synonyms: [f sku, capacity units, cu]
+  entity_type: system
+  category: operations
+- {term: Direct Lake, definition: Power BI storage mode reading Delta tables in OneLake without import, entity_type: concept, category: technology}
+- {term: Shortcut, definition: OneLake pointer to data in other storage without copying, entity_type: concept, category: technology}
+- {term: Workspace, definition: Container for Fabric items with shared access and capacity assignment, entity_type: system, category: governance}
+- {term: Domain, definition: Fabric grouping of workspaces by business area for federated governance, entity_type: concept, category: governance}

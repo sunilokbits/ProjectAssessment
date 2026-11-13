@@ -1,0 +1,92 @@
+- id: pci-dss
+  name: Payment Card Industry Data Security Standard v4.0
+  short_name: PCI DSS
+  geographies: [GLOBAL]
+  data_classifications_any: [cardholder]
+  description: Security requirements for entities that store, process or transmit cardholder data.
+- id: sox
+  name: Sarbanes-Oxley Act (internal controls over financial reporting)
+  short_name: SOX
+  geographies: [US]
+  applicability_note: Applicable to US-listed entities and their subsidiaries where systems support financial reporting.
+- id: rbi-it-governance
+  name: RBI Master Direction on IT Governance, Risk, Controls and Assurance Practices
+  short_name: RBI IT Governance
+  geographies: [IN]
+- id: rbi-outsourcing
+  name: RBI guidelines on outsourcing of IT services (incl. cloud)
+  short_name: RBI IT Outsourcing
+  geographies: [IN]
+  technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]
+- id: rbi-data-localisation
+  name: RBI Storage of Payment System Data (data localisation)
+  short_name: RBI Data Localisation
+  geographies: [IN]
+  sub_domains: [payments, cards]
+- id: rbi-kyc
+  name: RBI Master Direction - Know Your Customer
+  short_name: RBI KYC
+  geographies: [IN]
+- id: pmla
+  name: Prevention of Money Laundering Act (India)
+  short_name: PMLA
+  geographies: [IN]
+- id: bcbs-239
+  name: BCBS 239 - Principles for effective risk data aggregation and risk reporting
+  short_name: BCBS 239
+  geographies: [GLOBAL]
+  applicability_note: Applies primarily to systemically important banks; often adopted as good practice.
+- id: basel-iii
+  name: Basel III capital and liquidity framework
+  short_name: Basel III
+  geographies: [GLOBAL]
+- id: glba
+  name: Gramm-Leach-Bliley Act
+  short_name: GLBA
+  geographies: [US]
+  data_classifications_any: [pii, financial]
+- id: ffiec
+  name: FFIEC IT Examination Handbook
+  short_name: FFIEC
+  geographies: [US]
+- id: bsa-aml
+  name: Bank Secrecy Act / AML regulations
+  short_name: BSA/AML
+  geographies: [US]
+- id: dora
+  name: Digital Operational Resilience Act
+  short_name: DORA
+  geographies: [EU, EEA]
+- id: psd2
+  name: Payment Services Directive 2
+  short_name: PSD2
+  geographies: [EU, EEA]
+  sub_domains: [payments, retail_banking, fintech, cards]
+- id: eba-outsourcing
+  name: EBA Guidelines on outsourcing arrangements
+  short_name: EBA Outsourcing
+  geographies: [EU, EEA]
+  technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]
+- id: mas-trm
+  name: MAS Technology Risk Management Guidelines
+  short_name: MAS TRM
+  geographies: [SG]
+- id: apra-cps-234
+  name: APRA CPS 234 Information Security
+  short_name: APRA CPS 234
+  geographies: [AU]
+- id: sr-11-7
+  name: SR 11-7 Guidance on Model Risk Management
+  short_name: SR 11-7
+  geographies: [US]
+  technologies_any: [machine_learning, generative_ai, advanced_analytics, agentic_ai, ai_agents]
+- id: sebi-cscrf
+  name: SEBI Cybersecurity and Cyber Resilience Framework
+  short_name: SEBI CSCRF
+  geographies: [IN]
+  sub_domains: [capital_markets, asset_management, wealth_management, investment_banking]
+- id: mifid-ii
+  name: Markets in Financial Instruments Directive II
+  short_name: MiFID II
+  geographies: [EU, EEA]
+  sub_domains: [capital_markets, investment_banking, wealth_management, asset_management]

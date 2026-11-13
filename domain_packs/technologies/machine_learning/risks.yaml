@@ -1,0 +1,48 @@
+- id: ml-label-quality
+  title: Poor or missing ground-truth labels
+  category: data
+  likelihood: 4
+  impact: 4
+  mitigation: Audit label sources; invest in labelling or proxy outcomes before modelling.
+  indicators:
+  - no labels
+  - manual tagging
+  - inconsistent outcomes
+- id: ml-leakage
+  title: Target leakage inflates offline model performance
+  category: technology
+  likelihood: 3
+  impact: 4
+  mitigation: Point-in-time feature construction and time-based validation splits.
+  indicators:
+  - future data
+  - leakage
+- id: ml-bias
+  title: Model produces biased or unfair outcomes
+  category: governance
+  likelihood: 3
+  impact: 4
+  mitigation: Fairness metrics per protected group; documented review and approval.
+  indicators:
+  - protected attributes
+  - fairness
+  - discrimination
+- id: ml-no-deployment
+  title: Models never reach production (pilot purgatory)
+  category: delivery
+  likelihood: 4
+  impact: 3
+  mitigation: Define deployment path and owner before building; use MLOps patterns.
+  indicators:
+  - proof of concept
+  - pilot only
+  - notebook
+- id: ml-drift
+  title: Model performance degrades as data drifts
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Monitor data and prediction drift with retraining triggers.
+  indicators:
+  - drift
+  - degradation

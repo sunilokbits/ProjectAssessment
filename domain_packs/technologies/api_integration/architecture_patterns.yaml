@@ -1,0 +1,59 @@
+- id: api-led-integration
+  name: API-led integration
+  description: System APIs wrap back-ends, process APIs orchestrate, experience APIs serve channels; a gateway enforces security.
+  use_cases:
+  - Application integration
+  - Partner APIs
+  layer_order:
+  - sources
+  - integration
+  - ingestion
+  - processing
+  - storage
+  - serving
+  - consumption
+  - governance
+  - operations
+  components:
+  - id: gateway
+    name: API gateway / management
+    layer: integration
+    core: true
+  - id: system-apis
+    name: System APIs over back-end systems
+    layer: integration
+    core: true
+  - id: process-apis
+    name: Process / orchestration APIs
+    layer: processing
+    core: true
+  - id: broker
+    name: Event broker
+    layer: integration
+    when:
+      technologies_any:
+      - real_time_streaming
+  - id: apim
+    name: Azure API Management
+    layer: integration
+    when:
+      technologies_any:
+      - azure
+  - id: aws-apigw
+    name: Amazon API Gateway
+    layer: integration
+    when:
+      technologies_any:
+      - aws
+  - id: apigee
+    name: Apigee
+    layer: integration
+    when:
+      technologies_any:
+      - gcp
+  - id: api-monitoring
+    name: Integration monitoring
+    layer: operations
+    core: true
+  considerations:
+  - Version APIs and publish contracts in a developer portal.

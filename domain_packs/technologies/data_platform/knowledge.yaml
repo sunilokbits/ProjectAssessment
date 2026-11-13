@@ -1,0 +1,7 @@
+# Data Platform technology pack - knowledge
+security_considerations:
+  - {id: central-identity, text: Central identity provider integration and role-based access across all platform services., category: security}
+  - {id: data-zones, text: 'Separate storage zones and access policies for raw, curated and sensitive data.', category: security}
+dependencies:
+  - {id: landing-zone-dep, text: Cloud landing zone and network connectivity to source systems., category: infrastructure}
+  - {id: governance-org, text: Data owners and stewards nominated per domain., category: governance}

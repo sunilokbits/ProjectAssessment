@@ -1,0 +1,43 @@
+- id: rec-objective
+  text: What is the recommendation objective (conversion, basket size, engagement, retention) and where is it shown?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: rec-interaction-data
+  text: Is user interaction data (views, clicks, purchases) captured with user identifiers?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: rec-catalog
+  text: Is product / content catalogue metadata complete and current?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+- id: rec-latency
+  text: Must recommendations be computed in real time per session or can they be pre-computed?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+  - value: realtime
+    label: Real-time in session
+    score: 1
+  - value: precomputed
+    label: Pre-computed batch
+    score: 1
+  - value: unknown
+    label: Not defined
+    score: 0.2
+- id: rec-experimentation
+  text: Is A/B testing infrastructure available to measure uplift?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: rec-consent
+  text: Is consent for personalisation captured and honoured?
+  category: privacy
+  dimension: privacy_protection
+  answer_type: yes_no

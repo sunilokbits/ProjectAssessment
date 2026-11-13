@@ -1,0 +1,13 @@
+# Data Warehouse technology pack - domain
+key: data_warehouse
+name: Data Warehouse
+kind: technology
+version: 1.0.0
+description: Enterprise / cloud data warehouse - dimensional modelling, integrated historical data and SQL serving for reporting and analytics.
+aliases: [Data Platforms]
+sort_order: 12
+detection:
+  keywords: {data warehouse: 4, enterprise data warehouse: 5, edw: 3, data mart: 3, dimensional model: 3, star schema: 3, kimball: 3, data vault: 3,
+    teradata: 3, netezza: 3, oracle exadata: 2.5, amazon redshift: 3, redshift: 2.5, bigquery: 2.5, synapse: 2.5, fact table: 2, sql: 0.3}
+related_technologies: [data_engineering, snowflake, microsoft_fabric, business_intelligence, data_migration]
+related_project_types: [bi_modernization, regulatory_reporting, data_platform_modernization]

@@ -1,0 +1,32 @@
+# Data Migration technology pack - questions
+- {id: dm-scope, text: 'Are migration scope, objects and history depth (how many years) agreed with data owners?', category: data, dimension: data_migration_readiness,
+  weight: 1.5, critical: true}
+- {id: dm-profiling, text: 'Has source data been profiled for quality, duplicates and referential integrity?', category: quality, dimension: data_quality}
+- {id: dm-mapping, text: 'Are source-to-target mappings and transformation rules documented and signed off?', category: data, dimension: data_migration_readiness}
+- id: dm-volumes
+  text: What is the total data volume to be migrated?
+  category: data
+  dimension: data_availability
+  answer_type: single_choice
+  options:
+    - {value: small, label: < 1 TB}
+    - {value: medium, label: 1 - 50 TB}
+    - {value: large, label: 50 - 500 TB}
+    - {value: very_large, label: '> 500 TB'}
+- id: dm-cutover-approach
+  text: What cutover approach is expected?
+  category: operations
+  dimension: data_migration_readiness
+  answer_type: single_choice
+  options:
+    - {value: big_bang, label: Big bang (single cutover)}
+    - {value: phased, label: Phased by entity / business unit}
+    - {value: parallel_run, label: Parallel run with ongoing sync}
+    - {value: unknown, label: Not decided}
+- {id: dm-reconciliation, text: 'Is a reconciliation approach (counts, checksums, financial totals) and sign-off process defined?', category: quality,
+  dimension: data_migration_readiness, critical: true}
+- {id: dm-rehearsals, text: 'Are mock migrations / dress rehearsals planned before production cutover?', category: delivery, dimension: operational_readiness}
+- {id: dm-pii-handling, text: 'Will production data containing personal data be used in non-production migration environments?', category: security,
+  dimension: privacy_protection, help: 'If yes, masking or approved secure environments are needed.'}
+- {id: dm-skills, text: 'How experienced is the client team with data migration tooling and reconciliation (1-5)?', category: delivery, dimension: team_capability,
+  answer_type: scale, equivalence_key: client_skills}

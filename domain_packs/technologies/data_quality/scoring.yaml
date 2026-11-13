@@ -1,0 +1,6 @@
+dimensions:
+- key: data_quality_readiness
+  name: Data Quality Readiness
+  group: technology
+  weight: 1.0
+  description: Profiling, rule coverage, monitoring, issue management and remediation ownership.

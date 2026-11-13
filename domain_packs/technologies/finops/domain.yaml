@@ -1,0 +1,29 @@
+key: finops
+name: FinOps
+kind: technology
+version: 1.0.0
+description: 'Cloud financial management: cost visibility, allocation, optimisation and accountability.'
+aliases:
+- Operations
+sort_order: 92
+detection:
+  keywords:
+    finops: 5
+    cloud cost: 4
+    cost optimisation: 3
+    cost optimization: 3
+    chargeback: 4
+    showback: 4
+    reserved instances: 3
+    savings plans: 3
+    committed use: 3
+    cost allocation: 3
+    tagging policy: 3
+    budget alerts: 3
+related_technologies:
+- devops
+- azure
+- aws
+- gcp
+- databricks
+- snowflake

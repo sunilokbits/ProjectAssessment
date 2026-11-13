@@ -1,0 +1,19 @@
+- {term: Customer, definition: Individual or legal entity holding a relationship with the bank, synonyms: [client, account holder, party], entity_type: entity, category: data}
+- {term: Account, definition: "Deposit, loan or card account held by a customer", synonyms: [casa, current account, savings account], entity_type: entity, category: data}
+- {term: Transaction, definition: Monetary movement posted to an account, synonyms: [posting, txn], entity_type: entity, category: data}
+- {term: Loan, definition: Credit facility extended to a customer, synonyms: [advance, credit facility], entity_type: entity, category: data}
+- {term: KYC, definition: Know Your Customer due diligence, synonyms: [customer due diligence, cdd, know your customer], entity_type: process, category: compliance}
+- {term: AML, definition: Anti-money laundering controls and monitoring, synonyms: [anti-money laundering, transaction monitoring], entity_type: process, category: compliance}
+- {term: Credit Risk, definition: Risk of loss from borrower default, synonyms: [default risk, pd, lgd, ead], entity_type: concept, category: data}
+- {term: Payment, definition: Transfer of funds between parties, synonyms: [remittance, funds transfer, upi, neft, rtgs], entity_type: entity, category: integration}
+- {term: Fraud, definition: Unauthorised or deceptive financial activity, synonyms: [fraudulent transaction, mule account], entity_type: event, category: security}
+- {term: NPA, definition: Non-performing asset, synonyms: [non-performing loan, npl], entity_type: metric, category: data}
+- {term: General Ledger, definition: Book of record for financial accounting, synonyms: [gl, ledger], entity_type: system, category: data}
+- {term: Core Banking System, definition: System of record for accounts and transactions, synonyms: [cbs, core banking, finacle, t24, flexcube], entity_type: system, category: integration}
+- {term: Collateral, definition: Asset pledged as security for a loan, entity_type: entity, category: data, sub_domains: [lending, mortgage, corporate_banking, commercial_banking]}
+- {term: PAN, definition: Primary account number of a payment card, synonyms: [card number], entity_type: entity, category: security, sub_domains: [cards, payments]}
+- {term: ISO 20022, definition: Financial messaging standard, entity_type: concept, category: integration, sub_domains: [payments, corporate_banking]}
+- {term: AUM, definition: Assets under management, entity_type: metric, category: reporting, sub_domains: [wealth_management, asset_management]}
+- {term: Basel, definition: Basel Committee capital and liquidity standards, synonyms: [basel iii, bcbs], entity_type: regulation, category: compliance}
+- {term: RBI, definition: Reserve Bank of India, entity_type: regulation, category: compliance}
+- {term: Sanctions Screening, definition: Screening of parties against sanctions lists, synonyms: [ofac, watchlist screening], entity_type: process, category: compliance}

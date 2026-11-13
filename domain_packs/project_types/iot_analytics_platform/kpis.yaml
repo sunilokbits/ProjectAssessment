@@ -1,0 +1,18 @@
+- id: iap-sites-onboarded
+  name: Sites onboarded
+  description: Number of sites streaming data to the platform.
+  unit: count
+  direction: higher_is_better
+  category: delivery
+- id: iap-data-latency
+  name: Telemetry latency
+  description: Time from device reading to availability for analytics.
+  unit: seconds
+  direction: lower_is_better
+  category: operations
+- id: iap-data-completeness
+  name: Telemetry completeness
+  description: Share of expected messages received.
+  unit: '%'
+  direction: higher_is_better
+  category: data

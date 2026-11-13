@@ -1,0 +1,46 @@
+- id: fd-fraud-types
+  text: Which fraud types and channels are in scope?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: fd-latency
+  text: Must decisions be made in real time (pre-authorisation) or post-event?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+  - value: realtime
+    label: Real-time / in-flight
+    score: 1
+  - value: near_realtime
+    label: Near real-time
+    score: 1
+  - value: batch
+    label: Post-event batch review
+    score: 1
+  - value: unknown
+    label: Not defined
+    score: 0.2
+  critical: true
+- id: fd-labels
+  text: Are confirmed fraud outcomes labelled and fed back from investigations?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+  weight: 1.5
+- id: fd-case-mgmt
+  text: Is there a case-management process for investigators to review alerts?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: fd-explainability
+  text: Do alerts and declines need explanations for investigators, customers or regulators?
+  category: governance
+  dimension: privacy_protection
+  answer_type: yes_no
+- id: fd-data-sources
+  text: Are transaction, customer, device and third-party data sources accessible for scoring?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no

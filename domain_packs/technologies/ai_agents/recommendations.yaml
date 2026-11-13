@@ -1,0 +1,19 @@
+- id: agents-narrow-first
+  title: Launch narrow agents with clear success metrics
+  text: Start with one well-defined task per agent and expand on measured containment and quality.
+  category: delivery
+  priority: high
+- id: agents-saas-builder
+  title: Use a SaaS agent builder for standard channels
+  text: Use the productivity or CRM suite's agent builder when channels and data already live there.
+  category: technology
+  priority: medium
+  decision_key: agent_platform
+  decision_option: saas
+- id: agents-custom-build
+  title: Custom-build agents on a cloud AI platform
+  text: Build on a cloud AI platform when deep integration, custom evaluation or portability is required.
+  category: technology
+  priority: medium
+  decision_key: agent_platform
+  decision_option: custom

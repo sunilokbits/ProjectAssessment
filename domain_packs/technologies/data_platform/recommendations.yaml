@@ -1,0 +1,27 @@
+# Data Platform technology pack - recommendations
+- {id: platform-as-product, title: Run the data platform as a product, text: 'Appoint a platform product owner, publish a roadmap and service
+    catalogue, and measure adoption.', category: delivery, priority: high}
+- {id: use-case-led, title: Deliver use-case-led increments, text: Sequence platform capabilities behind prioritised business use cases rather
+    than building all layers upfront., category: business, priority: high}
+- id: federated-model
+  title: Adopt a federated (data-mesh-style) operating model
+  text: Central platform team provides self-service infrastructure; domain teams own data products.
+  category: delivery
+  priority: medium
+  decision_key: platform_operating_model
+  decision_option: federated
+  when:
+    any_of:
+      - answers:
+          data_platform:platform-operating-model: [federated]
+      - keywords_any: [data mesh, data products, domain ownership]
+- id: centralised-model
+  title: Start with a centralised platform team
+  text: Build capability centrally first; federate once standards and skills mature.
+  category: delivery
+  priority: medium
+  decision_key: platform_operating_model
+  decision_option: centralised
+  when:
+    answers:
+      data_platform:platform-operating-model: [none, central]

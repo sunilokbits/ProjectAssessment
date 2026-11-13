@@ -1,0 +1,26 @@
+key: document_intelligence
+name: Document Intelligence / IDP
+kind: project_type
+version: 1.0.0
+description: 'Intelligent document processing: classifying documents and extracting data with OCR, ML and LLMs.'
+sort_order: 33
+detection:
+  keywords:
+    document intelligence: 5
+    intelligent document processing: 5
+    idp: 3
+    document extraction: 4
+    ocr: 3
+    invoice processing: 4
+    claims documents: 3
+    form recognizer: 4
+    azure ai document intelligence: 5
+    textract: 4
+    document ai: 4
+    document classification: 4
+    data extraction from pdf: 4
+related_technologies:
+- generative_ai
+- machine_learning
+- rag
+- api_integration

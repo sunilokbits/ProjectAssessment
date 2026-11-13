@@ -1,0 +1,17 @@
+- term: Prescriptive Analytics
+  definition: Analytics that recommends an action, typically via optimisation or simulation
+  entity_type: concept
+  category: analytics
+- term: Feature
+  definition: An input variable derived from data for a model or analysis
+  synonyms:
+  - variable
+  - predictor
+  entity_type: entity
+  category: analytics
+- term: Sandbox
+  definition: An isolated analytical environment for exploration
+  synonyms:
+  - analytical workspace
+  entity_type: system
+  category: technology

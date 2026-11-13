@@ -1,0 +1,7 @@
+system_addition: |
+  Use banking terminology (customer, account, transaction, loan, KYC, AML, GL, NPA).
+  Treat the general ledger as the financial book of record. Highlight reconciliation, KYC/AML,
+  model-risk and regulatory-reporting impacts. Never assume regulatory approval of cloud usage.
+stage_additions:
+  discovery: Ask which regulatory reports, core banking systems and financial-crime processes the project touches.
+extraction_hints: Map "client", "account holder" and "party" to Customer; map "posting" and "txn" to Transaction.

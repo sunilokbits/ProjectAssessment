@@ -1,0 +1,10 @@
+- id: cp-action-first
+  title: Design retention actions alongside the model
+  text: Agree interventions, channels and owners before building scores.
+  category: business
+  priority: high
+- id: cp-uplift-modelling
+  title: Consider uplift modelling
+  text: Target customers whose behaviour can be changed, not just those at risk.
+  category: data
+  priority: medium

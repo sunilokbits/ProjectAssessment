@@ -1,0 +1,5 @@
+# Data Lake technology pack - recommendations
+- {id: open-table-format, title: Adopt an open table format, text: 'Store curated data as Delta Lake or Apache Iceberg tables for ACID, schema
+    evolution and time travel.', category: technology, priority: high, decision_key: lake_table_format, decision_option: open_table_format}
+- {id: catalog-mandatory, title: Make cataloguing mandatory for promotion, text: 'Data cannot be promoted beyond raw without catalog registration,
+    owner and classification.', category: governance, priority: high}

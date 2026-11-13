@@ -1,0 +1,35 @@
+- id: devops-manual-releases
+  title: Manual deployments cause drift and failures
+  category: operations
+  likelihood: 4
+  impact: 3
+  mitigation: Automate deployments and lock production to pipeline-only changes.
+  indicators:
+  - manual deployment
+  - click-ops
+- id: devops-cab-bottleneck
+  title: Change advisory process blocks frequent releases
+  category: governance
+  likelihood: 3
+  impact: 3
+  mitigation: Agree standard pre-approved change types for pipeline releases.
+  indicators:
+  - cab
+  - change board
+- id: devops-env-gaps
+  title: Insufficient non-production environments
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Provision environments via IaC early.
+  indicators:
+  - no test environment
+- id: devops-secrets-in-code
+  title: Secrets committed in code or pipelines
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Secret managers, scanning and workload identities.
+  indicators:
+  - password in code
+  - hardcoded

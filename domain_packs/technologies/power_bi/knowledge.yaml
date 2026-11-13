@@ -1,0 +1,9 @@
+# Power BI technology pack - knowledge
+security_considerations:
+  - {id: pbi-rls, text: Row-level / object-level security on semantic models mapped to Entra ID groups., category: security}
+  - {id: pbi-tenant, text: Disable publish-to-web and restrict export / external sharing in tenant settings., category: security}
+  - {id: pbi-labels, text: Sensitivity labels inherited to exports via Microsoft Purview., category: security}
+dependencies:
+  - {id: pbi-licences, text: Licences / capacity procured for authors and consumers., category: commercial}
+  - {id: pbi-entra-groups, text: Entra ID security groups for workspace roles and RLS., category: identity}
+  - {id: pbi-curated, text: 'Curated, modelled data source available.', category: data}

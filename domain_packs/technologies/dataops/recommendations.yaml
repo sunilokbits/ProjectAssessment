@@ -1,0 +1,10 @@
+- id: dataops-ci
+  title: Treat pipelines as code with CI/CD
+  text: Version, test and deploy data pipelines through automated pipelines with environment promotion.
+  category: operations
+  priority: high
+- id: dataops-contracts
+  title: Introduce data contracts for critical feeds
+  text: Agree schemas, SLAs and quality expectations with producers.
+  category: governance
+  priority: medium

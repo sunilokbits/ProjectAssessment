@@ -1,0 +1,38 @@
+- id: dg-no-ownership
+  title: No accountable data owners
+  category: governance
+  likelihood: 4
+  impact: 4
+  mitigation: Appoint owners per domain with documented decision rights.
+  indicators:
+  - no owner
+  - unclear ownership
+  - nobody owns
+- id: dg-shelfware
+  title: Governance becomes documentation shelfware
+  category: governance
+  likelihood: 3
+  impact: 3
+  mitigation: Tie governance to delivery use cases and automate controls in the platform.
+  indicators:
+  - policy document
+  - not enforced
+- id: dg-stewards-capacity
+  title: Data stewards lack time and mandate
+  category: delivery
+  likelihood: 4
+  impact: 3
+  mitigation: Allocate formal capacity and objectives for stewards.
+  indicators:
+  - part-time
+  - volunteer
+- id: dg-regulatory-gap
+  title: Regulatory data-governance obligations not met
+  category: compliance
+  likelihood: 3
+  impact: 4
+  mitigation: Map obligations (e.g. BCBS 239, GDPR) to controls and evidence.
+  indicators:
+  - bcbs 239
+  - gdpr
+  - regulator finding

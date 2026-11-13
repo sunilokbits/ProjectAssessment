@@ -1,0 +1,25 @@
+key: regulatory_reporting
+name: Regulatory Reporting
+kind: project_type
+version: 1.0.0
+description: Producing accurate, timely and auditable reports for regulators with lineage and controls.
+sort_order: 21
+detection:
+  keywords:
+    regulatory reporting: 5
+    regulatory returns: 5
+    regulatory report: 4
+    bcbs 239: 4
+    corep: 5
+    finrep: 5
+    axiomsl: 4
+    xbrl: 4
+    solvency ii reporting: 5
+    mifid reporting: 4
+    statutory reporting: 3
+    regulator submission: 4
+related_technologies:
+- data_governance
+- data_quality
+- metadata_management
+- data_warehouse

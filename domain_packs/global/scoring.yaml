@@ -1,0 +1,14 @@
+# Comparable dimensions: every assessment is scored on these, regardless of industry.
+# Domain packs cannot change these weights (keeps "Overall (comparable)" comparable).
+dimensions:
+  - {key: business_alignment, name: Business Alignment, group: business, weight: 1.5, description: "Clear objectives, sponsorship, success criteria and benefits."}
+  - {key: stakeholder_readiness, name: Stakeholder & Change Readiness, group: business, weight: 1.0, description: "Stakeholders identified, engaged and ready for change."}
+  - {key: data_availability, name: Data Availability & Access, group: data, weight: 1.5, description: "Required data is identified, accessible and owned."}
+  - {key: data_quality, name: Data Quality, group: data, weight: 1.0, description: "Data quality is known, measured and fit for purpose."}
+  - {key: architecture_fit, name: Architecture Fit, group: architecture, weight: 1.5, description: "Target architecture, NFRs and platform choices are understood."}
+  - {key: integration_readiness, name: Integration Readiness, group: architecture, weight: 1.0, description: "Interfaces, connectivity and integration patterns are known."}
+  - {key: security_controls, name: Security Controls, group: security, weight: 1.5, description: "Identity, access, encryption, monitoring and secure engineering."}
+  - {key: privacy_protection, name: Privacy & Regulatory Protection, group: security, weight: 1.0, description: "Personal/regulated data handling and regulatory obligations."}
+  - {key: delivery_governance, name: Delivery Governance, group: delivery, weight: 1.0, description: "Scope, budget, timeline, decision-making and risk management."}
+  - {key: team_capability, name: Team Capability, group: delivery, weight: 1.0, description: "Skills and capacity on client and delivery side."}
+  - {key: operational_readiness, name: Operational Readiness, group: delivery, weight: 1.0, description: "Run, support, monitoring and continuity arrangements."}

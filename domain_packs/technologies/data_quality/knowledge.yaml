@@ -1,0 +1,18 @@
+data_quality_checks:
+- id: dq-completeness
+  text: Completeness of mandatory attributes.
+  category: data
+- id: dq-uniqueness
+  text: Uniqueness of business keys.
+  category: data
+- id: dq-freshness
+  text: Freshness against expected arrival times.
+  category: data
+security_considerations:
+- id: dq-sample-masking
+  text: Mask personal data in quality reports and samples.
+  category: security
+dependencies:
+- id: dq-governance
+  text: Data owners to agree thresholds and remediation.
+  category: governance

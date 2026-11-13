@@ -1,0 +1,85 @@
+key: technology_saas
+name: Technology, Software and SaaS
+kind: industry
+version: 1.0.0
+description: SaaS providers, enterprise software vendors, cloud platforms, cybersecurity companies and developer platforms.
+aliases: [software, saas, tech company, isv, hi-tech, cloud provider]
+sort_order: 80
+sub_domains:
+  - key: saas
+    name: SaaS
+    keywords: [saas, multi-tenant, subscription, arr, mrr, tenant, product-led growth, self-serve, freemium, usage-based pricing]
+  - key: enterprise_software
+    name: Enterprise Software
+    keywords: [enterprise software, isv, on-premise licence, perpetual licence, maintenance renewal, implementation partner, enterprise customers]
+  - key: cloud_platforms
+    name: Cloud Platforms and Infrastructure
+    keywords: [cloud provider, iaas, paas, hosting, data centre, managed services, hyperscaler, infrastructure platform]
+  - key: cybersecurity
+    name: Cybersecurity
+    keywords: [security vendor, siem, edr, xdr, threat intelligence, soc, mssp, vulnerability management, identity security]
+  - key: developer_platforms
+    name: Developer Platforms
+    keywords: [developer platform, api platform, sdk, developer experience, devtools, ci/cd platform, open source, api usage]
+detection:
+  keywords:
+    saas: 4
+    multi-tenant: 4.5
+    tenant: 2
+    arr: 3.5
+    mrr: 4
+    net revenue retention: 5
+    product analytics: 3.5
+    feature adoption: 3.5
+    soc 2: 3.5
+    customer success: 3
+    product-led growth: 5
+    usage-based pricing: 4.5
+    subscription: 1.5
+    churn: 1.5
+    trial conversion: 4
+    developer: 1.5
+    api calls: 3
+    telemetry: 2
+    isv: 4
+    seat licence: 3.5
+business_processes:
+  - Lead-to-cash and subscription management
+  - Product usage analytics and experimentation
+  - Customer onboarding and success
+  - Renewals and expansion
+  - Billing, metering and revenue recognition
+  - Support and incident management
+  - Software development lifecycle
+  - Security operations and compliance attestations
+  - Partner and marketplace management
+  - Capacity planning and cloud cost management
+capabilities:
+  - Customer health scoring
+  - Churn and expansion prediction
+  - Product analytics and feature adoption
+  - Usage-based billing and metering
+  - Unit economics and SaaS metrics
+  - Embedded customer-facing analytics
+  - In-product AI copilots
+  - Cloud cost optimisation
+source_systems:
+  - "CRM (Salesforce, HubSpot)"
+  - "Subscription billing (Zuora, Stripe Billing, Chargebee, Maxio)"
+  - "Product analytics (Amplitude, Mixpanel, Pendo, Heap)"
+  - "Customer success (Gainsight, ChurnZero, Totango)"
+  - "Support (Zendesk, ServiceNow, Intercom, Jira Service Management)"
+  - "Engineering (GitHub, GitLab, Jira, PagerDuty)"
+  - "Observability (Datadog, New Relic, Splunk, Grafana)"
+  - "ERP and revenue recognition (NetSuite, Sage Intacct, SAP RAR)"
+  - Application production databases and event logs
+  - Cloud billing exports
+data_entities: [Account, Tenant, User, Subscription, Plan, Usage event, Feature, Invoice, Support ticket, Opportunity, Incident, Release, Contract]
+integration_patterns:
+  - Product event collection SDKs
+  - Reverse ETL into CRM and CS tools
+  - CDC from multi-tenant application databases
+  - Webhooks and public APIs
+  - Cloud marketplace integrations
+related_technologies: [data_platform, snowflake, databricks, generative_ai, finops, devops]
+related_project_types: [churn_prediction, customer_360, genai_assistant, bi_modernization]

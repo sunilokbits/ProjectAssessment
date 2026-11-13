@@ -1,0 +1,27 @@
+- id: df-censored-demand
+  title: Stock-outs hide true demand
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Correct for stock-outs and lost sales in training data.
+  indicators:
+  - stock-out
+  - out of stock
+- id: df-planner-distrust
+  title: Planners override forecasts and ignore model output
+  category: business
+  likelihood: 3
+  impact: 4
+  mitigation: Explainable forecasts and measured forecast value added.
+  indicators:
+  - manual overrides
+  - spreadsheet planning
+- id: df-regime-change
+  title: Structural changes break historical patterns
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Monitoring, rapid retraining and scenario overlays.
+  indicators:
+  - pandemic
+  - new channel

@@ -1,0 +1,9 @@
+system_addition: |
+  Use insurance terminology (policyholder, policy, coverage, premium, claim, FNOL, reserve, IBNR, loss ratio).
+  Treat the general ledger and actuarial systems as the books of record. Highlight reconciliation of premium,
+  claims and reserves, IFRS 17 / solvency impacts, fair treatment of policyholders in automated decisions,
+  and handling of medical information. Never assume regulatory approval of cloud usage.
+stage_additions:
+  discovery: "Ask which lines of business, policy/claims platforms, regulatory returns and actuarial processes the project touches."
+  solutioning: Preserve transaction-level policy and claims history and design reconciliation to finance and actuarial outputs.
+extraction_hints: Map "insured", "policy owner" and "proposer" to Policyholder; map "loss" and "claim intimation" to Claim; map "cover" and "rider" to Coverage; map "GWP" to Premium.

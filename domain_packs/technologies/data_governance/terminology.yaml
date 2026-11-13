@@ -1,0 +1,20 @@
+- term: Data Owner
+  definition: Accountable business role for a data domain
+  synonyms:
+  - data domain owner
+  entity_type: role
+  category: governance
+- term: Data Steward
+  definition: Role responsible for day-to-day data definitions and quality
+  entity_type: role
+  category: governance
+- term: Critical Data Element
+  definition: Data element with high importance for decisions or regulatory reporting
+  synonyms:
+  - cde
+  entity_type: entity
+  category: governance
+- term: Data Policy
+  definition: Approved rule governing data handling
+  entity_type: concept
+  category: governance

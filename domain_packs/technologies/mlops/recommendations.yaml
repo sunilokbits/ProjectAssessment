@@ -1,0 +1,15 @@
+- id: mlops-registry-first
+  title: Centralise models in a registry with approvals
+  text: Register all production models with lineage, owner and approval gates.
+  category: governance
+  priority: high
+- id: mlops-monitoring
+  title: Implement model monitoring with retraining triggers
+  text: Monitor drift and outcome metrics and trigger retraining through pipelines.
+  category: operations
+  priority: high
+- id: mlops-platform-native
+  title: Use the data platform's native MLOps tooling
+  text: Prefer the MLOps capabilities integrated with the chosen data platform to reduce integration effort.
+  category: technology
+  priority: medium

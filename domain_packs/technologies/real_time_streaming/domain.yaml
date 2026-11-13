@@ -1,0 +1,34 @@
+key: real_time_streaming
+name: Real-time Streaming
+kind: technology
+version: 1.0.0
+description: Event streaming and stream processing for low-latency data movement, analytics and actions.
+aliases:
+- Integration
+sort_order: 84
+detection:
+  keywords:
+    real-time streaming: 5
+    event streaming: 5
+    kafka: 5
+    confluent: 5
+    event hubs: 4
+    kinesis: 4
+    pub/sub: 3
+    flink: 4
+    spark structured streaming: 4
+    stream processing: 4
+    change data capture: 3
+    debezium: 4
+    real-time: 1.5
+    real time: 1.5
+    streaming: 1.5
+related_technologies:
+- iot
+- api_integration
+- data_platform
+- databricks
+- machine_learning
+related_project_types:
+- fraud_detection
+- iot_analytics_platform

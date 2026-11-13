@@ -1,0 +1,48 @@
+- id: vs-scale
+  text: What is the expected index size and query volume?
+  category: architecture
+  dimension: vector_search_readiness
+  answer_type: single_choice
+  options:
+  - value: small
+    label: Under 1M vectors / low QPS
+    score: 1
+  - value: medium
+    label: 1M-100M vectors
+    score: 1
+  - value: large
+    label: Over 100M vectors or high QPS
+    score: 1
+  - value: unknown
+    label: Unknown
+- id: vs-store-choice
+  text: Has the vector store been chosen (dedicated vector DB, search engine, database extension, platform-native)?
+  category: architecture
+  dimension: vector_search_readiness
+  answer_type: yes_no
+- id: vs-embedding-model
+  text: Is the embedding model selected and versioned, with a re-embedding plan if it changes?
+  category: technology
+  dimension: vector_search_readiness
+  answer_type: yes_no
+- id: vs-metadata-filter
+  text: Are metadata filters (tenant, permissions, date, product) required alongside similarity?
+  category: architecture
+  dimension: vector_search_readiness
+  answer_type: yes_no
+- id: vs-latency
+  text: Are latency and recall targets for search defined by the consuming application?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: yes_no
+- id: vs-sync
+  text: How is the index kept in sync with source data (deletes, updates)?
+  category: data
+  dimension: vector_search_readiness
+  answer_type: text
+- id: vs-skills
+  text: How experienced is the client team with vector databases and embeddings (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

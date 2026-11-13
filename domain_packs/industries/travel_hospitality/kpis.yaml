@@ -1,0 +1,10 @@
+- {id: revpar, name: RevPAR, description: Revenue per available room., formula: room revenue / available room nights, unit: currency, direction: higher_is_better, category: business, sub_domains: [hotels]}
+- {id: occupancy, name: Occupancy rate, description: Share of available rooms sold., unit: "%", direction: higher_is_better, category: business, sub_domains: [hotels]}
+- {id: load-factor, name: Passenger load factor, description: Share of available seat capacity filled., formula: RPK / ASK, unit: "%", direction: higher_is_better, category: business, sub_domains: [airlines, rail]}
+- {id: rask, name: RASK, description: Revenue per available seat kilometre., unit: currency, direction: higher_is_better, category: business, sub_domains: [airlines]}
+- {id: on-time-performance, name: On-time performance, description: Share of departures or arrivals within the punctuality threshold., unit: "%", direction: higher_is_better, category: operational, sub_domains: [airlines, airports, rail, passenger_logistics]}
+- {id: ancillary-revenue, name: Ancillary revenue per passenger, description: Non-fare or non-room revenue per traveller., unit: currency, direction: higher_is_better, category: business}
+- {id: nps, name: Net Promoter Score, description: Customer advocacy score., unit: score, direction: higher_is_better, category: customer}
+- {id: mishandled-bags, name: Mishandled baggage rate, description: Mishandled bags per thousand passengers., unit: rate, direction: lower_is_better, category: operational, sub_domains: [airlines, airports]}
+- {id: fleet-utilisation, name: Fleet utilisation, description: Productive hours per fleet asset per period., unit: hours, direction: higher_is_better, category: operational, sub_domains: [fleet_management, airlines, rail]}
+- {id: direct-booking-share, name: Direct booking share, description: Share of bookings through direct channels., unit: "%", direction: higher_is_better, category: business, sub_domains: [hotels, airlines, rail]}

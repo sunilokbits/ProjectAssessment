@@ -1,0 +1,10 @@
+- id: pdm-critical-assets
+  title: Start with high-criticality assets with good data
+  text: Pick asset classes with failure cost, sensor coverage and maintenance history.
+  category: delivery
+  priority: high
+- id: pdm-eam-integration
+  title: Close the loop with EAM/CMMS
+  text: Create work orders or planner alerts automatically and capture outcomes for retraining.
+  category: integration
+  priority: medium

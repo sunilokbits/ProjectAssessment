@@ -1,0 +1,7 @@
+system_addition: |
+  Use media and entertainment terminology (subscriber, profile, title, viewing session, rights window, impression, CPM, DAU).
+  Highlight consent for advertising and tracking, children's data, content rights and licensing (including AI training rights),
+  telemetry scale for live events, and reconciliation with third-party audience measurement.
+stage_additions:
+  discovery: Ask which telemetry sources, billing, ad tech, rights systems and measurement partners are in scope.
+extraction_hints: Map "member" and "user" to Subscriber; map "show", "programme" and "asset" to Title; map "play" and "stream" to Viewing Session.

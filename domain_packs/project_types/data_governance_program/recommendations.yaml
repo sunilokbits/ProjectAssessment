@@ -1,0 +1,10 @@
+- id: dgp-use-case-anchor
+  title: Anchor governance to priority use cases
+  text: Govern the data behind funded use cases first to show tangible value.
+  category: governance
+  priority: high
+- id: dgp-maturity-baseline
+  title: Baseline maturity and set a roadmap
+  text: Run a maturity assessment and agree a phased roadmap with the council.
+  category: governance
+  priority: medium

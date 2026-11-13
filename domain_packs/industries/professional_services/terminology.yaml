@@ -1,0 +1,14 @@
+- {term: Client, definition: Organisation or person receiving services, synonyms: [customer, account], entity_type: entity, category: data}
+- {term: Engagement, definition: Contracted piece of client work, synonyms: [project, job, assignment, sow], entity_type: entity, category: data}
+- {term: Matter, definition: Legal engagement for a client, synonyms: [case, client-matter, file], entity_type: entity, category: data, sub_domains: [legal]}
+- {term: Timesheet Entry, definition: Recorded time against an engagement, synonyms: [time entry, billable hours, time card], entity_type: entity, category: data}
+- {term: WIP, definition: Work in progress not yet billed, synonyms: [work in progress, unbilled time], entity_type: metric, category: financial}
+- {term: Utilisation, definition: Share of available time spent on billable work, synonyms: [utilization, chargeability], entity_type: metric, category: productivity}
+- {term: Realisation, definition: Value billed or collected versus standard value, synonyms: [realization, recovery rate], entity_type: metric, category: financial}
+- {term: Ethical Wall, definition: Barrier preventing information flow between teams, synonyms: [information barrier, chinese wall, screen], entity_type: concept, category: security}
+- {term: Conflict Check, definition: Screening for conflicts of interest before accepting work, synonyms: [conflicts search, new business intake], entity_type: process, category: compliance}
+- {term: Independence, definition: Auditor freedom from relationships impairing objectivity, synonyms: [auditor independence, restricted entity list], entity_type: concept, category: compliance, sub_domains: [accounting]}
+- {term: Privilege, definition: Legal protection of communications from disclosure, synonyms: [attorney-client privilege, legal professional privilege, work product], entity_type: concept, category: compliance, sub_domains: [legal]}
+- {term: Fee Earner, definition: Professional whose time is billed, synonyms: [timekeeper, billable professional, consultant], entity_type: role, category: data}
+- {term: Working Papers, definition: Audit documentation supporting conclusions, synonyms: [audit file, workpapers], entity_type: entity, category: data, sub_domains: [accounting]}
+- {term: PSA, definition: Professional services automation system, synonyms: [professional services automation, practice management system], entity_type: system, category: integration}

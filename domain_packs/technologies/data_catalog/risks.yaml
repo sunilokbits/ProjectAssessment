@@ -1,0 +1,27 @@
+- id: dc-empty-catalog
+  title: Catalog deployed but not curated or used
+  category: governance
+  likelihood: 4
+  impact: 3
+  mitigation: Curate priority assets first; measure search and usage.
+  indicators:
+  - low adoption
+  - empty catalog
+- id: dc-integration-gaps
+  title: Connectors missing for key platforms
+  category: technology
+  likelihood: 3
+  impact: 3
+  mitigation: Validate connector coverage during selection.
+  indicators:
+  - custom connector
+  - unsupported source
+- id: dc-duplicate-catalogs
+  title: Competing catalogs across platforms
+  category: technology
+  likelihood: 3
+  impact: 2
+  mitigation: Define catalog of record and federation approach.
+  indicators:
+  - multiple catalogs
+  - purview and unity catalog

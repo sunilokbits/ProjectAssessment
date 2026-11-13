@@ -1,0 +1,21 @@
+- id: retail-unified-commerce-data
+  name: Retail unified commerce data platform
+  description: Lakehouse unifying POS, e-commerce, inventory, product and loyalty data with near-real-time inventory and customer views.
+  use_cases: [Customer 360, Demand forecasting, Inventory visibility, Pricing and promotion analytics, Recommendations]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: retail-sources, name: "POS, e-commerce, ERP / merchandising, OMS and WMS", layer: sources, core: true}
+    - {id: tlog-batch, name: POS TLOG and ERP batch ingestion, layer: ingestion, core: true}
+    - {id: event-stream, name: Inventory and order event streaming, layer: ingestion, when: {any_of: [{technologies_any: [real_time_streaming]}, {sub_domains_any: [omnichannel, inventory]}, {keywords_any: [real-time inventory, available to promise, streaming]}]}}
+    - {id: clickstream, name: Clickstream ingestion, layer: ingestion, when: {sub_domains_any: [ecommerce, recommendation_systems]}}
+    - {id: product-master, name: Product master / PIM integration, layer: processing, core: true}
+    - {id: sales-recon, name: Sales reconciliation to ERP, layer: processing, core: true}
+    - {id: identity-resolution, name: Customer identity resolution, layer: processing, when: {project_types_any: [customer_360, recommendation_engine, churn_prediction]}}
+    - {id: consent-hub, name: Consent and preference management, layer: governance, when: {data_classifications_any: [pii, children]}}
+    - {id: pan-tokenisation, name: Payment tokenisation boundary (no PAN in analytics), layer: security, when: {data_classifications_any: [cardholder]}}
+    - {id: forecasting, name: SKU-store demand forecasting service, layer: serving, when: {project_types_any: [demand_forecasting]}}
+    - {id: reco-serving, name: Low-latency recommendation and feature serving, layer: serving, when: {project_types_any: [recommendation_engine]}}
+    - {id: clean-room, name: Data clean room for retail media and supplier collaboration, layer: serving, when: {keywords_any: [retail media, clean room, supplier collaboration]}}
+  considerations:
+    - ERP remains the financial book of record for sales; the platform reconciles net sales daily.
+    - Design for peak trading volumes and avoid cut-over during peak periods.

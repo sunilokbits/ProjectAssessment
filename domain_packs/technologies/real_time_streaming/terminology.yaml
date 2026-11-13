@@ -1,0 +1,20 @@
+- term: Event Broker
+  definition: Platform that stores and distributes event streams
+  synonyms:
+  - message broker
+  entity_type: system
+  category: integration
+- term: Watermark
+  definition: Threshold for handling late-arriving events in stream processing
+  entity_type: concept
+  category: technology
+- term: CDC
+  definition: Change data capture from databases
+  synonyms:
+  - change data capture
+  entity_type: process
+  category: integration
+- term: Exactly-once
+  definition: Delivery semantics ensuring each event affects results once
+  entity_type: concept
+  category: technology

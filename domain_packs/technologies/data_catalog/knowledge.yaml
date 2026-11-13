@@ -1,0 +1,8 @@
+security_considerations:
+- id: dc-preview
+  text: Restrict data previews in the catalog for sensitive assets.
+  category: security
+dependencies:
+- id: dc-stewards
+  text: Stewards with time allocated to curation.
+  category: governance

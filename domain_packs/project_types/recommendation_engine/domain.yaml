@@ -1,0 +1,25 @@
+key: recommendation_engine
+name: Personalized Recommendation
+kind: project_type
+version: 1.0.0
+description: Recommending products, content or next-best actions personalised to each user.
+sort_order: 26
+detection:
+  keywords:
+    recommendation engine: 5
+    recommender system: 5
+    personalised recommendations: 5
+    personalized recommendations: 5
+    next best action: 4
+    next best offer: 4
+    product recommendations: 4
+    personalisation: 3
+    personalization: 3
+    collaborative filtering: 4
+    cross-sell: 2
+    upsell: 2
+related_technologies:
+- machine_learning
+- vector_search
+- real_time_streaming
+- mlops

@@ -1,0 +1,76 @@
+- id: property-hierarchy
+  text: Is there a consistent property / building / unit hierarchy and identifier used across property management, lease, finance and FM systems?
+  category: data
+  dimension: asset_portfolio_data
+  weight: 1.5
+  critical: true
+- id: lease-data-source
+  text: Are key lease terms (dates, rent steps, options, clauses) abstracted into structured data, or held only in documents?
+  category: data
+  dimension: asset_portfolio_data
+  answer_type: single_choice
+  sub_domains: [commercial, property_management, residential]
+  options:
+    - {value: documents_only, label: Documents only, score: 0.1}
+    - {value: partial, label: Partially abstracted, score: 0.5}
+    - {value: full, label: Fully abstracted and maintained, score: 1}
+- id: lease-accounting
+  text: Must outputs support lease accounting (IFRS 16 / ASC 842) or investor reporting requiring auditability?
+  category: compliance
+  dimension: asset_portfolio_data
+  sub_domains: [commercial, property_management]
+- id: cost-code-structure
+  text: Is a standard cost breakdown structure (e.g. CSI MasterFormat, NRM) used consistently across projects?
+  category: data
+  dimension: project_controls_maturity
+  answer_type: scale
+  sub_domains: [construction]
+- id: change-order-tracking
+  text: Are change orders, RFIs and cost-to-complete forecasts captured digitally and linked to the project schedule?
+  category: data
+  dimension: project_controls_maturity
+  sub_domains: [construction]
+- id: bim-usage
+  text: What level of BIM maturity is used on projects, and are models available for downstream analytics or digital twins?
+  category: data
+  dimension: project_controls_maturity
+  answer_type: text
+  sub_domains: [construction, smart_buildings]
+- id: bms-access
+  text: How will building telemetry be accessed from BMS and IoT systems while maintaining OT network security?
+  category: security
+  dimension: security_controls
+  answer_type: single_choice
+  sub_domains: [smart_buildings]
+  options:
+    - {value: unknown, label: Not yet defined, score: 0}
+    - {value: direct, label: Direct cloud connection from BMS controllers, score: 0.3}
+    - {value: gateway, label: Secured edge gateway with segmentation, score: 1}
+- id: tenant-pii
+  text: Does the solution process tenant or occupant personal data (screening, payments, access control, occupancy sensors)?
+  category: privacy
+  dimension: privacy_protection
+  sub_domains: [residential, property_management, smart_buildings]
+- id: fair-housing
+  text: Will any models be used in tenant screening, pricing or marketing that could be subject to fair housing laws?
+  category: compliance
+  dimension: privacy_protection
+  critical: true
+  sub_domains: [residential, property_management]
+  when: {technologies_any: [machine_learning, generative_ai, advanced_analytics, agentic_ai, ai_agents]}
+- id: energy-reporting
+  text: Which building energy and carbon reporting obligations apply (e.g. NYC Local Law 97, EU EPBD, UK MEES, GRESB)?
+  category: compliance
+  dimension: asset_portfolio_data
+  answer_type: text
+  sub_domains: [commercial, smart_buildings, property_management]
+- id: jv-data-rights
+  text: Are there joint venture, fund or third-party manager structures that restrict data ownership and sharing?
+  category: governance
+  dimension: data_availability
+  sub_domains: [commercial, residential]
+- id: site-safety-data
+  text: Is site safety data (incidents, near misses, inspections) captured digitally across projects?
+  category: data
+  dimension: project_controls_maturity
+  sub_domains: [construction]

@@ -1,0 +1,81 @@
+- id: genai-hallucination
+  title: Hallucinated or factually incorrect output
+  category: ai
+  likelihood: 4
+  impact: 4
+  mitigation: Ground on authoritative content, cite sources, run evaluation datasets and require human review for high-impact outputs.
+  indicators:
+  - hallucination
+  - incorrect answers
+  - made up
+- id: genai-prompt-injection
+  title: Prompt injection and jailbreak attacks
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Input/output guardrails, least-privilege tool access, isolation of untrusted content and red-teaming.
+  indicators:
+  - prompt injection
+  - jailbreak
+  - untrusted content
+- id: genai-data-leakage
+  title: Sensitive data leakage through prompts, outputs or vendor retention
+  category: privacy
+  likelihood: 3
+  impact: 5
+  mitigation: PII redaction, enterprise model endpoints with zero data retention, access-aware retrieval and DLP.
+  indicators:
+  - pii
+  - confidential
+  - customer data
+  - data retention
+- id: genai-model-drift
+  title: Model drift or behaviour change after vendor model updates
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: Pin model versions, regression-test with evaluation datasets before upgrades and monitor quality in production.
+  indicators:
+  - model update
+  - deprecation
+  - version change
+- id: genai-toxic-output
+  title: Toxic, biased or inappropriate output
+  category: ai
+  likelihood: 2
+  impact: 4
+  mitigation: Content-safety filters, tone and topic guardrails, red-teaming and user feedback loops.
+  indicators:
+  - customer-facing
+  - public
+  - chatbot
+- id: genai-copyright-ip
+  title: Copyright and intellectual-property infringement in generated content
+  category: legal
+  likelihood: 2
+  impact: 4
+  mitigation: Use vendors with IP indemnity, restrict generation of verbatim third-party content and review published material.
+  indicators:
+  - marketing content
+  - code generation
+  - copyright
+- id: genai-grounding-quality
+  title: Poor grounding quality from stale, incomplete or conflicting source content
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Content ownership, freshness SLAs, de-duplication and retrieval evaluation.
+  indicators:
+  - outdated documents
+  - sharepoint
+  - duplicate content
+- id: genai-human-approval
+  title: Human-approval requirements undefined or bypassed for high-impact outputs
+  category: governance
+  likelihood: 3
+  impact: 4
+  mitigation: Define approval matrix by risk tier; enforce approval steps in the workflow and audit them.
+  indicators:
+  - automated decision
+  - auto-send
+  - customer communication

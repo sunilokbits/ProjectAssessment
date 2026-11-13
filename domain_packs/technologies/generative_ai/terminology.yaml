@@ -1,0 +1,36 @@
+- term: Hallucination
+  definition: Model output that is fluent but factually unsupported
+  synonyms:
+  - confabulation
+  entity_type: concept
+  category: ai
+- term: Prompt Injection
+  definition: Attack where crafted input overrides system instructions
+  synonyms:
+  - jailbreak
+  entity_type: concept
+  category: security
+- term: Guardrails
+  definition: Controls that filter or constrain model inputs and outputs
+  synonyms:
+  - content filters
+  entity_type: system
+  category: ai
+- term: Grounding
+  definition: Supplying authoritative context so outputs are based on trusted sources
+  entity_type: process
+  category: ai
+- term: Evaluation Dataset
+  definition: Curated questions with expected answers used to test model quality
+  synonyms:
+  - golden set
+  - eval set
+  entity_type: entity
+  category: quality
+- term: Foundation Model
+  definition: Large pre-trained model adaptable to many tasks
+  synonyms:
+  - llm
+  - large language model
+  entity_type: system
+  category: ai

@@ -1,0 +1,20 @@
+- id: cpg-commercial-data-hub
+  name: CPG commercial and demand data hub
+  description: Harmonises sell-in, sell-out, syndicated, distributor and trade data on governed hierarchies to power planning, RGM and sales analytics.
+  use_cases: [Demand forecasting, Trade promotion optimisation, Sales and distribution analytics, Revenue growth management]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: erp-src, name: "ERP, planning and TPM systems", layer: sources, core: true}
+    - {id: external-src, name: "Syndicated, retailer POS and distributor data", layer: sources, core: true}
+    - {id: sap-connector, name: SAP extraction (ODP / Datasphere / certified connector), layer: ingestion, when: {technologies_any: [sap_integration]}}
+    - {id: file-ingest, name: Partner file and portal ingestion with validation, layer: ingestion, core: true}
+    - {id: harmonisation, name: "Product, customer and calendar harmonisation (MDM)", layer: processing, core: true}
+    - {id: licence-tagging, name: Data licence tagging and access policies, layer: governance, core: true}
+    - {id: forecast-engine, name: Demand forecasting and sensing models, layer: serving, when: {project_types_any: [demand_forecasting]}}
+    - {id: tpo-engine, name: Promotion uplift and optimisation models, layer: serving, when: {sub_domains_any: [trade_promotion, revenue_growth_management]}}
+    - {id: plan-writeback, name: Write-back to planning / TPM systems, layer: serving, when: {sub_domains_any: [demand_planning, trade_promotion]}}
+    - {id: clean-room, name: Retailer data clean room, layer: serving, when: {keywords_any: [clean room, retail media, data collaboration]}}
+    - {id: consumer-cdp, name: Consumer data platform with consent, layer: processing, when: {sub_domains_any: [ecommerce_d2c, consumer_analytics, marketing_analytics]}}
+  considerations:
+    - Harmonisation of hierarchies is usually the critical path; plan MDM effort explicitly.
+    - Keep planning systems (IBP / Kinaxis / o9) as the system of record for approved plans.

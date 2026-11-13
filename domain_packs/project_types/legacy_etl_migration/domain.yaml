@@ -1,0 +1,26 @@
+key: legacy_etl_migration
+name: Legacy ETL Migration
+kind: project_type
+version: 1.0.0
+description: Converting legacy ETL jobs (Informatica, DataStage, SSIS, Ab Initio, hand-coded SQL) to modern pipelines.
+sort_order: 30
+detection:
+  keywords:
+    etl migration: 5
+    legacy etl: 5
+    informatica migration: 5
+    datastage migration: 5
+    ssis migration: 5
+    ab initio: 4
+    informatica powercenter: 4
+    datastage: 3
+    ssis: 3
+    talend: 2.5
+    etl conversion: 5
+    code conversion: 3
+related_technologies:
+- etl_migration
+- data_engineering
+- dataops
+- databricks
+- snowflake

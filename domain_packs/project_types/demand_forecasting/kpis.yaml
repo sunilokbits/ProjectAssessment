@@ -1,0 +1,25 @@
+- id: df-forecast-accuracy
+  name: Forecast accuracy
+  description: Forecast error measure (e.g. WAPE or MAPE) at agreed granularity.
+  formula: Weighted absolute error / actual demand
+  unit: '%'
+  direction: lower_is_better
+  category: quality
+- id: df-bias
+  name: Forecast bias
+  description: Systematic over- or under-forecasting.
+  unit: '%'
+  direction: target_range
+  category: quality
+- id: df-stockouts
+  name: Stock-out rate
+  description: Share of item-locations out of stock.
+  unit: '%'
+  direction: lower_is_better
+  category: operations
+- id: df-inventory
+  name: Inventory days of supply
+  description: Inventory held relative to demand.
+  unit: days
+  direction: target_range
+  category: financial

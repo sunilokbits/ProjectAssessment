@@ -1,0 +1,20 @@
+- {term: Patient, definition: Person receiving or registered to receive care, synonyms: [member, beneficiary, client, service user, enrollee], entity_type: entity, category: data}
+- {term: Encounter, definition: Interaction between a patient and provider for care delivery, synonyms: [visit, admission, episode, appointment, stay], entity_type: event, category: data}
+- {term: Diagnosis, definition: Clinical determination of a condition coded for care and billing, synonyms: [condition, problem, dx, icd code], entity_type: entity, category: data}
+- {term: Provider, definition: Clinician or organisation delivering care, synonyms: [practitioner, physician, clinician, rendering provider, facility, npi], entity_type: role, category: data}
+- {term: Claims, definition: Request for payment for healthcare services submitted to a payer, synonyms: [claim, "837", encounter claim, bill], entity_type: entity, category: data, sub_domains: [healthcare_payers, revenue_cycle, healthcare_providers]}
+- {term: Clinical Data, definition: "Data documenting patient health, observations, orders and results", synonyms: [clinical records, observations, vitals, results, notes], entity_type: entity, category: data}
+- {term: PHI, definition: Protected health information identifiable to an individual, synonyms: [protected health information, ephi, personal health information, special category health data], entity_type: concept, category: compliance}
+- {term: EHR, definition: Electronic health record system of record for clinical data, synonyms: [emr, electronic medical record, electronic health record, epic, cerner], entity_type: system, category: integration}
+- {term: HL7, definition: Health Level Seven messaging standard (v2 messages and CDA documents), synonyms: [hl7 v2, adt, oru, orm, cda], entity_type: concept, category: integration}
+- {term: FHIR, definition: HL7 Fast Healthcare Interoperability Resources API standard, synonyms: [fhir r4, smart on fhir, bulk fhir], entity_type: concept, category: integration}
+- {term: ICD-10, definition: International Classification of Diseases coding system (ICD-10-CM / ICD-10-PCS), synonyms: [icd, icd-10-cm, icd-11], entity_type: concept, category: data}
+- {term: SNOMED CT, definition: Clinical terminology for documenting findings and conditions, synonyms: [snomed], entity_type: concept, category: data}
+- {term: LOINC, definition: Coding standard for laboratory and clinical observations, entity_type: concept, category: data, sub_domains: [diagnostics_imaging, clinical_operations, health_analytics]}
+- {term: CPT, definition: Current Procedural Terminology codes for procedures and services, synonyms: [hcpcs, procedure code], entity_type: concept, category: data, sub_domains: [revenue_cycle, healthcare_payers, healthcare_providers]}
+- {term: MRN, definition: Medical record number identifying a patient within a facility, synonyms: [medical record number, patient id, empi id], entity_type: entity, category: data}
+- {term: EMPI, definition: Enterprise master patient index for patient matching, synonyms: [mpi, master patient index], entity_type: system, category: data}
+- {term: ADT, definition: "Admission, discharge and transfer events", synonyms: [admit discharge transfer], entity_type: event, category: integration, sub_domains: [hospitals, clinical_operations, patient_management]}
+- {term: Prior Authorization, definition: Payer approval required before a service is delivered, synonyms: [pre-authorization, pre-auth, "278"], entity_type: process, category: process, sub_domains: [healthcare_payers, revenue_cycle]}
+- {term: DICOM, definition: Standard for medical imaging data and communication, synonyms: [pacs], entity_type: concept, category: integration, sub_domains: [diagnostics_imaging]}
+- {term: HIPAA, definition: US law governing privacy and security of PHI, synonyms: [hitech], entity_type: regulation, category: compliance}

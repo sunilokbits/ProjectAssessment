@@ -1,0 +1,28 @@
+- id: cp-churn-definition
+  text: Is churn clearly defined for the business (contract end, inactivity window, downgrade)?
+  category: business
+  dimension: business_alignment
+  answer_type: yes_no
+  critical: true
+- id: cp-retention-actions
+  text: What retention actions will be triggered and who owns them?
+  category: business
+  dimension: business_alignment
+  answer_type: text
+  critical: true
+- id: cp-data
+  text: Is customer behaviour, usage, billing and interaction history available?
+  category: data
+  dimension: data_availability
+  answer_type: yes_no
+  weight: 1.5
+- id: cp-measurement
+  text: Will retention campaigns use control groups to measure incremental impact?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: cp-fairness
+  text: Are there restrictions on using certain attributes (age, gender, location) in models?
+  category: privacy
+  dimension: privacy_protection
+  answer_type: yes_no

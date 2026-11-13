@@ -1,0 +1,94 @@
+key: travel_hospitality
+name: Travel, Transportation and Hospitality
+kind: industry
+version: 1.0.0
+description: Airlines, airports, rail, hotels and resorts, travel distribution and agencies, passenger logistics and fleet management.
+aliases: [travel, hospitality, transportation, airline, hotel, TTH]
+sort_order: 50
+sub_domains:
+  - key: airlines
+    name: Airlines
+    keywords: [airline, pnr, passenger service system, ancillary, loyalty programme, frequent flyer, crew scheduling, revenue management, load factor, ndc]
+  - key: airports
+    name: Airports
+    keywords: [airport, terminal, baggage handling, airside, landside, gate allocation, aodb, passenger flow, security screening]
+  - key: rail
+    name: Rail
+    keywords: [rail operator, train, rolling stock, timetable, signalling, ticketing, railway, track maintenance, station]
+  - key: hotels
+    name: Hotels and Resorts
+    keywords: [hotel, property management system, pms, revpar, adr, occupancy, guest, reservations, resort, front desk]
+  - key: travel_distribution
+    name: Travel Agencies and Distribution
+    keywords: [online travel agency, ota, gds, travel management company, booking engine, amadeus, sabre, travelport, metasearch]
+  - key: passenger_logistics
+    name: Transportation Logistics
+    keywords: [cargo, air cargo, freight, ground handling, transfers, coach operator, bus operator, ferry]
+  - key: fleet_management
+    name: Fleet Management
+    keywords: [fleet, telematics, vehicle tracking, maintenance planning, aircraft maintenance, fuel efficiency, car rental, utilisation]
+detection:
+  keywords:
+    airline: 4
+    airport: 4
+    passenger: 3
+    pnr: 5
+    hotel: 3.5
+    revpar: 5
+    occupancy rate: 3
+    guest: 2
+    property management system: 3.5
+    gds: 4
+    amadeus: 4
+    sabre: 4
+    loyalty programme: 2
+    frequent flyer: 4
+    booking: 2
+    itinerary: 3
+    load factor: 4
+    rolling stock: 5
+    timetable: 2.5
+    baggage: 4
+    iata: 4.5
+    ndc: 3
+    opera pms: 5
+business_processes:
+  - Shopping, booking and ticketing
+  - Revenue management and pricing
+  - Check-in, boarding and guest arrival
+  - Loyalty programme management
+  - Operations control and disruption management
+  - Crew and staff rostering
+  - Maintenance, repair and overhaul
+  - Baggage and cargo handling
+  - Housekeeping and property operations
+  - Customer service and recovery
+capabilities:
+  - Traveller / guest 360
+  - Dynamic pricing and revenue management
+  - Personalisation and ancillary offers
+  - Disruption prediction and recovery
+  - Predictive fleet maintenance
+  - Demand forecasting
+  - Loyalty analytics
+  - Operational performance monitoring
+source_systems:
+  - "Passenger service system (Amadeus Altéa, Sabre SabreSonic, Navitaire)"
+  - "GDS (Amadeus, Sabre, Travelport)"
+  - "Hotel PMS (Oracle OPERA, Mews, Infor HMS, Protel)"
+  - "Revenue management (IDeaS, Duetto, PROS, Sabre AirVision)"
+  - "Central reservation system (SynXis, Pegasus)"
+  - "Airport operational database and resource management (SITA, Amadeus Airport)"
+  - "MRO systems (AMOS, TRAX, IFS Maintenix)"
+  - "Loyalty platforms (Comarch, Loyalty Prime)"
+  - "Crew management (Jeppesen, Sabre Crew Manager, Lufthansa Systems NetLine)"
+  - Telematics and fleet management platforms
+data_entities: [Passenger, Guest, Booking, PNR, Ticket, Flight, Segment, Room night, Itinerary, Loyalty member, Fleet asset, Station, Fare, Ancillary]
+integration_patterns:
+  - "IATA NDC / ONE Order APIs"
+  - "EDIFACT / Type B teletype messaging"
+  - "OpenTravel Alliance (OTA) XML / HTNG"
+  - GDS and channel manager connectivity
+  - Event streaming of operational and booking events
+related_technologies: [real_time_streaming, machine_learning, salesforce_integration, generative_ai, iot]
+related_project_types: [customer_360, recommendation_engine, demand_forecasting, predictive_maintenance, churn_prediction]

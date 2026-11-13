@@ -1,0 +1,14 @@
+- {term: Student, definition: Learner enrolled at an institution, synonyms: [learner, pupil, scholar, enrollee], entity_type: entity, category: data}
+- {term: Applicant, definition: Prospective student applying for admission, synonyms: [prospect, candidate, inquirer], entity_type: entity, category: data, sub_domains: [higher_education]}
+- {term: Enrolment, definition: Registration of a student on a programme or course, synonyms: [enrollment, registration, matriculation], entity_type: event, category: data}
+- {term: Course, definition: Unit of study delivered over a term, synonyms: [module, class, subject, unit], entity_type: entity, category: data}
+- {term: Section, definition: Scheduled offering of a course, synonyms: [class section, course offering, cohort], entity_type: entity, category: data}
+- {term: SIS, definition: Student information system, synonyms: [student information system, student record system, banner, powerschool], entity_type: system, category: integration}
+- {term: LMS, definition: Learning management system, synonyms: [learning management system, vle, virtual learning environment, canvas, moodle], entity_type: system, category: integration}
+- {term: FTE, definition: Full-time equivalent student load, synonyms: [full-time equivalent, student load], entity_type: metric, category: reporting}
+- {term: Retention, definition: Continuation of students between terms or years, synonyms: [persistence, continuation], entity_type: metric, category: reporting}
+- {term: Education Record, definition: Record directly related to a student and maintained by the institution, synonyms: [student record, transcript, academic record], entity_type: entity, category: compliance}
+- {term: Census Date, definition: Official date used to count enrolments for funding and reporting, synonyms: [census, count date], entity_type: concept, category: reporting}
+- {term: Principal Investigator, definition: Lead researcher responsible for a grant, synonyms: [pi, lead researcher], entity_type: role, category: business, sub_domains: [research]}
+- {term: IPEDS, definition: US federal postsecondary data collection, synonyms: [integrated postsecondary education data system], entity_type: regulation, category: reporting, sub_domains: [higher_education]}
+- {term: FERPA, definition: US federal law protecting student education records, synonyms: [family educational rights and privacy act], entity_type: regulation, category: compliance}

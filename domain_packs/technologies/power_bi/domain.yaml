@@ -1,0 +1,14 @@
+# Power BI technology pack - domain
+key: power_bi
+name: Power BI
+kind: technology
+version: 1.0.0
+description: Microsoft Power BI - semantic models, storage modes (Import, DirectQuery, Direct Lake), workspaces, licensing (Pro, PPU, Fabric capacity),
+  governance and deployment.
+aliases: [Analytics & BI]
+sort_order: 51
+detection:
+  keywords: {power bi: 5, powerbi: 5, power bi premium: 5, dax: 4, power query: 3, directquery: 4, direct lake: 4, semantic model: 2.5, power bi service: 4,
+    paginated reports: 2, on-premises data gateway: 3, pbix: 4, dashboard: 0.5}
+related_technologies: [business_intelligence, microsoft_fabric, azure, data_warehouse, lakehouse, databricks]
+related_project_types: [bi_modernization]

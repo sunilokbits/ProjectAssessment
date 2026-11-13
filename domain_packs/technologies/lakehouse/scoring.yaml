@@ -1,0 +1,4 @@
+# Lakehouse technology pack - scoring
+dimensions:
+  - {key: lakehouse_readiness, name: Lakehouse Readiness, group: technology, weight: 1.0, description: 'Table format, medallion layering, catalog
+      governance, engine interoperability and SQL serving readiness.'}

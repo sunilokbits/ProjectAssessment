@@ -1,0 +1,4 @@
+dimensions:
+  - {key: ot_integration, name: OT Integration Readiness, group: domain, weight: 1.5, description: "Readiness to securely connect PLC, SCADA, historian and MES data to IT and cloud platforms with the right context and quality."}
+  - {key: operational_continuity, name: Operational Continuity, group: domain, weight: 1.5, description: "Assurance that the project will not disrupt production, plant safety or maintenance operations."}
+  - {key: ot_security, name: OT Security, group: security, weight: 1.0, description: "Network segmentation, remote access, and ISA/IEC 62443-aligned controls for industrial systems."}

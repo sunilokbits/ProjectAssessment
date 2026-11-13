@@ -1,0 +1,11 @@
+# Data Migration technology pack - knowledge
+security_considerations:
+  - {id: dm-masking, text: Mask personal data in non-production migration runs., category: privacy}
+  - {id: dm-transfer-encryption, text: Encrypted transfer of extracts; secure deletion of staging data after migration., category: security}
+migration_concerns:
+  - {id: dm-history, text: 'History depth, archive and legal retention requirements.', category: data}
+  - {id: dm-freeze, text: Source change freeze during cutover., category: operations}
+  - {id: dm-signoff, text: Business sign-off criteria for reconciliation., category: quality}
+dependencies:
+  - {id: dm-target-ready, text: Target data model and system configured before loads., category: technology}
+  - {id: dm-data-owners, text: Data owners available for mapping and sign-off., category: governance}

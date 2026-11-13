@@ -1,0 +1,114 @@
+- id: ehr-systems
+  text: Which EHR / EMR and clinical systems (and versions) are in scope, and how is data accessed today (reporting database, HL7 feeds, FHIR APIs, bulk export)?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  equivalence_key: ehr_extract
+- id: phi-in-scope
+  text: Will PHI be processed, and has the minimum necessary data set been defined?
+  category: privacy
+  dimension: patient_data_protection
+  answer_type: single_choice
+  options:
+    - {value: unknown, label: Not yet known, score: 0}
+    - {value: yes_undefined, label: Yes - minimum necessary not defined, score: 0.2}
+    - {value: yes_defined, label: Yes - minimum necessary data set defined and approved, score: 1}
+    - {value: deidentified, label: Only de-identified data (Safe Harbor or Expert Determination), score: 1}
+    - {value: no, label: No PHI in scope (confirmed), score: 1}
+  critical: true
+  evidence_required: true
+- id: baa-in-place
+  text: Are Business Associate Agreements (or equivalent data processing agreements) in place with all vendors and cloud providers handling PHI?
+  category: compliance
+  dimension: patient_data_protection
+  weight: 2
+  critical: true
+  when: {data_classifications_any: [phi]}
+- id: deidentification-method
+  text: How is patient data de-identified or pseudonymised for analytics, research and non-production use?
+  category: privacy
+  dimension: patient_data_protection
+  answer_type: single_choice
+  options:
+    - {value: none, label: No de-identification today, score: 0}
+    - {value: adhoc, label: Ad hoc masking per project, score: 0.3}
+    - {value: standard, label: Standard de-identification service or tooling, score: 0.8}
+    - {value: certified, label: Expert-determined / certified de-identification with re-identification risk review, score: 1}
+  equivalence_key: nonprod_masking
+- id: patient-consent
+  text: Are patient consent and data-sharing preferences (including sensitive records such as behavioural health or substance use) captured and enforceable downstream?
+  category: privacy
+  dimension: patient_data_protection
+- id: patient-matching
+  text: Is there an enterprise master patient index (EMPI) or agreed patient-matching approach across facilities and systems?
+  category: data
+  dimension: interoperability_readiness
+  weight: 1.5
+  equivalence_key: patient_identity
+- id: interop-standards
+  text: How mature is the use of interoperability standards (HL7 v2, FHIR R4, C-CDA) and terminologies (ICD-10, SNOMED CT, LOINC, RxNorm)?
+  category: integration
+  dimension: interoperability_readiness
+  answer_type: scale
+  help: "1 = proprietary extracts and local codes, 3 = HL7 v2 feeds with partial code mapping, 5 = FHIR APIs with governed terminology services."
+- id: clinical-use-of-outputs
+  text: Will outputs (dashboards, alerts, predictions, AI summaries) be used to inform clinical decisions at the point of care?
+  category: governance
+  dimension: clinical_safety
+  answer_type: single_choice
+  options:
+    - {value: no, label: No - operational or financial use only, score: 1}
+    - {value: yes_governed, label: Yes - clinical safety review and clinician validation planned, score: 1}
+    - {value: yes_partial, label: Yes - informal clinical review only, score: 0.4}
+    - {value: yes_none, label: Yes - no clinical safety process defined, score: 0}
+  critical: true
+- id: samd-classification
+  text: Has it been assessed whether any algorithm or software qualifies as a medical device / SaMD (e.g. FDA, EU MDR, UK MDR) and requires regulatory clearance?
+  category: compliance
+  dimension: clinical_safety
+  sub_domains: [medical_devices, clinical_operations, health_analytics, digital_health]
+  when: {technologies_any: [machine_learning, generative_ai, agentic_ai, ai_agents, advanced_analytics]}
+- id: clinical-safety-officer
+  text: Is a clinical safety officer or clinical informatics lead assigned to approve design and changes?
+  category: governance
+  dimension: clinical_safety
+  sub_domains: [hospitals, clinical_operations, digital_health, medical_devices, healthcare_providers]
+- id: data-timeliness-clinical
+  text: What data latency is acceptable for clinical use cases (e.g. real-time ADT, near-real-time vitals, daily batch)?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: text
+  sub_domains: [hospitals, clinical_operations, medical_devices]
+- id: claims-edi
+  text: Which X12 transactions (837, 835, 270/271, 276/277, 278) and clearinghouses are in scope?
+  category: integration
+  dimension: integration_readiness
+  answer_type: text
+  sub_domains: [healthcare_payers, revenue_cycle, healthcare_providers]
+- id: quality-measures
+  text: Which quality and regulatory measure programs (e.g. HEDIS, CMS Star Ratings, MIPS, eCQMs, NHS returns) depend on data in scope?
+  category: compliance
+  dimension: privacy_protection
+  answer_type: text
+  sub_domains: [health_analytics, healthcare_payers, healthcare_providers, hospitals]
+- id: device-data-validation
+  text: Are medical device and remote-monitoring data feeds validated for accuracy, units, timestamps and device identity before use?
+  category: data
+  dimension: clinical_safety
+  sub_domains: [medical_devices, digital_health]
+  when: {technologies_any: [iot, real_time_streaming]}
+- id: sensitive-records
+  text: Are specially protected records (substance use disorder records under 42 CFR Part 2, behavioural health, HIV, reproductive health, genetic data) identified and segregated?
+  category: privacy
+  dimension: patient_data_protection
+  when: {geographies_any: [US]}
+- id: genai-clinical-hallucination
+  text: For GenAI use cases, is there a plan to evaluate clinical accuracy, hallucination and citation of source records with clinician reviewers?
+  category: governance
+  dimension: clinical_safety
+  when: {technologies_any: [generative_ai, rag, agentic_ai, ai_agents, llmops]}
+- id: health-data-residency
+  text: Are there national or state health-data residency requirements (e.g. provincial health data laws, national health records) constraining hosting location?
+  category: compliance
+  dimension: patient_data_protection
+  when: {technologies_any: [azure, aws, gcp, databricks, snowflake, microsoft_fabric, cloud_migration]}

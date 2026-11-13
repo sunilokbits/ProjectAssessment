@@ -1,0 +1,6 @@
+dimensions:
+- key: cybersecurity_readiness
+  name: Cybersecurity Readiness
+  group: technology
+  weight: 1.0
+  description: Security architecture, identity, data protection, threat detection, testing and incident response maturity.

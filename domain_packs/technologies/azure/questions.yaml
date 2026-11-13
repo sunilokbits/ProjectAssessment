@@ -1,0 +1,24 @@
+# Azure technology pack - questions
+- id: azure-footprint
+  text: What is the client's current Azure footprint?
+  category: technology
+  dimension: azure_readiness
+  answer_type: single_choice
+  options:
+    - {value: none, label: No Azure usage, score: 0.2}
+    - {value: limited, label: Limited / departmental workloads, score: 0.5}
+    - {value: enterprise, label: Enterprise agreement with production workloads, score: 1}
+- {id: azure-landing-zone, text: 'Is an Azure landing zone (management groups, subscriptions, hub-spoke or Virtual WAN networking) deployed?',
+  category: technology, dimension: azure_readiness, weight: 1.5, critical: true}
+- {id: azure-identity, text: 'Is Microsoft Entra ID used with conditional access, PIM and managed identities for workloads?', category: security,
+  dimension: security_controls}
+- {id: azure-network, text: 'Is hybrid connectivity (ExpressRoute / VPN) and private DNS for private endpoints in place?', category: integration,
+  dimension: integration_readiness}
+- {id: azure-policy, text: 'Are Azure Policy guardrails (allowed regions, private endpoints, tagging, encryption) enforced?', category: governance,
+  dimension: azure_readiness}
+- {id: azure-iac, text: 'Is infrastructure provisioned as code (Bicep / Terraform) through CI/CD pipelines?', category: operations, dimension: azure_readiness}
+- {id: azure-cost, text: 'Are Azure Cost Management budgets, tagging and reservations / savings plans in place?', category: operations, dimension: operational_readiness}
+- {id: azure-region, text: 'Are the Azure regions confirmed against data residency and service availability requirements?', category: architecture,
+  dimension: privacy_protection}
+- {id: azure-skills, text: 'How experienced is the client team with Azure (1-5)?', category: delivery, dimension: team_capability, answer_type: scale,
+  equivalence_key: client_skills}

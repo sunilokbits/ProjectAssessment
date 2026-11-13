@@ -1,0 +1,19 @@
+- id: enterprise-functional-analytics
+  name: Enterprise functional analytics platform
+  description: Integrates ERP, HCM, procurement, CRM, service and ITSM data around conformed master data and a governed semantic layer for cross-functional reporting and AI.
+  use_cases: [Finance and management reporting, Spend analytics, People analytics, Service and IT operations analytics]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: enterprise-sources, name: "ERP, HCM, procurement, CRM, service and ITSM sources", layer: sources, core: true}
+    - {id: sap-extract, name: SAP extraction (ODP / SLT / Datasphere), layer: ingestion, when: {any_of: [{technologies_any: [sap_integration]}, {keywords_any: [sap, s/4hana, ecc]}]}}
+    - {id: saas-connectors, name: Managed SaaS connectors, layer: ingestion, core: true}
+    - {id: conformed-dimensions, name: "Conformed dimensions (entity, cost centre, employee, supplier, customer)", layer: processing, core: true}
+    - {id: semantic-layer, name: Governed semantic and metric layer, layer: serving, core: true}
+    - {id: hr-secure-zone, name: Restricted HR data zone with aggregation thresholds, layer: security, when: {sub_domains_any: [hr]}}
+    - {id: sox-controls, name: SOX change and reconciliation controls, layer: governance, when: {sub_domains_any: [finance, procurement], geographies_any: [US]}}
+    - {id: mdm-hub, name: Master data management hub, layer: governance, when: {any_of: [{technologies_any: [master_data_management]}, {answers: {master-data-ownership: [none, partial]}}]}}
+    - {id: enterprise-copilot, name: Permission-aware enterprise copilot, layer: serving, when: {technologies_any: [generative_ai, rag, agentic_ai]}}
+    - {id: functional-dashboards, name: Functional and executive dashboards, layer: consumption, core: true}
+  considerations:
+    - Insulate reporting from ERP migrations with a semantic layer.
+    - Apply minimum aggregation sizes to people analytics.

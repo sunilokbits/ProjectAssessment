@@ -1,0 +1,4 @@
+dimensions:
+  - {key: retail_data_foundation, name: Retail Data Foundation, group: domain, weight: 1.5, description: "Quality and consistency of product, store, customer, transaction and inventory master and reference data."}
+  - {key: customer_data_trust, name: Customer Data Trust, group: security, weight: 1.0, description: "Consent, identity resolution, privacy and payment data controls over shopper data."}
+  - {key: omnichannel_readiness, name: Omnichannel Readiness, group: domain, weight: 1.0, description: "Ability to provide timely, unified views of inventory, orders and customers across channels."}

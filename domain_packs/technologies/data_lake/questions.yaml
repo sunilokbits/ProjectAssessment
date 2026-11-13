@@ -1,0 +1,21 @@
+# Data Lake technology pack - questions
+- {id: lake-zones, text: 'Are data lake zones (raw / curated / consumption, sandbox) and their rules defined?', category: architecture, dimension: data_lake_readiness,
+  weight: 1.3}
+- id: file-formats
+  text: Which storage formats are standard in the lake?
+  category: technology
+  dimension: data_lake_readiness
+  answer_type: single_choice
+  options:
+    - {value: mixed, label: Mixed CSV / JSON / proprietary, score: 0.3}
+    - {value: parquet, label: Parquet / ORC, score: 0.7}
+    - {value: table_format, label: 'Open table format (Delta, Iceberg, Hudi)', score: 1}
+- {id: lake-catalog, text: 'Is lake data registered in a catalog with business metadata and ownership?', category: governance, dimension: data_lake_readiness,
+  critical: true, help: Without a catalog lakes tend to become data swamps.}
+- {id: lake-access-control, text: 'Is fine-grained access control (table/column level, not only bucket/container ACLs) in place?', category: security,
+  dimension: security_controls}
+- {id: lake-retention, text: 'Are retention, archival and deletion (right-to-erasure) processes defined for lake data?', category: security, dimension: privacy_protection}
+- {id: hadoop-legacy, text: 'Is there an existing on-premises Hadoop / HDFS estate to migrate?', category: technology, dimension: architecture_fit,
+  answer_type: yes_no}
+- {id: lake-skills, text: 'How experienced is the client team with data lake technologies (object storage, Spark, open file formats) (1-5)?',
+  category: delivery, dimension: team_capability, answer_type: scale, equivalence_key: client_skills}

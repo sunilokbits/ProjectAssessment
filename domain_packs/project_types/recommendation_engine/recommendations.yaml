@@ -1,0 +1,10 @@
+- id: rec-ab-testing
+  title: Measure with controlled experiments
+  text: Run A/B tests against a baseline before full rollout.
+  category: delivery
+  priority: high
+- id: rec-batch-first
+  title: Start with pre-computed recommendations
+  text: Deliver batch recommendations first; add real-time session signals later.
+  category: architecture
+  priority: medium

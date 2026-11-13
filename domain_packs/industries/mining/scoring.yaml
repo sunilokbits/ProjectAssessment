@@ -1,0 +1,3 @@
+dimensions:
+  - {key: mine_operations_data, name: Mine Operations Data Readiness, group: domain, weight: 1.5, description: "Integration and reconciliation of geology, fleet, plant and maintenance data across the mine value chain."}
+  - {key: safety_environment_controls, name: Safety and Environmental Controls, group: domain, weight: 1.5, description: "Safety-critical systems, OT security, tailings and environmental monitoring obligations."}

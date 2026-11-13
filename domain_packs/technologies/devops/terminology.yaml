@@ -1,0 +1,14 @@
+- term: CI/CD
+  definition: Continuous integration and continuous delivery
+  entity_type: process
+  category: operations
+- term: Infrastructure as Code
+  definition: Managing infrastructure through declarative code
+  synonyms:
+  - iac
+  entity_type: process
+  category: operations
+- term: Pipeline
+  definition: Automated sequence of build, test and deploy steps
+  entity_type: system
+  category: operations

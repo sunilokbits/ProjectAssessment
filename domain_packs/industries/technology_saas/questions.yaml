@@ -1,0 +1,78 @@
+- id: tenant-isolation-model
+  text: How is customer data isolated in the application and how will that isolation be preserved in analytics and AI workloads?
+  category: security
+  dimension: tenant_data_isolation
+  answer_type: single_choice
+  critical: true
+  options:
+    - {value: unknown, label: Not defined for analytics, score: 0}
+    - {value: shared_no_controls, label: Shared tables - no tenant-level controls planned, score: 0.1}
+    - {value: row_level, label: Tenant id with row-level security, score: 0.8}
+    - {value: physical, label: Per-tenant schemas or accounts, score: 1}
+- id: customer-data-use-terms
+  text: Do customer contracts and the DPA permit using customer content and usage data for analytics, benchmarking or AI training?
+  category: privacy
+  dimension: tenant_data_isolation
+  critical: true
+  evidence_required: true
+- id: attestations
+  text: Which attestations must cover the new platform (SOC 2 Type II, ISO 27001, PCI, FedRAMP, HIPAA) and when is the next audit?
+  category: compliance
+  dimension: tenant_data_isolation
+  answer_type: text
+- id: saas-metric-definitions
+  text: Are SaaS metrics (ARR, NRR, GRR, churn, active user) defined consistently between finance, sales and product?
+  category: data
+  dimension: product_data_maturity
+  answer_type: single_choice
+  weight: 1.5
+  sub_domains: [saas, enterprise_software, developer_platforms, cybersecurity]
+  options:
+    - {value: inconsistent, label: Different definitions per team, score: 0.2}
+    - {value: documented, label: Documented but not enforced, score: 0.6}
+    - {value: governed, label: Governed metric layer used by all teams, score: 1}
+- id: product-telemetry
+  text: How complete and well-governed is product telemetry (event taxonomy, user and account ids, versioning)?
+  category: data
+  dimension: product_data_maturity
+  answer_type: scale
+- id: account-hierarchy
+  text: Can users, workspaces and tenants be mapped reliably to CRM accounts and subscriptions?
+  category: data
+  dimension: data_quality
+- id: usage-metering
+  text: Does usage data drive billing (usage-based pricing), requiring billing-grade accuracy and auditability?
+  category: data
+  dimension: product_data_maturity
+  sub_domains: [saas, cloud_platforms, developer_platforms]
+- id: data-residency-commitments
+  text: Have regional data residency commitments been made to customers (e.g. EU-only hosting)?
+  category: privacy
+  dimension: privacy_protection
+  equivalence_key: data_residency_commitments
+- id: embedded-analytics
+  text: Will analytics or AI features be exposed to customers inside the product (embedded analytics, copilots)?
+  category: architecture
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+    - {value: internal, label: Internal use only, score: null}
+    - {value: embedded_planned, label: Customer-facing - design not started, score: 0.3}
+    - {value: embedded_designed, label: "Customer-facing - multi-tenant serving design agreed", score: 1}
+- id: cloud-cost-allocation
+  text: Can cloud costs be allocated per tenant, product or feature to measure unit economics?
+  category: operations
+  dimension: operational_readiness
+  sub_domains: [saas, cloud_platforms, developer_platforms]
+  when: {technologies_any: [finops, azure, aws, gcp]}
+- id: security-telemetry-volume
+  text: What security telemetry volumes (events per second, retention) must the platform ingest and query?
+  category: data
+  dimension: data_availability
+  answer_type: text
+  sub_domains: [cybersecurity]
+- id: genai-feature-guardrails
+  text: For customer-facing GenAI features, are tenant-scoped retrieval, prompt-injection defences and output evaluation defined?
+  category: security
+  dimension: tenant_data_isolation
+  when: {technologies_any: [generative_ai, rag, agentic_ai, ai_agents, llmops]}

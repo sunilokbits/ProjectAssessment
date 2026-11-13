@@ -1,0 +1,18 @@
+- term: Org
+  definition: A Salesforce tenant instance
+  entity_type: system
+  category: technology
+- term: SOQL
+  definition: Salesforce Object Query Language
+  entity_type: concept
+  category: technology
+- term: Platform Event
+  definition: Salesforce event-driven messaging
+  entity_type: event
+  category: integration
+- term: Data Cloud
+  definition: Salesforce customer data platform
+  synonyms:
+  - salesforce cdp
+  entity_type: system
+  category: data

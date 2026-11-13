@@ -1,0 +1,52 @@
+- id: dq-profiling
+  text: Has the in-scope data been profiled to quantify quality issues?
+  category: data
+  dimension: data_quality
+  answer_type: yes_no
+  evidence_required: true
+- id: dq-rules
+  text: Are data quality rules defined for critical data elements with thresholds agreed by owners?
+  category: data
+  dimension: data_quality_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: dq-monitoring
+  text: How is data quality monitored?
+  category: technology
+  dimension: data_quality_readiness
+  answer_type: single_choice
+  options:
+  - value: none
+    label: Not monitored
+    score: 0
+  - value: manual
+    label: Manual checks / reconciliations
+    score: 0.4
+  - value: automated
+    label: Automated rules in pipelines
+    score: 0.8
+  - value: observability
+    label: Automated rules plus observability with alerting
+    score: 1
+- id: dq-issue-mgmt
+  text: Is there an issue-management process with owners and SLAs for fixing data at source?
+  category: governance
+  dimension: data_quality_readiness
+  answer_type: yes_no
+- id: dq-scorecards
+  text: Are data quality scorecards published to data consumers?
+  category: governance
+  dimension: data_quality_readiness
+  answer_type: yes_no
+- id: dq-tooling
+  text: Is a data quality / observability tool selected or available?
+  category: technology
+  dimension: data_quality_readiness
+  answer_type: yes_no
+- id: dq-skills
+  text: How experienced is the client team with data quality management (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

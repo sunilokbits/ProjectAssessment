@@ -1,0 +1,2 @@
+- {id: identity-match, title: Low customer match rates across systems, category: data, likelihood: 4, impact: 4, mitigation: "Profile keys early; define match/survivorship rules with data owners.", indicators: [duplicate customers, no common key, multiple ids]}
+- {id: c360-scope, title: Customer 360 scope expands to every attribute, category: delivery, likelihood: 3, impact: 3, mitigation: Prioritise attributes by consuming use case.}

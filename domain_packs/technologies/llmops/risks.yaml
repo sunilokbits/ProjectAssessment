@@ -1,0 +1,35 @@
+- id: llmops-regressions
+  title: Prompt or model changes cause silent quality regressions
+  category: operations
+  likelihood: 4
+  impact: 3
+  mitigation: Automated evaluation gates and canary releases.
+  indicators:
+  - prompt change
+  - model upgrade
+- id: llmops-cost-overrun
+  title: Token costs exceed budget at scale
+  category: operations
+  likelihood: 3
+  impact: 4
+  mitigation: Cost per request tracking, caching, model routing and quotas.
+  indicators:
+  - token cost
+  - usage growth
+- id: llmops-no-observability
+  title: No visibility into failures and latency
+  category: operations
+  likelihood: 3
+  impact: 3
+  mitigation: End-to-end tracing and dashboards.
+  indicators:
+  - no logging
+- id: llmops-sensitive-logs
+  title: Sensitive data stored in prompt logs
+  category: privacy
+  likelihood: 3
+  impact: 4
+  mitigation: Redact before logging; restrict access and retention of traces.
+  indicators:
+  - pii
+  - logs

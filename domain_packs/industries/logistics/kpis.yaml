@@ -1,0 +1,10 @@
+- {id: otif, name: OTIF, description: Share of orders delivered on time and in full., unit: "%", direction: higher_is_better, category: service}
+- {id: forecast-accuracy, name: Forecast accuracy, description: "Demand forecast accuracy (e.g. 1 - WMAPE).", unit: "%", direction: higher_is_better, category: planning, sub_domains: [demand_forecasting, inventory]}
+- {id: inventory-turns, name: Inventory turnover, description: Cost of goods sold divided by average inventory., unit: ratio, direction: higher_is_better, category: inventory, sub_domains: [inventory, warehouse]}
+- {id: inventory-accuracy, name: Inventory record accuracy, description: Share of locations where system and physical counts match., unit: "%", direction: higher_is_better, category: inventory, sub_domains: [warehouse, inventory]}
+- {id: cost-per-shipment, name: Freight cost per shipment, description: Total freight cost divided by shipments., unit: currency, direction: lower_is_better, category: cost, sub_domains: [transportation]}
+- {id: first-attempt-delivery, name: First-attempt delivery rate, description: Share of deliveries completed on the first attempt., unit: "%", direction: higher_is_better, category: service, sub_domains: [last_mile]}
+- {id: cost-per-drop, name: Cost per drop, description: Last-mile cost per delivery stop., unit: currency, direction: lower_is_better, category: cost, sub_domains: [last_mile, route_optimization]}
+- {id: orders-per-hour, name: Warehouse throughput, description: Order lines picked per labour hour., unit: lines/hour, direction: higher_is_better, category: productivity, sub_domains: [warehouse]}
+- {id: empty-miles, name: Empty miles, description: Share of distance driven without load., unit: "%", direction: lower_is_better, category: efficiency, sub_domains: [transportation, route_optimization]}
+- {id: co2-per-shipment, name: CO2e per shipment, description: Greenhouse gas emissions per shipment., unit: kgCO2e, direction: lower_is_better, category: esg}

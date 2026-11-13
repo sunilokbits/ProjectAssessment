@@ -1,0 +1,20 @@
+key: databricks
+name: Databricks
+kind: technology
+version: 1.0.0
+description: Databricks Data Intelligence Platform (Azure, AWS or GCP) - lakehouse, Unity Catalog, Delta Lake, Lakeflow, Mosaic AI.
+aliases: [Data Platforms]
+sort_order: 20
+detection:
+  keywords:
+    databricks: 5
+    azure databricks: 5
+    delta lake: 3
+    unity catalog: 4
+    lakehouse: 2
+    medallion: 2
+    delta live tables: 3
+    lakeflow: 3
+    spark: 1.5
+    pyspark: 2
+related_technologies: [lakehouse, data_engineering, azure, aws, gcp, mlops, generative_ai]

@@ -1,0 +1,27 @@
+- id: iap-site-variation
+  title: Site-to-site variation in equipment and data
+  category: technology
+  likelihood: 4
+  impact: 3
+  mitigation: Standard site template and onboarding playbook.
+  indicators:
+  - multiple plants
+  - different vendors
+- id: iap-pilot-to-scale
+  title: Pilot cannot scale to all sites
+  category: delivery
+  likelihood: 3
+  impact: 4
+  mitigation: Design for multi-site from the pilot; automate onboarding.
+  indicators:
+  - pilot site
+  - proof of concept
+- id: iap-ot-security
+  title: OT security objections block connectivity
+  category: security
+  likelihood: 3
+  impact: 4
+  mitigation: Early OT security engagement and one-way data flows.
+  indicators:
+  - ot security
+  - air gapped

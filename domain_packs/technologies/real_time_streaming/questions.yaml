@@ -1,0 +1,60 @@
+- id: rts-latency
+  text: What end-to-end latency does the business decision actually need?
+  category: business
+  dimension: business_alignment
+  answer_type: single_choice
+  options:
+  - value: seconds
+    label: Sub-second to seconds
+    score: 1
+  - value: minutes
+    label: Minutes
+    score: 1
+  - value: hourly
+    label: Hourly is acceptable
+    score: 1
+  - value: unknown
+    label: Not defined
+    score: 0.2
+  critical: true
+- id: rts-sources
+  text: Do sources emit events or CDC streams today?
+  category: integration
+  dimension: integration_readiness
+  answer_type: single_choice
+  options:
+  - value: events
+    label: Yes, events / CDC available
+    score: 1
+  - value: partial
+    label: Partially
+    score: 0.6
+  - value: none
+    label: No, batch only
+    score: 0.3
+- id: rts-broker
+  text: Is a streaming platform (Kafka, Event Hubs, Kinesis, Pub/Sub) in place and operated?
+  category: technology
+  dimension: real_time_streaming_readiness
+  answer_type: yes_no
+- id: rts-schema-registry
+  text: Is a schema registry and event contract governance in place?
+  category: governance
+  dimension: real_time_streaming_readiness
+  answer_type: yes_no
+- id: rts-delivery-semantics
+  text: Are delivery semantics (at-least-once, exactly-once), ordering and late-data handling requirements defined?
+  category: architecture
+  dimension: real_time_streaming_readiness
+  answer_type: yes_no
+- id: rts-ops
+  text: Is there 24x7 support capability for streaming workloads?
+  category: operations
+  dimension: operational_readiness
+  answer_type: yes_no
+- id: rts-skills
+  text: How experienced is the client team with streaming technologies (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

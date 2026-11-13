@@ -1,0 +1,24 @@
+- id: healthcare-data-platform
+  name: PHI-protected healthcare data platform
+  description: Clinical, financial and operational data platform with interoperability standards, patient matching and PHI protection by design.
+  use_cases: [Patient 360, Population health, Quality reporting, Operational analytics, Clinical AI]
+  layer_order: [sources, ingestion, storage, processing, serving, consumption, governance, security]
+  components:
+    - {id: clinical-sources, name: "EHR, LIS, PACS, RCM and payer systems", layer: sources, core: true}
+    - {id: integration-engine, name: HL7 v2 / FHIR integration engine feeds, layer: ingestion, core: true}
+    - {id: bulk-fhir, name: Bulk FHIR export ingestion, layer: ingestion, when: {keywords_any: [fhir, bulk export, smart on fhir]}}
+    - {id: ehr-reporting-extract, name: EHR reporting database extracts (e.g. Clarity / Caboodle), layer: ingestion, when: {keywords_any: [epic, clarity, caboodle, reporting database]}}
+    - {id: device-stream, name: Device and remote-monitoring telemetry streaming, layer: ingestion, when: {any_of: [{technologies_any: [iot, real_time_streaming]}, {sub_domains_any: [medical_devices]}]}}
+    - {id: edi-ingest, name: X12 EDI claims and remittance ingestion, layer: ingestion, when: {sub_domains_any: [healthcare_payers, revenue_cycle]}}
+    - {id: phi-encryption, name: "Encryption, key management and PHI access audit", layer: security, core: true}
+    - {id: patient-matching, name: EMPI / patient matching service, layer: processing, core: true}
+    - {id: terminology-service, name: "Terminology service (ICD-10, SNOMED CT, LOINC, RxNorm maps)", layer: processing, core: true}
+    - {id: fhir-model, name: FHIR-aligned or OMOP common data model, layer: processing, when: {any_of: [{sub_domains_any: [health_analytics, public_health]}, {keywords_any: [omop, fhir, research]}]}}
+    - {id: deid-zone, name: De-identified analytics and research zone, layer: security, when: {data_classifications_any: [phi]}}
+    - {id: consent-engine, name: Consent and data-sharing preference enforcement, layer: governance, when: {keywords_any: [consent, 42 cfr part 2, data sharing, research]}}
+    - {id: quality-mart, name: Quality measure and regulatory reporting mart, layer: serving, when: {any_of: [{project_types_any: [regulatory_reporting]}, {keywords_any: [hedis, star ratings, mips, ecqm, quality measures]}]}}
+    - {id: clinical-ai-guardrails, name: Clinical AI guardrails and evaluation harness, layer: serving, when: {technologies_any: [generative_ai, rag, agentic_ai, ai_agents, machine_learning]}}
+  considerations:
+    - The EHR remains the legal medical record; analytics outputs must not be written back without clinical governance.
+    - Confirm BAAs and health-data residency before selecting cloud services and regions.
+    - Segregate specially protected records (e.g. 42 CFR Part 2) and enforce consent at query time.

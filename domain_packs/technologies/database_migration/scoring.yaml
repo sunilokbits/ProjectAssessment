@@ -1,0 +1,4 @@
+# Database Migration technology pack - scoring
+dimensions:
+  - {key: database_migration_readiness, name: Database Migration Readiness, group: technology, weight: 1.0, description: 'Database inventory,
+      compatibility assessment, code conversion, replication approach and application testing readiness.'}

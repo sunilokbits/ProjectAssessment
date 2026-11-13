@@ -1,0 +1,4 @@
+- {id: time-to-insight, name: Time to insight, description: Elapsed time from data generation to availability for decision-making., unit: hours, direction: lower_is_better, category: delivery}
+- {id: data-quality-score, name: Data quality score, description: Share of records passing agreed data-quality rules., formula: passed records / total records, unit: "%", direction: higher_is_better, category: data}
+- {id: user-adoption, name: User adoption rate, description: Active users as a share of intended users., unit: "%", direction: higher_is_better, category: business}
+- {id: platform-availability, name: Platform availability, description: Share of time the solution meets its availability SLA., unit: "%", direction: higher_is_better, category: operations}

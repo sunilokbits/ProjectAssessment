@@ -1,0 +1,85 @@
+key: aerospace_defense
+name: Aerospace and Defense
+kind: industry
+version: 1.0.0
+description: Aircraft and engine manufacturing, maintenance repair and overhaul, defense programs, space systems and the A&D supply chain.
+aliases: [aerospace, defense, defence, A&D, aviation manufacturing, defense contractor]
+sort_order: 140
+sub_domains:
+  - key: aircraft_manufacturing
+    name: Aircraft and Engine Manufacturing
+    keywords: [aircraft manufacturing, airframe, aero engine, final assembly, composite, as9100, first article inspection, configuration management, plm]
+  - key: mro
+    name: Maintenance, Repair and Overhaul
+    keywords: [mro, maintenance repair and overhaul, airworthiness, part-145, component repair, engine shop visit, aog, maintenance records, back-to-birth]
+  - key: defense_programs
+    name: Defense Programs
+    keywords: [defense program, defence programme, dod contract, cui, cmmc, dfars, program office, weapons system, mil-spec, earned value]
+  - key: space
+    name: Space Systems
+    keywords: [satellite, launch vehicle, spacecraft, ground station, constellation, earth observation, payload, telemetry tracking and command]
+  - key: supply_chain
+    name: A&D Supply Chain
+    keywords: [tier 1 supplier, supplier quality, counterfeit parts, flow-down, long lead items, supplier scorecard, special processes, nadcap]
+detection:
+  keywords:
+    aerospace: 4.5
+    defense: 3
+    defence: 3
+    itar: 5
+    ear: 2
+    export controlled: 4
+    cmmc: 5
+    dfars: 5
+    cui: 4
+    controlled unclassified information: 5
+    as9100: 5
+    airworthiness: 4.5
+    mro: 3.5
+    airframe: 4.5
+    satellite: 3
+    nadcap: 5
+    program office: 3
+    earned value: 2.5
+    nist 800-171: 4.5
+    teamcenter: 3
+    "part-145": 4
+business_processes:
+  - Program management and earned value
+  - Engineering and configuration management
+  - Manufacturing execution and quality
+  - Supplier management and flow-down
+  - Maintenance, repair and overhaul
+  - Export control classification and licensing
+  - Contracts and government compliance
+  - Aftermarket and spares
+  - Test and certification
+  - Sustainment and logistics support
+capabilities:
+  - Digital thread and digital twin
+  - Predictive maintenance and fleet health
+  - Supply chain risk analytics
+  - Quality and nonconformance analytics
+  - Program performance analytics
+  - Export-control-aware data access
+  - Spares demand forecasting
+  - Engineering knowledge assistants
+source_systems:
+  - "PLM (Siemens Teamcenter, Dassault 3DEXPERIENCE / ENOVIA, PTC Windchill)"
+  - "ERP (SAP S/4HANA, Oracle, Deltek Costpoint, IFS)"
+  - "MES (Siemens Opcenter, Dassault DELMIA Apriso, iBASEt Solumina)"
+  - "MRO (AMOS, TRAX, IFS Maintenix, Ramco, SAP for MRO)"
+  - "Quality / QMS (ETQ Reliance, Siemens Opcenter Quality, Net-Inspect)"
+  - "Program management and EVM (Deltek Cobra, Microsoft Project, Primavera P6)"
+  - "Engine and aircraft health monitoring (OEM platforms)"
+  - "Space ground segment and telemetry systems"
+  - Supplier portals and Exostar
+data_entities: [Part, Serial number, Bill of materials, Engineering change, Work order, Nonconformance, Supplier, Program, Contract line item, Maintenance record, Aircraft, Engine, Export classification, Satellite telemetry]
+integration_patterns:
+  - PLM-ERP-MES digital thread integration
+  - "ATA Spec 2000 / Spec 2500 aviation data exchange"
+  - "S1000D technical publications"
+  - Supplier EDI and portals
+  - Air-gapped or cross-domain transfer for classified environments
+related_technologies: [data_governance, cybersecurity, machine_learning, iot, master_data_management]
+related_project_types: [predictive_maintenance, demand_forecasting, document_intelligence, data_platform_modernization]

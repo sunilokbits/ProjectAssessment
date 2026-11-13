@@ -1,0 +1,25 @@
+# Business Intelligence technology pack - recommendations
+- {id: bi-semantic-certified, title: Establish certified semantic models, text: 'Publish governed, certified semantic models as the single source
+    for KPIs.', category: architecture, priority: high}
+- {id: bi-rationalise, title: Rationalise the report estate, text: Retire unused reports and consolidate duplicates using usage statistics before
+    migration., category: delivery, priority: medium}
+- id: bi-managed-self-service
+  title: Adopt managed self-service
+  text: Central team owns certified data and models; business users build reports on top.
+  category: business
+  priority: medium
+  decision_key: bi_self_service_model
+  decision_option: managed
+  when:
+    not:
+      answers:
+        business_intelligence:bi-self-service: [centralised, full]
+- id: bi-tool-consolidation
+  title: Consolidate on a strategic BI tool
+  text: Reduce the number of BI tools to lower licence and support costs.
+  category: technology
+  priority: medium
+  when:
+    any_of:
+      - keywords_any: [tableau, qlik, cognos, business objects, microstrategy]
+      - technologies_any: [power_bi]

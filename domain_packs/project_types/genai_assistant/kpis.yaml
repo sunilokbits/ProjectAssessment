@@ -1,0 +1,24 @@
+- id: gaa-answer-accuracy
+  name: Answer accuracy
+  description: Share of evaluated answers judged correct and grounded.
+  unit: '%'
+  direction: higher_is_better
+  category: quality
+- id: gaa-adoption
+  name: Active users
+  description: Share of target users using the assistant in a period.
+  unit: '%'
+  direction: higher_is_better
+  category: business
+- id: gaa-time-saved
+  name: Time saved per task
+  description: Reduction in handling time for assisted tasks.
+  unit: minutes
+  direction: higher_is_better
+  category: business
+- id: gaa-escalation
+  name: Escalation rate
+  description: Share of conversations escalated to a human.
+  unit: '%'
+  direction: lower_is_better
+  category: operations

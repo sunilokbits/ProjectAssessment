@@ -1,0 +1,63 @@
+- id: eudr
+  name: EU Deforestation Regulation (EU) 2023/1115
+  short_name: EUDR
+  geographies: [EU, EEA]
+  sub_domains: [agri_supply_chain]
+  applicability_note: "Covers cattle, cocoa, coffee, oil palm, rubber, soy and wood placed on or exported from the EU market; check current application dates."
+- id: fsma-204
+  name: FDA FSMA Section 204 Food Traceability Rule
+  short_name: FSMA 204
+  geographies: [US]
+  sub_domains: [agri_supply_chain]
+- id: eu-cap
+  name: EU Common Agricultural Policy (IACS / LPIS reporting)
+  short_name: EU CAP
+  geographies: [EU, EEA]
+  sub_domains: [farm_finance, crop_analytics, precision_farming]
+- id: eu-ag-data-code
+  name: EU Code of Conduct on Agricultural Data Sharing by Contractual Agreement
+  short_name: EU Ag Data Code
+  geographies: [EU, EEA]
+  applicability_note: Voluntary code; reflects good practice for farmer data consent and ownership.
+- id: ag-data-transparent
+  name: Ag Data Transparent / American Farm Bureau Core Principles for Agricultural Data
+  short_name: Ag Data Transparent
+  geographies: [US]
+  applicability_note: Voluntary certification of farm data contracts.
+- id: gdpr
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA, UK]
+  data_classifications_any: [pii]
+- id: india-dpdp
+  name: Digital Personal Data Protection Act 2023
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii]
+- id: eu-animal-health-law
+  name: EU Animal Health Law (Regulation 2016/429) identification and registration
+  short_name: EU Animal Health Law
+  geographies: [EU, EEA]
+  sub_domains: [livestock]
+- id: usda-adt
+  name: USDA Animal Disease Traceability rule
+  short_name: USDA ADT
+  geographies: [US]
+  sub_domains: [livestock]
+- id: globalgap
+  name: GLOBALG.A.P. Integrated Farm Assurance
+  short_name: GLOBALG.A.P.
+  geographies: [GLOBAL]
+  sub_domains: [crop_analytics, agri_supply_chain, livestock]
+  applicability_note: Private certification commonly required by retail buyers.
+- id: eu-drone-rules
+  name: EU drone regulations (EASA UAS) / FAA Part 107
+  short_name: Drone Rules
+  geographies: [GLOBAL]
+  sub_domains: [precision_farming, crop_analytics]
+  applicability_note: Apply the national aviation authority's rules where drones capture imagery or spray.
+- id: pesticide-records
+  name: Pesticide application record-keeping rules (e.g. EU Regulation 1107/2009 and 2023/564, USDA restricted-use pesticide records)
+  short_name: Pesticide Records
+  geographies: [GLOBAL]
+  sub_domains: [precision_farming, agri_inputs]

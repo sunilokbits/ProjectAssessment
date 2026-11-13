@@ -1,0 +1,85 @@
+key: education
+name: Education
+kind: industry
+version: 1.0.0
+description: Higher education, K-12 schools, EdTech, student analytics and research institutions.
+aliases: [higher ed, university, k-12, schools, edtech, academia]
+sort_order: 40
+sub_domains:
+  - key: higher_education
+    name: Higher Education
+    keywords: [university, college, higher education, campus, admissions, enrolment, registrar, faculty, alumni, tuition]
+  - key: schools
+    name: "Schools (K-12)"
+    keywords: [k-12, school district, primary school, secondary school, pupil, teacher, classroom, academy trust, local education authority]
+  - key: edtech
+    name: EdTech
+    keywords: [edtech, learning platform, online course, mooc, lms vendor, e-learning, learning app, adaptive learning]
+  - key: student_analytics
+    name: Student Analytics
+    keywords: [student success, retention analytics, learning analytics, at-risk students, attendance analytics, early alert, progression]
+  - key: research
+    name: Research
+    keywords: [research grants, principal investigator, research data management, hpc, sponsored research, publications, research computing]
+detection:
+  keywords:
+    student: 3
+    students: 3
+    university: 3.5
+    school district: 4.5
+    enrolment: 3
+    enrollment: 3
+    ferpa: 5
+    coppa: 4
+    learning management system: 4
+    lms: 2.5
+    student information system: 5
+    sis: 2
+    canvas: 2
+    blackboard: 3
+    moodle: 4
+    banner: 2
+    peoplesoft campus solutions: 5
+    curriculum: 2.5
+    gradebook: 4
+    faculty: 2.5
+    admissions: 2.5
+    financial aid: 3.5
+business_processes:
+  - Recruitment and admissions
+  - Enrolment and registration
+  - Curriculum and timetable management
+  - Teaching, learning and assessment
+  - Student support and early intervention
+  - Financial aid and fees
+  - Research grant lifecycle
+  - Alumni relations and advancement
+  - Accreditation and statutory returns
+  - Safeguarding and wellbeing
+capabilities:
+  - Student 360
+  - Retention and student success analytics
+  - Learning analytics
+  - Enrolment forecasting
+  - Research analytics
+  - Institutional performance reporting
+  - Personalised learning
+  - Advancement analytics
+source_systems:
+  - "Student information system (Ellucian Banner, Ellucian Colleague, Oracle PeopleSoft Campus Solutions, Workday Student, Tribal SITS)"
+  - "K-12 SIS (PowerSchool, Infinite Campus, Skyward, Arbor, SIMS)"
+  - "Learning management system (Canvas, Blackboard Learn, D2L Brightspace, Moodle, Google Classroom)"
+  - "CRM (Salesforce Education Cloud, Slate, Microsoft Dynamics 365)"
+  - "Research administration (Cayuse, Kuali, InfoEd, Pure, Symplectic Elements)"
+  - "ERP / finance and HR (Workday, Oracle, SAP)"
+  - "Assessment platforms (Turnitin, Pearson, ExamSoft)"
+  - Library management systems
+data_entities: [Student, Applicant, Course, Section, Enrolment, Grade, Programme, Instructor, Attendance, Financial aid award, Grant, Publication, Alumnus]
+integration_patterns:
+  - "IMS Global / 1EdTech standards (LTI, OneRoster, Caliper)"
+  - "Ed-Fi data standard (K-12)"
+  - SIS nightly batch extracts
+  - LMS REST APIs and event streams
+  - SAML / federated identity (InCommon, eduGAIN)
+related_technologies: [data_governance, power_bi, machine_learning, generative_ai, salesforce_integration]
+related_project_types: [customer_360, churn_prediction, bi_modernization, genai_assistant]

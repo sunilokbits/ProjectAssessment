@@ -1,0 +1,68 @@
+- id: ferpa
+  name: Family Educational Rights and Privacy Act
+  short_name: FERPA
+  geographies: [US]
+  applicability_note: Applies to institutions receiving US Department of Education funding and to vendors acting as school officials.
+- id: coppa
+  name: Children's Online Privacy Protection Act
+  short_name: COPPA
+  geographies: [US]
+  data_classifications_any: [children]
+  sub_domains: [schools, edtech]
+- id: ppra
+  name: Protection of Pupil Rights Amendment
+  short_name: PPRA
+  geographies: [US]
+  sub_domains: [schools]
+- id: sopipa
+  name: California Student Online Personal Information Protection Act
+  short_name: SOPIPA
+  geographies: [US-CA]
+  sub_domains: [schools, edtech]
+- id: ny-ed-law-2d
+  name: New York Education Law 2-d (student data privacy)
+  short_name: NY Ed Law 2-d
+  geographies: [US-NY]
+  sub_domains: [schools, edtech]
+- id: cipa
+  name: Children's Internet Protection Act
+  short_name: CIPA
+  geographies: [US]
+  sub_domains: [schools]
+- id: glba-safeguards-edu
+  name: GLBA Safeguards Rule as applied to student financial aid data
+  short_name: GLBA (Financial Aid)
+  geographies: [US]
+  sub_domains: [higher_education]
+  applicability_note: Enforced through Federal Student Aid programme participation agreements.
+- id: nist-800-171
+  name: NIST SP 800-171 for Controlled Unclassified Information in research
+  short_name: NIST 800-171
+  geographies: [US]
+  sub_domains: [research]
+- id: hipaa-research
+  name: HIPAA Privacy Rule for health-related research data
+  short_name: HIPAA
+  geographies: [US]
+  data_classifications_any: [phi]
+  sub_domains: [research, higher_education]
+- id: gdpr
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii, children]
+- id: uk-gdpr-aadc
+  name: UK GDPR and Age Appropriate Design Code
+  short_name: UK GDPR / AADC
+  geographies: [UK]
+  data_classifications_any: [pii, children]
+- id: dpdp-children
+  name: Digital Personal Data Protection Act 2023 (verifiable parental consent for children)
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii, children]
+- id: wcag
+  name: Web Content Accessibility Guidelines / ADA Title II digital accessibility rule
+  short_name: WCAG / ADA
+  geographies: [GLOBAL]
+  applicability_note: ADA Title II rule applies to US public institutions; WCAG 2.1 AA is a common contractual baseline elsewhere.

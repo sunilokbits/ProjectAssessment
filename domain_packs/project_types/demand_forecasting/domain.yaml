@@ -1,0 +1,24 @@
+key: demand_forecasting
+name: Demand Forecasting
+kind: project_type
+version: 1.0.0
+description: Forecasting demand for products, services or resources to drive planning, inventory and staffing.
+sort_order: 27
+detection:
+  keywords:
+    demand forecasting: 5
+    demand forecast: 5
+    demand planning: 4
+    sales forecasting: 4
+    forecast accuracy: 4
+    inventory optimisation: 3
+    inventory optimization: 3
+    mape: 3
+    time series forecasting: 4
+    s&op: 3
+    replenishment: 2
+related_technologies:
+- machine_learning
+- advanced_analytics
+- sap_integration
+- mlops

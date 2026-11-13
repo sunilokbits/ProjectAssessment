@@ -1,0 +1,15 @@
+- id: dq-shift-left
+  title: Embed quality checks in pipelines
+  text: Implement expectations at ingestion and transformation; quarantine failing records.
+  category: data
+  priority: high
+- id: dq-cde-focus
+  title: Focus rules on critical data elements
+  text: Start with CDEs for priority use cases rather than blanket rule coverage.
+  category: governance
+  priority: medium
+- id: dq-scorecard
+  title: Publish data quality scorecards
+  text: Make quality visible to consumers and owners with trend reporting.
+  category: governance
+  priority: medium

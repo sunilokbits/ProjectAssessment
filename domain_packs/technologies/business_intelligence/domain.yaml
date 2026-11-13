@@ -1,0 +1,14 @@
+# Business Intelligence technology pack - domain
+key: business_intelligence
+name: Business Intelligence
+kind: technology
+version: 1.0.0
+description: Business intelligence and reporting - KPI definition, semantic layers, dashboards, self-service analytics and BI governance across
+  tools (Power BI, Tableau, Qlik, Looker).
+aliases: [Analytics & BI]
+sort_order: 50
+detection:
+  keywords: {business intelligence: 5, bi: 1.5, dashboard: 2, reporting: 1.5, tableau: 4, qlik: 4, looker: 4, microstrategy: 4, cognos: 4, business objects: 4,
+    semantic layer: 3, self-service analytics: 3, kpi: 1, report: 0.5}
+related_technologies: [power_bi, data_warehouse, lakehouse, microsoft_fabric, snowflake, advanced_analytics]
+related_project_types: [bi_modernization, regulatory_reporting]

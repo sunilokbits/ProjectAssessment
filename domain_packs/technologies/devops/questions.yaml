@@ -1,0 +1,51 @@
+- id: devops-source-control
+  text: Is all code and configuration in source control with branching standards?
+  category: operations
+  dimension: devops_readiness
+  answer_type: yes_no
+- id: devops-cicd
+  text: Are CI/CD pipelines used for build, test and deployment across environments?
+  category: operations
+  dimension: devops_readiness
+  answer_type: yes_no
+  weight: 1.5
+  critical: true
+- id: devops-iac
+  text: Is infrastructure provisioned as code (Terraform, Bicep, CloudFormation)?
+  category: technology
+  dimension: devops_readiness
+  answer_type: yes_no
+- id: devops-environments
+  text: Which environments are available?
+  category: operations
+  dimension: operational_readiness
+  answer_type: single_choice
+  options:
+  - value: prod_only
+    label: Production only
+    score: 0.1
+  - value: dev_prod
+    label: Dev and prod
+    score: 0.5
+  - value: dev_test_prod
+    label: Dev, test and prod
+    score: 0.9
+  - value: full
+    label: Dev, test, pre-prod and prod
+    score: 1
+- id: devops-testing
+  text: Is automated testing (unit, integration, security scanning) part of pipelines?
+  category: quality
+  dimension: devops_readiness
+  answer_type: yes_no
+- id: devops-change-mgmt
+  text: Is the change-management process compatible with frequent automated releases?
+  category: governance
+  dimension: delivery_governance
+  answer_type: yes_no
+- id: devops-skills
+  text: How experienced is the client team with DevOps practices and tooling (1-5)?
+  category: delivery
+  dimension: team_capability
+  answer_type: scale
+  equivalence_key: client_skills

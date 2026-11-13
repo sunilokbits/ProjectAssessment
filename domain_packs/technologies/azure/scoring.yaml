@@ -1,0 +1,4 @@
+# Azure technology pack - scoring
+dimensions:
+  - {key: azure_readiness, name: Azure Readiness, group: technology, weight: 1.0, description: 'Azure landing zone, identity, networking, policy
+      guardrails, IaC and cost management readiness.'}

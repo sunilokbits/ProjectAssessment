@@ -1,0 +1,83 @@
+key: cross_industry
+name: Cross-industry Enterprise
+kind: industry
+version: 1.0.0
+description: Generic enterprise functions applicable to any industry - finance, HR, procurement, sales and marketing, customer service and IT operations. Used when the industry is generic or unknown.
+aliases: [enterprise, generic, corporate functions, back office, horizontal]
+sort_order: 999
+sub_domains:
+  - key: finance
+    name: Finance
+    keywords: [general ledger, financial close, accounts payable, accounts receivable, fp&a, budgeting, consolidation, management accounts, treasury]
+  - key: hr
+    name: Human Resources
+    keywords: [hr, human resources, payroll, workforce, headcount, talent acquisition, attrition, performance management, people analytics, hcm]
+  - key: procurement
+    name: Procurement
+    keywords: [procurement, purchasing, sourcing, spend analytics, supplier management, purchase order, contract management, p2p, procure-to-pay]
+  - key: sales_marketing
+    name: Sales and Marketing
+    keywords: [sales pipeline, crm, opportunities, lead management, marketing campaigns, marketing attribution, customer segmentation, revenue operations]
+  - key: customer_service
+    name: Customer Service
+    keywords: [contact centre, customer service, service desk, case management, tickets, csat, first contact resolution, call centre]
+  - key: it_operations
+    name: IT Operations
+    keywords: [it operations, itsm, incident management, service management, observability, aiops, asset management, cmdb, change management]
+detection:
+  keywords:
+    enterprise: 1
+    erp: 1.5
+    general ledger: 2
+    financial close: 2.5
+    payroll: 2
+    procurement: 2
+    spend analytics: 2.5
+    crm: 1.5
+    contact centre: 2
+    service desk: 2
+    itsm: 2.5
+    servicenow: 2
+    workday: 2
+    sap: 1
+    headcount: 1.5
+    fp&a: 2.5
+    purchase order: 1.5
+business_processes:
+  - Record-to-report
+  - Procure-to-pay
+  - Order-to-cash
+  - Hire-to-retire
+  - Plan-to-perform (FP&A)
+  - Lead-to-opportunity
+  - Case-to-resolution
+  - Incident-to-resolution
+  - Source-to-contract
+  - Request-to-fulfil (IT)
+capabilities:
+  - Finance and management reporting
+  - Spend and supplier analytics
+  - People analytics
+  - Sales pipeline and revenue analytics
+  - Customer service analytics
+  - IT operations analytics and AIOps
+  - Enterprise copilots and knowledge assistants
+  - Process mining
+source_systems:
+  - "ERP (SAP S/4HANA / ECC, Oracle Fusion / EBS, Microsoft Dynamics 365, Infor, NetSuite)"
+  - "HCM and payroll (Workday, SAP SuccessFactors, Oracle HCM, ADP, UKG)"
+  - "Procurement (SAP Ariba, Coupa, Jaggaer, Ivalua)"
+  - "CRM (Salesforce, Microsoft Dynamics 365, HubSpot)"
+  - "Contact centre and service (Genesys, NICE, Five9, Zendesk, Salesforce Service Cloud)"
+  - "ITSM and observability (ServiceNow, Jira Service Management, BMC Helix, Splunk, Datadog)"
+  - "EPM (Oracle EPM, OneStream, Anaplan, SAP Analytics Cloud)"
+  - "Collaboration and documents (Microsoft 365, SharePoint, Google Workspace)"
+data_entities: [Legal entity, Cost centre, GL account, Journal, Employee, Position, Supplier, Purchase order, Invoice, Customer, Opportunity, Case, Incident, Configuration item]
+integration_patterns:
+  - "ERP extraction (SAP ODP / SLT, Oracle BICC)"
+  - SaaS application APIs and managed connectors
+  - Batch file interfaces
+  - Event-driven integration via iPaaS
+  - Identity federation and SCIM
+related_technologies: [sap_integration, salesforce_integration, power_bi, data_governance, generative_ai]
+related_project_types: [bi_modernization, data_platform_modernization, customer_360, genai_assistant]

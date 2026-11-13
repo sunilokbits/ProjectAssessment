@@ -1,0 +1,18 @@
+# Lakehouse technology pack - terminology
+- {term: Lakehouse, definition: Architecture combining lake storage with warehouse management features, entity_type: concept, category: architecture}
+- term: Medallion Architecture
+  definition: Bronze/silver/gold data layering
+  synonyms: [bronze silver gold, medallion]
+  entity_type: concept
+  category: architecture
+- term: Apache Iceberg
+  definition: Open table format for large analytic tables
+  synonyms: [iceberg]
+  entity_type: system
+  category: technology
+- term: Delta Lake
+  definition: Open table format with ACID transactions
+  synonyms: [delta]
+  entity_type: system
+  category: technology
+- {term: Time Travel, definition: Querying a table as of a previous version or timestamp, entity_type: concept, category: technology}

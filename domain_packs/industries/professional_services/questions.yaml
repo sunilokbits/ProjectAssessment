@@ -1,0 +1,65 @@
+- id: ethical-walls
+  text: How are ethical walls, client confidentiality restrictions and need-to-know access enforced, and will they carry over to the new platform?
+  category: security
+  dimension: client_confidentiality
+  answer_type: single_choice
+  critical: true
+  options:
+    - {value: unknown, label: Not defined for the new platform, score: 0}
+    - {value: manual, label: Manual or policy-only controls, score: 0.3}
+    - {value: dms_only, label: Enforced in DMS only - not in analytics or AI, score: 0.5}
+    - {value: end_to_end, label: Enforced end-to-end via security groups / Intapp Walls, score: 1}
+- id: privileged-content
+  text: Will privileged or client-confidential documents be processed by search or GenAI tools, and do engagement letters permit it?
+  category: privacy
+  dimension: client_confidentiality
+  critical: true
+  when: {technologies_any: [generative_ai, rag, vector_search, agentic_ai, ai_agents]}
+- id: time-capture-quality
+  text: How complete and timely is time capture (narratives, codes, submission lag)?
+  category: data
+  dimension: engagement_data_maturity
+  answer_type: scale
+- id: engagement-hierarchy
+  text: Is there a consistent client / engagement (or matter) hierarchy across CRM, PSA, billing and document management?
+  category: data
+  dimension: engagement_data_maturity
+  weight: 1.5
+- id: profitability-definitions
+  text: Are utilisation, realisation and engagement margin defined consistently across practices and geographies?
+  category: data
+  dimension: engagement_data_maturity
+  answer_type: single_choice
+  options:
+    - {value: inconsistent, label: Defined differently by practice, score: 0.2}
+    - {value: documented, label: Documented firm-wide, score: 0.7}
+    - {value: governed, label: Governed and system-enforced, score: 1}
+- id: independence-checks
+  text: Must the solution respect auditor independence rules (e.g. restrictions on services to audit clients)?
+  category: compliance
+  dimension: client_confidentiality
+  sub_domains: [accounting]
+- id: legal-hold
+  text: Are legal hold and records retention policies integrated with systems holding matter data?
+  category: compliance
+  dimension: privacy_protection
+  sub_domains: [legal]
+- id: client-data-residency
+  text: Do client contracts require client data to remain in specific countries or firm-member entities?
+  category: privacy
+  dimension: privacy_protection
+- id: knowledge-repository
+  text: Where does reusable knowledge (precedents, proposals, deliverables, designs) live, and is it tagged and curated?
+  category: data
+  dimension: data_availability
+  answer_type: text
+- id: network-structure
+  text: Is the firm a network of separate legal entities with restrictions on sharing data between member firms?
+  category: governance
+  dimension: client_confidentiality
+  sub_domains: [accounting, consulting, legal]
+- id: engineering-ip
+  text: Are client drawings, models and specifications (CAD/BIM) subject to IP or export control restrictions?
+  category: security
+  dimension: client_confidentiality
+  sub_domains: [engineering_services]

@@ -1,0 +1,7 @@
+system_addition: |
+  Use real estate and construction terminology (property, unit, lease, tenant, rent roll, NOI, change order, RFI, BIM, BMS).
+  Emphasise a governed property master, lease data quality, construction project controls, BMS/OT security,
+  fair housing obligations for residential models and building energy and carbon reporting.
+stage_additions:
+  discovery: Ask about property management, lease, construction and BMS systems, ownership structures and ESG reporting.
+extraction_hints: Map "asset", "building" and "site" to Property; map "suite" and "apartment" to Unit; map "variation" to Change Order.

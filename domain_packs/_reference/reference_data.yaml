@@ -1,0 +1,164 @@
+# Reference data shared by all domain packs. Editable without code changes.
+
+rag_thresholds: {green: 75, amber: 50}
+
+# Weights used for "Overall (domain-adjusted)" across readiness groups. Visible in the UI.
+readiness_group_weights:
+  business: 1.0
+  data: 1.0
+  architecture: 1.0
+  security: 1.0
+  domain: 1.0
+  technology: 1.0
+  delivery: 1.0
+
+dedupe:
+  similarity_threshold: 0.82
+
+detection:
+  saturation: 12
+
+stages:
+  - {key: discovery, name: Discovery}
+  - {key: assessment, name: Detailed Assessment}
+  - {key: solutioning, name: Solutioning}
+  - {key: proposal, name: Proposal}
+  - {key: delivery, name: Delivery}
+
+data_classifications:
+  - {key: public, name: Public}
+  - {key: internal, name: Internal}
+  - {key: confidential, name: Confidential}
+  - {key: pii, name: Personal data (PII)}
+  - {key: spi, name: Sensitive personal data}
+  - {key: financial, name: Financial / payment data}
+  - {key: cardholder, name: Cardholder data (PAN)}
+  - {key: phi, name: Protected health information (PHI)}
+  - {key: children, name: Children's data}
+  - {key: biometric, name: Biometric data}
+  - {key: classified, name: Government classified}
+  - {key: export_controlled, name: Export-controlled (ITAR/EAR)}
+  - {key: ip, name: Intellectual property / trade secrets}
+  - {key: ot_telemetry, name: Operational technology telemetry}
+
+regulatory_regions:
+  - {code: EU, name: European Union}
+  - {code: EEA, name: European Economic Area}
+  - {code: UK, name: United Kingdom}
+  - {code: US, name: United States (federal)}
+  - {code: US-CA, name: California}
+  - {code: US-NY, name: New York}
+  - {code: IN, name: India}
+  - {code: SG, name: Singapore}
+  - {code: AU, name: Australia}
+  - {code: CA, name: Canada}
+  - {code: AE, name: United Arab Emirates}
+  - {code: SA, name: Saudi Arabia}
+  - {code: GCC, name: Gulf Cooperation Council}
+  - {code: APAC, name: Asia Pacific}
+  - {code: LATAM, name: Latin America}
+  - {code: BR, name: Brazil}
+  - {code: ZA, name: South Africa}
+  - {code: JP, name: Japan}
+  - {code: CN, name: China}
+
+geographies:
+  - {code: IN, name: India, regions: [APAC]}
+  - {code: US, name: United States, regions: [NA]}
+  - {code: CA, name: Canada, regions: [NA]}
+  - {code: MX, name: Mexico, regions: [LATAM, NA]}
+  - {code: BR, name: Brazil, regions: [LATAM]}
+  - {code: GB, name: United Kingdom, regions: [UK, EUROPE]}
+  - {code: IE, name: Ireland, regions: [EU, EEA, EUROPE]}
+  - {code: DE, name: Germany, regions: [EU, EEA, EUROPE]}
+  - {code: FR, name: France, regions: [EU, EEA, EUROPE]}
+  - {code: NL, name: Netherlands, regions: [EU, EEA, EUROPE]}
+  - {code: ES, name: Spain, regions: [EU, EEA, EUROPE]}
+  - {code: IT, name: Italy, regions: [EU, EEA, EUROPE]}
+  - {code: SE, name: Sweden, regions: [EU, EEA, EUROPE]}
+  - {code: PL, name: Poland, regions: [EU, EEA, EUROPE]}
+  - {code: CH, name: Switzerland, regions: [EUROPE]}
+  - {code: "NO", name: Norway, regions: [EEA, EUROPE]}
+  - {code: AE, name: United Arab Emirates, regions: [GCC, MEA]}
+  - {code: SA, name: Saudi Arabia, regions: [GCC, MEA]}
+  - {code: QA, name: Qatar, regions: [GCC, MEA]}
+  - {code: ZA, name: South Africa, regions: [MEA]}
+  - {code: NG, name: Nigeria, regions: [MEA]}
+  - {code: SG, name: Singapore, regions: [APAC]}
+  - {code: AU, name: Australia, regions: [APAC]}
+  - {code: NZ, name: New Zealand, regions: [APAC]}
+  - {code: JP, name: Japan, regions: [APAC]}
+  - {code: CN, name: China, regions: [APAC]}
+  - {code: HK, name: Hong Kong, regions: [APAC]}
+  - {code: MY, name: Malaysia, regions: [APAC]}
+  - {code: ID, name: Indonesia, regions: [APAC]}
+  - {code: PH, name: Philippines, regions: [APAC]}
+  - {code: GLOBAL_MULTI, name: Multi-country / Global, regions: []}
+
+technology_categories:
+  Data Platforms: [data_engineering, data_platform, data_warehouse, data_lake, lakehouse, databricks, microsoft_fabric, snowflake]
+  Cloud: [azure, aws, gcp, cloud_migration]
+  Modernization & Migration: [application_modernization, data_migration, database_migration, etl_migration]
+  Analytics & BI: [business_intelligence, power_bi, advanced_analytics]
+  AI: [machine_learning, generative_ai, agentic_ai, ai_agents, rag, vector_search, mlops, llmops]
+  Data Management: [data_governance, data_quality, master_data_management, metadata_management, data_catalog]
+  Integration: [api_integration, sap_integration, salesforce_integration, iot, real_time_streaming]
+  Operations: [devops, dataops, finops, cybersecurity]
+
+# ---------------------------------------------------------------- extraction
+requirement_markers: [shall, must, should, requires, "will need", "needs to", "need to", required, requirement, "is expected to",
+                      "has to", "have to", "ability to", "support", "provide", "enable", "want to", "would like"]
+
+requirement_categories:
+  security: [encrypt, encryption, access control, rbac, authentication, sso, mfa, audit, masking, tokenization, firewall, vulnerability, secrets]
+  privacy: [consent, gdpr, pii, phi, personal data, anonymi, pseudonymi, right to be forgotten, data subject, retention]
+  compliance: [regulator, regulatory, compliance, audit trail, sox, hipaa, pci, basel, ifrs, rbi, sebi, fda, gxp]
+  performance: [latency, response time, throughput, concurrent, real-time, real time, near real-time, sla, seconds, milliseconds]
+  availability: [availability, uptime, disaster recovery, rto, rpo, failover, high availability, 99.9]
+  scalability: [scalable, scale, scalability, growth, volume, terabytes, petabytes, millions of]
+  data: [data model, ingestion, pipeline, etl, elt, source system, data quality, lineage, master data, cdc, batch]
+  integration: [api, integration, interface, connector, kafka, event, message queue, webhook, sftp, sap, salesforce]
+  reporting: [report, dashboard, kpi, visuali, power bi, tableau, analytics, insight]
+  ai: [machine learning, model, prediction, genai, generative, llm, chatbot, copilot, agent, rag, recommendation]
+  usability: [user-friendly, intuitive, self-service, accessibility, wcag, mobile]
+  operations: [monitoring, alerting, observability, devops, ci/cd, support, runbook, cost]
+
+non_functional_categories: [security, privacy, compliance, performance, availability, scalability, usability, operations]
+
+category_dimension:
+  business: business_alignment
+  functional: business_alignment
+  reporting: business_alignment
+  data: data_availability
+  integration: integration_readiness
+  architecture: architecture_fit
+  performance: architecture_fit
+  scalability: architecture_fit
+  availability: operational_readiness
+  operations: operational_readiness
+  security: security_controls
+  privacy: privacy_protection
+  compliance: privacy_protection
+  delivery: delivery_governance
+  ai: architecture_fit
+  usability: business_alignment
+  domain: business_alignment
+  technology: architecture_fit
+
+# Vague words in requirements -> clarification question templates ({term}, {excerpt})
+ambiguity_terms:
+  real-time: {question: "What latency does 'real-time' mean for this requirement (e.g. < 1 s, < 1 min, < 15 min)? Requirement: \"{excerpt}\"", category: performance, dimension: architecture_fit}
+  near real-time: {question: "What is the maximum acceptable data latency for 'near real-time'? Requirement: \"{excerpt}\"", category: performance, dimension: architecture_fit}
+  fast: {question: "What measurable response-time target defines 'fast'? Requirement: \"{excerpt}\"", category: performance, dimension: architecture_fit}
+  scalable: {question: "What growth must the solution support (data volume, users, transactions) over what period? Requirement: \"{excerpt}\"", category: scalability, dimension: architecture_fit}
+  high availability: {question: "What availability target (e.g. 99.9%) and RTO/RPO apply? Requirement: \"{excerpt}\"", category: availability, dimension: operational_readiness}
+  secure: {question: "Which specific security controls and standards are expected for '{term}'? Requirement: \"{excerpt}\"", category: security, dimension: security_controls}
+  user-friendly: {question: "How will usability be measured and who are the target user personas? Requirement: \"{excerpt}\"", category: usability, dimension: business_alignment}
+  tbd: {question: "This requirement contains an open item (TBD). Who owns the decision and by when? Requirement: \"{excerpt}\"", category: delivery, dimension: delivery_governance}
+  as needed: {question: "What criteria define 'as needed' (frequency, trigger, owner)? Requirement: \"{excerpt}\"", category: delivery, dimension: delivery_governance}
+  etc: {question: "The requirement lists items ending with 'etc.'. Please provide the complete list. Requirement: \"{excerpt}\"", category: business, dimension: business_alignment}
+  large volume: {question: "Please quantify 'large volume' (records/day, GB/TB, peak rate). Requirement: \"{excerpt}\"", category: scalability, dimension: architecture_fit}
+  single source of truth: {question: "Which entities must the 'single source of truth' cover, and which system wins on conflict? Requirement: \"{excerpt}\"", category: data, dimension: data_availability}
+  "360": {question: "Which data domains and attributes make up the 360-degree view, and who are its consumers? Requirement: \"{excerpt}\"", category: data, dimension: data_availability}
+  ai-powered: {question: "What business decision or task should AI support, and what accuracy/acceptance criteria apply? Requirement: \"{excerpt}\"", category: ai, dimension: architecture_fit}
+  seamless: {question: "What does 'seamless' integration mean in measurable terms (systems, latency, error handling)? Requirement: \"{excerpt}\"", category: integration, dimension: integration_readiness}

@@ -1,0 +1,27 @@
+- id: lem-complexity-underestimated
+  title: ETL complexity underestimated
+  category: delivery
+  likelihood: 4
+  impact: 4
+  mitigation: Automated complexity analysis of the code base before estimating.
+  indicators:
+  - thousands of jobs
+  - complex mappings
+- id: lem-licence-overlap
+  title: Legacy licence renewal needed due to delays
+  category: financial
+  likelihood: 3
+  impact: 3
+  mitigation: Plan around renewal dates; prioritise high-cost components.
+  indicators:
+  - licence renewal
+  - support end
+- id: lem-reconciliation
+  title: Output differences delay sign-off
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Automated reconciliation and agreed tolerance rules.
+  indicators:
+  - mismatch
+  - reconciliation

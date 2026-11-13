@@ -1,0 +1,3 @@
+dimensions:
+  - {key: supply_chain_visibility, name: Supply Chain Visibility, group: domain, weight: 1.5, description: "Availability, timeliness and consistency of order, shipment, inventory and event data across partners."}
+  - {key: planning_data_maturity, name: Planning Data Maturity, group: domain, weight: 1.0, description: "Quality of master data and history needed for forecasting, inventory and route optimisation."}

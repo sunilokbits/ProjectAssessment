@@ -1,0 +1,24 @@
+# Lakehouse technology pack - questions
+- id: lh-engine
+  text: Which lakehouse platform / engine is targeted?
+  category: technology
+  dimension: architecture_fit
+  answer_type: single_choice
+  options:
+    - {value: databricks, label: Databricks}
+    - {value: fabric, label: Microsoft Fabric}
+    - {value: snowflake, label: Snowflake (Iceberg tables)}
+    - {value: open_source, label: Open source (Spark / Trino + Iceberg)}
+    - {value: undecided, label: Undecided}
+- {id: lh-table-format, text: 'Is the open table format standard agreed (Delta, Iceberg, Hudi) including interoperability needs?', category: technology,
+  dimension: lakehouse_readiness, weight: 1.3}
+- {id: lh-medallion, text: 'Is a medallion (bronze / silver / gold) layering standard with promotion rules agreed?', category: architecture, dimension: lakehouse_readiness}
+- {id: lh-catalog, text: 'Is a unified catalog governing tables, permissions and lineage across engines selected?', category: governance, dimension: lakehouse_readiness,
+  critical: true}
+- {id: lh-bi-serving, text: 'Will BI tools query lakehouse gold tables directly, and are performance requirements known?', category: architecture,
+  dimension: lakehouse_readiness}
+- {id: lh-table-maintenance, text: 'Are table maintenance practices (compaction, clustering, vacuum/expiry) planned?', category: operations, dimension: operational_readiness}
+- {id: lh-multi-engine, text: 'Must multiple engines (e.g. Spark, Snowflake, Fabric, Trino) read/write the same tables?', category: integration,
+  dimension: integration_readiness}
+- {id: lh-skills, text: 'How experienced is the client team with lakehouse concepts (open table formats, Spark SQL, medallion) (1-5)?', category: delivery,
+  dimension: team_capability, answer_type: scale, equivalence_key: client_skills}

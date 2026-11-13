@@ -1,0 +1,10 @@
+- {id: occupancy-rate, name: Occupancy rate, description: Share of leasable space or units occupied., unit: "%", direction: higher_is_better, category: portfolio, sub_domains: [residential, commercial, property_management]}
+- {id: noi, name: Net operating income, description: Property revenue less operating expenses., unit: currency, direction: higher_is_better, category: financial, sub_domains: [commercial, residential, property_management]}
+- {id: rent-arrears, name: Rent arrears, description: Share of billed rent overdue., unit: "%", direction: lower_is_better, category: financial, sub_domains: [residential, commercial, property_management]}
+- {id: tenant-retention, name: Tenant retention rate, description: Share of expiring leases renewed., unit: "%", direction: higher_is_better, category: portfolio}
+- {id: work-order-resolution, name: Work order resolution time, description: Average time to close maintenance requests., unit: hours, direction: lower_is_better, category: operations, sub_domains: [property_management, smart_buildings]}
+- {id: cpi, name: Cost performance index, description: Earned value divided by actual cost., formula: EV / AC, unit: ratio, direction: higher_is_better, category: project, sub_domains: [construction]}
+- {id: spi, name: Schedule performance index, description: Earned value divided by planned value., formula: EV / PV, unit: ratio, direction: higher_is_better, category: project, sub_domains: [construction]}
+- {id: change-order-rate, name: Change order rate, description: Value of change orders relative to original contract value., unit: "%", direction: lower_is_better, category: project, sub_domains: [construction]}
+- {id: trir, name: Total recordable incident rate, description: Recordable safety incidents per 200000 hours worked., unit: rate, direction: lower_is_better, category: safety, sub_domains: [construction]}
+- {id: energy-intensity, name: Energy use intensity, description: Energy consumption per unit floor area., unit: kWh/m2, direction: lower_is_better, category: esg, sub_domains: [smart_buildings, commercial, property_management]}

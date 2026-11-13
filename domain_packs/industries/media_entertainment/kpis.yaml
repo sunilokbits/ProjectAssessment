@@ -1,0 +1,10 @@
+- {id: subscriber-churn, name: Subscriber churn rate, description: Share of subscribers cancelling per period., unit: "%", direction: lower_is_better, category: business, sub_domains: [streaming, publishing]}
+- {id: arpu, name: ARPU, description: Average revenue per user or subscriber., unit: currency, direction: higher_is_better, category: business}
+- {id: engagement-time, name: Engagement time, description: "Average viewing, reading or play time per active user.", unit: minutes, direction: higher_is_better, category: engagement}
+- {id: dau-mau, name: DAU/MAU stickiness, description: Daily active users divided by monthly active users., unit: ratio, direction: higher_is_better, category: engagement, sub_domains: [gaming, streaming]}
+- {id: ecpm, name: eCPM, description: Effective revenue per thousand ad impressions., unit: currency, direction: higher_is_better, category: advertising, sub_domains: [advertising, streaming, publishing]}
+- {id: fill-rate, name: Ad fill rate, description: Share of ad requests filled., unit: "%", direction: higher_is_better, category: advertising, sub_domains: [advertising]}
+- {id: recommendation-ctr, name: Recommendation click-through rate, description: Share of recommendations that lead to a play or read., unit: "%", direction: higher_is_better, category: product}
+- {id: content-roi, name: Content ROI, description: Revenue or engagement attributed to a title relative to its cost., unit: ratio, direction: higher_is_better, category: content, sub_domains: [streaming, content_analytics]}
+- {id: rebuffer-ratio, name: Rebuffering ratio, description: Share of playback time spent rebuffering., unit: "%", direction: lower_is_better, category: quality, sub_domains: [streaming]}
+- {id: paywall-conversion, name: Paywall conversion rate, description: Share of engaged readers converting to subscribers., unit: "%", direction: higher_is_better, category: business, sub_domains: [publishing]}

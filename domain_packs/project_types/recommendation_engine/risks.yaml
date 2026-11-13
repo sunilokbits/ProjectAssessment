@@ -1,0 +1,27 @@
+- id: rec-cold-start
+  title: Cold start for new users and items
+  category: data
+  likelihood: 4
+  impact: 3
+  mitigation: Content-based and popularity fallbacks.
+  indicators:
+  - new customers
+  - new products
+- id: rec-no-uplift-measure
+  title: Uplift cannot be proven without experimentation
+  category: business
+  likelihood: 3
+  impact: 3
+  mitigation: A/B testing with agreed success metrics.
+  indicators:
+  - no ab testing
+- id: rec-privacy
+  title: Personalisation without valid consent
+  category: privacy
+  likelihood: 3
+  impact: 4
+  mitigation: Consent checks in feature pipelines and serving.
+  indicators:
+  - consent
+  - gdpr
+  - tracking

@@ -1,0 +1,3 @@
+dimensions:
+  - {key: agronomic_data_readiness, name: Agronomic Data Readiness, group: domain, weight: 1.5, description: "Availability and quality of field boundaries, imagery, sensor, weather, yield and herd data with seasonal history."}
+  - {key: farm_data_rights, name: Farm Data Rights and Traceability, group: domain, weight: 1.0, description: "Farmer data ownership and consent, OEM data access and traceability obligations."}

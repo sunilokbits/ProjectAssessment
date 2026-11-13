@@ -1,0 +1,70 @@
+- id: gdpr
+  name: General Data Protection Regulation
+  short_name: GDPR
+  geographies: [EU, EEA]
+  data_classifications_any: [pii, spi, children]
+- id: uk-gdpr-pecr
+  name: UK GDPR, Data Protection Act 2018 and PECR (fundraising communications)
+  short_name: UK GDPR / PECR
+  geographies: [UK]
+  data_classifications_any: [pii, spi, children]
+- id: uk-fundraising-code
+  name: Code of Fundraising Practice (Fundraising Regulator)
+  short_name: UK Fundraising Code
+  geographies: [UK]
+  sub_domains: [fundraising, donor_management]
+- id: uk-charity-commission
+  name: Charities Act 2011 and Charity Commission reporting (SORP)
+  short_name: Charities Act / SORP
+  geographies: [UK]
+- id: uk-gift-aid
+  name: HMRC Gift Aid declaration and record-keeping requirements
+  short_name: Gift Aid
+  geographies: [UK]
+  sub_domains: [fundraising]
+- id: irs-990
+  name: IRS Form 990 and Section 501(c)(3) requirements
+  short_name: IRS Form 990
+  geographies: [US]
+- id: us-state-solicitation
+  name: US state charitable solicitation registration laws
+  short_name: State Solicitation
+  geographies: [US]
+  sub_domains: [fundraising]
+- id: uniform-guidance
+  name: 2 CFR 200 Uniform Guidance for federal awards
+  short_name: Uniform Guidance
+  geographies: [US]
+  sub_domains: [grants, programs_impact]
+- id: ofac-sanctions
+  name: OFAC sanctions and counter-terrorism financing obligations
+  short_name: OFAC / CTF
+  geographies: [US]
+  sub_domains: [grants, programs_impact]
+- id: fatf-r8
+  name: FATF Recommendation 8 (non-profit organisations and terrorist financing)
+  short_name: FATF R8
+  geographies: [GLOBAL]
+  sub_domains: [grants, programs_impact]
+  applicability_note: Implemented through national charity and AML regimes.
+- id: india-fcra
+  name: Foreign Contribution (Regulation) Act 2010
+  short_name: FCRA (India)
+  geographies: [IN]
+  sub_domains: [fundraising, grants]
+- id: india-dpdp
+  name: Digital Personal Data Protection Act 2023
+  short_name: DPDP Act
+  geographies: [IN]
+  data_classifications_any: [pii, children]
+- id: pci-dss
+  name: Payment Card Industry Data Security Standard v4.0
+  short_name: PCI DSS
+  geographies: [GLOBAL]
+  data_classifications_any: [cardholder]
+  sub_domains: [fundraising]
+- id: canada-casl
+  name: Canada's Anti-Spam Legislation (registered charity provisions)
+  short_name: CASL
+  geographies: [CA]
+  sub_domains: [fundraising, donor_management]
