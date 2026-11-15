@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link, NavLink, Route, Routes, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { api, errorText, getUser } from "../api";
 import { Card, CountUp, ErrorBox, Meter, Origin, Pill, Source, pct, ragState, useApi, useToast } from "../components";
+import Reports from "./Reports";
 
 const ORIGINS = ["GLOBAL", "INDUSTRY", "SUB-DOMAIN", "TECHNOLOGY", "PROJECT", "AI-DISCOVERED"];
 
@@ -13,7 +14,7 @@ export default function AssessmentView() {
   const tabs = [["", "Dashboard"], ["questionnaire", "Questionnaire"], ["risks", "Risks"], ["kpis", "KPIs"],
     ["compliance", "Compliance"], ["architecture", "Architecture"], ["recommendations", "Recommendations"],
     ["requirements", "Requirements"], ["knowledge", "NFRs & assumptions"], ["provenance", "Domain packs & provenance"],
-    ["ai", "AI context"]];
+    ["ai", "AI context"], ["reports", "✦ Reports & downloads"]];
   return (
     <div>
       <WorkspaceHeader id={id!} a={a.data} base={base} />
@@ -32,6 +33,7 @@ export default function AssessmentView() {
         <Route path="knowledge" element={<Knowledge id={id!} />} />
         <Route path="provenance" element={<Provenance id={id!} assessment={a.data} reload={a.reload} />} />
         <Route path="ai" element={<AiContext id={id!} />} />
+        <Route path="reports" element={<Reports id={id!} assessment={a.data} />} />
       </Routes>
     </div>
   );

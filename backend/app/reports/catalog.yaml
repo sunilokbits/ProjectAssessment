@@ -1,0 +1,151 @@
+# Insight bid content catalogue used by the report generator (PPT deck + analysis document).
+# Edit this file to change the framework, accelerators, positioning or battle cards - no code changes needed.
+# AI generation starts from these defaults and tailors them to the assessment and the user's prompt.
+
+company: Insight
+
+framework:
+  name: PROVE
+  core_stage_index: 2
+  stages:
+    - {letter: P, name: Profile, text: "AI mines processes and documents; baseline volume, effort, errors and turnaround.", tooling: "Assessment Studio · mining"}
+    - {letter: R, name: Rank, text: "Score every opportunity on business value × feasibility; select the first wave.", tooling: "Value-feasibility matrix"}
+    - {letter: O, name: Orchestrate, text: "Redesign first, then automate with workflow, document AI and agents — human in the loop.", tooling: "IDP · GenAI · AI agents"}
+    - {letter: V, name: Validate, text: "Pilot on live volumes; measure against baseline; risk and compliance sign-off.", tooling: "Value Tracker · guardrails"}
+    - {letter: E, name: Expand, text: "Industrialise into a delivery factory; scale wave by wave with reusable components.", tooling: "Factory · CoE"}
+  timeline:
+    - {when: "Wk 0–2", label: "Profile & Rank"}
+    - {when: "Wk 3–6", label: "Orchestrate pilots"}
+    - {when: "Wk 7–8", label: "Validate value"}
+    - {when: "Wave 2+", label: "Expand & scale"}
+
+# 'match' lists pack keys (technologies / project types / industries). An accelerator is picked when
+# any key matches the assessment, or when 'always' is true. 'live' marks assets that can be demoed today.
+accelerators:
+  - name: Project Assessment Studio
+    stage_tags: "P · R"
+    text: "Domain-specific assessment: tailored questions, risks, compliance and readiness scoring."
+    live: true
+    url: "https://projectassessment.azurewebsites.net"
+    always: true
+  - name: DBx Migrator — Migration Studio
+    stage_tags: "O · E"
+    text: "Databricks Brickbuilder accelerator: legacy SQL to a governed Lakehouse, one job per table, reconciled."
+    live: true
+    url: ""
+    match: [databricks, lakehouse, data_migration, etl_migration, database_migration, legacy_etl_migration, cloud_data_migration, data_platform_modernization]
+  - name: Document & Process Intelligence
+    stage_tags: "P · O"
+    text: "Classify and extract data from forms and documents; route exceptions to people with full audit."
+    live: false
+    url: ""
+    match: [document_intelligence, generative_ai, ai_agents, agentic_ai]
+  - name: Agentic Automation Factory
+    stage_tags: "O"
+    text: "Reusable GenAI agents and workflow patterns with guardrails, approvals and human-in-the-loop review."
+    live: false
+    url: ""
+    match: [ai_agents, agentic_ai, generative_ai, genai_assistant, rag, llmops]
+  - name: Value Tracker
+    stage_tags: "V"
+    text: "Baseline vs actual for hours saved, turnaround, quality and ROI — one view for sponsors."
+    live: false
+    url: ""
+    always: true
+  - name: Governance & Responsible AI
+    stage_tags: "V · E"
+    text: "Data governance, model-risk reviews and compliance controls built in from day one."
+    live: false
+    url: ""
+    always: true
+  - name: Lakehouse & Data Platform Blueprints
+    stage_tags: "O · E"
+    text: "Reference architectures and IaC for governed data platforms on Databricks, Fabric or Snowflake."
+    live: false
+    url: ""
+    match: [data_platform, microsoft_fabric, snowflake, data_warehouse, data_lake, azure, aws, gcp]
+accelerators_footnote: "Stage tags show where each accelerator plugs into the approach. Align names with the current Aurora catalogue before client use."
+
+value:
+  stats:
+    - {value: "40–60%", label: "less manual effort", category: "PROCESS OPTIMISATION"}
+    - {value: "50%+", label: "faster turnaround", category: "EFFICIENCY"}
+    - {value: "25–35%", label: "lower cost to serve", category: "COST OPTIMISATION"}
+    - {value: "2–3×", label: "throughput per FTE", category: "PRODUCTIVITY"}
+  chart:
+    title: "Cumulative benefit vs investment (USD k, illustrative)"
+    categories: [Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8]
+    benefit: [0, 120, 330, 620, 960, 1350, 1780, 2250]
+    investment: [250, 400, 500, 580, 640, 700, 750, 800]
+  payback_note: "Payback ≈ Q4   ·   ~2.8× return by Q8"
+  disclaimer: "Illustrative targets for in-scope processes; client-specific figures come from the Profile baseline."
+
+operating_model:
+  title: "FDE pods embed engineering inside the client's teams"
+  roles:
+    - {title: "FDE Lead", text: "Owns outcomes & architecture; single point of contact"}
+    - {title: "Forward Deployed Engineers", text: "2–3 engineers sit with process owners and build"}
+    - {title: "AI / Automation Engineer", text: "Document AI, agents, guardrails and MLOps"}
+    - {title: "Process & Change Lead", text: "Process redesign, adoption and training"}
+    - {title: "Insight Delivery Centre", text: "Local scale-out, run and support"}
+    - {title: "Aurora CoE", text: "Accelerators, Databricks & Microsoft expertise"}
+  comparison_title: "TRADITIONAL DELIVERY  vs  FDE MODEL"
+  comparison:
+    - {dimension: "Where the team sits", traditional: "Remote backlog, offshore queue", ours: "Inside the client's business teams"}
+    - {dimension: "How work starts", traditional: "Months of requirements documents", ours: "Shadow the process, build in days"}
+    - {dimension: "Time to first value", traditional: "At the end of the programme", ours: "Within the 6-week pilot"}
+    - {dimension: "What the client keeps", traditional: "Code and documents", ours: "Capability, runbooks, trained people"}
+
+roadmap:
+  phases:
+    - {name: "Mobilise & governance", start_week: 0, end_week: 1}
+    - {name: "Profile & Rank", start_week: 0, end_week: 2}
+    - {name: "Orchestrate — pilot wave 1", start_week: 2, end_week: 6}
+    - {name: "Validate & value review", start_week: 6, end_week: 8}
+    - {name: "Expand — wave 2 & scale plan", start_week: 8, end_week: 12}
+  milestones:
+    - {week: 2, label: "Roadmap & business case signed off"}
+    - {week: 6, label: "First processes live"}
+    - {week: 8, label: "Value validated with sponsors"}
+    - {week: 12, label: "Scale decision"}
+  governance:
+    - {title: "Steering committee", text: "Monthly · client sponsor & Insight executive · value and scale decisions"}
+    - {title: "Design authority", text: "Fortnightly · architecture, security, regulatory and model-risk sign-off"}
+    - {title: "Pod stand-up", text: "Daily · FDEs with process owners · backlog and blockers"}
+
+why_us:
+  proof_stats:
+    - {when: "8 wks", label: "to first value"}
+    - {when: "2", label: "accelerators live today"}
+    - {when: "1", label: "partner, roadmap to run"}
+  themes:
+    - {title: "Local presence, global scale", text: "Local leadership and Solutions team engaged; backed by a Fortune 500 solutions integrator."}
+    - {title: "Accelerators, not slideware", text: "Assessment Studio is already configured for this client; Migration Studio is a Databricks Brickbuilder accelerator."}
+    - {title: "Engineers in the business", text: "FDE pods build alongside process owners and transfer the capability to the client's teams."}
+    - {title: "Outcome-led and measured", text: "Every KPI baselined and tracked in the Value Tracker; commercials can link to outcomes."}
+    - {title: "Safe AI for regulated industries", text: "Human-in-the-loop, full audit trail and regulatory controls designed in from day one."}
+
+options:
+  items:
+    - {tag: "OPTION 1", name: "PROVE Sprint", terms: "2 weeks · fixed fee", recommended: true, outputs: ["Process baseline and pain-point map", "Value × feasibility ranked opportunities", "Roadmap and business case for wave 1"]}
+    - {tag: "OPTION 2", name: "Pilot Wave", terms: "6 weeks · fixed fee + outcome bonus", recommended: false, outputs: ["2–3 processes redesigned and automated", "Running on live volumes with human review", "Value validated against the baseline"]}
+    - {tag: "OPTION 3", name: "Scale Programme", terms: "Quarterly waves · managed FDE capacity", recommended: false, outputs: ["Delivery factory and reusable components", "Outcome KPIs in the commercial model", "CoE set-up and handover to the client"]}
+
+battle_cards:
+  competitors:
+    - {type: "Global SIs & Big 4 consultancies", pitch: "Large transformation programme; strategy first, delivery later", strengths: "Brand, C-suite access, industry references", weaknesses: "Long, costly discovery; senior pitch team handed to juniors; slow to show value", how_we_win: "Fixed-fee 2-week sprint; value in 8 weeks; the FDEs who design it also build it"}
+    - {type: "Offshore IT majors", pitch: "Scale and low day rates; offshore factory", strengths: "Scale and cost; existing client relationships", weaknesses: "Effort-based (FTE) models conflict with productivity goals; generic CoEs", how_we_win: "Outcome-linked commercials; redesign before automation; accelerators cut effort"}
+    - {type: "Automation platform vendors & partners", pitch: "Licence-led; deploy bots quickly", strengths: "Fast tactical wins; deep product features", weaknesses: "Tool-first; bot sprawl; brittle on unstructured documents; lock-in", how_we_win: "Platform-agnostic; document AI + agents + redesign; reuse the client's existing tools"}
+    - {type: "Boutique AI / GenAI firms", pitch: "Cutting-edge GenAI pilots", strengths: "Speed and innovation", weaknesses: "Scale, enterprise-grade security, outsourcing compliance and run support", how_we_win: "Enterprise delivery with local support; compliance and audit by design"}
+  objections:
+    - {objection: "“You are smaller locally than the big SIs.”", response: "A senior, embedded FDE pod plus our local delivery team; we scale with accelerators, not headcount."}
+    - {objection: "“We already have an automation tool.”", response: "We reuse it. The approach decides where bots, document AI or agents fit — no rip-and-replace."}
+    - {objection: "“GenAI is too risky for us.”", response: "Human-in-the-loop, audit trails and regulatory controls by design; start with low-risk, high-volume work."}
+    - {objection: "“We need a business case before we commit.”", response: "The fixed-fee sprint produces a baselined, value-ranked business case in 2 weeks."}
+    - {objection: "“How do we avoid vendor lock-in?”", response: "The client owns the code, process designs and runbooks; knowledge transfer is built into the FDE model."}
+  questions:
+    - "How will value be measured against today's baseline — and who signs it off?"
+    - "How soon do you need the first process running in production?"
+    - "Which processes are the most document- or exception-heavy today?"
+    - "How will AI decisions be audited for regulators and internal model-risk review?"
+    - "Will the team that designs the roadmap also deliver it?"

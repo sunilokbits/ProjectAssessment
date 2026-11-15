@@ -127,3 +127,13 @@
 .ind-tile.used { border-color: var(--brand-tint-2); background: linear-gradient(160deg, #fff, var(--brand-tint)); }
 .card { border-radius: 8px; }
 button.primary, .button.primary { background: var(--brand); border-color: var(--brand); }
+
+/* Reports & downloads */
+.grid2 { display: grid; gap: 18px; }
+@media (max-width: 1100px) { .grid2 { grid-template-columns: 1fr !important; } }
+.notice.warn { background: #fff6e0; border-color: #f1d48a; }
+.notice.err { background: #fde8ee; border-color: #f4a9bd; color: #8a1030; }
+.outline li::marker { color: var(--brand, #c8175f); font-weight: 700; }
+textarea#rp-prompt { border: 1px solid #e3dbe8; border-radius: 10px; padding: 10px 12px; font: inherit; resize: vertical; }
+textarea#rp-prompt:focus { outline: 2px solid #d30e8c33; border-color: #d30e8c; }
+.fchip { border-color: #eadff0; }
