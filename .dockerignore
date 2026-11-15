@@ -5,3 +5,4 @@ frontend/dist
 backend/*.db
 .git
 .claude
+presentations
