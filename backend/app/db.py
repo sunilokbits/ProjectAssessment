@@ -13,17 +13,30 @@ class Base(DeclarativeBase):
 
 
 _engine = None
+
+
+def normalise_url(url: str) -> str:
+    """Accept postgres:// / postgresql:// URLs and use the psycopg 3 driver."""
+    for prefix in ("postgres://", "postgresql://"):
+        if url.startswith(prefix):
+            return "postgresql+psycopg://" + url[len(prefix):]
+    return url
 _SessionLocal: sessionmaker | None = None
 
 
 def init_engine(url: str | None = None):
     global _engine, _SessionLocal
-    url = url or get_settings().database_url
-    kwargs = {"connect_args": {"check_same_thread": False}} if url.startswith("sqlite") else {}
+    url = normalise_url(url or get_settings().database_url)
+    if url.startswith("sqlite"):
+        kwargs = {"connect_args": {"check_same_thread": False}}
+    else:  # PostgreSQL (Azure Database for PostgreSQL): recycle idle connections, verify before use
+        kwargs = {"pool_pre_ping": True, "pool_recycle": 1800, "pool_size": 5, "max_overflow": 5}
     if url.startswith("sqlite:///"):
         from pathlib import Path
 
         Path(url.removeprefix("sqlite:///")).parent.mkdir(parents=True, exist_ok=True)
+    if _engine is not None:
+        _engine.dispose()
     _engine = create_engine(url, future=True, **kwargs)
     if url.startswith("sqlite"):
         @event.listens_for(_engine, "connect")

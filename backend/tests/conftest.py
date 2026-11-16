@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -29,7 +30,17 @@ def packs_dir(tmp_path: Path) -> Path:
 
 @pytest.fixture()
 def client(tmp_path: Path, packs_dir: Path, monkeypatch):
-    monkeypatch.setenv("PAT_DATABASE_URL", f"sqlite:///{(tmp_path / 'test.db').as_posix()}")
+    pg = os.environ.get("PAT_TEST_DATABASE_URL")  # optional: run the suite against PostgreSQL
+    if pg:
+        from sqlalchemy import create_engine
+
+        from app import models  # noqa: F401
+        from app.db import Base, normalise_url
+
+        eng = create_engine(normalise_url(pg))
+        Base.metadata.drop_all(eng)
+        eng.dispose()
+    monkeypatch.setenv("PAT_DATABASE_URL", pg or f"sqlite:///{(tmp_path / 'test.db').as_posix()}")
     monkeypatch.setenv("PAT_DOMAIN_PACKS_DIR", str(packs_dir))
     monkeypatch.setenv("PAT_AI_ENABLED", "false")
     from app import config, services
