@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link, NavLink, Route, Routes, useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { api, errorText, getUser } from "../api";
+import { api, downloadFile, errorText, getUser } from "../api";
 import { Card, CountUp, ErrorBox, Meter, Origin, Pill, Source, pct, ragState, useApi, useToast } from "../components";
 import Reports from "./Reports";
 
@@ -243,6 +243,7 @@ function Questionnaire({ id }: { id: string }) {
   const dim = params.get("dim");
   const setFilter = (o: string) => { const n = new URLSearchParams(params); o === "ALL" ? n.delete("origin") : n.set("origin", o); setParams(n); };
   const [onlyOpen, setOnlyOpen] = useState(false);
+  const [xlsxBusy, setXlsxBusy] = useState(false);
   const toast = useToast();
   const [err, setErr] = useState<string | null>(null);
   const canReview = ["admin", "reviewer"].includes(getUser().role);
@@ -258,6 +259,11 @@ function Questionnaire({ id }: { id: string }) {
     } catch (e) { setErr(errorText(e)); }
   };
   const verify = async (q: any) => { try { await api.post(`/api/assessments/${id}/answers/${encodeURIComponent(q.key)}/verify`); reload(); } catch (e) { setErr(errorText(e)); } };
+  const downloadXlsx = async () => {
+    setXlsxBusy(true);
+    try { toast(`Downloaded ${await downloadFile(`/api/assessments/${id}/questionnaire.xlsx`, "Assessment_Questionnaire.xlsx")}`); }
+    catch (e) { setErr(errorText(e)); } finally { setXlsxBusy(false); }
+  };
   const reviewAi = async (q: any, status: string) => { await api.patch(`/api/assessments/${id}/ai-questions/${q.id}`, { status }); reload(); };
 
   return (
@@ -265,6 +271,9 @@ function Questionnaire({ id }: { id: string }) {
       <div className="row">
         <select value={filter} onChange={(e) => setFilter(e.target.value)}><option value="ALL">All origins</option>{ORIGINS.map((o) => <option key={o}>{o}</option>)}</select>
         <label className="check"><input type="checkbox" checked={onlyOpen} onChange={(e) => setOnlyOpen(e.target.checked)} />Open only</label>
+        <button className="primary" disabled={xlsxBusy} onClick={downloadXlsx}
+          title="All questions for this assessment, with answers so far, as an Excel workbook to share or fill in">
+          {xlsxBusy ? "Building…" : "⬇ Download Excel"}</button>
       </div>}>
       {(() => { const all = data.questions, done = all.filter((q: any) => q.answer && q.answer.value != null && q.answer.value !== "").length; return (
         <div className="meter" style={{ marginBottom: 8 }}><div className="meter-label"><strong>Overall progress</strong></div>

@@ -89,3 +89,28 @@ def test_ai_generation_uses_prompt_and_falls_back(client, monkeypatch):
     body = client.post(f"/api/assessments/{aid}/reports/generate", json={"prompt": "x"}, headers=ASSESSOR).json()
     assert body["method"] == "template" and any("AI call failed" in w for w in body["warnings"])
     assert generator.strict_json_schema  # imported for schema use
+
+
+def test_questionnaire_excel_download(client):
+    from openpyxl import load_workbook
+
+    aid = new_assessment(client, **BANK_C360)
+    qs = client.get(f"/api/assessments/{aid}/questionnaire", headers=ASSESSOR).json()["questions"]
+    first = qs[0]
+    client.put(f"/api/assessments/{aid}/answers/{first['key']}", json={"value": "yes", "evidence": "Charter v2"},
+               headers=ASSESSOR)
+    r = client.get(f"/api/assessments/{aid}/questionnaire.xlsx", headers={"X-User-Name": "v", "X-User-Role": "viewer"})
+    assert r.status_code == 200, r.text
+    assert "Acme_Bank_Assessment_Questionnaire.xlsx" in r.headers["content-disposition"]
+    wb = load_workbook(io.BytesIO(r.content))
+    assert wb.sheetnames == ["Cover", "Questionnaire", "Summary"]
+    ws = wb["Questionnaire"]
+    head = [c.value for c in ws[1]]
+    assert {"Question", "Answer", "Evidence / reference", "Origin", "Critical"} <= set(head)
+    rows = {row[head.index("Question ID")]: row for row in ws.iter_rows(min_row=2, values_only=True)}
+    assert len(rows) == len(qs)  # every question, nothing dropped
+    row = rows[first["key"]]
+    assert row[head.index("Answer")] == "Yes" and row[head.index("Evidence / reference")] == "Charter v2"
+    assert ws.data_validations.dataValidation  # drop-downs for fixed-option answers
+    assert str(wb["Summary"]["C5"].value).startswith("=COUNTIF(")
+    assert client.get("/api/assessments/99999/questionnaire.xlsx", headers=ASSESSOR).status_code == 404

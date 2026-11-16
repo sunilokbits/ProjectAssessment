@@ -47,6 +47,30 @@ export const api = {
   form: <T = any>(p: string, f: FormData) => request<T>("POST", p, f, true),
 };
 
+/** Fetch a file (with the user headers) and save it via the browser; returns the saved file name. */
+export async function downloadFile(path: string, fallbackName: string, body?: unknown): Promise<string> {
+  const u = getUser();
+  const headers: Record<string, string> = { "X-User-Name": u.name, "X-User-Role": u.role };
+  if (body !== undefined) headers["Content-Type"] = "application/json";
+  const res = await fetch(path, { method: body === undefined ? "GET" : "POST", headers,
+    body: body === undefined ? undefined : JSON.stringify(body) });
+  if (!res.ok) {
+    const d = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new ApiError(res.status, d.detail ?? d);
+  }
+  const blob = await res.blob();
+  const name = /filename="([^"]+)"/.exec(res.headers.get("content-disposition") || "")?.[1] || fallbackName;
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  return name;
+}
+
 export function errorText(e: unknown): string {
   if (e instanceof ApiError) {
     if (e.detail?.errors) return e.detail.errors.map((x: any) => `${x.location}: ${x.message}`).join("\n");

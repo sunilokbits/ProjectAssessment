@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { api, ApiError, errorText, getUser } from "../api";
+import { api, downloadFile, errorText, getUser } from "../api";
 import { Card, ErrorBox, MultiCheck, Pill, useApi, useToast } from "../components";
 
 type Generated = { content: any; method: "ai" | "template"; warnings: string[] };
@@ -18,29 +18,6 @@ const OUTLINE: Record<string, (c: any) => string[]> = {
   battle_cards: (c) => ["Bid team only — battle cards", `${c.battle_cards.competitors.length} competitor types · ${c.battle_cards.objections.length} objections · ${c.battle_cards.questions.length} questions`],
 };
 
-async function download(path: string, body: unknown, fallbackName: string) {
-  const u = getUser();
-  const res = await fetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "X-User-Name": u.name, "X-User-Role": u.role },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
-    const d = await res.json().catch(() => ({ detail: res.statusText }));
-    throw new ApiError(res.status, d.detail ?? d);
-  }
-  const blob = await res.blob();
-  const name = /filename="([^"]+)"/.exec(res.headers.get("content-disposition") || "")?.[1] || fallbackName;
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = name;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 2000);
-}
-
 export default function Reports({ id, assessment }: { id: string; assessment: any }) {
   const opts = useApi<any>("/api/reports/options");
   const toast = useToast();
@@ -49,7 +26,7 @@ export default function Reports({ id, assessment }: { id: string; assessment: an
   const [sections, setSections] = useState<string[] | null>(null);
   const [useAi, setUseAi] = useState(true);
   const [gen, setGen] = useState<Generated | null>(null);
-  const [busy, setBusy] = useState<"" | "gen" | "pptx" | "docx">("");
+  const [busy, setBusy] = useState<"" | "gen" | "pptx" | "docx" | "xlsx">("");
   const [error, setError] = useState<unknown>(null);
 
   if (!opts.data) return <ErrorBox error={opts.error} />;
@@ -70,9 +47,16 @@ export default function Reports({ id, assessment }: { id: string; assessment: an
     setBusy(kind); setError(null);
     try {
       const body = gen ? { content: gen.content } : { prompt, sections: chosen, use_ai: false };
-      await download(`/api/assessments/${id}/reports/${kind}`, body,
-        `${assessment.client_name}_${kind === "pptx" ? "Insight_Proposal.pptx" : "Analysis_Document.docx"}`);
+      await downloadFile(`/api/assessments/${id}/reports/${kind}`,
+        `${assessment.client_name}_${kind === "pptx" ? "Insight_Proposal.pptx" : "Analysis_Document.docx"}`, body);
       toast(kind === "pptx" ? "PowerPoint downloaded" : "Analysis document downloaded", "ok");
+    } catch (e) { setError(e); } finally { setBusy(""); }
+  };
+  const getXlsx = async () => {
+    setBusy("xlsx"); setError(null);
+    try {
+      await downloadFile(`/api/assessments/${id}/questionnaire.xlsx`, `${assessment.client_name}_Assessment_Questionnaire.xlsx`);
+      toast("Questionnaire downloaded", "ok");
     } catch (e) { setError(e); } finally { setBusy(""); }
   };
   const editTitle = (v: string) => gen && setGen({ ...gen, content: { ...gen.content, title: v } });
@@ -131,6 +115,8 @@ export default function Reports({ id, assessment }: { id: string; assessment: an
             {busy === "pptx" ? "Building deck…" : "⬇ Download PowerPoint"}</button>
           <button disabled={!canEdit || !confirmed || busy !== ""} onClick={() => get("docx")}>
             {busy === "docx" ? "Building document…" : "⬇ Download analysis (Word)"}</button>
+          <button disabled={busy !== ""} onClick={getXlsx}>
+            {busy === "xlsx" ? "Building workbook…" : "⬇ Download questionnaire (Excel)"}</button>
         </div>
         <p className="small muted" style={{ marginTop: 10 }}>Insight corporate template · clickable contents and section links · slide builds and transitions · speaker notes.
           Figures marked illustrative and battle cards must be reviewed before anything is sent to the client.</p>

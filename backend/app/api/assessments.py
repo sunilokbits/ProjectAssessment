@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 import io
+import re
 from typing import Any
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from fastapi.responses import Response
 from pydantic import BaseModel, Field
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -13,6 +15,7 @@ from .. import services
 from ..db import get_db
 from ..engine import compliance as compliance_engine
 from ..engine import detection
+from ..reports.xlsx_render import render_questionnaire_xlsx
 from ..engine.registry import RegistryError, content_of, latest_published
 from ..models import (
     Assessment,
@@ -239,9 +242,7 @@ def process_documents(aid: int, db: Session = Depends(get_db), _: User = Depends
 
 
 # --------------------------------------------------------------------------- questionnaire
-@router.get("/assessments/{aid}/questionnaire")
-def questionnaire(aid: int, db: Session = Depends(get_db), _: User = Depends(current_user)):
-    a = _get(db, aid)
+def _questionnaire(db: Session, a: Assessment) -> dict[str, Any]:
     _, prof = services.profile(db, a)
     ans = {x.question_key: x for x in a.answers}
     out = []
@@ -251,6 +252,27 @@ def questionnaire(aid: int, db: Session = Depends(get_db), _: User = Depends(cur
             "value": x.value, "evidence": x.evidence, "notes": x.notes, "answered_by": x.answered_by,
             "verified": x.verified, "verified_by": x.verified_by, "verified_at": x.verified_at}})
     return {"questions": out, "dimensions": prof["dimensions"]}
+
+
+@router.get("/assessments/{aid}/questionnaire")
+def questionnaire(aid: int, db: Session = Depends(get_db), _: User = Depends(current_user)):
+    return _questionnaire(db, _get(db, aid))
+
+
+@router.get("/assessments/{aid}/questionnaire.xlsx")
+def questionnaire_xlsx(aid: int, db: Session = Depends(get_db), _: User = Depends(current_user)):
+    """All questions for this assessment (with any answers so far) as an Excel workbook to share or fill in."""
+    a = _get(db, aid)
+    data = _questionnaire(db, a)
+    cls = services.dashboard(db, a)["classification"]
+    names = lambda xs: [x["name"] for x in xs or []]  # noqa: E731
+    info = {"client": a.client_name, "project": a.project_name, "industry": (names(cls.get("industry")) or [""])[0],
+            "technologies": names(cls.get("technologies")), "project_types": names(cls.get("project_types")),
+            "geography": (cls.get("geography") or {}).get("name") or ""}
+    body = render_questionnaire_xlsx(info, data["questions"], data["dimensions"])
+    stem = re.sub(r"[^A-Za-z0-9]+", "_", f"{a.client_name} Assessment Questionnaire").strip("_")
+    return Response(body, media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    headers={"Content-Disposition": f'attachment; filename="{stem}.xlsx"'})
 
 
 class AnswerBody(BaseModel):
