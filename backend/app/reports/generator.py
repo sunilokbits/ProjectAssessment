@@ -137,7 +137,7 @@ def baseline(f: dict[str, Any], sections: list[str] | None = None, prompt: str =
                      f"accelerators and engineers embedded in {c}'s teams.",
             "need": {"headline": clip(short_project, 40), "text": clip(f["description"] or f"Deliver {f['project']} with one accountable partner.", 150)},
             "response": {"headline": f"{fw['name']}, made real with Aurora",
-                         "text": f"Profile and rank opportunities, redesign, then deliver with {tech}."},
+                         "text": f"Discover and rank opportunities, redesign, then deliver with {tech}."},
             "why_us": {"headline": "Accelerators and engineers, locally",
                        "text": "Live accelerators and Forward Deployed Engineers who build inside the business."},
             "value": {"headline": "Payback within the first year",
@@ -180,7 +180,7 @@ def baseline(f: dict[str, Any], sections: list[str] | None = None, prompt: str =
             "footnote": cat["accelerators_footnote"],
         },
         "value": {"title": "Targeted value: payback within the first year",
-                  "intro": "Illustrative targets for in-scope processes — baselined in Profile and confirmed in Validate before scaling.",
+                  "intro": "Illustrative targets for in-scope processes — baselined in Discover and confirmed in Verify before scaling.",
                   **{k: cat["value"][k] for k in ("stats", "chart", "payback_note", "disclaimer")}},
         "operating_model": {"title": clip(cat["operating_model"]["title"].replace("the client's", f"{c}'s"), 62),
                             "intro": f"Small, senior Forward Deployed Engineer pods sit with {c}'s process owners — building in the flow of work and handing over a capability.",
@@ -202,7 +202,7 @@ def baseline(f: dict[str, Any], sections: list[str] | None = None, prompt: str =
                                    {"when": "Week 1", "label": "Agree sprint scope, sponsors and shortlist"},
                                    {"when": "Weeks 2–3", "label": f"Run the {fw['name']} sprint; baseline in Assessment Studio"},
                                    {"when": "Week 4", "label": "Present roadmap & business case; decide on the pilot"}]},
-        "closing": {"title": "Let's partner", "message": "Prove it in weeks. Make it real with Aurora. Scale it with FDEs.",
+        "closing": {"title": "Let's partner", "message": "Drive it in weeks. Make it real with Aurora. Scale it with FDEs.",
                     "next_step": f"Next step: discovery call with {c} and Insight's local leadership"},
         "battle_cards": cat["battle_cards"],
         "analysis": {
@@ -231,7 +231,7 @@ _KEYWORDS = {
     "roadmap": ["roadmap", "plan", "governance", "timeline"],
     "options": ["commercial", "option", "pricing", "next step"],
     "why_us": ["why insight", "win theme", "differentiat"],
-    "approach": ["framework", "prove", "approach", "method"],
+    "approach": ["framework", "drive", "prove", "approach", "method"],
 }
 
 

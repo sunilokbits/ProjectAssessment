@@ -54,7 +54,7 @@ class WhenLabel(BaseModel):
 
 class Accelerator(BaseModel):
     name: str
-    stage_tags: str = Field(description="Which approach stages it supports, e.g. 'P · R'")
+    stage_tags: str = Field(description="Which approach stages it supports, e.g. 'D · R'")
     text: str
     live: bool = Field(description="True only for accelerators that exist and can be demonstrated today")
     url: str = Field(description="Demo URL or empty string")

@@ -71,7 +71,7 @@ def _filename(a: Assessment, kind: str, ext: str) -> str:
 def report_options(_: User = Depends(current_user)):
     return {"sections": SECTIONS, "default_sections": generator.DEFAULT_SECTIONS, "ai_available": llm.available(),
             "example_prompts": [
-                "Leadership bid deck: PROVE framework, Aurora accelerators incl. DBx Migrator, ROI and productivity value, "
+                "Leadership bid deck: DRIVE framework, Aurora accelerators incl. DBx Migrator, ROI and productivity value, "
                 "FDE operating model, and add battle cards.",
                 "Short executive briefing for the client's CIO: findings, approach and next steps only.",
                 "Technical deep-dive for architects: assessment findings, accelerators, delivery plan and risks.",

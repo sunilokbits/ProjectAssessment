@@ -28,6 +28,9 @@ def test_generate_without_ai_applies_prompt_sections(client):
     assert "Acme Bank" in c["title"]
     assert any("Banking" in k for k in c["findings"]["key_findings"])
     assert any(a["name"].startswith("DBx Migrator") for a in c["accelerators"]["items"])  # databricks selected
+    assert c["approach"]["framework_name"] == "DRIVE"
+    assert [s["letter"] for s in c["approach"]["stages"]] == list("DRIVE")
+    assert "PROVE" not in str(c)
     bad = client.post(f"/api/assessments/{aid}/reports/generate", json={"sections": ["nope"]}, headers=ASSESSOR)
     assert bad.status_code == 422
 

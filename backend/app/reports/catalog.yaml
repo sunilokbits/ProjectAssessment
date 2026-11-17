@@ -5,43 +5,43 @@
 company: Insight
 
 framework:
-  name: PROVE
+  name: DRIVE
   core_stage_index: 2
   stages:
-    - {letter: P, name: Profile, text: "AI mines processes and documents; baseline volume, effort, errors and turnaround.", tooling: "Assessment Studio · mining"}
+    - {letter: D, name: Discover, text: "AI mines processes and documents; baseline volume, effort, errors and turnaround.", tooling: "Assessment Studio · mining"}
     - {letter: R, name: Rank, text: "Score every opportunity on business value × feasibility; select the first wave.", tooling: "Value-feasibility matrix"}
-    - {letter: O, name: Orchestrate, text: "Redesign first, then automate with workflow, document AI and agents — human in the loop.", tooling: "IDP · GenAI · AI agents"}
-    - {letter: V, name: Validate, text: "Pilot on live volumes; measure against baseline; risk and compliance sign-off.", tooling: "Value Tracker · guardrails"}
+    - {letter: I, name: Implement, text: "Redesign first, then automate with workflow, document AI and agents — human in the loop.", tooling: "IDP · GenAI · AI agents"}
+    - {letter: V, name: Verify, text: "Pilot on live volumes; measure against baseline; risk and compliance sign-off.", tooling: "Value Tracker · guardrails"}
     - {letter: E, name: Expand, text: "Industrialise into a delivery factory; scale wave by wave with reusable components.", tooling: "Factory · CoE"}
   timeline:
-    - {when: "Wk 0–2", label: "Profile & Rank"}
-    - {when: "Wk 3–6", label: "Orchestrate pilots"}
-    - {when: "Wk 7–8", label: "Validate value"}
+    - {when: "Wk 0–2", label: "Discover & Rank"}
+    - {when: "Wk 3–6", label: "Implement pilots"}
+    - {when: "Wk 7–8", label: "Verify value"}
     - {when: "Wave 2+", label: "Expand & scale"}
 
 # 'match' lists pack keys (technologies / project types / industries). An accelerator is picked when
 # any key matches the assessment, or when 'always' is true. 'live' marks assets that can be demoed today.
 accelerators:
   - name: Project Assessment Studio
-    stage_tags: "P · R"
+    stage_tags: "D · R"
     text: "Domain-specific assessment: tailored questions, risks, compliance and readiness scoring."
     live: true
     url: "https://projectassessment.azurewebsites.net"
     always: true
   - name: DBx Migrator — Migration Studio
-    stage_tags: "O · E"
+    stage_tags: "I · E"
     text: "Databricks Brickbuilder accelerator: legacy SQL to a governed Lakehouse, one job per table, reconciled."
     live: true
     url: ""
     match: [databricks, lakehouse, data_migration, etl_migration, database_migration, legacy_etl_migration, cloud_data_migration, data_platform_modernization]
   - name: Document & Process Intelligence
-    stage_tags: "P · O"
+    stage_tags: "D · I"
     text: "Classify and extract data from forms and documents; route exceptions to people with full audit."
     live: false
     url: ""
     match: [document_intelligence, generative_ai, ai_agents, agentic_ai]
   - name: Agentic Automation Factory
-    stage_tags: "O"
+    stage_tags: "I"
     text: "Reusable GenAI agents and workflow patterns with guardrails, approvals and human-in-the-loop review."
     live: false
     url: ""
@@ -59,7 +59,7 @@ accelerators:
     url: ""
     always: true
   - name: Lakehouse & Data Platform Blueprints
-    stage_tags: "O · E"
+    stage_tags: "I · E"
     text: "Reference architectures and IaC for governed data platforms on Databricks, Fabric or Snowflake."
     live: false
     url: ""
@@ -78,7 +78,7 @@ value:
     benefit: [0, 120, 330, 620, 960, 1350, 1780, 2250]
     investment: [250, 400, 500, 580, 640, 700, 750, 800]
   payback_note: "Payback ≈ Q4   ·   ~2.8× return by Q8"
-  disclaimer: "Illustrative targets for in-scope processes; client-specific figures come from the Profile baseline."
+  disclaimer: "Illustrative targets for in-scope processes; client-specific figures come from the Discover baseline."
 
 operating_model:
   title: "FDE pods embed engineering inside the client's teams"
@@ -99,9 +99,9 @@ operating_model:
 roadmap:
   phases:
     - {name: "Mobilise & governance", start_week: 0, end_week: 1}
-    - {name: "Profile & Rank", start_week: 0, end_week: 2}
-    - {name: "Orchestrate — pilot wave 1", start_week: 2, end_week: 6}
-    - {name: "Validate & value review", start_week: 6, end_week: 8}
+    - {name: "Discover & Rank", start_week: 0, end_week: 2}
+    - {name: "Implement — pilot wave 1", start_week: 2, end_week: 6}
+    - {name: "Verify & value review", start_week: 6, end_week: 8}
     - {name: "Expand — wave 2 & scale plan", start_week: 8, end_week: 12}
   milestones:
     - {week: 2, label: "Roadmap & business case signed off"}
@@ -127,7 +127,7 @@ why_us:
 
 options:
   items:
-    - {tag: "OPTION 1", name: "PROVE Sprint", terms: "2 weeks · fixed fee", recommended: true, outputs: ["Process baseline and pain-point map", "Value × feasibility ranked opportunities", "Roadmap and business case for wave 1"]}
+    - {tag: "OPTION 1", name: "DRIVE Sprint", terms: "2 weeks · fixed fee", recommended: true, outputs: ["Process baseline and pain-point map", "Value × feasibility ranked opportunities", "Roadmap and business case for wave 1"]}
     - {tag: "OPTION 2", name: "Pilot Wave", terms: "6 weeks · fixed fee + outcome bonus", recommended: false, outputs: ["2–3 processes redesigned and automated", "Running on live volumes with human review", "Value validated against the baseline"]}
     - {tag: "OPTION 3", name: "Scale Programme", terms: "Quarterly waves · managed FDE capacity", recommended: false, outputs: ["Delivery factory and reusable components", "Outcome KPIs in the commercial model", "CoE set-up and handover to the client"]}
 

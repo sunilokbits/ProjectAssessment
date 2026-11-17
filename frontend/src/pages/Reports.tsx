@@ -68,7 +68,7 @@ export default function Reports({ id, assessment }: { id: string; assessment: an
         {!confirmed && <div className="notice warn">Confirm the domain classification first — reports are built from the confirmed domain packs.</div>}
         <label className="small muted" htmlFor="rp-prompt">Prompt — audience, focus, framework, sections, tone</label>
         <textarea id="rp-prompt" rows={6} value={prompt} onChange={(e) => setPrompt(e.target.value)} disabled={!canEdit}
-          placeholder="e.g. Leadership bid deck for MUFG: PROVE framework, Aurora accelerators incl. DBx Migrator, ROI and productivity value, FDE operating model, and add battle cards."
+          placeholder="e.g. Leadership bid deck for MUFG: DRIVE framework, Aurora accelerators incl. DBx Migrator, ROI and productivity value, FDE operating model, and add battle cards."
           style={{ width: "100%", marginTop: 6 }} />
         <div className="row" style={{ flexWrap: "wrap", gap: 6, margin: "8px 0 14px" }}>
           {o.example_prompts.map((p: string, i: number) => (
